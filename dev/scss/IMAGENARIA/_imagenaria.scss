@@ -1,0 +1,13 @@
+@mixin i-bkg-ctr($src,$size:contain){
+  background-image:url($src);
+  background-position: center center;
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+@mixin background($imgpath,$position:0 0,$repeat: no-repeat) {
+  background: {
+    image: url($imgpath);
+    position: $position;
+    repeat: $repeat;
+  }
+}

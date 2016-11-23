@@ -1,0 +1,46 @@
+@import "imports";
+@import "debug";
+
+///////////////////////////////////////////////////////
+// INPUT
+/*
+ * BASE STYLES
+ */
+@import "BASE/base";
+
+/*
+ * NORMALIZE
+ */
+@import "NORMALIZE/normalize-5-0-0";
+
+/*
+ * TYPOGRAPHY
+ */
+
+  @include typographic();
+
+/*
+ * GRID
+ */
+ @if($response){
+  @include drawGrid($grid-map, $options);
+}@else {
+  @include nr-drawGrid($nr-options);
+ }
+
+
+/*
+* LAYOUT HELPERS
+*/
+@include helpers();
+/////////////////////////////////////////////////////
+//PROJECTBOARD
+@if($production == false){
+  @include projectBoard();
+  @include draft();
+  @include toJSMap();
+}
+//DEBUG
+@if($debug){
+  @include debug();
+}

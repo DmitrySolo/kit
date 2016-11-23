@@ -1,0 +1,166 @@
+// Helpers
+
+/// A function to remove the unit from a number.
+///
+/// @param {unit} $unit - A unit with a unit value.
+///
+/// @example
+///   _strip-units(1px)
+///
+/// @access private
+
+@function _strip-units($unit) {
+  @return $unit / ($unit * 0 + 1);
+}
+
+
+/// Creates a baseline grid based off your $line-height-ratio to help visualize your vertical rhythm grid. You can offset the grid by negative or positive pixels to line it up perfectly with the bottom of your text.
+///
+/// @param {color} $color [black] - A color to be lightened and used as the color for the grid.
+/// @param {number} $px-offset [false] - A positive or negative number of pixels to offset the grid by. Useful for lining the bottom of the gridlines up with your text.
+///
+/// @example
+///   @include grid-overlay(blue, 2);
+
+@mixin grid-overlay($color: black, $px-offset: false) {
+  body {
+    background: linear-gradient(to top, rgba($color, .1) 5%, white 5%);
+    background-size: 100% ($line-height-ratio) + em;
+    @if($px-offset) {
+      background-position: 0 $px-offset + px;
+    }
+  }
+}
+
+
+/// Returns a "vertical unit". Useful for specifying the height and margins of non-text elements like not_opt_images and such.
+///
+/// @param {number} $units [1] - Number of units. Accepts floated numbers as well.
+/// @param {number} $px-offset [false] - A positive or negative number of pixels to offset the grid by. Useful for lining the bottom of the gridlines up with your text. Since this doesn't compute a literal pixel you may need to use a floated number (multiples of .25 work well) to keep your rhythm on track.
+///
+/// @example
+///   img {
+///     height: vr-block(5.25);
+///     margin-bottom: vr-block(.25);
+///   }
+
+@function vr-block($units: 1, $px-offset: false) {
+  @if($px-offset) {
+    @return ( (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2)) * ($units / 2) * (1 + ($px-offset / _strip-units($max-font))) ) + em;
+  } @else {
+    @return ( (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2)) * ($units / 2) ) + em;
+  }
+}
+
+
+/// Performs exponent math on floated numbers.
+///
+/// @example
+///   math-pow(3, 3)
+///
+/// @access private
+
+@function math-pow($number, $exp) {
+  @if (round($exp) != $exp) {
+    @return math-exp($exp * math-ln($number));
+  }
+
+  $value: 1;
+
+  @if $exp > 0 {
+    @for $i from 1 through $exp {
+      $value: $value * $number;
+    }
+  }
+  @else if $exp < 0 {
+    @for $i from 1 through -$exp {
+      $value: $value / $number;
+    }
+  }
+
+  @return $value;
+}
+
+
+/// Helps with math-pow() function
+///
+/// @access private
+
+@function math-factorial($value) {
+  @if $value == 0 {
+    @return 1;
+  }
+
+  $result: 1;
+
+  @for $index from 1 through $value {
+    $result: $result * $index;
+  }
+
+  @return $result;
+}
+
+
+/// Helps with math-pow() function
+///
+/// @access private
+
+@function math-summation($iteratee, $input, $initial: 0, $limit: 100) {
+  $sum: 0;
+
+  @for $index from $initial to $limit {
+    $sum: $sum + call($iteratee, $input, $index);
+  }
+
+  @return $sum;
+}
+
+
+/// Helps with math-pow() function
+///
+/// @access private
+
+@function math-exp-maclaurin($x, $n) {
+  $result: math-pow($x, $n) / math-factorial($n);
+  @return $result;
+}
+
+
+/// Helps with math-pow() function
+///
+/// @access private
+
+@function math-exp($value) {
+  $result: math-summation(math-exp-maclaurin, $value, 0, 100);
+  @return $result;
+}
+
+
+/// Helps with math-pow() function
+///
+/// @access private
+
+@function math-ln-maclaurin($x, $n) {
+  $result: (math-pow(-1, $n + 1) / $n) * (math-pow($x - 1, $n));
+  @return $result;
+}
+
+
+/// Helps with math-pow() function
+///
+/// @access private
+
+@function math-ln($value) {
+  $ten-exp: 1;
+  $ln-ten: 2.30258509;
+
+  @while ($value > math-pow(10, $ten-exp)) {
+    $ten-exp: $ten-exp + 1;
+  }
+
+  $value: $value / math-pow(10, $ten-exp);
+
+  $result: math-summation(math-ln-maclaurin, $value, 1, 100);
+
+  @return $result + $ten-exp * $ln-ten;
+}

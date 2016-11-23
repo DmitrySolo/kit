@@ -1,0 +1,9 @@
+meta(charset="utf-8")
+block title
+    title=head.title
+meta(name="description", content=""+head.desc)
+meta(name="keywords", content=""+head.kw)
+meta(name="viewport", content="width=device-width, initial-scale=1.0")
+if head.fontLink
+    link(href=""+head.fontLinkHref, rel="stylesheet", type="text/css")
+link(href="main.css",rel="stylesheet", type="text/css")

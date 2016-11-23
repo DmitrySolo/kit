@@ -1,0 +1,13 @@
+mixin menu(menuItems,layOut)
+    if layOut=='v'
+        nav.vertical
+            ul
+                for menuItem in menuItems
+                    li
+                        a(href='#')= menuItem
+    else if layOut=='h'
+        nav.horizontal
+            ul
+                for menuItem in menuItems
+                    li
+                        a(href='#')= menuItem

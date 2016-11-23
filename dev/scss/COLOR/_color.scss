@@ -1,0 +1,28 @@
+$colors: (
+        'primary':#3a4048,
+        'accent': #d47c6e,
+        'secondary': #4469A5,
+        'fground': #fff,
+        'bground': #9c9fa2,
+        'font': #454F60
+);
+$color-step: .1;
+
+
+$colors-map:(
+
+);
+@each $role,$value in $colors {
+
+        $colors-map1:(
+                '#{$role}':  map-get($colors, $role),
+                '#{$role}-l': lighten(map-get($colors, $role),percentage($color-step)),
+                '#{$role}-d':darken(map-get($colors, $role),percentage($color-step)),
+        );
+        $colors-map:map-merge($colors-map,$colors-map1);
+
+}
+@function cs($key: 'primary',$inc:$colors-map) {
+        @return map-get($inc, $key);
+
+}

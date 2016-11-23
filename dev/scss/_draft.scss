@@ -1,0 +1,21 @@
+@mixin draft(){
+  body{
+    background-image: url("images/dark_wood.png");
+  }
+.mainHeader {
+  background-color: cs('primary');
+}
+  .logo{
+    height: 8.5em;
+    background-color: #fff;
+    @include i-bkg-ctr('images/vrig.svg',85%);
+    @include media('mobile')  {
+    background-size: cover;
+  }
+  }
+  .mainFooter{
+    background-color: cs('primary');
+    color:#fff;
+    @include space('module','trbl','')
+  }
+}

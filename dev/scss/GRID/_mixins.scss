@@ -1,0 +1,50 @@
+@mixin colStyle($prefixes,$colums){
+  @each $prefix in $prefixes{
+    @for $i from 1 through $colums {
+      .col-#{$i}-#{$prefix} {
+        @extend %col-styles;
+      }
+    }
+  }
+}
+@mixin gridBuilder($prefix,$colums) {
+  @for $i from 1 through $colums {
+    .col-#{$i}-#{$prefix} {
+      width: percentage($i/$colums);
+    }
+  }
+}
+@mixin hide($hidePrefix,$prefixes) {
+  @each $prefix in $prefixes {
+
+    @if $hidePrefix == $prefix {
+      .hide-#{$hidePrefix} {
+        display: none;
+      }
+
+    }
+    @else {
+      .hide-#{$prefix} {
+        display: block;
+      }
+    }
+
+  }
+}
+@mixin visible($hidePrefix,$prefixes) {
+  @each $prefix in $prefixes {
+
+    @if $hidePrefix == $prefix {
+      .visible-#{$hidePrefix} {
+        display: block;
+      }
+
+    }
+    @else {
+      .visible-#{$prefix} {
+        display: none;
+      }
+    }
+
+  }
+}

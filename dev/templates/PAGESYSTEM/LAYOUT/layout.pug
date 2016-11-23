@@ -1,0 +1,17 @@
+include ../../mixins/module_includer
+doctype html
+html(lang=''+head.lang)
+    head
+        include ../INCLUDES/_head
+    body
+        .container
+            header.mainHeader
+                .row
+                    .col-4-l
+                        .logo
+                    .col-8-l
+                        +module('Light_menu')
+            block main
+            footer.mainFooter
+                p &copy; "ВИРИ" Смесители и аксессуары для ванной комнаты 2016.
+

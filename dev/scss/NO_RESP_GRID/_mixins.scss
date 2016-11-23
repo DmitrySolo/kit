@@ -1,0 +1,14 @@
+@mixin nr-colStyle($colums){
+    @for $i from 1 through $colums {
+      .col-#{$i} {
+        @extend %col-styles;
+      }
+    }
+}
+@mixin nr-gridBuilder($colums) {
+  @for $i from 1 through $colums {
+    .col-#{$i} {
+      width: percentage($i/$colums);
+    }
+  }
+}

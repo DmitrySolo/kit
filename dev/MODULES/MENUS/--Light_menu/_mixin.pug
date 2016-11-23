@@ -1,0 +1,6 @@
+mixin lightMenu()
+    nav.lightMenu(role='navigation')
+        ul.lightMenu__list
+            each menuItem in menuData
+                    li(class='' + menuItem.dop_class)
+                        a(href="" + menuItem.href)=menuItem.title

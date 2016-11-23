@@ -1,0 +1,68 @@
+@mixin space($e,$p,$m) {
+  $space_ratio: 0;
+  @if ($e=='block') {
+    $space_ratio: $block_space;
+  } @else if ($e=='module') {
+    $space_ratio: $module_space;
+  } @else if ($e=='component') {
+    $space_ratio: $component_space;
+  } @else if ($e=='element') {
+    $space_ratio: $element_space;
+  }
+
+  @if ($m==0) {
+    margin: 0;
+  } @else {
+    @if (str-index($m, 't')) {
+      margin-top: #{$line-height-ratio*$space_ratio}em;
+    }
+    @if (str-index($m, 'r')) {
+      margin-right: #{$line-height-ratio*$space_ratio}em;
+    }
+    @if (str-index($m, 'b')) {
+      margin-bottom: #{$line-height-ratio*$space_ratio}em;
+    }
+    @if (str-index($m, 'l')) {
+      margin-left: #{$line-height-ratio*$space_ratio}em;
+    }
+  }
+  @if($p==0){
+    padding: 0;
+  }@else{
+    @if(str-index($p, 't')){
+      padding-top: #{$line-height-ratio*$space_ratio}em;
+    }
+    @if(str-index($p, 'r')){
+      padding-right: #{$line-height-ratio*$space_ratio}em;
+    }
+    @if(str-index($p, 'b')){
+      padding-bottom: #{$line-height-ratio*$space_ratio}em;
+    }
+    @if(str-index($p, 'l')){
+      padding-left: #{$line-height-ratio*$space_ratio}em;
+    }
+  }
+}
+///////////////////////////////////////////////////////////////////////////////////////
+.block:first-child {
+  @include space('block','tb','');
+}
+.block:last-child {
+  @include space('block',0,'');
+}
+.block {
+  @include space('block','b',0);
+}
+/////////////////////
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.vertical {
+  @include space('component',0,'tb');
+}
+.vertical li{
+  display: inline-block;
+  @include space('element',0,'bl');
+}

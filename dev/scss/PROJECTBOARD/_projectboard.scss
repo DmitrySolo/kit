@@ -1,0 +1,25 @@
+@mixin projectBoard(){
+  .pb-projectBoard {
+    background: white;
+  }
+  .pb-section {
+    border-bottom: 1px solid #ededed;
+    @include space('module','trbl','');
+  }
+  .pb-elementHeader{
+    display:block;
+  }
+  .pb-element{
+    @include space('element','r','');
+  }
+  .pb-colorBox{
+    width: 90px;
+    height: 90px;
+    @include space('element','','t');
+  }
+  @each $role,$value in $colors-map{
+    .pb-colorBox--#{$role}{
+      background-color: $value;
+    }
+  }
+}

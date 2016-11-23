@@ -1,0 +1,60 @@
+@mixin debug-elem($db-color){
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image:linear-gradient(to bottom, $db-color 0%, $db-color 100%), linear-gradient(to bottom, lighten($db-color,10%) 0%,  lighten($db-color,10%));
+  background-clip: content-box, padding-box;
+  & ~ .debug-margins{
+    position: absolute;
+    font-weight:900;
+    color:#fff;
+    background-color: $db-color;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%;
+  }
+}
+
+@mixin debug(){
+  $db-headers-color: #e74c3c;
+  $db-block-color: #8e44ad;
+  $db-body-color: #ad9337;
+  $db-p-color: #ffc114;
+  $db-ul-color: #27ae60;
+  $db-li-color: #2980b9;
+  $db-col-color: #9e9b95;
+  $db-ctn-color: #f39c12;
+  $db-row-color: #f1c40f;
+
+  @include grid-overlay(#0800f3);
+
+  body {
+    background-color: $db-body-color;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    @include debug-elem($db-headers-color);
+  }
+  p {
+    @include debug-elem($db-p-color);
+  }
+  ul {
+    @include debug-elem($db-ul-color);
+  }
+  li {
+    @include debug-elem($db-li-color);
+  }
+  *[class^="col-"]{
+    @include debug-elem($db-col-color);
+  }
+
+  .container {
+    @include debug-elem($db-ctn-color);
+  }
+  .row {
+    @include debug-elem($db-row-color);
+  }
+  .block {
+    @include debug-elem($db-block-color);
+  }
+}

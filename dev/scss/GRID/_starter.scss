@@ -1,0 +1,52 @@
+@mixin drawGrid($grid-map, $options){
+  $prefixes:();
+  @each $label,$map in $grid-map {
+    $prefixes :append($prefixes,map_get($map,prefix));
+  }
+  $colStyles: map-get($options, colStyles);
+  $gutterWidth: map-get($options, gutterWidth);
+  $colums: map-get($options, colums);
+  %col-styles {
+    @each $style, $value in $colStyles{
+      #{$style}: #{$value};
+    }
+    padding-left: $gutterWidth/2;
+    padding-right: $gutterWidth/2;
+  }
+  @include colStyle($prefixes,$colums);
+
+  @each $label,$map in $grid-map{
+    @media screen and (min-width : map_get($map,breakpoint)) {
+      @include gridBuilder(map_get($map,prefix),$colums);
+      @include hide(map_get($map,prefix),$prefixes);
+      @include visible(map_get($map,prefix),$prefixes);
+      .container {
+        width: map_get($map,container);
+      }
+    }
+  }
+  .row {
+    margin-left: -$gutterWidth/2;
+    margin-right: -$gutterWidth/2;
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  .wrapper{
+    width: 100%;
+  }
+  .container {
+    display: block;
+    margin: 0 auto;
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+}

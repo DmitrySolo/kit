@@ -1,0 +1,36 @@
+mixin menu2()
+    div#pattern.pattern
+        button.menu-link Menu
+            nav#menu.menu(role='navigation')
+                ul.level-1
+                    each menuItem in menuData
+                        if menuItem.childs.length==0
+                            li(class='' + menuItem.dop_class)
+                                a(href="" + menuItem.href)=menuItem.title
+                        else
+                            li.has-subnav(class=''+menuItem.dop_class)
+                                a(href="#")=menuItem.title
+                                ul.level-2
+                                    each menuItem1 in menuItem.childs
+                                        if menuItem1.childs.length == 0
+                                            li(class='' + menuItem1.dop_class)
+                                                a(href="" + menuItem1.href)=menuItem1.title
+                                        else
+                                            li.has-subnav(class='' + menuItem1.dop_class)
+                                                a(href="#")=menuItem1.title
+                                                ul.level-3
+                                                    each menuItem2 in menuItem1.childs
+                                                        if menuItem2.childs.length == 0
+                                                            li(class='' + menuItem2.dop_class)
+                                                                a(href="" + menuItem1.href)=menuItem2.title
+                                                        else
+                                                            li.has-subnav(class='' + menuItem2.dop_class)
+                                                                a(href="#")=menuItem2.title
+                                                                ul.level-4
+                                                                    each menuItem3 in menuItem2.childs
+                                                                        if menuItem2.childs.length == 0
+                                                                            li(class='' + menuItem3.dop_class)
+                                                                                a(href="" + menuItem1.href)=menuItem3.title
+                                                                        else
+                                                                            li.has-subnav(class='' + menuItem3.dop_class)
+                                                                                a(href="#")=menuItem3.title

@@ -1,0 +1,9 @@
+@mixin toJSMap(){
+  $toJSMap: (
+          animationData: $animationData,
+          globalVariables: #ff0000,
+  );
+  .sassTojs-data{
+    font-family:sassToJs($toJSMap);
+  }
+}

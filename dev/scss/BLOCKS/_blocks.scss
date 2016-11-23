@@ -1,0 +1,10 @@
+@mixin blocks() {
+  .block{
+    margin-bottom: vr-block(2);
+    padding: vr-block(1);
+  }
+  .block-split {
+    padding-top: vr-block(1);
+    padding-bottom: vr-block(2.5);
+  }
+}

@@ -1,0 +1,39 @@
+@mixin nr-drawGrid($nr-options){
+
+  $colStyles: map-get($nr-options, colStyles);
+  $gutterWidth: map-get($nr-options, gutterWidth);
+  $colums: map-get($nr-options, colums);
+  %col-styles {
+    @each $style, $value in $colStyles{
+      #{$style}: #{$value};
+    }
+    padding-left: $gutterWidth/2;
+    padding-right: $gutterWidth/2;
+  }
+  @include nr-colStyle($colums);
+  @include nr-gridBuilder($colums);
+  .row {
+    margin-left: -$gutterWidth/2;
+    margin-right: -$gutterWidth/2;
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  .wrapper{
+    width: 100%;
+  }
+  .container {
+    display: block;
+    width: $siteWidth;
+    margin: 0 auto;
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}

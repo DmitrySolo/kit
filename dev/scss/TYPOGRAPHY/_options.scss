@@ -1,0 +1,13 @@
+$header-ratio       : $golden;
+$min-width          : $siteMinWidth; // MASTER_OPTIONS
+$max-width          : $siteWidth;  // MASTER_OPTIONS
+$min-font:'';
+$max-font:'';
+@if($response){
+  $min-font: $mobile-font; // MASTER_OPTIONS
+  $max-font: $screen-font; // MASTER_OPTIONS
+}
+@else {
+  $min-font: $screen-font;
+  $max-font: $min-font; // ANTIBUG )))
+}

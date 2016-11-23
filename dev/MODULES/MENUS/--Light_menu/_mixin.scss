@@ -1,0 +1,37 @@
+@mixin lightMenu($rotation:'v'){
+  @if($rotation=='h'){
+    .lightMenu li {
+      display: inline-block;
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+  .lightMenu li {
+    list-style: none;
+    @include space('element','lr','r');
+    @include media('mobile'){
+      @include space('element','tb','');
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-left: 0;
+    }
+  }
+  .lightMenu__list{
+    @extend %hierarhiLevel--4;
+  }
+  .lightMenu li a{
+    font-size: 1em;
+    color: #f9f2f4;
+    text-decoration: none;
+  }
+  .lightMenu {
+    @include space('block','tb','');
+    text-align: center;
+  }
+  .lightmenu__item--active {
+      background-color: cs('accent');
+      @include a-hover('background-color',(from:false,to:cs('accent-d')),.3s,ease);
+  }
+}
