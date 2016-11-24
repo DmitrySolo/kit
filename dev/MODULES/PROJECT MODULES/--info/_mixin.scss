@@ -1,7 +1,30 @@
 @mixin info(){
 	.info{
-      text-decoration: underline;
-      font-size: 56px;
-      color: chocolate;
+      background-color: #fff;
+      @include space('block','trbl','');
+      background-image: url("images-rs/arches.png");
     }
+  .info__section {
+    border: 2px solid cs('primary-l');
+    @include space('component','trbl','');
+    @include media('md'){
+      @include space('component','','b');
+    }
+
+  }
+  .info__section__title {
+
+  }
+  .info__section__body{
+    @include space('element','trbl','t');
+  }
+  .info__section__more {
+    display: block;
+    @include space('element','trlb',0);
+    background-color: cs('accent');
+    @include a-hover('background-color',(from:false,to:cs('accent-d')),.3s,ease);
+    color: #fff;
+    margin: 0 auto;
+    cursor: pointer;
+  }
 }

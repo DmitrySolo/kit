@@ -16,6 +16,9 @@
   .mainFooter{
     background-color: cs('primary');
     color:#fff;
-    @include space('module','trbl','')
+    @include space('module','trbl','');
+    @include media('md'){
+      text-align: center;
+    }
   }
 }

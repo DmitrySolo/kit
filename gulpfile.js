@@ -164,7 +164,7 @@ gulp.task('bm', function() {
             file('_mixin.scss', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
             ///DATA
-            var str = "{}";
+            var str = '{\n\t"'+options.name+'" : {\n\t\t"1" : "1"\n\t}\n}';
             file('data.json', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
             ///JS

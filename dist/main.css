@@ -1,29 +1,3 @@
-.block:first-child {
-  padding-top: 3.4em;
-  padding-bottom: 3.4em; }
-
-.block:last-child {
-  padding: 0; }
-
-.block {
-  margin: 0;
-  padding-bottom: 3.4em; }
-
-ul {
-  margin: 0;
-  padding: 0; }
-
-.vertical {
-  margin-top: 1.53em;
-  margin-bottom: 1.53em;
-  padding: 0; }
-
-.vertical li {
-  display: inline-block;
-  margin-bottom: 0.85em;
-  margin-left: 0.85em;
-  padding: 0; }
-
 .lightMenu__list {
   font-size: 1em;
   text-transform: uppercase; }
@@ -111,6 +85,49 @@ ul {
   position: absolute;
   right: 0; }
 
+.info {
+  background-color: #fff;
+  padding-top: 3.4em;
+  padding-right: 3.4em;
+  padding-bottom: 3.4em;
+  padding-left: 3.4em;
+  background-image: url("images-rs/arches.png"); }
+
+.info__section {
+  border: 2px solid #515964;
+  padding-top: 1.53em;
+  padding-right: 1.53em;
+  padding-bottom: 1.53em;
+  padding-left: 1.53em; }
+  @media screen and (max-width: 1400px) {
+    .info__section {
+      margin-bottom: 1.53em; } }
+
+.info__section__body {
+  margin-top: 0.85em;
+  padding-top: 0.85em;
+  padding-right: 0.85em;
+  padding-bottom: 0.85em;
+  padding-left: 0.85em; }
+
+.info__section__more {
+  display: block;
+  margin: 0;
+  padding-top: 0.85em;
+  padding-right: 0.85em;
+  padding-bottom: 0.85em;
+  padding-left: 0.85em;
+  background-color: #d47c6e;
+  background-color: false;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  color: #fff;
+  margin: 0 auto;
+  cursor: pointer; }
+  .info__section__more:hover {
+    background-color: #c85847; }
+
 .vri_features {
   background-color: #23272c;
   padding-top: 3.4em;
@@ -195,11 +212,6 @@ ul {
   background-color: inherit;
   text-align: center;
   line-height: 2; }
-
-.info {
-  text-decoration: underline;
-  font-size: 56px;
-  color: chocolate; }
 
 /*
  * BASE STYLES
@@ -1137,6 +1149,9 @@ body {
   padding-right: 2.38em;
   padding-bottom: 2.38em;
   padding-left: 2.38em; }
+  @media screen and (max-width: 1400px) {
+    .mainFooter {
+      text-align: center; } }
 
 .sassTojs-data {
   font-family: '{"animationData":[],"globalVariables":"#ff0000"}'; }

@@ -1,2 +1,9 @@
 mixin info()
-    section.info Hello!
+    section.info
+        .row
+            each infos in info
+                .col-4-l
+                    .info__section( class='' + infos.dopClass )
+                        h2.info__section__title= infos.title
+                        p.info__section__body= infos.content
+                        a.info__section__more Подробнее

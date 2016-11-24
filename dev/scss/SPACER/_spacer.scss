@@ -43,26 +43,3 @@
     }
   }
 }
-///////////////////////////////////////////////////////////////////////////////////////
-.block:first-child {
-  @include space('block','tb','');
-}
-.block:last-child {
-  @include space('block',0,'');
-}
-.block {
-  @include space('block','b',0);
-}
-/////////////////////
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-.vertical {
-  @include space('component',0,'tb');
-}
-.vertical li{
-  display: inline-block;
-  @include space('element',0,'bl');
-}
