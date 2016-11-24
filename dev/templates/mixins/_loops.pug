@@ -1,4 +1,6 @@
-mixin loop(tag,nclass,order,name)
-    -for (i=0; i<order; i++)
-        #{tag}( class=''+nclass)
+mixin loop( count )
+    - var n = 0
+    while n < count
+        block
+        - n++
 
