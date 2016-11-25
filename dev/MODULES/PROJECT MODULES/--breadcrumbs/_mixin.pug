@@ -1,0 +1,5 @@
+mixin breadcrumbs()
+    nav.breadCrumb.visible-l
+        a(href='/').breadcrumb__section.breadCrumb__section--home Главная
+        +loop(2)
+            a(href='/').breadcrumb__section Другая страница

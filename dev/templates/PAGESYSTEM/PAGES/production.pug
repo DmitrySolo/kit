@@ -1,4 +1,7 @@
 //- production.pug
 extends ../LAYOUT/layout.pug
 block title
-	title Продукция
+    title Продукция
+block main
+    h1.pageTitle Продукция
+    +module('categories')

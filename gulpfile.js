@@ -46,7 +46,7 @@ gulp.task('bro', function() {
 gulp.task('PAGESYSTEM', function() {
     for(var index in data.pages) {
         var attr = data.pages[index];
-        var str = "//- "+attr.slug+".pug\nextends ../LAYOUT/layout.pug\nblock title\n\t-var page="+attr.slug+"\n\ttitle "+attr.title;
+        var str = "//- "+attr.slug+".pug\nextends ../LAYOUT/layout.pug\nblock title\n\t-var page='"+attr.slug+"'\n\ttitle "+attr.title;
         if (!fs.existsSync('dev/templates/PAGESYSTEM/PAGES/'+attr.slug+'.pug')) {
             file(attr.slug+'.pug', str)
                 .pipe(gulp.dest('dev/templates/PAGESYSTEM/PAGES'));

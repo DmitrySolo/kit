@@ -2,6 +2,9 @@
   body{
     background-image: url("images/dark_wood.png");
   }
+  .container {
+    background-color: rgb(243, 243, 243);
+  }
 .mainHeader {
   background-color: cs('primary');
 }
@@ -9,8 +12,8 @@
     height: 8.5em;
     background-color: #fff;
     @include i-bkg-ctr('images/vrig.svg',85%);
-    @include media('mobile')  {
-    background-size: cover;
+    @include media('md')  {
+    background-size: contain;
   }
   }
   .mainFooter{
@@ -18,6 +21,16 @@
     color:#fff;
     @include space('module','trbl','');
     @include media('md'){
+      text-align: center;
+    }
+  }
+  .pageTitle{
+    line-height: 1.7;
+    @include space('element','','tb');
+    @include space('block','','rl');
+    text-transform: uppercase;
+    @include media('md'){
+      @include space('block','','t');
       text-align: center;
     }
   }
