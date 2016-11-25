@@ -1,0 +1,15 @@
+mixin module_no_on(modname,pages)
+    -var curPage =page
+    -var includem =true
+    each no_page in pages
+        if curPage == no_page
+            -includem= false
+    if includem
+        +module(modname)
+
+
+
+
+
+
+
