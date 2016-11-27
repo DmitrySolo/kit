@@ -1,8 +1,11 @@
 var gulp = require('gulp');
 var runSequence  = require('run-sequence');
 var data = require('./data.json');
+htmlv = require('gulp-html-validator');
 var concat = require('gulp-concat');
 var fs = require('fs');
+var GulpSSH = require('gulp-ssh')
+var htmlsplit = require('gulp-htmlsplit');
 var pug = require('gulp-pug');
 var gm = require('gulp-gm');
 var insert = require('gulp-insert');
@@ -10,6 +13,7 @@ var imageResize = require('gulp-image-resize');
 const imagemin = require('gulp-imagemin');
 var minimist = require('minimist');
 var sass = require('gulp-sass');
+var htmlhint = require("gulp-htmlhint");
 
 const autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
@@ -22,8 +26,10 @@ gulp.task('views', function buildHTML() {
             pretty: true,
         })).pipe(gulp.dest('dist'));
 });
-gulp.task('browserreload',function () {
-    browserSync.reload;
+gulp.task('validate',function () {
+    gulp.src("dist/*service.html")
+        .pipe(htmlhint())
+        .pipe(htmlhint.failReporter());
 });
 gulp.task('default', function() {
     gulp.watch('dev/**/*.pug', ['views','browserreload']);
@@ -108,7 +114,7 @@ gulp.task('serve', [], function() {
         server: "./dist"
     });
 
-    gulp.watch("dist/*.html").on('change', browserSync.reload);
+    gulp.watch("dist/*service.html").on('change', browserSync.reload);
     gulp.watch("dist/*.css").on('change', browserSync.reload);
 });
 gulp.task('watchsass', ['scssconcatmodules','sass','browser-reload','views'], function() {
@@ -156,15 +162,15 @@ gulp.task('bm', function() {
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
 
             ///MIXIN PUG
-            var str = "mixin "+options.name+"()";
+            var str = "mixin "+options.name+"()\n\t."+options.name+"";
             file('_mixin.pug', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
             ///MIXIN SCSS
-            var str = "@mixin "+options.name+"(){\n\t\n}";
+            var str = "@mixin "+options.name+"(){\n\t\n."+options.name+"{}}";
             file('_mixin.scss', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
             ///DATA
-            var str = '{\n\t"'+options.name+'" : {\n\t\t"1" : "1"\n\t}\n}';
+            var str = '{\n\t"'+options.name+'" : {\n\t\t"'+options.name+'" : "1"\n\t}\n}';
             file('data.json', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
             ///JS
@@ -186,3 +192,89 @@ gulp.task('browser-reload',  function() {
     browserSync.reload
 
 });
+var htmlhint = require("gulp-htmlhint");
+gulp.task('validw3c', function () {
+    gulp.src('dist/index.php.html')
+        .pipe(htmlv({format: 'html'}))
+        .pipe(gulp.dest('dist/1/'));
+});
+//////////////////// WORDPRESS
+gulp.task('makeWP_DRAFT', function() {
+         gulp.src(['integrator/WordPress/style.css','dist/main.css'])
+        .pipe(concat('style.css'))
+        .pipe(gulp.dest('integrator/WordPress/DRAFT/'));
+         gulp.src(['integrator/WordPress/header.php','dist/splits/header.html'])
+        .pipe(concat('header.php'))
+        .pipe(gulp.dest('integrator/WordPress/DRAFT'));
+         gulp.src(['integrator/WordPress/footer.php','dist/splits/footer.html'])
+        .pipe(concat('footer.php'))
+        .pipe(gulp.dest('integrator/WordPress/DRAFT'));
+         gulp.src(['integrator/WordPress/index.php','dist/splits/index.html'])
+        .pipe(concat('index.php'))
+        .pipe(gulp.dest('integrator/WordPress/DRAFT'));
+         gulp.src(['dist/images/*','dist/images_rs/*'])
+        .pipe(gulp.dest('integrator/WordPress/DRAFT/images/'));
+////////////////////////
+    for(var index in data.pages) {
+        var attr = data.pages[index];
+        if (attr.slug !=='index' && !attr.shop==true)
+             gulp.src(['integrator/WordPress/page.php','dist/splits/'+attr.slug+'.html'])
+            .pipe(concat('page-'+attr.slug+'.php'))
+            .pipe(gulp.dest('integrator/WordPress/DRAFT'));
+        else if(attr.shop==true){
+            gulp.src(['integrator/WordPress/wc shop/LOOP/archive-product.php','dist/splits/production.html'])
+            .pipe(concat('archive-product.php'))
+            .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
+
+            gulp.src(['integrator/WordPress/wc shop/LOOP/single-product.php','dist/splits/product.html'])
+            .pipe(concat('single-product.php'))
+            .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
+
+            gulp.src(['integrator/WordPress/wc shop/CONTENT/content-single-product.php','dist/splits/product.html'])
+            .pipe(concat('content-single-product.php'))
+            .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
+
+            gulp.src(['integrator/WordPress/wc shop/CONTENT/content-product.php','dist/splits/category.html'])
+            .pipe(concat('content-product.php'))
+            .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
+
+            gulp.src(['integrator/WordPress/wc shop/CONTENT/content-product_cat.php','dist/splits/production.html'])
+            .pipe(concat('content-product_cat.php'))
+            .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));}
+
+    }
+    //////////////////////////////
+
+});
+gulp.task('splitter', function() {
+    gulp.src('dist/*.html')
+        .pipe(htmlsplit())
+        .pipe(gulp.dest('dist/splits/'));
+})
+//////////////////////////////////////////////SSH
+
+var config = {
+    host: '185.22.233.89',
+    port: 22,
+    username: 'podpolkovnyk',
+    password: 'Himfwhwbi1899FTP'
+    //privateKey: fs.readFileSync('/Users/Sol/.ssh/id_rsa')
+}
+var gulpSSH = new GulpSSH({
+    ignoreErrors: false,
+    sshConfig: config
+})
+gulp.task('DEPLOY_WP', function() {
+
+        return gulp
+            .src(['integrator/WordPress/DIST/**'])
+            .pipe(gulpSSH.dest('www/vrigroup.ru/wp-content/themes/VRI'))
+
+})
+gulp.task('WORDPRESS DIST', function() {
+
+    //return gulp
+        //.src(['integrator/WordPress/DRAFT/**'])
+        //.pipe(gulp.dest('integrator/WordPress/DIST'));
+
+})

@@ -95,38 +95,27 @@
   }
 }
 @include categories();
-@mixin info(){
-	.info{
-      background-color: #fff;
-      @include space('block','trbl','');
-      background-image: url("images-rs/arches.png");
+@mixin category(){
+  .category{
+    background-color: #fff;
+    @include space('block',"trlb","")
+  }
+  .category__product__image_ctn{
+    @include i-bkg-ctr("?holder.js/355x260");
+    height:260px;
+  }
+  .category__product{
+    @include space('component','trlb','')
+  }
+  .category__product__title{
+    line-height: 1.75;
+    @include space('element','trlb','');
+    @include media('tablet'){
+      text-align: center;
     }
-  .info__section {
-    border: 2px solid cs('primary-l');
-    @include space('component','trbl','');
-    @include media('md'){
-      @include space('component','','b');
-    }
-
-  }
-  .info__section__title {
-
-  }
-  .info__section__body{
-    @include space('element','trbl','t');
-  }
-  .info__section__more {
-    display: block;
-    @include space('element','trlb',0);
-    background-color: cs('accent-d');
-    @include a-hover('background-color',(from:false,to:cs('accent')),.3s,ease);
-    color: #fff;
-    margin: 0 auto;
-    cursor: pointer;
-    font-family: $header-font;
   }
 }
-@include info();
+@include category();
 @mixin collection_slider(){
 	.collection_slider{
       position: relative;
@@ -163,6 +152,38 @@
   }
 }
 @include collection_slider();
+@mixin info(){
+	.info{
+      background-color: #fff;
+      @include space('block','trbl','');
+      background-image: url("images-rs/arches.png");
+    }
+  .info__section {
+    border: 2px solid cs('primary-l');
+    @include space('component','trbl','');
+    @include media('md'){
+      @include space('component','','b');
+    }
+
+  }
+  .info__section__title {
+
+  }
+  .info__section__body{
+    @include space('element','trbl','t');
+  }
+  .info__section__more {
+    display: block;
+    @include space('element','trlb',0);
+    background-color: cs('accent-d');
+    @include a-hover('background-color',(from:false,to:cs('accent')),.3s,ease);
+    color: #fff;
+    margin: 0 auto;
+    cursor: pointer;
+    font-family: $header-font;
+  }
+}
+@include info();
 @mixin vri_features(){
   .vri_features{
     background-color: cs('primary-d');

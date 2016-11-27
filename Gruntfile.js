@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       pretty: true,
     },
     files: {
-      'dist/index.html': ['dev/templates/index.pug'],
+      'dist/index.html': ['dev/templates/index.php.pug'],
       'projectboard/index.html': ['dev/templates/projectboard.pug'],
         }
       }

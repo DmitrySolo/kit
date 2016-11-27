@@ -34,4 +34,35 @@
       text-align: center;
     }
   }
+  .product{
+    @include space('block','tlbr','');
+    background-color: #fff;
+  }
+  .product__image_ctn, .product__info{
+    @include space('component','tlbr','')
+  }
+  .product__image_ctn {
+    width: 100%;
+    height: 450px;
+    @include i-bkg-ctr('images/HG800312.jpg');
+  }
+  .product__info {
+    background-color: cs('bground-l');
+    dl{
+      @include space('component','tbrl','')
+      background-color: #fff;
+
+    }
+    dd,dt {
+      @include space('element','brtl','');
+    }
+    dt {
+      font-weight: 900;
+      font-family: $header-font;
+    }
+
+  }
+  .product__info__list_line {
+    border-bottom: solid 1px #eee
+  }
 }

@@ -1,4 +1,5 @@
 include ../../mixins/_mixins
+<!-- split header.html -->
 doctype html
 html(lang=''+head.lang)
     head
@@ -12,7 +13,9 @@ html(lang=''+head.lang)
                     .col-8-l
                         +module('Light_menu')
             +module_no_on('breadcrumbs',['index'])
+            <!-- split #{page}.html -->
             block main
+            <!-- split footer.html -->
             footer.mainFooter
                 p &copy; "ВИРИ" Смесители и аксессуары для ванной комнаты 2016.
         include ../INCLUDES/_scripts

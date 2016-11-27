@@ -11,27 +11,32 @@
             "1":{
               "title":"Главная",
               "slug":"index",
-              "kw" : "application, test , hurray!!!"
+              "kw" : "application, test , hurray!!!",
+              "shop": false
             },
             "2":{
               "title":"Продукция",
               "slug":"production",
-              "kw" : "application, test , hurray!!!"
+              "kw" : "application, test , hurray!!!",
+              "shop": true
             },
             "3":{
               "title":"Гарантия и сервис",
               "slug":"service",
-              "kw" : "application, test , hurray!!!"
+              "kw" : "application, test , hurray!!!",
+              "shop": false
             },
             "4":{
               "title":"Партнерам",
               "slug":"partners",
-              "kw" : "application, test , hurray!!!"
+              "kw" : "application, test , hurray!!!",
+              "shop": false
             },
             "5":{
               "title":"Где купить",
               "slug":"buy",
-              "kw" : "application, test , hurray!!!"
+              "kw" : "application, test , hurray!!!",
+              "shop": false
             },
             "6":{
               "title":"Страница кибер-менеджера",
@@ -41,23 +46,14 @@
             "7":{
               "title":"Продукт",
               "slug":"product",
-              "kw" : "application, test , hurray!!!"
+              "kw" : "application, test , hurray!!!",
+              "shop": true
             },
             "8":{
               "title":"Категория",
               "slug":"category",
-              "kw" : "application, test , hurray!!!"
+              "kw" : "application, test , hurray!!!",
+              "shop": true
             }
-  },
-  "modules":{
-    "1":{
-      "name":"collection_slider"
-    },
-    "2":{
-      "name":"vri_features"
-    },"4":{
-      "name":"suoer-slider"
-    }
-
   }
 }

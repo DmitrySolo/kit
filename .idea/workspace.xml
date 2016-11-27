@@ -2,21 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a405dd0-215a-4030-b1ad-1ee92d874110" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/loop/loop-end.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/loop/loop-start.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/integrator/WordPress/DRAFT/functions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/integrator/WordPress/footer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/integrator/WordPress/functions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/integrator/WordPress/header.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/integrator/WordPress/page.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/integrator/WordPress/style.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/kitgit_node_modules.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/HG800312.jpg" afterPath="$PROJECT_DIR$/dist/images/HG800312.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/kit.iml" afterPath="$PROJECT_DIR$/.idea/kit.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.json" afterPath="$PROJECT_DIR$/data.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/data.json" afterPath="$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/data.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/MODULES/_modules.scss" afterPath="$PROJECT_DIR$/dev/MODULES/_modules.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/buy.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/buy.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/partners.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/partners.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/HELPERS/_helpers.scss" afterPath="$PROJECT_DIR$/dev/scss/HELPERS/_helpers.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/_draft.scss" afterPath="$PROJECT_DIR$/dev/scss/_draft.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/product.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/product.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/production.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/production.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/service.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/service.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/data.json" afterPath="$PROJECT_DIR$/dev/templates/data.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/mixins/module_includer.pug" afterPath="$PROJECT_DIR$/dev/templates/mixins/module_includer.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/about.html" afterPath="$PROJECT_DIR$/dist/about.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/buy.html" afterPath="$PROJECT_DIR$/dist/buy.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/cyber.html" afterPath="$PROJECT_DIR$/dist/cyber.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/main.css" afterPath="$PROJECT_DIR$/dist/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/partners.html" afterPath="$PROJECT_DIR$/dist/partners.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product.html" afterPath="$PROJECT_DIR$/dist/product.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/production.html" afterPath="$PROJECT_DIR$/dist/production.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/service.html" afterPath="$PROJECT_DIR$/dist/service.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="kit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,6 +54,14 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -101,103 +133,63 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.61440676">
+    <splitter split-orientation="vertical" split-proportion="0.5619946">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.5524257">
+        <splitter split-orientation="horizontal" split-proportion="0.46933332">
           <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="127">
-              <file leaf-file-name="_mixin.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--breadcrumbs/_mixin.pug">
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="679">
+              <file leaf-file-name="header.php" pinned="true" current-in-tab="false">
+                <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/montereybath.ru/wp-content/themes/twentyfifteen/header.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="45">
-                      <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+                    <state relative-caret-position="136">
+                      <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="_include.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/_include.pug">
+              <file leaf-file-name="index.php" pinned="true" current-in-tab="false">
+                <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/montereybath.ru/wp-content/themes/monterey/index.php">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="0">
+                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="15" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/integrator/WordPress/index.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="102">
+                      <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dist/splits/index.html">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="-662">
                       <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="_mixin.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/_mixin.pug">
+              <file leaf-file-name="page.php" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/integrator/WordPress/page.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <state relative-caret-position="68">
+                      <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="data.json" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/data.json">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_mixin.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--vri_features/_mixin.pug">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="30">
-                      <caret line="2" column="63" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_loops.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/mixins/_loops.pug">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="75">
-                      <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_mixin.pug" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--categories/_mixin.pug">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="105">
-                      <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_mixins.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/mixins/_mixins.pug">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="75">
-                      <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_starter.scss" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/_starter.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/script.js">
+              <file leaf-file-name="buy.html" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dist/splits/buy.html">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="0">
                       <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -209,11 +201,11 @@
             </leaf>
           </split-first>
           <split-second>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="97">
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="260">
               <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--breadcrumbs/_mixin.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="90">
+                    <state relative-caret-position="102">
                       <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
                       <folding />
                     </state>
@@ -223,8 +215,8 @@
               <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--categories/_mixin.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="210">
-                      <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+                    <state relative-caret-position="0">
+                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -233,18 +225,8 @@
               <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/_mixin.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="150">
+                    <state relative-caret-position="170">
                       <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="274">
-                      <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
                       <folding />
                     </state>
                   </provider>
@@ -253,7 +235,7 @@
               <file leaf-file-name="data.json" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/data.json">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="195">
+                    <state relative-caret-position="221">
                       <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
                       <folding />
                     </state>
@@ -263,46 +245,61 @@
               <file leaf-file-name="data.json" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/data.json">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="107">
-                      <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+                    <state relative-caret-position="0">
+                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="_draft.scss" pinned="false" current-in-tab="false">
+              <file leaf-file-name="_draft.scss" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/dev/scss/_draft.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="147">
-                      <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="25" />
+                    <state relative-caret-position="-321">
+                      <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="buy.pug" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/buy.pug">
+              <file leaf-file-name="_color.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/COLOR/_color.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="90">
-                      <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+                    <state relative-caret-position="85">
+                      <caret line="5" column="26" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="26" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="fresh_snow.png" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dist/images-rs/fresh_snow.png">
-                  <provider selected="true" editor-type-id="images">
-                    <state />
+              <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--category/_mixin.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="0">
+                      <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+                      <folding />
+                    </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="service.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/service.pug">
+              <file leaf-file-name="_helpers.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/HELPERS/_helpers.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="75">
-                      <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+                    <state relative-caret-position="17">
+                      <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
                       <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="_functions.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="0">
+                      <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+                      <folding>
+                        <marker date="1480168454185" expanded="true" signature="41:76" ph="{...}" />
+                      </folding>
                     </state>
                   </provider>
                 </entry>
@@ -312,39 +309,89 @@
         </splitter>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="123">
-                  <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="381">
           <file leaf-file-name="_options.scss" pinned="true" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
+                <state relative-caret-position="435">
                   <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_scripts.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scripts.pug">
+          <file leaf-file-name="functions.php" pinned="true" current-in-tab="false">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/montereybath.ru/wp-content/themes/monterey/functions.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="58" selection-start-line="0" selection-start-column="58" selection-end-line="0" selection-end-column="58" />
+                <state relative-caret-position="103">
+                  <caret line="42" column="29" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="category.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug">
+          <file leaf-file-name="functions.php" pinned="true" current-in-tab="false">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/themes/VRI/functions.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="154">
+                  <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="breadcrumb.php" pinned="true" current-in-tab="false">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/themes/VRI/woocommerce/global/breadcrumb.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="544">
+                  <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="header.php" pinned="true" current-in-tab="false">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/themes/VRI/header.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="breadcrumb.php" pinned="true" current-in-tab="false">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/montereybath.ru/wp-content/themes/monterey/woocommerce/global/breadcrumb.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="85">
+                  <caret line="21" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="wc-template-hooks.php" pinned="true" current-in-tab="false">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/montereybath.ru/wp-content/plugins/woocommerce/includes/wc-template-hooks.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="96">
+                  <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="104" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="content-product.php" pinned="true" current-in-tab="false">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/montereybath.ru/wp-content/themes/monterey/woocommerce/content-product.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="53" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="loop-end.php" pinned="true" current-in-tab="false">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/montereybath.ru/wp-content/themes/monterey/woocommerce/loop/loop-end.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -353,8 +400,8 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="holder.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dist/scripts/holder.js">
+          <file leaf-file-name="loop-start.php" pinned="true" current-in-tab="false">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/montereybath.ru/wp-content/themes/monterey/woocommerce/loop/loop-start.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -363,49 +410,44 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="info.mmd" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/info.mmd">
-              <provider selected="true" editor-type-id="com.igormaznitsa.ideamindmap.editor.MindMapDocumentEditor">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="layout.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
+          <file leaf-file-name="archive-product.php" pinned="true" current-in-tab="false">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/themes/VRI/woocommerce/archive-product.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="191">
-                  <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+                <state relative-caret-position="-1316">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="partners.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/partners.pug">
+          <file leaf-file-name="content-product.php" pinned="true" current-in-tab="false">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/themes/VRI/woocommerce/content-product.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+                <state relative-caret-position="-126">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="product.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/product.pug">
+          <file leaf-file-name="style.css" pinned="true" current-in-tab="true">
+            <entry file="remoteDeploymentFS://&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/themes/VRI/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+                <state relative-caret-position="-2491">
+                  <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="production.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/production.pug">
+          <file leaf-file-name="content-product.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/content-product.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-                  <folding />
+                <state relative-caret-position="183">
+                  <caret line="31" column="136" selection-start-line="31" selection-start-column="136" selection-end-line="31" selection-end-column="136" />
+                  <folding>
+                    <element signature="e#6#681#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -421,6 +463,7 @@
         <option value="JavaScript File" />
         <option value="AWS CloudFormation Template" />
         <option value="Pug File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -430,57 +473,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/collection_slider/_mixin.scss" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/collection_slider/_mixin.pug" />
-        <option value="$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_include.scss" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/_starter.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/_imports.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/ANIMATION SYSTEM/_animation.scss" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/suoer-slider/_mixin.pug" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/suoer-slider/_mixin.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/main.scss" />
-        <option value="$PROJECT_DIR$/dev/MODULES/_modules.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/GRID/_starter.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/MEDIA/_media.scss" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/vri_features/_mixin.pug" />
-        <option value="$PROJECT_DIR$/dev/scss/GRID/_mixins.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/COLOR/_color.scss" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/_mixin.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/IMAGENARIA/_imagenaria.scss" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--vri_features/_mixin.scss" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--vri_features/_mixin.pug" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/_mixin.pug" />
-        <option value="$PROJECT_DIR$/dev/templates/module_includer.pug" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--testjson/data.json" />
-        <option value="$PROJECT_DIR$/dev/templates/mixins/module_includer.pug" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/data.json" />
-        <option value="$PROJECT_DIR$/dev/scss/SPACER/_spacer.scss" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.scss" />
-        <option value="$PROJECT_DIR$/dev/templates/mixins/_loops.pug" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.pug" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/index.pug" />
-        <option value="$PROJECT_DIR$/dev/templates/mixins/_mixins.pug" />
-        <option value="$PROJECT_DIR$/dev/templates/mixins/_noON.pug" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--breadcrumbs/_mixin.scss" />
-        <option value="$PROJECT_DIR$/dev/templates/data.json" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/product.pug" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug" />
-        <option value="$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scripts.pug" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--breadcrumbs/_mixin.pug" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--categories/_mixin.pug" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/production.pug" />
-        <option value="$PROJECT_DIR$/dev/scss/_draft.scss" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--categories/_mixin.scss" />
         <option value="$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/partners.pug" />
         <option value="$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/data.json" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/service.pug" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/buy.pug" />
+        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--category/data.json" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug" />
+        <option value="$PROJECT_DIR$/dev/scss/HELPERS/_helpers.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss" />
+        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--category/_mixin.scss" />
+        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--category/_mixin.pug" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/product.pug" />
+        <option value="$PROJECT_DIR$/dev/scss/_draft.scss" />
+        <option value="$PROJECT_DIR$/dist/about.html" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/style.css" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/header.php" />
+        <option value="&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/montereybath.ru/wp-content/themes/monterey/footer.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/footer.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/index.php" />
+        <option value="$PROJECT_DIR$/dist/service.html" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/page.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DRAFT/footer.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DRAFT/index.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/functions.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DRAFT/header.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DRAFT/functions.php" />
+        <option value="$PROJECT_DIR$/dev/templates/data.json" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/service.pug" />
+        <option value="$PROJECT_DIR$/dist/production.html" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/production.pug" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DRAFT/woocommerce/archive-product.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DRAFT/woocommerce/content-product_cat.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DRAFT/woocommerce/content-single-product.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DRAFT/woocommerce/single-product.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/loop/loop-start.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/loop/loop-end.php" />
+        <option value="&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/montereybath.ru/wp-content/themes/monterey/woocommerce/content-product.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/content-single-product.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DIST/footer.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DIST/index.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DIST/functions.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DIST/header.php" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DRAFT/woocommerce/content-product.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DIST/style.css" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/content-product_cat.php" />
+        <option value="&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/themes/VRI/functions.php" />
+        <option value="&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/themes/VRI/woocommerce/global/breadcrumb.php" />
+        <option value="&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/themes/VRI/header.php" />
+        <option value="$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/content-product.php" />
+        <option value="&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/themes/VRI/style.css" />
       </list>
     </option>
   </component>
@@ -512,7 +555,7 @@
             <task-name>views</task-name>
           </GulpTaskState>
           <GulpTaskState>
-            <task-name>browserreload</task-name>
+            <task-name>validate</task-name>
           </GulpTaskState>
           <GulpTaskState>
             <task-name>default</task-name>
@@ -562,6 +605,21 @@
           <GulpTaskState>
             <task-name>browser-reload</task-name>
           </GulpTaskState>
+          <GulpTaskState>
+            <task-name>validw3c</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>makeWP_DRAFT</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>splitter</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>DEPLOY_WP</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>WORDPRESS DIST</task-name>
+          </GulpTaskState>
         </tasks>
       </GulpfileState>
     </gulpfiles>
@@ -575,10 +633,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="66" />
-    <option name="y" value="23" />
-    <option name="width" value="1686" />
-    <option name="height" value="960" />
+    <option name="x" value="-10" />
+    <option name="y" value="3" />
+    <option name="width" value="1684" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -696,6 +754,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -703,7 +762,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
+            <PATH_ELEMENT USER_OBJECT="kit">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -713,7 +772,121 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
+            <PATH_ELEMENT USER_OBJECT="kit">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="integrator">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="WordPress">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="kit">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="integrator">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="WordPress">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="DRAFT">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="kit">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="integrator">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="WordPress">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="DRAFT">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="woocommerce">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="kit">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="integrator">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="WordPress">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="DIST">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="kit">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="integrator">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="WordPress">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="DIST">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="woocommerce">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="kit">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -727,7 +900,25 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
+            <PATH_ELEMENT USER_OBJECT="kit">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dist">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="splits">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="kit">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -745,7 +936,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
+            <PATH_ELEMENT USER_OBJECT="kit">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -771,7 +962,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
+            <PATH_ELEMENT USER_OBJECT="kit">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -793,221 +984,11 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
+            <PATH_ELEMENT USER_OBJECT="kit">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="templates">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="PAGESYSTEM">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="INCLUDES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="scss">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MODULES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MODULES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="PROJECT MODULES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MODULES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="PROJECT MODULES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="--collection_slider">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MODULES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="PROJECT MODULES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="--categories">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MODULES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="PROJECT MODULES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="--breadcrumbs">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MODULES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MENUS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kitgit">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MODULES">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MENUS">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="--Light_menu">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -1018,7 +999,6 @@
       <pane id="ProjectPane">
         <subPane />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1026,27 +1006,34 @@
     <property name="js.buildTools.grunt.grunt-cli.package" value="$PROJECT_DIR$/node_modules/grunt-cli" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="settings.editor.splitter.proportion" value="0.24517375" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="DefaultAwsCloudFormationTemplate" value="AWS CloudFormation Template" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dist/scripts" />
-      <recent name="$PROJECT_DIR$/dev/SCRIPTS" />
-      <recent name="C:\Users\Sol\PhpstormProjects\kit\dev\MODULES\PROJECT MODULES\collection_slider" />
-      <recent name="C:\Users\Sol\PhpstormProjects\kit\dev\MODULES\LOGO" />
-      <recent name="C:\Users\Sol\PhpstormProjects\kit\dev\templates\PAGESYSTEM\INCLUDES" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/dist/scripts" />
       <recent name="C:\Users\Sol\PhpstormProjects\kit\dist\not_opt_images" />
       <recent name="C:\Users\Sol\PhpstormProjects\kit\dist\images" />
       <recent name="C:\Users\Sol\PhpstormProjects\kit\architect" />
       <recent name="C:\Users\Sol\PhpstormProjects\kit\dev\MODULES\MENUS\D_Multi-Toggle Navigation_Adaptive" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\integrator\WordPress\DIST" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\integrator\WordPress\DRAFT" />
+      <recent name="$PROJECT_DIR$/dist/scripts" />
+      <recent name="$PROJECT_DIR$/dev/SCRIPTS" />
+      <recent name="C:\Users\Sol\PhpstormProjects\kit\dev\MODULES\PROJECT MODULES\collection_slider" />
     </key>
   </component>
   <component name="RunManager" selected="Gulp.js.PAGESYSTEM">
@@ -1074,12 +1061,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
-      <node-interpreter value="/usr/local/bin/node" />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -1105,15 +1092,6 @@
       <test-kind>DIRECTORY</test-kind>
       <test-directory />
       <recursive>false</recursive>
-      <method />
-    </configuration>
-    <configuration default="false" name="merge-json" type="js.build_tools.grunt" factoryName="Grunt.js">
-      <node-interpreter value="/usr/local/bin/node" />
-      <gruntfile value="$PROJECT_DIR$/Gruntfile.js" />
-      <tasks>
-        <task value="merge-json" />
-      </tasks>
-      <envs />
       <method />
     </configuration>
     <configuration default="false" name="optimage" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -1149,17 +1127,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="bm" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
-      <tasks>
-        <task>bm</task>
-      </tasks>
-      <arguments>name</arguments>
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="image_resize" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>/usr/local/bin/node</node-interpreter>
       <node-options />
@@ -1192,7 +1159,7 @@
       <method />
     </configuration>
     <configuration default="false" name="serve" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
@@ -1203,7 +1170,7 @@
       <method />
     </configuration>
     <configuration default="false" name="views" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
@@ -1214,7 +1181,7 @@
       <method />
     </configuration>
     <configuration default="false" name="watchsass" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
@@ -1224,20 +1191,40 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="bm" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>bm</task>
+      </tasks>
+      <arguments>name</arguments>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="merge-json" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <node-interpreter value="project" />
+      <gruntfile value="$PROJECT_DIR$/Gruntfile.js" />
+      <tasks>
+        <task value="merge-json" />
+      </tasks>
+      <envs />
+      <method />
+    </configuration>
     <list size="13">
-      <item index="0" class="java.lang.String" itemvalue="Grunt.js.merge-json" />
-      <item index="1" class="java.lang.String" itemvalue="Gulp.js.optimage" />
-      <item index="2" class="java.lang.String" itemvalue="Gulp.js.BUILDMODULE" />
-      <item index="3" class="java.lang.String" itemvalue="Gulp.js.PAGESYSTEM" />
-      <item index="4" class="java.lang.String" itemvalue="Gulp.js.bm" />
-      <item index="5" class="java.lang.String" itemvalue="Gulp.js.image_resize" />
-      <item index="6" class="java.lang.String" itemvalue="Gulp.js.scssconcatmodules" />
-      <item index="7" class="java.lang.String" itemvalue="Grunt.js.sass" />
+      <item index="0" class="java.lang.String" itemvalue="Gulp.js.optimage" />
+      <item index="1" class="java.lang.String" itemvalue="Gulp.js.BUILDMODULE" />
+      <item index="2" class="java.lang.String" itemvalue="Gulp.js.PAGESYSTEM" />
+      <item index="3" class="java.lang.String" itemvalue="Gulp.js.image_resize" />
+      <item index="4" class="java.lang.String" itemvalue="Gulp.js.scssconcatmodules" />
+      <item index="5" class="java.lang.String" itemvalue="Grunt.js.sass" />
+      <item index="6" class="java.lang.String" itemvalue="Gulp.js.serve" />
+      <item index="7" class="java.lang.String" itemvalue="Gulp.js.views" />
       <item index="8" class="java.lang.String" itemvalue="Node.js.script.js" />
       <item index="9" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="10" class="java.lang.String" itemvalue="Gulp.js.serve" />
-      <item index="11" class="java.lang.String" itemvalue="Gulp.js.views" />
-      <item index="12" class="java.lang.String" itemvalue="Gulp.js.watchsass" />
+      <item index="10" class="java.lang.String" itemvalue="Gulp.js.watchsass" />
+      <item index="11" class="java.lang.String" itemvalue="Gulp.js.bm" />
+      <item index="12" class="java.lang.String" itemvalue="Grunt.js.merge-json" />
     </list>
     <recent_temporary>
       <list size="2">
@@ -1290,6 +1277,8 @@
       <workItem from="1480006654786" duration="3253000" />
       <workItem from="1480017819970" duration="1662000" />
       <workItem from="1480060867054" duration="21995000" />
+      <workItem from="1480102654364" duration="1079000" />
+      <workItem from="1480158914395" duration="50016000" />
     </task>
     <task id="LOCAL-00001" summary="workspace commit">
       <created>1479982952535</created>
@@ -1316,7 +1305,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310968000" />
+    <option name="totallyTimeSpent" value="362063000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1328,32 +1317,56 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="23" width="1686" height="960" extended-state="0" />
+    <frame x="-10" y="3" width="1684" height="1026" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16039604" sideWeight="0.5202343" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1578341" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1843318" sideWeight="0.4627263" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18548387" sideWeight="0.4797657" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2037713" sideWeight="0.3220339" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2037713" sideWeight="0.6779661" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2037713" sideWeight="0.3220339" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14269535" sideWeight="0.49754602" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1574179" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1596829" sideWeight="0.4627263" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18459795" sideWeight="0.4797657" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30641183" sideWeight="0.22177419" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30641183" sideWeight="0.7782258" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30641183" sideWeight="0.22237569" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298397" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33069083" sideWeight="0.49508598" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24866879" sideWeight="0.36052632" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13876222" sideWeight="0.3983051" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13871764" sideWeight="0.3839779" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14656144" sideWeight="0.49754602" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33179724" sideWeight="0.49508598" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16039604" sideWeight="0.5202343" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14269535" sideWeight="0.49754602" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1578341" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1596829" sideWeight="0.4627263" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18459795" sideWeight="0.4797657" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30641183" sideWeight="0.22083806" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30641183" sideWeight="0.77916193" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30641183" sideWeight="0.22237569" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298397" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33069083" sideWeight="0.49508598" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24866879" sideWeight="0.36052632" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13871764" sideWeight="0.3839779" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -1409,72 +1422,15 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/templates/module_includer.pug" />
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_include.pug">
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/test/footer1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5775">
-          <caret line="473" column="13" selection-start-line="473" selection-start-column="13" selection-end-line="473" selection-end-column="13" />
+        <state relative-caret-position="-2380">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/testjson/data.json" />
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--vri_features/_mixin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/testjson1/data.json" />
-    <entry file="file://$PROJECT_DIR$/dist/images-rs/arches.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/images-rs/argyle.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/images-rs/fresh_snow.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/SPACER/_spacer.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_head.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/modules/_test.pug">
+    <entry file="file://$PROJECT_DIR$/dist/splits/buy.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1482,7 +1438,159 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/mixins/module_includer.pug">
+    <entry file="file://$PROJECT_DIR$/dist/service.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/page-partners.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/page-index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/page-cyber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/page-category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22389">
+          <caret line="1317" column="0" selection-start-line="1317" selection-start-column="0" selection-end-line="1317" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/1/fold2/feil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/splits/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-662">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="154" selection-start-line="8" selection-start-column="154" selection-end-line="8" selection-end-column="154" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/page-category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="13" column="53" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/partners.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/index.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1498,39 +1606,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.pug">
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/mixins/_noON.pug">
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/buy.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/data.json">
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/service.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="68">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/data.json">
+    <entry file="file://$PROJECT_DIR$/dist/product.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+        <state relative-caret-position="-204">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/index.pug">
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/product.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/production.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/production.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/woocommerce/content-single-product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/woocommerce/single-product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/loop/loop-end.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/loop/loop-start.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/single-product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/content-single-product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/woocommerce/content-product_cat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1540,13 +1754,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
+        <state relative-caret-position="226">
+          <caret line="277" column="10" selection-start-line="277" selection-start-column="10" selection-end-line="277" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/holder.js">
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/woocommerce/archive-product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1279">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DRAFT/woocommerce/content-product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/archive-product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1554,47 +1784,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--vri_features/_mixin.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="63" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/mixins/_loops.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/mixins/_mixins.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--breadcrumbs/_mixin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/_mixin.pug">
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1602,111 +1792,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/_include.pug">
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/_starter.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--breadcrumbs/_include.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/holder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/_mixin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--collection_slider/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scripts.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="58" selection-start-line="0" selection-start-column="58" selection-end-line="0" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--breadcrumbs/_mixin.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--categories/_mixin.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        <state relative-caret-position="58">
+          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/scss/_draft.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="-321">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--categories/_mixin.scss">
+    <entry file="file://$PROJECT_DIR$/dist/partners.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        <state relative-caret-position="238">
+          <caret line="32" column="12" selection-start-line="31" selection-start-column="5" selection-end-line="32" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug">
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/content-product_cat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1714,72 +1824,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss">
+    <entry file="file://$PROJECT_DIR$/integrator/WordPress/DIST/woocommerce/content-product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/product.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/production.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/partners.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/info.mmd">
-      <provider selected="true" editor-type-id="com.igormaznitsa.ideamindmap.editor.MindMapDocumentEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/service.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/buy.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="183">
+          <caret line="31" column="136" selection-start-line="31" selection-start-column="136" selection-end-line="31" selection-end-column="136" />
+          <folding>
+            <element signature="e#6#681#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
