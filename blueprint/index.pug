@@ -1,0 +1,12 @@
+include ../dev/templates/mixins/_mixins
+doctype html
+html
+    head
+        link(href='main.css',type='text/css',rel='stylesheet')
+        link(href='blueprint.css',type='text/css',rel='stylesheet')
+    body
+        .canvas
+            .canvas__border
+                .canvas__blueprint
+                    +module(blueprint)
+

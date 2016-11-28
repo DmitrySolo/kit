@@ -59,25 +59,100 @@
 	},
 	"menuData": {
 		"Home": {
-			"title": "Продукция",
-			"href": "/production.html",
-			"dop_class": ""
+			"title": "Home",
+			"href": "#",
+			"dop_class": "asdas",
+			"childs": {
+				"Parent": {
+					"title": "Home2",
+					"href": "main_home",
+					"dop_class": "",
+					"childs": ""
+				},
+				"Parent2": {
+					"title": "Contacts",
+					"href": "contacts",
+					"dop_class": "contacts",
+					"childs": ""
+				}
+			}
 		},
 		"Products and help": {
-			"title": "Гарантия и сервис",
-			"href": "service.html",
-			"dop_class": ""
+			"title": "Products and help",
+			"href": "#",
+			"dop_class": "asdas",
+			"childs": {
+				"Parent": {
+					"title": "Home2",
+					"href": "main_home",
+					"dop_class": "",
+					"childs": {
+						"Parent2": {
+							"title": "Home",
+							"href": "#",
+							"dop_class": "asdas",
+							"childs": {
+								"Parent": {
+									"title": "Home2",
+									"href": "main_home",
+									"dop_class": "",
+									"childs": ""
+								},
+								"Parent2": {
+									"title": "Contacts",
+									"href": "contacts",
+									"dop_class": "contacts",
+									"childs": ""
+								}
+							}
+						}
+					}
+				},
+				"Parent2": {
+					"title": "Contacts",
+					"href": "contacts",
+					"dop_class": "contacts",
+					"childs": ""
+				}
+			}
 		},
 		"Support": {
-			"title": "Партнерам",
-			"href": "partners.html",
-			"dop_class": ""
+			"title": "Support",
+			"href": "#",
+			"dop_class": "asdas",
+			"childs": {
+				"Parent": {
+					"title": "Home2",
+					"href": "main_home",
+					"dop_class": "",
+					"childs": ""
+				},
+				"Parent2": {
+					"title": "Contacts",
+					"href": "contacts",
+					"dop_class": "contacts",
+					"childs": ""
+				}
+			}
 		},
 		"AboutUs": {
-			"title": "Где купить",
-			"href": "buy.html",
-			"dop_class": "",
-			"childs": ""
+			"title": "About Us",
+			"href": "#",
+			"dop_class": "asdas",
+			"childs": {
+				"Parent": {
+					"title": "Home2",
+					"href": "main_home",
+					"dop_class": "",
+					"childs": ""
+				},
+				"Parent2": {
+					"title": "Contacts",
+					"href": "contacts",
+					"dop_class": "contacts",
+					"childs": ""
+				}
+			}
 		},
 		"acc": {
 			"title": "Акции",
@@ -128,5 +203,6 @@
 			"content": "Инструмент для оценки посещаемости сайтов, анализа поведения посетителей и эффективности рекламы. Мониторинг доступности сайтов. API.",
 			"dopClass": "info__section--callback"
 		}
-	}
+	},
+	"blueprint": "breadcrumbs"
 }

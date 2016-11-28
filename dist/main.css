@@ -169,50 +169,6 @@
   position: absolute;
   right: 0; }
 
-.info {
-  background-color: #fff;
-  padding-top: 3.4em;
-  padding-right: 3.4em;
-  padding-bottom: 3.4em;
-  padding-left: 3.4em;
-  background-image: url("images-rs/arches.png"); }
-
-.info__section {
-  border: 2px solid #515964;
-  padding-top: 1.53em;
-  padding-right: 1.53em;
-  padding-bottom: 1.53em;
-  padding-left: 1.53em; }
-  @media screen and (max-width: 1400px) {
-    .info__section {
-      margin-bottom: 1.53em; } }
-
-.info__section__body {
-  margin-top: 0.85em;
-  padding-top: 0.85em;
-  padding-right: 0.85em;
-  padding-bottom: 0.85em;
-  padding-left: 0.85em; }
-
-.info__section__more {
-  display: block;
-  margin: 0;
-  padding-top: 0.85em;
-  padding-right: 0.85em;
-  padding-bottom: 0.85em;
-  padding-left: 0.85em;
-  background-color: #c85847;
-  background-color: false;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
-  color: #fff;
-  margin: 0 auto;
-  cursor: pointer;
-  font-family: "Roboto Condensed", sans-serif; }
-  .info__section__more:hover {
-    background-color: #d47c6e; }
-
 .vri_features {
   background-color: #23272c;
   padding-top: 3.4em;
@@ -297,6 +253,50 @@
   background-color: inherit;
   text-align: center;
   line-height: 2; }
+
+.info {
+  background-color: #fff;
+  padding-top: 3.4em;
+  padding-right: 3.4em;
+  padding-bottom: 3.4em;
+  padding-left: 3.4em;
+  background-image: url("images-rs/arches.png"); }
+
+.info__section {
+  border: 2px solid #515964;
+  padding-top: 1.53em;
+  padding-right: 1.53em;
+  padding-bottom: 1.53em;
+  padding-left: 1.53em; }
+  @media screen and (max-width: 1400px) {
+    .info__section {
+      margin-bottom: 1.53em; } }
+
+.info__section__body {
+  margin-top: 0.85em;
+  padding-top: 0.85em;
+  padding-right: 0.85em;
+  padding-bottom: 0.85em;
+  padding-left: 0.85em; }
+
+.info__section__more {
+  display: block;
+  margin: 0;
+  padding-top: 0.85em;
+  padding-right: 0.85em;
+  padding-bottom: 0.85em;
+  padding-left: 0.85em;
+  background-color: #c85847;
+  background-color: false;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  color: #fff;
+  margin: 0 auto;
+  cursor: pointer;
+  font-family: "Roboto Condensed", sans-serif; }
+  .info__section__more:hover {
+    background-color: #d47c6e; }
 
 /*
  * BASE STYLES
@@ -1292,7 +1292,7 @@ body {
     font-family: "Roboto Condensed", sans-serif; }
 
 .product__info__list_line {
-  border-bottom: solid 1px #eee; }
+  border-bottom: solid 1px #ff00c6; }
 
 .sassTojs-data {
   font-family: '{"animationData":[],"globalVariables":"#ff0000"}'; }

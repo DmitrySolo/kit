@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var runSequence  = require('run-sequence');
+var merge = require('gulp-merge-json');
 var data = require('./data.json');
 htmlv = require('gulp-html-validator');
 var concat = require('gulp-concat');
@@ -146,7 +147,7 @@ gulp.task('scssconcatmodules', function() {
 });
 var buildmodulesData = {
     string: 'name',
-    default: 'no'
+    default: 'no',
 };
 var options = minimist(process.argv.slice(2), buildmodulesData);
 gulp.task('bm', function() {
@@ -260,10 +261,10 @@ var config = {
     password: 'Himfwhwbi1899FTP'
     //privateKey: fs.readFileSync('/Users/Sol/.ssh/id_rsa')
 }
-var gulpSSH = new GulpSSH({
+/*var gulpSSH = new GulpSSH({
     ignoreErrors: false,
     sshConfig: config
-})
+})*/
 gulp.task('DEPLOY_WP', function() {
 
         return gulp
@@ -276,5 +277,46 @@ gulp.task('WORDPRESS DIST', function() {
     //return gulp
         //.src(['integrator/WordPress/DRAFT/**'])
         //.pipe(gulp.dest('integrator/WordPress/DIST'));
+
+})
+/////////////////////////COMPONENTS BLUEPRINT
+gulp.task('bb', [], function() {
+    var str = '{"blueprint" : "'+options.name+'"}';
+    file('blueprint.json', str)
+        .pipe(gulp.dest('blueprint/'));
+
+    gulp.src(['dev/**/*.json','blueprint/*.json'])
+        .pipe(merge('data.json'))
+        .pipe(gulp.dest('./'));
+
+
+    var browserSyncComponent = require('browser-sync').create();
+    gulp.src('blueprint/*.pug')
+            .pipe(pug({
+                data: data,
+                pretty: true,
+            })).pipe(gulp.dest('blueprint/'));
+    browserSyncComponent.init({
+        server: "blueprint",
+        cssOutlining: true
+    });
+
+    gulp.watch("blueprint/*.html").on('change', browserSyncComponent.reload);
+    gulp.watch("dist/*.css").on('change', browserSyncComponent.reload);
+});
+gulp.task('buildblueprint', function buildHTML() {
+    gulp.src('blueprint/*.pug')
+        .pipe(pug({
+            data: data,
+            pretty: true,
+        })).pipe(gulp.dest('blueprint/'));
+    gulp.src('blueprint/blueprint.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(gulp.dest('blueprint/'));
+});
+gulp.task('mergeJson',function () {
+    gulp.src(['dev/**/*.json','blueprint/*.json'])
+        .pipe(merge('data.json'))
+        .pipe(gulp.dest('./'));
 
 })
