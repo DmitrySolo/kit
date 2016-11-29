@@ -109,21 +109,25 @@ gulp.task('dep-js', function() {
         .pipe(gulp.dest('dist/scripts/'));
 });
 /////////////////////////////////////
-gulp.task('serve', [], function() {
+gulp.task('SERVER', [], function() {
 
     browserSync.init({
         server: "./dist"
     });
-
-    gulp.watch("dist/*service.html").on('change', browserSync.reload);
+    gulp.watch("dev/**/*.json").on('change', browserSync.reload);
+    gulp.watch("dist/*.html").on('change', browserSync.reload);
     gulp.watch("dist/*.css").on('change', browserSync.reload);
 });
-gulp.task('watchsass', ['scssconcatmodules','sass','browser-reload','views'], function() {
-    gulp.watch('dev/MODULES/*/--*/*.scss',function(){ runSequence('scssconcatmodules', 'sass','browser-reload') });
+gulp.task('WATCHER', ['scssconcatmodules','sass','throw-main-css','browser-reload','views','merge-json','compile-blueprint-view','compile-blueprint-sass'], function() {
+    gulp.watch('dev/MODULES/*/--*/*.scss',function(){ runSequence('scssconcatmodules', 'sass','throw-main-css','browser-reload') });
     //gulp.watch('dev/MODULES/PROJECT MODULES/--*/*.scss',['scssconcatmodules','sass']);
-    gulp.watch('dev/scss/**/*.scss',['sass', browserSync.reload]);
+    gulp.watch(['dev/scss/**/*.scss'],['sass','throw-main-css', browserSync.reload]);
     //gulp.watch('dev/MODULES/*/--*/*.pug',['views']);
-    gulp.watch('dev/**/*.pug',['views']);
+
+    gulp.watch(['dev/**/*.pug'],function(){ runSequence('views', 'compile-blueprint-view') });
+    gulp.watch(['blueprint/*.pug'],['compile-blueprint-view']);
+    gulp.watch(['blueprint/*.scss'],['compile-blueprint-sass']);
+    gulp.watch(['dev/**/*.json','blueprint/*json'],['merge-json']);
 });
 gulp.task('optimage', [], function() {
     gulp.src('dist/not_opt_images/*')
@@ -185,9 +189,13 @@ gulp.task('bm', function() {
 
 });
 gulp.task('sass', function () {
-    return gulp.src('dev/scss/main.scss')
+        gulp.src('dev/scss/main.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('dist'));
+});
+gulp.task('throw-main-css', function () {
+    gulp.src('dist/main.css')
+        .pipe(gulp.dest('blueprint'));
 });
 gulp.task('browser-reload',  function() {
     browserSync.reload
@@ -280,29 +288,60 @@ gulp.task('WORDPRESS DIST', function() {
 
 })
 /////////////////////////COMPONENTS BLUEPRINT
-gulp.task('bb', [], function() {
+gulp.task('blueprint-wright-json', [], function() {
     var str = '{"blueprint" : "'+options.name+'"}';
     file('blueprint.json', str)
         .pipe(gulp.dest('blueprint/'));
+});
 
+gulp.task('merge-json', [], function() {
     gulp.src(['dev/**/*.json','blueprint/*.json'])
         .pipe(merge('data.json'))
         .pipe(gulp.dest('./'));
-
-
-    var browserSyncComponent = require('browser-sync').create();
+});
+gulp.task('compile-blueprint-view-start',[],function () {
+    data.blueprint = options.name;
     gulp.src('blueprint/*.pug')
-            .pipe(pug({
-                data: data,
-                pretty: true,
-            })).pipe(gulp.dest('blueprint/'));
+        .pipe(pug({
+            data: data,
+            pretty: true,
+        })).pipe(gulp.dest('blueprint/'));
+})
+gulp.task('compile-blueprint-view',[],function () {
+    var obj = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+    gulp.src('blueprint/*.pug')
+        .pipe(pug({
+            data: obj,
+            pretty: true,
+        })).pipe(gulp.dest('blueprint/'));
+})
+gulp.task('compile-blueprint-sass',[],function () {
+    return gulp.src('blueprint/blueprint.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(gulp.dest('blueprint/'));
+})
+
+gulp.task('start-blueprint-server',[],function () {
+    var browserSyncComponent = require('browser-sync').create();
+
     browserSyncComponent.init({
         server: "blueprint",
         cssOutlining: true
     });
-
     gulp.watch("blueprint/*.html").on('change', browserSyncComponent.reload);
     gulp.watch("dist/*.css").on('change', browserSyncComponent.reload);
+
+})
+
+
+
+
+gulp.task('bp', [], function() {
+
+    runSequence('blueprint-wright-json',
+        ['merge-json', 'compile-blueprint-view-start','compile-blueprint-sass'],
+        'start-blueprint-server');
+
 });
 gulp.task('buildblueprint', function buildHTML() {
     gulp.src('blueprint/*.pug')
