@@ -1,0 +1,30 @@
+@mixin blueprint () {
+  body.blueprint
+  {
+
+    background-color:#269;
+    background-image: //linear-gradient(white 2px, transparent 2px),
+    //linear-gradient(90deg, white 2px, transparent 2px);
+    linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+    background-size: #{$line-height-ratio}em #{$line-height-ratio}em, #{$line-height-ratio}em #{$line-height-ratio}em;
+    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -7px
+  }
+  .canvas__border{
+  }
+  .canvas__blueprint{
+
+  }
+  .canvas{
+    position: absolute;
+  }
+  .blueprint_panel{
+    //position: fixed;
+    height: #{5*$line-height-ratio - 0.1}em;
+    background-color: #183f5d;
+    width: 100%;
+    border-bottom: solid 3px darken(#269,10%);
+  }
+
+}
+

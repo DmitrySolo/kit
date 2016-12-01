@@ -22,7 +22,7 @@
     display: block;
     @include space('element','trlb',0);
     background-color: cs('accent-d');
-    @include a-hover('background-color',(from:false,to:cs('accent')),.3s,ease);
+    @include a-hover('background-color',(from:false,to:cs('font')),.3s,ease);
     color: #fff;
     margin: 0 auto;
     cursor: pointer;

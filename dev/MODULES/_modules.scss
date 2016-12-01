@@ -60,7 +60,7 @@
     display: inline-block;
     @include space('element','','tbrl');
     &:before {
-      content: '/rtgspnnno';
+      content: '/rsstgsssdssss[[sshuray it workss';
       margin-right: 20px;
     }
   }
@@ -176,7 +176,7 @@
     display: block;
     @include space('element','trlb',0);
     background-color: cs('accent-d');
-    @include a-hover('background-color',(from:false,to:cs('accent')),.3s,ease);
+    @include a-hover('background-color',(from:false,to:cs('font')),.3s,ease);
     color: #fff;
     margin: 0 auto;
     cursor: pointer;
@@ -184,6 +184,38 @@
   }
 }
 @include info();
+@mixin pagination(){
+	
+.pagination{
+  @include space('component','trl','');
+  @include space('block','b','');
+  background-color: #fff;
+
+}
+  .pagination__ctn{
+    padding: 0;
+    text-align: center;
+  }
+  .pagination__ctn__button {
+    list-style: none;
+    display: inline-block;
+    @include space('element','tb','r');
+    @include space('component','rl','');
+    background-color: cs('primary');
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    @include a-hover('background-color',(from:false,to:cs('primary-d')),.3s,ease)
+  }
+  .pagination__ctn__button--current {
+    background-color: cs('accent-l');
+    &:hover{
+      background-color: cs('accent-l');
+    }
+  }
+}
+@include pagination();
 @mixin vri_features(){
   .vri_features{
     background-color: cs('primary-d');

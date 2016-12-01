@@ -15,11 +15,12 @@ const imagemin = require('gulp-imagemin');
 var minimist = require('minimist');
 var sass = require('gulp-sass');
 var htmlhint = require("gulp-htmlhint");
-
+var clean = require('gulp-clean');
 const autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var concat = require('gulp-concat');
 var file = require('gulp-file');
+var uncss = require('gulp-uncss');
 gulp.task('views', function buildHTML() {
     return gulp.src('dev/templates/PAGESYSTEM/PAGES/*.pug')
         .pipe(pug({
@@ -73,7 +74,7 @@ gulp.task('BUILDMODULE', function() {
             ///INCLUDE SCSS
             var str = "@include "+attr.name+"();";
 
-            file('_starter.scss', str)
+            file('starter.scss', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/'+attr.name+'/'));
 
             ///MIXIN PUG
@@ -118,10 +119,10 @@ gulp.task('SERVER', [], function() {
     gulp.watch("dist/*.html").on('change', browserSync.reload);
     gulp.watch("dist/*.css").on('change', browserSync.reload);
 });
-gulp.task('WATCHER', ['scssconcatmodules','sass','throw-main-css','browser-reload','views','merge-json','compile-blueprint-view','compile-blueprint-sass'], function() {
-    gulp.watch('dev/MODULES/*/--*/*.scss',function(){ runSequence('scssconcatmodules', 'sass','throw-main-css','browser-reload') });
+gulp.task('WATCHER', ['scssconcatmodules','sass','cleanMainCss','throw-main-css','browser-reload','views','merge-json','compile-blueprint-view','compile-blueprint-sass'], function() {
+    gulp.watch('dev/MODULES/*/--*/*.scss',function(){ runSequence('cleanMainCss','scssconcatmodules', 'sass','throw-main-css','browser-reload') });
     //gulp.watch('dev/MODULES/PROJECT MODULES/--*/*.scss',['scssconcatmodules','sass']);
-    gulp.watch(['dev/scss/**/*.scss'],['sass','throw-main-css', browserSync.reload]);
+    gulp.watch(['dev/scss/**/*.scss'],['cleanMainCss','sass','throw-main-css', browserSync.reload]);
     //gulp.watch('dev/MODULES/*/--*/*.pug',['views']);
 
     gulp.watch(['dev/**/*.pug'],function(){ runSequence('views', 'compile-blueprint-view') });
@@ -163,11 +164,11 @@ gulp.task('bm', function() {
             ///INCLUDE SCSS
             var str = "@include "+options.name+"();";
 
-            file('_starter.scss', str)
+            file('starter.scss', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
 
             ///MIXIN PUG
-            var str = "mixin "+options.name+"()\n\t."+options.name+"";
+            var str = "mixin "+options.name+"()\n\t\<!-- split modules/"+options.name+" -->\n\t."+options.name+"";
             file('_mixin.pug', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
             ///MIXIN SCSS
@@ -191,7 +192,8 @@ gulp.task('bm', function() {
 gulp.task('sass', function () {
         gulp.src('dev/scss/main.scss')
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('blueprint'));
 });
 gulp.task('throw-main-css', function () {
     gulp.src('dist/main.css')
@@ -283,13 +285,17 @@ gulp.task('DEPLOY_WP', function() {
 gulp.task('WORDPRESS DIST', function() {
 
     //return gulp
-        //.src(['integrator/WordPress/DRAFT/**'])
+       // .src(['integrator/WordPress/DRAFT/**'])
         //.pipe(gulp.dest('integrator/WordPress/DIST'));
 
 })
 /////////////////////////COMPONENTS BLUEPRINT
 gulp.task('blueprint-wright-json', [], function() {
-    var str = '{"blueprint" : "'+options.name+'"}';
+    if(distoptions.izolate){
+        var izolate = ',\n"izolate":"true"';
+
+    } else var izolate =',\n"izolate":"false"';
+    var str = '{"blueprint" : "'+options.name+'"'+izolate+'}';
     file('blueprint.json', str)
         .pipe(gulp.dest('blueprint/'));
 });
@@ -316,9 +322,18 @@ gulp.task('compile-blueprint-view',[],function () {
         })).pipe(gulp.dest('blueprint/'));
 })
 gulp.task('compile-blueprint-sass',[],function () {
-    return gulp.src('blueprint/blueprint.scss')
+        gulp.src('blueprint/_blueprint.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('blueprint/'));
+    if(distoptions.izolate){
+        gulp.src('dev/MODULES/PROJECT MODULES/--'+data.blueprint+'/starter.scss')
+            .pipe(sass.sync().on('error', sass.logError))
+            .pipe(gulp.dest('blueprint/'));
+
+    }
+
+
+
 })
 
 gulp.task('start-blueprint-server',[],function () {
@@ -349,7 +364,7 @@ gulp.task('buildblueprint', function buildHTML() {
             data: data,
             pretty: true,
         })).pipe(gulp.dest('blueprint/'));
-    gulp.src('blueprint/blueprint.scss')
+    gulp.src('blueprint/_blueprint.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('blueprint/'));
 });
@@ -358,4 +373,48 @@ gulp.task('mergeJson',function () {
         .pipe(merge('data.json'))
         .pipe(gulp.dest('./'));
 
+})
+gulp.task('cleanMainCss', function () {
+    return gulp.src('dist/main.css', {read: false})
+        .pipe(clean());
+});
+
+gulp.task('split-css', function () {
+    return gulp.src('dist/main.css')
+        .pipe(uncss({
+            html: ['dist/**/*.html']
+        }))
+        .pipe(gulp.dest('dist/'));
+});
+var distData = {
+    boolean: 'izolate',
+    default: false,
+};
+var distoptions = minimist(process.argv.slice(2), distData);
+
+gulp.task('tests',[], function () {
+    if(distoptions.izolate){
+            console.log('hello')
+        }else{console.log('by by')}
+    }
+)
+
+gulp.task('dist-module',[], function () {
+        gulp.src('dev/MODULES/PROJECT MODULES/--'+options.name+'/_include.pug')
+        .pipe(pug({
+            data: data,
+            pretty: true,
+        })).pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/DIST/'));
+        var dest = 'dev/MODULES/PROJECT MODULES/--'+options.name+'/DIST/_include.html'
+        gulp.src('dist/main.css')
+        .pipe(uncss({
+            html: [dest]
+        }))
+        .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/DIST/'));
+
+});
+gulp.task('testizmodul',[], function () {
+    gulp.src('dev/MODULES/PROJECT MODULES/--pagination/starter.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(gulp.dest('blueprint/starter.css'));
 })

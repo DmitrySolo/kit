@@ -34,11 +34,12 @@
 */
 @include helpers();
 /////////////////////////////////////////////////////
-//PROJECTBOARD
+//NO PRODUCTION
 @if($production == false){
   @include projectBoard();
   @include draft();
   @include toJSMap();
+  @include blueprint();
 }
 //DEBUG
 @if($debug){
