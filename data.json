@@ -161,6 +161,73 @@
 			"childs": ""
 		}
 	},
+	"FORM": {
+		"TITLE": "THE FEEDBACK FORM",
+		"action": "/",
+		"method": "get",
+		"name": "",
+		"dop_class": "forme",
+		"submit": {
+			"name": "name",
+			"value": "SEND TO SERVER",
+			"id": "",
+			"dop_class": ""
+		},
+		"inputs": {
+			"1": {
+				"type": "text",
+				"label": "ИМЯ!",
+				"name": "name",
+				"value": "",
+				"id": "",
+				"dop_class": "",
+				"requared": "true",
+				"placeholder": ""
+			},
+			"2": {
+				"type": "text",
+				"label": "Фамилия!",
+				"name": "name",
+				"value": "",
+				"id": "",
+				"dop_class": "",
+				"requared": "true",
+				"placeholder": ""
+			},
+			"3": {
+				"type": "radio",
+				"label": "Фамилия!",
+				"name": "name",
+				"value": {
+					"rambler": "zopa",
+					"rbc": "ne zopa"
+				},
+				"id": "",
+				"dop_class": "",
+				"requared": "true",
+				"placeholder": ""
+			},
+			"4": {
+				"type": "radio",
+				"label": "Фамилия!",
+				"name": "name",
+				"value": {
+					"rambler": "zopa",
+					"rbc": "ne zopa"
+				},
+				"id": "",
+				"dop_class": "",
+				"requared": "true",
+				"placeholder": ""
+			}
+		}
+	},
+	"breadcrumbs": {
+		"1": "1"
+	},
+	"categories": {
+		"1": "1"
+	},
 	"category": {
 		"1": {
 			"title": "Baciano Смеситель для ванны HG900333"
@@ -198,15 +265,9 @@
 			"dopClass": "info__section--callback"
 		}
 	},
-	"categories": {
-		"1": "1"
-	},
 	"pagination": {
 		"pagination": "1"
 	},
-	"breadcrumbs": {
-		"1": "1"
-	},
-	"blueprint": "info",
-	"izolate": "true"
+	"blueprint": "FORM",
+	"izolate": "false"
 }

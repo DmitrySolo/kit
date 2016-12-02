@@ -128,7 +128,7 @@ gulp.task('WATCHER', ['scssconcatmodules','sass','cleanMainCss','throw-main-css'
     gulp.watch(['dev/**/*.pug'],function(){ runSequence('views', 'compile-blueprint-view') });
     gulp.watch(['blueprint/*.pug'],['compile-blueprint-view']);
     gulp.watch(['blueprint/*.scss'],['compile-blueprint-sass']);
-    gulp.watch(['dev/**/*.json','blueprint/*json'],['merge-json']);
+    gulp.watch(['dev/**/*.json','blueprint/*json'],function(){ runSequence('merge-json','views','compile-blueprint-view') });
 });
 gulp.task('optimage', [], function() {
     gulp.src('dist/not_opt_images/*')

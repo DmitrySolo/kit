@@ -41,60 +41,6 @@
 @include lightMenu('h');
 
 
-@mixin breadcrumbs(){
-	.breadCrumb {
-      @include space('component','tb','');
-      @include space('block','lr','');
-      background-color: cs('fground');
-      text-transform: uppercase;
-      font-size: .9em;
-      a:link,a:visited {
-        color: cs('font-l');
-        text-decoration: none;
-      }
-      a:hover{
-        color: cs('font-d');
-      }
-    }
-  .breadcrumb__section {
-    display: inline-block;
-    @include space('element','','tbrl');
-    &:before {
-      content: '/rsstgsssdssss[[sshuray it workss';
-      margin-right: 20px;
-    }
-  }
-  .breadCrumb__section--home {
-    font-weight: 600;
-    &:before{
-      content: '';
-      margin-right:0;
-
-    }
-  }
-}
-@include breadcrumbs();
-@mixin categories(){
-	.categories{
-      text-align: center;
-      @include space('block','trbl','');
-      background-color: #fff;
-    }
-  .categories__item {
-    @include space('component','','tb');
-
-  }
-  .categories__item__title{
-    line-height: 1.5;
-    text-align: left;
-    @include space('element','b','');
-    font-size:2em;
-    @include media('tablet'){
-      text-align: center;
-    }
-  }
-}
-@include categories();
 @mixin category(){
   .category{
     background-color: #aaaaaa;
@@ -152,70 +98,31 @@
   }
 }
 @include collection_slider();
-@mixin info(){
-	.info{
-      background-color: #fff;
+@mixin categories(){
+	.categories{
+      text-align: center;
       @include space('block','trbl','');
-      background-image: url("images-rs/arches.png");
+      background-color: #fff;
     }
-  .info__section {
-    border: 2px solid cs('primary-l');
-    @include space('component','trbl','');
-    @include media('md'){
-      @include space('component','','b');
-    }
+  .categories__item {
+    @include space('component','','tb');
 
   }
-  .info__section__title {
-
-  }
-  .info__section__body{
-    @include space('element','trbl','t');
-  }
-  .info__section__more {
-    display: block;
-    @include space('element','trlb',0);
-    background-color: cs('accent-d');
-    @include a-hover('background-color',(from:false,to:cs('font')),.3s,ease);
-    color: #fff;
-    margin: 0 auto;
-    cursor: pointer;
-    font-family: $header-font;
+  .categories__item__title{
+    line-height: 1.5;
+    text-align: left;
+    @include space('element','b','');
+    font-size:2em;
+    @include media('tablet'){
+      text-align: center;
+    }
   }
 }
-@include info();
-@mixin pagination(){
+@include categories();
+@mixin FORM(){
 	
-.pagination{
-  @include space('component','trl','');
-  @include space('block','b','');
-  background-color: #fff;
-
-}
-  .pagination__ctn{
-    padding: 0;
-    text-align: center;
-  }
-  .pagination__ctn__button {
-    list-style: none;
-    display: inline-block;
-    @include space('element','tb','r');
-    @include space('component','rl','');
-    background-color: cs('primary');
-    color: #fff;
-    font-size: 16px;
-    font-weight: 900;
-    cursor: pointer;
-    @include a-hover('background-color',(from:false,to:cs('primary-d')),.3s,ease)
-  }
-  .pagination__ctn__button--current {
-    background-color: cs('accent-l');
-    &:hover{
-      background-color: cs('accent-l');
-    }
-  }
-}
-@include pagination();
+.FORM{}}
+@include FORM();
 @mixin vri_features(){
   .vri_features{
     background-color: cs('primary-d');
@@ -290,3 +197,100 @@
   }
 }
 @include vri_features();
+@mixin info(){
+	.info{
+      background-color: #fff;
+      @include space('block','trbl','');
+      background-image: url("images-rs/arches.png");
+    }
+  .info__section {
+    border: 2px solid cs('primary-l');
+    @include space('component','trbl','');
+    @include media('md'){
+      @include space('component','','b');
+    }
+
+  }
+  .info__section__title {
+
+  }
+  .info__section__body{
+    @include space('element','trbl','t');
+  }
+  .info__section__more {
+    display: block;
+    @include space('element','trlb',0);
+    background-color: cs('accent-d');
+    @include a-hover('background-color',(from:false,to:cs('font')),.3s,ease);
+    color: #fff;
+    margin: 0 auto;
+    cursor: pointer;
+    font-family: $header-font;
+  }
+}
+@include info();
+@mixin breadcrumbs(){
+	.breadCrumb {
+      @include space('component','tb','');
+      @include space('block','lr','');
+      background-color: cs('fground');
+      text-transform: uppercase;
+      font-size: .9em;
+      a:link,a:visited {
+        color: cs('font-l');
+        text-decoration: none;
+      }
+      a:hover{
+        color: cs('font-d');
+      }
+    }
+  .breadcrumb__section {
+    display: inline-block;
+    @include space('element','','tbrl');
+    &:before {
+      content: '/rsstgsssdssss[[sshuray it workss';
+      margin-right: 20px;
+    }
+  }
+  .breadCrumb__section--home {
+    font-weight: 600;
+    &:before{
+      content: '';
+      margin-right:0;
+
+    }
+  }
+}
+@include breadcrumbs();
+@mixin pagination(){
+	
+.pagination{
+  @include space('component','trl','');
+  @include space('block','b','');
+  background-color: #fff;
+
+}
+  .pagination__ctn{
+    padding: 0;
+    text-align: center;
+  }
+  .pagination__ctn__button {
+    list-style: none;
+    display: inline-block;
+    @include space('element','tb','r');
+    @include space('component','rl','');
+    background-color: cs('primary');
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    @include a-hover('background-color',(from:false,to:cs('primary-d')),.3s,ease)
+  }
+  .pagination__ctn__button--current {
+    background-color: cs('accent-l');
+    &:hover{
+      background-color: cs('accent-l');
+    }
+  }
+}
+@include pagination();
