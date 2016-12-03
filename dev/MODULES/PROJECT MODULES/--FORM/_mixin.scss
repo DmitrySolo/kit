@@ -1,0 +1,24 @@
+@mixin FORM(){
+	
+.FORM{
+  background-color: #fff;
+  @include space('element','trlb','');
+  input[type='text']{
+    @include space('element','tbrl','');
+    font-size: .8rem;
+    width: 100%;
+    border:solid 1px lighten(cs('font-l'),43%);
+  }
+  input[type='submit']{
+    border: none;
+    font-size: 1rem;
+  }
+}
+.form__line {
+  @include space('element','tb','');
+  &:last-child{
+    padding-bottom: 0;
+  }
+}
+
+}

@@ -162,63 +162,39 @@
 		}
 	},
 	"FORM": {
-		"TITLE": "THE FEEDBACK FORM",
+		"TITLE": "Быть в курсе последних акций и новостей",
 		"action": "/",
 		"method": "get",
 		"name": "",
 		"dop_class": "forme",
 		"submit": {
 			"name": "name",
-			"value": "SEND TO SERVER",
+			"value": "ОТПРАВИТЬ",
 			"id": "",
-			"dop_class": ""
+			"dop_class": "info__section__more"
 		},
 		"inputs": {
 			"1": {
 				"type": "text",
-				"label": "ИМЯ!",
+				"label": "Ваше имя",
 				"name": "name",
 				"value": "",
 				"id": "",
-				"dop_class": "",
+				"dop_class": "form--name",
 				"requared": "true",
-				"placeholder": ""
+				"placeholder": "",
+				"other_specific": ""
 			},
 			"2": {
 				"type": "text",
-				"label": "Фамилия!",
-				"name": "name",
+				"label": "Электронный ящик",
+				"name": "ssname",
 				"value": "",
 				"id": "",
-				"dop_class": "",
+				"dop_class": "form--mail",
 				"requared": "true",
-				"placeholder": ""
-			},
-			"3": {
-				"type": "radio",
-				"label": "Фамилия!",
-				"name": "name",
-				"value": {
-					"rambler": "zopa",
-					"rbc": "ne zopa"
-				},
-				"id": "",
-				"dop_class": "",
-				"requared": "true",
-				"placeholder": ""
-			},
-			"4": {
-				"type": "radio",
-				"label": "Фамилия!",
-				"name": "name",
-				"value": {
-					"rambler": "zopa",
-					"rbc": "ne zopa"
-				},
-				"id": "",
-				"dop_class": "",
-				"requared": "true",
-				"placeholder": ""
+				"placeholder": "",
+				"other_specific": {}
 			}
 		}
 	},
@@ -256,13 +232,8 @@
 		},
 		"2": {
 			"title": "Акции",
-			"content": "Инструмент для оценки посещаемости сайтов, анализа поведения посетителей и эффективности рекламы. Мониторинг доступности сайтов. API.",
+			"content": "Инструмент для оценки посещwwаемоwaсти сайтов, анализа поведения посетителей и эффективности рекламы. Мониторинг доступности сайтов. API.",
 			"dopClass": "info__section--acc"
-		},
-		"3": {
-			"title": "Обратная связь",
-			"content": "Инструмент для оценки посещаемости сайтов, анализа поведения посетителей и эффективности рекламы. Мониторинг доступности сайтов. API.",
-			"dopClass": "info__section--callback"
 		}
 	},
 	"pagination": {

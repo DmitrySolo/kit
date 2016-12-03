@@ -106,7 +106,7 @@ gulp.task('own-js', function() {
         .pipe(gulp.dest('dist/scripts'));
 });
 gulp.task('dep-js', function() {
-    gulp.src(['bower_components/jquery/dist/jquery.min.js','bower_components/sass-to-js/js/dist/sass-to-js.min.js'])
+    gulp.src(['bower_components/jquery/dist/jquery.min.js','bower_components/sass-to-js/js/dist/sass-to -js.min.js'])
         .pipe(gulp.dest('dist/scripts/'));
 });
 /////////////////////////////////////

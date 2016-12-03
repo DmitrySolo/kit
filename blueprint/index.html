@@ -10,27 +10,21 @@
       <div class="canvas__border">
         <div class="canvas__blueprint container"><!-- split modules/FORM -->
           <div class="FORM">
-            <h3 class="form__title">THE FEEDBACK FORM</h3>
+            <!--h3.form__title=FORM.TITLE-->
             <form class="forme" method="get" name="" action="/">
               <p class="form__line">
-                <label for="name">ИМЯ!
-                  <input type="text" name="name" value="" placeholder="" id=""/>
+                <label for="name">Ваше имя<br/>
+                  <input class="form--name" type="text" name="name" value="" placeholder="" id=""/>
                 </label>
               </p>
               <p class="form__line">
-                <label for="name">Фамилия!
-                  <input type="text" name="name" value="" placeholder="" id=""/>
+                <label for="ssname">Электронный ящик<br/>
+                  <input class="form--mail" type="text" name="ssname" value="" placeholder="" id=""/>
                 </label>
               </p>
               <p class="form__line">
-                <input type="radio" name="name" value="zopa" checked="true"/>rambler<br/>
-                <input type="radio" name="name" value="ne zopa" checked="false"/>rbc<br/>
+                <input class="info__section__more" type="submit" value="ОТПРАВИТЬ" id=""/>
               </p>
-              <p class="form__line">
-                <input type="radio" name="name" value="zopa" checked="true"/>rambler<br/>
-                <input type="radio" name="name" value="ne zopa" checked="false"/>rbc<br/>
-              </p>
-              <input type="submit" value="SEND TO SERVER" id=""/>
             </form>
           </div>
         </div>

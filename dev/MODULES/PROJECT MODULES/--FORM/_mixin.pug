@@ -1,0 +1,48 @@
+mixin FORM(labelPosition,inputsPosition)
+	<!-- split modules/FORM -->
+	.FORM
+		-if(FORM.TITLE !="")
+			//h3.form__title=FORM.TITLE
+		form(class=''+FORM.dop_class,method=''+FORM.method,name=''+FORM.name,action=''+FORM.action)
+			each val in FORM.inputs
+				-var attrLine =val.other_specific
+				p.form__line
+					-if(val.type=='text')
+						label(for=''+val.name)=val.label
+							-if(labelPosition=='over')
+								br
+							input(type=''+val.type,
+								name=''+val.name,
+								value=''+val.value,
+								class=''+val.dop_class,
+								placeholder=''+val.placeholder,
+								id=''+val.id,
+							)&attributes(attrLine)
+					-if(val.type=='radio')
+						-var name = val.name
+						label(for=''+val.name)=val.label
+							-if(labelPosition=='over')
+								br
+							each radio, index in val.value
+								input(type='radio',name=name,value=radio,)&attributes(attrLine)
+								| #{index}
+								br
+					-if(val.type=='radio')
+						-var name = val.name
+						label(for='' + val.name)=val.label
+							-if(labelPosition=='over')
+								br
+							each radio, index in val.value
+								input(type='checkbox',name=name,value=radio,)&attributes(attrLine)
+								| #{index}
+								br
+					-if(val.type=='select')
+						-var name = val.name
+						label(for='' + val.name)=val.label
+							-if(labelPosition=='over')
+								br
+								select(name=val.name)
+									each opt, index in val.value
+										option(value=opt,)&attributes(attrLine)  #{index}
+			p.form__line
+				input(type='submit',value=''+FORM.submit.value,id=''+FORM.submit.id,class=''+FORM.submit.dop_class)
