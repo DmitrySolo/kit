@@ -3,7 +3,8 @@
 		"TITLE" : "Быть в курсе последних акций и новостей",
 		"action":"/",
 		"method":"get",
-		"name":"",
+		"name":"subscribe",
+		"on_submit":"return validate()",
 		"dop_class":"forme",
 		"submit":{
 			"name":"name",
@@ -26,7 +27,7 @@
 			"2": {
 				"type":"text",
 				"label":"Электронный ящик",
-				"name":"ssname",
+				"name":"email",
 				"value":"",
 				"id":"",
 				"dop_class":"form--mail",

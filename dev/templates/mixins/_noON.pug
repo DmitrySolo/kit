@@ -1,5 +1,5 @@
 mixin module_no_on(modname,pages)
-    -var curPage =page
+    -var curPage =page.slug
     -var includem =true
     each no_page in pages
         if curPage == no_page

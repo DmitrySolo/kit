@@ -2,7 +2,7 @@
 extends ../LAYOUT/layout.pug
 block title
     title Главная
-    -var page='index'
+    -var page={slug:"index",title:"Главная"};
 block main
     +module('collection_slider')
     .row

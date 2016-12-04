@@ -41,31 +41,6 @@
 @include lightMenu('h');
 
 
-@mixin FORM(){
-	
-.FORM{
-  background-color: #fff;
-  @include space('element','trlb','');
-  input[type='text']{
-    @include space('element','tbrl','');
-    font-size: .8rem;
-    width: 100%;
-    border:solid 1px lighten(cs('font-l'),43%);
-  }
-  input[type='submit']{
-    border: none;
-    font-size: 1rem;
-  }
-}
-.form__line {
-  @include space('element','tb','');
-  &:last-child{
-    padding-bottom: 0;
-  }
-}
-
-}
-@include FORM();
 @mixin breadcrumbs(){
 	.breadCrumb {
       @include space('component','tb','');
@@ -177,6 +152,38 @@
   }
 }
 @include collection_slider();
+@mixin FORM(){
+	
+.FORM{
+  background-color: #fff;
+  @include space('element','trlb','');
+  input[type='text']{
+    @include space('element','tbrl','');
+    font-size: .8rem;
+    width: 100%;
+    border:solid 1px lighten(cs('font-l'),43%);
+  }
+  input[type='submit']{
+    border: none;
+    font-size: 1rem;
+  }
+}
+.form__validateMessage {
+  color:red;
+  float: right;
+  display: inline-block;
+}
+.form__line {
+  @include space('element','tb','');
+  &:last-child{
+    padding-bottom: 0;
+  }
+}
+.form_img_ctn{
+  height:500px;
+}
+}
+@include FORM();
 @mixin info(){
 	.info{
       background-color: #fff;

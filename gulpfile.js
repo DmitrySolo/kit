@@ -54,7 +54,10 @@ gulp.task('bro', function() {
 gulp.task('PAGESYSTEM', function() {
     for(var index in data.pages) {
         var attr = data.pages[index];
-        var str = "//- "+attr.slug+".pug\nextends ../LAYOUT/layout.pug\nblock title\n\t-var page='"+attr.slug+"'\n\ttitle "+attr.title;
+        if(attr.layout == 'default')
+            var str = "//- "+attr.slug+".pug\nextends ../LAYOUT/layout.pug\nblock title\n\t-var page={slug:'"+attr.slug+"',title:'"+attr.title+"'};\n\ttitle "+attr.title;
+        else
+            var str = "//- "+attr.slug+".pug\nextends ../LAYOUT/"+attr.layout+"/layout.pug\nblock title\n\t-var page={slug:'"+attr.slug+"',title:'"+attr.title+"'};\n\ttitle "+attr.title;
         if (!fs.existsSync('dev/templates/PAGESYSTEM/PAGES/'+attr.slug+'.pug')) {
             file(attr.slug+'.pug', str)
                 .pipe(gulp.dest('dev/templates/PAGESYSTEM/PAGES'));
@@ -74,7 +77,7 @@ gulp.task('BUILDMODULE', function() {
             ///INCLUDE SCSS
             var str = "@include "+attr.name+"();";
 
-            file('starter.scss', str)
+            file('_starter.scss', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/'+attr.name+'/'));
 
             ///MIXIN PUG
@@ -83,7 +86,7 @@ gulp.task('BUILDMODULE', function() {
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/'+attr.name+'/'));
             ///MIXIN SCSS
             var str = "@mixin "+attr.name+"(){\n\t\n}";
-            file('_mixin.scss', str)
+            file('_style.scss', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/'+attr.name+'/'));
             ///DATA
             var str = "{}";
@@ -105,6 +108,11 @@ gulp.task('own-js', function() {
         .pipe(concat({ path: 'script.js', stat: { mode: 0666 }}))
         .pipe(gulp.dest('dist/scripts'));
 });
+gulp.task('build-script-js', function() {
+    gulp.src(['dev/**/_script.js'])
+        .pipe(concat({ path: 'script.js', stat: { mode: 0666 }}))
+        .pipe(gulp.dest('dist/scripts'));
+});
 gulp.task('dep-js', function() {
     gulp.src(['bower_components/jquery/dist/jquery.min.js','bower_components/sass-to-js/js/dist/sass-to -js.min.js'])
         .pipe(gulp.dest('dist/scripts/'));
@@ -118,13 +126,14 @@ gulp.task('SERVER', [], function() {
     gulp.watch("dev/**/*.json").on('change', browserSync.reload);
     gulp.watch("dist/*.html").on('change', browserSync.reload);
     gulp.watch("dist/*.css").on('change', browserSync.reload);
+    gulp.watch("dist/**/*.js").on('change', browserSync.reload);
 });
-gulp.task('WATCHER', ['scssconcatmodules','sass','cleanMainCss','throw-main-css','browser-reload','views','merge-json','compile-blueprint-view','compile-blueprint-sass'], function() {
-    gulp.watch('dev/MODULES/*/--*/*.scss',function(){ runSequence('cleanMainCss','scssconcatmodules', 'sass','throw-main-css','browser-reload') });
-    //gulp.watch('dev/MODULES/PROJECT MODULES/--*/*.scss',['scssconcatmodules','sass']);
+gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-script-js','throw-main-css','browser-reload','views','merge-json','compile-blueprint-view','compile-blueprint-sass'], function() {
+    gulp.watch('dev/MODULES/*/--*/*.scss',function(){ runSequence('cleanMainCss','concat-modules-and-mixes', 'sass','throw-main-css','browser-reload') });
+    //gulp.watch('dev/MODULES/PROJECT MODULES/--*/*.scss',['concat-modules-and-mixes','sass']);
     gulp.watch(['dev/scss/**/*.scss'],['cleanMainCss','sass','throw-main-css', browserSync.reload]);
     //gulp.watch('dev/MODULES/*/--*/*.pug',['views']);
-
+    gulp.watch(['dev/**/_script.js'],['build-script-js',browserSync.reload]);
     gulp.watch(['dev/**/*.pug'],function(){ runSequence('views', 'compile-blueprint-view') });
     gulp.watch(['blueprint/*.pug'],['compile-blueprint-view']);
     gulp.watch(['blueprint/*.scss'],['compile-blueprint-sass']);
@@ -145,10 +154,17 @@ gulp.task('image_resize', [], function() {
         }))
         .pipe(gulp.dest('dist/images-rs'));
 });
-gulp.task('scssconcatmodules', function() {
-    return gulp.src(['dev/MODULES/MENUS/--*/*.scss','dev/MODULES/PROJECT MODULES/--*/*.scss'])
+gulp.task('concat-modules-and-mixes', function() {
+        gulp.src(['dev/MODULES/MENUS/--*/*.scss','dev/MODULES/PROJECT MODULES/--*/*.scss'])
         .pipe(concat('_modules.scss'))
         .pipe(gulp.dest('dev/MODULES/'));
+        gulp.src(['dev/MIXES/**/_style.scss'])
+        .pipe(concat('_mixes.scss'))
+        .pipe(gulp.dest('dev/MIXES/'));
+        gulp.src(['dev/MIXES/**/_mixin.pug'])
+        .pipe(concat('_mixes.pug'))
+        .pipe(gulp.dest('dev/MIXES/'));
+
 });
 var buildmodulesData = {
     string: 'name',
@@ -164,7 +180,7 @@ gulp.task('bm', function() {
             ///INCLUDE SCSS
             var str = "@include "+options.name+"();";
 
-            file('starter.scss', str)
+            file('_starter.scss', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
 
             ///MIXIN PUG
@@ -173,7 +189,7 @@ gulp.task('bm', function() {
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
             ///MIXIN SCSS
             var str = "@mixin "+options.name+"(){\n\t\n."+options.name+"{}}";
-            file('_mixin.scss', str)
+            file('_style.scss', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
             ///DATA
             var str = '{\n\t"'+options.name+'" : {\n\t\t"'+options.name+'" : "1"\n\t}\n}';
@@ -183,6 +199,11 @@ gulp.task('bm', function() {
             var str ="//"+options.name+" Script";
             file('script.js',str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
+            ///LIBS JSON
+            var str ='{"LIBS": {"'+options.name+'":{"js":{"":{"src":"","concat":"false"}},"css":{"":""}}}}';
+            file('libs.json', str)
+                .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
+            ///MODULE INCLUDER
             var str ="\n        when '"+options.name+"'\n            include ../../../dev/MODULES/PROJECT MODULES/--"+options.name+"/_include";
             gulp.src('dev/templates/mixins/module_includer.pug').pipe(insert.append(str)).pipe(gulp.dest('dev/templates/mixins'));
 
@@ -326,7 +347,7 @@ gulp.task('compile-blueprint-sass',[],function () {
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('blueprint/'));
     if(distoptions.izolate){
-        gulp.src('dev/MODULES/PROJECT MODULES/--'+data.blueprint+'/starter.scss')
+        gulp.src('dev/MODULES/PROJECT MODULES/--'+data.blueprint+'/_starter.scss')
             .pipe(sass.sync().on('error', sass.logError))
             .pipe(gulp.dest('blueprint/'));
 
@@ -414,7 +435,29 @@ gulp.task('dist-module',[], function () {
 
 });
 gulp.task('testizmodul',[], function () {
-    gulp.src('dev/MODULES/PROJECT MODULES/--pagination/starter.scss')
+    gulp.src('dev/MODULES/PROJECT MODULES/--pagination/_starter.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('blueprint/starter.css'));
 })
+gulp.task('buildLibs',[], function () {
+    for(var index in data.LIBS) {
+        var mod_deps = data.LIBS[index]
+        //console.log(mod_deps)
+        var js_deps =mod_deps['js'];
+        //console.log(js_deps)
+        var css_deps = mod_deps['css'];
+        //console.log(css_deps)
+        for (var index in js_deps){
+            var js_dep = js_deps[index];
+            var path = js_dep.src;
+            console.log(js_dep.concat)
+            if(js_dep.concat == 'false'){
+                gulp.src(path).pipe(gulp.dest('dist/scripts/libs/'));
+               var str ="\nscript(src='scripts/libs/"+index+"' type='text/javascript')";
+                gulp.src('dev/templates/PAGESYSTEM/INCLUDES/_scripts.pug').pipe(insert.append(str)).pipe(gulp.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
+
+            }
+        }
+
+    }
+});

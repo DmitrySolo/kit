@@ -2,13 +2,14 @@ mixin FORM(labelPosition,inputsPosition)
 	<!-- split modules/FORM -->
 	.FORM
 		-if(FORM.TITLE !="")
-			//h3.form__title=FORM.TITLE
-		form(class=''+FORM.dop_class,method=''+FORM.method,name=''+FORM.name,action=''+FORM.action)
+			//h3.form__title=page.title
+		form(class=''+FORM.dop_class,method=''+FORM.method,name=''+FORM.name,action=''+FORM.action,onsubmit=''+FORM.on_submit)
 			each val in FORM.inputs
 				-var attrLine =val.other_specific
 				p.form__line
 					-if(val.type=='text')
 						label(for=''+val.name)=val.label
+							span.form__validateMessage&attributes({"id":'js_val_'+val.name})
 							-if(labelPosition=='over')
 								br
 							input(type=''+val.type,
@@ -21,6 +22,7 @@ mixin FORM(labelPosition,inputsPosition)
 					-if(val.type=='radio')
 						-var name = val.name
 						label(for=''+val.name)=val.label
+							span.form__validateMessage&attributes({"id":'js_val_'+val.name})
 							-if(labelPosition=='over')
 								br
 							each radio, index in val.value
@@ -46,3 +48,4 @@ mixin FORM(labelPosition,inputsPosition)
 										option(value=opt,)&attributes(attrLine)  #{index}
 			p.form__line
 				input(type='submit',value=''+FORM.submit.value,id=''+FORM.submit.id,class=''+FORM.submit.dop_class)
+				+vertical_centered_image('wild_oliva.png','form_img_ctn')

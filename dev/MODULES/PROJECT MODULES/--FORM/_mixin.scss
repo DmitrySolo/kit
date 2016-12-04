@@ -14,11 +14,18 @@
     font-size: 1rem;
   }
 }
+.form__validateMessage {
+  color:red;
+  float: right;
+  display: inline-block;
+}
 .form__line {
   @include space('element','tb','');
   &:last-child{
     padding-bottom: 0;
   }
 }
-
+.form_img_ctn{
+  height:500px;
+}
 }

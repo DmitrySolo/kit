@@ -1,3 +1,4 @@
+include ../../../MIXES/_mixes
 include ../../mixins/_mixins
 <!-- split header.html -->
 doctype html
@@ -13,10 +14,11 @@ html(lang=''+head.lang)
                     .col-8-l
                         +module('Light_menu')
             +module_no_on('breadcrumbs',['index'])
-            <!-- split #{page}.html -->
+            <!-- split #{page.slug}.html -->
             block main
             <!-- split footer.html -->
             footer.mainFooter
                 p &copy; "ВИРИ" Смесители и аксессуары для ванной комнаты 2016.
+        <!-- split scripts/scripts.html -->
         include ../INCLUDES/_scripts
 
