@@ -83,9 +83,9 @@
 	},
 	"menuData": {
 		"Home": {
-			"title": "Home",
-			"href": "#",
-			"dop_class": "asdas",
+			"title": "Продукция",
+			"href": "/production.html",
+			"dop_class": "",
 			"childs": {
 				"Parent": {
 					"title": "Home2",
@@ -102,9 +102,9 @@
 			}
 		},
 		"Products and help": {
-			"title": "Products and help",
-			"href": "#",
-			"dop_class": "asdas",
+			"title": "Гарантия и сервис",
+			"href": "service.html",
+			"dop_class": "",
 			"childs": {
 				"Parent": {
 					"title": "Home2",
@@ -141,9 +141,9 @@
 			}
 		},
 		"Support": {
-			"title": "Support",
-			"href": "#",
-			"dop_class": "asdas",
+			"title": "Партнерам",
+			"href": "partners.html",
+			"dop_class": "",
 			"childs": {
 				"Parent": {
 					"title": "Home2",
@@ -160,23 +160,10 @@
 			}
 		},
 		"AboutUs": {
-			"title": "About Us",
-			"href": "#",
-			"dop_class": "asdas",
-			"childs": {
-				"Parent": {
-					"title": "Home2",
-					"href": "main_home",
-					"dop_class": "",
-					"childs": ""
-				},
-				"Parent2": {
-					"title": "Contacts",
-					"href": "contacts",
-					"dop_class": "contacts",
-					"childs": ""
-				}
-			}
+			"title": "Где купить",
+			"href": "buy.html",
+			"dop_class": "",
+			"childs": ""
 		},
 		"acc": {
 			"title": "Акции",
@@ -209,42 +196,6 @@
 		},
 		"6": {
 			"title": "Baciano Смеситель для душа HG900331"
-		}
-	},
-	"info": {
-		"1": {
-			"title": "Новости!!!",
-			"content": "Купи продукцию «WasserKRAFT» и получи скидку 10% на покупку плитки!подробнее СПЕЦПРЕДЛОЖЕНИЕ! Скидка 30% на аксессуары коллекции Aller K-1100!подробнее СПЕЦПРЕДЛОЖЕНИЕ! На смесители серий Rhein 1700 и Oder 6300 скидка до 25%!подробнее",
-			"dopClass": "info__section--news"
-		},
-		"2": {
-			"title": "Акции",
-			"content": "Инструмент для оценки посещwwаемоwaсти сайтов, анализа поведения посетителей и эффективности рекламы. Мониторинг доступности сайтов. API.",
-			"dopClass": "info__section--acc"
-		}
-	},
-	"LIBS": {
-		"info": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"FORM": {
-			"js": {
-				"validator": {
-					"src": "bower_components/validator-js/validator.min.js",
-					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
 		}
 	},
 	"FORM": {
@@ -283,6 +234,42 @@
 				"placeholder": "",
 				"other_specific": {}
 			}
+		}
+	},
+	"LIBS": {
+		"FORM": {
+			"js": {
+				"validator": {
+					"src": "bower_components/validator-js/validator.min.js",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"info": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		}
+	},
+	"info": {
+		"1": {
+			"title": "Новости!!!",
+			"content": "Купи продукцию «WasserKRAFT» и получи скидку 10% на покупку плитки!подробнее СПЕЦПРЕДЛОЖЕНИЕ! Скидка 30% на аксессуары коллекции Aller K-1100!подробнее СПЕЦПРЕДЛОЖЕНИЕ! На смесители серий Rhein 1700 и Oder 6300 скидка до 25%!подробнее",
+			"dopClass": "info__section--news"
+		},
+		"2": {
+			"title": "Акции",
+			"content": "Инструмент для оценки посещwwаемоwaсти сайтов, анализа поведения посетителей и эффективности рекламы. Мониторинг доступности сайтов. API.",
+			"dopClass": "info__section--acc"
 		}
 	},
 	"pagination": {

@@ -1,13 +1,33 @@
+$image-path:'images/';
 @mixin i-bkg-ctr($src,$size:contain){
   background-image:url($src);
   background-position: center center;
   background-size: $size;
   background-repeat: no-repeat;
 }
-@mixin background($imgpath,$position:0 0,$repeat: no-repeat) {
-  background: {
-    image: url($imgpath);
-    position: $position;
-    repeat: $repeat;
+@mixin i-gradient($vector,$colors,$points:(),$type:'linear'){
+  @if(length($points)!=0){
+
+    $str:nth($colors,1);
+    @each $point in $points{
+      $index:index($points,$point);
+      $cp:nth($colors,$index+1);
+      $PC:#{$cp} #{$point};
+      $str:$str, #{$cp} #{$point},;
+    }
+
+
+    @if($type=='linear'){
+      background: linear-gradient(#{$vector}deg,$str);
+    }@else{
+      background:radial-gradient($str);}
+
+
+  }@else{
+    @if($type=='linear'){
+      $colors : to-string($colors,',');
+      background: linear-gradient(#{$vector}deg,$colors);
+    }@else{
+      background:radial-gradient($colors);}
   }
 }

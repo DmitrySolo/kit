@@ -13,17 +13,6 @@
   bottom: 0;
   right: 0; }
 
-.img_container--align_v {
-  position: relative; }
-
-.img_container--align_v img {
-  position: absolute;
-  margin: auto;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0; }
-
 .lightMenu li {
   display: inline-block; }
   .lightMenu li:first-child {
@@ -1302,7 +1291,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #303742; }
 
 body {
-  background-image: url("images/dark_wood.png"); }
+  background: linear-gradient(180deg, #de2110, #ee4e4a 100%); }
 
 .container {
   background-color: #f3f3f3; }

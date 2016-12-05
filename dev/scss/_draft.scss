@@ -1,12 +1,13 @@
 @mixin draft(){
   body{
-    background-image: url("images/dark_wood.png");
+    @include i-gradient(180,(cs('accent'), #ee4e4a),(100%));
   }
   .container {
     background-color: rgb(243, 243, 243);
   }
 .mainHeader {
   background-color: cs('primary');
+
 }
   .logo{
     height: 8.5em;
