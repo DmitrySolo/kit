@@ -421,7 +421,8 @@ gulp.task('tests',[], function () {
 )
 
 gulp.task('dist-module',[], function () {
-        gulp.src('dev/MODULES/PROJECT MODULES/--'+options.name+'/_include.pug')
+    var str ="include ../../../templates/PAGESYSTEM/INCLUDES/_includes\n";
+        gulp.src('dev/MODULES/PROJECT MODULES/--'+options.name+'/_include.pug').pipe(insert.prepend(str))
         .pipe(pug({
             data: data,
             pretty: true,
