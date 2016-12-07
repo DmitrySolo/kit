@@ -462,3 +462,82 @@ gulp.task('buildLibs',[], function () {
 
     }
 });
+var resW = {
+    number: 'w',
+    default: 0,
+};
+var resH = {
+    number: 'hi',
+    default: 0,
+};
+var cropTo = {
+    string: 'to',
+    default: 'Centr',
+};
+///////////////////////////////////////////////////////////////////IMAGES
+var resOptionW = minimist(process.argv.slice(2), resW);
+var resOptionH = minimist(process.argv.slice(2), resH);
+var resOptionTo = minimist(process.argv.slice(2), cropTo);
+gulp.task('scale', [], function() {
+    if(resOptionW.w == 0){
+        gulp.src('dev/SOURCE FABRIC/HALL/*')
+            .pipe(imageResize({
+                height : resOptionH.hi,
+                crop : false,
+                upscale : false
+            })).pipe(gulp.dest('dist/irs'));
+    }else{
+        gulp.src('dev/SOURCE FABRIC/HALL/*')
+            .pipe(imageResize({
+                width : resOptionW.w,
+                height : resOptionH.hi,
+                crop : false,
+                upscale : false
+            })).pipe(gulp.dest('dist/irs'));
+    }
+
+
+});
+var gravity='';
+gulp.task('crop', [], function() {
+    switch (resOptionTo.to){
+        case 'N': gravity = 'North';
+            break;
+        case 'NE': gravity = 'NorthEast';
+            break;
+        case 'E': gravity = 'East';
+            break;
+        case 'SE': gravity = 'SouthEast';
+            break;
+        case 'S': gravity = 'South';
+            break;
+        case 'SW': gravity = 'SouthWest';
+            break;
+        case 'W': gravity = 'West';
+            break;
+        case 'NW': gravity = 'NorthWest';
+            break;
+        default: gravity = 'Centr';
+    }
+    console.log(gravity);
+    if(resOptionW.w == 0){
+        gulp.src('dev/SOURCE FABRIC/HALL/*')
+            .pipe(imageResize({
+                height : resOptionH.hi,
+                gravity : gravity,
+                crop : true,
+                upscale : true
+            })).pipe(gulp.dest('dist/irs'));
+    }else{
+        gulp.src('dev/SOURCE FABRIC/HALL/*')
+            .pipe(imageResize({
+                gravity : gravity,
+                width : resOptionW.w,
+                height : resOptionH.hi,
+                crop : true,
+                upscale : true
+            })).pipe(gulp.dest('dist/irs'));
+    }
+
+
+});
