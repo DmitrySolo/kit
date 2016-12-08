@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var foreach = require('gulp-foreach');
 var runSequence  = require('run-sequence');
 var merge = require('gulp-merge-json');
 var data = require('./data.json');
@@ -21,6 +22,7 @@ var browserSync = require('browser-sync').create();
 var concat = require('gulp-concat');
 var file = require('gulp-file');
 var uncss = require('gulp-uncss');
+var rename = require("gulp-rename");
 gulp.task('views', function buildHTML() {
     return gulp.src('dev/templates/PAGESYSTEM/PAGES/*.pug')
         .pipe(pug({
@@ -468,38 +470,24 @@ var resW = {
 };
 var resH = {
     number: 'hi',
-    default: 0,
+    default: 'auto',
 };
 var cropTo = {
     string: 'to',
     default: 'Centr',
 };
+var imgPref = {
+    string: 'prefix',
+    default: false,
+};
 ///////////////////////////////////////////////////////////////////IMAGES
 var resOptionW = minimist(process.argv.slice(2), resW);
 var resOptionH = minimist(process.argv.slice(2), resH);
 var resOptionTo = minimist(process.argv.slice(2), cropTo);
-gulp.task('scale', [], function() {
-    if(resOptionW.w == 0){
-        gulp.src('dev/SOURCE FABRIC/HALL/*')
-            .pipe(imageResize({
-                height : resOptionH.hi,
-                crop : false,
-                upscale : false
-            })).pipe(gulp.dest('dist/irs'));
-    }else{
-        gulp.src('dev/SOURCE FABRIC/HALL/*')
-            .pipe(imageResize({
-                width : resOptionW.w,
-                height : resOptionH.hi,
-                crop : false,
-                upscale : false
-            })).pipe(gulp.dest('dist/irs'));
-    }
-
-
-});
-var gravity='';
+var resOptionPref = minimist(process.argv.slice(2), imgPref);
+var imageQ = 0;
 gulp.task('crop', [], function() {
+    var gravity='';
     switch (resOptionTo.to){
         case 'N': gravity = 'North';
             break;
@@ -519,22 +507,72 @@ gulp.task('crop', [], function() {
             break;
         default: gravity = 'Centr';
     }
-    console.log(gravity);
-    if(resOptionW.w == 0){
-        gulp.src('dev/SOURCE FABRIC/HALL/*')
+    console.log(gravity)
+    if(!resOptionW.w){
+        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function(stream, file){
+            imageQ++;
+            return stream
+                .pipe(rename(function (path) {
+                    if (resOptionPref.prefix){path.basename =resOptionPref.prefix+'-'+imageQ;}
+                    else{path.basename +='-auto_X_'+resOptionH.hi; }}))
+        }))
             .pipe(imageResize({
-                height : resOptionH.hi,
                 gravity : gravity,
+                height : resOptionH.hi,
                 crop : true,
-                upscale : true
+                upscale : false
             })).pipe(gulp.dest('dist/irs'));
     }else{
-        gulp.src('dev/SOURCE FABRIC/HALL/*')
+        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function(stream, file){
+            imageQ++;
+            return stream
+                .pipe(rename(function (path) {
+                    if (resOptionPref.prefix){path.basename =resOptionPref.prefix+'-'+imageQ;}
+                    else{path.basename +=resOptionW.w+'_X_'+resOptionH.hi; }}))
+
+        }))
             .pipe(imageResize({
                 gravity : gravity,
                 width : resOptionW.w,
                 height : resOptionH.hi,
                 crop : true,
+                upscale : false
+            })).pipe(gulp.dest('dist/irs'));
+    }
+
+
+});
+
+gulp.task('scale', [], function() {
+
+    if(!resOptionW.w){
+        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function(stream, file){
+            imageQ++;
+            return stream
+                .pipe(rename(function (path) {
+                    if (resOptionPref.prefix){path.basename =resOptionPref.prefix+= '-'+imageQ;}
+                    else{path.basename +='-autoX_'+resOptionH.hi; }}))
+
+        }))
+            .pipe(imageResize({
+                height : resOptionH.hi,
+                crop : false,
+                upscale : true
+            })).pipe(gulp.dest('dist/irs'));
+    }else{
+        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function(stream, file){
+            imageQ++;
+
+            return stream
+                .pipe(rename(function (path) {
+                    if (resOptionPref.prefix){path.basename =resOptionPref.prefix+= '-'+imageQ;}
+                    else{path.basename+='-'+resOptionW.w+'_X_auto' }}))
+
+        }))
+            .pipe(imageResize({
+                width : resOptionW.w,
+                height : resOptionH.hi,
+                crop : false,
                 upscale : true
             })).pipe(gulp.dest('dist/irs'));
     }
