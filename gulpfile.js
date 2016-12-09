@@ -4,7 +4,6 @@ var runSequence  = require('run-sequence');
 var merge = require('gulp-merge-json');
 var data = require('./data.json');
 htmlv = require('gulp-html-validator');
-var concat = require('gulp-concat');
 var fs = require('fs');
 var GulpSSH = require('gulp-ssh')
 var htmlsplit = require('gulp-htmlsplit');
@@ -24,11 +23,19 @@ var file = require('gulp-file');
 var uncss = require('gulp-uncss');
 var rename = require("gulp-rename");
 gulp.task('views', function buildHTML() {
-    return gulp.src('dev/templates/PAGESYSTEM/PAGES/*.pug')
+    gulp.src('dev/templates/PAGESYSTEM/PAGES/*.pug')
         .pipe(pug({
             data: data,
             pretty: true,
         })).pipe(gulp.dest('dist'));
+    var str ="include ../templates/PAGESYSTEM/INCLUDES/_includes\n";
+    gulp.src('dev/templates/projectboard.pug').pipe(insert.prepend(str)).pipe(rename(function (path) {
+        path.basename='index';
+        }))
+        .pipe(pug({
+            data: data,
+            pretty: true,
+        })).pipe(gulp.dest('projectboard/'));
 });
 gulp.task('validate',function () {
     gulp.src("dist/*service.html")
@@ -216,7 +223,8 @@ gulp.task('sass', function () {
         gulp.src('dev/scss/main.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('dist'))
-        .pipe(gulp.dest('blueprint'));
+        .pipe(gulp.dest('blueprint'))
+        .pipe(gulp.dest('projectboard'));
 });
 gulp.task('throw-main-css', function () {
     gulp.src('dist/main.css')

@@ -44,6 +44,20 @@ html(lang=''+head.lang)
                     .pb-colorBox.pb-colorBox--font-d
                     .pb-colorBox.pb-colorBox--font-l
             section.pb-section.clearfix
+                .pb-colorMaket
+                    .pb-colorMaket__ctn
+                        .pb-colorMaket__header.clearfix
+                            .pb-colorMaket__header__primary.f-left fws
+                            .pb-colorMaket__header__secondary.f-left
+                                .pb-colorMaket__header__accent.f-right
+                        .pb-colorMarket__body.clearfix
+                            +loop(6)
+                                .pb-colorMaket__body__sections_ctn.f-left
+                                    .pb-colorMaket__body__section
+                                        .pb-colorMaket__body__section__header
+                                    .pb-colorMaket__body__section__accent
+                        .pb-colorMaket__footer
+            section.pb-section.clearfix
                 .pb-element.f-left
                     h1 Header 1
                     h2 Header 2

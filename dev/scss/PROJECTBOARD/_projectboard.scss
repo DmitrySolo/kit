@@ -22,4 +22,56 @@
       background-color: $value;
     }
   }
+  .pb-colorMaket {
+    width: 40%;
+    background-color: cs('bground');
+  }
+  .pb-colorMaket__ctn{
+    width: 80%;
+    background-color: cs('fground');
+    @include space('block','trbl','');
+    margin: 0 auto;
+  }
+  .pb-colorMaket__header{
+    height: 60px;
+  }
+  .pb-colorMaket__header__primary{
+    @include space('component','trbl','');
+    background-color: cs('primary');
+    width: 70%;
+  }
+  .pb-colorMaket__header__secondary{
+    @include space('component','trbl','');
+    background-color: cs('secondary');
+    width: 30%;
+  }
+  .pb-colorMaket__header__accent{
+    width: 40%;
+    @include space('element','trbl','');
+    background-color: cs('accent');
+  }
+  .pb-colorMarket__body{
+    @include space('component','trbl','');
+  }
+  .pb-colorMaket__body__section{
+
+    @include space('module','tlbr','');
+    background-color: cs('primary');
+    &:first-child{
+      margin-right:10%;
+    }
+  }
+  .pb-colorMaket__body__section__header{
+    @include space('component','tlbr','');
+    background-color: cs('secondary');
+  }
+  .pb-colorMaket__body__section__accent{
+    @include space('element','tlbr','tb');
+    width: 45%;
+    background-color: cs('accent');
+  }
+  .pb-colorMaket__footer {
+    @include space('component','tlbr','');
+    background-color: cs('primary');
+  }
 }
