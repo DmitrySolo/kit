@@ -19,10 +19,10 @@
     }
   }
   .lightMenu__list{
-    @extend %hierarhiLevel--4;
+
   }
   .lightMenu li a{
-    font-size: 1em;
+    //@extend %hierarhiLevel-4;
     color: #f9f2f4;
     text-decoration: none;
   }
@@ -41,38 +41,39 @@
 @include lightMenu('h');
 
 
-@mixin FORM(){
-	
-.FORM{
-  background-color: #fff;
-  @include space('element','trlb','');
-  input[type='text']{
-    @include space('element','tbrl','');
-    font-size: .8rem;
-    width: 100%;
-    border:solid 1px lighten(cs('font-l'),43%);
+@mixin breadcrumbs(){
+	.breadCrumb {
+      @include space('component','tb','');
+      @include space('block','lr','');
+      background-color: cs('fground');
+      text-transform: uppercase;
+      font-size: .9em;
+      a:link,a:visited {
+        color: cs('font-l');
+        text-decoration: none;
+      }
+      a:hover{
+        color: cs('font-d');
+      }
+    }
+  .breadcrumb__section {
+    display: inline-block;
+    @include space('element','','tbrl');
+    &:before {
+      content: '/rsstgsssdssss[[sshuray it workss';
+      margin-right: 20px;
+    }
   }
-  input[type='submit']{
-    border: none;
-    font-size: 1rem;
+  .breadCrumb__section--home {
+    font-weight: 600;
+    &:before{
+      content: '';
+      margin-right:0;
+
+    }
   }
 }
-.form__validateMessage {
-  color:red;
-  float: right;
-  display: inline-block;
-}
-.form__line {
-  @include space('element','tb','');
-  &:last-child{
-    padding-bottom: 0;
-  }
-}
-.form_img_ctn{
-  height:500px;
-}
-}
-@include FORM();
+@include breadcrumbs();
 @mixin categories(){
 	.categories{
       text-align: center;
@@ -115,6 +116,38 @@
   }
 }
 @include category();
+@mixin FORM(){
+	
+.FORM{
+  background-color: #fff;
+  @include space('element','trlb','');
+  input[type='text']{
+    @include space('element','tbrl','');
+    font-size: .8rem;
+    width: 100%;
+    border:solid 1px lighten(cs('font-l'),43%);
+  }
+  input[type='submit']{
+    border: none;
+    font-size: 1rem;
+  }
+}
+.form__validateMessage {
+  color:red;
+  float: right;
+  display: inline-block;
+}
+.form__line {
+  @include space('element','tb','');
+  &:last-child{
+    padding-bottom: 0;
+  }
+}
+.form_img_ctn{
+  height:500px;
+}
+}
+@include FORM();
 @mixin collection_slider(){
 	.collection_slider{
       position: relative;
@@ -151,39 +184,72 @@
   }
 }
 @include collection_slider();
-@mixin breadcrumbs(){
-	.breadCrumb {
-      @include space('component','tb','');
-      @include space('block','lr','');
-      background-color: cs('fground');
-      text-transform: uppercase;
-      font-size: .9em;
-      a:link,a:visited {
-        color: cs('font-l');
-        text-decoration: none;
-      }
-      a:hover{
-        color: cs('font-d');
-      }
+@mixin info(){
+	.info{
+      background-color: #fff;
+      @include space('block','trbl','');
+      background-image: url("images-rs/arches.png");
     }
-  .breadcrumb__section {
-    display: inline-block;
-    @include space('element','','tbrl');
-    &:before {
-      content: '/rsstgsssdssss[[sshuray it workss';
-      margin-right: 20px;
-    }
-  }
-  .breadCrumb__section--home {
-    font-weight: 600;
-    &:before{
-      content: '';
-      margin-right:0;
+  .info__section {
+    border: 2px solid cs('primary-l');
+    @include space('component','trbl','');
+    background-color: #fff;
+    @include media('md'){
+      @include space('component','','b');
 
+    }
+
+  }
+  .info__section__title {
+
+  }
+  .info__section__body{
+    @include space('element','a');
+  }
+  .info__section__more {
+    display: block;
+    @include space('element','trlb',0);
+    background-color: cs('accent-d');
+    @include a-hover('background-color',(from:false,to:cs('font')),.3s,ease);
+    color: #fff;
+    margin: 0 auto;
+    cursor: pointer;
+    font-family: $header-font;
+  }
+}
+@include info();
+@mixin pagination(){
+	
+.pagination{
+  @include space('component','trl','');
+  @include space('block','b','');
+  background-color: #fff;
+
+}
+  .pagination__ctn{
+    padding: 0;
+    text-align: center;
+  }
+  .pagination__ctn__button {
+    list-style: none;
+    display: inline-block;
+    @include space('element','tb','r');
+    @include space('component','rl','');
+    background-color: cs('primary');
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    @include a-hover('background-color',(from:false,to:cs('primary-d')),.3s,ease)
+  }
+  .pagination__ctn__button--current {
+    background-color: cs('accent-l');
+    &:hover{
+      background-color: cs('accent-l');
     }
   }
 }
-@include breadcrumbs();
+@include pagination();
 @mixin vri_features(){
   .vri_features{
     background-color: cs('primary-d');
@@ -258,69 +324,3 @@
   }
 }
 @include vri_features();
-@mixin pagination(){
-	
-.pagination{
-  @include space('component','trl','');
-  @include space('block','b','');
-  background-color: #fff;
-
-}
-  .pagination__ctn{
-    padding: 0;
-    text-align: center;
-  }
-  .pagination__ctn__button {
-    list-style: none;
-    display: inline-block;
-    @include space('element','tb','r');
-    @include space('component','rl','');
-    background-color: cs('primary');
-    color: #fff;
-    font-size: 16px;
-    font-weight: 900;
-    cursor: pointer;
-    @include a-hover('background-color',(from:false,to:cs('primary-d')),.3s,ease)
-  }
-  .pagination__ctn__button--current {
-    background-color: cs('accent-l');
-    &:hover{
-      background-color: cs('accent-l');
-    }
-  }
-}
-@include pagination();
-@mixin info(){
-	.info{
-      background-color: #fff;
-      @include space('block','trbl','');
-      background-image: url("images-rs/arches.png");
-    }
-  .info__section {
-    border: 2px solid cs('primary-l');
-    @include space('component','trbl','');
-    background-color: #fff;
-    @include media('md'){
-      @include space('component','','b');
-
-    }
-
-  }
-  .info__section__title {
-
-  }
-  .info__section__body{
-    @include space('element','trbl','t');
-  }
-  .info__section__more {
-    display: block;
-    @include space('element','trlb',0);
-    background-color: cs('accent-d');
-    @include a-hover('background-color',(from:false,to:cs('font')),.3s,ease);
-    color: #fff;
-    margin: 0 auto;
-    cursor: pointer;
-    font-family: $header-font;
-  }
-}
-@include info();

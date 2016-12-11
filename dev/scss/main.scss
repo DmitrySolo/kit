@@ -1,24 +1,28 @@
 @import "imports";
-@import "debug";
-
 ///////////////////////////////////////////////////////
-// INPUT
-/*
- * BASE STYLES
- */
-@import "BASE/base";
-
 /*
  * NORMALIZE
  */
 @import "NORMALIZE/normalize-5-0-0";
 
 /*
+ * RESET
+ */
+@import "reset";
+/*
+ * BASE STYLES
+ */
+@import "base";
+
+
+/*
  * TYPOGRAPHY
  */
-
-  @include typographic();
-
+@include typographic();
+/*
+ * HIERARCHY
+ */
+@import "HIERARCHY/hierarchy";
 /*
  * GRID
  */
@@ -33,15 +37,31 @@
 * LAYOUT HELPERS
 */
 @include helpers();
+
 /////////////////////////////////////////////////////
+/*
+* MODULES  STYLES
+*/
+@import "../MODULES/modules";
+/*
+* MIXES  STYLES
+*/
+@import "../MIXES/mixes";
+/*
+* PROJECT  STYLES
+*/
+@import "project";
+
 //NO PRODUCTION
+@import "debug";
 @if($production == false){
   @include projectBoard();
   @include draft();
   @include toJSMap();
   @include blueprint();
+  //DEBUG
+  @if($debug){
+    @include debug();
+  }
 }
-//DEBUG
-@if($debug){
-  @include debug();
-}
+

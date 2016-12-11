@@ -1,20 +1,30 @@
 $contrastLevel: 0;
 
 
-%hierarhiLevel--1{
-  font-size: 1.6em;
+%hierarhiLevel-1{
+  font-size: 6em;
   text-transform: uppercase;
   font-weight: bold;
 }
 
 
-%hierarhiLevel--2{
-  font-size: 1.6em;
+%hierarhiLevel-2{
+  font-size: 3.5em;
 }
-%hierarhiLevel--3{
-
+%hierarhiLevel-3{
+  font-size: 1.25em;
 }
-%hierarhiLevel--4{
-  font-size: 1em;
+%hierarhiLevel-4{
+  font-size: 1.1em;
   text-transform: uppercase;
+}
+%hierarhiLevel--1{
+  font-size: .6em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+%hierarhiLevel--2{
+  font-size: .7em;
+  font-style: italic;
+  font-weight: bold;
 }

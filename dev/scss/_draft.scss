@@ -10,7 +10,7 @@
 
 }
   .logo{
-    height: 8.5em;
+    height: s-growWrap('block',2,s-growLines(2));
     background-color: #fff;
     @include i-bkg-ctr('images/vrig.svg',85%);
     @include media('md')  {
@@ -50,7 +50,7 @@
   .product__info {
     background-color: cs('bground-l');
     dl{
-      @include space('component','tbrl','')
+      @include space('component','tbrl','');
       background-color: #fff;
 
     }

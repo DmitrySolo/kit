@@ -19,10 +19,10 @@
     }
   }
   .lightMenu__list{
-    @extend %hierarhiLevel--4;
+
   }
   .lightMenu li a{
-    font-size: 1em;
+    //@extend %hierarhiLevel-4;
     color: #f9f2f4;
     text-decoration: none;
   }

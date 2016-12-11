@@ -55,9 +55,8 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
   font-family: $body-font;
   font-weight: $body-font-weight;
   color: $body-color;
-
   font-size: $min-font;
-  line-height: #{$line-height-ratio}em;
+  line-height: #{$line-height-ratio};
   @if $response == true {
     @media (min-width: $min-width) {
       font-size: calc( #{$min-font} + (#{_strip-units($max-font)} - #{_strip-units($min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -94,9 +93,10 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
 
   font-size: $local-min-font;
   @if ($vertical-rhythm) {
+    @at-root h1.text, .text h1 {
     margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
     line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
+    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;}
   } @else {
     margin-top: 0;
     line-height: 1.1em;
@@ -110,9 +110,10 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
     @media (min-width: $max-width) {
       font-size: $local-max-font;
       @if ($vertical-rhythm) {
+        @at-root h1.text, .text h1 {
         margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
         line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-        margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
+        margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;}
       }
     }
   }
@@ -125,9 +126,11 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
 
   font-size: $local-min-font;
   @if ($vertical-rhythm) {
+    @at-root h2.text, .text h2 {
     margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
     line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
     margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    }
   } @else {
     margin-top: 0;
     line-height: 1.2em;
@@ -141,9 +144,11 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
     @media (min-width: $max-width) {
       font-size: $local-max-font;
       @if ($vertical-rhythm) {
+        @at-root h2.text, .text h2 {
         margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
         line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
         margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+        }
       }
     }
   }
@@ -155,9 +160,11 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
 
   font-size: $local-min-font;
   @if ($vertical-rhythm) {
+    @at-root h3.text, .text h3 {
     margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
     line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
     margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    }
   } @else {
     margin-top: 0;
     line-height: 1.3em;
@@ -171,9 +178,10 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
     @media (min-width: $max-width) {
       font-size: $local-max-font;
       @if ($vertical-rhythm) {
+        @at-root h3.text, .text h3 {
         margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
         line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-        margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+        margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;}
       }
     }
   }
@@ -185,9 +193,11 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
 
   font-size: $local-min-font;
   @if ($vertical-rhythm) {
+    @at-root h4.text, .text h4 {
     margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
     line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
     margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    }
   } @else {
     margin-top: 0;
     line-height: 1.4em;
@@ -201,9 +211,11 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
     @media (min-width: $max-width) {
       font-size: $local-max-font;
       @if ($vertical-rhythm) {
+        @at-root h4.text, .text h4 {
         margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
         line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
         margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+        }
       }
     }
   }
@@ -215,9 +227,11 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
 
   font-size: $local-min-font;
   @if ($vertical-rhythm) {
+    @at-root h5.text, .text h5 {
     margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
     line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
     margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
+    }
   } @else {
     margin-top: 0;
     line-height: 1.5em;
@@ -231,9 +245,11 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
     @media (min-width: $max-width) {
       font-size: $local-max-font;
       @if ($vertical-rhythm) {
+        @at-root h5.text, .text h5 {
         margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
         line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
         margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
+        }
       }
     }
   }
@@ -245,9 +261,11 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
 
   font-size: $local-min-font;
   @if ($vertical-rhythm) {
+    @at-root h6.text, .text h6 {
     margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
     line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
     margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (2 / _strip-units($local-min-font)))) + em;
+    }
   } @else {
     margin-top: 0;
     line-height: 1.6em;
@@ -261,9 +279,11 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
     @media (min-width: $max-width) {
       font-size: $local-max-font;
       @if ($vertical-rhythm) {
+        @at-root h6.text, .text h6 {
         margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
         line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
         margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (1 / _strip-units($local-min-font)))) + em;
+        }
       }
     }
   }

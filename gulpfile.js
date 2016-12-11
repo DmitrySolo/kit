@@ -587,3 +587,14 @@ gulp.task('scale', [], function() {
 
 
 });
+gulp.task('pb',[],function () {
+    var browserSyncPb = require('browser-sync').create();
+
+    browserSyncPb.init({
+        server: "projectboard",
+        cssOutlining: true
+    });
+    gulp.watch("projectboard/*.html").on('change', browserSyncPb.reload);
+    gulp.watch("projectboard/*.css").on('change', browserSyncPb.reload);
+
+})

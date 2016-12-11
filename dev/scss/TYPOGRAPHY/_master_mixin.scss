@@ -20,11 +20,14 @@
   }
 
 
-  .text{
-    p, blockquote, pre,
-    address,
-    dl, ol, ul,
-    table {
+  .text p, p.text,
+  .text blockquote, blockquote.text,
+  .text pre pre.text,
+  .text address, address.text,
+  .text dl, dl.text,
+  .text ol,ol.text,
+  .text ul,ul.text,
+  .text table, table.text {
       @include t-block;
     }
   h1 {
@@ -78,11 +81,11 @@
     @include t-dt;
   }
 
-  ul {
+  .text ul, ul.text {
     padding-left: 1.1em;
   }
 
-  ol {
+  .text ol, ol.text {
     padding-left: 1.4em;
   }
 
@@ -118,5 +121,5 @@
     @include t-td;
   }
 
-  }
+
 }

@@ -1,10 +1,13 @@
+//FOR MAKE COLLOR PALETE [ https://coolors.co ]
+
+// FOREGROUND -> MAIN -> SECONDARY
 $colors: (
         'primary':#f4f7f6,
-        'accent': #42AB9E,
-        'secondary': #202121,
+        'secondary': #42AB9E,
+        'accent': #202121,
         'fground': #fefff9,
         'bground': #9c9fa2,
-        'font': #454F60
+        'font': #0c0b0f
 );
 $color-step: .1;
 
@@ -18,6 +21,7 @@ $colors-map:(
                 '#{$role}':  map-get($colors, $role),
                 '#{$role}-l': lighten(map-get($colors, $role),percentage($color-step)),
                 '#{$role}-d':darken(map-get($colors, $role),percentage($color-step)),
+                '#{$role}-t':transparentize(map-get($colors, $role), 0.5)
         );
         $colors-map:map-merge($colors-map,$colors-map1);
 

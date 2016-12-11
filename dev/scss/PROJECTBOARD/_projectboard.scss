@@ -22,6 +22,10 @@
       background-color: $value;
     }
   }
+  .pb-colorMaket section {
+    font-size: 10px;
+    @include space('block','','tb');
+  }
   .pb-colorMaket {
     width: 40%;
     background-color: cs('bground');
@@ -50,19 +54,17 @@
     @include space('element','trbl','');
     background-color: cs('accent');
   }
-  .pb-colorMarket__body{
+  .pb-colorMaket__body{
     @include space('component','trbl','');
   }
   .pb-colorMaket__body__section{
-
-    @include space('module','tlbr','');
+    @include space('block','tb','');
     background-color: cs('primary');
     &:first-child{
-      margin-right:10%;
     }
   }
   .pb-colorMaket__body__section__header{
-    @include space('component','tlbr','');
+    @include space('element','tlbr','');
     background-color: cs('secondary');
   }
   .pb-colorMaket__body__section__accent{
@@ -74,4 +76,32 @@
     @include space('component','tlbr','');
     background-color: cs('primary');
   }
+  .pb-colorMaket__hero{
+    font-size:16px;
+    @include space('block','trbl','');
+    background-color: cs('primary');
+    color: cs('secondary');
+    border-bottom: solid 4em cs('secondary');
+  }
+  button{
+    background-color: cs('accent');
+    font-size: 22px;
+    @include space('element','','t');
+    border: none;
+    @include space('component','trlb','')
+  }
+  button:last-child{
+    color: #fff;
+  }
+  .hierarchy{
+    font-size: 1rem;
+  }
+  .hl1 {@extend %hierarhiLevel-1}
+  .hl2 {@extend %hierarhiLevel-2}
+  .hl3 {@extend %hierarhiLevel-3}
+  .hl4 {@extend %hierarhiLevel-4}
+  .hl-1 {@extend %hierarhiLevel--1}
+  .hl-2 {@extend %hierarhiLevel--2}
+
+
 }

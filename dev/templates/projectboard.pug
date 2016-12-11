@@ -19,15 +19,15 @@ html(lang=''+head.lang)
                     .pb-colorBox.pb-colorBox--primary-d
                     .pb-colorBox.pb-colorBox--primary-l
                 .pb-element.f-left
-                    span.pb-elementHeader Accent
-                    .pb-colorBox.pb-colorBox--accent
-                    .pb-colorBox.pb-colorBox--accent-d
-                    .pb-colorBox.pb-colorBox--accent-l
-                .pb-element.f-left
                     span.pb-elementHeader Secondary
                     .pb-colorBox.pb-colorBox--secondary
                     .pb-colorBox.pb-colorBox--secondary-d
                     .pb-colorBox.pb-colorBox--secondary-l
+                .pb-element.f-left
+                    span.pb-elementHeader Accent
+                    .pb-colorBox.pb-colorBox--accent
+                    .pb-colorBox.pb-colorBox--accent-d
+                    .pb-colorBox.pb-colorBox--accent-l
                 .pb-element.f-left
                     span.pb-elementHeader Foreground
                     .pb-colorBox.pb-colorBox--fground
@@ -46,17 +46,27 @@ html(lang=''+head.lang)
             section.pb-section.clearfix
                 .pb-colorMaket
                     .pb-colorMaket__ctn
-                        .pb-colorMaket__header.clearfix
-                            .pb-colorMaket__header__primary.f-left fws
-                            .pb-colorMaket__header__secondary.f-left
-                                .pb-colorMaket__header__accent.f-right
-                        .pb-colorMarket__body.clearfix
-                            +loop(6)
-                                .pb-colorMaket__body__sections_ctn.f-left
-                                    .pb-colorMaket__body__section
-                                        .pb-colorMaket__body__section__header
-                                    .pb-colorMaket__body__section__accent
-                        .pb-colorMaket__footer
+                        section
+
+                        section
+                            .pb-colorMaket__header.clearfix
+                                .pb-colorMaket__header__primary.f-left COLORMAKET
+                                .pb-colorMaket__header__secondary.f-left
+                                    .pb-colorMaket__header__accent.f-right
+                        section
+                            .pb-colorMarket__body.clearfix
+                                +loop(6)
+                                    .pb-colorMaket__body__sections_ctn.col-4-t
+                                        .pb-colorMaket__body__section
+                                            .pb-colorMaket__body__section__header
+                                        .pb-colorMaket__body__section__accent
+                        section
+                            .pb-colorMaket__hero
+                                h1 HERO
+                                button ACTION
+                                button ACTION
+                        section
+                            .pb-colorMaket__footer
             section.pb-section.clearfix
                 .pb-element.f-left
                     h1 Header 1
@@ -74,4 +84,17 @@ html(lang=''+head.lang)
                     h6 Header 6
                 .pb-element.f-left.text
                     p It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            section.pb-section.clearfix.hierarchy
+                .hl1 Level 1
+                .hl2 Level 2
+                .hl3 Level 3
+                .hl4 Level 4
+                .hl-1 Level -1
+                .hl-2 Level -2
+                ul
+                    li sdfsd
+                    li sdfsdf
+                    li sdfsdf
+                    li dsf
+                    li sdfsdf
 

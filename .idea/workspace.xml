@@ -2,16 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a405dd0-215a-4030-b1ad-1ee92d874110" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/kit_node_modules.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/projectboard/index.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/scss/RESOURCE STORRAGE.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/scss/_reset.scss" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/kit_node_modules.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/scss/BASE/_base.scss" afterPath="$PROJECT_DIR$/dev/scss/_base.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/kit.iml" afterPath="$PROJECT_DIR$/.idea/kit.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blueprint/main.css" afterPath="$PROJECT_DIR$/blueprint/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.json" afterPath="$PROJECT_DIR$/data.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss" afterPath="$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.scss" afterPath="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/MODULES/_modules.scss" afterPath="$PROJECT_DIR$/dev/MODULES/_modules.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/COLOR/_color.scss" afterPath="$PROJECT_DIR$/dev/scss/COLOR/_color.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss" afterPath="$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/HIERARCHY/_hierarchy.scss" afterPath="$PROJECT_DIR$/dev/scss/HIERARCHY/_hierarchy.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/PROJECTBOARD/_projectboard.scss" afterPath="$PROJECT_DIR$/dev/scss/PROJECTBOARD/_projectboard.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/SPACER/_spacer.scss" afterPath="$PROJECT_DIR$/dev/scss/SPACER/_spacer.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss" afterPath="$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_mixins.scss" afterPath="$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_mixins.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/_draft.scss" afterPath="$PROJECT_DIR$/dev/scss/_draft.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/_imports.scss" afterPath="$PROJECT_DIR$/dev/scss/_imports.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/main.scss" afterPath="$PROJECT_DIR$/dev/scss/main.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/projectboard.pug" afterPath="$PROJECT_DIR$/dev/templates/projectboard.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/buy.html" afterPath="$PROJECT_DIR$/dist/buy.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
@@ -22,6 +34,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/production.html" afterPath="$PROJECT_DIR$/dist/production.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/service.html" afterPath="$PROJECT_DIR$/dist/service.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projectboard/index.html" afterPath="$PROJECT_DIR$/projectboard/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projectboard/main.css" afterPath="$PROJECT_DIR$/projectboard/main.css" />
     </list>
     <ignored path="kit.iws" />
@@ -115,63 +128,83 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.61861074">
+    <splitter split-orientation="vertical" split-proportion="0.6810458">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.32461873">
+        <splitter split-orientation="horizontal" split-proportion="0.7920319">
           <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="167">
-              <file leaf-file-name="_animation.scss" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/scss/ANIMATION SYSTEM/_animation.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_head.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_head.pug">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="75">
-                      <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_imports.scss" pinned="false" current-in-tab="true">
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="260">
+              <file leaf-file-name="_imports.scss" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/scss/_imports.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="270">
-                      <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+                    <state relative-caret-position="0">
+                      <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="_mixin.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/_mixin.pug">
+              <file leaf-file-name="_spacer.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/SPACER/_spacer.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <state relative-caret-position="332">
+                      <caret line="73" column="93" selection-start-line="73" selection-start-column="93" selection-end-line="73" selection-end-column="93" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="_strip-units.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/bower_components/bourbon/app/assets/stylesheets/functions/_strip-units.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="238">
+                      <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="_functions.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="291">
+                      <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="_helpers.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/HELPERS/_helpers.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="17">
+                      <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
               <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/_mixin.scss">
+                <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="420">
-                      <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+                    <state relative-caret-position="138">
+                      <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="_scripts.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scripts.pug">
+              <file leaf-file-name="_mixes.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/MIXES/_mixes.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="170">
+                      <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="_sassTojs.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/_sassTojs.scss">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="0">
                       <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -180,21 +213,21 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dist/splits/header.html">
+              <file leaf-file-name="_draft.scss" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/dev/scss/_draft.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <state relative-caret-position="-577">
+                      <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="layout.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
+              <file leaf-file-name="_media.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/MEDIA/_media.scss">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                      <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
                       <folding />
                     </state>
                   </provider>
@@ -203,19 +236,19 @@
             </leaf>
           </split-first>
           <split-second>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="353">
-              <file leaf-file-name="_color.scss" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/dev/scss/COLOR/_color.scss">
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="75">
+              <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/main.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="45">
-                      <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+                    <state relative-caret-position="374">
+                      <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="category.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug">
+              <file leaf-file-name="_base.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/_base.scss">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="0">
                       <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -224,60 +257,40 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="data.json" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/data.json">
+              <file leaf-file-name="_debug.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/_debug.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="1155">
-                      <caret line="77" column="21" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="21" />
+                    <state relative-caret-position="306">
+                      <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="index.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/index.pug">
+              <file leaf-file-name="_typography.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_typography.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="60">
-                      <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+                    <state relative-caret-position="51">
+                      <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="partners.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/partners.pug">
+              <file leaf-file-name="_mixins.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_mixins.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="45">
-                      <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+                    <state relative-caret-position="5341">
+                      <caret line="317" column="9" selection-start-line="317" selection-start-column="9" selection-end-line="317" selection-end-column="9" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="layout.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/personal/layout.pug">
+              <file leaf-file-name="_helpers.scss" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_helpers.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="45">
-                      <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="product.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/product.pug">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="production.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/production.pug">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
+                    <state relative-caret-position="-663">
                       <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                       <folding />
                     </state>
@@ -287,18 +300,38 @@
               <file leaf-file-name="projectboard.pug" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/templates/projectboard.pug">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="128">
-                      <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
+                    <state relative-caret-position="185">
+                      <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="service.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/service.pug">
+              <file leaf-file-name="_reset.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/_reset.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <state relative-caret-position="68">
+                      <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="_master_mixin.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="258">
+                      <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="typographic.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/bower_components/typographic/scss/typographic.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="1567">
+                      <caret line="271" column="9" selection-start-line="271" selection-start-column="9" selection-end-line="271" selection-end-column="9" />
                       <folding />
                     </state>
                   </provider>
@@ -309,13 +342,35 @@
         </splitter>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="176">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="310">
           <file leaf-file-name="_imagenaria.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/scss/IMAGENARIA/_imagenaria.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+                <state relative-caret-position="119">
+                  <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_hierarchy.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/scss/HIERARCHY/_hierarchy.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-136">
+                  <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="RESOURCE STORRAGE.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/scss/RESOURCE STORRAGE.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -323,8 +378,8 @@
           <file leaf-file-name="_options.scss" pinned="true" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+                <state relative-caret-position="87">
+                  <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -340,21 +395,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_projectboard.scss" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/dev/scss/PROJECTBOARD/_projectboard.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-123">
-                  <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gulpfile.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="271">
-                  <caret line="226" column="41" selection-start-line="226" selection-start-column="41" selection-end-line="226" selection-end-column="41" />
+                <state relative-caret-position="10149">
+                  <caret line="597" column="72" selection-start-line="597" selection-start-column="72" selection-end-line="597" selection-end-column="72" />
                   <folding />
                 </state>
               </provider>
@@ -363,21 +408,20 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/projectboard/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="82" column="14" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
+                <state relative-caret-position="17">
+                  <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/projectboard/main.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="293">
-                  <caret line="1379" column="0" selection-start-line="1379" selection-start-column="0" selection-end-line="1379" selection-end-column="0" />
+                <state relative-caret-position="-376">
+                  <caret line="1489" column="0" selection-start-line="1489" selection-start-column="0" selection-end-line="1489" selection-end-column="0" />
                   <folding>
-                    <marker date="1481294698000" expanded="true" signature="848:871" ph="{...}" />
-                    <marker date="1481294698000" expanded="true" signature="30131:30247" ph="{...}" />
+                    <marker date="1481473804413" expanded="true" signature="31448:31564" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -386,8 +430,18 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="585">
+                <state relative-caret-position="663">
                   <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -415,17 +469,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/plugins/woocommerce/assets/css/woocommerce.css" />
-        <option value="$PROJECT_DIR$/blueprint/blueprint.css" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--pagination/_starter.scss" />
-        <option value="&lt;d240037e-b5c6-4747-8c14-45ad912a83b7&gt;/www/vrigroup.ru/wp-content/themes/VRI/style.css" />
-        <option value="$PROJECT_DIR$/dev/templates/mixins/module_includer.pug" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--pagination/starter.scss" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/_include.pug" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/data.json" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.pug" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.scss" />
-        <option value="$PROJECT_DIR$/dev/templates/mixins/_noON.pug" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/buy.pug" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/index.pug" />
@@ -455,17 +498,28 @@
         <option value="$PROJECT_DIR$/dev/MIXES/vertical_centered_image/_mixin.pug" />
         <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/_mixin.scss" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_head.pug" />
-        <option value="$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss" />
         <option value="$PROJECT_DIR$/dev/scss/IMAGENARIA/_imagenaria.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/_draft.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/_imports.scss" />
         <option value="$PROJECT_DIR$/dev/scss/_project.scss" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/projectboard/main.css" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/dev/scss/PROJECTBOARD/_projectboard.scss" />
-        <option value="$PROJECT_DIR$/dev/templates/projectboard.pug" />
         <option value="$PROJECT_DIR$/dev/scss/COLOR/_color.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/HIERARCHY/_hierarchy.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/RESOURCE STORRAGE" />
+        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/_reset.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/main.scss" />
+        <option value="$PROJECT_DIR$/dev/templates/projectboard.pug" />
+        <option value="$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_mixins.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss" />
+        <option value="$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/_imports.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/RESOURCE STORRAGE.ts" />
+        <option value="$PROJECT_DIR$/dev/scss/SPACER/_spacer.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/_draft.scss" />
       </list>
     </option>
   </component>
@@ -625,6 +679,9 @@
           <GulpTaskState>
             <task-name>scale</task-name>
           </GulpTaskState>
+          <GulpTaskState>
+            <task-name>pb</task-name>
+          </GulpTaskState>
         </tasks>
       </GulpfileState>
     </gulpfiles>
@@ -638,10 +695,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="57" />
-    <option name="y" value="35" />
-    <option name="width" value="1692" />
-    <option name="height" value="977" />
+    <option name="x" value="-46" />
+    <option name="y" value="25" />
+    <option name="width" value="1684" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -759,8 +816,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="NBKnowledgePane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -789,20 +844,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="projectboard" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="dev" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -843,7 +884,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PROJECTBOARD" />
+              <option name="myItemId" value="TYPOGRAPHY" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -865,12 +906,124 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="COLOR" />
+              <option name="myItemId" value="SPACER" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MASTER_OPTIONS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HELPERS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MODULES" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MODULES" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MENUS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MODULES" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MENUS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="--Light_menu" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="NBKnowledgePane" />
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -940,19 +1093,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE FABRIC\HALL" />
-      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\integrator\WordPress\DIST" />
-      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\integrator\WordPress\DRAFT" />
-      <recent name="$PROJECT_DIR$/dist/scripts" />
-      <recent name="$PROJECT_DIR$/dev/SCRIPTS" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE FABRIC\HALL" />
       <recent name="$PROJECT_DIR$/dist/scripts" />
       <recent name="C:\Users\Sol\PhpstormProjects\kit\dist\not_opt_images" />
       <recent name="C:\Users\Sol\PhpstormProjects\kit\dist\images" />
       <recent name="C:\Users\Sol\PhpstormProjects\kit\architect" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\scss" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE FABRIC\HALL" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\integrator\WordPress\DIST" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\integrator\WordPress\DRAFT" />
+      <recent name="$PROJECT_DIR$/dist/scripts" />
     </key>
   </component>
   <component name="RunManager" selected="Gulp.js.PAGESYSTEM">
@@ -985,7 +1138,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -1094,17 +1247,6 @@
       <tasks>
         <task value="merge-json" />
       </tasks>
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="sass" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
-      <tasks>
-        <task>sass</task>
-      </tasks>
-      <arguments />
       <envs />
       <method />
     </configuration>
@@ -1219,7 +1361,7 @@
       <method />
     </configuration>
     <configuration default="false" name="WATCHER" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
@@ -1230,11 +1372,22 @@
       <method />
     </configuration>
     <configuration default="false" name="SERVER" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
         <task>SERVER</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="sass" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>sass</task>
       </tasks>
       <arguments />
       <envs />
@@ -1249,21 +1402,21 @@
       <item index="5" class="java.lang.String" itemvalue="Gulp.js.watchsass" />
       <item index="6" class="java.lang.String" itemvalue="Gulp.js.bm" />
       <item index="7" class="java.lang.String" itemvalue="Grunt.js.merge-json" />
-      <item index="8" class="java.lang.String" itemvalue="Gulp.js.sass" />
-      <item index="9" class="java.lang.String" itemvalue="Gulp.js.compile-blueprint-sass" />
-      <item index="10" class="java.lang.String" itemvalue="Gulp.js.throw-main-css" />
-      <item index="11" class="java.lang.String" itemvalue="Gulp.js.default" />
-      <item index="12" class="java.lang.String" itemvalue="Gulp.js.split-css" />
-      <item index="13" class="java.lang.String" itemvalue="Gulp.js.merge-json" />
-      <item index="14" class="java.lang.String" itemvalue="Gulp.js.PAGESYSTEM" />
-      <item index="15" class="java.lang.String" itemvalue="Gulp.js.mergeJson" />
-      <item index="16" class="java.lang.String" itemvalue="Gulp.js.scssconcatmodules" />
-      <item index="17" class="java.lang.String" itemvalue="Gulp.js.splitter" />
-      <item index="18" class="java.lang.String" itemvalue="Node.js.script.js" />
-      <item index="19" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="20" class="java.lang.String" itemvalue="Gulp.js.views" />
-      <item index="21" class="java.lang.String" itemvalue="Gulp.js.WATCHER" />
-      <item index="22" class="java.lang.String" itemvalue="Gulp.js.SERVER" />
+      <item index="8" class="java.lang.String" itemvalue="Gulp.js.compile-blueprint-sass" />
+      <item index="9" class="java.lang.String" itemvalue="Gulp.js.throw-main-css" />
+      <item index="10" class="java.lang.String" itemvalue="Gulp.js.default" />
+      <item index="11" class="java.lang.String" itemvalue="Gulp.js.split-css" />
+      <item index="12" class="java.lang.String" itemvalue="Gulp.js.merge-json" />
+      <item index="13" class="java.lang.String" itemvalue="Gulp.js.PAGESYSTEM" />
+      <item index="14" class="java.lang.String" itemvalue="Gulp.js.mergeJson" />
+      <item index="15" class="java.lang.String" itemvalue="Gulp.js.scssconcatmodules" />
+      <item index="16" class="java.lang.String" itemvalue="Gulp.js.splitter" />
+      <item index="17" class="java.lang.String" itemvalue="Gulp.js.views" />
+      <item index="18" class="java.lang.String" itemvalue="Gulp.js.WATCHER" />
+      <item index="19" class="java.lang.String" itemvalue="Node.js.script.js" />
+      <item index="20" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <item index="21" class="java.lang.String" itemvalue="Gulp.js.SERVER" />
+      <item index="22" class="java.lang.String" itemvalue="Gulp.js.sass" />
     </list>
     <recent_temporary>
       <list size="2">
@@ -1330,6 +1483,9 @@
       <workItem from="1481133940803" duration="7879000" />
       <workItem from="1481221051763" duration="9602000" />
       <workItem from="1481273275692" duration="6945000" />
+      <workItem from="1481364375218" duration="10611000" />
+      <workItem from="1481392435872" duration="3062000" />
+      <workItem from="1481451516623" duration="19252000" />
     </task>
     <task id="LOCAL-00001" summary="workspace commit">
       <created>1479982952535</created>
@@ -1412,7 +1568,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="494307000" />
+    <option name="totallyTimeSpent" value="527232000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1424,20 +1580,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="35" width="1692" height="977" extended-state="0" />
+    <frame x="-46" y="25" width="1684" height="1026" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733408" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14554456" sideWeight="0.5063898" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14554456" sideWeight="0.49361023" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14237288" sideWeight="0.4473684" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14173229" sideWeight="0.44781682" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3309091" sideWeight="0.29907772" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13363533" sideWeight="0.4473684" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13816534" sideWeight="0.44781682" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22626387" sideWeight="0.46928105" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23482428" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3309091" sideWeight="0.70092225" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22626387" sideWeight="0.530719" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30641183" sideWeight="0.22237569" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845894" sideWeight="0.49508598" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24866879" sideWeight="0.36052632" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13844515" sideWeight="0.3716012" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1445,9 +1600,11 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="107" y="100" width="1484" height="826" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14269535" sideWeight="0.49754602" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845894" sideWeight="0.49508598" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1456,19 +1613,20 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16421291" sideWeight="0.55263156" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14554456" sideWeight="0.5063898" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="107" y="100" width="1484" height="826" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14269535" sideWeight="0.49754602" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14609286" sideWeight="0.4978701" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18573046" sideWeight="0.4473684" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14269535" sideWeight="0.45207667" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15521473" sideWeight="0.29194188" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14554456" sideWeight="0.49361023" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13590033" sideWeight="0.4473684" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13929784" sideWeight="0.44781682" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22503082" sideWeight="0.46920052" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23482428" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28773007" sideWeight="0.7080581" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22503082" sideWeight="0.53079945" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30641183" sideWeight="0.22237569" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49508598" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845894" sideWeight="0.49508598" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24866879" sideWeight="0.36052632" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13844515" sideWeight="0.3716012" order="0" side_tool="false" content_ui="tabs" />
@@ -1537,68 +1695,113 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/_modules.scss">
+    <entry file="file://$PROJECT_DIR$/dev/templates/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="77" column="21" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/product.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MIXES/_mixes.pug">
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/index.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MIXES/_mixes.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/libs.json">
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/partners.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MIXES/vertical_centered_image/_style.scss">
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/production.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/libs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/_mixin.pug">
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/service.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_options.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/GRID/_GRID.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_head.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/GRID/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/GRID/_options.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/GRID/_starter.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/COLOR/_color.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/_mixin.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="382">
           <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/ANIMATION SYSTEM/_animation.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1611,10 +1814,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
+    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/_mixin.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/DEPS/_dependences.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1627,176 +1838,277 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/splits/styles/stylec.html" />
-    <entry file="file://$PROJECT_DIR$/dist/splits/scripts/scripts.html" />
-    <entry file="file://$PROJECT_DIR$/dev/MIXES/vertical_centered_image/_mixin.pug">
+    <entry file="file://$PROJECT_DIR$/dev/scss/PROJECTBOARD/_projectboard.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        <state relative-caret-position="1666">
+          <caret line="98" column="33" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/GRID/_GRID.scss">
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/GRID/_starter.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/_draft.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_head.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/irs/zsivhindnsq-oskar-vertetics-thumbnail.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/zsivhindnsq-oskar-vertetics1-shop.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/images2-shop.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/images1-shop.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/zsivhindnsq-oskar-vertetics.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/zsivhindnsq-oskar-vertetics400X200.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/images400Xundefined.jpg" />
-    <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/irs/images400X200.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/zsivhindnsq-oskar-vertetics-350_X_auto.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/zsivhindnsq-oskar-vertetics-400_X_auto.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/images352Xundefined.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/zsivhindnsq-oskar-vertetics400Xundefined.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/zsivhindnsq-oskar-vertetics352Xundefined.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/zsivhindnsq-oskar-vertetics352X600.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/images-auto_X_352.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/zsivhindnsq-oskar-vertetics-auto_X_352.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/shop_item-1.jpg" />
-    <entry file="file://$PROJECT_DIR$/dist/irs/shop_item-2.jpg" />
-    <entry file="file://$PROJECT_DIR$/projectboard/index.html/projectboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-739">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/personal/layout.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projectboard/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="82" column="14" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="226" column="41" selection-start-line="226" selection-start-column="41" selection-end-line="226" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projectboard/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="1379" column="0" selection-start-line="1379" selection-start-column="0" selection-end-line="1379" selection-end-column="0" />
-          <folding>
-            <marker date="1481294698000" expanded="true" signature="848:871" ph="{...}" />
-            <marker date="1481294698000" expanded="true" signature="30131:30247" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/_project.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/scss/IMAGENARIA/_imagenaria.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+        <state relative-caret-position="119">
+          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/_imports.scss">
+    <entry file="file://$PROJECT_DIR$/dev/MODULES/_modules.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1481469915711" expanded="true" signature="31:438" ph="{...}" />
+            <marker date="1481469915711" expanded="true" signature="54:167" ph="{...}" />
+            <marker date="1481469915711" expanded="true" signature="74:163" ph="{...}" />
+            <marker date="1481469915711" expanded="true" signature="124:157" ph="{...}" />
+            <marker date="1481469915711" expanded="true" signature="184:417" ph="{...}" />
+            <marker date="1481469915711" expanded="true" signature="276:413" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/BASE/_base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/PROJECTBOARD/_projectboard.scss">
+    <entry file="file://$PROJECT_DIR$/dev/scss/ANIMATION SYSTEM/_animation.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="-654">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/NORMALIZE/_normalize-5-0-0.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_reset.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/templates/projectboard.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
+        <state relative-caret-position="185">
+          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/COLOR/_color.scss">
+    <entry file="file://$PROJECT_DIR$/dev/scss/_debug.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        <state relative-caret-position="306">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blueprint/_blueprint.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/typographic/scss/typographic.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1567">
+          <caret line="271" column="9" selection-start-line="271" selection-start-column="9" selection-end-line="271" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_typography.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5341">
+          <caret line="317" column="9" selection-start-line="317" selection-start-column="9" selection-end-line="317" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_helpers.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-663">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/RESOURCE STORRAGE.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_sassTojs.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/MIXES/_mixes.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/HIERARCHY/_hierarchy.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projectboard/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-376">
+          <caret line="1489" column="0" selection-start-line="1489" selection-start-column="0" selection-end-line="1489" selection-end-column="0" />
+          <folding>
+            <marker date="1481473804413" expanded="true" signature="31448:31564" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/HELPERS/_helpers.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_imports.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/MEDIA/_media.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower_components/bourbon/app/assets/stylesheets/functions/_strip-units.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/SPACER/_spacer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="73" column="93" selection-start-line="73" selection-start-column="93" selection-end-line="73" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_draft.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-577">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1818,6 +2130,6 @@
     </states>
   </component>
   <component name="webServersAuthStorage">
-    <data>AAAAwHVGHGIhKS0OJEVWHXDqXVcvUk8RvpG30MDn/55VWXYFhEWGZ55j0mtPRy94cqsDn7vOUBj46nV5S7HPmDTQJ0aYmJsU8JBpPlnYd4mwk2gbPG31tovhdx7wi6lVeAgA6OEAqRiSS7guuqiTFC+e1YFQezbciSpogicJUh9RvTKwGFtfrC8B6wmmTOfNr46Kr2Ji+2Tt8ndHPIXuBWfJtG8HEq6APkg+sQIF37V+1fsEiq3FpXniIyoPzakdkx5UAU0K1qMAPyXQF1DocZXWxQA=</data>
+    <data>AAAAwJGDIc71bjzyYMykfJM8ot8its62jQ+uPxE4f3tHWtDjhHqA2KhHwqkp4XfKQ53vtESzZX6QSW3M0hhCRyDz2IrAeJynePgl07Yl1+44F9FKsi8NlmMmoXdCtZ6sQBogxfJFHmaZnP59kbtD7ZyEw+nqRWUjwsTdB0EGyv84bGphDW4pyFOy7A2PHC2g7QVG0aRtCEEWiwGQjWsYs2VfiJ9u0GbM4KV44OtP9Tp0a0WN+L1JVi2AGG9GpvrvzHMOgl9ngNxLMSWwBzfWE5GNu2A=</data>
   </component>
 </project>
