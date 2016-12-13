@@ -10,7 +10,7 @@
 
 }
   .logo{
-    height: s-growWrap('block',2,s-growLines(2));
+    height: s-growWrap('block',2,s-growLines(1));
     background-color: #fff;
     @include i-bkg-ctr('images/vrig.svg',85%);
     @include media('md')  {

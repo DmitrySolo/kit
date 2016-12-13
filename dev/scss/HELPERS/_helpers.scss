@@ -1,5 +1,17 @@
 @import "functions";
 @mixin helpers() {
+  .fadeIn{
+    opacity: 1;
+  }
+  .fadeOut{
+    opacity: 0;
+  }
+  .visible{
+    display: block;
+  }
+  .hidden{
+    display: none;
+  }
 
   .f-left {
     float: left;

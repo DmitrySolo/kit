@@ -5,7 +5,8 @@ var merge = require('gulp-merge-json');
 var data = require('./data.json');
 htmlv = require('gulp-html-validator');
 var fs = require('fs');
-var GulpSSH = require('gulp-ssh')
+var GulpSSH = require('gulp-ssh');
+var fontgen = require('gulp-fontgen');
 var htmlsplit = require('gulp-htmlsplit');
 var pug = require('gulp-pug');
 var gm = require('gulp-gm');
@@ -198,7 +199,7 @@ gulp.task('bm', function() {
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
             ///MIXIN SCSS
             var str = "@mixin "+options.name+"(){\n\t\n."+options.name+"{}}";
-            file('_style.scss', str)
+            file('_mixin.scss', str)
                 .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
             ///DATA
             var str = '{\n\t"'+options.name+'" : {\n\t\t"'+options.name+'" : "1"\n\t}\n}';
@@ -598,3 +599,10 @@ gulp.task('pb',[],function () {
     gulp.watch("projectboard/*.css").on('change', browserSyncPb.reload);
 
 })
+//FONT
+gulp.task('fontgen', function() {
+    return gulp.src("dev/SOURCE FABRIC/FONT LAB/SOURCE/*.{ttf,otf}")
+        .pipe(fontgen({
+            dest: "dist/fonts"
+        }));
+});
