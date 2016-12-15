@@ -1,13 +1,39 @@
 var gulp = require('gulp');
 var foreach = require('gulp-foreach');
+var path = require('path');
 var runSequence  = require('run-sequence');
 var merge = require('gulp-merge-json');
 var data = require('./data.json');
 htmlv = require('gulp-html-validator');
+var Vinyl = require('vinyl');
+var shell = require('gulp-shell');
 var fs = require('fs');
 var GulpSSH = require('gulp-ssh');
+var fontfacegen = require('fontfacegen');
 var fontgen = require('gulp-fontgen');
 var htmlsplit = require('gulp-htmlsplit');
+var fontfacegen = require('fontfacegen');
+var ttf2woff = require('gulp-ttf2woff');
+
+gulp.task('ttf2woff', function(){
+    gulp.src(['dev/SOURCE FABRIC/FONT_LAB/SOURCE/*.otf'])
+        .pipe(ttf2woff())
+        .pipe(gulp.dest('fonts/'));
+});
+var ttf2woff2 = require('gulp-ttf2woff2');
+
+gulp.task('ttf2woff2', function(){
+    gulp.src(['dev/SOURCE FABRIC/FONT_LAB/SOURCE/*.ttf'])
+        .pipe(ttf2woff2())
+        .pipe(gulp.dest('fonts/'));
+});
+var ttf2eot = require('gulp-ttf2eot');
+
+gulp.task('ttf2eot', function(){
+    gulp.src(['dev/SOURCE FABRIC/FONT_LAB/SOURCE/*.ttf'])
+        .pipe(ttf2eot())
+        .pipe(gulp.dest('fonts/'));
+});
 var pug = require('gulp-pug');
 var gm = require('gulp-gm');
 var insert = require('gulp-insert');
@@ -601,8 +627,33 @@ gulp.task('pb',[],function () {
 })
 //FONT
 gulp.task('fontgen', function() {
-    return gulp.src("dev/SOURCE FABRIC/FONT LAB/SOURCE/*.{ttf,otf}")
-        .pipe(fontgen({
-            dest: "dist/fonts"
-        }));
+    var result = fontfacegen({
+        source: 'dev/SOURCE FABRIC/FONT_LAB/SOURCE/.{ttf,otf}',
+        dest: '/dist/',
+    });
 });
+gulp.task('fontgen1', function() {
+    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Round_Bold.otf',{read: false}).pipe(
+
+            shell.task([
+                'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= file.path %>.otf dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= file.path %>.svg'
+            ])
+
+    )
+});
+gulp.task('shorthand', shell.task([
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Round_Bold.otf dev/SOURCE_FABRIC/FONT_LAB/SOURCE/opa.svg'
+]))
+
+gulp.task('examplesd', function () {
+    return gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/*.{ttf,otf}', {read: false})
+        .pipe(shell([
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.svg'], {
+            templateData: {
+                f: function (s) {
+                    return path.basename(s, path.extname(s))
+                }
+            }
+        })
+        )
+})

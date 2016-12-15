@@ -2,3 +2,4 @@
                 // [http://befonts.com/]
 // FONTS [https://www.fontsquirrel.com]
 // HERO VIDEO & code to it [ http://www.coverr.co/ ]
+// FREE MOCKUPS PSD ICONS ETC [ https://sellfy.com/designcoon ]
