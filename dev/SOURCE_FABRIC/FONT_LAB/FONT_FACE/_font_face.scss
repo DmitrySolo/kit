@@ -1,11 +1,42 @@
-@font-face {
-  font-family: 'entyporegular';
-  src: url('Entypo-webfont.eot');
-  src: url('Entypo-webfont.eot?#iefix') format('embedded-opentype'),
-  url('Entypo-webfont.woff') format('woff'),
-  url('Entypo-webfont.ttf') format('truetype'),
-  url('Entypo-webfont.svg#entyporegular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+@import "VARIABLES/variables";
+
+@each $role,$value in $FONTS {
+  @each $fontvar,$params in $value {
+    @font-face {
+      font-family: nth($params, 2);
+      src: url('#{nth($params, 3)}.eot'); /* IE9 Compat Modes */
+      src: url('#{nth($params, 3)}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('#{nth($params, 3)}.woff2') format('woff2'), /* Super Modern Browsers */
+      url('#{nth($params, 3)}.woff') format('woff'), /* Pretty Modern Browsers */
+      url('#{nth($params, 3)}.ttf')  format('truetype'), /* Safari, Android, iOS */
+      url('#{nth($params, 3)}.svg#svgFontName') format('svg'); /* Legacy iOS */
+      font-weight: nth($params, 5);
+      font-style: nth($params, 4);
+    }
+  }
 
 }
+$font-map:();
+@each $role,$value in $FONTS {
+  @each $fontvar,$params in $value {
+
+    $font-map1:(
+            '#{$role}': (nth($params, 2),normal,normal),
+            '#{$role}-l': (nth($params, 2),400,normal),
+            '#{$role}-b':(nth($params, 2),bold,normal),
+            '#{$role}-li':(nth($params, 2),400,italic),
+            '#{$role}-bi':(nth($params, 2),bold,italic),
+            '#{$role}-i':(nth($params, 2),normal,italic),
+    );
+    $font-map:map-merge($font-map,$font-map1);
+  }
+}
+@mixin build-fs($key){
+
+}
+@function fs($key: 'main',$inc:$font-map) {
+  @return map-get($inc, $key);
+
+}
+
+	

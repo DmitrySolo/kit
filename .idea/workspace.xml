@@ -2,19 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a405dd0-215a-4030-b1ad-1ee92d874110" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Round_Bold.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_font_face.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/SOURCE FABRIC/FONT LAB/SOURCE/ArchitectsDaughter.ttf" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/ArchitectsDaughter.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/SOURCE FABRIC/HALL/10563638.jpg" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/HALL/10563638.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/SOURCE FABRIC/HALL/5_10_min111.jpg" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/HALL/5_10_min111.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/SOURCE FABRIC/HALL/artmeh_rubak_dob.jpg" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/HALL/artmeh_rubak_dob.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/SOURCE FABRIC/HALL/images.jpg" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/HALL/images.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/SOURCE FABRIC/HALL/imgres.jpg" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/HALL/imgres.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/SOURCE FABRIC/HALL/zsivhindnsq-oskar-vertetics.jpg" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/HALL/zsivhindnsq-oskar-vertetics.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_HEADER.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_fontList.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Zopa/ZopaFont/Bold/italic/ArchitectsDaughter.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/ArchitectsDaughter.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/Noja_Round_Bold.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/normal/Noja_Roud_Bold.otf" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/ArchitectsDaughter.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Round_Bold.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/opa.svg" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/ArchitectsDaughter.ttf" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/HEADER/Noja_Round/Normal/normal/ArchitectsDaughter.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Round_Bold.otf" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Zopa/ZopaFont/Normal/normal/Noja_Round_Bold.otf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/Noja_Round_Bold.otf" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/HEADER/Noja_Round/Bold/normal/Noja_Round_Bold.otf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/RESOURCE STORRAGE.ts" afterPath="$PROJECT_DIR$/dev/scss/RESOURCE STORRAGE.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blueprint/main.css" afterPath="$PROJECT_DIR$/blueprint/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_font_face.scss" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_font_face.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss" afterPath="$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/_draft.scss" afterPath="$PROJECT_DIR$/dev/scss/_draft.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/_imports.scss" afterPath="$PROJECT_DIR$/dev/scss/_imports.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/main.css" afterPath="$PROJECT_DIR$/dist/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projectboard/main.css" afterPath="$PROJECT_DIR$/projectboard/main.css" />
     </list>
     <ignored path="kit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,11 +115,11 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.1">
+    <splitter split-orientation="vertical" split-proportion="0.22835821">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.7920319">
+        <splitter split-orientation="horizontal" split-proportion="0.547956">
           <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="242">
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="215">
               <file leaf-file-name="_spacer.scss" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/scss/SPACER/_spacer.scss">
                   <provider selected="true" editor-type-id="text-editor">
@@ -122,11 +130,11 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="_draft.scss" pinned="false" current-in-tab="false">
+              <file leaf-file-name="_draft.scss" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/dev/scss/_draft.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="357">
-                      <caret line="21" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+                    <state relative-caret-position="524">
+                      <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -162,6 +170,16 @@
                   </provider>
                 </entry>
               </file>
+              <file leaf-file-name="_fontList.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_fontList.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="51">
+                      <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
               <file leaf-file-name="_script.js" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--hero_video/_script.js">
                   <provider selected="true" editor-type-id="text-editor">
@@ -182,31 +200,11 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="layout.pug" pinned="false" current-in-tab="true">
+              <file leaf-file-name="layout.pug" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="238">
-                      <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="26" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_mixin.pug" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MIXES/vertical_centered_image/_mixin.pug">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_style.scss" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/MIXES/vertical_centered_image/_style.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <state relative-caret-position="34">
+                      <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
                       <folding />
                     </state>
                   </provider>
@@ -215,18 +213,8 @@
             </leaf>
           </split-first>
           <split-second>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="75">
-              <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/scss/main.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="374">
-                      <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_base.scss" pinned="false" current-in-tab="false">
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="430">
+              <file leaf-file-name="_base.scss" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/dev/scss/_base.scss">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="0">
@@ -236,10 +224,20 @@
                   </provider>
                 </entry>
               </file>
+              <file leaf-file-name="_color.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/COLOR/_color.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="408">
+                      <caret line="25" column="10" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="56" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
               <file leaf-file-name="_debug.scss" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/scss/_debug.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="306">
+                    <state relative-caret-position="29">
                       <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
                       <folding />
                     </state>
@@ -256,17 +254,7 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="_mixins.scss" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_mixins.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="5389">
-                      <caret line="317" column="9" selection-start-line="317" selection-start-column="9" selection-end-line="317" selection-end-column="9" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_helpers.scss" pinned="false" current-in-tab="true">
+              <file leaf-file-name="_helpers.scss" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_helpers.scss">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="0">
@@ -289,18 +277,18 @@
               <file leaf-file-name="_reset.scss" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dev/scss/_reset.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="68">
+                    <state relative-caret-position="29">
                       <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="_master_mixin.scss" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss">
+              <file leaf-file-name="_sassTojs.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/dev/scss/_sassTojs.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="1479">
-                      <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+                    <state relative-caret-position="0">
+                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -321,62 +309,42 @@
         </splitter>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="310">
-          <file leaf-file-name="RESOURCE STORRAGE.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/scss/RESOURCE STORRAGE.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/Desktop/stylesheet.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_options.scss" pinned="true" current-in-tab="false">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="218">
+          <file leaf-file-name="_options.scss" pinned="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+                <state relative-caret-position="119">
+                  <caret line="30" column="88" selection-start-line="30" selection-start-column="88" selection-end-line="30" selection-end-column="88" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gulpfile.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="372">
-                  <caret line="648" column="62" selection-start-line="648" selection-start-column="62" selection-end-line="648" selection-end-column="62" />
+                <state relative-caret-position="222">
+                  <caret line="667" column="83" selection-start-line="667" selection-start-column="83" selection-end-line="667" selection-end-column="83" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Noja_Round_Bold.svg" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Round_Bold.svg">
+          <file leaf-file-name="_HEADER.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_HEADER.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="34">
+                  <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="buy.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dist/buy.html">
+          <file leaf-file-name="_Zopa.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_Zopa.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="34">
+                  <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -385,18 +353,28 @@
           <file leaf-file-name="_font_face.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_font_face.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+                <state relative-caret-position="327">
+                  <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/node_modules/orchestrator/index.js">
+          <file leaf-file-name="_options.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_options.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2261">
-                  <caret line="133" column="13" selection-start-line="133" selection-start-column="13" selection-end-line="133" selection-end-column="13" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_imports.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/scss/_imports.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17">
+                  <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
                   <folding />
                 </state>
               </provider>
@@ -412,15 +390,22 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/projectboard/main.css">
+          <file leaf-file-name="_mixins.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_mixins.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="26418">
-                  <caret line="1554" column="0" selection-start-line="1554" selection-start-column="0" selection-end-line="1554" selection-end-column="0" />
-                  <folding>
-                    <marker date="1481656608552" expanded="true" signature="25890:25893" ph="{...}" />
-                    <marker date="1481656608552" expanded="true" signature="32484:32600" ph="{...}" />
-                  </folding>
+                <state relative-caret-position="1259">
+                  <caret line="317" column="9" selection-start-line="317" selection-start-column="9" selection-end-line="317" selection-end-column="9" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_master_mixin.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1479">
+                  <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -447,16 +432,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/templates/data.json" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/testik.pug" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/personal/layout.pug" />
-        <option value="$PROJECT_DIR$/dev/templates/dev_libs.json" />
-        <option value="$PROJECT_DIR$/dev/templates/libs.json" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/libs.json" />
-        <option value="$PROJECT_DIR$/data.json" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/script.js" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/data.json" />
-        <option value="$PROJECT_DIR$/dist/scripts/script.js" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scripts.pug" />
         <option value="$PROJECT_DIR$/dev/MODULES/_starters.scss" />
         <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/_script.js" />
@@ -480,13 +455,10 @@
         <option value="$PROJECT_DIR$/dev/scss/main.scss" />
         <option value="$PROJECT_DIR$/dev/templates/projectboard.pug" />
         <option value="$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_mixins.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss" />
         <option value="$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss" />
         <option value="$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss" />
         <option value="$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/_imports.scss" />
         <option value="$PROJECT_DIR$/dev/scss/SPACER/_spacer.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/_draft.scss" />
         <option value="$PROJECT_DIR$/projectboard/main.css" />
         <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--hero_video/_script.js" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug" />
@@ -497,7 +469,20 @@
         <option value="$PROJECT_DIR$/dev/SOURCE FABRIC/FONT LAB/FONT FACE/_font_face.scss" />
         <option value="$PROJECT_DIR$/dist/buy.html" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_HEADER.scss" />
+        <option value="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_SPECIAL.scss" />
+        <option value="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_HERO.scss" />
+        <option value="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_SPECIAL.scss" />
+        <option value="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_fontList.scss" />
+        <option value="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/__VARS.scss" />
+        <option value="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_Zopa.scss" />
+        <option value="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_HEADER.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/_imports.scss" />
+        <option value="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/variables.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/_draft.scss" />
+        <option value="$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_font_face.scss" />
       </list>
     </option>
   </component>
@@ -525,15 +510,6 @@
       <GulpfileState>
         <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
         <tasks>
-          <GulpTaskState>
-            <task-name>ttf2woff</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <task-name>ttf2woff2</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <task-name>ttf2eot</task-name>
-          </GulpTaskState>
           <GulpTaskState>
             <task-name>views</task-name>
           </GulpTaskState>
@@ -681,6 +657,18 @@
           <GulpTaskState>
             <task-name>examplesd</task-name>
           </GulpTaskState>
+          <GulpTaskState>
+            <task-name>fontvars</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>regfont</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>wrapfontVars</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>concatVars</task-name>
+          </GulpTaskState>
         </tasks>
       </GulpfileState>
     </gulpfiles>
@@ -694,10 +682,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="-1" />
+    <option name="y" value="9" />
+    <option name="width" value="1678" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -986,6 +974,296 @@
               <option name="myItemId" value="FONT_LAB" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HEADER" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noja_Round" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Normal" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="normal" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FONT_LAB" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HEADER" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noja_Round" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Normal" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FONT_LAB" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HEADER" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noja_Round" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FONT_LAB" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HEADER" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noja_Round" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bold" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="normal" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FONT_LAB" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HEADER" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Noja_Round" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bold" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FONT_LAB" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FONT_FACE" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FONT_LAB" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FONT_FACE" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VARIABLES" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TYPOGRAPHY" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MASTER_OPTIONS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -1014,19 +1292,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE FABRIC\FONT LAB\SOURCE" />
-      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE FABRIC\HALL" />
-      <recent name="$PROJECT_DIR$/dist/scripts" />
-      <recent name="C:\Users\Sol\PhpstormProjects\kit\dist\not_opt_images" />
-      <recent name="C:\Users\Sol\PhpstormProjects\kit\dist\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE FABRIC\FONT LAB\SOURCE" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE_FABRIC\FONT_LAB\SOURCE\HEADER\Noja_Round\Bold\normal" />
       <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dist" />
-      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\scss" />
-      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE FABRIC\HALL" />
-      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\integrator\WordPress\DIST" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE_FABRIC\FONT_LAB\SOURCE\HEADER\Noja_Round\Normal\normal" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE_FABRIC\FONT_LAB\SOURCE\SPECIAL\Bold\Normal" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE_FABRIC\FONT_LAB\SOURCE\HERO\Normal\Normal" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dist" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE_FABRIC\FONT_LAB\SOURCE\Zopa\ZopaFont\Normal\normal" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE_FABRIC\FONT_LAB\SOURCE\Zopa\ZopaFont\Bold\italic" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE_FABRIC\FONT_LAB\SOURCE" />
+      <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE_FABRIC\FONT_LAB\SOURCE\HEADER\superFont\Normal\normal" />
     </key>
   </component>
   <component name="RunManager" selected="Gulp.js.PAGESYSTEM">
@@ -1413,7 +1691,7 @@
       <workItem from="1481740932351" duration="2047000" />
       <workItem from="1481743011985" duration="5718000" />
       <workItem from="1481827033068" duration="858000" />
-      <workItem from="1481827914721" duration="6839000" />
+      <workItem from="1481827914721" duration="40867000" />
     </task>
     <task id="LOCAL-00001" summary="workspace commit">
       <created>1479982952535</created>
@@ -1506,11 +1784,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481660098310</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="12-15n  Font shell with fontforge">
+      <created>1481835035584</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1481835035584</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="551365000" />
+    <option name="totallyTimeSpent" value="585393000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1522,17 +1807,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-1" y="9" width="1678" height="1008" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733408" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26387316" sideWeight="0.57894737" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49150622" sideWeight="0.49361023" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19592299" sideWeight="0.42105263" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2446206" sideWeight="0.41432068" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2117503" sideWeight="0.33380282" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22543353" sideWeight="0.42105263" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24393064" sideWeight="0.41432068" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21287128" sideWeight="0.35074627" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23482428" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2117503" sideWeight="0.6661972" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21287128" sideWeight="0.6492537" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30641183" sideWeight="0.22237569" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.49265605" order="2" side_tool="false" content_ui="tabs" />
@@ -1549,31 +1834,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733408" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14554456" sideWeight="0.5063898" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="107" y="100" width="1484" height="826" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14269535" sideWeight="0.49754602" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14554456" sideWeight="0.49361023" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13590033" sideWeight="0.4473684" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13929784" sideWeight="0.44781682" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22503082" sideWeight="0.46920052" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23482428" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22503082" sideWeight="0.53079945" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30641183" sideWeight="0.22237569" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845894" sideWeight="0.49508598" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24866879" sideWeight="0.36052632" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13844515" sideWeight="0.3716012" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -1618,7 +1878,8 @@
     <MESSAGE value="127n resize crop task" />
     <MESSAGE value="12-11e new spacer func fix scss parts order to compile" />
     <MESSAGE value="12-13n Some Font work started + hero video module + some helpers styles added" />
-    <option name="LAST_COMMIT_MESSAGE" value="12-13n Some Font work started + hero video module + some helpers styles added" />
+    <MESSAGE value="12-15n  Font shell with fontforge" />
+    <option name="LAST_COMMIT_MESSAGE" value="12-15n  Font shell with fontforge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1630,7 +1891,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1639,214 +1900,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/scss/IMAGENARIA/_imagenaria.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/_modules.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/BASE/_base.scss" />
-    <entry file="file://$PROJECT_DIR$/dev/scss/ANIMATION SYSTEM/_animation.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-654">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/NORMALIZE/_normalize-5-0-0.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/_reset.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/projectboard.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/_debug.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/_base.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blueprint/_blueprint.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--info/_mixin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/typographic/scss/typographic.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4607">
-          <caret line="271" column="9" selection-start-line="271" selection-start-column="9" selection-end-line="271" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_typography.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_mixins.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5389">
-          <caret line="317" column="9" selection-start-line="317" selection-start-column="9" selection-end-line="317" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_helpers.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/_sassTojs.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MIXES/_mixes.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/HIERARCHY/_hierarchy.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projectboard/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26418">
-          <caret line="1554" column="0" selection-start-line="1554" selection-start-column="0" selection-end-line="1554" selection-end-column="0" />
-          <folding>
-            <marker date="1481656608552" expanded="true" signature="25890:25893" ph="{...}" />
-            <marker date="1481656608552" expanded="true" signature="32484:32600" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/HELPERS/_functions.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/_imports.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/MEDIA/_media.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/bourbon/app/assets/stylesheets/functions/_strip-units.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MIXES/vertical_centered_image/_mixin.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/MIXES/vertical_centered_image/_style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1925,26 +1978,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/_draft.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/scss/SPACER/_spacer.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
           <caret line="73" column="93" selection-start-line="73" selection-start-column="93" selection-end-line="73" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--hero_video/_mixin.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1964,16 +2001,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.185/stylesheet.css" />
+    <entry file="file://$PROJECT_DIR$/dist/buy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.185/stylesheet.css" />
-    <entry file="file://$PROJECT_DIR$/dist/buy.html">
+    <entry file="file://$PROJECT_DIR$/dist/Noja_Round_Bold.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_ICONS.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/SPECIAL/Bold/Normal/ArchitectsDaughter.ttf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_ICON.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1989,15 +2050,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_font_face.scss">
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/__VARS.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="43" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Round_Bold.svg">
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_VARS.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2005,10 +2066,226 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_SPECIAL.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_HERO.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_MAIN.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/HEADER/Noja_Round/Normal/normal/ArchitectsDaughter.ttf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_helpers.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_reset.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_sassTojs.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_debug.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_HEADER.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_Zopa.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--hero_video/_mixin.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/ArchitectsDaughter.ttf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_fontList.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_draft.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="648" column="62" selection-start-line="648" selection-start-column="62" selection-end-line="648" selection-end-column="62" />
+        <state relative-caret-position="222">
+          <caret line="667" column="83" selection-start-line="667" selection-start-column="83" selection-end-line="667" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/SOURCE/HEADER/Noja_Round/Bold/normal/Noja_Round_Bold.otf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/_font_face.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/COLOR/_color.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_typography.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1259">
+          <caret line="317" column="9" selection-start-line="317" selection-start-column="9" selection-end-line="317" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_imports.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_options.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="30" column="88" selection-start-line="30" selection-start-column="88" selection-end-line="30" selection-end-column="88" />
           <folding />
         </state>
       </provider>

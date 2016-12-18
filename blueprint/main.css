@@ -1,3 +1,39 @@
+@font-face {
+  font-family: "Noja_Round";
+  src: url("Noja_Round_Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("Noja_Round_Bold.eot?#iefix") format("embedded-opentype"), url("Noja_Round_Bold.woff2") format("woff2"), url("Noja_Round_Bold.woff") format("woff"), url("Noja_Round_Bold.ttf") format("truetype"), url("Noja_Round_Bold.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+  font-weight: Bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Noja_Round";
+  src: url("ArchitectsDaughter.eot");
+  /* IE9 Compat Modes */
+  src: url("ArchitectsDaughter.eot?#iefix") format("embedded-opentype"), url("ArchitectsDaughter.woff2") format("woff2"), url("ArchitectsDaughter.woff") format("woff"), url("ArchitectsDaughter.ttf") format("truetype"), url("ArchitectsDaughter.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+  font-weight: Normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "ZopaFont";
+  src: url("ArchitectsDaughter.eot");
+  /* IE9 Compat Modes */
+  src: url("ArchitectsDaughter.eot?#iefix") format("embedded-opentype"), url("ArchitectsDaughter.woff2") format("woff2"), url("ArchitectsDaughter.woff") format("woff"), url("ArchitectsDaughter.ttf") format("truetype"), url("ArchitectsDaughter.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+  font-weight: Bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: "ZopaFont";
+  src: url("Noja_Round_Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("Noja_Round_Bold.eot?#iefix") format("embedded-opentype"), url("Noja_Round_Bold.woff2") format("woff2"), url("Noja_Round_Bold.woff") format("woff"), url("Noja_Round_Bold.ttf") format("truetype"), url("Noja_Round_Bold.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+  font-weight: Normal;
+  font-style: normal; }
+
 /*
  * NORMALIZE
  */
@@ -413,7 +449,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   padding: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Noja_Round" bold, san-serif;
   font-weight: 700;
   color: black;
   clear: both; }
@@ -1101,82 +1137,6 @@ td {
 .form_img_ctn {
   height: 500px; }
 
-.pagination {
-  padding-top: 1.53em;
-  padding-right: 1.53em;
-  padding-left: 1.53em;
-  padding-bottom: 3.4em;
-  background-color: #fff; }
-
-.pagination__ctn {
-  padding: 0;
-  text-align: center; }
-
-.pagination__ctn__button {
-  list-style: none;
-  display: inline-block;
-  margin-right: 0.85em;
-  padding-top: 0.85em;
-  padding-bottom: 0.85em;
-  padding-right: 1.53em;
-  padding-left: 1.53em;
-  background-color: #f4f7f6;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 900;
-  cursor: pointer;
-  background-color: false;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease; }
-  .pagination__ctn__button:hover {
-    background-color: #d6e2de; }
-
-.pagination__ctn__button--current {
-  background-color: #393b3b; }
-  .pagination__ctn__button--current:hover {
-    background-color: #393b3b; }
-
-.info {
-  background-color: #fff;
-  padding-top: 3.4em;
-  padding-right: 3.4em;
-  padding-bottom: 3.4em;
-  padding-left: 3.4em;
-  background-image: url("images-rs/arches.png"); }
-
-.info__section {
-  border: 2px solid white;
-  padding-top: 1.53em;
-  padding-right: 1.53em;
-  padding-bottom: 1.53em;
-  padding-left: 1.53em;
-  background-color: #fff; }
-  @media screen and (max-width: 1400px) {
-    .info__section {
-      margin-bottom: 1.53em; } }
-
-.info__section__body {
-  padding: 0.85em; }
-
-.info__section__more {
-  display: block;
-  padding-top: 0.85em;
-  padding-right: 0.85em;
-  padding-bottom: 0.85em;
-  padding-left: 0.85em;
-  background-color: #070707;
-  background-color: false;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
-  color: #fff;
-  margin: 0 auto;
-  cursor: pointer;
-  font-family: "Roboto Condensed", sans-serif; }
-  .info__section__more:hover {
-    background-color: #0c0b0f; }
-
 .hero_video {
   position: relative; }
 
@@ -1227,7 +1187,83 @@ td {
   top: 50%; }
   .heroTitle-ctn h1 {
     color: #fff;
-    font-size: 8rem; }
+    font-size: 6rem; }
+
+.info {
+  background-color: #fff;
+  padding-top: 3.4em;
+  padding-right: 3.4em;
+  padding-bottom: 3.4em;
+  padding-left: 3.4em;
+  background-image: url("images-rs/arches.png"); }
+
+.info__section {
+  border: 2px solid white;
+  padding-top: 1.53em;
+  padding-right: 1.53em;
+  padding-bottom: 1.53em;
+  padding-left: 1.53em;
+  background-color: #fff; }
+  @media screen and (max-width: 1400px) {
+    .info__section {
+      margin-bottom: 1.53em; } }
+
+.info__section__body {
+  padding: 0.85em; }
+
+.info__section__more {
+  display: block;
+  padding-top: 0.85em;
+  padding-right: 0.85em;
+  padding-bottom: 0.85em;
+  padding-left: 0.85em;
+  background-color: #070707;
+  background-color: false;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  color: #fff;
+  margin: 0 auto;
+  cursor: pointer;
+  font-family: "Noja_Round" bold, san-serif; }
+  .info__section__more:hover {
+    background-color: #0c0b0f; }
+
+.pagination {
+  padding-top: 1.53em;
+  padding-right: 1.53em;
+  padding-left: 1.53em;
+  padding-bottom: 3.4em;
+  background-color: #fff; }
+
+.pagination__ctn {
+  padding: 0;
+  text-align: center; }
+
+.pagination__ctn__button {
+  list-style: none;
+  display: inline-block;
+  margin-right: 0.85em;
+  padding-top: 0.85em;
+  padding-bottom: 0.85em;
+  padding-right: 1.53em;
+  padding-left: 1.53em;
+  background-color: #f4f7f6;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  background-color: false;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease; }
+  .pagination__ctn__button:hover {
+    background-color: #d6e2de; }
+
+.pagination__ctn__button--current {
+  background-color: #393b3b; }
+  .pagination__ctn__button--current:hover {
+    background-color: #393b3b; }
 
 .vri_features {
   background-color: #d6e2de;
@@ -1609,7 +1645,7 @@ body {
     padding-left: 0.85em; }
   .product__info dt {
     font-weight: 900;
-    font-family: "Roboto Condensed", sans-serif; }
+    font-family: "Noja_Round" bold, san-serif; }
 
 .product__info__list_line {
   border-bottom: solid 1px #ff00c6; }

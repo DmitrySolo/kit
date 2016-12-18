@@ -14,26 +14,6 @@ var fontgen = require('gulp-fontgen');
 var htmlsplit = require('gulp-htmlsplit');
 var fontfacegen = require('fontfacegen');
 var ttf2woff = require('gulp-ttf2woff');
-
-gulp.task('ttf2woff', function(){
-    gulp.src(['dev/SOURCE FABRIC/FONT_LAB/SOURCE/*.otf'])
-        .pipe(ttf2woff())
-        .pipe(gulp.dest('fonts/'));
-});
-var ttf2woff2 = require('gulp-ttf2woff2');
-
-gulp.task('ttf2woff2', function(){
-    gulp.src(['dev/SOURCE FABRIC/FONT_LAB/SOURCE/*.ttf'])
-        .pipe(ttf2woff2())
-        .pipe(gulp.dest('fonts/'));
-});
-var ttf2eot = require('gulp-ttf2eot');
-
-gulp.task('ttf2eot', function(){
-    gulp.src(['dev/SOURCE FABRIC/FONT_LAB/SOURCE/*.ttf'])
-        .pipe(ttf2eot())
-        .pipe(gulp.dest('fonts/'));
-});
 var pug = require('gulp-pug');
 var gm = require('gulp-gm');
 var insert = require('gulp-insert');
@@ -633,7 +613,7 @@ gulp.task('fontgen', function() {
     });
 });
 gulp.task('fontgen1', function() {
-    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Round_Bold.otf',{read: false}).pipe(
+    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Roud_Bold.otf',{read: false}).pipe(
 
             shell.task([
                 'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= file.path %>.otf dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= file.path %>.svg'
@@ -642,18 +622,90 @@ gulp.task('fontgen1', function() {
     )
 });
 gulp.task('shorthand', shell.task([
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Round_Bold.otf dev/SOURCE_FABRIC/FONT_LAB/SOURCE/opa.svg'
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Roud_Bold.otf dev/SOURCE_FABRIC/FONT_LAB/SOURCE/opa.svg'
 ]))
 
 gulp.task('examplesd', function () {
-    return gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/*.{ttf,otf}', {read: false})
+        var str='$fonts:(\n\t';
+        gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/*.scss').pipe(insert.append(str)).pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/'));
+
+        gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/**/*.{ttf,otf}', {read: false})
         .pipe(shell([
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.svg'], {
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.svg',
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.woff',
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.woff2',
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.eot',
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.ttf'
+
+
+            ],
+            {
             templateData: {
                 f: function (s) {
-                    return path.basename(s, path.extname(s))
+                    var name = path.basename(s, path.extname(s));
+
+
+                    return name
                 }
             }
         })
         )
 })
+gulp.task('fontvars', function () {
+    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/*.scss', {read: false})
+        .pipe(clean());
+    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/**/*.{ttf,otf}').pipe(foreach(function(stream, file){
+
+        var name = path.basename(file.path, path.extname(file.path));
+        var dirs = file.path.split('\\')
+        var i = dirs.length;
+        var stl = dirs[i-2];
+        var weight = dirs[i-3];
+        var family = dirs[i-4];
+        var role  = dirs[i-5];
+        console.log(!fs.existsSync('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_'+role+'.scss'));
+        if(!fs.existsSync('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_'+role+'.scss')){fs.closeSync(fs.openSync('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_'+role+'.scss', 'w'));}
+        var str ="'"+name+"':('"+role+"','"+family+"','"+name+"',"+stl+","+weight+"),\n\t";
+        gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_'+role+'.scss').pipe(insert.append(str)).pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/'));
+        return stream
+    }))
+})
+
+
+var fr = {
+    string: 'role',
+    default: 'MAIN',
+};
+var fontrole = minimist(process.argv.slice(2), fr);
+
+gulp.task('regfont', function () {
+    if (!fs.existsSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role)) fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role);
+    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name);
+        fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Bold');
+            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Bold/italic');
+            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Bold/normal');
+        fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Light');
+            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Light/italic');
+            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Light/normal');
+        fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Normal');
+            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Normal/italic');
+            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Normal/normal');
+})
+gulp.task('wrapfontVars', function () {
+    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/*.scss').pipe(foreach(function(stream, file){
+        var name = (path.basename(file.path, path.extname(file.path))).slice(1,(path.basename(file.path, path.extname(file.path))).length);
+        console.log(name);
+        gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_'+name+'.scss').pipe(insert.wrap("'"+name+"':(", "),")).pipe(gulp.dest("dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/"));
+        return stream;
+    }))
+
+});
+
+
+
+gulp.task('concatVars', function () {
+    gulp.src(['dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/*.scss'])
+        .pipe(concat({ path: 'variables.scss', stat: { mode: 0666 }}))
+        .pipe(insert.wrap('$FONTS:(', ');')).pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/'))
+        .pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/'));
+});
