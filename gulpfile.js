@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var foreach = require('gulp-foreach');
+var wait = require('gulp-wait');
 var path = require('path');
 var runSequence  = require('run-sequence');
 var merge = require('gulp-merge-json');
@@ -7,6 +8,7 @@ var data = require('./data.json');
 htmlv = require('gulp-html-validator');
 var Vinyl = require('vinyl');
 var shell = require('gulp-shell');
+var sassJson = require('gulp-sass-json');
 var fs = require('fs');
 var GulpSSH = require('gulp-ssh');
 var fontfacegen = require('fontfacegen');
@@ -232,6 +234,11 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('dist'))
         .pipe(gulp.dest('blueprint'))
         .pipe(gulp.dest('projectboard'));
+
+        gulp.src('dev/scss/MASTER_OPTIONS/*.scss')
+        .pipe(sassJson())
+        .pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
+
 });
 gulp.task('throw-main-css', function () {
     gulp.src('dist/main.css')
@@ -606,36 +613,19 @@ gulp.task('pb',[],function () {
 
 })
 //FONT
-gulp.task('fontgen', function() {
-    var result = fontfacegen({
-        source: 'dev/SOURCE FABRIC/FONT_LAB/SOURCE/.{ttf,otf}',
-        dest: '/dist/',
-    });
-});
-gulp.task('fontgen1', function() {
-    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Roud_Bold.otf',{read: false}).pipe(
 
-            shell.task([
-                'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= file.path %>.otf dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= file.path %>.svg'
-            ])
 
-    )
-});
-gulp.task('shorthand', shell.task([
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe dev/SOURCE_FABRIC/FONT_LAB/SOURCE/Noja_Roud_Bold.otf dev/SOURCE_FABRIC/FONT_LAB/SOURCE/opa.svg'
-]))
-
-gulp.task('examplesd', function () {
+gulp.task('convertfonts', function () {
         var str='$fonts:(\n\t';
         gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/*.scss').pipe(insert.append(str)).pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/'));
 
         gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/**/*.{ttf,otf}', {read: false})
         .pipe(shell([
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.svg',
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.woff',
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.woff2',
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.eot',
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dev/SOURCE_FABRIC/FONT_LAB/SOURCE/<%= f(file.path) %>.ttf'
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.svg',
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.woff',
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.woff2',
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.eot',
+            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.ttf'
 
 
             ],
@@ -654,8 +644,10 @@ gulp.task('examplesd', function () {
 gulp.task('fontvars', function () {
     gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/*.scss', {read: false})
         .pipe(clean());
+
     gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/**/*.{ttf,otf}').pipe(foreach(function(stream, file){
 
+        console.log('vars')
         var name = path.basename(file.path, path.extname(file.path));
         var dirs = file.path.split('\\')
         var i = dirs.length;
@@ -708,4 +700,41 @@ gulp.task('concatVars', function () {
         .pipe(concat({ path: 'variables.scss', stat: { mode: 0666 }}))
         .pipe(insert.wrap('$FONTS:(', ');')).pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/'))
         .pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/'));
+});
+gulp.task('buildfonts', function() {
+
+
+    runSequence(
+        'convertfonts','fontvars'
+                );
+
+});
+gulp.task('buildfonts2', function() {
+
+
+    runSequence(
+        ['wrapfontVars',
+            'concatVars']);
+
+});
+gulp.task('buildfonts3', function() {
+
+
+    runSequence(
+        'buildfonts',
+        'wait',
+        'buildfonts2');
+
+});
+gulp.task('wait', function() {
+
+setTimeout('h',3000)
+
+});
+//SASS VARIABLES TO JSON
+gulp.task('sass-json', function () {
+return gulp
+    .src('dev/scss/MASTER_OPTIONS/*.scss')
+    .pipe(sassJson())
+    .pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
 });

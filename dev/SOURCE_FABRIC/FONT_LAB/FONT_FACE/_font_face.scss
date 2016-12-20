@@ -4,12 +4,12 @@
   @each $fontvar,$params in $value {
     @font-face {
       font-family: nth($params, 2);
-      src: url('#{nth($params, 3)}.eot'); /* IE9 Compat Modes */
-      src: url('#{nth($params, 3)}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-      url('#{nth($params, 3)}.woff2') format('woff2'), /* Super Modern Browsers */
-      url('#{nth($params, 3)}.woff') format('woff'), /* Pretty Modern Browsers */
-      url('#{nth($params, 3)}.ttf')  format('truetype'), /* Safari, Android, iOS */
-      url('#{nth($params, 3)}.svg#svgFontName') format('svg'); /* Legacy iOS */
+      src: url('fonts/#{nth($params, 3)}.eot'); /* IE9 Compat Modes */
+      src: url('fonts/#{nth($params, 3)}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('fonts/#{nth($params, 3)}.woff2') format('woff2'), /* Super Modern Browsers */
+      url('fonts/#{nth($params, 3)}.woff') format('woff'), /* Pretty Modern Browsers */
+      url('fonts/#{nth($params, 3)}.ttf')  format('truetype'), /* Safari, Android, iOS */
+      url('fonts/#{nth($params, 3)}.svg#svgFontName') format('svg'); /* Legacy iOS */
       font-weight: nth($params, 5);
       font-style: nth($params, 4);
     }
@@ -21,20 +21,30 @@ $font-map:();
   @each $fontvar,$params in $value {
 
     $font-map1:(
-            '#{$role}': (nth($params, 2),normal,normal),
-            '#{$role}-l': (nth($params, 2),400,normal),
-            '#{$role}-b':(nth($params, 2),bold,normal),
-            '#{$role}-li':(nth($params, 2),400,italic),
-            '#{$role}-bi':(nth($params, 2),bold,italic),
-            '#{$role}-i':(nth($params, 2),normal,italic),
+            '#{$role}': (nth($params, 2))
     );
     $font-map:map-merge($font-map,$font-map1);
   }
 }
-@mixin build-fs($key){
-
+@mixin build-typographic($key,$inc:$font-map,$alt:serif){
+  $font:map-get($inc, $key);
+//  @debug $font;
+  @if (str-index($key, 'HEADER') && length($font)>1 ) {
+     $header-font: nth($font, 1) ,$alt;
+    @debug $header-font;
+  $header-font-weight: nth($font, 2);
+    @debug $header-font-weight;
+  $header-font-style: nth($font, 3);
+  }@else if(str-index($key, 'MAIN') && length($font)>1){
+    $body-font: nth($font, 1), $alt;
+    $body-font-weight: nth($font, 2);
+    $body-font-style: nth($font, 3);
+  }
 }
 @function fs($key: 'main',$inc:$font-map) {
+  @if($linkFonts==true){
+    $inc:map-merge($inc,$LINKED_FONTS_MAP);
+  }
   @return map-get($inc, $key);
 
 }

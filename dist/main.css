@@ -1,38 +1,29 @@
 @font-face {
   font-family: "Noja_Round";
-  src: url("Noja_Round_Bold.eot");
+  src: url("fonts/ArchitectsDaughter.eot");
   /* IE9 Compat Modes */
-  src: url("Noja_Round_Bold.eot?#iefix") format("embedded-opentype"), url("Noja_Round_Bold.woff2") format("woff2"), url("Noja_Round_Bold.woff") format("woff"), url("Noja_Round_Bold.ttf") format("truetype"), url("Noja_Round_Bold.svg#svgFontName") format("svg");
+  src: url("fonts/ArchitectsDaughter.eot?#iefix") format("embedded-opentype"), url("fonts/ArchitectsDaughter.woff2") format("woff2"), url("fonts/ArchitectsDaughter.woff") format("woff"), url("fonts/ArchitectsDaughter.ttf") format("truetype"), url("fonts/ArchitectsDaughter.svg#svgFontName") format("svg");
   /* Legacy iOS */
-  font-weight: Bold;
+  font-weight: Normal;
   font-style: normal; }
 
 @font-face {
-  font-family: "Noja_Round";
-  src: url("ArchitectsDaughter.eot");
+  font-family: "SIMPLIFICA";
+  src: url("fonts/SIMPLIFICA_Typeface.eot");
   /* IE9 Compat Modes */
-  src: url("ArchitectsDaughter.eot?#iefix") format("embedded-opentype"), url("ArchitectsDaughter.woff2") format("woff2"), url("ArchitectsDaughter.woff") format("woff"), url("ArchitectsDaughter.ttf") format("truetype"), url("ArchitectsDaughter.svg#svgFontName") format("svg");
+  src: url("fonts/SIMPLIFICA_Typeface.eot?#iefix") format("embedded-opentype"), url("fonts/SIMPLIFICA_Typeface.woff2") format("woff2"), url("fonts/SIMPLIFICA_Typeface.woff") format("woff"), url("fonts/SIMPLIFICA_Typeface.ttf") format("truetype"), url("fonts/SIMPLIFICA_Typeface.svg#svgFontName") format("svg");
   /* Legacy iOS */
   font-weight: Normal;
   font-style: normal; }
 
 @font-face {
   font-family: "ZopaFont";
-  src: url("ArchitectsDaughter.eot");
+  src: url("fonts/ArchitectsDaughter.eot");
   /* IE9 Compat Modes */
-  src: url("ArchitectsDaughter.eot?#iefix") format("embedded-opentype"), url("ArchitectsDaughter.woff2") format("woff2"), url("ArchitectsDaughter.woff") format("woff"), url("ArchitectsDaughter.ttf") format("truetype"), url("ArchitectsDaughter.svg#svgFontName") format("svg");
+  src: url("fonts/ArchitectsDaughter.eot?#iefix") format("embedded-opentype"), url("fonts/ArchitectsDaughter.woff2") format("woff2"), url("fonts/ArchitectsDaughter.woff") format("woff"), url("fonts/ArchitectsDaughter.ttf") format("truetype"), url("fonts/ArchitectsDaughter.svg#svgFontName") format("svg");
   /* Legacy iOS */
   font-weight: Bold;
   font-style: italic; }
-
-@font-face {
-  font-family: "ZopaFont";
-  src: url("Noja_Round_Bold.eot");
-  /* IE9 Compat Modes */
-  src: url("Noja_Round_Bold.eot?#iefix") format("embedded-opentype"), url("Noja_Round_Bold.woff2") format("woff2"), url("Noja_Round_Bold.woff") format("woff"), url("Noja_Round_Bold.ttf") format("truetype"), url("Noja_Round_Bold.svg#svgFontName") format("svg");
-  /* Legacy iOS */
-  font-weight: Normal;
-  font-style: normal; }
 
 /*
  * NORMALIZE
@@ -449,8 +440,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   padding: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Noja_Round" bold, san-serif;
-  font-weight: 700;
+  font-family: true, san-serif;
+  font-weight: 900;
   color: black;
   clear: both; }
 
@@ -1225,7 +1216,7 @@ td {
   color: #fff;
   margin: 0 auto;
   cursor: pointer;
-  font-family: "Noja_Round" bold, san-serif; }
+  font-family: true, san-serif; }
   .info__section__more:hover {
     background-color: #0c0b0f; }
 
@@ -1645,7 +1636,7 @@ body {
     padding-left: 0.85em; }
   .product__info dt {
     font-weight: 900;
-    font-family: "Noja_Round" bold, san-serif; }
+    font-family: true, san-serif; }
 
 .product__info__list_line {
   border-bottom: solid 1px #ff00c6; }
