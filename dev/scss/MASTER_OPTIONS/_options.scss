@@ -17,21 +17,16 @@ $background-color   : cs('bground');
 
 // FONTS ////////////////////////////////////////////////
 //// Register link fonts
-$fontLinks:(
-        link1: aa,
-);
 $LINKED_FONTS_MAP:(
   'MAIN':('Tinos'),
 );
 
-
 // SPACE RATIO //////////////////////////////////////////
 
-$block_space: 2;
-$module_space: 1.4;
-$component_space: .9;
-$element_space:.5;
-
+$element_space:.6;
+$component_space: $element_space*1.618;
+$module_space: $component_space*1.618;
+$block_space: $module_space*1.618;
 
 // TYPOGRAPHY ///////////////////////////////////////////
 
@@ -40,7 +35,7 @@ $body-font-weight   : 300;
 $header-font        : fs('HERO'),san-serif;//'Roboto Condensed', sans-serif; // TODO
 $header-font-weight : 900;
 $mobile-font           : 14px;
-$screen-font           : 16px;
+$screen-font           : 18px;
 $line-height-ratio: 1.7;
 
 

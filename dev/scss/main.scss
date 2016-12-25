@@ -9,6 +9,13 @@
  * RESET
  */
 @import "reset";
+@if($assetsFonts){
+/*
+* FONTS
+*/
+  @include make-font-face();
+}
+
 /*
  * BASE STYLES
  */

@@ -1,6 +1,15 @@
-mixin lightMenu()
+mixin lightMenu(dataMenu)
+    if dataMenu=='MainMenu'
+        -var menuData = pages
+    else
+        -var menuData = menuData1
     nav.lightMenu(role='navigation')
         ul.lightMenu__list
             each menuItem in menuData
-                    li(class='' + menuItem.dop_class)
+                if dataMenu=='MainMenu'
+                    if menuItem.MainMenu
+                        li(class='lightMenu__item ' + menuItem.dop_class)
+                            a(href="" + menuItem.href)=menuItem.title
+                else
+                    li(class='lightMenu__item ' + menuItem.dop_class)
                         a(href="" + menuItem.href)=menuItem.title

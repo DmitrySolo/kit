@@ -1,4 +1,8 @@
-mixin module(modulename)
+mixin module(modulename,moduleData)
+    if(moduleData)
+        - var moduleData = moduleData
+    else
+        - var moduleData = false
     case modulename
         when 'Light_menu'
             include ../../../dev/MODULES/MENUS/--Light_menu/_include

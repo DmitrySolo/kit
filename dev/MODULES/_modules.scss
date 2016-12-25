@@ -38,6 +38,7 @@
       }
   }
 }
+//[h] -horizontal menu [v] -vertical menu
 @include lightMenu('h');
 
 
@@ -230,15 +231,6 @@
   }
   .video-container video.fillWidth {
     width: 100%;
-  }
-  .heroTitle-ctn {
-    position: absolute;
-    left:50%;
-    top: 50%;
-    h1{
-      color:#fff;
-      font-size: 6rem;
-    }
   }
 }
 @include hero_video();

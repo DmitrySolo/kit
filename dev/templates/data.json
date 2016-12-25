@@ -3,8 +3,9 @@
             "title" : "TEST APPLICATION",
             "desc" : "This is test framework application",
             "kw" : "application, test , hurray!!!",
-            "fontLink" : true,
-            "fontLinkHref": "https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Tinos:400,400i,700&amp;subset=cyrillic",
+            "fontlinks":{
+              "1": "https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Tinos:400,400i,700&amp;subset=cyrillic"
+            },
             "debug": false
             },
   "pages": {
@@ -13,71 +14,9 @@
               "slug":"index",
               "kw" : "application, test , hurray!!!",
               "layout": "default",
-              "shop": false,
-              "group": false
-            },
-            "2":{
-              "title":"Продукция",
-              "slug":"production",
-              "kw" : "application, test , hurray!!!",
-              "layout": "default",
-              "shop": true,
-              "group": false
-            },
-            "3":{
-              "title":"Гарантия и сервис",
-              "slug":"service",
-              "kw" : "application, test , hurray!!!",
-              "layout": "default",
-              "shop": false,
-              "group": false
-            },
-            "4":{
-              "title":"Партнерам",
-              "slug":"partners",
-              "kw" : "application, test , hurray!!!",
-              "layout": "default",
-              "shop": false,
-              "group": false
-            },
-            "5":{
-              "title":"Где купить",
-              "slug":"buy",
-              "kw" : "application, test , hurray!!!",
-              "layout": "default",
-              "shop": false,
-              "group": false
-            },
-            "6":{
-              "title":"Страница кибер-менеджера",
-              "slug":"cyber",
-              "kw" : "application, test , hurray!!!",
-              "layout": "default",
-              "group": false
-            },
-            "7":{
-              "title":"Продукт",
-              "slug":"product",
-              "kw" : "application, test , hurray!!!",
-              "layout": "default",
-              "shop": true,
-              "group": false
-            },
-            "8":{
-              "title":"Категория",
-              "slug":"category",
-              "kw" : "application, test , hurray!!!",
-              "layout": "default",
-              "shop": true,
-              "group": false
-            },
-            "9":{
-              "title":"тестовая",
-              "slug":"testik",
-              "kw" : "application, test , hurray!!!",
-              "layout": "personal",
-              "shop": true,
-              "group": false
+              "MainMenu": false,
+              "group": false,
+              "dop_class": ""
             }
   }
 }

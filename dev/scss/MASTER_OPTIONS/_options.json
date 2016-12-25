@@ -8,25 +8,19 @@
 	"body-color": "cs('font')",
 	"header-color": "cs('font-d')",
 	"background-color": "cs('bground')",
-	"fontLinks": {
-		"link1": "aa",
-		"link2": "xx"
-	},
 	"LINKED_FONTS_MAP": {
-		"'HEADER'": "('fontFamily')",
-		"'MAIN'": "('fontFamily')",
-		"'HERO'": "('fontFamily')\r\n)"
+		"'MAIN'": "('Tinos')"
 	},
-	"block_space": "2",
-	"module_space": "1.4",
-	"component_space": ".9",
-	"element_space": ".5",
-	"body-font": "'Tinos', serif",
+	"element_space": ".6",
+	"component_space": "$element_space*1.618",
+	"module_space": "$component_space*1.618",
+	"block_space": "$module_space*1.618",
+	"body-font": "fs('MAIN'),san-serif",
 	"body-font-weight": "300",
 	"header-font": "fs('HERO'),san-serif",
 	"header-font-weight": "900",
 	"mobile-font": "14px",
-	"screen-font": "16px",
+	"screen-font": "18px",
 	"line-height-ratio": "1.7",
 	"siteWidth": "1200px",
 	"colums": "12",

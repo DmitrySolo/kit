@@ -31,7 +31,9 @@ var concat = require('gulp-concat');
 var file = require('gulp-file');
 var uncss = require('gulp-uncss');
 var rename = require("gulp-rename");
+var unquote = require('unquote')
 gulp.task('views', function buildHTML() {
+    var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
     gulp.src('dev/templates/PAGESYSTEM/PAGES/*.pug')
         .pipe(pug({
             data: data,
@@ -141,12 +143,12 @@ gulp.task('SERVER', [], function() {
     browserSync.init({
         server: "./dist"
     });
-    gulp.watch("dev/**/*.json").on('change', browserSync.reload);
+    //gulp.watch("dev/**/*.json").on('change', browserSync.reload);
     gulp.watch("dist/*.html").on('change', browserSync.reload);
     gulp.watch("dist/*.css").on('change', browserSync.reload);
     gulp.watch("dist/**/*.js").on('change', browserSync.reload);
 });
-gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-script-js','throw-main-css','browser-reload','views','merge-json','compile-blueprint-view','compile-blueprint-sass'], function() {
+gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-script-js','throw-main-css','browser-reload','views','mergeJson','compile-blueprint-view','compile-blueprint-sass'], function() {
     gulp.watch('dev/MODULES/*/--*/*.scss',function(){ runSequence('cleanMainCss','concat-modules-and-mixes', 'sass','throw-main-css','browser-reload') });
     //gulp.watch('dev/MODULES/PROJECT MODULES/--*/*.scss',['concat-modules-and-mixes','sass']);
     gulp.watch(['dev/scss/**/*.scss'],['cleanMainCss','sass','throw-main-css', browserSync.reload]);
@@ -155,7 +157,7 @@ gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-sc
     gulp.watch(['dev/**/*.pug'],function(){ runSequence('views', 'compile-blueprint-view') });
     gulp.watch(['blueprint/*.pug'],['compile-blueprint-view']);
     gulp.watch(['blueprint/*.scss'],['compile-blueprint-sass']);
-    gulp.watch(['dev/**/*.json','blueprint/*json'],function(){ runSequence('merge-json','views','compile-blueprint-view') });
+    gulp.watch(['dev/**/*.json','blueprint/*json'],function(){ runSequence('mergeJson','views','compile-blueprint-view') });
 });
 gulp.task('optimage', [], function() {
     gulp.src('dist/not_opt_images/*')
@@ -414,7 +416,7 @@ gulp.task('buildblueprint', function buildHTML() {
         .pipe(gulp.dest('blueprint/'));
 });
 gulp.task('mergeJson',function () {
-    gulp.src(['dev/**/*.json','blueprint/*.json'])
+    return gulp.src(['dev/**/*.json','blueprint/*.json'])
         .pipe(merge('data.json'))
         .pipe(gulp.dest('./'));
 
@@ -616,9 +618,6 @@ gulp.task('pb',[],function () {
 
 
 gulp.task('convertfonts', function () {
-        var str='$fonts:(\n\t';
-        gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/*.scss').pipe(insert.append(str)).pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/'));
-
         gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/**/*.{ttf,otf}', {read: false})
         .pipe(shell([
             'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.svg',
@@ -647,7 +646,6 @@ gulp.task('fontvars', function () {
 
     gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/**/*.{ttf,otf}').pipe(foreach(function(stream, file){
 
-        console.log('vars')
         var name = path.basename(file.path, path.extname(file.path));
         var dirs = file.path.split('\\')
         var i = dirs.length;
@@ -717,20 +715,7 @@ gulp.task('buildfonts2', function() {
             'concatVars']);
 
 });
-gulp.task('buildfonts3', function() {
 
-
-    runSequence(
-        'buildfonts',
-        'wait',
-        'buildfonts2');
-
-});
-gulp.task('wait', function() {
-
-setTimeout('h',3000)
-
-});
 //SASS VARIABLES TO JSON
 gulp.task('sass-json', function () {
 return gulp

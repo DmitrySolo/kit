@@ -1,25 +1,25 @@
 @import "VARIABLES/variables";
 
+@mixin make-font-face(){
 @each $role,$value in $FONTS {
-  @each $fontvar,$params in $value {
+  @each $fontvar, $params in $value {
     @font-face {
       font-family: nth($params, 2);
       src: url('fonts/#{nth($params, 3)}.eot'); /* IE9 Compat Modes */
       src: url('fonts/#{nth($params, 3)}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
       url('fonts/#{nth($params, 3)}.woff2') format('woff2'), /* Super Modern Browsers */
       url('fonts/#{nth($params, 3)}.woff') format('woff'), /* Pretty Modern Browsers */
-      url('fonts/#{nth($params, 3)}.ttf')  format('truetype'), /* Safari, Android, iOS */
+      url('fonts/#{nth($params, 3)}.ttf') format('truetype'), /* Safari, Android, iOS */
       url('fonts/#{nth($params, 3)}.svg#svgFontName') format('svg'); /* Legacy iOS */
       font-weight: nth($params, 5);
       font-style: nth($params, 4);
     }
   }
-
+  }
 }
 $font-map:();
 @each $role,$value in $FONTS {
   @each $fontvar,$params in $value {
-
     $font-map1:(
             '#{$role}': (nth($params, 2))
     );
@@ -48,5 +48,4 @@ $font-map:();
   @return map-get($inc, $key);
 
 }
-
 	

@@ -1,3 +1,21 @@
+mixin hero-title-center(title)
+    .heroTitle-ctn
+        h1.heroTitle=title
+
+
+
+mixin logo-img(src,className)
+    a.logo__link(class=''+className)
+        img(src='images/'+src)
+
+
+
+mixin logo-svg(src,className)
+    a.logo__link(class=''+className)
+        .logo__container
+            include ../../dist/images/logo.svg
+
+
 mixin vertical_centered_image(src,className)
     .img_container--align_v(class=''+className)
         img(src='images/'+src)
