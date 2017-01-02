@@ -3,9 +3,9 @@
  */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
- * 1. Change the default font family in all browsers (opinionated).
+ * 1. Change the default fonts family in all browsers (opinionated).
  * 2. Correct the line height in all browsers.
- * 3. Prevent adjustments of font size after orientation changes in
+ * 3. Prevent adjustments of fonts size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
 /* Document
@@ -66,8 +66,8 @@ hr {
   /* 2 */ }
 
 /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
+ * 1. Correct the inheritance and scaling of fonts size in all browsers.
+ * 2. Correct the odd `em` fonts sizing in all browsers.
  */
 pre {
   font-family: monospace, monospace;
@@ -115,15 +115,15 @@ strong {
   font-weight: inherit; }
 
 /**
- * Add the correct font weight in Chrome, Edge, and Safari.
+ * Add the correct fonts weight in Chrome, Edge, and Safari.
  */
 b,
 strong {
   font-weight: bolder; }
 
 /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
+ * 1. Correct the inheritance and scaling of fonts size in all browsers.
+ * 2. Correct the odd `em` fonts sizing in all browsers.
  */
 code,
 kbd,
@@ -134,7 +134,7 @@ samp {
   /* 2 */ }
 
 /**
- * Add the correct font style in Android 4.3-.
+ * Add the correct fonts style in Android 4.3-.
  */
 dfn {
   font-style: italic; }
@@ -147,7 +147,7 @@ mark {
   color: #000; }
 
 /**
- * Add the correct font size in all browsers.
+ * Add the correct fonts size in all browsers.
  */
 small {
   font-size: 80%; }
@@ -321,7 +321,7 @@ textarea {
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
+ * 2. Change fonts properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
@@ -380,28 +380,10 @@ li {
 * FONTS
 */
 @font-face {
-  font-family: "Noja_Round";
-  src: url("fonts/ArchitectsDaughter.eot");
+  font-family: "Blanca";
+  src: url("fonts/BlankaRegular.eot");
   /* IE9 Compat Modes */
-  src: url("fonts/ArchitectsDaughter.eot?#iefix") format("embedded-opentype"), url("fonts/ArchitectsDaughter.woff2") format("woff2"), url("fonts/ArchitectsDaughter.woff") format("woff"), url("fonts/ArchitectsDaughter.ttf") format("truetype"), url("fonts/ArchitectsDaughter.svg#svgFontName") format("svg");
-  /* Legacy iOS */
-  font-weight: Normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Sunbreath";
-  src: url("fonts/Sunbreath.eot");
-  /* IE9 Compat Modes */
-  src: url("fonts/Sunbreath.eot?#iefix") format("embedded-opentype"), url("fonts/Sunbreath.woff2") format("woff2"), url("fonts/Sunbreath.woff") format("woff"), url("fonts/Sunbreath.ttf") format("truetype"), url("fonts/Sunbreath.svg#svgFontName") format("svg");
-  /* Legacy iOS */
-  font-weight: Normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: "ZopaFont";
-  src: url("fonts/Noja_Round_Bold.eot");
-  /* IE9 Compat Modes */
-  src: url("fonts/Noja_Round_Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Noja_Round_Bold.woff2") format("woff2"), url("fonts/Noja_Round_Bold.woff") format("woff"), url("fonts/Noja_Round_Bold.ttf") format("truetype"), url("fonts/Noja_Round_Bold.svg#svgFontName") format("svg");
+  src: url("fonts/BlankaRegular.eot?#iefix") format("embedded-opentype"), url("fonts/BlankaRegular.woff2") format("woff2"), url("fonts/BlankaRegular.woff") format("woff"), url("fonts/BlankaRegular.ttf") format("truetype"), url("fonts/BlankaRegular.svg#svgFontName") format("svg");
   /* Legacy iOS */
   font-weight: Normal;
   font-style: normal; }
@@ -443,7 +425,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   padding: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Sunbreath", san-serif;
+  font-family: "Blanca", san-serif;
   font-weight: 900;
   color: black;
   clear: both; }
@@ -1003,102 +985,6 @@ td {
     content: '';
     margin-right: 0; }
 
-.categories {
-  text-align: center;
-  padding-top: 4.32052em;
-  padding-right: 4.32052em;
-  padding-bottom: 4.32052em;
-  padding-left: 4.32052em;
-  background-color: #fff; }
-
-.categories__item {
-  margin-top: 1.65036em;
-  margin-bottom: 1.65036em; }
-
-.categories__item__title {
-  line-height: 1.5;
-  text-align: left;
-  padding-bottom: 1.02em;
-  font-size: 2em; }
-  @media screen and (max-width: 900px) {
-    .categories__item__title {
-      text-align: center; } }
-
-.category {
-  background-color: #aaaaaa;
-  padding-top: 4.32052em;
-  padding-right: 4.32052em;
-  padding-bottom: 4.32052em;
-  padding-left: 4.32052em; }
-
-.category__product__image_ctn {
-  background-image: url("?holder.js/355x260");
-  background-position: center center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 260px; }
-
-.category__product {
-  padding-top: 1.65036em;
-  padding-right: 1.65036em;
-  padding-bottom: 1.65036em;
-  padding-left: 1.65036em; }
-
-.category__product__title {
-  line-height: 1.75;
-  padding-top: 1.02em;
-  padding-right: 1.02em;
-  padding-bottom: 1.02em;
-  padding-left: 1.02em; }
-  @media screen and (max-width: 900px) {
-    .category__product__title {
-      text-align: center; } }
-
-.collection_slider {
-  position: relative;
-  font-size: 1.1em;
-  padding-top: 4.32052em;
-  padding-bottom: 4.32052em;
-  background-color: #fff;
-  background-image: url("images-rs/rs-s.png");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat; }
-
-.collection_slider__menu__item {
-  list-style: none;
-  text-align: center;
-  padding-top: 1.02em;
-  padding-right: 1.02em;
-  padding-bottom: 1.02em;
-  padding-left: 1.02em;
-  background-color: #f4f7f6;
-  margin: 0 auto 1px auto;
-  color: #fff;
-  text-transform: uppercase;
-  width: 50%;
-  cursor: pointer;
-  background-color: false;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease; }
-  .collection_slider__menu__item:hover {
-    background-color: #d6e2de; }
-  @media screen and (max-width: 900px) {
-    .collection_slider__menu__item {
-      padding-top: 1.65036em;
-      padding-right: 1.65036em;
-      padding-bottom: 1.65036em;
-      padding-left: 1.65036em; } }
-
-.collection_slider__hero__title {
-  font-size: 2.6em;
-  width: 67%;
-  line-height: 1.7;
-  color: #0c0b0f;
-  position: absolute;
-  right: 0; }
-
 .FORM {
   background-color: #fff;
   padding-top: 1.02em;
@@ -1112,7 +998,7 @@ td {
     padding-left: 1.02em;
     font-size: .8rem;
     width: 100%;
-    border: solid 1px #8c84a5; }
+    border: solid 1px black; }
   .FORM input[type='submit'] {
     border: none;
     font-size: 1rem; }
@@ -1175,46 +1061,6 @@ td {
 .video-container video.fillWidth {
   width: 100%; }
 
-.info {
-  background-color: #fff;
-  padding-top: 4.32052em;
-  padding-right: 4.32052em;
-  padding-bottom: 4.32052em;
-  padding-left: 4.32052em;
-  background-image: url("images-rs/arches.png"); }
-
-.info__section {
-  border: 2px solid white;
-  padding-top: 1.65036em;
-  padding-right: 1.65036em;
-  padding-bottom: 1.65036em;
-  padding-left: 1.65036em;
-  background-color: #fff; }
-  @media screen and (max-width: 1400px) {
-    .info__section {
-      margin-bottom: 1.65036em; } }
-
-.info__section__body {
-  padding: 1.02em; }
-
-.info__section__more {
-  display: block;
-  padding-top: 1.02em;
-  padding-right: 1.02em;
-  padding-bottom: 1.02em;
-  padding-left: 1.02em;
-  background-color: #070707;
-  background-color: false;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
-  color: #fff;
-  margin: 0 auto;
-  cursor: pointer;
-  font-family: "Sunbreath", san-serif; }
-  .info__section__more:hover {
-    background-color: #0c0b0f; }
-
 .pagination {
   padding-top: 1.65036em;
   padding-right: 1.65036em;
@@ -1251,107 +1097,20 @@ td {
   .pagination__ctn__button--current:hover {
     background-color: #393b3b; }
 
-.vri_features {
-  background-color: #d6e2de;
-  padding-top: 4.32052em;
-  padding-right: 4.32052em;
-  padding-bottom: 4.32052em;
-  padding-left: 4.32052em; }
-
-.vri_features__title {
-  text-align: center;
-  font-size: 2em;
-  line-height: 1.7;
-  margin-top: 1.65036em;
-  padding-bottom: 1.65036em;
-  color: #fff; }
-
-.vri_features__list {
-  margin-top: 1.65036em;
-  background-image: url("images-rs/smsh.png");
-  background-position: center center;
-  background-size: "cover";
-  background-repeat: no-repeat;
-  height: 600px;
-  position: relative; }
-  @media screen and (max-width: 900px) {
-    .vri_features__list {
-      background-image: none;
-      height: auto; } }
-
-.vri_features__list__item {
-  position: absolute;
-  list-style: none;
-  padding-top: 1.02em;
-  padding-right: 1.02em;
-  padding-bottom: 1.02em;
-  padding-left: 1.02em;
-  font-weight: 700;
-  text-transform: uppercase;
-  display: inline-block;
-  background-color: white;
-  color: #fff; }
-  @media screen and (max-width: 900px) {
-    .vri_features__list__item {
-      position: initial;
-      margin: 0 auto;
-      text-align: center;
-      margin-bottom: 1.02em;
-      display: block;
-      width: 90%; } }
-
-.vri_features__list__item--left {
-  left: 0%; }
-
-.vri_features__list__item--right {
-  right: 0; }
-
-.vri_features__list__item--top15 {
-  top: 15.4%; }
-
-.vri_features__list__item--top41 {
-  top: 41.8%; }
-
-.vri_features__list__item--top75 {
-  top: 74.5%; }
-
-.vri_features__list__item--top34 {
-  top: 34%; }
-
-.vri_features__list__item--top4 {
-  top: 4%; }
-
-.vri_features__list__item--shield {
-  background-image: url("images-rs/shield.svg");
-  background-position: center center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  bottom: 0;
-  font-size: 1.2em;
-  padding-top: 4.32052em;
-  padding-right: 4.32052em;
-  padding-bottom: 4.32052em;
-  padding-left: 4.32052em;
-  background-color: inherit;
-  text-align: center;
-  line-height: 2; }
-
 /*
 * MIXES  STYLES
 */
 .heroTitle-ctn {
-  position: absolute;
-  z-index: 2000;
   width: 100%;
   display: table;
   text-align: center;
   height: 100%; }
   .heroTitle-ctn h1.heroTitle {
-    color: #fff;
-    font-size: 6rem;
+    color: #395bb9;
+    font-size: 8rem;
     display: table-cell;
     vertical-align: middle;
-    font-family: "Sunbreath"; }
+    font-family: "Blanca"; }
 
 .logo__link {
   display: block;
@@ -1576,89 +1335,8 @@ button:last-child {
 .hierarchy {
   font-size: 1rem; }
 
-body {
-  background: linear-gradient(180deg, #202121, #ee4e4a 100%); }
-
-.container {
-  background-color: #f3f3f3; }
-
-.mainHeader {
-  background-color: #f4f7f6; }
-
-.logo {
-  height: 10.34103em;
-  background-color: #fff;
-  background-image: url("images/vrig.svg");
-  background-position: center center;
-  background-size: 85%;
-  background-repeat: no-repeat; }
-  @media screen and (max-width: 1400px) {
-    .logo {
-      background-size: contain; } }
-
-.mainFooter {
-  background-color: #f4f7f6;
-  color: #fff;
-  padding-top: 2.67028em;
-  padding-right: 2.67028em;
-  padding-bottom: 2.67028em;
-  padding-left: 2.67028em; }
-  @media screen and (max-width: 1400px) {
-    .mainFooter {
-      text-align: center; } }
-
-.pageTitle {
-  line-height: 1.7;
-  margin-top: 1.02em;
-  margin-bottom: 1.02em;
-  margin-right: 4.32052em;
-  margin-left: 4.32052em;
-  text-transform: uppercase; }
-  @media screen and (max-width: 1400px) {
-    .pageTitle {
-      margin-top: 4.32052em;
-      text-align: center; } }
-
-.product {
-  padding-top: 4.32052em;
-  padding-right: 4.32052em;
-  padding-bottom: 4.32052em;
-  padding-left: 4.32052em;
-  background-color: #fff; }
-
-.product__image_ctn, .product__info {
-  padding-top: 1.65036em;
-  padding-right: 1.65036em;
-  padding-bottom: 1.65036em;
-  padding-left: 1.65036em; }
-
-.product__image_ctn {
-  width: 100%;
-  height: 450px;
-  background-image: url("images/HG800312.jpg");
-  background-position: center center;
-  background-size: contain;
-  background-repeat: no-repeat; }
-
-.product__info {
-  background-color: #b6b9bb; }
-  .product__info dl {
-    padding-top: 1.65036em;
-    padding-right: 1.65036em;
-    padding-bottom: 1.65036em;
-    padding-left: 1.65036em;
-    background-color: #fff; }
-  .product__info dd, .product__info dt {
-    padding-top: 1.02em;
-    padding-right: 1.02em;
-    padding-bottom: 1.02em;
-    padding-left: 1.02em; }
-  .product__info dt {
-    font-weight: 900;
-    font-family: "Sunbreath", san-serif; }
-
-.product__info__list_line {
-  border-bottom: solid 1px #ff00c6; }
+.hero {
+  height: 200px; }
 
 .sassTojs-data {
   font-family: '{"animationData":[],"globalVariables":"#ff0000"}'; }

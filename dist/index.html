@@ -9,7 +9,31 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Tinos:400,400i,700&amp;amp;subset=cyrillic" rel="stylesheet" type="text/css">
     <link href="main.css" rel="stylesheet" type="text/css">
   </head>
-  <body><!-- split index.html --><!-- split footer.html -->
+  <body><!-- split index.html -->
+    <section class="hero">
+      <div class="heroTitle-ctn">
+        <h1 class="heroTitle">THE SUPER PROJECT!</h1>
+      </div>
+    </section><!-- split modules/FORM -->
+    <div class="FORM">
+      <!--h3.form__title=page.title-->
+      <form class="forme" method="get" name="subscribe" action="/" onsubmit="return validate()">
+        <p class="form__line">
+          <label for="name">Ваше имя<span class="form__validateMessage" id="js_val_name"></span><br/>
+            <input class="form--name" type="text" name="name" value="" placeholder="" id=""/>
+          </label>
+        </p>
+        <p class="form__line">
+          <label for="email">Электронный ящик!<span class="form__validateMessage" id="js_val_email"></span><br/>
+            <input class="form--mail" type="text" name="email" value="" placeholder="" id=""/>
+          </label>
+        </p>
+        <p class="form__line">
+          <input class="info__section__more" type="submit" value="ОТПРАВИТЬ" id=""/>
+          <div class="img_container--align_v form_img_ctn"><img src="images/wild_oliva.png"/></div>
+        </p>
+      </form>
+    </div><!-- split footer.html -->
 <!-- split scripts/scripts.html -->
     <script src="scripts/jquery.min.js" type="text/javascript"></script>
     <script src="scripts/sass-to-js.min.js" type="text/javascript"></script>

@@ -344,7 +344,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Adds a theme to default settings
 	     *
 	     * @param {string} name Theme name
-	     * @param {Object} theme Theme object, with foreground, background, size, font, and fontweight properties.
+	     * @param {Object} theme Theme object, with foreground, background, size, fonts, and fontweight properties.
 	     */
 	    addTheme: function(name, theme) {
 	        name != null && theme != null && (App.settings.themes[name] = theme);

@@ -11,11 +11,7 @@ var shell = require('gulp-shell');
 var sassJson = require('gulp-sass-json');
 var fs = require('fs');
 var GulpSSH = require('gulp-ssh');
-var fontfacegen = require('fontfacegen');
-var fontgen = require('gulp-fontgen');
 var htmlsplit = require('gulp-htmlsplit');
-var fontfacegen = require('fontfacegen');
-var ttf2woff = require('gulp-ttf2woff');
 var pug = require('gulp-pug');
 var gm = require('gulp-gm');
 var insert = require('gulp-insert');
@@ -151,12 +147,14 @@ gulp.task('SERVER', [], function() {
 gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-script-js','throw-main-css','browser-reload','views','mergeJson','compile-blueprint-view','compile-blueprint-sass'], function() {
     gulp.watch('dev/MODULES/*/--*/*.scss',function(){ runSequence('cleanMainCss','concat-modules-and-mixes', 'sass','throw-main-css','browser-reload') });
     //gulp.watch('dev/MODULES/PROJECT MODULES/--*/*.scss',['concat-modules-and-mixes','sass']);
-    gulp.watch(['dev/scss/**/*.scss'],['cleanMainCss','sass','throw-main-css', browserSync.reload]);
+    gulp.watch(['dev/scss/**/*.scss','dev/MIXES/_mixes.scss'],['cleanMainCss','sass','throw-main-css', browserSync.reload]);
     //gulp.watch('dev/MODULES/*/--*/*.pug',['views']);
     gulp.watch(['dev/**/_script.js'],['build-script-js',browserSync.reload]);
-    gulp.watch(['dev/**/*.pug'],function(){ runSequence('views', 'compile-blueprint-view') });
+    gulp.watch(['dev/MODULES/**/*.pug','dev/templates/**/*.pug','dev/MIXES/_mixes.pug'],function(){ runSequence('views', 'compile-blueprint-view') });
     gulp.watch(['blueprint/*.pug'],['compile-blueprint-view']);
     gulp.watch(['blueprint/*.scss'],['compile-blueprint-sass']);
+    gulp.watch(['dev/MIXES/*/*.scss'],['concat-modules-and-mixes']);
+    gulp.watch(['dev/MIXES/*/*.pug'],['concat-modules-and-mixes']);
     gulp.watch(['dev/**/*.json','blueprint/*json'],function(){ runSequence('mergeJson','views','compile-blueprint-view') });
 });
 gulp.task('optimage', [], function() {

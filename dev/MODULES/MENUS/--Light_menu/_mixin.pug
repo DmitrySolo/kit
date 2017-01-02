@@ -9,7 +9,7 @@ mixin lightMenu(dataMenu)
                 if dataMenu=='MainMenu'
                     if menuItem.MainMenu
                         li(class='lightMenu__item ' + menuItem.dop_class)
-                            a(href="" + menuItem.href)=menuItem.title
+                            a(href="" + menuItem.slug+".html")=menuItem.title
                 else
                     li(class='lightMenu__item ' + menuItem.dop_class)
                         a(href="" + menuItem.href)=menuItem.title
