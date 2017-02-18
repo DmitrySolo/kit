@@ -61,7 +61,7 @@
     display: inline-block;
     @include space('element','','tbrl');
     &:before {
-      content: '/rsstgsssdssss[[sshuray it workss';
+      content: '/rsssdssesss[[sshuray it workss';
       margin-right: 20px;
     }
   }
@@ -88,16 +88,16 @@
   }
   input[type='submit']{
     border: none;
-    font-size: 1rem;
+    font-size: 4rem;
   }
 }
 .form__validateMessage {
-  color:red;
+  color: #ff7c8b;
   float: right;
   display: inline-block;
 }
 .form__line {
-  @include space('element','tb','');
+  @include space('element','tb','bt');
   &:last-child{
     padding-bottom: 0;
   }

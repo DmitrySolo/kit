@@ -976,7 +976,7 @@ td {
   margin-bottom: 1.02em;
   margin-left: 1.02em; }
   .breadcrumb__section:before {
-    content: '/rsstgsssdssss[[sshuray it workss';
+    content: '/rsssdssesss[[sshuray it workss';
     margin-right: 20px; }
 
 .breadCrumb__section--home {
@@ -1001,14 +1001,16 @@ td {
     border: solid 1px black; }
   .FORM input[type='submit'] {
     border: none;
-    font-size: 1rem; }
+    font-size: 4rem; }
 
 .form__validateMessage {
-  color: red;
+  color: #ff7c8b;
   float: right;
   display: inline-block; }
 
 .form__line {
+  margin-top: 1.02em;
+  margin-bottom: 1.02em;
   padding-top: 1.02em;
   padding-bottom: 1.02em; }
   .form__line:last-child {
@@ -1106,8 +1108,6 @@ td {
   text-align: center;
   height: 100%; }
   .heroTitle-ctn h1.heroTitle {
-    color: #395bb9;
-    font-size: 8rem;
     display: table-cell;
     vertical-align: middle;
     font-family: "Blanca"; }
