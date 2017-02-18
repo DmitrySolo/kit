@@ -119,6 +119,9 @@ gulp.task('BUILDMODULE', function() {
 });
 
 
+
+
+
 gulp.task('own-js', function() {
     gulp.src(['dev/SCRIPTS/_*js'])
         .pipe(concat({ path: 'script.js', stat: { mode: 0666 }}))
@@ -148,6 +151,10 @@ gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-sc
 
     gulp.watch('dev/MODULES/*/--*/*.scss',function(){ runSequence('concat-modules-and-mixes') });
     gulp.watch(['dev/MIXES/*/*.scss'],['concat-modules-and-mixes']);
+
+    gulp.watch(['dev/ELEMENTS/*/--*/*.scss','dev/ELEMENTS/*/--*/*.pug'],['concat-elements']);
+        gulp.watch(['dev/ELEMENTS/_elements.scss'],['sass','compile-blueprint-sass']);
+        gulp.watch(['dev/ELEMENTS/_elements.pug'],['views','compile-blueprint-view']);
 
     //gulp.watch('dev/MODULES/PROJECT MODULES/--*/*.scss',['concat-modules-and-mixes','sass']);
     gulp.watch(['dev/scss/**/*.scss','dev/MIXES/_mixes.scss'],['sass','throw-main-css']);
@@ -187,6 +194,19 @@ gulp.task('concat-modules-and-mixes', function() {
         .pipe(gulp.dest('dev/MIXES/'));
 
 });
+
+gulp.task('concat-elements', function() {
+    gulp.src('dev/ELEMENTS/_elements.scss', {read: false})
+        .pipe(clean());
+    gulp.src('dev/ELEMENTS/*/--*/*.scss')
+        .pipe(concat('_elements.scss'))
+        .pipe(gulp.dest('dev/ELEMENTS/'));
+    gulp.src('dev/ELEMENTS/*/--*/*.pug')
+        .pipe(concat('_elements.pug'))
+        .pipe(gulp.dest('dev/ELEMENTS/'));
+
+});
+
 var buildmodulesData = {
     string: 'name',
     default: 'no',
@@ -231,6 +251,67 @@ gulp.task('bm', function() {
         }
 
 });
+//////////////////////////////////////////////////////////
+var type = {
+    string: 'type',
+    default: 'link',
+};
+var prefix = {
+        string: 'prefix',
+        default: '----',
+};
+var elemType = minimist(process.argv.slice(2), type);
+var elemPrefix = minimist(process.argv.slice(2), prefix);
+
+gulp.task('be', function() {
+
+    if (elemType.type == 'link'){
+
+        if (!fs.existsSync('dev/ELEMENTS/LINKS/--'+elemPrefix.prefix)) {
+
+            var str = "$color__link"+elemPrefix.prefix+";\n"
+                +"$color__link"+elemPrefix.prefix+"-visited;\n"
+                +"$color__link"+elemPrefix.prefix+"-hover;\n"
+                +" a."+elemPrefix.prefix+" {color: $color__link"+elemPrefix.prefix+";\n text-decoration: none; \n&:visited {color: $color__link"+elemPrefix.prefix+"-visited;\n}\n &:hover, &:focus, &:active \n{color: $color__link"+elemPrefix.prefix+"-hover;\n} &:focus {outline: thin dotted;} \n&:hover, &:active \n{outline: 0;}}";
+            file('style.scss', str)
+                .pipe(gulp.dest('dev/ELEMENTS/LINKS/--'+elemPrefix.prefix+'/'));
+
+            var str = "mixin A-"+elemPrefix.prefix+"(content,href,className)\n\t"
+                    +"-if (!className) className =''\n\t"
+                    +"a(class='"+elemPrefix.prefix+" '+className,href=href)=content";
+
+            file('mixin.pug', str)
+                .pipe(gulp.dest('dev/ELEMENTS/LINKS/--'+elemPrefix.prefix+'/'));
+        }
+
+        }
+    if (elemType.type == 'button'){
+
+        if (!fs.existsSync('dev/ELEMENTS/BUTTONS/--'+elemPrefix.prefix)) {
+
+            var str = "$bkgColor__"+elemPrefix.prefix+";\n"
+                +"$color__"+elemPrefix.prefix+"-hover;\n"
+                +"$color__"+elemPrefix.prefix+";\n"
+                +" ."+elemPrefix.prefix+" {background-color:$bkgColor__"+elemPrefix.prefix+";\ncolor: $color__"+elemPrefix.prefix+"; &:hover, &:focus, &:active \n{color: $color__"+elemPrefix.prefix+"-hover;\n} &:focus {outline: 0;} \n&:hover, &:active \n{outline: 0;}}";
+            file('style.scss', str)
+                .pipe(gulp.dest('dev/ELEMENTS/BUTTONS/--'+elemPrefix.prefix+'/'));
+
+            var str = "mixin B-"+elemPrefix.prefix+"(value,className)\n\t"
+                +"-if (!className) className =''\n\t"
+                +"button."+elemPrefix.prefix+"(class=''+className)=value";
+
+            file('mixin.pug', str)
+                .pipe(gulp.dest('dev/ELEMENTS/BUTTONS/--'+elemPrefix.prefix+'/'));
+        }
+
+    }
+
+    });
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 var alredyCompile = false;
 gulp.task('sass', function () {
     if (!alredyCompile){
@@ -316,33 +397,7 @@ gulp.task('splitter', function() {
         .pipe(htmlsplit())
         .pipe(gulp.dest('dist/splits/'));
 })
-//////////////////////////////////////////////SSH
 
-var config = {
-    host: '185.22.233.89',
-    port: 22,
-    username: 'podpolkovnyk',
-    password: 'Himfwhwbi1899FTP'
-    //privateKey: fs.readFileSync('/Users/Sol/.ssh/id_rsa')
-}
-/*var gulpSSH = new GulpSSH({
-    ignoreErrors: false,
-    sshConfig: config
-})*/
-gulp.task('DEPLOY_WP', function() {
-
-        return gulp
-            .src(['integrator/WordPress/DIST/**'])
-            .pipe(gulpSSH.dest('www/vrigroup.ru/wp-content/themes/VRI'))
-
-})
-gulp.task('WORDPRESS DIST', function() {
-
-    //return gulp
-       // .src(['integrator/WordPress/DRAFT/**'])
-        //.pipe(gulp.dest('integrator/WordPress/DIST'));
-
-})
 /////////////////////////COMPONENTS BLUEPRINT
 gulp.task('blueprint-wright-json', [], function() {
     if(distoptions.izolate){

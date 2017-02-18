@@ -1134,6 +1134,61 @@ td {
   right: 0; }
 
 /*
+* ELEMENTS  STYLES
+*/
+.loginButton {
+  background-color: #47bcff;
+  color: #f9f9f9; }
+  .loginButton:hover, .loginButton:focus, .loginButton:active {
+    color: #ff3a74; }
+  .loginButton:focus {
+    outline: 0; }
+  .loginButton:hover, .loginButton:active {
+    outline: 0; }
+
+.mainButton {
+  background-color: #aaa; }
+  .mainButton:focus {
+    outline: thin dotted; }
+  .mainButton:hover, .mainButton:active {
+    outline: 0; }
+
+button.toCardButton {
+  background-color: #dc4988;
+  color: #fff;
+  padding: 1.02em; }
+  button.toCardButton:hover, button.toCardButton:focus, button.toCardButton:active {
+    color: #a01f56; }
+  button.toCardButton:focus {
+    outline: 0; }
+  button.toCardButton:hover, button.toCardButton:active {
+    outline: 0; }
+
+a, a.mainLink {
+  color: #4323ff;
+  text-decoration: none; }
+  a:visited, a.mainLink:visited {
+    color: #ff7c8b; }
+  a:hover, a:focus, a:active, a.mainLink:hover, a.mainLink:focus, a.mainLink:active {
+    color: #1b00bc; }
+  a:focus, a.mainLink:focus {
+    outline: thin dotted; }
+  a:hover, a:active, a.mainLink:hover, a.mainLink:active {
+    outline: 0; }
+
+a.socialLink {
+  color: red;
+  text-decoration: none; }
+  a.socialLink:visited {
+    color: red; }
+  a.socialLink:hover, a.socialLink:focus, a.socialLink:active {
+    color: red; }
+  a.socialLink:focus {
+    outline: thin dotted; }
+  a.socialLink:hover, a.socialLink:active {
+    outline: 0; }
+
+/*
 * PROJECT  STYLES
 */
 .pb-projectBoard {
