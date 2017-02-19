@@ -3,6 +3,7 @@ var foreach = require('gulp-foreach');
 var wait = require('gulp-wait');
 var path = require('path');
 var runSequence  = require('run-sequence');
+const template = require('gulp-template');
 var merge = require('gulp-merge-json');
 var data = require('./data.json');
 htmlv = require('gulp-html-validator');
@@ -155,6 +156,7 @@ gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-sc
     gulp.watch(['dev/ELEMENTS/*/--*/*.scss','dev/ELEMENTS/*/--*/*.pug'],['concat-elements']);
         gulp.watch(['dev/ELEMENTS/_elements.scss'],['sass','compile-blueprint-sass']);
         gulp.watch(['dev/ELEMENTS/_elements.pug'],['views','compile-blueprint-view']);
+        gulp.watch(['dev/ELEMENTS/**/*','!dev/ELEMENTS/_elements.scss','!dev/ELEMENTS/_elements.pug'],['concat-elements']);
 
     //gulp.watch('dev/MODULES/PROJECT MODULES/--*/*.scss',['concat-modules-and-mixes','sass']);
     gulp.watch(['dev/scss/**/*.scss','dev/MIXES/_mixes.scss'],['sass','throw-main-css']);
@@ -196,15 +198,21 @@ gulp.task('concat-modules-and-mixes', function() {
 });
 
 gulp.task('concat-elements', function() {
-    gulp.src('dev/ELEMENTS/_elements.scss', {read: false})
-        .pipe(clean());
+
     gulp.src('dev/ELEMENTS/*/--*/*.scss')
         .pipe(concat('_elements.scss'))
         .pipe(gulp.dest('dev/ELEMENTS/'));
     gulp.src('dev/ELEMENTS/*/--*/*.pug')
         .pipe(concat('_elements.pug'))
         .pipe(gulp.dest('dev/ELEMENTS/'));
+////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
 });
 
 var buildmodulesData = {
@@ -260,51 +268,46 @@ var prefix = {
         string: 'prefix',
         default: '----',
 };
+var extend = {
+    string: 'extend',
+    default: 'NO',
+};
 var elemType = minimist(process.argv.slice(2), type);
 var elemPrefix = minimist(process.argv.slice(2), prefix);
+var elemExtend = minimist(process.argv.slice(2), extend);
 
 gulp.task('be', function() {
 
-    if (elemType.type == 'link'){
 
-        if (!fs.existsSync('dev/ELEMENTS/LINKS/--'+elemPrefix.prefix)) {
-
-            var str = "$color__link"+elemPrefix.prefix+";\n"
-                +"$color__link"+elemPrefix.prefix+"-visited;\n"
-                +"$color__link"+elemPrefix.prefix+"-hover;\n"
-                +" a."+elemPrefix.prefix+" {color: $color__link"+elemPrefix.prefix+";\n text-decoration: none; \n&:visited {color: $color__link"+elemPrefix.prefix+"-visited;\n}\n &:hover, &:focus, &:active \n{color: $color__link"+elemPrefix.prefix+"-hover;\n} &:focus {outline: thin dotted;} \n&:hover, &:active \n{outline: 0;}}";
-            file('style.scss', str)
-                .pipe(gulp.dest('dev/ELEMENTS/LINKS/--'+elemPrefix.prefix+'/'));
-
-            var str = "mixin A-"+elemPrefix.prefix+"(content,href,className)\n\t"
-                    +"-if (!className) className =''\n\t"
-                    +"a(class='"+elemPrefix.prefix+" '+className,href=href)=content";
-
-            file('mixin.pug', str)
-                .pipe(gulp.dest('dev/ELEMENTS/LINKS/--'+elemPrefix.prefix+'/'));
+    var dir = elemType.type.toUpperCase()+'S';
+    var elemName = elemPrefix.prefix;
+    var elemFolder = elemName;
+    var scssTpl = '_templateScss.tpl';
+    var pugTpl = '_templatePug.tpl';
+    var elemData = {
+            prefix: elemName
         }
+        if (elemExtend.extend){
+            elemData.extend = elemExtend.extend;
+            elemFolder +='( '+elemExtend.extend+' )';
+            scssTpl = '_extendScss.tpl';
+        }
+        if (!fs.existsSync('dev/ELEMENTS/'+dir+'/--'+elemFolder )) {
+
+
+
+
+                gulp.src('dev/ELEMENTS/'+dir+'/_templates/'+pugTpl)
+                    .pipe(rename('mixin.pug'))
+                    .pipe(template(elemData))
+                    .pipe(gulp.dest('dev/ELEMENTS/'+dir+'/--'+elemFolder+'/'))
+
+                gulp.src('dev/ELEMENTS/'+dir+'/_templates/'+scssTpl)
+                    .pipe(rename('style.scss'))
+                    .pipe(template(elemData))
+                    .pipe(gulp.dest('dev/ELEMENTS/'+dir+'/--'+elemFolder+'/'))
 
         }
-    if (elemType.type == 'button'){
-
-        if (!fs.existsSync('dev/ELEMENTS/BUTTONS/--'+elemPrefix.prefix)) {
-
-            var str = "$bkgColor__"+elemPrefix.prefix+";\n"
-                +"$color__"+elemPrefix.prefix+"-hover;\n"
-                +"$color__"+elemPrefix.prefix+";\n"
-                +" ."+elemPrefix.prefix+" {background-color:$bkgColor__"+elemPrefix.prefix+";\ncolor: $color__"+elemPrefix.prefix+"; &:hover, &:focus, &:active \n{color: $color__"+elemPrefix.prefix+"-hover;\n} &:focus {outline: 0;} \n&:hover, &:active \n{outline: 0;}}";
-            file('style.scss', str)
-                .pipe(gulp.dest('dev/ELEMENTS/BUTTONS/--'+elemPrefix.prefix+'/'));
-
-            var str = "mixin B-"+elemPrefix.prefix+"(value,className)\n\t"
-                +"-if (!className) className =''\n\t"
-                +"button."+elemPrefix.prefix+"(class=''+className)=value";
-
-            file('mixin.pug', str)
-                .pipe(gulp.dest('dev/ELEMENTS/BUTTONS/--'+elemPrefix.prefix+'/'));
-        }
-
-    }
 
     });
 

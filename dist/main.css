@@ -985,40 +985,6 @@ td {
     content: '';
     margin-right: 0; }
 
-.FORM {
-  background-color: #fff;
-  padding-top: 1.02em;
-  padding-right: 1.02em;
-  padding-bottom: 1.02em;
-  padding-left: 1.02em; }
-  .FORM input[type='text'] {
-    padding-top: 1.02em;
-    padding-right: 1.02em;
-    padding-bottom: 1.02em;
-    padding-left: 1.02em;
-    font-size: .8rem;
-    width: 100%;
-    border: solid 1px black; }
-  .FORM input[type='submit'] {
-    border: none;
-    font-size: 4rem; }
-
-.form__validateMessage {
-  color: #ff7c8b;
-  float: right;
-  display: inline-block; }
-
-.form__line {
-  margin-top: 1.02em;
-  margin-bottom: 1.02em;
-  padding-top: 1.02em;
-  padding-bottom: 1.02em; }
-  .form__line:last-child {
-    padding-bottom: 0; }
-
-.form_img_ctn {
-  height: 500px; }
-
 .hero_video {
   position: relative; }
 
@@ -1062,6 +1028,40 @@ td {
 
 .video-container video.fillWidth {
   width: 100%; }
+
+.FORM {
+  background-color: #fff;
+  padding-top: 1.02em;
+  padding-right: 1.02em;
+  padding-bottom: 1.02em;
+  padding-left: 1.02em; }
+  .FORM input[type='text'] {
+    padding-top: 1.02em;
+    padding-right: 1.02em;
+    padding-bottom: 1.02em;
+    padding-left: 1.02em;
+    font-size: .8rem;
+    width: 100%;
+    border: solid 1px black; }
+  .FORM input[type='submit'] {
+    border: none;
+    font-size: 4rem; }
+
+.form__validateMessage {
+  color: #ff7c8b;
+  float: right;
+  display: inline-block; }
+
+.form__line {
+  margin-top: 1.02em;
+  margin-bottom: 1.02em;
+  padding-top: 1.02em;
+  padding-bottom: 1.02em; }
+  .form__line:last-child {
+    padding-bottom: 0; }
+
+.form_img_ctn {
+  height: 500px; }
 
 .pagination {
   padding-top: 1.65036em;
@@ -1136,34 +1136,6 @@ td {
 /*
 * ELEMENTS  STYLES
 */
-.loginButton {
-  background-color: #47bcff;
-  color: #f9f9f9; }
-  .loginButton:hover, .loginButton:focus, .loginButton:active {
-    color: #ff3a74; }
-  .loginButton:focus {
-    outline: 0; }
-  .loginButton:hover, .loginButton:active {
-    outline: 0; }
-
-.mainButton {
-  background-color: #aaa; }
-  .mainButton:focus {
-    outline: thin dotted; }
-  .mainButton:hover, .mainButton:active {
-    outline: 0; }
-
-button.toCardButton {
-  background-color: #dc4988;
-  color: #fff;
-  padding: 1.02em; }
-  button.toCardButton:hover, button.toCardButton:focus, button.toCardButton:active {
-    color: #a01f56; }
-  button.toCardButton:focus {
-    outline: 0; }
-  button.toCardButton:hover, button.toCardButton:active {
-    outline: 0; }
-
 a, a.mainLink {
   color: #4323ff;
   text-decoration: none; }
@@ -1176,6 +1148,18 @@ a, a.mainLink {
   a:hover, a:active, a.mainLink:hover, a.mainLink:active {
     outline: 0; }
 
+a.signUpButtonLink {
+  color: #ff726b;
+  text-decoration: none; }
+  a.signUpButtonLink:visited {
+    color: #fff; }
+  a.signUpButtonLink:hover, a.signUpButtonLink:focus, a.signUpButtonLink:active {
+    color: #a14d47; }
+  a.signUpButtonLink:focus {
+    outline: none; }
+  a.signUpButtonLink:hover, a.signUpButtonLink:active {
+    outline: none; }
+
 a.socialLink {
   color: red;
   text-decoration: none; }
@@ -1186,6 +1170,13 @@ a.socialLink {
   a.socialLink:focus {
     outline: thin dotted; }
   a.socialLink:hover, a.socialLink:active {
+    outline: 0; }
+
+.mainButton {
+  background-color: #aaa; }
+  .mainButton:focus {
+    outline: thin dotted; }
+  .mainButton:hover, .mainButton:active {
     outline: 0; }
 
 /*
