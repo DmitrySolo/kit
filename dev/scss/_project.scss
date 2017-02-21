@@ -8,6 +8,9 @@ Header
   @include for-size(tablet-l-up) {
     display: block;
   }
+  @include for-size(desktop-up){
+    @include space('element','','b');
+  }
 }
 
 .ove-topNavigation li.ove-topNavigation__eshopMark {
@@ -25,6 +28,7 @@ Header
   display: none;
   @include for-size(desktop-up) {
     display: block;
+    @include space('element','','b');
   }
 }
 
@@ -51,5 +55,5 @@ Header
 logo
 */
 .ove-logo--mobile img {
-  height: 60px;
+  height: s-height(1,'module');
 }

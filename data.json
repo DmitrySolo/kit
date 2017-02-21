@@ -98,6 +98,68 @@
 			"childs": ""
 		}
 	},
+	"FORM": {
+		"TITLE": "Быть в курсе последних акций и новостей",
+		"action": "/",
+		"method": "get",
+		"name": "subscribe",
+		"on_submit": "return validate()",
+		"dop_class": "forme",
+		"submit": {
+			"name": "name",
+			"value": "ОТПРАВИТЬ",
+			"id": "",
+			"dop_class": "info__section__more"
+		},
+		"inputs": {
+			"1": {
+				"type": "text",
+				"label": "Ваше имя",
+				"name": "name",
+				"value": "",
+				"id": "",
+				"dop_class": "form--name",
+				"requared": "true",
+				"placeholder": "",
+				"other_specific": ""
+			},
+			"2": {
+				"type": "text",
+				"label": "Электронный ящик!",
+				"name": "email",
+				"value": "",
+				"id": "",
+				"dop_class": "form--mail",
+				"requared": "true",
+				"placeholder": "",
+				"other_specific": {}
+			}
+		}
+	},
+	"LIBS": {
+		"FORM": {
+			"js": {
+				"validator": {
+					"src": "bower_components/validator-js/validator.min.js",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"hero_video": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		}
+	},
 	"menuData": {
 		"Home": {
 			"title": "Home",
@@ -196,73 +258,11 @@
 			}
 		}
 	},
-	"FORM": {
-		"TITLE": "Быть в курсе последних акций и новостей",
-		"action": "/",
-		"method": "get",
-		"name": "subscribe",
-		"on_submit": "return validate()",
-		"dop_class": "forme",
-		"submit": {
-			"name": "name",
-			"value": "ОТПРАВИТЬ",
-			"id": "",
-			"dop_class": "info__section__more"
-		},
-		"inputs": {
-			"1": {
-				"type": "text",
-				"label": "Ваше имя",
-				"name": "name",
-				"value": "",
-				"id": "",
-				"dop_class": "form--name",
-				"requared": "true",
-				"placeholder": "",
-				"other_specific": ""
-			},
-			"2": {
-				"type": "text",
-				"label": "Электронный ящик!",
-				"name": "email",
-				"value": "",
-				"id": "",
-				"dop_class": "form--mail",
-				"requared": "true",
-				"placeholder": "",
-				"other_specific": {}
-			}
-		}
-	},
-	"LIBS": {
-		"FORM": {
-			"js": {
-				"validator": {
-					"src": "bower_components/validator-js/validator.min.js",
-					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"hero_video": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		}
+	"hero_video": {
+		"hero_video": "1"
 	},
 	"breadcrumbs": {
 		"1": "1"
-	},
-	"hero_video": {
-		"hero_video": "1"
 	},
 	"pagination": {
 		"pagination": "1"

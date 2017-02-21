@@ -1,11 +1,16 @@
 .menu-hamburger{
-  height: 100%;
+position: relative;
+  top:0;
+  bottom: 0;
   .menu-hamburger__part{
-    @include space('element','','b');
-    border-radius: 3px;
+    position: relative;
+    margin: 0 auto 6px auto;
+    vertical-align: middle;
+    margin-bottom: 6px;
+    border-radius: 2px;
     display: block;
-    width: 80%;
-    height: .5rem;
+    width: 36px;
+    height: .4rem;
     background-color: cs('fground');
   }
 }

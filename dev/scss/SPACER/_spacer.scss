@@ -45,7 +45,7 @@
     }
   }
 }
-@function s-growLines($lines,$linesRatio:0,$linesBlocks:0,$font-size:1){
+@function s-growLines($lines,$linesRatio:0,$linesBlocks:1,$font-size:1){
   $space_ratio: 0;
   @if ($linesRatio=='block') {
     $space_ratio: $block_space;
@@ -57,6 +57,19 @@
     $space_ratio: $element_space;
   }
   @return $font-size*($lines*(($space_ratio*$line-height-ratio*$linesBlocks)+($line-height-ratio)))*1em;
+}
+@function s-height($lines,$linesRatio){
+  $space_ratio: 0;
+  @if ($linesRatio=='block') {
+    $space_ratio: $block_space;
+  } @else if ($linesRatio=='module') {
+    $space_ratio: $module_space;
+  } @else if ($linesRatio=='component') {
+    $space_ratio: $component_space;
+  } @else if ($linesRatio=='element') {
+    $space_ratio: $element_space;
+  }
+  @return $line-height-ratio+$space_ratio*$lines*2em;
 }
 @function s-growWrap($wrapRatio,$wrapBlocks,$calcLines,$wrapFontSize:1){
   $lines:_strip-units($calcLines);
