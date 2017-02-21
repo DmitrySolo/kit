@@ -16,7 +16,9 @@
   @include colStyle($prefixes,$colums);
 
   @each $label,$map in $grid-map{
-    @media screen and (min-width : map_get($map,breakpoint)) {
+    $prop:min-width;
+    @if($label == mobile){$prop:max-width;}
+    @media screen and ($prop : map_get($map,breakpoint)) {
       @include gridBuilder(map_get($map,prefix),$colums);
       @include hide(map_get($map,prefix),$prefixes);
       @include visible(map_get($map,prefix),$prefixes);

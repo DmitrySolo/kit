@@ -1,3 +1,15 @@
+.menu-hamburger{
+  height: 100%;
+  .menu-hamburger__part{
+    @include space('element','','b');
+    border-radius: 3px;
+    display: block;
+    width: 80%;
+    height: .5rem;
+    background-color: cs('fground');
+  }
+}
+
 .heroTitle-ctn {
   width: 100%;
   display: table;
@@ -14,7 +26,8 @@
   display: block;
   text-align: center;
   img{
-
+      width: 100%;
+    vertical-align: bottom;
   }
 }
 

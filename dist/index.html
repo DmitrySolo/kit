@@ -6,35 +6,102 @@
     <meta name="description" content="This is test framework application">
     <meta name="keywords" content="application, test , hurray!!!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Tinos:400,400i,700&amp;amp;subset=cyrillic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;amp;subset=cyrillic,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="main.css" rel="stylesheet" type="text/css">
   </head>
-  <body><!-- split index.html -->
-    <section class="hero">
-      <div class="heroTitle-ctn">
-        <h1 class="heroTitle">THE SUPER PROJECT!</h1>
+  <body><!-- split header.html -->
+    <header class="ove-mainHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-12-tl">
+            <nav class="ove-topNavigation">
+              <ul>
+                <li class="ove-topNavigation__eshopMark"><a class="ove-topNavLink " href="/">Интернет-магазин</a>
+                </li>
+                <li><a class="ove-topNavLink " href="/">Vip Сантехника</a>
+                </li>
+                <li><a class="ove-topNavLink " href="/">Наши магазины</a>
+                </li>
+                <li><a class="ove-topNavLink " href="/">Сервисный центр</a>
+                </li>
+                <li><a class="ove-topNavLink " href="/">Сток центр</a>
+                </li>
+                <li><a class="ove-topNavLink " href="/">Оптовый отдел</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <section class="ove-desctopControlPanel">
+            <div class="col-5-d">
+              <div class="row">
+                <div class="col-6-d">
+                  <div class="ove-logo"><a class="logo__link ove-logo"><img src="images/logo.svg"/></a>
+                  </div>
+                </div>
+                <div class="col-6-d no-gutter-l">
+                  <div class="ove-info">info</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4-d">
+              <div class="ove-personalDashboard">dashboard</div>
+            </div>
+            <div class="col-1-d">
+              <div class="ove-bookmarks">bookmarks</div>
+            </div>
+            <div class="col-2-d">
+              <div class="ove-cart">cart</div>
+            </div>
+          </section>
+        </div>
       </div>
-    </section><!-- split modules/FORM -->
-    <div class="FORM">
-      <!--h3.form__title=page.title-->
-      <form class="forme" method="get" name="subscribe" action="/" onsubmit="return validate()">
-        <p class="form__line">
-          <label for="name">Ваше имя<span class="form__validateMessage" id="js_val_name"></span><br/>
-            <input class="form--name" type="text" name="name" value="" placeholder="" id=""/>
-          </label>
-        </p>
-        <p class="form__line">
-          <label for="email">Электронный ящик!<span class="form__validateMessage" id="js_val_email"></span><br/>
-            <input class="form--mail" type="text" name="email" value="" placeholder="" id=""/>
-          </label>
-        </p>
-        <p class="form__line">
-          <input class="info__section__more" type="submit" value="ОТПРАВИТЬ" id=""/>
-          <div class="img_container--align_v form_img_ctn"><img src="images/wild_oliva.png"/></div><a class="mainLink " href="/go">hello i am link </a><a class="signUpButtonLink " href="/heopppo">SIGN UP!</a>
-        </p>
-      </form>
+      <div class="ove-subControlPanel__wrapper">
+        <div class="container">
+          <section class="ove-subControlPanel ove-subControlPanel--mobile">
+            <div class="row">
+              <div class="col-2-m col-2-tp">
+                <div class="menu-hamburger"><span class="menu-hamburger__part menu-hamburger--top"></span><span class="menu-hamburger__part menu-hamburger--middle"></span><span class="menu-hamburger__part menu-hamburger--bottom"></span></div>
+              </div>
+              <div class="col-8-m col-8-tp"><a class="logo__link ove-logo--mobile"><img src="images/logo.svg"/></a>
+              </div>
+              <div class="col-2-m col-2-tp">button</div>
+            </div>
+          </section>
+          <section class="ove-subControlPanel ove-subControlPanel--desktop"></section>
+        </div>
+      </div>
+    </header><!-- split index.html -->
+    <div class="container">
+      <div class="row">
+        <div class="col-6-tl">
+          <div class="heroTitle-ctn">
+            <h1 class="heroTitle">THE SUPER PROJECT!</h1>
+          </div>
+        </div>
+        <div class="col-6-tl"><!-- split modules/FORM -->
+          <div class="FORM">
+            <!--h3.form__title=page.title-->
+            <form class="forme" method="get" name="subscribe" action="/" onsubmit="return validate()">
+              <p class="form__line">
+                <label for="name">Ваше имя<span class="form__validateMessage" id="js_val_name"></span><br/>
+                  <input class="form--name" type="text" name="name" value="" placeholder="" id=""/>
+                </label>
+              </p>
+              <p class="form__line">
+                <label for="email">Электронный ящик!<span class="form__validateMessage" id="js_val_email"></span><br/>
+                  <input class="form--mail" type="text" name="email" value="" placeholder="" id=""/>
+                </label>
+              </p>
+              <p class="form__line">
+                <input class="info__section__more" type="submit" value="ОТПРАВИТЬ" id=""/>
+                <div class="img_container--align_v form_img_ctn"><img src="images/wild_oliva.png"/></div>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
     </div><!-- split footer.html -->
-<!-- split scripts/scripts.html -->
+    <footer></footer><!-- split scripts/scripts.html -->
     <script src="scripts/jquery.min.js" type="text/javascript"></script>
     <script src="scripts/sass-to-js.min.js" type="text/javascript"></script>
     <script src="scripts/script.js" type="text/javascript"></script>

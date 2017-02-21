@@ -1,3 +1,11 @@
+mixin hamburger()
+    .menu-hamburger
+        span.menu-hamburger__part.menu-hamburger--top
+        span.menu-hamburger__part.menu-hamburger--middle
+        span.menu-hamburger__part.menu-hamburger--bottom
+
+
+
 mixin hero-title-center(title)
     .heroTitle-ctn
         h1.heroTitle=title
@@ -10,7 +18,7 @@ mixin logo-img(src,className)
 
 
 
-mixin logo-svg(src,className)
+mixin logo-svg(className,src)
     a.logo__link(class=''+className)
         .logo__container
             include ../../dist/images/logo.svg

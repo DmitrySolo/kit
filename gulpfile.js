@@ -788,3 +788,5 @@ return gulp
     .pipe(sassJson())
     .pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
 });
+//////////////////////////////////////////////////////
+gulp.task('default', ['WATCHER', 'SERVER']);

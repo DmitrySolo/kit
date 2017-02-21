@@ -4,7 +4,10 @@ block title
     title Главная
     -var page={slug:"index",title:"Главная"};
 block main
-    section.hero
-        +hero-title-center('THE SUPER PROJECT!')
-    +module('FORM')
+    .container
+        .row
+            .col-6-tl
+                +hero-title-center('THE SUPER PROJECT!')
+            .col-6-tl
+                +module('FORM')
 

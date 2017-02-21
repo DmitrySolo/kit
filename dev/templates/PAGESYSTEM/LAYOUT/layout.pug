@@ -5,9 +5,9 @@ html(lang=''+head.lang)
     head
         include ../INCLUDES/_head
     body
+        include _header
         <!-- split #{page.slug}.html -->
         block main
-        <!-- split footer.html -->
+        include _footer
         <!-- split scripts/scripts.html -->
         include ../INCLUDES/_scripts
-

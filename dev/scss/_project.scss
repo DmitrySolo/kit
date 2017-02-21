@@ -1,1 +1,55 @@
 //PROJECT SCSS
+
+/*
+Header
+*/
+.ove-topNavigation {
+  display: none;
+  @include for-size(tablet-l-up) {
+    display: block;
+  }
+}
+
+.ove-topNavigation li.ove-topNavigation__eshopMark {
+  display: none;
+  @include for-size(desktop-up) {
+    display: inline-block;
+  }
+}
+
+.ove-topNavigation li {
+  display: inline-block;
+}
+
+.ove-desctopControlPanel {
+  display: none;
+  @include for-size(desktop-up) {
+    display: block;
+  }
+}
+
+.ove-subControlPanel__wrapper {
+ //@include space('element', 'a', '');
+  background-color: cs('primary');
+  border-bottom: 3px solid cs('primary-d');
+}
+
+.ove-subControlPanel--mobile {
+  @include for-size(desktop-up) {
+    display: none;
+  }
+}
+
+.ove-subControlPanel--desktop {
+  display: none;
+  @include for-size(desktop-up) {
+    display: block;
+  }
+}
+
+/*
+logo
+*/
+.ove-logo--mobile img {
+  height: 60px;
+}

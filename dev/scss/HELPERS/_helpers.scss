@@ -1,15 +1,16 @@
 @import "functions";
+
 @mixin helpers() {
-  .fadeIn{
+  .fadeIn {
     opacity: 1;
   }
-  .fadeOut{
+  .fadeOut {
     opacity: 0;
   }
-  .visible{
+  .visible {
     display: block;
   }
-  .hidden{
+  .hidden {
     display: none;
   }
 
@@ -28,5 +29,15 @@
     &:after {
       clear: both;
     }
+  }
+  .no-gutter {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .no-gutter-l {
+    padding-left: 0;
+  }
+  .no-gutter-r {
+    padding-right: 0;
   }
 }

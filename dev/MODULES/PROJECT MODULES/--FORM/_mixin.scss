@@ -11,13 +11,17 @@
   }
   input[type='submit']{
     border: none;
-    font-size: 4rem;
+    font-size: 1rem;
   }
 }
 .form__validateMessage {
   color: #ff7c8b;
   float: right;
   display: inline-block;
+  @include for-size(desktop-up){
+    color: #00A000;
+    font-size: 50px;
+  }
 }
 .form__line {
   @include space('element','tb','bt');

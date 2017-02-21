@@ -1,13 +1,10 @@
-mixin A(content,href,className)
-	-if (!className) className =''
-	a(class='mainLink '+className,href=href)=content
-mixin A-signUpButtonLink(content,href,className)
-	-if (!className) className =''
-	a(class='signUpButtonLink '+className,href=href)=content
-
-mixin A-socialLink(content,href,className)
-	-if (!className) className =''
-	a(class='socialLink '+className,href=href)=content
 mixin B(value,className)
 	-if (!className) className =''
 	button.mainButton(class=''+className)=value
+
+mixin A(content,href,className)
+	-if (!className) className =''
+	a(class='mainLink '+className,href=href)=content
+mixin A-ove-topNavLink(content,href,className)
+	-if (!className) className =''
+	a(class='ove-topNavLink '+className,href=href)=content
