@@ -1,0 +1,67 @@
+$color__button:#aaa;
+$color__button-hover:#aaa;
+$color__button-active:#aaa;
+//--Main Button
+.mainButton {
+  background-color: $color__button;
+
+  &:focus {
+    outline: thin dotted;
+  }
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+$color__link: #4323ff;
+$color__link-visited: #ff7c8b;
+$color__link-hover:darken($color__link,20%);
+
+a, a.mainLink {
+  color: $color__link;
+  text-decoration: none;
+
+  &:visited {
+    color: $color__link-visited;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
+  &:focus {
+    outline: thin dotted;
+  }
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+$color__ove-topNavLink:cs('font');
+$color__ove-topNavLink-visited:cs('font');
+$color__ove-topNavLink-hover:cs('font-d');
+
+a.ove-topNavLink {
+	color: $color__ove-topNavLink;
+	display: inline-block;
+	text-decoration: none;
+	@include space('element','a','');
+	background-color: #fff;
+
+	&:visited {
+		color: $color__ove-topNavLink-visited;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__ove-topNavLink-hover;
+		background-color: #87ff8b;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover,
+	&:active {
+	outline: none;
+	}
+}
