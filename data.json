@@ -46,29 +46,28 @@
 	"siteWidth": "1240px",
 	"colums": "12",
 	"gutter-width": "1em",
+	"container-styles": "(\r\n\r\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
 		"float": "left"
 	},
-	"grid-map": {
-		"mobile": "(prefix",
-		"container": "$siteWidth",
-		"breakpoint": "$desktop-upper-boundary)",
-		"tablet": "(prefix",
-		"mediumScreen": "(prefix",
-		"largeScreen": "(prefix",
-		"tablet-p": "(prefix",
-		"tablet-l": "(prefix"
-	},
-	"nr-colStyles": {
-		"float": "left"
-	},
-	"container-styles": "(\n\n)",
 	"phone-upper-boundary": "600px",
 	"tablet-portrait-upper-boundary": "900px",
 	"tablet-landscape-upper-boundary": "1200px",
 	"desktop-upper-boundary": "1800px",
+	"grid-map": {
+		"mobile": "(prefix",
+		"container": "$siteWidth",
+		"breakpoint": "$desktop-upper-boundary)",
+		"tablet-p": "(prefix",
+		"tablet-l": "(prefix",
+		"mediumScreen": "(prefix",
+		"largeScreen": "(prefix"
+	},
+	"nr-colStyles": {
+		"float": "left"
+	},
 	"menuData1": {
 		"Home": {
 			"title": "Продукция",
@@ -96,68 +95,6 @@
 			"href": "sale.html",
 			"dop_class": "lightmenu__item--active",
 			"childs": ""
-		}
-	},
-	"FORM": {
-		"TITLE": "Быть в курсе последних акций и новостей",
-		"action": "/",
-		"method": "get",
-		"name": "subscribe",
-		"on_submit": "return validate()",
-		"dop_class": "forme",
-		"submit": {
-			"name": "name",
-			"value": "ОТПРАВИТЬ",
-			"id": "",
-			"dop_class": "info__section__more"
-		},
-		"inputs": {
-			"1": {
-				"type": "text",
-				"label": "Ваше имя",
-				"name": "name",
-				"value": "",
-				"id": "",
-				"dop_class": "form--name",
-				"requared": "true",
-				"placeholder": "",
-				"other_specific": ""
-			},
-			"2": {
-				"type": "text",
-				"label": "Электронный ящик!",
-				"name": "email",
-				"value": "",
-				"id": "",
-				"dop_class": "form--mail",
-				"requared": "true",
-				"placeholder": "",
-				"other_specific": {}
-			}
-		}
-	},
-	"LIBS": {
-		"FORM": {
-			"js": {
-				"validator": {
-					"src": "bower_components/validator-js/validator.min.js",
-					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"hero_video": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
 		}
 	},
 	"menuData": {
@@ -258,11 +195,73 @@
 			}
 		}
 	},
-	"hero_video": {
-		"hero_video": "1"
-	},
 	"breadcrumbs": {
 		"1": "1"
+	},
+	"FORM": {
+		"TITLE": "Быть в курсе последних акций и новостей",
+		"action": "/",
+		"method": "get",
+		"name": "subscribe",
+		"on_submit": "return validate()",
+		"dop_class": "forme",
+		"submit": {
+			"name": "name",
+			"value": "ОТПРАВИТЬ",
+			"id": "",
+			"dop_class": "info__section__more"
+		},
+		"inputs": {
+			"1": {
+				"type": "text",
+				"label": "Ваше имя",
+				"name": "name",
+				"value": "",
+				"id": "",
+				"dop_class": "form--name",
+				"requared": "true",
+				"placeholder": "",
+				"other_specific": ""
+			},
+			"2": {
+				"type": "text",
+				"label": "Электронный ящик!",
+				"name": "email",
+				"value": "",
+				"id": "",
+				"dop_class": "form--mail",
+				"requared": "true",
+				"placeholder": "",
+				"other_specific": {}
+			}
+		}
+	},
+	"LIBS": {
+		"FORM": {
+			"js": {
+				"validator": {
+					"src": "bower_components/validator-js/validator.min.js",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"hero_video": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		}
+	},
+	"hero_video": {
+		"hero_video": "1"
 	},
 	"pagination": {
 		"pagination": "1"

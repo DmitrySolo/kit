@@ -9,9 +9,9 @@
 	"header-color": "cs('font-d')",
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
-		"'MAIN'": "('Tinos')"
+		"'MAIN'": "('Roboto')"
 	},
-	"element_space": ".6",
+	"element_space": ".5",
 	"component_space": "$element_space*1.618",
 	"module_space": "$component_space*1.618",
 	"block_space": "$module_space*1.618",
@@ -20,21 +20,27 @@
 	"header-font": "fs('HERO'),san-serif",
 	"header-font-weight": "900",
 	"mobile-font": "14px",
-	"screen-font": "18px",
+	"screen-font": "16px",
 	"line-height-ratio": "1.7",
-	"siteWidth": "1200px",
+	"siteWidth": "1240px",
 	"colums": "12",
-	"gutter-width": "10px",
+	"gutter-width": "1em",
+	"container-styles": "(\r\n\r\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
 		"float": "left"
 	},
+	"phone-upper-boundary": "600px",
+	"tablet-portrait-upper-boundary": "900px",
+	"tablet-landscape-upper-boundary": "1200px",
+	"desktop-upper-boundary": "1800px",
 	"grid-map": {
 		"mobile": "(prefix",
 		"container": "$siteWidth",
-		"breakpoint": "1400px)",
-		"tablet": "(prefix",
+		"breakpoint": "$desktop-upper-boundary)",
+		"tablet-p": "(prefix",
+		"tablet-l": "(prefix",
 		"mediumScreen": "(prefix",
 		"largeScreen": "(prefix"
 	},

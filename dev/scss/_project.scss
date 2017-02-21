@@ -8,8 +8,8 @@ Header
   @include for-size(tablet-l-up) {
     display: block;
   }
-  @include for-size(desktop-up){
-    @include space('element','','b');
+  @include for-size(desktop-up) {
+    @include space('element', '', 'b');
   }
 }
 
@@ -28,17 +28,18 @@ Header
   display: none;
   @include for-size(desktop-up) {
     display: block;
-    @include space('element','','b');
+    @include space('element', '', 'b');
   }
 }
 
 .ove-subControlPanel__wrapper {
- //@include space('element', 'a', '');
+  //@include space('element', 'a', '');
   background-color: cs('primary');
   border-bottom: 3px solid cs('primary-d');
 }
 
 .ove-subControlPanel--mobile {
+  @include space('element', 'tb', '');
   @include for-size(desktop-up) {
     display: none;
   }
@@ -46,14 +47,22 @@ Header
 
 .ove-subControlPanel--desktop {
   display: none;
-  @include for-size(desktop-up) {
-    display: block;
-  }
++ for-size(desktop-up) {
+  display: block;
+}
 }
 
 /*
 logo
 */
+.ove-logo--mobile {
+@include for-size(tablet-p-up) {
+  text-align: left;
+}
+}
+
 .ove-logo--mobile img {
-  height: s-height(1,'module');
+  height: s-height(1, 'module');
+  width: auto;
+
 }

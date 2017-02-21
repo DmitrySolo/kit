@@ -1,18 +1,27 @@
 .menu-hamburger{
+  display: table;
 position: relative;
-  top:0;
-  bottom: 0;
+  margin: 0 auto;
+  height: s-height(1,'module');
+  cursor: pointer;
   .menu-hamburger__part{
     position: relative;
-    margin: 0 auto 6px auto;
     vertical-align: middle;
     margin-bottom: 6px;
-    border-radius: 2px;
+    border-radius: 1px;
     display: block;
-    width: 36px;
+    width: 2rem;
     height: .4rem;
     background-color: cs('fground');
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
+
+}
+.menu-hamburger__partsWrap{
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .heroTitle-ctn {

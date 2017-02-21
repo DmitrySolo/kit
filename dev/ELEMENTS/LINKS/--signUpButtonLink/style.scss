@@ -1,0 +1,24 @@
+$color__signUpButtonLink: #ff726b;
+$color__signUpButtonLink-visited:#fff;
+$color__signUpButtonLink-hover: #a14d47;
+
+a.signUpButtonLink {
+	color: $color__signUpButtonLink;
+	text-decoration: none;
+
+	&:visited {
+		color: $color__signUpButtonLink-visited;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__signUpButtonLink-hover;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover,
+	&:active {
+	outline: none;
+	}
+}
