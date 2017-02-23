@@ -1,0 +1,1 @@
+$('.row').notify("Hello Box");
