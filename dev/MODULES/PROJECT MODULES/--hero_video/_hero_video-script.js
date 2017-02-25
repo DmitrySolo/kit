@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-    scaleVideoContainer();
+    scaleVideoContainer();//vvdxo
 
     initBannerVideoSize('.video-container .poster img');
     initBannerVideoSize('.video-container .filter');

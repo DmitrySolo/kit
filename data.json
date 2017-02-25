@@ -46,7 +46,7 @@
 	"siteWidth": "1240px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
@@ -67,6 +67,71 @@
 	},
 	"nr-colStyles": {
 		"float": "left"
+	},
+	"LIBS": {
+		"gogog": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"<%= prefix %>": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"FORM11": {
+			"js": {
+				"validator": {
+					"src": "bower_components/validator-js/validator.min.js",
+					"container": "header"
+				},
+				"<E>-script": {
+					"src": "din",
+					"container": "header/preloaderInit"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"FORM": {
+			"js": {
+				"validator": {
+					"src": "bower_components/validator-js/validator.min.js",
+					"container": "footer/libs"
+				},
+				"FORM-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--FORM/_FORM--script.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"hero_video": {
+			"js": {
+				"hero_video-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		}
 	},
 	"menuData1": {
 		"Home": {
@@ -195,9 +260,6 @@
 			}
 		}
 	},
-	"breadcrumbs": {
-		"1": "1"
-	},
 	"FORM": {
 		"TITLE": "Быть в курсе последних акций и новостей",
 		"action": "/",
@@ -236,29 +298,8 @@
 			}
 		}
 	},
-	"LIBS": {
-		"FORM": {
-			"js": {
-				"validator": {
-					"src": "bower_components/validator-js/validator.min.js",
-					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"hero_video": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		}
+	"breadcrumbs": {
+		"1": "1"
 	},
 	"hero_video": {
 		"hero_video": "1"

@@ -1,10 +1,18 @@
-{"LIBS":{
-  "FORM":{
-      "js":{
-        "validator":{
-           "src":"bower_components/validator-js/validator.min.js",
-           "concat":"true"
+{
+  "LIBS": {
+    "FORM": {
+      "js": {
+        "validator": {
+          "src": "bower_components/validator-js/validator.min.js",
+          "container": "footer/libs"
+        },"FORM-script": {
+          "src": "dev/MODULES/PROJECT MODULES/--FORM/_FORM--script.js",
+          "container": "footer/init"
         }
       },
-      "css":{"":""}
-}}}
+      "css": {
+        "": ""
+      }
+    }
+  }
+}
