@@ -2,13 +2,11 @@
   "LIBS": {
     "FORM11": {
       "js": {
-        "validator": {
-          "src": "bower_components/validator-js/validator.min.js",
-          "container": "header"
-        },
-        "<E>-script": {
-          "src": "din",
-          "container": "header/preloaderInit"
+
+        "preloader-script": {
+          "src": "dev/SCRIPTS/SCRIPTS/PRELOADER/script.js",
+          "container": "header/preloaderInit",
+          "type":"init"
         }
       },
       "css": {

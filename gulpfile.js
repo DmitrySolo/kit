@@ -129,7 +129,7 @@ gulp.task('own-js', function() {
         .pipe(gulp.dest('dist/scripts'));
 });
 gulp.task('build-script-js', function() {
-    gulp.src(['dev/**/_FORM-script.js'])
+    gulp.src(['dev/**/_FORM-search.js'])
         .pipe(concat({ path: 'script.js', stat: { mode: 0666 }}))
         .pipe(gulp.dest('dist/scripts'));
 });
@@ -161,7 +161,7 @@ gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-sc
     //gulp.watch('dev/MODULES/PROJECT MODULES/--*/*.scss',['concat-modules-and-mixes','sass']);
     gulp.watch(['dev/scss/**/*.scss','dev/MIXES/_mixes.scss'],['sass','throw-main-css']);
     //gulp.watch('dev/MODULES/*/--*/*.pug',['views']);
-    gulp.watch(['dev/**/_FORM-script.js'],['build-script-js',browserSync.reload]);
+    gulp.watch(['dev/**/_FORM-search.js'],['build-script-js',browserSync.reload]);
     gulp.watch(['dev/MODULES/**/*.pug','dev/templates/**/*.pug','dev/MIXES/_mixes.pug'],function(){ runSequence('views', 'compile-blueprint-view') });
     gulp.watch(['blueprint/*.pug'],['compile-blueprint-view']);
     gulp.watch(['blueprint/*.scss'],['compile-blueprint-sass']);
@@ -547,12 +547,12 @@ gulp.task('buildLibs',[], function () {
         //console.log(css_deps)
         for (var index in js_deps){
             var js_dep = js_deps[index];
-            var path = js_dep.src;
+            var pathtoScript = js_dep.src;
             console.log(js_dep.concat)
             if(js_dep.concat == 'false'){
-                gulp.src(path).pipe(gulp.dest('dist/scripts/libs/'));
+                gulp.src(pathtoScript).pipe(gulp.dest('dist/scripts/libs/'));
                var str ="\nscript(src='scripts/libs/"+index+"' type='text/javascript')";
-                gulp.src('dev/templates/PAGESYSTEM/INCLUDES/_scripts.pug').pipe(insert.append(str)).pipe(gulp.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
+                gulp.src('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug').pipe(insert.append(str)).pipe(gulp.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
 
             }
         }
@@ -798,6 +798,19 @@ return gulp
 gulp.task('START QUANT', ['WATCHER', 'SERVER']);
 
 gulp.task('SCRIPTS',[], function () {
+
+
+    //gulp.src('dev/SCRIPTS/CONTAINERS/**/*', {read: false}).pipe(clean());
+    //deleteFolderRecursive('dev/SCRIPTS/CONTAINERS/FOOTER/');
+        fs.truncateSync('dev/templates/PAGESYSTEM/INCLUDES/_scriptsFooter.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug');
+
+
+    var scriptFiles = [];
+    var strHeader = "";
+    var strFooter = "";
+
+
     for(var index in data.LIBS) {
         var mod_deps = data.LIBS[index]
         //console.log(mod_deps)
@@ -807,22 +820,77 @@ gulp.task('SCRIPTS',[], function () {
         //console.log(css_deps)
         for (var index in js_deps){
             var js_dep = js_deps[index];
-            var path = js_dep.src;
+            var pathtoScript = js_dep.src;
             console.log(js_dep.container)
             var dist = 'dev/SCRIPTS/CONTAINERS/'+js_dep.container+'/';
             console.log(dist);
 
-                gulp.src(path).pipe(gulp.dest(dist));
+                gulp.src(pathtoScript).pipe(gulp.dest(dist));
 
 
-        }
+    }}///throw to container
 
-    }
 
-    concatAndDist=function (e, cnt) {
+
+    var concatAndDist=function (e, cnt) {
+
+        gulp.src('dev/SCRIPTS/CONTAINERS/'+cnt+'/*.js')
+            .pipe(foreach(function(stream, file){
+
+                var name = path.basename(file.path, '.js');
+
+                if(scriptFiles.indexOf(name)==-1){
+
+
+                    if (cnt.toUpperCase() == 'HEADER' ){
+
+                         strHeader +="\nscript(src='scripts/"+name+".js' type='text/javascript')";
+                         console.log(strHeader)
+
+
+                    }else if(cnt.toUpperCase() == 'FOOTER') {
+
+                         strFooter +="\nscript(src='scripts/"+name+".js' type='text/javascript')";
+
+                    }
+                    scriptFiles.push(name);
+
+                }
+                fs.writeFileSync('dev/templates/PAGESYSTEM/INCLUDES/_scriptsFooter.pug',strFooter)
+                fs.writeFileSync('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug',strHeader)
+                //gulp.src('dev/templates/PAGESYSTEM/INCLUDES/_scriptsFooter.pug').pipe(insert.append(strFooter)).pipe(gulp.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
+                //gulp.src('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug').pipe(insert.append(strHeader)).pipe(gulp.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
+                return stream
+            }))
+            .pipe(gulp.dest('dist/scripts'));//write to pugs and throw to dist scripts
+
         for(var index in e) {
-            gulp.src('dev/SCRIPTS/CONTAINERS/'+cnt+'/'+e[index]+'/*.js').pipe(concat(e[index]+'.js')).pipe(gulp.dest('dist/scripts'));
+            gulp.src('dev/SCRIPTS/CONTAINERS/'+cnt+'/'+e[index]+'/*.js')
+                .pipe(concat(e[index]+'.js')).pipe(gulp.dest('dist/scripts'));
+
+            name = e[index];
+            if(scriptFiles.indexOf(name)==-1){
+
+
+                if (cnt.toUpperCase() == 'HEADER' ){
+
+                    strHeader +="\nscript(src='scripts/"+name+".js' type='text/javascript')";
+                    console.log(strHeader)
+
+
+                }else if(cnt.toUpperCase() == 'FOOTER') {
+
+                    strFooter +="\nscript(src='scripts/"+name+".js' type='text/javascript')";
+
+                }
+                scriptFiles.push(name);
+
+            }
+
+
         }
+
+
     }
 
     var getDirs = function(rootDir, cb, cnt) {
@@ -844,9 +912,25 @@ gulp.task('SCRIPTS',[], function () {
             }
         });
     }
+
     getDirs('dev/SCRIPTS/CONTAINERS/HEADER',concatAndDist,'HEADER');
     getDirs('dev/SCRIPTS/CONTAINERS/FOOTER',concatAndDist,'FOOTER');
 
 
 
+});
+////////////////////////////////////////////////////
+gulp.task('bs',[], function () {
+    var elemData = {
+        name: options.name
+    }
+    gulp.src('dev/SCRIPTS/SCRIPTS/_template.json')
+        .pipe(rename('libs.json'))
+        .pipe(template(elemData))
+        .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/'+options.name+'/'));
+
+    gulp.src('dev/SCRIPTS/SCRIPTS/_template.js')
+        .pipe(rename(options.name+'.js'))
+        .pipe(template(elemData))
+        .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/'+options.name+'/'));
 });
