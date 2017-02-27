@@ -29,6 +29,7 @@ var file = require('gulp-file');
 var uncss = require('gulp-uncss');
 var rename = require("gulp-rename");
 var unquote = require('unquote');
+const del = require('del');
 gulp.task('views', function buildHTML() {
     var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
     gulp.src('dev/templates/PAGESYSTEM/PAGES/*.pug')
@@ -794,41 +795,24 @@ return gulp
     .pipe(sassJson())
     .pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
 });
-//////////////////////////////////////////////////////
-gulp.task('START QUANT', ['WATCHER', 'SERVER']);
+
 
 gulp.task('SCRIPTS',[], function () {
 
 
-    //gulp.src('dev/SCRIPTS/CONTAINERS/**/*', {read: false}).pipe(clean());
-    //deleteFolderRecursive('dev/SCRIPTS/CONTAINERS/FOOTER/');
-        fs.truncateSync('dev/templates/PAGESYSTEM/INCLUDES/_scriptsFooter.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug');
+
+
+
+
+
 
 
     var scriptFiles = [];
+    var strCtn = "";
     var strHeader = "";
     var strFooter = "";
 
 
-    for(var index in data.LIBS) {
-        var mod_deps = data.LIBS[index]
-        //console.log(mod_deps)
-        var js_deps =mod_deps['js'];
-        //console.log(js_deps)
-        var css_deps = mod_deps['css'];
-        //console.log(css_deps)
-        for (var index in js_deps){
-            var js_dep = js_deps[index];
-            var pathtoScript = js_dep.src;
-            console.log(js_dep.container)
-            var dist = 'dev/SCRIPTS/CONTAINERS/'+js_dep.container+'/';
-            console.log(dist);
-
-                gulp.src(pathtoScript).pipe(gulp.dest(dist));
-
-
-    }}///throw to container
 
 
 
@@ -840,26 +824,21 @@ gulp.task('SCRIPTS',[], function () {
                 var name = path.basename(file.path, '.js');
 
                 if(scriptFiles.indexOf(name)==-1){
+                    var ctnArr = cnt.split('/');
+                    var ctn1 = ctnArr[0];
+                    var ctn2 = ctnArr[1];
 
 
-                    if (cnt.toUpperCase() == 'HEADER' ){
 
-                         strHeader +="\nscript(src='scripts/"+name+".js' type='text/javascript')";
-                         console.log(strHeader)
+                        strCtn ="\nscript(src='scripts/"+name+".js' type='text/javascript')";
+                        fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+ctn1+'/_'+ctn2+'.pug',strCtn);
 
 
-                    }else if(cnt.toUpperCase() == 'FOOTER') {
 
-                         strFooter +="\nscript(src='scripts/"+name+".js' type='text/javascript')";
-
-                    }
                     scriptFiles.push(name);
 
                 }
-                fs.writeFileSync('dev/templates/PAGESYSTEM/INCLUDES/_scriptsFooter.pug',strFooter)
-                fs.writeFileSync('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug',strHeader)
-                //gulp.src('dev/templates/PAGESYSTEM/INCLUDES/_scriptsFooter.pug').pipe(insert.append(strFooter)).pipe(gulp.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
-                //gulp.src('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug').pipe(insert.append(strHeader)).pipe(gulp.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
+                gulp.src('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug').pipe(insert.append(strHeader)).pipe(gulp.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
                 return stream
             }))
             .pipe(gulp.dest('dist/scripts'));//write to pugs and throw to dist scripts
@@ -869,23 +848,26 @@ gulp.task('SCRIPTS',[], function () {
                 .pipe(concat(e[index]+'.js')).pipe(gulp.dest('dist/scripts'));
 
             name = e[index];
-            if(scriptFiles.indexOf(name)==-1){
 
 
-                if (cnt.toUpperCase() == 'HEADER' ){
+                if(scriptFiles.indexOf(name)==-1){
+                    var ctnArr = cnt.split('/');
+                    var ctn1 = ctnArr[0];
+                    var ctn2 = ctnArr[1];
 
-                    strHeader +="\nscript(src='scripts/"+name+".js' type='text/javascript')";
-                    console.log(strHeader)
 
 
-                }else if(cnt.toUpperCase() == 'FOOTER') {
+                    strCtn ="\nscript(src='scripts/"+name+".js' type='text/javascript')";
+                    fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+ctn1+'/_'+ctn2+'.pug',strCtn);
 
-                    strFooter +="\nscript(src='scripts/"+name+".js' type='text/javascript')";
+
+
+                    scriptFiles.push(name);
 
                 }
-                scriptFiles.push(name);
 
-            }
+
+
 
 
         }
@@ -913,8 +895,21 @@ gulp.task('SCRIPTS',[], function () {
         });
     }
 
-    getDirs('dev/SCRIPTS/CONTAINERS/HEADER',concatAndDist,'HEADER');
-    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER',concatAndDist,'FOOTER');
+
+
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/TOP',concatAndDist,'FOOTER/top');
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBS',concatAndDist,'FOOTER/libs');
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBSEXT',concatAndDist,'FOOTER/libsExts');
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INIT',concatAndDist,'FOOTER/INIT');
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INITEXT',concatAndDist,'FOOTER/initExt');
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/BOTTOM',concatAndDist,'FOOTER/bottom');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/TOP',concatAndDist,'HEAD/top');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBS',concatAndDist,'HEAD/libs');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBSEXT',concatAndDist,'HEAD/libsExts');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INIT',concatAndDist,'HEAD/init');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INITEXT',concatAndDist,'HEAD/initExt');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/BOTTOM',concatAndDist,'HEAD/bottom');
+
 
 
 
@@ -933,4 +928,166 @@ gulp.task('bs',[], function () {
         .pipe(rename(options.name+'.js'))
         .pipe(template(elemData))
         .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/'+options.name+'/'));
+});
+// 1
+gulp.task('SCRIPTS-CLEAN',[], function () {
+
+    del.sync('dev/SCRIPTS/CONTAINERS/FOOTER/**');
+    del.sync('dev/SCRIPTS/CONTAINERS/HEAD/**');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libsExts.pug');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_initExts.pug');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_top.pug');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs.pug');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libsExts.pug');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_initExts.pug');
+    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug');
+
+})
+// 2
+gulp.task('SCRIPTS-GO-CONTAINER',[], function () {
+
+    for(var index in data.LIBS) {
+        var mod_deps = data.LIBS[index]
+        //console.log(mod_deps)
+        var js_deps =mod_deps['js'];
+        //console.log(js_deps)
+        var css_deps = mod_deps['css'];
+        //console.log(css_deps)
+        for (var index in js_deps){
+            var js_dep = js_deps[index];
+            var pathtoScript = js_dep.src;
+            console.log(js_dep.container)
+            var dist = 'dev/SCRIPTS/CONTAINERS/'+js_dep.container+'/';
+            console.log(dist);
+
+           var stream = gulp.src(pathtoScript).pipe(gulp.dest(dist));
+
+
+        }}///throw to container
+        return stream
+})
+// 3
+gulp.task('SCRIPTS-BUILD',[], function () {
+
+    var scriptFiles = [];
+    var strCtn = "";
+    var strHeader = "";
+    var strFooter = "";
+
+
+
+
+
+    var concatAndDist=function (e, cnt) {
+
+        gulp.src('dev/SCRIPTS/CONTAINERS/'+cnt+'/*.js')
+            .pipe(foreach(function(stream, file){
+
+                var name = path.basename(file.path, '.js');
+
+                if(scriptFiles.indexOf(name)==-1){
+                    var ctnArr = cnt.split('/');
+                    var ctn1 = ctnArr[0];
+                    var ctn2 = ctnArr[1];
+
+
+
+                    strCtn ="\nscript(src='scripts/"+name+".js' type='text/javascript')";
+                    fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+ctn1+'/_'+ctn2+'.pug',strCtn);
+
+
+
+                    scriptFiles.push(name);
+
+                }
+                gulp.src('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug').pipe(insert.append(strHeader)).pipe(gulp.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
+                return stream
+            }))
+            .pipe(gulp.dest('dist/scripts'));//write to pugs and throw to dist scripts
+
+        for(var index in e) {
+            gulp.src('dev/SCRIPTS/CONTAINERS/'+cnt+'/'+e[index]+'/*.js')
+                .pipe(concat(e[index]+'.js')).pipe(gulp.dest('dist/scripts'));
+
+            name = e[index];
+
+
+            if(scriptFiles.indexOf(name)==-1){
+                var ctnArr = cnt.split('/');
+                var ctn1 = ctnArr[0];
+                var ctn2 = ctnArr[1];
+
+
+
+                strCtn ="\nscript(src='scripts/"+name+".js' type='text/javascript')";
+                fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+ctn1+'/_'+ctn2+'.pug',strCtn);
+
+
+
+                scriptFiles.push(name);
+
+            }
+
+
+
+
+
+        }
+
+
+    }
+
+    var getDirs = function(rootDir, cb, cnt) {
+
+        fs.readdir(rootDir, function(err, files) {
+
+            if (err == null){
+                console.log('OK');
+                var dirs = [];
+                for (var index = 0; index < files.length; ++index) {
+                    var file = files[index];
+                    if (file[0] !== '.') {
+                        var filePath = rootDir + '/' + file;
+                        fs.stat(filePath, function(err, stat) {
+                            if (stat.isDirectory()) {
+                                dirs.push(this.file);
+                            }
+                            if (files.length === (this.index + 1)) {
+                                return cb(dirs, cnt);
+                            }
+                        }.bind({index: index, file: file}));
+                    }
+                }
+            }
+
+        });
+    }
+
+
+
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/TOP',concatAndDist,'FOOTER/top');
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBS',concatAndDist,'FOOTER/libs');
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBSEXT',concatAndDist,'FOOTER/libsExts');
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INIT',concatAndDist,'FOOTER/INIT');
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INITEXT',concatAndDist,'FOOTER/initExt');
+    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/BOTTOM',concatAndDist,'FOOTER/bottom');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/TOP',concatAndDist,'HEAD/top');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBS',concatAndDist,'HEAD/libs');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBSEXT',concatAndDist,'HEAD/libsExts');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INIT',concatAndDist,'HEAD/init');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INITEXT',concatAndDist,'HEAD/initExt');
+    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/BOTTOM',concatAndDist,'HEAD/bottom');
+
+})
+//////////////////////////////////////////////////////
+gulp.task('START QUANT', ['WATCHER', 'SERVER']);
+//gulp.task('SCRIPT BUILDERs', gulp.series('SCRIPTS-CLEAN', 'SCRIPTS-GO-CONTAINER', 'SCRIPTS-BUILD'));
+
+gulp.task('SCRIPT BUILDER', function(done) {
+    runSequence('SCRIPTS-CLEAN', 'SCRIPTS-GO-CONTAINER','SCRIPTS-BUILD');
 });

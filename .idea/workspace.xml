@@ -2,62 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a405dd0-215a-4030-b1ad-1ee92d874110" name="Default" comment="Pre Alpha 0.0.531 add installer">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/libs.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/search.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/_template.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_bottom.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_footerScripts.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_init.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_initExts.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_libs.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_libsExts.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_top.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_bottom.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_headScripts.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_init.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_initExts.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_libs.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_libsExts.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_top.pug" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/herovideo-script.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/init/_FORM--script.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/libs/validator.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/validator.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/HEADER/validator.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/forms/_fields.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/forms/_forms.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/layout/_block.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/layout/_grids.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/layout/_layout.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/navy/_links.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/navy/_lists.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/navy/_navy.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/variables/_animations.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/variables/_color.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/variables/_layout.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/variables/_media.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/variables/_typography.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/variables/_variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/scss/variables/_vendor.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scripts.pug" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/scss/forms/_buttons.scss" afterPath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/_template.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scriptsFooter.pug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/_hero_video-script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/init/undefined_hero_video-script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/taskRunner.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/undefined_FORM-script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/undefinedjquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/undefinedtaskRunner.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/HEAD/init/_hero_video-script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/HEAD/init/init/_FORM-script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/HEAD/libs/search.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/HEAD/libs/taskRunners/search.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/HEAD/libs/taskRunners/taskRunner.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/HEAD/libs/tuskRunners/search.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/HEAD/libs/tuskRunners/taskRunner.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/HEADER/preloaderInit/script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/main.css" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_bottom.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_footerScripts.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_footerScripts.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_init.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_initExts.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_initExts.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_libs.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_libsExts.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libsExts.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_top.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_top.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_bottom.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_headScripts.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_headScripts.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_init.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_initExts.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_initExts.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_libs.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_libsExts.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libsExts.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_top.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blueprint/main.css" afterPath="$PROJECT_DIR$/blueprint/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.json" afterPath="$PROJECT_DIR$/data.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/libs.json" afterPath="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/libs.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--hero_video/libs.json" afterPath="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--hero_video/libs.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/MODULES/_modules.scss" afterPath="$PROJECT_DIR$/dev/MODULES/_modules.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/PRELOADER/libs.json" afterPath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/PRELOADER/libs.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/JQ/libs.json" afterPath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/JQ/libs.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/libs.json" afterPath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/libs.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/taskRunner/libs.json" afterPath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/taskRunner/libs.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_head.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_head.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_footer.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_footer.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/main.css" afterPath="$PROJECT_DIR$/dist/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/_hero_video-script.js" afterPath="$PROJECT_DIR$/dist/scripts/_hero_video-script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/init.js" afterPath="$PROJECT_DIR$/dist/scripts/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/jquery.min.js" afterPath="$PROJECT_DIR$/dist/scripts/jquery.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/libs.js" afterPath="$PROJECT_DIR$/dist/scripts/libs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/script.js" afterPath="$PROJECT_DIR$/dist/scripts/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/preloaderInit.js" afterPath="$PROJECT_DIR$/dist/scripts/preloaderInit.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projectboard/index.html" afterPath="$PROJECT_DIR$/projectboard/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projectboard/main.css" afterPath="$PROJECT_DIR$/projectboard/main.css" />
     </list>
@@ -164,139 +157,29 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="341">
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="260">
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="834" column="34" lean-forward="false" selection-start-line="834" selection-start-column="34" selection-end-line="834" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="libs.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/PRELOADER/libs.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="libs.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/libs.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="libs.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/libs.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_template.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/_template.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_template.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/_template.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="libs.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/taskRunner/libs.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="libs.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/JQ/libs.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="libs.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--hero_video/libs.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="414">
+              <caret line="971" column="21" lean-forward="false" selection-start-line="971" selection-start-column="21" selection-end-line="971" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="_footerScripts.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_footerScripts.pug">
+        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_footerScripts.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_top.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_top.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_libs.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_libs.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_libsExts.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_libsExts.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="_init.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_init.pug">
+        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -306,7 +189,147 @@
         </entry>
       </file>
       <file leaf-file-name="_initExts.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_initExts.pug">
+        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_initExts.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_header.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="42" column="68" lean-forward="false" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_extendScss.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/_templates/_extendScss.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_templatePug.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/_templates/_templatePug.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--SERG/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mixin.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--SERG/mixin.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--gogog/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/LINKS/--socialLink/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/LINKS/--signUpButtonLink/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/LINKS/--ove-topNavLink/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_init.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="52" lean-forward="false" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_top.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_libsExts.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libsExts.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_libs.pug" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_initExts.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_initExts.pug">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -316,7 +339,7 @@
         </entry>
       </file>
       <file leaf-file-name="_bottom.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_bottom.pug">
+        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -325,41 +348,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_bottom.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_bottom.pug">
+      <file leaf-file-name="libs.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/JQ/libs.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_head.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_head.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_footer.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_footer.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="90">
+              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -396,14 +389,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/ELEMENTS/LINKS/--catMenuLink/mixin.pug" />
-        <option value="$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/_templates/_extendScss.tpl" />
-        <option value="$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--signUpButton/style.scss" />
-        <option value="$PROJECT_DIR$/dev/ELEMENTS/LINKS/_templates/_templateScss.tpl" />
-        <option value="$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/_templates/_templateScss.tpl" />
-        <option value="$PROJECT_DIR$/dev/ELEMENTS/LINKS/_templates/_templatePug.tpl" />
-        <option value="$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/_templates/_templatePug.tpl" />
-        <option value="$PROJECT_DIR$/dev/ELEMENTS/_elements.pug" />
         <option value="$PROJECT_DIR$/dev/ELEMENTS/LINKS/--signUpButtonLink/style.scss" />
         <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/_mixin.pug" />
         <option value="$PROJECT_DIR$/dev/MIXES/Hamburger/_mixin.pug" />
@@ -423,18 +408,12 @@
         <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js" />
         <option value="$PROJECT_DIR$/dist/scripts/init.js" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/script.js" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/script.js" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scriptsFooter.pug" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/_template.js" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/taskRunner/taskRunner.js" />
-        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/JQ/libs.json" />
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/libs.json" />
         <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--hero_video/libs.json" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/PRELOADER/libs.json" />
-        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/libs.json" />
-        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/taskRunner/libs.json" />
-        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/_template.json" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_top.pug" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/libs.pug" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_libsExts.pug" />
@@ -446,7 +425,21 @@
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_head.pug" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_footer.pug" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug" />
+        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/_template.json" />
+        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/libs.json" />
+        <option value="$PROJECT_DIR$/dist/scripts/tuskRunners.js" />
+        <option value="$PROJECT_DIR$/dist/scripts/taskRunners.js" />
+        <option value="$PROJECT_DIR$/dist/scripts/search.js" />
+        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/taskRunner/libs.json" />
+        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/libs.json" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_footerScripts.pug" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug" />
+        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/JQ/libs.json" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug" />
       </list>
     </option>
   </component>
@@ -473,6 +466,192 @@
     <gulpfiles>
       <GulpfileState>
         <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+        <tasks>
+          <GulpTaskState>
+            <task-name>views</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>validate</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>default</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>bro</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>PAGESYSTEM</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>BUILDMODULE</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>own-js</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>build-script-js</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>dep-js</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>SERVER</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="concat-modules-and-mixes" />
+              <dependency value="sass" />
+              <dependency value="cleanMainCss" />
+              <dependency value="build-script-js" />
+              <dependency value="throw-main-css" />
+              <dependency value="browser-reload" />
+              <dependency value="views" />
+              <dependency value="mergeJson" />
+              <dependency value="compile-blueprint-view" />
+              <dependency value="compile-blueprint-sass" />
+            </dependencies>
+            <task-name>WATCHER</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>optimage</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>image_resize</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>concat-modules-and-mixes</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>concat-elements</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>bm</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>be</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>sass</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>throw-main-css</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>browser-reload</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>validw3c</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>makeWP_DRAFT</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>splitter</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>blueprint-wright-json</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>merge-json</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compile-blueprint-view-start</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compile-blueprint-view</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compile-blueprint-sass</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>start-blueprint-server</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>bp</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>buildblueprint</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>mergeJson</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>cleanMainCss</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>split-css</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>tests</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>dist-module</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>testizmodul</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>buildLibs</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>crop</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>scale</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>pb</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>convertfonts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>fontvars</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>regfont</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>wrapfontVars</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>concatVars</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>buildfonts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>buildfonts2</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>sass-json</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>SCRIPTS</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>bs</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>SCRIPTS-CLEAN</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>SCRIPTS-GO-CONTAINER</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>SCRIPTS-BUILD</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="WATCHER" />
+              <dependency value="SERVER" />
+            </dependencies>
+            <task-name>START QUANT</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>SCRIPT BUILDER</task-name>
+          </GulpTaskState>
+        </tasks>
       </GulpfileState>
     </gulpfiles>
     <sorting>DEFINITION_ORDER</sorting>
@@ -495,10 +674,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="14" />
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="977" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -561,20 +740,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kit">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -612,6 +777,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="dev" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -642,11 +825,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SCRIPTS&amp;STYLES" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HEAD" />
+              <option name="myItemId" value="SCRIPTS-STYLES" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -672,7 +851,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SCRIPTS&amp;STYLES" />
+              <option name="myItemId" value="SCRIPTS-STYLES" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FOOTER" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -737,6 +920,32 @@
               <option name="myItemId" value="dev" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PAGESYSTEM" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="INCLUDES" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -775,84 +984,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SCRIPTS" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SCRIPTS" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SCRIPTS" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="taskRunner" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SCRIPTS" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SCRIPTS" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SEARCH" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SCRIPTS" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SCRIPTS" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRELOADER" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -918,15 +1049,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SCRIPTS" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CONTAINERS" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOOTER" />
+              <option name="myItemId" value="ELEMENTS" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -944,7 +1067,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MODULES" />
+              <option name="myItemId" value="ELEMENTS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BUTTONS" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -962,38 +1089,30 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MODULES" />
+              <option name="myItemId" value="ELEMENTS" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PROJECT MODULES" />
+              <option name="myItemId" value="BUTTONS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="--gogog" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MODULES" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PROJECT MODULES" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="--hero_video" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            <PATH_ELEMENT USER_OBJECT="kit">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1023,13 +1142,6 @@
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Projects\Quant\preBetta\kit\dev\templates\PAGESYSTEM\SCRIPTS&amp;STYLES\HEAD" />
-      <recent name="C:\Projects\Quant\preBetta\kit\dev\SCRIPTS\SCRIPTS\SEARCH" />
-      <recent name="$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/_templates" />
-      <recent name="C:\Projects\Quant\preBetta\kit\dist\scripts" />
-      <recent name="C:\Projects\Quant\preBetta\kit\dev\SCRIPTS\CONTAINERS\DEBUG" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\Quant\preBetta\kit\dev\SCRIPTS\CONTAINERS\DEBUG" />
       <recent name="C:\Users\Sol\Desktop\kit.betta\kit\dev\ELEMENTS\BUTTONS\_templates" />
@@ -1037,20 +1149,65 @@
       <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE_FABRIC\FONT_LAB\SOURCE\HERO\Blanca\Normal\normal" />
       <recent name="C:\Users\Sol\PhpstormProjects\KITHUB\kit\dev\SOURCE_FABRIC\FONT_LAB\SOURCE\HERO\Sunbreath\Normal\normal" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/HEAD" />
+      <recent name="C:\Projects\Quant\preBetta\kit\dev\templates\PAGESYSTEM\SCRIPTS&amp;STYLES\HEAD" />
+      <recent name="C:\Projects\Quant\preBetta\kit\dev\SCRIPTS\SCRIPTS\SEARCH" />
+      <recent name="$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/_templates" />
+      <recent name="C:\Projects\Quant\preBetta\kit\dist\scripts" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gulp.js.START QUANT">
-    <configuration default="false" name="script.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="script.js" working-dir="$PROJECT_DIR$/dev/MODULES/MENUS/D_Multi-Toggle Navigation_Adaptive">
-      <method />
-    </configuration>
-    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost/dist/index.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="START QUANT" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
-      <node-interpreter>project</node-interpreter>
+  <component name="RunManager">
+    <configuration default="false" name="SCRIPTS-GO-CONTAINER" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>/usr/local/bin/node</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
-        <task>START QUANT</task>
+        <task>SCRIPTS-GO-CONTAINER</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="SCRIPTS-CLEAN" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>SCRIPTS-CLEAN</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="SCRIPTS" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>SCRIPTS</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="SCRIPTS-BUILD" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>SCRIPTS-BUILD</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="SCRIPT BUILDER" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>SCRIPT BUILDER</task>
       </tasks>
       <arguments />
       <envs />
@@ -1089,7 +1246,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
+      <node-interpreter>/usr/local/bin/node</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -1256,17 +1413,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="mergeJson" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
-      <tasks>
-        <task>mergeJson</task>
-      </tasks>
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="scssconcatmodules" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -1344,7 +1490,18 @@
       <envs />
       <method />
     </configuration>
-    <list size="24">
+    <configuration default="false" name="mergeJson" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>mergeJson</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <list size="26">
       <item index="0" class="java.lang.String" itemvalue="Gulp.js.optimage" />
       <item index="1" class="java.lang.String" itemvalue="Gulp.js.BUILDMODULE" />
       <item index="2" class="java.lang.String" itemvalue="Gulp.js.image_resize" />
@@ -1358,23 +1515,27 @@
       <item index="10" class="java.lang.String" itemvalue="Gulp.js.split-css" />
       <item index="11" class="java.lang.String" itemvalue="Gulp.js.merge-json" />
       <item index="12" class="java.lang.String" itemvalue="Gulp.js.PAGESYSTEM" />
-      <item index="13" class="java.lang.String" itemvalue="Gulp.js.mergeJson" />
-      <item index="14" class="java.lang.String" itemvalue="Gulp.js.scssconcatmodules" />
-      <item index="15" class="java.lang.String" itemvalue="Gulp.js.splitter" />
-      <item index="16" class="java.lang.String" itemvalue="Gulp.js.WATCHER" />
-      <item index="17" class="java.lang.String" itemvalue="Gulp.js.SERVER" />
-      <item index="18" class="java.lang.String" itemvalue="Gulp.js.sass" />
-      <item index="19" class="java.lang.String" itemvalue="Gulp.js.views" />
-      <item index="20" class="java.lang.String" itemvalue="Gulp.js.default" />
-      <item index="21" class="java.lang.String" itemvalue="Node.js.script.js" />
-      <item index="22" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="23" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
+      <item index="13" class="java.lang.String" itemvalue="Gulp.js.scssconcatmodules" />
+      <item index="14" class="java.lang.String" itemvalue="Gulp.js.splitter" />
+      <item index="15" class="java.lang.String" itemvalue="Gulp.js.WATCHER" />
+      <item index="16" class="java.lang.String" itemvalue="Gulp.js.SERVER" />
+      <item index="17" class="java.lang.String" itemvalue="Gulp.js.sass" />
+      <item index="18" class="java.lang.String" itemvalue="Gulp.js.views" />
+      <item index="19" class="java.lang.String" itemvalue="Gulp.js.default" />
+      <item index="20" class="java.lang.String" itemvalue="Gulp.js.mergeJson" />
+      <item index="21" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS-GO-CONTAINER" />
+      <item index="22" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS-CLEAN" />
+      <item index="23" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS" />
+      <item index="24" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS-BUILD" />
+      <item index="25" class="java.lang.String" itemvalue="Gulp.js.SCRIPT BUILDER" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.script.js" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Gulp.js.SCRIPT BUILDER" />
+        <item index="1" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS-BUILD" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS-GO-CONTAINER" />
+        <item index="3" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS-CLEAN" />
+        <item index="4" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS" />
       </list>
     </recent_temporary>
   </component>
@@ -1479,6 +1640,7 @@
       <workItem from="1488126331778" duration="3597000" />
       <workItem from="1488131656894" duration="1733000" />
       <workItem from="1488180251559" duration="17000" />
+      <workItem from="1488188538731" duration="15897000" />
     </task>
     <task id="LOCAL-00001" summary="workspace commit">
       <created>1479982952535</created>
@@ -1631,7 +1793,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="742722000" />
+    <option name="totallyTimeSpent" value="758619000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1643,20 +1805,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <frame x="14" y="23" width="1920" height="977" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23400854" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20869033" sideWeight="0.42222223" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20869033" sideWeight="0.5777778" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733408" sideWeight="0.4978701" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30641183" sideWeight="0.22237569" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2015855" sideWeight="0.58506733" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889125" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30849826" sideWeight="0.49361023" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.3282887" sideWeight="0.42105263" order="4" side_tool="false" content_ui="tabs" x="1405" y="277" width="499" height="679" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32945284" sideWeight="0.41493267" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23400854" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24466951" sideWeight="0.47031432" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24466951" sideWeight="0.5296857" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30641183" sideWeight="0.22237569" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889125" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32596043" sideWeight="0.49265605" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24791418" sideWeight="0.35224587" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23040935" sideWeight="0.41493267" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.28797084" sideWeight="0.35236937" order="3" side_tool="false" content_ui="tabs" x="1519" y="23" width="239" height="224" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1664,12 +1829,9 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="107" y="100" width="1484" height="826" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14269535" sideWeight="0.49754602" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.3282887" sideWeight="0.42105263" order="4" side_tool="false" content_ui="tabs" x="1207" y="829" width="415" height="157" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3263158" sideWeight="0.49265605" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1733,12 +1895,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gulpfile.js</url>
-          <line>539</line>
+          <line>540</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gulpfile.js</url>
-          <line>488</line>
+          <line>489</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
@@ -1750,7 +1912,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1759,157 +1921,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--gogog/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--gogog/libs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/dev_libs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/libs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/containers.data" />
-    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/LINKS/_templates/_libs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/FOOTER.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/HEADER.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="78" column="20" lean-forward="false" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/splits/modules/FORM">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/preloaderInit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/personal/layout.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/_scriptsHeader.pug" />
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_includes.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/script.js" />
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/init/_FORM--script.js" />
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/init/_hero_video-script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/PRELOADER/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/libs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/libs/script.js" />
     <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/libs/search.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1932,139 +1943,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/libs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--hero_video/libs.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="105">
           <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/JQ/libs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/PRELOADER/libs.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="120">
           <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/libs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/taskRunner/libs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/_template.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="90">
           <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/_template.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_top.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_libs.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_libsExts.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_init.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_initExts.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_bottom.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/HEAD/_bottom.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS&amp;STYLES/FOOTER/_footerScripts.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scriptsFooter.pug" />
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug" />
     <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_head.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="180">
           <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding />
         </state>
@@ -2072,24 +1977,344 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="150">
           <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--FORM/libs.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_scriptsFooter.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/_template.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scripts/undefined_FORM-script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/libs/tuskRunners/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/FOOTER/libs/tuskRunners/taskRunner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scripts/taskRunner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scripts/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/taskRunner/libs.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="64" lean-forward="false" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/SEARCH/libs.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scripts/taskRunners.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scripts/tuskRunners.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/CONTAINERS/HEAD/init/init/_FORM-script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_footer.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+        <state relative-caret-position="30">
+          <caret line="2" column="42" lean-forward="false" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libsExts.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_top.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_headScripts.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--Main Button/mixin.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="42" column="68" lean-forward="false" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/_templates/_extendScss.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/_templates/_templatePug.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--SERG/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--SERG/mixin.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--gogog/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/LINKS/--socialLink/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/LINKS/--signUpButtonLink/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_initExts.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/LINKS/--ove-topNavLink/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_footerScripts.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="834" column="34" lean-forward="false" selection-start-line="834" selection-start-column="34" selection-end-line="834" selection-end-column="34" />
+        <state relative-caret-position="414">
+          <caret line="971" column="21" lean-forward="false" selection-start-line="971" selection-start-column="21" selection-end-line="971" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libsExts.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_initExts.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="52" lean-forward="false" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/JQ/libs.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

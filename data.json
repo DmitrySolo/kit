@@ -23,13 +23,21 @@
 	"LIBS": {
 		"<%=name%>": {
 			"js": {
-				"": {
-					"src": "",
-					"container": ""
-				},
 				"<%=name%>-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/<%=name%>/<%=name%>.js",
-					"container": "footer"
+					"container": "footer",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"SERG": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
 				}
 			},
 			"css": {
@@ -62,13 +70,11 @@
 			"js": {
 				"validator": {
 					"src": "bower_components/validator-js/validator.min.js",
-					"container": "footer/libs",
-					"type": "lib"
+					"container": "footer/libs"
 				},
 				"FORM-script": {
 					"src": "dev/MODULES/PROJECT MODULES/--FORM/_FORM-script.js",
-					"container": "footer/",
-					"type": "init"
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
@@ -91,7 +97,7 @@
 			"js": {
 				"jquery": {
 					"src": "bower_components/jquery/dist/jquery.min.js",
-					"container": "footer",
+					"container": "footer/libs",
 					"type": "lib"
 				}
 			},
@@ -119,7 +125,7 @@
 				},
 				"searcher-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/SEARCH/search.js",
-					"container": "footer/libs",
+					"container": "footer/libs/taskRunners",
 					"type": "init"
 				}
 			},
@@ -135,7 +141,8 @@
 				},
 				"taskRunner-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/taskRunner/taskRunner.js",
-					"container": "footer"
+					"container": "footer/libs/taskRunners",
+					"type": "libExt"
 				}
 			},
 			"css": {
@@ -169,7 +176,7 @@
 	"siteWidth": "1240px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
@@ -318,9 +325,6 @@
 			}
 		}
 	},
-	"breadcrumbs": {
-		"1": "1"
-	},
 	"FORM": {
 		"TITLE": "Быть в курсе последних акций и новостей",
 		"action": "/",
@@ -358,6 +362,9 @@
 				"other_specific": {}
 			}
 		}
+	},
+	"breadcrumbs": {
+		"1": "1"
 	},
 	"hero_video": {
 		"hero_video": "1"

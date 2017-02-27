@@ -1,0 +1,20 @@
+$bkgColor__SERG:#fff;
+$bkgColor__SERG-hover:#fff;
+$color__SERG-hover:#fff;
+$color__SERG:#fff;
+
+.SERG {
+	position: relative;
+	background-color: $bkgColor__SERG;
+	color: $color__SERG;
+		&:hover, &:focus, &:active {
+		color: $color__SERG-hover;
+		background-color: $bkgColor__SERG-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}

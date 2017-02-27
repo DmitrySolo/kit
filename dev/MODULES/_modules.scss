@@ -42,39 +42,42 @@
 @include lightMenu('h');
 
 
-@mixin breadcrumbs(){
-	.breadCrumb {
-      @include space('component','tb','');
-      @include space('block','lr','');
-      background-color: cs('fground');
-      text-transform: uppercase;
-      font-size: .9em;
-      a:link,a:visited {
-        color: cs('font-l');
-        text-decoration: none;
-      }
-      a:hover{
-        color: cs('font-d');
-      }
-    }
-  .breadcrumb__section {
-    display: inline-block;
-    @include space('element','','tbrl');
-    &:before {
-      content: '/rsssdssesss[[sshuray it workss';
-      margin-right: 20px;
-    }
+@mixin FORM(){
+	
+.FORM{
+  background-color: #fff;
+  @include space('element','trlb','');
+  input[type='text']{
+    @include space('element','tbrl','');
+    font-size: .8rem;
+    width: 100%;
+    border:solid 1px black;
   }
-  .breadCrumb__section--home {
-    font-weight: 600;
-    &:before{
-      content: '';
-      margin-right:0;
-
-    }
+  input[type='submit']{
+    border: none;
+    font-size: 1rem;
   }
 }
-@include breadcrumbs();
+.form__validateMessage {
+  color: #ff7c8b;
+  float: right;
+  display: inline-block;
+  @include for-size(desktop-up){
+    color: #00A000;
+    font-size: 50px;
+  }
+}
+.form__line {
+  @include space('element','tb','bt');
+  &:last-child{
+    padding-bottom: 0;
+  }
+}
+.form_img_ctn{
+  height:500px;
+}
+}
+@include FORM();
 @mixin hero_video(){
 	
 .hero_video{
@@ -124,42 +127,39 @@
   }
 }
 @include hero_video();
-@mixin FORM(){
-	
-.FORM{
-  background-color: #fff;
-  @include space('element','trlb','');
-  input[type='text']{
-    @include space('element','tbrl','');
-    font-size: .8rem;
-    width: 100%;
-    border:solid 1px black;
+@mixin breadcrumbs(){
+	.breadCrumb {
+      @include space('component','tb','');
+      @include space('block','lr','');
+      background-color: cs('fground');
+      text-transform: uppercase;
+      font-size: .9em;
+      a:link,a:visited {
+        color: cs('font-l');
+        text-decoration: none;
+      }
+      a:hover{
+        color: cs('font-d');
+      }
+    }
+  .breadcrumb__section {
+    display: inline-block;
+    @include space('element','','tbrl');
+    &:before {
+      content: '/rsssdssesss[[sshuray it workss';
+      margin-right: 20px;
+    }
   }
-  input[type='submit']{
-    border: none;
-    font-size: 1rem;
+  .breadCrumb__section--home {
+    font-weight: 600;
+    &:before{
+      content: '';
+      margin-right:0;
+
+    }
   }
 }
-.form__validateMessage {
-  color: #ff7c8b;
-  float: right;
-  display: inline-block;
-  @include for-size(desktop-up){
-    color: #00A000;
-    font-size: 50px;
-  }
-}
-.form__line {
-  @include space('element','tb','bt');
-  &:last-child{
-    padding-bottom: 0;
-  }
-}
-.form_img_ctn{
-  height:500px;
-}
-}
-@include FORM();
+@include breadcrumbs();
 @mixin pagination(){
 	
 .pagination{
