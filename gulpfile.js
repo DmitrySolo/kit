@@ -930,10 +930,9 @@ gulp.task('bs',[], function () {
         .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/'+options.name+'/'));
 });
 // 1
-gulp.task('SCRIPTS-CLEAN',[], function () {
+gulp.task('SCRIPTS-CLEAN', function () {
 
-    del.sync('dev/SCRIPTS/CONTAINERS/FOOTER/**');
-    del.sync('dev/SCRIPTS/CONTAINERS/HEAD/**');
+
     fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
     fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
     fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libsExts.pug');
@@ -946,6 +945,9 @@ gulp.task('SCRIPTS-CLEAN',[], function () {
     fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug');
     fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_initExts.pug');
     fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug');
+    del.sync('dev/SCRIPTS/CONTAINERS/FOOTER/**');
+    del.sync('dev/SCRIPTS/CONTAINERS/HEAD/**');
+    del.sync('dist/scripts');
 
 })
 // 2
