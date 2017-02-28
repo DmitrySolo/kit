@@ -30,6 +30,8 @@ var uncss = require('gulp-uncss');
 var rename = require("gulp-rename");
 var unquote = require('unquote');
 const del = require('del');
+var Sync = require('sync');
+var gulpsync = require('gulp-sync')(gulp);
 gulp.task('views', function buildHTML() {
     var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
     gulp.src('dev/templates/PAGESYSTEM/PAGES/*.pug')
@@ -147,7 +149,7 @@ gulp.task('SERVER', [], function() {
     //gulp.watch("dev/**/*.json").on('change', browserSync.reload);
     gulp.watch("dist/*.html").on('change', browserSync.reload);
     gulp.watch("dist/*.css").on('change', browserSync.reload);
-    gulp.watch("dist/**/*.js").on('change', browserSync.reload);
+    //gulp.watch("dist/**/*.js").on('change', browserSync.reload);
 });
 gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-script-js','throw-main-css','browser-reload','views','mergeJson','compile-blueprint-view','compile-blueprint-sass'], function() {
 
@@ -162,8 +164,8 @@ gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-sc
     //gulp.watch('dev/MODULES/PROJECT MODULES/--*/*.scss',['concat-modules-and-mixes','sass']);
     gulp.watch(['dev/scss/**/*.scss','dev/MIXES/_mixes.scss'],['sass','throw-main-css']);
     //gulp.watch('dev/MODULES/*/--*/*.pug',['views']);
-    gulp.watch(['dev/**/_FORM-search.js'],['build-script-js',browserSync.reload]);
-    gulp.watch(['dev/MODULES/**/*.pug','dev/templates/**/*.pug','dev/MIXES/_mixes.pug'],function(){ runSequence('views', 'compile-blueprint-view') });
+    gulp.watch(['dev/MODULES/**/*.js','!dev/SCRIPTS/CONTAINERS/**/*'],['SCRIPT BUILDER']);
+    gulp.watch(['dev/MODULES/**/*.pug','dev/templates/**/*.pug','dev/MIXES/_mixes.pug','!dev/templates/PAGESYSTEM/SCRIPTS-STYLES/**/*'],function(){ runSequence('views', 'compile-blueprint-view') });
     gulp.watch(['blueprint/*.pug'],['compile-blueprint-view']);
     gulp.watch(['blueprint/*.scss'],['compile-blueprint-sass']);
 
@@ -932,50 +934,54 @@ gulp.task('bs',[], function () {
 // 1
 gulp.task('SCRIPTS-CLEAN', function () {
 
-
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libsExts.pug');
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug');
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_initExts.pug');
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug');
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_top.pug');
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs.pug');
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libsExts.pug');
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug');
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_initExts.pug');
-    fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug');
-    del.sync('dev/SCRIPTS/CONTAINERS/FOOTER/**');
-    del.sync('dev/SCRIPTS/CONTAINERS/HEAD/**');
-    del.sync('dist/scripts');
+function scrclean() {
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libsExts.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_initExts.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_top.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libsExts.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_initExts.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug');
+        del.sync('dev/SCRIPTS/CONTAINERS/FOOTER/**');
+        del.sync('dev/SCRIPTS/CONTAINERS/HEAD/**');
+        del.sync('dist/scripts');
+}
+Sync(scrclean());
 
 })
 // 2
 gulp.task('SCRIPTS-GO-CONTAINER',[], function () {
 
-    for(var index in data.LIBS) {
-        var mod_deps = data.LIBS[index]
-        //console.log(mod_deps)
-        var js_deps =mod_deps['js'];
-        //console.log(js_deps)
-        var css_deps = mod_deps['css'];
-        //console.log(css_deps)
-        for (var index in js_deps){
-            var js_dep = js_deps[index];
-            var pathtoScript = js_dep.src;
-            console.log(js_dep.container)
-            var dist = 'dev/SCRIPTS/CONTAINERS/'+js_dep.container+'/';
-            console.log(dist);
+        for(var index in data.LIBS) {
+            var mod_deps = data.LIBS[index]
+            //console.log(mod_deps)
+            var js_deps =mod_deps['js'];
+            //console.log(js_deps)
+            var css_deps = mod_deps['css'];
+            //console.log(css_deps)
+            for (var index in js_deps){
+                var js_dep = js_deps[index];
+                var pathtoScript = js_dep.src;
+                console.log(js_dep.container)
+                var dist = 'dev/SCRIPTS/CONTAINERS/'+js_dep.container+'/';
+                console.log(dist);
 
-           var stream = gulp.src(pathtoScript).pipe(gulp.dest(dist));
+                var stream = gulp.src(pathtoScript).pipe(gulp.dest(dist)).pipe(wait(2500));
 
 
-        }}///throw to container
+            }}///throw to container
         return stream
+
+
 })
 // 3
 gulp.task('SCRIPTS-BUILD',[], function () {
-
+function scrBuild() {
     var scriptFiles = [];
     var strCtn = "";
     var strHeader = "";
@@ -1046,7 +1052,7 @@ gulp.task('SCRIPTS-BUILD',[], function () {
 
     var getDirs = function(rootDir, cb, cnt) {
 
-        fs.readdir(rootDir, function(err, files) {
+        Sync(fs.readdir(rootDir, function(err, files) {
 
             if (err == null){
                 console.log('OK');
@@ -1067,23 +1073,25 @@ gulp.task('SCRIPTS-BUILD',[], function () {
                 }
             }
 
-        });
+        }))
     }
 
 
 
-    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/TOP',concatAndDist,'FOOTER/top');
-    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBS',concatAndDist,'FOOTER/libs');
-    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBSEXT',concatAndDist,'FOOTER/libsExts');
-    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INIT',concatAndDist,'FOOTER/INIT');
-    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INITEXT',concatAndDist,'FOOTER/initExt');
-    getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/BOTTOM',concatAndDist,'FOOTER/bottom');
-    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/TOP',concatAndDist,'HEAD/top');
-    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBS',concatAndDist,'HEAD/libs');
-    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBSEXT',concatAndDist,'HEAD/libsExts');
-    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INIT',concatAndDist,'HEAD/init');
-    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INITEXT',concatAndDist,'HEAD/initExt');
-    getDirs('dev/SCRIPTS/CONTAINERS/HEAD/BOTTOM',concatAndDist,'HEAD/bottom');
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/TOP',concatAndDist,'FOOTER/top'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBS',concatAndDist,'FOOTER/libs'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBSEXT',concatAndDist,'FOOTER/libsExts'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INIT',concatAndDist,'FOOTER/INIT'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INITEXT',concatAndDist,'FOOTER/initExt'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/BOTTOM',concatAndDist,'FOOTER/bottom'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/TOP',concatAndDist,'HEAD/top'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBS',concatAndDist,'HEAD/libs'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBSEXT',concatAndDist,'HEAD/libsExts'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INIT',concatAndDist,'HEAD/init'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INITEXT',concatAndDist,'HEAD/initExt'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/BOTTOM',concatAndDist,'HEAD/bottom'));
+}
+   Sync(scrBuild())
 
 })
 //////////////////////////////////////////////////////
