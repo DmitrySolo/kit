@@ -47,8 +47,9 @@ Header
 
 .ove-subControlPanel--desktop {
   display: none;
-+ for-size(desktop-up) {
+@include for-size(desktop-up) {
   display: block;
+  height: 70px;
 }
 }
 
@@ -65,4 +66,16 @@ logo
   height: s-height(1, 'module');
   width: auto;
 
+}
+.ove-main {
+  position: relative;
+}
+.ove-shade {
+  position: absolute;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.21);
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 3000;
 }

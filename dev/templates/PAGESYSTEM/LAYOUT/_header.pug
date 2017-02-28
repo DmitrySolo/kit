@@ -17,7 +17,7 @@ header.ove-mainHeader
                             +A-ove-topNavLink('Сток центр','/')
                         li
                             +A-ove-topNavLink('Оптовый отдел','/')
-            section.ove-desctopControlPanel
+            section.ove-desctopControlPanel.clearfix
                 .col-5-d
                     .row
                         .col-6-d
@@ -35,9 +35,15 @@ header.ove-mainHeader
         .container
             section.ove-subControlPanel.ove-subControlPanel--mobile
                 .row
-                    .col-2-m.col-2-tp
+                    .col-4-m.col-2-tp
                         +hamburger()
-                    .col-8-m.col-8-tp
+                    .col-4-m.col-6-tp
                         +logo-img('logo.svg','ove-logo--mobile')
+                    .col-2-m.col-2-tp cart
                     .col-2-m.col-2-tp button
             section.ove-subControlPanel.ove-subControlPanel--desktop
+                .row
+                    .col-5-d
+                        .row
+                            .col-6-d
+                                +module('catalogMenu')

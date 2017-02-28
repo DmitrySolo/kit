@@ -1,0 +1,19 @@
+{
+  "LIBS": {
+    "spinner-circle": {
+      "js": {
+        "lib": {
+          "src": "bower_components/please-wait/build/please-wait.min.js",
+          "container": "footer/top/preloader"
+        },"init": {
+          "src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
+          "container": "footer/top/preloader"
+        }
+      },
+
+      "css": {
+        "": ""
+      }
+    }
+  }
+}

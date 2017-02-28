@@ -7,5 +7,7 @@ html(lang=''+head.lang)
     body
         include _header
         <!-- split #{page.slug}.html -->
-        block main
-        include _footer
+        .ove-main
+            .ove-shade
+            block main
+            include _footer

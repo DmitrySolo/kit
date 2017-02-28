@@ -15,3 +15,21 @@ var validate = function () {
     }else{{$('#js_val_email').html('')}}
     return valid
 }
+//catalogMenu Script
+$('.catalogMenu').hover(function () {
+    $('.ove-shade').fadeIn();
+    $('.catalogMenu__list').css('display','block')
+},function () {
+    $('.ove-shade,.catalogMenu__list').fadeOut();
+    $('.catalogMenu__list').css('display','none')
+})
+//owlSlider Script
+$(document).ready(function(){
+    $(".owl-carousel").owlCarousel(
+        {
+            "items":1,
+            "lazyLoad":true,
+            "margin": 30
+        }
+    );
+});

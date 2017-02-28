@@ -42,6 +42,42 @@
 @include lightMenu('h');
 
 
+@mixin FORM(){
+	
+.FORM{
+  background-color: #fff;
+  @include space('element','trlb','');
+  input[type='text']{
+    @include space('element','tbrl','');
+    font-size: .8rem;
+    width: 100%;
+    border:solid 1px black;
+  }
+  input[type='submit']{
+    border: none;
+    font-size: 1rem;
+  }
+}
+.form__validateMessage {
+  color: #ff7c8b;
+  float: right;
+  display: inline-block;
+  @include for-size(desktop-up){
+    color: #00A000;
+    font-size: 50px;
+  }
+}
+.form__line {
+  @include space('element','tb','bt');
+  &:last-child{
+    padding-bottom: 0;
+  }
+}
+.form_img_ctn{
+  height:500px;
+}
+}
+@include FORM();
 @mixin breadcrumbs(){
 	.breadCrumb {
       @include space('component','tb','');
@@ -75,6 +111,47 @@
   }
 }
 @include breadcrumbs();
+@mixin catalogMenu(){
+	
+.catalogMenu{
+  position: relative;
+  .catalogMenu__button {
+    display: block;
+    background-color: cs('accent');
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    cursor: pointer;
+    @include a-hover('background-color',(from:0,to:cs('accent-l')),1s,ease);
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      width: 100%;
+      height: 3px;
+      left:0;
+      background-color: cs('accent-d');
+
+    }
+  }
+  .catalogMenu__list {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    z-index: 4000;
+  }
+  .catalogMenu__list__item {
+    @include space('element','tbl','');
+    border-bottom: solid 1px cs('bground-d');
+  }
+}
+
+}
+@include catalogMenu();
 @mixin hero_video(){
 	
 .hero_video{
@@ -124,42 +201,17 @@
   }
 }
 @include hero_video();
-@mixin FORM(){
+@mixin owlSlider(){
 	
-.FORM{
-  background-color: #fff;
-  @include space('element','trlb','');
-  input[type='text']{
-    @include space('element','tbrl','');
-    font-size: .8rem;
-    width: 100%;
-    border:solid 1px black;
-  }
-  input[type='submit']{
-    border: none;
-    font-size: 1rem;
-  }
-}
-.form__validateMessage {
-  color: #ff7c8b;
-  float: right;
-  display: inline-block;
-  @include for-size(desktop-up){
-    color: #00A000;
-    font-size: 50px;
-  }
-}
-.form__line {
-  @include space('element','tb','bt');
-  &:last-child{
-    padding-bottom: 0;
-  }
-}
-.form_img_ctn{
-  height:500px;
+.owlSlider{
+
+@include for-size(tablet-l-up){
+  @include space('component','','t')
 }
 }
-@include FORM();
+
+}
+@include owlSlider();
 @mixin pagination(){
 	
 .pagination{

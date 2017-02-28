@@ -1,0 +1,10 @@
+@mixin owlSlider(){
+	
+.owlSlider{
+
+@include for-size(tablet-l-up){
+  @include space('component','','t')
+}
+}
+
+}
