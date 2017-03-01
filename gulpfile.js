@@ -971,7 +971,7 @@ gulp.task('SCRIPTS-GO-CONTAINER',[], function () {
                 var dist = 'dev/SCRIPTS/CONTAINERS/'+js_dep.container+'/';
                 console.log(dist);
 
-                var stream = gulp.src(pathtoScript).pipe(gulp.dest(dist)).pipe(wait(2500));
+                var stream = gulp.src(pathtoScript).pipe(gulp.dest(dist)).pipe(wait(4500));
 
 
             }}///throw to container

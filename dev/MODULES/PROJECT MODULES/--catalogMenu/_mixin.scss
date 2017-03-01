@@ -29,38 +29,37 @@
     background-color: #fff;
     position: absolute;
     z-index: 6000;
-    box-shadow: 1px 1px 1px silver;
+    box-shadow: 3px 0px 3px silver;
   }
   .catalogMenu__list__item {
-    @include space('element','tbl','');
-    border-bottom: solid 1px cs('bground-d');
+    @include space('element','tb','');
+    @include space('component','l','');
+    cursor: pointer;
+    font-weight: bold;
+   // border: solid 1px #fff;
     &:hover{
       background-color: darken(cs('bground'),4%);
     }
   }
   .catalogMenu__wrapper {
     position: relative;
+    background-color: #fff;
     display: none;
   }
-  .catalogMenu__subCatalog{
-    display: none;
-    background-color: #fff;
-    position: absolute;
-    top:0;
-    right: -150%;
-    z-index: 5000;
-    width: 150%;
-
+  .catalogMenu__list--L1{
+    width: 99.8%;
   }
   .catalogMenu__list--L2{
     width: 150%;
-    right: -150%;
+    right: -149.8%;
     display: none;
+    z-index: 5999;
   }
   .catalogMenu__list--L3{
     width: 150%;
-    right: -300%;
+    right: -299.8%;
     display: none;
+    z-index: 5998;
   }
   .catalogMenu__list__item--active {
     background-color: darken(cs('bground'),4%);
