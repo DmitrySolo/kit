@@ -25,15 +25,47 @@
     }
   }
   .catalogMenu__list {
-    display: none;
     width: 100%;
     background-color: #fff;
     position: absolute;
-    z-index: 4000;
+    z-index: 6000;
+    box-shadow: 1px 1px 1px silver;
   }
   .catalogMenu__list__item {
     @include space('element','tbl','');
     border-bottom: solid 1px cs('bground-d');
+    &:hover{
+      background-color: darken(cs('bground'),4%);
+    }
+  }
+  .catalogMenu__wrapper {
+    position: relative;
+    display: none;
+  }
+  .catalogMenu__subCatalog{
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top:0;
+    right: -150%;
+    z-index: 5000;
+    width: 150%;
+
+  }
+  .catalogMenu__list--L2{
+    width: 150%;
+    right: -150%;
+    display: none;
+  }
+  .catalogMenu__list--L3{
+    width: 150%;
+    right: -300%;
+    display: none;
+  }
+  .catalogMenu__list__item--active {
+    background-color: darken(cs('bground'),4%);
+
+
   }
 }
 

@@ -2,13 +2,31 @@ mixin catalogMenu()
 	<!-- split modules/catalogMenu -->
 	.catalogMenu
 		a.catalogMenu__button Каталог товаров
-		ul.catalogMenu__list
-			li.catalogMenu__list__item Сантехника
-			li.catalogMenu__list__item Мебель для ванной
-			li.catalogMenu__list__item Водоснабжение
-			li.catalogMenu__list__item Строительная химия
-			li.catalogMenu__list__item Люстры/Светильники
-			li.catalogMenu__list__item Электрика
-			li.catalogMenu__list__item Аксессуары
-			li.catalogMenu__list__item Отопление
-			li.catalogMenu__list__item Отопление Сток-товары
+		.catalogMenu__wrapper
+			ul.catalogMenu__list.catalogMenu__list--L1
+				li.catalogMenu__list__item.catalogMenu__list__item--active#catalogMenu__list__item--1--1 Сантехника
+				li.catalogMenu__list__item#catalogMenu__list__item--1--2 Мебель для ванной
+				li.catalogMenu__list__item#catalogMenu__list__item--1--3 Водоснабжение
+				li.catalogMenu__list__item#catalogMenu__list__item--1--4 Строительная химия
+				li.catalogMenu__list__item#catalogMenu__list__item--1--5 Люстры/Светильники
+				li.catalogMenu__list__item#catalogMenu__list__item--1--6 Электрика
+				li.catalogMenu__list__item#catalogMenu__list__item--1--7 Аксессуары
+				li.catalogMenu__list__item#catalogMenu__list__item--1--8 Отопление
+				li.catalogMenu__list__item#catalogMenu__list__item--1--9 Отопление Сток-товары
+			-var i = 1
+			-var ii = 1
+			-var i3 = 1
+			+loop(8)
+				ul(id="catalogMenuLevel--2--"+i).catalogMenu__list.catalogMenu__list--L2
+					-i++
+					+loop(8)
+						li(id='#catalogMenu__list__item--2--'+ii).catalogMenu__list__item="2й Уровень "+i
+						-ii++
+			+loop(64)
+				ul(id="catalogMenuLevel--3--"+i3).catalogMenu__list.catalogMenu__list--L3
+					-i3++
+					+loop(5)
+						li.catalogMenu__list__item#catalogMenu__list__item--3--1="3й Уровень "+i3
+
+
+

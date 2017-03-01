@@ -70,17 +70,6 @@
 				"": ""
 			}
 		},
-		"catalogMenu": {
-			"js": {
-				"catalogMenu": {
-					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"FORM": {
 			"js": {
 				"validator": {
@@ -104,6 +93,17 @@
 				"": ""
 			}
 		},
+		"catalogMenu": {
+			"js": {
+				"catalogMenu": {
+					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"hero_video": {
 			"js": {
 				"hero_video-script": {
@@ -116,23 +116,23 @@
 				"": ""
 			}
 		},
-		"buttonEvent": {
+		"JQ": {
 			"js": {
-				"buttonEvent-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/buttonEvent/buttonEvent.js",
-					"container": "footer/init/init",
-					"type": "init"
+				"jquery": {
+					"src": "bower_components/jquery/dist/jquery.min.js",
+					"container": "footer/libs"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"JQ": {
+		"buttonEvent": {
 			"js": {
-				"jquery": {
-					"src": "bower_components/jquery/dist/jquery.min.js",
-					"container": "footer/libs"
+				"buttonEvent-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/buttonEvent/buttonEvent.js",
+					"container": "footer/init/init",
+					"type": "init"
 				}
 			},
 			"css": {
@@ -162,11 +162,11 @@
 	"header-font-weight": "900",
 	"mobile-font": "14px",
 	"screen-font": "16px",
-	"line-height-ratio": "1.7",
+	"line-height-ratio": "1.6",
 	"siteWidth": "1240px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
@@ -315,12 +315,6 @@
 			}
 		}
 	},
-	"breadcrumbs": {
-		"1": "1"
-	},
-	"catalogMenu": {
-		"catalogMenu": "1"
-	},
 	"FORM": {
 		"TITLE": "Быть в курсе последних акций и новостей",
 		"action": "/",
@@ -358,6 +352,12 @@
 				"other_specific": {}
 			}
 		}
+	},
+	"breadcrumbs": {
+		"1": "1"
+	},
+	"catalogMenu": {
+		"catalogMenu": "1"
 	},
 	"hero_video": {
 		"hero_video": "1"
