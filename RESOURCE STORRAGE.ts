@@ -4,3 +4,4 @@
 // HERO VIDEO & code to it [ http://www.coverr.co/ ]
 // FREE MOCKUPS PSD ICONS ETC [ https://sellfy.com/designcoon ]
 // GOOD SOURCES RESURS FONTS MOCKUPS [ https://www.graphicpear.com/ ] Log DimSolo pass vidppp
+// FREE FONT ICON  [http://themify.me/themify-icons]

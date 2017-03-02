@@ -1,0 +1,19 @@
+@mixin sideBar(){
+	
+.sideBar{
+  position: absolute;
+  width: 100%;
+  left: -100%;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 8000;
+  @include space('block','a','');
+}
+  .sideBar__closer {
+    height: 50px;
+    width: 50px;
+    float: right;
+    @include i-bkg-ctr('images/icons/close.svg');
+  }
+}

@@ -42,39 +42,6 @@
 @include lightMenu('h');
 
 
-@mixin breadcrumbs(){
-	.breadCrumb {
-      @include space('component','tb','');
-      @include space('block','lr','');
-      background-color: cs('fground');
-      text-transform: uppercase;
-      font-size: .9em;
-      a:link,a:visited {
-        color: cs('font-l');
-        text-decoration: none;
-      }
-      a:hover{
-        color: cs('font-d');
-      }
-    }
-  .breadcrumb__section {
-    display: inline-block;
-    @include space('element','','tbrl');
-    &:before {
-      content: '/rsssdssesss[[sshuray it workss';
-      margin-right: 20px;
-    }
-  }
-  .breadCrumb__section--home {
-    font-weight: 600;
-    &:before{
-      content: '';
-      margin-right:0;
-
-    }
-  }
-}
-@include breadcrumbs();
 @mixin FORM(){
 	
 .FORM{
@@ -111,6 +78,39 @@
 }
 }
 @include FORM();
+@mixin breadcrumbs(){
+	.breadCrumb {
+      @include space('component','tb','');
+      @include space('block','lr','');
+      background-color: cs('fground');
+      text-transform: uppercase;
+      font-size: .9em;
+      a:link,a:visited {
+        color: cs('font-l');
+        text-decoration: none;
+      }
+      a:hover{
+        color: cs('font-d');
+      }
+    }
+  .breadcrumb__section {
+    display: inline-block;
+    @include space('element','','tbrl');
+    &:before {
+      content: '/rsssdssesss[[sshuray it workss';
+      margin-right: 20px;
+    }
+  }
+  .breadCrumb__section--home {
+    font-weight: 600;
+    &:before{
+      content: '';
+      margin-right:0;
+
+    }
+  }
+}
+@include breadcrumbs();
 @mixin catalogMenu(){
 	
 .catalogMenu{
@@ -149,10 +149,8 @@
     @include space('component','l','');
     cursor: pointer;
     font-weight: bold;
-   // border: solid 1px #fff;
-    &:hover{
-      background-color: darken(cs('bground'),4%);
-    }
+    @include a-hover('background-color',(from:0,to:0),.13s,linear);
+
   }
   .catalogMenu__wrapper {
     position: relative;
@@ -275,3 +273,23 @@
   }
 }
 @include pagination();
+@mixin sideBar(){
+	
+.sideBar{
+  position: absolute;
+  width: 100%;
+  left: -100%;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 8000;
+  @include space('block','a','');
+}
+  .sideBar__closer {
+    height: 50px;
+    width: 50px;
+    float: right;
+    @include i-bkg-ctr('images/icons/close.svg');
+  }
+}
+@include sideBar();

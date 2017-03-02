@@ -1,4 +1,5 @@
 <!-- split header.html -->
++module('sideBar')
 header.ove-mainHeader
     .container
         .row
@@ -39,8 +40,10 @@ header.ove-mainHeader
                         +hamburger()
                     .col-4-m.col-6-tp
                         +logo-img('logo.svg','ove-logo--mobile')
-                    .col-2-m.col-2-tp cart
-                    .col-2-m.col-2-tp button
+                    .col-2-m.col-2-tp
+                        //+vertical_centered_image('icons/shopping-cart.svg','ove-subControlPanel__section')
+                    .col-2-m.col-2-tp
+                       // +vertical_centered_image('icons/search.svg','ove-subControlPanel__section')
             section.ove-subControlPanel.ove-subControlPanel--desktop
                 .row
                     .col-5-d

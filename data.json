@@ -70,17 +70,6 @@
 				"": ""
 			}
 		},
-		"catalogMenu": {
-			"js": {
-				"catalogMenu": {
-					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"FORM": {
 			"js": {
 				"validator": {
@@ -104,6 +93,17 @@
 				"": ""
 			}
 		},
+		"catalogMenu": {
+			"js": {
+				"catalogMenu": {
+					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"hero_video": {
 			"js": {
 				"hero_video-script": {
@@ -116,12 +116,11 @@
 				"": ""
 			}
 		},
-		"buttonEvent": {
+		"sideBar": {
 			"js": {
-				"buttonEvent-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/buttonEvent/buttonEvent.js",
-					"container": "footer/init/init",
-					"type": "init"
+				"catalogMenu": {
+					"src": "dev/MODULES/PROJECT MODULES/--sideBar/sideBar.js",
+					"container": "footer/init/mobile"
 				}
 			},
 			"css": {
@@ -133,6 +132,18 @@
 				"jquery": {
 					"src": "bower_components/jquery/dist/jquery.min.js",
 					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"buttonEvent": {
+			"js": {
+				"buttonEvent-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/buttonEvent/buttonEvent.js",
+					"container": "footer/init/init",
+					"type": "init"
 				}
 			},
 			"css": {
@@ -166,7 +177,7 @@
 	"siteWidth": "1240px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
@@ -315,12 +326,6 @@
 			}
 		}
 	},
-	"breadcrumbs": {
-		"1": "1"
-	},
-	"catalogMenu": {
-		"catalogMenu": "1"
-	},
 	"FORM": {
 		"TITLE": "Быть в курсе последних акций и новостей",
 		"action": "/",
@@ -359,14 +364,23 @@
 			}
 		}
 	},
+	"breadcrumbs": {
+		"1": "1"
+	},
+	"catalogMenu": {
+		"catalogMenu": "1"
+	},
 	"hero_video": {
 		"hero_video": "1"
+	},
+	"owlSlider": {
+		"owlSlider": "1"
 	},
 	"pagination": {
 		"pagination": "1"
 	},
-	"owlSlider": {
-		"owlSlider": "1"
+	"sideBar": {
+		"sideBar": "1"
 	},
 	"blueprint": "FORM",
 	"izolate": "false"

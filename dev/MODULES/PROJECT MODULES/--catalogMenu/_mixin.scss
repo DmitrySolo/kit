@@ -36,10 +36,8 @@
     @include space('component','l','');
     cursor: pointer;
     font-weight: bold;
-   // border: solid 1px #fff;
-    &:hover{
-      background-color: darken(cs('bground'),4%);
-    }
+    @include a-hover('background-color',(from:0,to:0),.13s,linear);
+
   }
   .catalogMenu__wrapper {
     position: relative;
