@@ -32,11 +32,16 @@
     box-shadow: 3px 0px 3px silver;
   }
   .catalogMenu__list__item {
+    position: relative;
     @include space('element','tb','');
     @include space('component','l','');
     cursor: pointer;
     font-weight: bold;
     @include a-hover('background-color',(from:0,to:0),.13s,linear);
+    .angleR {
+      position: absolute;
+      right: 5%;
+    }
 
   }
   .catalogMenu__wrapper {

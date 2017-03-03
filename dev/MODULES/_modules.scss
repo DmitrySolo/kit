@@ -42,6 +42,39 @@
 @include lightMenu('h');
 
 
+@mixin breadcrumbs(){
+	.breadCrumb {
+      @include space('component','tb','');
+      @include space('block','lr','');
+      background-color: cs('fground');
+      text-transform: uppercase;
+      font-size: .9em;
+      a:link,a:visited {
+        color: cs('font-l');
+        text-decoration: none;
+      }
+      a:hover{
+        color: cs('font-d');
+      }
+    }
+  .breadcrumb__section {
+    display: inline-block;
+    @include space('element','','tbrl');
+    &:before {
+      content: '/rsssdssesss[[sshuray it workss';
+      margin-right: 20px;
+    }
+  }
+  .breadCrumb__section--home {
+    font-weight: 600;
+    &:before{
+      content: '';
+      margin-right:0;
+
+    }
+  }
+}
+@include breadcrumbs();
 @mixin FORM(){
 	
 .FORM{
@@ -78,39 +111,6 @@
 }
 }
 @include FORM();
-@mixin breadcrumbs(){
-	.breadCrumb {
-      @include space('component','tb','');
-      @include space('block','lr','');
-      background-color: cs('fground');
-      text-transform: uppercase;
-      font-size: .9em;
-      a:link,a:visited {
-        color: cs('font-l');
-        text-decoration: none;
-      }
-      a:hover{
-        color: cs('font-d');
-      }
-    }
-  .breadcrumb__section {
-    display: inline-block;
-    @include space('element','','tbrl');
-    &:before {
-      content: '/rsssdssesss[[sshuray it workss';
-      margin-right: 20px;
-    }
-  }
-  .breadCrumb__section--home {
-    font-weight: 600;
-    &:before{
-      content: '';
-      margin-right:0;
-
-    }
-  }
-}
-@include breadcrumbs();
 @mixin catalogMenu(){
 	
 .catalogMenu{
@@ -145,11 +145,16 @@
     box-shadow: 3px 0px 3px silver;
   }
   .catalogMenu__list__item {
+    position: relative;
     @include space('element','tb','');
     @include space('component','l','');
     cursor: pointer;
     font-weight: bold;
     @include a-hover('background-color',(from:0,to:0),.13s,linear);
+    .angleR {
+      position: absolute;
+      right: 5%;
+    }
 
   }
   .catalogMenu__wrapper {
@@ -274,22 +279,38 @@
 }
 @include pagination();
 @mixin sideBar(){
-	
+
 .sideBar{
-  position: absolute;
+  position: fixed;
+  overflow: auto;
   width: 100%;
-  left: -100%;
-  top: 0;
   bottom: 0;
-  background-color: #fff;
+  left: -100%;
   z-index: 8000;
+  top: 0;
+  height: 100%;
   @include space('block','a','');
+  background-color: #fff;
 }
+  .sideBar__menu--personal,.sideBar__menu--catalog {
+    @include space('component','','b')
+  }
+  .sideBar__menu--personal {
+    .sideBar__menu--catalog__item {
+      background-color: cs('bground');
+    }
+  }
   .sideBar__closer {
-    height: 50px;
-    width: 50px;
-    float: right;
-    @include i-bkg-ctr('images/icons/close.svg');
+    text-align: right;
+    @include space('block','','b')
+  }
+  .sideBar__menu {
+    height: 100%;
+    font-size: 2em;
+  }
+  .sideBar__menu--catalog__item {
+    @include space('element','a','');
+    border-bottom: solid 1px cs('bground-d');
   }
 }
 @include sideBar();

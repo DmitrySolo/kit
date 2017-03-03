@@ -1,0 +1,28 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 3rem;
+  width: 3rem;
+  fill: #fff;
+}
+
+.icon--close {
+  height: 2.8rem;
+  width: 2.8rem;
+  fill: cs('font-d');
+  cursor: pointer;
+}
+.icon--search {
+  height: 3.2rem;
+  width: 3.2rem;
+}
+.icon--angle {
+  height: 1rem;
+  width: 1rem;
+  fill: cs('font-l');
+}
+.catalogMenu__list__item--active {
+  .icon--angle {
+    fill: cs('accent');
+  }
+}

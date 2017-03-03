@@ -32,6 +32,8 @@ var unquote = require('unquote');
 const del = require('del');
 var Sync = require('sync');
 var gulpsync = require('gulp-sync')(gulp);
+var svgstore = require('gulp-svgstore');
+var svgmin = require('gulp-svgmin');
 gulp.task('views', function buildHTML() {
     var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
     gulp.src('dev/templates/PAGESYSTEM/PAGES/*.pug')
@@ -738,7 +740,7 @@ gulp.task('fontvars', function () {
 
 var fr = {
     string: 'role',
-    default: 'MAIN',
+    default: '--MAIN',
 };
 var fontrole = minimist(process.argv.slice(2), fr);
 
@@ -1094,6 +1096,23 @@ function scrBuild() {
    Sync(scrBuild())
 
 })
+gulp.task('svgstore', function () {
+    return gulp
+        .src('dev/SOURCE_FABRIC/ICONS_COMBINER/icons/**/*.svg')
+        .pipe(svgmin(function (file) {
+            var prefix = path.basename(file.relative, path.extname(file.relative));
+            return {
+                plugins: [{
+                    cleanupIDs: {
+                        prefix: prefix + '-',
+                        minify: true
+                    }
+                }]
+            }
+        }))
+        .pipe(svgstore())
+        .pipe(gulp.dest('dist/icons/'));
+});
 //////////////////////////////////////////////////////
 gulp.task('START QUANT', ['WATCHER', 'SERVER']);
 //gulp.task('SCRIPT BUILDERs', gulp.series('SCRIPTS-CLEAN', 'SCRIPTS-GO-CONTAINER', 'SCRIPTS-BUILD'));

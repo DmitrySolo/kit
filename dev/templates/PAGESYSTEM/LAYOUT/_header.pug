@@ -1,4 +1,6 @@
 <!-- split header.html -->
+.hidden
+    include ../../../../dist/icons/icons.svg
 +module('sideBar')
 header.ove-mainHeader
     .container
@@ -41,9 +43,11 @@ header.ove-mainHeader
                     .col-4-m.col-6-tp
                         +logo-img('logo.svg','ove-logo--mobile')
                     .col-2-m.col-2-tp
-                        //+vertical_centered_image('icons/shopping-cart.svg','ove-subControlPanel__section')
+                        .ove-subControlPanel__section
+                            +I('cart')
                     .col-2-m.col-2-tp
-                       // +vertical_centered_image('icons/search.svg','ove-subControlPanel__section')
+                        .ove-subControlPanel__section
+                            +I('search','icon--search')
             section.ove-subControlPanel.ove-subControlPanel--desktop
                 .row
                     .col-5-d

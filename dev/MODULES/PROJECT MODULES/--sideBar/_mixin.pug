@@ -1,17 +1,18 @@
 mixin sideBar()
 	<!-- split modules/sideBar -->
-	.sideBar
-		.sideBar__closer
-		.sideBar__menu
-			ul.sideBar__menu--personal
-				li Личный кабинет
-			ul.sideBar__menu--catalog
-				li.sideBar__menu--catalog__item Сантехника
-				li.sideBar__menu--catalog__item Мебель для ванной
-				li.sideBar__menu--catalog__item Водоснабжение
-				li.sideBar__menu--catalog__item Строительная химия
-				li.sideBar__menu--catalog__item Люстры/Светильники
-				li.sideBar__menu--catalog__item Электрика
-				li.sideBar__menu--catalog__item Аксессуары
-				li.sideBar__menu--catalog__item Отопление
-				li.sideBar__menu--catalog__item Сток-товары
+		.sideBar.clearfix
+			.sideBar-bck
+				.sideBar__closer
+					+I('close','icon--close')
+				.sideBar__menu
+					h2.sideBar__menu--title Каталог
+					ul.sideBar__menu--catalog
+						li.sideBar__menu--catalog__item Сантехника
+						li.sideBar__menu--catalog__item Мебель для ванной
+						li.sideBar__menu--catalog__item Водоснабжение
+						li.sideBar__menu--catalog__item Строительная химия
+						li.sideBar__menu--catalog__item Люстры/Светильники
+						li.sideBar__menu--catalog__item Электрика
+						li.sideBar__menu--catalog__item Аксессуары
+						li.sideBar__menu--catalog__item Отопление
+						li.sideBar__menu--catalog__item Сток-товары

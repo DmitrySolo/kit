@@ -2,9 +2,17 @@ mixin B(value,className)
 	-if (!className) className =''
 	button.mainButton(class=''+className)=value
 
-mixin A-signUpButtonLink(content,href,className)
+mixin B-gogog(value,className)
 	-if (!className) className =''
-	a(class='signUpButtonLink '+className,href=href)=content
+	button.gogog(class=''+className)=value
+
+
+mixin A(content,href,className)
+	-if (!className) className =''
+	a(class='mainLink '+className,href=href)=content
+mixin A-ove-topNavLink(content,href,className)
+	-if (!className) className =''
+	a(class='ove-topNavLink '+className,href=href)=content
 
 mixin A-socialLink(content,href,className)
 	-if (!className) className =''
@@ -13,14 +21,7 @@ mixin PL-spinner-circle(className)
 	-if (!className) className =''
 		.spinner-circle(class=''+className)
 
-mixin A(content,href,className)
-	-if (!className) className =''
-	a(class='mainLink '+className,href=href)=content
-mixin B-gogog(value,className)
-	-if (!className) className =''
-	button.gogog(class=''+className)=value
-
-
-mixin A-ove-topNavLink(content,href,className)
-	-if (!className) className =''
-	a(class='ove-topNavLink '+className,href=href)=content
+mixin I(id,classModifier)
+	-if (!classModifier) classModifier =''
+	svg(class='icon '+classModifier)
+		use(xlink:href="#"+id)

@@ -1,19 +1,35 @@
 @mixin sideBar(){
-	
+
 .sideBar{
-  position: absolute;
+  position: fixed;
+  overflow: auto;
   width: 100%;
-  left: -100%;
-  top: 0;
   bottom: 0;
-  background-color: #fff;
+  left: -100%;
   z-index: 8000;
+  top: 0;
+  height: 100%;
   @include space('block','a','');
+  background-color: #fff;
 }
+  .sideBar__menu--personal,.sideBar__menu--catalog {
+    @include space('component','','b')
+  }
+  .sideBar__menu--personal {
+    .sideBar__menu--catalog__item {
+      background-color: cs('bground');
+    }
+  }
   .sideBar__closer {
-    height: 50px;
-    width: 50px;
-    float: right;
-    @include i-bkg-ctr('images/icons/close.svg');
+    text-align: right;
+    @include space('block','','b')
+  }
+  .sideBar__menu {
+    height: 100%;
+    font-size: 2em;
+  }
+  .sideBar__menu--catalog__item {
+    @include space('element','a','');
+    border-bottom: solid 1px cs('bground-d');
   }
 }
