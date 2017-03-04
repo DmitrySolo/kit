@@ -39,6 +39,7 @@ Header
 }
 
 .ove-subControlPanel--mobile {
+  position: relative;
   @include space('element', 'tb', '');
   @include for-size(desktop-up) {
     display: none;
@@ -53,12 +54,33 @@ Header
 }
 }
 .ove-subControlPanel__section {
+  position: relative;
   text-align: center;
   height: 3.69434em;
-  img {
-    width: 60%;
-    height: auto;
+  cursor: pointer;
 
+
+}
+.ove-subControlPanel__search {
+  background-color: cs('primary');
+}
+.ove-subControlPanel__search_wrapper {
+  display: none;
+  position: absolute;
+  background-color: cs('primary');
+}
+.ove-subControlPanel__search__input{
+  @include space('element','t','');
+  top:0;
+  input {
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 9px;
+    vert-align: middle;
+    width: 100%;
+    font-size: 1.17em;
+    margin: 0;
   }
 }
 /*

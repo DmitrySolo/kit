@@ -105,12 +105,27 @@ var walkStart = function (obj) {
 
 
 $('.catalogMenu__list__item').hover(walkMenu);
+/*
+
+microControls script
+
+ */
+
+//search-mobile
+$( document ).ready(function() {
+
+    $('.ove-subControlPanel__search_trigger').on('click',function () {
+        $('.ove-subControlPanel__search_wrapper').toggle().find('input').focus();
+    })
+
+});
 //owlSlider Script
 $(document).ready(function(){
     $(".owl-carousel").owlCarousel(
         {
             "items":1,
-            "lazyLoad":true
+            "lazyLoad":true,
+            "autoPlay":true
         }
     );
 });

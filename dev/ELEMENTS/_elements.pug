@@ -1,3 +1,7 @@
+mixin I(id,classModifier)
+	-if (!classModifier) classModifier =''
+	svg(class='icon '+classModifier)
+		use(xlink:href="#"+id)
 mixin B(value,className)
 	-if (!className) className =''
 	button.mainButton(class=''+className)=value
@@ -20,8 +24,3 @@ mixin A-socialLink(content,href,className)
 mixin PL-spinner-circle(className)
 	-if (!className) className =''
 		.spinner-circle(class=''+className)
-
-mixin I(id,classModifier)
-	-if (!classModifier) classModifier =''
-	svg(class='icon '+classModifier)
-		use(xlink:href="#"+id)

@@ -12,6 +12,9 @@
     .col-#{$i}-#{$prefix} {
       width: percentage($i/$colums);
     }
+    .push-#{$i}-#{$prefix} {
+      margin-left: percentage($i/$colums);
+    }
   }
 }
 @mixin hide($hidePrefix,$prefixes) {

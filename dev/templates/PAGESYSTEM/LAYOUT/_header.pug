@@ -46,8 +46,12 @@ header.ove-mainHeader
                         .ove-subControlPanel__section
                             +I('cart')
                     .col-2-m.col-2-tp
-                        .ove-subControlPanel__section
+                        .ove-subControlPanel__section.ove-subControlPanel__search_trigger
                             +I('search','icon--search')
+                    .ove-subControlPanel__search_wrapper.push-2-tp.push-3-m.col-7-m.col-8-tp
+                            .ove-subControlPanel__search
+                                .ove-subControlPanel__search__input
+                                    input(type='text')
             section.ove-subControlPanel.ove-subControlPanel--desktop
                 .row
                     .col-5-d
