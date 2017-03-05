@@ -12,16 +12,26 @@
   fill: cs('font-d');
   cursor: pointer;
 }
+
 .icon--search {
   width: 2.5rem;
 }
+
 .icon--angle {
   height: 1rem;
   width: 1rem;
   fill: cs('font-l');
 }
+
 .catalogMenu__list__item--active {
   .icon--angle {
     fill: cs('accent');
   }
+}
+
+.icon-menu__button {
+  cursor: pointer;
+  background-color: cs('primary-d');
+  border-radius: 3px;
+  @include space('element','a','');
 }

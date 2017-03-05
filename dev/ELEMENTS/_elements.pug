@@ -1,7 +1,3 @@
-mixin I(id,classModifier)
-	-if (!classModifier) classModifier =''
-	svg(class='icon '+classModifier)
-		use(xlink:href="#"+id)
 mixin B(value,className)
 	-if (!className) className =''
 	button.mainButton(class=''+className)=value
@@ -11,6 +7,10 @@ mixin B-gogog(value,className)
 	button.gogog(class=''+className)=value
 
 
+mixin I(id,classModifier)
+	-if (!classModifier) classModifier =''
+	svg(class='icon '+classModifier)
+		use(xlink:href="#"+id)
 mixin A(content,href,className)
 	-if (!className) className =''
 	a(class='mainLink '+className,href=href)=content

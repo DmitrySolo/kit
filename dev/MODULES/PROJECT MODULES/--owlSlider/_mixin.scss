@@ -1,10 +1,27 @@
 @mixin owlSlider(){
 	
 .owlSlider{
-
+@include space('block','','b');
 @include for-size(tablet-l-up){
   @include space('component','','t')
 }
 }
+  .owl-dots{
+    @include space('element','','t');
+    text-align: center;
+    .owl-dot{
+      display: inline-block;
+      @include space('element','','r');
+      width: .8em;
+      height: .8em;
+      border-radius: 50%;
+      background-color: cs('primary-d');
+
+      &.active{
+        background-color: cs('accent');
+      }
+    }
+
+  }
 
 }

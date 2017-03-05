@@ -1,5 +1,5 @@
 //sideBar Script
-$('.menu-hamburger__partsWrap').click(function () {
+$('.icon-menu__button').click(function () {
     $('.sideBar').animate({
         left: "0"
     }, 400);

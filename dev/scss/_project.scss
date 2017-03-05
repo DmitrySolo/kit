@@ -44,6 +44,11 @@ Header
   @include for-size(desktop-up) {
     display: none;
   }
+  .ove-mobile-menu {
+   // @include space('element','a','');
+    text-align: center;
+    height: 3.69434em;
+  }
 }
 
 .ove-subControlPanel--desktop {
@@ -103,7 +108,7 @@ logo
 .ove-shade {
   position: absolute;
   display: none;
-  background-color: rgba(0, 0, 0, 0.21);
+  background-color: rgba(0, 0, 0, 0.7);
   top: 0;
   bottom: 0;
   width: 100%;

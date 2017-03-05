@@ -160,46 +160,31 @@
   }
 }
 @include hero_video();
-@mixin pagination(){
-	
-.pagination{
-  @include space('component','trl','');
-  @include space('block','b','');
-  background-color: #fff;
-
-}
-  .pagination__ctn{
-    padding: 0;
-    text-align: center;
-  }
-  .pagination__ctn__button {
-    list-style: none;
-    display: inline-block;
-    @include space('element','tb','r');
-    @include space('component','rl','');
-    background-color: cs('primary');
-    color: #fff;
-    font-size: 16px;
-    font-weight: 900;
-    cursor: pointer;
-    @include a-hover('background-color',(from:false,to:cs('primary-d')),.3s,ease)
-  }
-  .pagination__ctn__button--current {
-    background-color: cs('accent-l');
-    &:hover{
-      background-color: cs('accent-l');
-    }
-  }
-}
-@include pagination();
 @mixin owlSlider(){
 	
 .owlSlider{
-
+@include space('block','','b');
 @include for-size(tablet-l-up){
   @include space('component','','t')
 }
 }
+  .owl-dots{
+    @include space('element','','t');
+    text-align: center;
+    .owl-dot{
+      display: inline-block;
+      @include space('element','','r');
+      width: .8em;
+      height: .8em;
+      border-radius: 50%;
+      background-color: cs('primary-d');
+
+      &.active{
+        background-color: cs('accent');
+      }
+    }
+
+  }
 
 }
 @include owlSlider();
@@ -278,6 +263,79 @@
 
 }
 @include catalogMenu();
+@mixin oveFeatures() {
+
+  .oveFeatures {
+
+    h3{
+      @include space('element','a','');
+      font-size: 1.2em;
+      text-transform: uppercase;
+      color: #fff;
+
+      @include for-size(tablet-p-up){
+        font-size: 2.1em;
+      }
+    }
+  }
+  .oveFeatures__feature {
+    background-repeat: no-repeat;
+    @include for-size(tablet-p-up) {
+      background-size: cover;
+    }
+  .oveFeatures__feature__desc {
+    background-color: rgba(30, 28, 0, 0.48);
+  }
+    position: relative;
+    box-shadow: 0px 1px 1px silver;
+    @include space('element','','b');
+    @include space('component','a','');
+    border: solid 3px #fff;
+    background-color: #fff;
+    border-radius: 3px;
+  }
+  .oveFeatures__feature--delivery {
+    background-image: url('images/delivery.jpg');
+  }
+  .oveFeatures__feature--service {
+    background-image: url('images/plumber.jpg');
+  }
+
+
+}
+@include oveFeatures();
+@mixin pagination(){
+	
+.pagination{
+  @include space('component','trl','');
+  @include space('block','b','');
+  background-color: #fff;
+
+}
+  .pagination__ctn{
+    padding: 0;
+    text-align: center;
+  }
+  .pagination__ctn__button {
+    list-style: none;
+    display: inline-block;
+    @include space('element','tb','r');
+    @include space('component','rl','');
+    background-color: cs('primary');
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    @include a-hover('background-color',(from:false,to:cs('primary-d')),.3s,ease)
+  }
+  .pagination__ctn__button--current {
+    background-color: cs('accent-l');
+    &:hover{
+      background-color: cs('accent-l');
+    }
+  }
+}
+@include pagination();
 @mixin sideBar(){
 
 .sideBar{

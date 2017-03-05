@@ -155,7 +155,7 @@ gulp.task('SERVER', [], function() {
 });
 gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-script-js','throw-main-css','browser-reload','views','mergeJson','compile-blueprint-view','compile-blueprint-sass'], function() {
 
-    gulp.watch('dev/MODULES/*/--*/*.scss',function(){ runSequence('concat-modules-and-mixes') });
+    gulp.watch(['dev/MODULES/*.scss','!dev/MODULES/_modules.scss'],['concat-modules-and-mixes']);
     gulp.watch(['dev/MIXES/*/*.scss'],['concat-modules-and-mixes']);
 
     gulp.watch(['dev/ELEMENTS/*/--*/*.scss','dev/ELEMENTS/*/--*/*.pug'],['concat-elements']);

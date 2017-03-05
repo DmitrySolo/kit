@@ -9,7 +9,6 @@ $('.catalogMenu').hover(function () {
     $('.catalogMenu__list--L2,.catalogMenu__list--L3').css('min-height',height+'px');
 
     setTimeout(timeout,mrefreshinterval);
-
 },function () {
     $('.ove-shade').fadeOut();
     $('.catalogMenu__wrapper').css('display','none');
