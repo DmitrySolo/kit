@@ -37,6 +37,12 @@ Header
   background-color: cs('primary');
   border-bottom: 3px solid cs('primary-d');
 }
+.stickyHeader {
+  position : fixed;
+  z-index  : 10000;
+  width: 100%;
+  top:0;
+}
 
 .ove-subControlPanel--mobile {
   position: relative;

@@ -7,6 +7,12 @@ mixin B-gogog(value,className)
 	button.gogog(class=''+className)=value
 
 
+mixin B-toCart(value,className)
+	-if (!className) className =''
+	button.toCart(class=''+className)
+		+I('cart')
+
+
 mixin I(id,classModifier)
 	-if (!classModifier) classModifier =''
 	svg(class='icon '+classModifier)

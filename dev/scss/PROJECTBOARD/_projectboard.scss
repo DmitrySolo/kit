@@ -83,16 +83,6 @@
     color: cs('secondary');
     border-bottom: solid 4em cs('secondary');
   }
-  button{
-    background-color: cs('accent');
-    font-size: 22px;
-    @include space('element','','t');
-    border: none;
-    @include space('component','trlb','')
-  }
-  button:last-child{
-    color: #fff;
-  }
   .hierarchy{
     font-size: 1rem;
   }

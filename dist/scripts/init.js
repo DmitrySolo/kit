@@ -15,20 +15,13 @@ var validate = function () {
     }else{{$('#js_val_email').html('')}}
     return valid
 }
-//  buttonEvent script
-
-$( document ).ready(function() {
-
-console.log('Hello');
-
-});
 //catalogMenu Script
 
 
 $('.catalogMenu').hover(function () {
-    $('.ove-shade').fadeIn();
-    $('.catalogMenu__wrapper').css('display','block')
 
+    $('.catalogMenu__wrapper').css('display','block')
+    $('.ove-shade').fadeIn('fast');
     var height = $('.catalogMenu__list--L1').height();
     $('.catalogMenu__list--L2,.catalogMenu__list--L3').css('min-height',height+'px');
 
@@ -133,4 +126,23 @@ $(document).ready(function(){
             "autoplay":true
         }
     );
+});
+//  styckyHeader script
+
+$(document).ready(function () {
+    var offset = $('.ove-subControlPanel__wrapper').offset().top;
+
+    console.log(offset);
+
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > offset+20) {
+
+            $('.ove-subControlPanel__wrapper').addClass('stickyHeader');
+        }
+        else {
+            $('.ove-subControlPanel__wrapper').removeClass('stickyHeader');
+        }
+
+    })
+
 });

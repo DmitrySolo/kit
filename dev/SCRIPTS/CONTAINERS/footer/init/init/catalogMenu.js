@@ -2,9 +2,9 @@
 
 
 $('.catalogMenu').hover(function () {
-    $('.ove-shade').fadeIn();
-    $('.catalogMenu__wrapper').css('display','block')
 
+    $('.catalogMenu__wrapper').css('display','block')
+    $('.ove-shade').fadeIn('fast');
     var height = $('.catalogMenu__list--L1').height();
     $('.catalogMenu__list--L2,.catalogMenu__list--L3').css('min-height',height+'px');
 

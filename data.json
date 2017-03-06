@@ -44,6 +44,17 @@
 				"": ""
 			}
 		},
+		"toCart": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"<%= prefix %>": {
 			"js": {
 				"": {
@@ -55,15 +66,12 @@
 				"": ""
 			}
 		},
-		"spinner-circle": {
+		"styckyHeader": {
 			"js": {
-				"lib": {
-					"src": "bower_components/please-wait/build/please-wait.min.js",
-					"container": "footer/top/preloader"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
-					"container": "footer/top/preloader"
+				"styckyHeader-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
+					"container": "footer/init/init",
+					"type": "init"
 				}
 			},
 			"css": {
@@ -93,6 +101,17 @@
 				"": ""
 			}
 		},
+		"JQ": {
+			"js": {
+				"jquery": {
+					"src": "bower_components/jquery/dist/jquery.min.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"catalogMenu": {
 			"js": {
 				"catalogMenu": {
@@ -116,7 +135,30 @@
 				"": ""
 			}
 		},
-		"oveFeatures": {
+		"microControls": {
+			"js": {
+				"microControls-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/microControls/microControls.js",
+					"container": "footer/init/init",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"owlGoodsSlider": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"catalogItem": {
 			"js": {
 				"": {
 					"src": "",
@@ -138,35 +180,26 @@
 				"": ""
 			}
 		},
-		"JQ": {
+		"spinner-circle": {
 			"js": {
-				"jquery": {
-					"src": "bower_components/jquery/dist/jquery.min.js",
-					"container": "footer/libs"
+				"lib": {
+					"src": "bower_components/please-wait/build/please-wait.min.js",
+					"container": "footer/top/preloader"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
+					"container": "footer/top/preloader"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"buttonEvent": {
+		"oveFeatures": {
 			"js": {
-				"buttonEvent-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/buttonEvent/buttonEvent.js",
-					"container": "footer/init/init",
-					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"microControls": {
-			"js": {
-				"microControls-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/microControls/microControls.js",
-					"container": "footer/init/init",
-					"type": "init"
+				"": {
+					"src": "",
+					"concat": "false"
 				}
 			},
 			"css": {
@@ -396,17 +429,23 @@
 	"hero_video": {
 		"hero_video": "1"
 	},
-	"oveFeatures": {
-		"oveFeatures": "1"
-	},
 	"owlSlider": {
 		"owlSlider": "1"
 	},
 	"pagination": {
 		"pagination": "1"
 	},
+	"owlGoodsSlider": {
+		"owlGoodsSlider": "1"
+	},
+	"catalogItem": {
+		"catalogItem": "1"
+	},
 	"sideBar": {
 		"sideBar": "1"
+	},
+	"oveFeatures": {
+		"oveFeatures": "1"
 	},
 	"blueprint": "FORM",
 	"izolate": "false"

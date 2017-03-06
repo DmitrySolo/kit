@@ -1,0 +1,44 @@
+@mixin catalogItem() {
+
+  .catalogItem {
+    @include space('element', 'a', '');
+    @include space('component','','b');
+    background-color: cs('fground');
+    border: 1px solid cs('bground-d');
+    & > div{
+      @include space('element', '', 'b');
+    }
+  }
+  .catalogItem__imgCtn {
+    box-sizing: content-box;
+    height: 170px;
+    text-align: center;
+    line-height: 170px;
+    @include space('element','tb','');
+    @include for-size(phone-only){
+           height: auto;
+          }
+
+    img {
+      width: 170px;
+      height: 170px;
+      @include for-size(phone-only){
+        width: 100%;
+        height: auto;
+        max-height: 150px;
+        vertical-align: middle;
+      }
+    }
+  }
+  .catalogItem__title {
+    height: s-growLines(4);
+    overflow: hidden;
+  }
+  .catalogItem__priceAndBuy__price {
+    text-align: center;
+    span{
+      font-size: 1.7em;
+      font-weight: bold;
+    }
+  }
+}

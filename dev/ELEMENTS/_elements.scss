@@ -33,6 +33,29 @@ $color__gogog:#fff;
 			outline: none;
 	}
 }
+$bkgColor__toCart:cs('accent');
+$bkgColor__toCart-hover:cs('accent-d');
+$color__toCart-hover:#fff;
+$color__toCart:#fff;
+
+.toCart {
+	background-color: $bkgColor__toCart;
+	color: $color__toCart;
+	border: none;
+	@include space('element','a','');
+	height: 4em;
+	width:100%;
+	margin: 0;
+		&:hover, &:focus, &:active {
+		background-color: $bkgColor__toCart-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -70,9 +93,9 @@ $color__gogog:#fff;
   border-radius: 3px;
   @include space('element','a','');
 }
-$color__link: #4323ff;
-$color__link-visited: #ff7c8b;
-$color__link-hover:darken($color__link,20%);
+$color__link: cs('font-d');
+$color__link-visited:cs('font-d');
+$color__link-hover:cs('font-l');
 
 a, a.mainLink {
   color: $color__link;
@@ -87,11 +110,11 @@ a, a.mainLink {
     color: $color__link-hover;
   }
   &:focus {
-    outline: thin dotted;
+    outline: none;
   }
   &:hover,
   &:active {
-    outline: 0;
+    outline: none;
   }
 }
 $color__ove-topNavLink:cs('font');
