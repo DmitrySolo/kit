@@ -34,9 +34,9 @@ header.ove-mainHeader
                     .ove-bookmarks bookmarks
                 .col-2-d
                     .ove-cart cart
-    .ove-subControlPanel__wrapper
+    .ove-subControlPanel__wrapper.ove-subControlPanel--mobile
         .container
-            section.ove-subControlPanel.ove-subControlPanel--mobile
+            section.ove-subControlPanel
                 .row
                     .col-4-m.col-2-tp
                         .ove-mobile-menu
@@ -49,11 +49,13 @@ header.ove-mainHeader
                     .col-2-m.col-2-tp
                         .ove-subControlPanel__section.ove-subControlPanel__search_trigger
                             +I('search','icon--search')
-                    .ove-subControlPanel__search_wrapper.push-2-tp.push-3-m.col-7-m.col-8-tp
+                    .ove-subControlPanel__search_wrapper.push-2-tp.push-3-m.col-7-m.col-8-tp.col-7-tl
                             .ove-subControlPanel__search
                                 .ove-subControlPanel__search__input
                                     input(type='text')
-            section.ove-subControlPanel.ove-subControlPanel--desktop
+    .ove-subControlPanel__wrapper.ove-subControlPanel--desktop
+        .container
+            section.ove-subControlPanel
                 .row
                     .col-5-d
                         .row

@@ -1,17 +1,31 @@
 //  styckyHeader script
 
 $(document).ready(function () {
-    var offset = $('.ove-subControlPanel__wrapper').offset().top;
+    var hPoint = $('.ove-subControlPanel--desktop').offset().top;
+    var lPoint = hPoint + $('.ove-subControlPanel--desktop').innerHeight();
 
-    console.log(offset);
+    var sticked = false;
+    console.log(lPoint);
 
     $(window).on('scroll', function () {
-        if ($(this).scrollTop() > offset) {
+        if ($(this).scrollTop() > lPoint) {
 
-            $('.ove-subControlPanel__wrapper').addClass('stickyHeader');
+            if (!sticked) {
+
+                $('.ove-main').css('margin-top','1.1em');
+                $('.ove-subControlPanel--desktop').addClass('stickyHeader').hide().slideDown();
+                sticked = true
+            }
+
         }
-        else {
-            $('.ove-subControlPanel__wrapper').removeClass('stickyHeader');
+        else if($(this).scrollTop() < hPoint) {
+            if (sticked){
+
+                $('.ove-main').css('margin-top','0');
+                $('.ove-subControlPanel--desktop').removeClass('stickyHeader');
+                sticked = false
+            }
+
         }
 
     })

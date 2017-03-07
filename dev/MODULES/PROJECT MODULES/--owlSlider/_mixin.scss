@@ -1,9 +1,9 @@
 @mixin owlSlider(){
 	
 .owlSlider{
+@include space('component','','t');
 @include space('block','','b');
 @include for-size(tablet-l-up){
-  @include space('component','','t')
 }
 }
   .owl-dots{
