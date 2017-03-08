@@ -1,3 +1,27 @@
 @mixin owlGoodsSlider(){
 	
-.owlGoodsSlider{}}
+.owlGoodsSlider{
+  position: relative;
+
+  .owl-prev,.owl-next{
+    top: 30%;
+    position: absolute;
+    color: #fff;
+    width: 14%;
+    @include space('component','tb','');
+    background-color: rgba(0, 0, 0, 0.29);
+    text-align: center;
+    &.disabled{
+      display: none;
+    }
+  }
+  .owl-prev {
+     left:0;
+  }
+  .owl-next {
+    right: 0;
+  }
+  .catalogItem{
+    margin: 1px;
+  }
+}}

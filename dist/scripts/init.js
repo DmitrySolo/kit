@@ -1,20 +1,3 @@
-//FORM VALIDATE
-var validate = function () {
-    var valid = true;
-    var name=document.forms["subscribe"]["name"].value;
-    var email=document.forms["subscribe"]["email"].value;
-    if (! validator.isAlpha(name)){
-        console.log('noname');
-        if (valid) valid =false;
-        $('#js_val_name').html('Введите имя!').css('color','red')
-    }else{$('#js_val_name').html('')}
-    if (! validator.isEmail(email)){
-        console.log('NOMAIL');
-        if (valid) valid =false;
-        $('#js_val_email').html('Неверный адрес!').css('color','red')
-    }else{{$('#js_val_email').html('')}}
-    return valid
-}
 //catalogMenu Script
 
 
@@ -117,9 +100,19 @@ $( document ).ready(function() {
     });
 
 });
+//owlGoodsSlider Script
+var items = ($(window).width() > 900)? ($(window).width() > 1400)? 5: 4: 3;
+
+$(".owlGoodsSlider").owlCarousel({
+    "items" : items || 3,
+    "margin": 6,
+    "nav" : true,
+    "dots" : false,
+    "lazyLoad": true
+});
 //owlSlider Script
 $(document).ready(function(){
-    $(".owl-carousel").owlCarousel(
+    $(".ove-mainSlider").owlCarousel(
         {
             "items":1,
             "lazyLoad":true,
@@ -131,18 +124,19 @@ $(document).ready(function(){
 
 $(document).ready(function () {
     var hPoint = $('.ove-subControlPanel--desktop').offset().top;
-    var lPoint = hPoint + $('.ove-subControlPanel--desktop').innerHeight();
+    var styckElHeight = $('.ove-subControlPanel--desktop').innerHeight();
+    var lPoint = hPoint + styckElHeight*2;
 
     var sticked = false;
     console.log(lPoint);
 
     $(window).on('scroll', function () {
-        if ($(this).scrollTop() > lPoint) {
+        if ($(this).scrollTop() > lPoint && $(this).width() > 1199) {
 
             if (!sticked) {
 
-                $('.ove-main').css('margin-top','1.1em');
-                $('.ove-subControlPanel--desktop').addClass('stickyHeader').hide().slideDown();
+                $('.ove-main').css('margin-top',styckElHeight+'px');
+                $('.ove-subControlPanel--desktop').addClass('stickyHeader').delay(1000).hide().slideDown();
                 sticked = true
             }
 
@@ -151,7 +145,7 @@ $(document).ready(function () {
             if (sticked){
 
                 $('.ove-main').css('margin-top','0');
-                $('.ove-subControlPanel--desktop').removeClass('stickyHeader');
+                $('.ove-subControlPanel--desktop').show().removeClass('stickyHeader');
                 sticked = false
             }
 
@@ -160,3 +154,20 @@ $(document).ready(function () {
     })
 
 });
+//FORM VALIDATE
+var validate = function () {
+    var valid = true;
+    var name=document.forms["subscribe"]["name"].value;
+    var email=document.forms["subscribe"]["email"].value;
+    if (! validator.isAlpha(name)){
+        console.log('noname');
+        if (valid) valid =false;
+        $('#js_val_name').html('Введите имя!').css('color','red')
+    }else{$('#js_val_name').html('')}
+    if (! validator.isEmail(email)){
+        console.log('NOMAIL');
+        if (valid) valid =false;
+        $('#js_val_email').html('Неверный адрес!').css('color','red')
+    }else{{$('#js_val_email').html('')}}
+    return valid
+}

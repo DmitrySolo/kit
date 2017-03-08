@@ -1,11 +1,11 @@
-mixin B(value,className)
-	-if (!className) className =''
-	button.mainButton(class=''+className)=value
-
 mixin B-gogog(value,className)
 	-if (!className) className =''
 	button.gogog(class=''+className)=value
 
+
+mixin B(value,className)
+	-if (!className) className =''
+	button.mainButton(class=''+className)=value
 
 mixin B-toCart(value,className)
 	-if (!className) className =''
@@ -13,10 +13,6 @@ mixin B-toCart(value,className)
 		+I('cart')
 
 
-mixin I(id,classModifier)
-	-if (!classModifier) classModifier =''
-	svg(class='icon '+classModifier)
-		use(xlink:href="#"+id)
 mixin A(content,href,className)
 	-if (!className) className =''
 	a(class='mainLink '+className,href=href)=content
@@ -27,6 +23,10 @@ mixin A-ove-topNavLink(content,href,className)
 mixin A-socialLink(content,href,className)
 	-if (!className) className =''
 	a(class='socialLink '+className,href=href)=content
+mixin I(id,classModifier)
+	-if (!classModifier) classModifier =''
+	svg(class='icon '+classModifier)
+		use(xlink:href="#"+id)
 mixin PL-spinner-circle(className)
 	-if (!className) className =''
 		.spinner-circle(class=''+className)

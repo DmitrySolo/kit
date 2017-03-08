@@ -42,87 +42,6 @@
 @include lightMenu('h');
 
 
-@mixin FORM(){
-	
-.FORM{
-  background-color: #fff;
-  @include space('element','trlb','');
-  input[type='text']{
-    @include space('element','tbrl','');
-    font-size: .8rem;
-    width: 100%;
-    border:solid 1px black;
-  }
-  input[type='submit']{
-    border: none;
-    font-size: 1rem;
-  }
-}
-.form__validateMessage {
-  color: #ff7c8b;
-  float: right;
-  display: inline-block;
-  @include for-size(desktop-up){
-    color: #00A000;
-    font-size: 50px;
-  }
-}
-.form__line {
-  @include space('element','tb','bt');
-  &:last-child{
-    padding-bottom: 0;
-  }
-}
-.form_img_ctn{
-  height:500px;
-}
-}
-@include FORM();
-@mixin catalogItem() {
-
-  .catalogItem {
-    @include space('element', 'a', '');
-    @include space('component','','b');
-    background-color: cs('fground');
-    border: 1px solid cs('bground-d');
-    & > div{
-      @include space('element', '', 'b');
-    }
-  }
-  .catalogItem__imgCtn {
-    box-sizing: content-box;
-    height: 170px;
-    text-align: center;
-    line-height: 170px;
-    @include space('element','tb','');
-    @include for-size(phone-only){
-           height: auto;
-          }
-
-    img {
-      width: 170px;
-      height: 170px;
-      @include for-size(phone-only){
-        width: 100%;
-        height: auto;
-        max-height: 150px;
-        vertical-align: middle;
-      }
-    }
-  }
-  .catalogItem__title {
-    height: s-growLines(4);
-    overflow: hidden;
-  }
-  .catalogItem__priceAndBuy__price {
-    text-align: center;
-    span{
-      font-size: 1.7em;
-      font-weight: bold;
-    }
-  }
-}
-@include catalogItem();
 @mixin breadcrumbs(){
 	.breadCrumb {
       @include space('component','tb','');
@@ -156,6 +75,57 @@
   }
 }
 @include breadcrumbs();
+@mixin catalogItem() {
+
+  .catalogItem {
+    @include space('element', 'a', '');
+    @include space('component','','b');
+    background-color: cs('fground');
+    border: 1px solid cs('bground-d');
+    & > div{
+      @include space('element', '', 'b');
+    }
+  }
+  .catalogItem__imgCtn {
+    box-sizing: content-box;
+    @include for-size(tablet-p-up){
+      height: 120px;
+          }
+    @include for-size(tablet-l-up){
+      height: 150px;
+    }
+    @include for-size(desktop-up){
+      height: 170px;
+    }
+    height: 90px;
+    max-width: 100%;
+    text-align: center;
+    line-height: 90px;
+    @include space('element','tb','');
+
+    img.catalogItem__img {
+      max-height: 170px;
+      display: inline;
+      @include for-size(phone-only){
+        width: 100%;
+        vertical-align: middle;
+        height: auto;
+      }
+    }
+  }
+  .catalogItem__title {
+    height: s-growLines(4);
+    overflow: hidden;
+  }
+  .catalogItem__priceAndBuy__price {
+    text-align: center;
+    span{
+      font-size: 1.7em;
+      font-weight: bold;
+    }
+  }
+}
+@include catalogItem();
 @mixin catalogMenu(){
 	
 .catalogMenu{
@@ -231,6 +201,42 @@
 
 }
 @include catalogMenu();
+@mixin FORM(){
+	
+.FORM{
+  background-color: #fff;
+  @include space('element','trlb','');
+  input[type='text']{
+    @include space('element','tbrl','');
+    font-size: .8rem;
+    width: 100%;
+    border:solid 1px black;
+  }
+  input[type='submit']{
+    border: none;
+    font-size: 1rem;
+  }
+}
+.form__validateMessage {
+  color: #ff7c8b;
+  float: right;
+  display: inline-block;
+  @include for-size(desktop-up){
+    color: #00A000;
+    font-size: 50px;
+  }
+}
+.form__line {
+  @include space('element','tb','bt');
+  &:last-child{
+    padding-bottom: 0;
+  }
+}
+.form_img_ctn{
+  height:500px;
+}
+}
+@include FORM();
 @mixin hero_video(){
 	
 .hero_video{
@@ -323,7 +329,31 @@
 @include oveFeatures();
 @mixin owlGoodsSlider(){
 	
-.owlGoodsSlider{}}
+.owlGoodsSlider{
+  position: relative;
+
+  .owl-prev,.owl-next{
+    top: 30%;
+    position: absolute;
+    color: #fff;
+    width: 14%;
+    @include space('component','tb','');
+    background-color: rgba(0, 0, 0, 0.29);
+    text-align: center;
+    &.disabled{
+      display: none;
+    }
+  }
+  .owl-prev {
+     left:0;
+  }
+  .owl-next {
+    right: 0;
+  }
+  .catalogItem{
+    margin: 1px;
+  }
+}}
 @include owlGoodsSlider();
 @mixin owlSlider(){
 	

@@ -44,6 +44,17 @@
 				"": ""
 			}
 		},
+		"toCart": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"<%= prefix %>": {
 			"js": {
 				"": {
@@ -70,11 +81,22 @@
 				"": ""
 			}
 		},
-		"toCart": {
+		"catalogItem": {
 			"js": {
 				"": {
 					"src": "",
-					"concat": "true"
+					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"catalogMenu": {
+			"js": {
+				"catalogMenu": {
+					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
@@ -104,22 +126,12 @@
 				"": ""
 			}
 		},
-		"catalogItem": {
+		"hero_video": {
 			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"catalogMenu": {
-			"js": {
-				"catalogMenu": {
-					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
-					"container": "footer/init/init"
+				"hero_video-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
+					"container": "footer/init",
+					"type": "init"
 				}
 			},
 			"css": {
@@ -137,23 +149,11 @@
 				"": ""
 			}
 		},
-		"hero_video": {
+		"OWLGOODSSLIDER": {
 			"js": {
-				"hero_video-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
-					"container": "footer/init",
-					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"owlGoodsSlider": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--owlGoodsSlider/owlGoodsSlider.js",
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
@@ -233,7 +233,7 @@
 	"siteWidth": "1240px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\n\n)",
+	"container-styles": "(\r\n\r\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
@@ -382,6 +382,15 @@
 			}
 		}
 	},
+	"breadcrumbs": {
+		"1": "1"
+	},
+	"catalogItem": {
+		"catalogItem": "1"
+	},
+	"catalogMenu": {
+		"catalogMenu": "1"
+	},
 	"FORM": {
 		"TITLE": "Быть в курсе последних акций и новостей",
 		"action": "/",
@@ -420,20 +429,11 @@
 			}
 		}
 	},
-	"breadcrumbs": {
-		"1": "1"
-	},
-	"catalogItem": {
-		"catalogItem": "1"
-	},
-	"catalogMenu": {
-		"catalogMenu": "1"
+	"hero_video": {
+		"hero_video": "1"
 	},
 	"oveFeatures": {
 		"oveFeatures": "1"
-	},
-	"hero_video": {
-		"hero_video": "1"
 	},
 	"owlGoodsSlider": {
 		"owlGoodsSlider": "1"

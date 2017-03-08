@@ -1,5 +1,5 @@
 $bkgColor__toCart:cs('accent');
-$bkgColor__toCart-hover:cs('accent-d');
+$bkgColor__toCart-hover:cs('accent-l');
 $color__toCart-hover:#fff;
 $color__toCart:#fff;
 
@@ -7,6 +7,7 @@ $color__toCart:#fff;
 	background-color: $bkgColor__toCart;
 	color: $color__toCart;
 	border: none;
+	border-radius: 2px;
 	@include space('element','a','');
 	height: 4em;
 	width:100%;

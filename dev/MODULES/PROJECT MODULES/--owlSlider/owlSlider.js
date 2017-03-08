@@ -1,6 +1,6 @@
 //owlSlider Script
 $(document).ready(function(){
-    $(".owl-carousel").owlCarousel(
+    $(".ove-mainSlider").owlCarousel(
         {
             "items":1,
             "lazyLoad":true,
