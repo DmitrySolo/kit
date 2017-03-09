@@ -1,3 +1,20 @@
+//FORM VALIDATE
+var validate = function () {
+    var valid = true;
+    var name=document.forms["subscribe"]["name"].value;
+    var email=document.forms["subscribe"]["email"].value;
+    if (! validator.isAlpha(name)){
+        console.log('noname');
+        if (valid) valid =false;
+        $('#js_val_name').html('Введите имя!').css('color','red')
+    }else{$('#js_val_name').html('')}
+    if (! validator.isEmail(email)){
+        console.log('NOMAIL');
+        if (valid) valid =false;
+        $('#js_val_email').html('Неверный адрес!').css('color','red')
+    }else{{$('#js_val_email').html('')}}
+    return valid
+}
 //catalogMenu Script
 
 
@@ -105,7 +122,7 @@ var items = ($(window).width() > 900)? ($(window).width() > 1400)? 5: 4: 3;
 
 $(".owlGoodsSlider").owlCarousel({
     "items" : items || 3,
-    "margin": 6,
+    "margin": 5,
     "nav" : true,
     "dots" : false,
     "lazyLoad": true
@@ -154,20 +171,3 @@ $(document).ready(function () {
     })
 
 });
-//FORM VALIDATE
-var validate = function () {
-    var valid = true;
-    var name=document.forms["subscribe"]["name"].value;
-    var email=document.forms["subscribe"]["email"].value;
-    if (! validator.isAlpha(name)){
-        console.log('noname');
-        if (valid) valid =false;
-        $('#js_val_name').html('Введите имя!').css('color','red')
-    }else{$('#js_val_name').html('')}
-    if (! validator.isEmail(email)){
-        console.log('NOMAIL');
-        if (valid) valid =false;
-        $('#js_val_email').html('Неверный адрес!').css('color','red')
-    }else{{$('#js_val_email').html('')}}
-    return valid
-}
