@@ -2,7 +2,7 @@
 	
 .owlSlider{
 @include space('component','','t');
-@include space('block','','b');
+@include space('component','','b');
 @include for-size(tablet-l-up){
 }
 }

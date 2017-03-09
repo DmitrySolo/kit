@@ -131,3 +131,41 @@ logo
   width: 100%;
   z-index: 3000;
 }
+
+
+
+/*
+Footer
+*/
+.styckyFooter {
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: cs('primary-l');
+  color: #fff;
+}
+.ove-pageNav__link {
+  height: 60px;
+  color: #fff;
+  font-size: .9em;
+  span {
+    display: block;
+  }
+  .icon {
+    width: 2em;
+    height: 2em;
+  }
+  &:hover{
+    color: #fff;
+  }
+  display: block;
+  @include space('element','a','');
+  text-align: center;
+  border-left: 1px solid cs('primary');
+  border-right: 1px solid cs('primary');
+
+}
+.ove-pageNav__link--active {
+  background-color: cs('primary-d');
+}

@@ -18,6 +18,42 @@
 			"MainMenu": false,
 			"group": false,
 			"dop_class": ""
+		},
+		"category": {
+			"title": "Категория",
+			"slug": "category",
+			"kw": "application, test , hurray!!!",
+			"layout": "default",
+			"MainMenu": false,
+			"group": false,
+			"dop_class": ""
+		},
+		"item": {
+			"title": "item",
+			"slug": "item",
+			"kw": "application, test , hurray!!!",
+			"layout": "default",
+			"MainMenu": false,
+			"group": false,
+			"dop_class": ""
+		},
+		"card": {
+			"title": "Card",
+			"slug": "cardHolder",
+			"kw": "application, test , hurray!!!",
+			"layout": "default",
+			"MainMenu": false,
+			"group": false,
+			"dop_class": ""
+		},
+		"cart": {
+			"title": "Cart",
+			"slug": "cart",
+			"kw": "application, test , hurray!!!",
+			"layout": "default",
+			"MainMenu": false,
+			"group": false,
+			"dop_class": ""
 		}
 	},
 	"LIBS": {
@@ -81,28 +117,6 @@
 				"": ""
 			}
 		},
-		"catalogItem": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"catalogMenu": {
-			"js": {
-				"catalogMenu": {
-					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"FORM": {
 			"js": {
 				"validator": {
@@ -126,6 +140,28 @@
 				"": ""
 			}
 		},
+		"catalogItem": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"catalogMenu": {
+			"js": {
+				"catalogMenu": {
+					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"hero_video": {
 			"js": {
 				"hero_video-script": {
@@ -138,22 +174,22 @@
 				"": ""
 			}
 		},
-		"oveFeatures": {
+		"OWLGOODSSLIDER": {
 			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--owlGoodsSlider/owlGoodsSlider.js",
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"OWLGOODSSLIDER": {
+		"oveFeatures": {
 			"js": {
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--owlGoodsSlider/owlGoodsSlider.js",
-					"container": "footer/init/init"
+				"": {
+					"src": "",
+					"concat": "false"
 				}
 			},
 			"css": {
@@ -233,7 +269,7 @@
 	"siteWidth": "1240px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
@@ -282,6 +318,44 @@
 			"href": "sale.html",
 			"dop_class": "lightmenu__item--active",
 			"childs": ""
+		}
+	},
+	"FORM": {
+		"TITLE": "Быть в курсе последних акций и новостей",
+		"action": "/",
+		"method": "get",
+		"name": "subscribe",
+		"on_submit": "return validate()",
+		"dop_class": "forme",
+		"submit": {
+			"name": "name",
+			"value": "ОТПРАВИТЬ",
+			"id": "",
+			"dop_class": "info__section__more"
+		},
+		"inputs": {
+			"1": {
+				"type": "text",
+				"label": "Ваше имя",
+				"name": "name",
+				"value": "",
+				"id": "",
+				"dop_class": "form--name",
+				"requared": "true",
+				"placeholder": "",
+				"other_specific": ""
+			},
+			"2": {
+				"type": "text",
+				"label": "Электронный ящик!",
+				"name": "email",
+				"value": "",
+				"id": "",
+				"dop_class": "form--mail",
+				"requared": "true",
+				"placeholder": "",
+				"other_specific": {}
+			}
 		}
 	},
 	"menuData": {
@@ -391,55 +465,17 @@
 	"catalogMenu": {
 		"catalogMenu": "1"
 	},
-	"FORM": {
-		"TITLE": "Быть в курсе последних акций и новостей",
-		"action": "/",
-		"method": "get",
-		"name": "subscribe",
-		"on_submit": "return validate()",
-		"dop_class": "forme",
-		"submit": {
-			"name": "name",
-			"value": "ОТПРАВИТЬ",
-			"id": "",
-			"dop_class": "info__section__more"
-		},
-		"inputs": {
-			"1": {
-				"type": "text",
-				"label": "Ваше имя",
-				"name": "name",
-				"value": "",
-				"id": "",
-				"dop_class": "form--name",
-				"requared": "true",
-				"placeholder": "",
-				"other_specific": ""
-			},
-			"2": {
-				"type": "text",
-				"label": "Электронный ящик!",
-				"name": "email",
-				"value": "",
-				"id": "",
-				"dop_class": "form--mail",
-				"requared": "true",
-				"placeholder": "",
-				"other_specific": {}
-			}
-		}
-	},
 	"hero_video": {
 		"hero_video": "1"
-	},
-	"oveFeatures": {
-		"oveFeatures": "1"
 	},
 	"owlGoodsSlider": {
 		"owlGoodsSlider": "1"
 	},
 	"owlSlider": {
 		"owlSlider": "1"
+	},
+	"oveFeatures": {
+		"oveFeatures": "1"
 	},
 	"pagination": {
 		"pagination": "1"

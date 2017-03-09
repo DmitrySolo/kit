@@ -1,3 +1,19 @@
 <!-- split footer.html -->
-footer
+footer.styckyFooter.hide-d
+ .container
+     .row
+         nav.ove-pageNav
+            ul
+                li.col-4-m.no-gutter
+                    a.ove-pageNav__link.ove-pageNav__link--active
+                        +I('cart')
+                        span Каталог
+                li.col-4-m.no-gutter
+                    a.ove-pageNav__link
+                        +I('mobile')
+                        span Звонок
+                li.col-4-m.no-gutter
+                    a.ove-pageNav__link
+                        +I('card')
+                        span Дисконтная карта
 include ../SCRIPTS-STYLES/FOOTER/_footerScripts

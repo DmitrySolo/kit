@@ -42,6 +42,42 @@
 @include lightMenu('h');
 
 
+@mixin FORM(){
+	
+.FORM{
+  background-color: #fff;
+  @include space('element','trlb','');
+  input[type='text']{
+    @include space('element','tbrl','');
+    font-size: .8rem;
+    width: 100%;
+    border:solid 1px black;
+  }
+  input[type='submit']{
+    border: none;
+    font-size: 1rem;
+  }
+}
+.form__validateMessage {
+  color: #ff7c8b;
+  float: right;
+  display: inline-block;
+  @include for-size(desktop-up){
+    color: #00A000;
+    font-size: 50px;
+  }
+}
+.form__line {
+  @include space('element','tb','bt');
+  &:last-child{
+    padding-bottom: 0;
+  }
+}
+.form_img_ctn{
+  height:500px;
+}
+}
+@include FORM();
 @mixin breadcrumbs(){
 	.breadCrumb {
       @include space('component','tb','');
@@ -201,42 +237,6 @@
 
 }
 @include catalogMenu();
-@mixin FORM(){
-	
-.FORM{
-  background-color: #fff;
-  @include space('element','trlb','');
-  input[type='text']{
-    @include space('element','tbrl','');
-    font-size: .8rem;
-    width: 100%;
-    border:solid 1px black;
-  }
-  input[type='submit']{
-    border: none;
-    font-size: 1rem;
-  }
-}
-.form__validateMessage {
-  color: #ff7c8b;
-  float: right;
-  display: inline-block;
-  @include for-size(desktop-up){
-    color: #00A000;
-    font-size: 50px;
-  }
-}
-.form__line {
-  @include space('element','tb','bt');
-  &:last-child{
-    padding-bottom: 0;
-  }
-}
-.form_img_ctn{
-  height:500px;
-}
-}
-@include FORM();
 @mixin hero_video(){
 	
 .hero_video{
@@ -359,7 +359,7 @@
 	
 .owlSlider{
 @include space('component','','t');
-@include space('block','','b');
+@include space('component','','b');
 @include for-size(tablet-l-up){
 }
 }
