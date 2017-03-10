@@ -5,5 +5,20 @@ block title
 	title Категория
 block main
 	.container
-		h4 Ванны
-		h4 Душевые кабины
+		a(href="#").ove-category.ove-category__prev
+			+I('left')
+			span Ванны
+		a(href="#").ove-category.ove-category__next
+			span Ванны Угловые
+			+I('right')
+		a(href="#").ove-category.ove-category__next
+			span Ванны Прямые
+			+I('right')
+		a(href="#").ove-category.ove-category__next
+			span Ванны Ассиметричные
+			+I('right')
+		h3.ove-category__current.text
+			+I('down')
+			span Душевые кабины
+		.row
+			+module('catalogItemsonCatPage')
