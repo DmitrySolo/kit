@@ -1,0 +1,12 @@
+form.ove-pageCard__Form .ove-cardRegInput {
+  text-align: center;
+  outline: none;
+  border:none;
+  color: #fff;
+  width: 100%;
+  background-color: transparent;
+  @include space('element','a','');
+  border-bottom: 3px solid #fff;
+  font-size: 2.5em;
+  letter-spacing: .25em;
+}

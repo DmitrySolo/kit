@@ -263,3 +263,74 @@ Item Page
     background-color: cs('bground');
   }
 }
+ .ove-pageCard {
+   //position: absolute;
+   @include space('block','bt','');
+   text-align: center;
+   background-color: cs('primary');
+   width: 100%;
+   color: #fff;
+ }
+.ove-pageCard__title {
+  font-size: 1.4em;
+  @include space('component','b','');
+}
+.ove-pageCard__number {
+  font-size: 2.5em;
+  display: block;
+  @include space('element','tb','');
+  background-color: cs('primary-l');
+  letter-spacing: .25em;
+
+}
+.ove-pageCard__percent {
+  font-size: 7em;
+  text-shadow: 0px  4px  silver;
+}
+.ove-pageCard__advance,.ove-pageCard__animMarkerWrapper {
+  @include space('block','rlb','');
+  span {
+    font-size: 1.3em;
+  }
+}
+.ove-pageCard__scaleWrapper {
+  @include space('block','rl','');
+  width: 100%;
+}
+.ove-pageCard__scale {
+  background-color: cs('primary-d');
+
+}
+.ove-pageCard__scaleCurrent,
+.ove-pageCard__scale {
+  height: .8em;
+  border-radius:4px;
+}
+.ove-pageCard__scaleCurrent {
+  background-color: #a2ff80;
+  width: 12%;
+}
+.ove-pageCard__code {
+  height: 90px;
+  @include space('module','','t');
+  img {
+    height: 90px;
+  }
+}
+.ove-pageCard__animMarkerWrapper {
+  position: relative;
+}
+.ove-pageCard__animMarker {
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  background-color: cs('accent');
+  @include a-set-frame(marker,2s,0s,infinite,linear,$frames:(
+          0  :(left:30%,),
+          .5 :(left:60%,),
+          1 :(left:30%,)
+  ));
+}
+.ove-pageCard__Form {
+  @include space('block','rl','')
+}

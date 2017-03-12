@@ -3,3 +3,19 @@ extends ../LAYOUT/layout.pug
 block title
 	-var page={slug:'cardHolder',title:'Card'};
 	title Card
+block main
+	.ove-pageCard
+		p.ove-pageCard__title Ваша скидка по карте: №
+		span.ove-pageCard__number 0945343
+		span.ove-pageCard__percent 5%
+		p.ove-pageCard__advance Для скидки <span>6%</span> необходимо осуществить покупки на сумму 43 000Р
+		.ove-pageCard__scaleWrapper
+			.ove-pageCard__scale
+				.ove-pageCard__scaleCurrent
+		+vertical_centered_image('code.png','ove-pageCard__code')
+		.ove-pageCard__animMarkerWrapper
+			.ove-pageCard__animMarker
+	.ove-pageCard
+		p.ove-pageCard__title Введите номер карты
+		form.ove-pageCard__Form
+			+INPUT-oveCard('text')
