@@ -1,8 +1,14 @@
 //PROJECT SCSS
-
 /*
 Header
 */
+
+*{
+  -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-tap-highlight-color: transparent; /* For some Androids */
+
+}
+
+
 .ove-topNavigation {
   display: none;
   @include for-size(tablet-l-up) {
@@ -118,9 +124,10 @@ logo
 .ove-main {
 
   position: relative;
-  @include for-size(phone-only){
-         margin-top: 70px;
-        }
+
+          margin-top: 70px;
+          margin-bottom: 70px;
+
 }
 .ove-shade {
   position: absolute;
@@ -168,4 +175,91 @@ Footer
 }
 .ove-pageNav__link--active {
   background-color: cs('primary-d');
+}
+/*
+Category Page
+*/
+.ove-category {
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  @include space('component','a','t');
+
+  .icon {
+    width: 1.4em;
+    height: 1.4em;
+    fill: cs('font');
+  }
+  span {
+    @include space('element','a','');
+  }
+
+}
+.ove-category__prev {
+  //background-color: cs('bground-d');
+  border-bottom: 1px solid cs('font-l');
+
+}
+.ove-category__next {
+  background-color: #fff;
+  border-bottom: 1px solid silver;
+  margin-bottom: 4px;
+  .icon {
+    float: right;
+    fill: cs('accent');
+  }
+
+}
+
+
+.ove-category__current {
+  text-transform: uppercase;
+  border-bottom: 2px solid cs('font-d');
+  text-align: center;
+  background-color: #fff;
+  @include space('component','a','');
+  .icon {
+    float: left;
+    width: 1em;
+    height: 1em;
+    fill: cs('font-d');
+  }
+}
+
+/*
+Item Page
+*/
+.ove-item__desc {
+  background-color: #fff;
+ @include space('component','a','');
+}
+.ove-item__desc-img {
+  text-align: center;
+  @include space('module','a','');
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.ove-item__desc-list {
+
+  @include space('element','t','');
+  .row {
+    &:first-child{
+      border-top: solid 3px cs('font-l');
+    }
+    &:last-child {
+      border-bottom: solid 3px cs('font-l');
+    }
+  }
+  dt,dd {
+    @include space('element','a','');
+
+  }
+  dt {
+    border: solid 1px cs('bground');
+  }
+  dd{
+    background-color: cs('bground');
+  }
 }
