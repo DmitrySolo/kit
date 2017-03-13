@@ -1,0 +1,5 @@
+mixin B-ove-cardReg(value,className,disabledc)
+	-if (!className) className =''
+	-if (!disabledc) disabled ='true'
+	button.ove-cardReg(class=''+className,disabled=disabledc)=value
+

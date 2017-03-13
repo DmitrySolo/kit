@@ -332,5 +332,30 @@ Item Page
   ));
 }
 .ove-pageCard__Form {
-  @include space('block','rl','')
+  @include space('block','rl','');
+  position: relative;
+}
+.ove-pageCard__Form__cleaner {
+  display: none;
+  position: absolute;
+  height: 20px;
+  top:25%;
+  right: 0;
+}
+.ove-pageCard__error{
+  @include space('block','a','a');
+  background-color: #ff5e46;
+  border-radius: 5px;
+  span {
+    font-size: 1.6em;
+    display: block;
+    border-radius:50% ;
+    text-align: center;
+    margin:0 auto;
+    width: 36px;
+    height: 36px;
+    color: #ff5e46;
+    background-color: #fff;
+  // @include space('element','a','')
+  }
 }

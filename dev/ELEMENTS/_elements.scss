@@ -1,39 +1,48 @@
-.icon {
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-  width: 3rem;
-  fill: #fff;
-}
+$color__button:#aaa;
+$color__button-hover:#aaa;
+$color__button-active:#aaa;
+//--Main Button
+.mainButton {
+  background-color: $color__button;
 
-.icon--close {
-  height: 2.8rem;
-  width: 2.8rem;
-  fill: cs('font-d');
-  cursor: pointer;
-}
-
-.icon--search {
-  width: 2.5rem;
-}
-
-.icon--angle {
-  height: 1rem;
-  width: 1rem;
-  fill: cs('font-l');
-}
-
-.catalogMenu__list__item--active {
-  .icon--angle {
-    fill: cs('accent');
+  &:focus {
+    outline: thin dotted;
+  }
+  &:hover,
+  &:active {
+    outline: 0;
   }
 }
+$bkgColor__ove-cardReg: transparent;
+$bkgColor__ove-cardReg-hover: cs('primary-l');
+$color__ove-cardReg-hover:#fff;
+$color__ove-cardReg:#fff;
 
-.icon-menu__button {
-  cursor: pointer;
-  background-color: cs('primary-d');
-  border-radius: 3px;
-  @include space('element','a','');
+.ove-cardReg {
+	position: relative;
+	margin: 0% auto;
+	background-color: $bkgColor__ove-cardReg;
+	color: $color__ove-cardReg;
+	border:3px solid #fff;
+	border-radius: 3px;
+	font-size: 1.4em;
+	@include space('element','a','');
+		&:hover, &:focus, &:active {
+		color: $color__ove-cardReg-hover;
+		background-color: $bkgColor__ove-cardReg-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+.ove-cardReg--inactive{
+	opacity: .6;
+	&:hover{
+		background-color: transparent;
+	}
 }
 $bkgColor__gogog:#fff;
 $bkgColor__gogog-hover:#fff;
@@ -55,19 +64,28 @@ $color__gogog:#fff;
 			outline: none;
 	}
 }
-$color__button:#aaa;
-$color__button-hover:#aaa;
-$color__button-active:#aaa;
-//--Main Button
-.mainButton {
-  background-color: $color__button;
+$color__link: cs('font-d');
+$color__link-visited:cs('font-d');
+$color__link-hover:cs('font-l');
 
+a, a.mainLink {
+  color: $color__link;
+  text-decoration: none;
+
+  &:visited {
+    color: $color__link-visited;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
   &:focus {
-    outline: thin dotted;
+    outline: none;
   }
   &:hover,
   &:active {
-    outline: 0;
+    outline: none;
   }
 }
 $bkgColor__toCart:cs('accent');
@@ -93,42 +111,6 @@ $color__toCart:#fff;
 		&:hover, &:active {
 			outline: none;
 	}
-}
-form.ove-pageCard__Form .ove-cardRegInput {
-  text-align: center;
-  outline: none;
-  border:none;
-  color: #fff;
-  width: 100%;
-  background-color: transparent;
-  @include space('element','a','');
-  border-bottom: 3px solid #fff;
-  font-size: 2.5em;
-  letter-spacing: .25em;
-}
-$color__link: cs('font-d');
-$color__link-visited:cs('font-d');
-$color__link-hover:cs('font-l');
-
-a, a.mainLink {
-  color: $color__link;
-  text-decoration: none;
-
-  &:visited {
-    color: $color__link-visited;
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color__link-hover;
-  }
-  &:focus {
-    outline: none;
-  }
-  &:hover,
-  &:active {
-    outline: none;
-  }
 }
 $color__ove-topNavLink:cs('font');
 $color__ove-topNavLink-visited:cs('font');
@@ -170,6 +152,55 @@ a.socialLink {color: $color__linksocialLink;
  } &:focus {outline: thin dotted;}
  &:hover, &:active
  {outline: 0;}}
+form.ove-pageCard__Form .ove-cardRegInput {
+  text-align: center;
+  outline: none;
+  border:none;
+  color: #fff;
+  width: 100%;
+  background-color: transparent;
+  @include space('element','a','b');
+  border-bottom: 3px solid #fff;
+  font-size: 2.5em;
+  letter-spacing: .25em;
+}
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 3rem;
+  fill: #fff;
+}
+
+.icon--close {
+  height: 2.8rem;
+  width: 2.8rem;
+  fill: cs('font-d');
+  cursor: pointer;
+}
+
+.icon--search {
+  width: 2.5rem;
+}
+
+.icon--angle {
+  height: 1rem;
+  width: 1rem;
+  fill: cs('font-l');
+}
+
+.catalogMenu__list__item--active {
+  .icon--angle {
+    fill: cs('accent');
+  }
+}
+
+.icon-menu__button {
+  cursor: pointer;
+  background-color: cs('primary-d');
+  border-radius: 3px;
+  @include space('element','a','');
+}
 
   .spinner-circle {
     width: 40px;

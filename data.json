@@ -80,6 +80,17 @@
 				"": ""
 			}
 		},
+		"ove-cardReg": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"toCart": {
 			"js": {
 				"": {
@@ -102,15 +113,23 @@
 				"": ""
 			}
 		},
-		"spinner-circle": {
+		"FORM": {
 			"js": {
+				"validator": {
+					"src": "bower_components/validator-js/validator.min.js",
+					"container": "footer/libs"
+				},
+				"FORM-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--FORM/_FORM-script.js",
+					"container": "footer/init/init"
+				},
 				"lib": {
-					"src": "bower_components/please-wait/build/please-wait.min.js",
-					"container": "footer/top/preloader"
+					"src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
+					"container": "footer/libs"
 				},
 				"init": {
-					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
-					"container": "footer/top/preloader"
+					"src": "dev/MODULES/PROJECT MODULES/--owlSlider/owlSlider.js",
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
@@ -143,29 +162,6 @@
 			"js": {
 				"catalogMenu": {
 					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"FORM": {
-			"js": {
-				"validator": {
-					"src": "bower_components/validator-js/validator.min.js",
-					"container": "footer/libs"
-				},
-				"FORM-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--FORM/_FORM-script.js",
-					"container": "footer/init/init"
-				},
-				"lib": {
-					"src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--owlSlider/owlSlider.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -235,6 +231,11 @@
 					"src": "dev/SCRIPTS/SCRIPTS/microControls/microControls.js",
 					"container": "footer/init/init",
 					"type": "init"
+				},
+				"maskedInput": {
+					"src": "bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js",
+					"container": "footer/libsExts/",
+					"type": "lib"
 				}
 			},
 			"css": {
@@ -247,6 +248,21 @@
 					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
 					"container": "footer/init/init",
 					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"spinner-circle": {
+			"js": {
+				"lib": {
+					"src": "bower_components/please-wait/build/please-wait.min.js",
+					"container": "footer/top/preloader"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
+					"container": "footer/top/preloader"
 				}
 			},
 			"css": {
@@ -280,7 +296,7 @@
 	"siteWidth": "1240px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
@@ -429,18 +445,6 @@
 			}
 		}
 	},
-	"breadcrumbs": {
-		"1": "1"
-	},
-	"catalogItem": {
-		"catalogItem": "1"
-	},
-	"catalogItemsonCatPage": {
-		"catalogItemsonCatPage": "1"
-	},
-	"catalogMenu": {
-		"catalogMenu": "1"
-	},
 	"FORM": {
 		"TITLE": "Быть в курсе последних акций и новостей",
 		"action": "/",
@@ -478,6 +482,18 @@
 				"other_specific": {}
 			}
 		}
+	},
+	"breadcrumbs": {
+		"1": "1"
+	},
+	"catalogItem": {
+		"catalogItem": "1"
+	},
+	"catalogItemsonCatPage": {
+		"catalogItemsonCatPage": "1"
+	},
+	"catalogMenu": {
+		"catalogMenu": "1"
 	},
 	"hero_video": {
 		"hero_video": "1"

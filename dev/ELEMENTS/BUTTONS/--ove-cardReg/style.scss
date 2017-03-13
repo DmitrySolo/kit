@@ -1,0 +1,31 @@
+$bkgColor__ove-cardReg: transparent;
+$bkgColor__ove-cardReg-hover: cs('primary-l');
+$color__ove-cardReg-hover:#fff;
+$color__ove-cardReg:#fff;
+
+.ove-cardReg {
+	position: relative;
+	margin: 0% auto;
+	background-color: $bkgColor__ove-cardReg;
+	color: $color__ove-cardReg;
+	border:3px solid #fff;
+	border-radius: 3px;
+	font-size: 1.4em;
+	@include space('element','a','');
+		&:hover, &:focus, &:active {
+		color: $color__ove-cardReg-hover;
+		background-color: $bkgColor__ove-cardReg-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+.ove-cardReg--inactive{
+	opacity: .6;
+	&:hover{
+		background-color: transparent;
+	}
+}

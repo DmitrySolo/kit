@@ -18,4 +18,28 @@ block main
 	.ove-pageCard
 		p.ove-pageCard__title Введите номер карты
 		form.ove-pageCard__Form
-			+INPUT-oveCard('text')
+			+INPUT-oveCard('number','ove-pageCard__Form__num')
+			span.ove-pageCard__Form__cleaner
+				+I('close')
+			+B-ove-cardReg('Привязать карту','ove-cardReg--inactive')
+	.ove-pageCard
+		p.ove-pageCard__title Введите последние четыре цифры номера телефона привязанного к вашей карте
+		form.ove-pageCard__Form
+			+INPUT-oveCard('number','ove-pageCard__Form__phone')
+			span.ove-pageCard__Form__cleaner
+				+I('close')
+			+B-ove-cardReg('OK','ove-cardReg--inactive')
+	.ove-pageCard
+		p.ove-pageCard__title На привязанный к карте номер телефона выслан код подтверждения
+		form.ove-pageCard__Form
+			+INPUT-oveCard('number','ove-pageCard__Form__sms')
+			span.ove-pageCard__Form__cleaner
+				+I('close')
+			+B-ove-cardReg('OK','ove-cardReg--inactive')
+	.ove-pageCard
+		p.ove-pageCard__error
+			span !
+			| Последние четыре цифры номера телефона привязанного к карте отличаются от введенных!
+
+		p.ove-pageCard__errorAdvace
+		+B-ove-cardReg('Повторить привязку карты',false,"false")

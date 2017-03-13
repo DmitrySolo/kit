@@ -1082,7 +1082,7 @@ function scrBuild() {
 
     Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/TOP',concatAndDist,'FOOTER/top'));
     Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBS',concatAndDist,'FOOTER/libs'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBSEXT',concatAndDist,'FOOTER/libsExts'));
+    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBSEXTS',concatAndDist,'FOOTER/libsExts'));
     Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INIT',concatAndDist,'FOOTER/INIT'));
     Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INITEXT',concatAndDist,'FOOTER/initExt'));
     Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/BOTTOM',concatAndDist,'FOOTER/bottom'));
