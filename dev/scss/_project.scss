@@ -153,7 +153,7 @@ Footer
   color: #fff;
 }
 .ove-pageNav__link {
-  height: 60px;
+  height: 70px;
   color: #fff;
   font-size: .9em;
   span {
@@ -357,5 +357,26 @@ Item Page
     color: #ff5e46;
     background-color: #fff;
   // @include space('element','a','')
+  }
+}
+.ove-callPage {
+  @include space('block','tb','');
+  @include space('component','rl','');
+  background-color: cs('primary');
+   h2, a {
+    color: #fff;
+  }
+}
+.ove-callList{
+  @include space('component','b','');
+  .icon{
+    height: 1.2em;
+  }
+}
+.ove-callList__item {
+  @include space('component','a','');
+  border-bottom: 3px solid cs('primary-l');
+  a{
+    @include space('element','l','')
   }
 }

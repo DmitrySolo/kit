@@ -54,6 +54,15 @@
 			"MainMenu": false,
 			"group": false,
 			"dop_class": ""
+		},
+		"call": {
+			"title": "Call",
+			"slug": "call",
+			"kw": "application, test , hurray!!!",
+			"layout": "default",
+			"MainMenu": false,
+			"group": false,
+			"dop_class": ""
 		}
 	},
 	"LIBS": {
@@ -107,6 +116,21 @@
 				"": {
 					"src": "",
 					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"spinner-circle": {
+			"js": {
+				"lib": {
+					"src": "bower_components/please-wait/build/please-wait.min.js",
+					"container": "footer/top/preloader"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
+					"container": "footer/top/preloader"
 				}
 			},
 			"css": {
@@ -248,21 +272,6 @@
 					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
 					"container": "footer/init/init",
 					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"spinner-circle": {
-			"js": {
-				"lib": {
-					"src": "bower_components/please-wait/build/please-wait.min.js",
-					"container": "footer/top/preloader"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
-					"container": "footer/top/preloader"
 				}
 			},
 			"css": {
