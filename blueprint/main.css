@@ -1528,9 +1528,9 @@ td {
     display: inline; }
     @media (max-width: 599px) {
       .catalogItem__imgCtn img.catalogItem__img {
-        width: 100%;
-        vertical-align: middle;
-        height: auto; } }
+        max-width: 90px;
+        max-height: 90px;
+        vertical-align: middle; } }
 
 .catalogItem__title {
   height: 6.4em;
@@ -1699,23 +1699,6 @@ td {
   .owlGoodsSlider .catalogItem {
     margin: 1px; }
 
-.owlSlider {
-  margin-top: 1.03552em;
-  margin-bottom: 1.03552em; }
-
-.owl-dots {
-  margin-top: 0.64em;
-  text-align: center; }
-  .owl-dots .owl-dot {
-    display: inline-block;
-    margin-right: 0.64em;
-    width: .8em;
-    height: .8em;
-    border-radius: 50%;
-    background-color: #097fbf; }
-    .owl-dots .owl-dot.active {
-      background-color: #fd5800; }
-
 .pagination {
   padding-top: 1.03552em;
   padding-right: 1.03552em;
@@ -1752,6 +1735,23 @@ td {
   .pagination__ctn__button--current:hover {
     background-color: #ff7931; }
 
+.owlSlider {
+  margin-top: 1.03552em;
+  margin-bottom: 1.03552em; }
+
+.owl-dots {
+  margin-top: 0.64em;
+  text-align: center; }
+  .owl-dots .owl-dot {
+    display: inline-block;
+    margin-right: 0.64em;
+    width: .8em;
+    height: .8em;
+    border-radius: 50%;
+    background-color: #097fbf; }
+    .owl-dots .owl-dot.active {
+      background-color: #fd5800; }
+
 .sideBar {
   position: fixed;
   overflow: auto;
@@ -1776,7 +1776,7 @@ td {
 
 .sideBar__menu {
   height: 100%;
-  font-size: 2em; }
+  font-size: 1.4em; }
 
 .sideBar__menu--catalog__item {
   padding: 0.64em;
@@ -1844,6 +1844,49 @@ td {
 /*
 * ELEMENTS  STYLES
 */
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 2rem;
+  max-width: 100%;
+  fill: #fff; }
+
+.icon--close {
+  height: 2.8rem;
+  width: 2.8rem;
+  fill: #405871;
+  cursor: pointer; }
+
+.icon--search {
+  width: 2rem; }
+
+.icon--angle {
+  height: 1rem;
+  width: 1rem;
+  fill: #6b8aac; }
+
+.catalogMenu__list__item--active .icon--angle {
+  fill: #fd5800; }
+
+.icon-menu__button {
+  cursor: pointer;
+  width: 2.6em;
+  background-color: #097fbf;
+  border-radius: 3px;
+  padding: 0.64em; }
+
+.ove-markedHeader {
+  display: inline-block;
+  background-color: #0BA0F0;
+  width: 40px;
+  height: 40px;
+  line-height: 50px;
+  vertical-align: middle;
+  border-radius: 50%; }
+  .ove-markedHeader .icon {
+    height: 1em; }
+
 .mainButton {
   background-color: #aaa; }
   .mainButton:focus {
@@ -1885,18 +1928,6 @@ td {
   .gogog:hover, .gogog:active {
     outline: none; }
 
-a, a.mainLink {
-  color: #405871;
-  text-decoration: none; }
-  a:visited, a.mainLink:visited {
-    color: #405871; }
-  a:hover, a:focus, a:active, a.mainLink:hover, a.mainLink:focus, a.mainLink:active {
-    color: #6b8aac; }
-  a:focus, a.mainLink:focus {
-    outline: none; }
-  a:hover, a:active, a.mainLink:hover, a.mainLink:active {
-    outline: none; }
-
 .toCart {
   background-color: #fd5800;
   color: #fff;
@@ -1911,6 +1942,33 @@ a, a.mainLink {
   .toCart:focus {
     outline: none; }
   .toCart:hover, .toCart:active {
+    outline: none; }
+  .toCart.toCart--in {
+    background-color: #3bd43b; }
+
+form.ove-pageCard__Form .ove-cardRegInput {
+  text-align: center;
+  outline: none;
+  border: none;
+  color: #fff;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 0.64em;
+  padding: 0.64em;
+  border-bottom: 3px solid #fff;
+  font-size: 2.5em;
+  letter-spacing: .25em; }
+
+a, a.mainLink {
+  color: #405871;
+  text-decoration: none; }
+  a:visited, a.mainLink:visited {
+    color: #405871; }
+  a:hover, a:focus, a:active, a.mainLink:hover, a.mainLink:focus, a.mainLink:active {
+    color: #6b8aac; }
+  a:focus, a.mainLink:focus {
+    outline: none; }
+  a:hover, a:active, a.mainLink:hover, a.mainLink:active {
     outline: none; }
 
 a.ove-topNavLink {
@@ -1940,49 +1998,6 @@ a.socialLink {
     outline: thin dotted; }
   a.socialLink:hover, a.socialLink:active {
     outline: 0; }
-
-form.ove-pageCard__Form .ove-cardRegInput {
-  text-align: center;
-  outline: none;
-  border: none;
-  color: #fff;
-  width: 100%;
-  background-color: transparent;
-  margin-bottom: 0.64em;
-  padding: 0.64em;
-  border-bottom: 3px solid #fff;
-  font-size: 2.5em;
-  letter-spacing: .25em; }
-
-.icon {
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-  width: 3rem;
-  fill: #fff; }
-
-.icon--close {
-  height: 2.8rem;
-  width: 2.8rem;
-  fill: #405871;
-  cursor: pointer; }
-
-.icon--search {
-  width: 2.5rem; }
-
-.icon--angle {
-  height: 1rem;
-  width: 1rem;
-  fill: #6b8aac; }
-
-.catalogMenu__list__item--active .icon--angle {
-  fill: #fd5800; }
-
-.icon-menu__button {
-  cursor: pointer;
-  background-color: #097fbf;
-  border-radius: 3px;
-  padding: 0.64em; }
 
 .spinner-circle {
   width: 40px;
@@ -2085,6 +2100,19 @@ Header
   height: 3.69434em;
   cursor: pointer; }
 
+.ove-cartCounter {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  color: #fff;
+  font-size: .8em;
+  border-radius: 50%;
+  border: 1px solid #ff7931;
+  background-color: #fd5800; }
+
 .ove-subControlPanel__search {
   background-color: #0BA0F0; }
 
@@ -2114,8 +2142,7 @@ logo
     text-align: left; } }
 
 .ove-logo--mobile img {
-  height: 3.69434em;
-  width: auto; }
+  height: 3.69434em; }
 
 .ove-main {
   position: relative;

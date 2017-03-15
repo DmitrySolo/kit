@@ -2,9 +2,10 @@
   "LIBS": {
     "toCart": {
       "js": {
-        "": {
-          "src": "",
-          "concat": "true"
+        "ini": {
+          "src": "dev/ELEMENTS/BUTTONS/--toCart/toCart.js",
+          "concat": "true",
+          "container":"footer/init/init"
         }
       },
       "css": {

@@ -1,0 +1,40 @@
+//- call.pug
+extends ../LAYOUT/layout.pug
+block title
+	-var page={slug:'call',title:'Call'};
+	title Call
+block main
+	.ove-callPage
+		h2 Воронеж
+		ul.ove-callList
+			li.ove-callList__item
+				+I('mobile')
+				a(href="tel: +74732334817,106") Общий многоканальный
+			li.ove-callList__item
+				+I('mobile')
+				a(href="tel: +74732334817,151") Торговый зал "Сантехника N1"
+			li.ove-callList__item
+				+I('mobile')
+				a(href="tel: +74732334817,151") Торговый зал "Сантехника N2"
+			li.ove-callList__item
+				+I('mobile')
+				a(href="tel: +74732334817,151") Торговый зал "Электрика"
+			li.ove-callList__item
+				+I('mobile')
+				a(href="tel: +74732334817,151") Торговый зал "VIP Сантехника"
+			li.ove-callList__item
+				+I('mobile')
+				a(href="tel: +74732334817,151") Оптовый отдел
+			li.ove-callList__item
+				+I('mobile')
+				a(href="tel: +74732334817,151") Строительный отдел
+		h2 Белгород
+		ul.ove-callList
+			+loop(3)
+				li.ove-callList__item
+					a(href="tel: +74732334817,106") Андрейка
+				li.ove-callList__item
+					a(href="tel: +74732334817,151") Я
+				li.ove-callList__item
+					a(href="tel: +74732334817,151") Общий многоканальный
+

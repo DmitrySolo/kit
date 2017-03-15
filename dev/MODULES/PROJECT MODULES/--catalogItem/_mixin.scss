@@ -30,9 +30,9 @@
       max-height: 170px;
       display: inline;
       @include for-size(phone-only){
-        width: 100%;
+        max-width: 90px;
+        max-height: 90px;
         vertical-align: middle;
-        height: auto;
       }
     }
   }

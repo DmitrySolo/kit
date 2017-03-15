@@ -9,7 +9,10 @@ block main
             .col-12-m
                 +module('owlSlider')
             .col-12-m
-                h2 Лучшие товары
+                h2
+                    span.ove-markedHeader
+                        +I('star')
+                    | Лучшие товары
                 +module('owlGoodsSlider')
                 h2 Лучшие товары
                 +module('owlGoodsSlider')

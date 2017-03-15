@@ -2,7 +2,8 @@
   display: inline-block;
   vertical-align: middle;
   height: 100%;
-  width: 3rem;
+  width: 2rem;
+  max-width: 100%;
   fill: #fff;
 }
 
@@ -14,7 +15,7 @@
 }
 
 .icon--search {
-  width: 2.5rem;
+  width: 2rem;
 }
 
 .icon--angle {
@@ -31,7 +32,20 @@
 
 .icon-menu__button {
   cursor: pointer;
+  width: 2.6em;
   background-color: cs('primary-d');
   border-radius: 3px;
   @include space('element','a','');
+}
+.ove-markedHeader {
+  display: inline-block;
+  background-color: cs('primary');
+  width: 40px;
+  height: 40px;
+  line-height: 50px;
+  vertical-align: middle;
+  border-radius: 50%;
+  .icon {
+    height: 1em;
+  }
 }

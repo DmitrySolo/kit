@@ -102,9 +102,10 @@
 		},
 		"toCart": {
 			"js": {
-				"": {
-					"src": "",
-					"concat": "true"
+				"ini": {
+					"src": "dev/ELEMENTS/BUTTONS/--toCart/toCart.js",
+					"concat": "true",
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
@@ -171,22 +172,22 @@
 				"": ""
 			}
 		},
-		"catalogItemsonCatPage": {
+		"catalogMenu": {
 			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
+				"catalogMenu": {
+					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"catalogMenu": {
+		"catalogItemsonCatPage": {
 			"js": {
-				"catalogMenu": {
-					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
-					"container": "footer/init/init"
+				"": {
+					"src": "",
+					"concat": "false"
 				}
 			},
 			"css": {
@@ -498,11 +499,11 @@
 	"catalogItem": {
 		"catalogItem": "1"
 	},
-	"catalogItemsonCatPage": {
-		"catalogItemsonCatPage": "1"
-	},
 	"catalogMenu": {
 		"catalogMenu": "1"
+	},
+	"catalogItemsonCatPage": {
+		"catalogItemsonCatPage": "1"
 	},
 	"hero_video": {
 		"hero_video": "1"

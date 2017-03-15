@@ -21,4 +21,7 @@ $color__toCart:#fff;
 		&:hover, &:active {
 			outline: none;
 	}
+	&.toCart--in {
+		background-color: #3bd43b;
+	}
 }

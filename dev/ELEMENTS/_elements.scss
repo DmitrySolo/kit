@@ -1,3 +1,54 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 2rem;
+  max-width: 100%;
+  fill: #fff;
+}
+
+.icon--close {
+  height: 2.8rem;
+  width: 2.8rem;
+  fill: cs('font-d');
+  cursor: pointer;
+}
+
+.icon--search {
+  width: 2rem;
+}
+
+.icon--angle {
+  height: 1rem;
+  width: 1rem;
+  fill: cs('font-l');
+}
+
+.catalogMenu__list__item--active {
+  .icon--angle {
+    fill: cs('accent');
+  }
+}
+
+.icon-menu__button {
+  cursor: pointer;
+  width: 2.6em;
+  background-color: cs('primary-d');
+  border-radius: 3px;
+  @include space('element','a','');
+}
+.ove-markedHeader {
+  display: inline-block;
+  background-color: cs('primary');
+  width: 40px;
+  height: 40px;
+  line-height: 50px;
+  vertical-align: middle;
+  border-radius: 50%;
+  .icon {
+    height: 1em;
+  }
+}
 $color__button:#aaa;
 $color__button-hover:#aaa;
 $color__button-active:#aaa;
@@ -64,30 +115,6 @@ $color__gogog:#fff;
 			outline: none;
 	}
 }
-$color__link: cs('font-d');
-$color__link-visited:cs('font-d');
-$color__link-hover:cs('font-l');
-
-a, a.mainLink {
-  color: $color__link;
-  text-decoration: none;
-
-  &:visited {
-    color: $color__link-visited;
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color__link-hover;
-  }
-  &:focus {
-    outline: none;
-  }
-  &:hover,
-  &:active {
-    outline: none;
-  }
-}
 $bkgColor__toCart:cs('accent');
 $bkgColor__toCart-hover:cs('accent-l');
 $color__toCart-hover:#fff;
@@ -111,6 +138,46 @@ $color__toCart:#fff;
 		&:hover, &:active {
 			outline: none;
 	}
+	&.toCart--in {
+		background-color: #3bd43b;
+	}
+}
+
+form.ove-pageCard__Form .ove-cardRegInput {
+  text-align: center;
+  outline: none;
+  border:none;
+  color: #fff;
+  width: 100%;
+  background-color: transparent;
+  @include space('element','a','b');
+  border-bottom: 3px solid #fff;
+  font-size: 2.5em;
+  letter-spacing: .25em;
+}
+$color__link: cs('font-d');
+$color__link-visited:cs('font-d');
+$color__link-hover:cs('font-l');
+
+a, a.mainLink {
+  color: $color__link;
+  text-decoration: none;
+
+  &:visited {
+    color: $color__link-visited;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover,
+  &:active {
+    outline: none;
+  }
 }
 $color__ove-topNavLink:cs('font');
 $color__ove-topNavLink-visited:cs('font');
@@ -152,55 +219,6 @@ a.socialLink {color: $color__linksocialLink;
  } &:focus {outline: thin dotted;}
  &:hover, &:active
  {outline: 0;}}
-form.ove-pageCard__Form .ove-cardRegInput {
-  text-align: center;
-  outline: none;
-  border:none;
-  color: #fff;
-  width: 100%;
-  background-color: transparent;
-  @include space('element','a','b');
-  border-bottom: 3px solid #fff;
-  font-size: 2.5em;
-  letter-spacing: .25em;
-}
-.icon {
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-  width: 3rem;
-  fill: #fff;
-}
-
-.icon--close {
-  height: 2.8rem;
-  width: 2.8rem;
-  fill: cs('font-d');
-  cursor: pointer;
-}
-
-.icon--search {
-  width: 2.5rem;
-}
-
-.icon--angle {
-  height: 1rem;
-  width: 1rem;
-  fill: cs('font-l');
-}
-
-.catalogMenu__list__item--active {
-  .icon--angle {
-    fill: cs('accent');
-  }
-}
-
-.icon-menu__button {
-  cursor: pointer;
-  background-color: cs('primary-d');
-  border-radius: 3px;
-  @include space('element','a','');
-}
 
   .spinner-circle {
     width: 40px;
