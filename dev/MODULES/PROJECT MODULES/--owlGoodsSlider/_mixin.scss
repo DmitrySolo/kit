@@ -2,6 +2,7 @@
 	
 .owlGoodsSlider{
   position: relative;
+  @include space('module','','b');
 
   .owl-prev,.owl-next{
     top: 30%;

@@ -45,7 +45,14 @@
   line-height: 50px;
   vertical-align: middle;
   border-radius: 50%;
+  @include space('element','','r');
   .icon {
     height: 1em;
+    vertical-align: baseline;
+    width: auto;
+
   }
+}
+.ove-sectionHeader {
+  @include space('element','','b');
 }

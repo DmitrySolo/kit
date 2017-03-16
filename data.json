@@ -89,7 +89,7 @@
 				"": ""
 			}
 		},
-		"ove-cardReg": {
+		"<%= prefix %>": {
 			"js": {
 				"": {
 					"src": "",
@@ -106,17 +106,6 @@
 					"src": "dev/ELEMENTS/BUTTONS/--toCart/toCart.js",
 					"concat": "true",
 					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"<%= prefix %>": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "true"
 				}
 			},
 			"css": {
@@ -172,11 +161,11 @@
 				"": ""
 			}
 		},
-		"catalogMenu": {
+		"ove-cardReg": {
 			"js": {
-				"catalogMenu": {
-					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
-					"container": "footer/init/init"
+				"": {
+					"src": "",
+					"concat": "true"
 				}
 			},
 			"css": {
@@ -188,6 +177,17 @@
 				"": {
 					"src": "",
 					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"catalogMenu": {
+			"js": {
+				"catalogMenu": {
+					"src": "dev/MODULES/PROJECT MODULES/--catalogMenu/catalogMenu.js",
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
@@ -499,11 +499,11 @@
 	"catalogItem": {
 		"catalogItem": "1"
 	},
-	"catalogMenu": {
-		"catalogMenu": "1"
-	},
 	"catalogItemsonCatPage": {
 		"catalogItemsonCatPage": "1"
+	},
+	"catalogMenu": {
+		"catalogMenu": "1"
 	},
 	"hero_video": {
 		"hero_video": "1"

@@ -1680,7 +1680,8 @@ td {
   background-image: url("images/plumber.jpg"); }
 
 .owlGoodsSlider {
-  position: relative; }
+  position: relative;
+  margin-bottom: 1.67547em; }
   .owlGoodsSlider .owl-prev, .owlGoodsSlider .owl-next {
     top: 30%;
     position: absolute;
@@ -1698,6 +1699,23 @@ td {
     right: 0; }
   .owlGoodsSlider .catalogItem {
     margin: 1px; }
+
+.owlSlider {
+  margin-top: 1.03552em;
+  margin-bottom: 1.03552em; }
+
+.owl-dots {
+  margin-top: 0.64em;
+  text-align: center; }
+  .owl-dots .owl-dot {
+    display: inline-block;
+    margin-right: 0.64em;
+    width: .8em;
+    height: .8em;
+    border-radius: 50%;
+    background-color: #097fbf; }
+    .owl-dots .owl-dot.active {
+      background-color: #fd5800; }
 
 .pagination {
   padding-top: 1.03552em;
@@ -1734,23 +1752,6 @@ td {
   background-color: #ff7931; }
   .pagination__ctn__button--current:hover {
     background-color: #ff7931; }
-
-.owlSlider {
-  margin-top: 1.03552em;
-  margin-bottom: 1.03552em; }
-
-.owl-dots {
-  margin-top: 0.64em;
-  text-align: center; }
-  .owl-dots .owl-dot {
-    display: inline-block;
-    margin-right: 0.64em;
-    width: .8em;
-    height: .8em;
-    border-radius: 50%;
-    background-color: #097fbf; }
-    .owl-dots .owl-dot.active {
-      background-color: #fd5800; }
 
 .sideBar {
   position: fixed;
@@ -1844,49 +1845,6 @@ td {
 /*
 * ELEMENTS  STYLES
 */
-.icon {
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-  width: 2rem;
-  max-width: 100%;
-  fill: #fff; }
-
-.icon--close {
-  height: 2.8rem;
-  width: 2.8rem;
-  fill: #405871;
-  cursor: pointer; }
-
-.icon--search {
-  width: 2rem; }
-
-.icon--angle {
-  height: 1rem;
-  width: 1rem;
-  fill: #6b8aac; }
-
-.catalogMenu__list__item--active .icon--angle {
-  fill: #fd5800; }
-
-.icon-menu__button {
-  cursor: pointer;
-  width: 2.6em;
-  background-color: #097fbf;
-  border-radius: 3px;
-  padding: 0.64em; }
-
-.ove-markedHeader {
-  display: inline-block;
-  background-color: #0BA0F0;
-  width: 40px;
-  height: 40px;
-  line-height: 50px;
-  vertical-align: middle;
-  border-radius: 50%; }
-  .ove-markedHeader .icon {
-    height: 1em; }
-
 .mainButton {
   background-color: #aaa; }
   .mainButton:focus {
@@ -1946,6 +1904,55 @@ td {
   .toCart.toCart--in {
     background-color: #3bd43b; }
 
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 2rem;
+  max-width: 100%;
+  fill: #fff; }
+
+.icon--close {
+  height: 2.8rem;
+  width: 2.8rem;
+  fill: #405871;
+  cursor: pointer; }
+
+.icon--search {
+  width: 2rem; }
+
+.icon--angle {
+  height: 1rem;
+  width: 1rem;
+  fill: #6b8aac; }
+
+.catalogMenu__list__item--active .icon--angle {
+  fill: #fd5800; }
+
+.icon-menu__button {
+  cursor: pointer;
+  width: 2.6em;
+  background-color: #097fbf;
+  border-radius: 3px;
+  padding: 0.64em; }
+
+.ove-markedHeader {
+  display: inline-block;
+  background-color: #0BA0F0;
+  width: 40px;
+  height: 40px;
+  line-height: 50px;
+  vertical-align: middle;
+  border-radius: 50%;
+  margin-right: 0.64em; }
+  .ove-markedHeader .icon {
+    height: 1em;
+    vertical-align: baseline;
+    width: auto; }
+
+.ove-sectionHeader {
+  margin-bottom: 0.64em; }
+
 form.ove-pageCard__Form .ove-cardRegInput {
   text-align: center;
   outline: none;
@@ -1958,18 +1965,6 @@ form.ove-pageCard__Form .ove-cardRegInput {
   border-bottom: 3px solid #fff;
   font-size: 2.5em;
   letter-spacing: .25em; }
-
-a, a.mainLink {
-  color: #405871;
-  text-decoration: none; }
-  a:visited, a.mainLink:visited {
-    color: #405871; }
-  a:hover, a:focus, a:active, a.mainLink:hover, a.mainLink:focus, a.mainLink:active {
-    color: #6b8aac; }
-  a:focus, a.mainLink:focus {
-    outline: none; }
-  a:hover, a:active, a.mainLink:hover, a.mainLink:active {
-    outline: none; }
 
 a.ove-topNavLink {
   color: #527192;
@@ -1985,6 +1980,18 @@ a.ove-topNavLink {
   a.ove-topNavLink:focus {
     outline: none; }
   a.ove-topNavLink:hover, a.ove-topNavLink:active {
+    outline: none; }
+
+a, a.mainLink {
+  color: #405871;
+  text-decoration: none; }
+  a:visited, a.mainLink:visited {
+    color: #405871; }
+  a:hover, a:focus, a:active, a.mainLink:hover, a.mainLink:focus, a.mainLink:active {
+    color: #6b8aac; }
+  a:focus, a.mainLink:focus {
+    outline: none; }
+  a:hover, a:active, a.mainLink:hover, a.mainLink:active {
     outline: none; }
 
 a.socialLink {
@@ -2069,6 +2076,9 @@ Header
   z-index: 10000;
   width: 100%;
   top: 0; }
+
+.ove-sectionHeader {
+  text-align: center; }
 
 .ove-subControlPanel--mobile {
   position: fixed;
