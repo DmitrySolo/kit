@@ -89,7 +89,7 @@
 				"": ""
 			}
 		},
-		"<%= prefix %>": {
+		"ove-cardReg": {
 			"js": {
 				"": {
 					"src": "",
@@ -112,6 +112,17 @@
 				"": ""
 			}
 		},
+		"<%= prefix %>": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"spinner-circle": {
 			"js": {
 				"lib": {
@@ -121,6 +132,46 @@
 				"init": {
 					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
 					"container": "footer/top/preloader"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"JQ": {
+			"js": {
+				"jquery": {
+					"src": "bower_components/jquery/dist/jquery.min.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"microControls": {
+			"js": {
+				"microControls-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/microControls/microControls.js",
+					"container": "footer/init/init",
+					"type": "init"
+				},
+				"maskedInput": {
+					"src": "bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js",
+					"container": "footer/libsExts/",
+					"type": "lib"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"styckyHeader": {
+			"js": {
+				"styckyHeader-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
+					"container": "footer/init/init",
+					"type": "init"
 				}
 			},
 			"css": {
@@ -155,17 +206,6 @@
 				"": {
 					"src": "",
 					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"ove-cardReg": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "true"
 				}
 			},
 			"css": {
@@ -233,46 +273,6 @@
 				"catalogMenu": {
 					"src": "dev/MODULES/PROJECT MODULES/--sideBar/sideBar.js",
 					"container": "footer/init/mobile"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"JQ": {
-			"js": {
-				"jquery": {
-					"src": "bower_components/jquery/dist/jquery.min.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"microControls": {
-			"js": {
-				"microControls-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/microControls/microControls.js",
-					"container": "footer/init/init",
-					"type": "init"
-				},
-				"maskedInput": {
-					"src": "bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js",
-					"container": "footer/libsExts/",
-					"type": "lib"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"styckyHeader": {
-			"js": {
-				"styckyHeader-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
-					"container": "footer/init/init",
-					"type": "init"
 				}
 			},
 			"css": {

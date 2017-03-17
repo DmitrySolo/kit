@@ -3,11 +3,11 @@
 Header
 */
 
-*{
-  -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-tap-highlight-color: transparent; /* For some Androids */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
 
 }
-
 
 .ove-topNavigation {
   display: none;
@@ -43,31 +43,33 @@ Header
   background-color: cs('primary');
   border-bottom: 3px solid cs('primary-d');
 }
+
 .stickyHeader {
-  position : fixed;
-  z-index  : 10000;
+  position: fixed;
+  z-index: 10000;
   width: 100%;
-  top:0;
+  top: 0;
 }
+
 .ove-sectionHeader {
   text-align: center;
 }
 
 .ove-subControlPanel--mobile {
   position: fixed;
-  top:0;
+  top: 0;
   width: 100%;
   z-index: 6000;
-  @include for-size(tablet-l-up){
-   position: relative;
+  @include for-size(tablet-l-up) {
+    position: relative;
 
-        }
+  }
   @include space('element', 'tb', '');
   @include for-size(desktop-up) {
     display: none;
   }
   .ove-mobile-menu {
-   // @include space('element','a','');
+    // @include space('element','a','');
     text-align: center;
     height: 3.69434em;
   }
@@ -75,24 +77,24 @@ Header
 
 .ove-subControlPanel--desktop {
   display: none;
-@include for-size(desktop-up) {
-  display: block;
-  height: 73px;
+  @include for-size(desktop-up) {
+    display: block;
+    height: 73px;
+  }
 }
-}
+
 .ove-subControlPanel__section {
   position: relative;
   text-align: center;
   height: 3.69434em;
   cursor: pointer;
 
-
 }
 
-.ove-cartCounter {
+.ove-cartCounter, .ove-cartCounter--phantom {
   position: absolute;
-  top:10%;
-  left:5%;
+  top: 10%;
+  left: 5%;
   width: 22px;
   height: 22px;
   line-height: 22px;
@@ -103,18 +105,26 @@ Header
   background-color: cs('accent');
 }
 
+.ove-cartCounter--phantom.animate {
+  @include a-set-frame(cartAnim, .5s, 0s, 1, linear, (
+          0 :(transform: scale(1.5), opacity:.7),
+          1 :(transform: scale(4), opacity:0)
+  ));
+}
 
 .ove-subControlPanel__search {
   background-color: cs('primary');
 }
+
 .ove-subControlPanel__search_wrapper {
   display: none;
   position: absolute;
   background-color: cs('primary');
 }
-.ove-subControlPanel__search__input{
-  @include space('element','t','');
-  top:0;
+
+.ove-subControlPanel__search__input {
+  @include space('element', 't', '');
+  top: 0;
   input {
     outline: none;
     border: none;
@@ -126,27 +136,29 @@ Header
     margin: 0;
   }
 }
+
 /*
 logo
 */
 .ove-logo--mobile {
-@include for-size(tablet-p-up) {
-  text-align: left;
-}
+  @include for-size(tablet-p-up) {
+    text-align: left;
+  }
 }
 
 .ove-logo--mobile img {
   height: s-height(1, 'module');
-
 }
+
 .ove-main {
 
   position: relative;
 
-          margin-top: 70px;
-          margin-bottom: 70px;
+  margin-top: 70px;
+  margin-bottom: 70px;
 
 }
+
 .ove-shade {
   position: absolute;
   display: none;
@@ -156,8 +168,6 @@ logo
   width: 100%;
   z-index: 3000;
 }
-
-
 
 /*
 Footer
@@ -170,6 +180,7 @@ Footer
   background-color: cs('primary-l');
   color: #fff;
 }
+
 .ove-pageNav__link {
   height: 70px;
   color: #fff;
@@ -181,19 +192,21 @@ Footer
     width: 2em;
     height: 2em;
   }
-  &:hover{
+  &:hover {
     color: #fff;
   }
   display: block;
-  @include space('element','a','');
+  @include space('element', 'a', '');
   text-align: center;
   border-left: 1px solid cs('primary');
   border-right: 1px solid cs('primary');
 
 }
+
 .ove-pageNav__link--active {
   background-color: cs('primary-d');
 }
+
 /*
 Category Page
 */
@@ -201,7 +214,7 @@ Category Page
   display: block;
   text-transform: uppercase;
   font-size: 1.4em;
-  @include space('component','a','t');
+  @include space('component', 'a', 't');
 
   .icon {
     width: 1.4em;
@@ -209,15 +222,17 @@ Category Page
     fill: cs('font');
   }
   span {
-    @include space('element','a','');
+    @include space('element', 'a', '');
   }
 
 }
+
 .ove-category__prev {
   //background-color: cs('bground-d');
   border-bottom: 1px solid cs('font-l');
 
 }
+
 .ove-category__next {
   background-color: #fff;
   border-bottom: 1px solid silver;
@@ -229,13 +244,12 @@ Category Page
 
 }
 
-
 .ove-category__current {
   text-transform: uppercase;
   border-bottom: 2px solid cs('font-d');
   text-align: center;
   background-color: #fff;
-  @include space('component','a','');
+  @include space('component', 'a', '');
   .icon {
     float: left;
     width: 1em;
@@ -249,152 +263,172 @@ Item Page
 */
 .ove-item__desc {
   background-color: #fff;
- @include space('component','a','');
+  @include space('component', 'a', '');
 }
+
 .ove-item__desc-img {
   text-align: center;
-  @include space('module','a','');
+  @include space('module', 'a', '');
   img {
     width: 100%;
     height: auto;
   }
 }
+
 .ove-item__desc-list {
 
-  @include space('element','t','');
+  @include space('element', 't', '');
   .row {
-    &:first-child{
+    &:first-child {
       border-top: solid 3px cs('font-l');
     }
     &:last-child {
       border-bottom: solid 3px cs('font-l');
     }
   }
-  dt,dd {
-    @include space('element','a','');
+  dt, dd {
+    @include space('element', 'a', '');
 
   }
   dt {
     border: solid 1px cs('bground');
   }
-  dd{
+  dd {
     background-color: cs('bground');
   }
 }
- .ove-pageCard {
-   //position: absolute;
-   @include space('block','bt','');
-   text-align: center;
-   background-color: cs('primary');
-   width: 100%;
-   color: #fff;
- }
+
+.ove-pageCard {
+  //position: absolute;
+  @include space('block', 'bt', '');
+  text-align: center;
+  background-color: cs('primary');
+  width: 100%;
+  color: #fff;
+}
+
 .ove-pageCard__title {
   font-size: 1.4em;
-  @include space('component','b','');
+  @include space('component', 'b', '');
 }
+
 .ove-pageCard__number {
   font-size: 2.5em;
   display: block;
-  @include space('element','tb','');
+  @include space('element', 'tb', '');
   background-color: cs('primary-l');
   letter-spacing: .25em;
 
 }
+
 .ove-pageCard__percent {
   font-size: 7em;
-  text-shadow: 0px  4px  silver;
+  text-shadow: 0px 4px silver;
 }
-.ove-pageCard__advance,.ove-pageCard__animMarkerWrapper {
-  @include space('block','rlb','');
+
+.ove-pageCard__advance, .ove-pageCard__animMarkerWrapper {
+  @include space('block', 'rlb', '');
   span {
     font-size: 1.3em;
   }
 }
+
 .ove-pageCard__scaleWrapper {
-  @include space('block','rl','');
+  @include space('block', 'rl', '');
   width: 100%;
 }
+
 .ove-pageCard__scale {
   background-color: cs('primary-d');
 
 }
+
 .ove-pageCard__scaleCurrent,
 .ove-pageCard__scale {
   height: .8em;
-  border-radius:4px;
+  border-radius: 4px;
 }
+
 .ove-pageCard__scaleCurrent {
   background-color: #a2ff80;
   width: 12%;
 }
+
 .ove-pageCard__code {
   height: 90px;
-  @include space('module','','t');
+  @include space('module', '', 't');
   img {
     height: 90px;
   }
 }
+
 .ove-pageCard__animMarkerWrapper {
   position: relative;
 }
+
 .ove-pageCard__animMarker {
   position: absolute;
   width: 40px;
   height: 10px;
   background-color: cs('accent');
-  @include a-set-frame(marker,2s,0s,infinite,linear,$frames:(
-          0  :(left:30%,),
+  @include a-set-frame(marker, 2s, 0s, infinite, linear, $frames: (
+          0 :(left:30%,),
           .5 :(left:60%,),
           1 :(left:30%,)
   ));
 }
+
 .ove-pageCard__Form {
-  @include space('block','rl','');
+  @include space('block', 'rl', '');
   position: relative;
 }
+
 .ove-pageCard__Form__cleaner {
   display: none;
   position: absolute;
   height: 20px;
-  top:25%;
+  top: 25%;
   right: 0;
 }
-.ove-pageCard__error{
-  @include space('block','a','a');
+
+.ove-pageCard__error {
+  @include space('block', 'a', 'a');
   background-color: #ff5e46;
   border-radius: 5px;
   span {
     font-size: 1.6em;
     display: block;
-    border-radius:50% ;
+    border-radius: 50%;
     text-align: center;
-    margin:0 auto;
+    margin: 0 auto;
     width: 36px;
     height: 36px;
     color: #ff5e46;
     background-color: #fff;
-  // @include space('element','a','')
+    // @include space('element','a','')
   }
 }
+
 .ove-callPage {
-  @include space('block','tb','');
-  @include space('component','rl','');
+  @include space('block', 'tb', '');
+  @include space('component', 'rl', '');
   background-color: cs('primary');
-   h2, a {
+  h2, a {
     color: #fff;
   }
 }
-.ove-callList{
-  @include space('component','b','');
-  .icon{
+
+.ove-callList {
+  @include space('component', 'b', '');
+  .icon {
     height: 1.2em;
   }
 }
+
 .ove-callList__item {
-  @include space('component','a','');
+  @include space('component', 'a', '');
   border-bottom: 3px solid cs('primary-l');
-  a{
-    @include space('element','l','')
+  a {
+    @include space('element', 'l', '')
   }
 }

@@ -1,3 +1,23 @@
 @mixin catalogItemsonCatPage(){
-	
-.catalogItemsonCatPage{}}
+  .catalogItem__quntCheck{
+    @include space('module','','b');
+    text-align: right;
+  }
+  .catalogItem__priceAndBuy__price {
+    @include space('module','','b')
+  }
+  .catalogItem__quntCheck__marker {
+    display: inline-block;
+    font-size: .8em;
+    text-transform: uppercase;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #3cb774;
+    @include space('element','','r');
+  }
+  .catalogItem__quntCheck__titl {
+    display: inline-block;
+  }
+
+}

@@ -13,37 +13,6 @@ $color__button-active:#aaa;
     outline: 0;
   }
 }
-$bkgColor__ove-cardReg: transparent;
-$bkgColor__ove-cardReg-hover: cs('primary-l');
-$color__ove-cardReg-hover:#fff;
-$color__ove-cardReg:#fff;
-
-.ove-cardReg {
-	position: relative;
-	margin: 0% auto;
-	background-color: $bkgColor__ove-cardReg;
-	color: $color__ove-cardReg;
-	border:3px solid #fff;
-	border-radius: 3px;
-	font-size: 1.4em;
-	@include space('element','a','');
-		&:hover, &:focus, &:active {
-		color: $color__ove-cardReg-hover;
-		background-color: $bkgColor__ove-cardReg-hover;
-		}
-		&:focus {
-			outline: none;
-		}
-		&:hover, &:active {
-			outline: none;
-	}
-}
-.ove-cardReg--inactive{
-	opacity: .6;
-	&:hover{
-		background-color: transparent;
-	}
-}
 $bkgColor__gogog:#fff;
 $bkgColor__gogog-hover:#fff;
 $color__gogog-hover:#fff;
@@ -92,6 +61,144 @@ $color__toCart:#fff;
 	}
 }
 
+$bkgColor__ove-cardReg: transparent;
+$bkgColor__ove-cardReg-hover: cs('primary-l');
+$color__ove-cardReg-hover:#fff;
+$color__ove-cardReg:#fff;
+
+.ove-cardReg {
+	position: relative;
+	margin: 0% auto;
+	background-color: $bkgColor__ove-cardReg;
+	color: $color__ove-cardReg;
+	border:3px solid #fff;
+	border-radius: 3px;
+	font-size: 1.4em;
+	@include space('element','a','');
+		&:hover, &:focus, &:active {
+		color: $color__ove-cardReg-hover;
+		background-color: $bkgColor__ove-cardReg-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+.ove-cardReg--inactive{
+	opacity: .6;
+	&:hover{
+		background-color: transparent;
+	}
+}
+$color__link: cs('font-d');
+$color__link-visited:cs('font-d');
+$color__link-hover:cs('font-l');
+
+a, a.mainLink {
+  color: $color__link;
+  text-decoration: none;
+
+  &:visited {
+    color: $color__link-visited;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover,
+  &:active {
+    outline: none;
+  }
+}
+form.ove-pageCard__Form .ove-cardRegInput {
+  text-align: center;
+  outline: none;
+  border:none;
+  color: #fff;
+  width: 100%;
+  background-color: transparent;
+  @include space('element','a','b');
+  border-bottom: 3px solid #fff;
+  font-size: 2.5em;
+  letter-spacing: .25em;
+}
+
+  .spinner-circle {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+    background-color: #ffffff;
+
+    border-radius: 100%;
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+  }
+
+  @-webkit-keyframes sk-scaleout {
+    0% { -webkit-transform: scale(0) }
+    100% {
+      -webkit-transform: scale(1.0);
+      opacity: .4;
+    }
+  }
+
+  @keyframes sk-scaleout {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+      }
+  }
+
+$color__linksocialLink:red;
+$color__linksocialLink-visited:red;
+$color__linksocialLink-hover:red;
+a.socialLink {color: $color__linksocialLink;
+ text-decoration: none;
+ &:visited {color: $color__linksocialLink-visited;
+ }
+ &:hover, &:focus, &:active
+ {color: $color__linksocialLink-hover;
+ } &:focus {outline: thin dotted;}
+ &:hover, &:active
+ {outline: 0;}}
+$color__ove-topNavLink:cs('font');
+$color__ove-topNavLink-visited:cs('font');
+$color__ove-topNavLink-hover:cs('font-d');
+
+a.ove-topNavLink {
+	color: $color__ove-topNavLink;
+	display: inline-block;
+	text-decoration: none;
+	@include space('element','a','');
+	background-color: #fff;
+
+	&:visited {
+		color: $color__ove-topNavLink-visited;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__ove-topNavLink-hover;
+		background-color: #87ff8b;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover,
+	&:active {
+	outline: none;
+	}
+}
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -150,109 +257,3 @@ $color__toCart:#fff;
 .ove-sectionHeader {
   @include space('element','','b');
 }
-form.ove-pageCard__Form .ove-cardRegInput {
-  text-align: center;
-  outline: none;
-  border:none;
-  color: #fff;
-  width: 100%;
-  background-color: transparent;
-  @include space('element','a','b');
-  border-bottom: 3px solid #fff;
-  font-size: 2.5em;
-  letter-spacing: .25em;
-}
-$color__ove-topNavLink:cs('font');
-$color__ove-topNavLink-visited:cs('font');
-$color__ove-topNavLink-hover:cs('font-d');
-
-a.ove-topNavLink {
-	color: $color__ove-topNavLink;
-	display: inline-block;
-	text-decoration: none;
-	@include space('element','a','');
-	background-color: #fff;
-
-	&:visited {
-		color: $color__ove-topNavLink-visited;
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__ove-topNavLink-hover;
-		background-color: #87ff8b;
-	}
-	&:focus {
-		outline: none;
-	}
-	&:hover,
-	&:active {
-	outline: none;
-	}
-}
-$color__link: cs('font-d');
-$color__link-visited:cs('font-d');
-$color__link-hover:cs('font-l');
-
-a, a.mainLink {
-  color: $color__link;
-  text-decoration: none;
-
-  &:visited {
-    color: $color__link-visited;
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color__link-hover;
-  }
-  &:focus {
-    outline: none;
-  }
-  &:hover,
-  &:active {
-    outline: none;
-  }
-}
-$color__linksocialLink:red;
-$color__linksocialLink-visited:red;
-$color__linksocialLink-hover:red;
-a.socialLink {color: $color__linksocialLink;
- text-decoration: none;
- &:visited {color: $color__linksocialLink-visited;
- }
- &:hover, &:focus, &:active
- {color: $color__linksocialLink-hover;
- } &:focus {outline: thin dotted;}
- &:hover, &:active
- {outline: 0;}}
-
-  .spinner-circle {
-    width: 40px;
-    height: 40px;
-    margin: 100px auto;
-    background-color: #ffffff;
-
-    border-radius: 100%;
-    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-    animation: sk-scaleout 1.0s infinite ease-in-out;
-  }
-
-  @-webkit-keyframes sk-scaleout {
-    0% { -webkit-transform: scale(0) }
-    100% {
-      -webkit-transform: scale(1.0);
-      opacity: .4;
-    }
-  }
-
-  @keyframes sk-scaleout {
-    0% {
-      -webkit-transform: scale(0);
-      transform: scale(0);
-    } 100% {
-        -webkit-transform: scale(1.0);
-        transform: scale(1.0);
-        opacity: 0;
-      }
-  }

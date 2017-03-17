@@ -60,7 +60,7 @@ $frames: (
   animation-name: $name;
   animation-duration: $time;
   animation-iteration-count: $iterations;
-  animation-direction: alternate;
+ // animation-direction: alternate;
   animation-timing-function: $function;
   animation-fill-mode: forwards;
   animation-delay: $delay;
