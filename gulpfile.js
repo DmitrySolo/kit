@@ -34,12 +34,26 @@ var Sync = require('sync');
 var gulpsync = require('gulp-sync')(gulp);
 var svgstore = require('gulp-svgstore');
 var svgmin = require('gulp-svgmin');
+var pugPHPFilter = require('pug-php-filter');
+var phplint = require('gulp-phplint');
+
+
+gulp.task('phplint', function phplint() {
+    gulp.src('dist/category.php')
+        .pipe(phplint());
+})
+
+
+
 gulp.task('views', function buildHTML() {
     var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
     gulp.src('dev/templates/PAGESYSTEM/PAGES/*.pug')
         .pipe(pug({
             data: data,
             pretty: true,
+            filters: {
+                php: pugPHPFilter
+            }
         })).pipe(gulp.dest('dist'));
     var str ="include ../templates/PAGESYSTEM/INCLUDES/_includes\n";
     gulp.src('dev/templates/projectboard.pug').pipe(insert.prepend(str)).pipe(rename(function (path) {

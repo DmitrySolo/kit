@@ -7,14 +7,20 @@ block main
 	.container
 		nav
 			ul.ove-category__list
+				:php
+					if($a==2):
 				li.ove-category__prevWrapper
 					a(href="#").ove-category.ove-category__prev
 						+I('left')
-						span Ванны
-				li
-					a(href="#").ove-category.ove-category__next
-						span Ванны Угловые
-						+I('right')
+						span
+							:php
+								=$a
+				:php
+					endif;
+			li
+				a(href="#").ove-category.ove-category__next
+					span Ванны Угловые
+					+I('right')
 
 		h3.ove-category__current.text
 			+I('down')
