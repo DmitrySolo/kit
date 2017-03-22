@@ -195,6 +195,9 @@ Footer
   &:hover {
     color: #fff;
   }
+  &:visited {
+    color: #fff;
+  }
   display: block;
   @include space('element', 'a', '');
   text-align: center;
@@ -211,50 +214,74 @@ Footer
 Category Page
 */
 .ove-category {
+  position: relative;
   display: block;
   text-transform: uppercase;
-  font-size: 1.4em;
-  @include space('component', 'a', 't');
+  font-size: 1.3em;
+  @include space('component', 'tb', 't');
+  @include space('block', 'lr', '');
 
   .icon {
     width: 1.4em;
     height: 1.4em;
     fill: cs('font');
-  }
-  span {
-    @include space('element', 'a', '');
+    top: 50%;
+    margin-top: -.6em;
   }
 
 }
-
+.ove-category__list {
+  position: relative;
+  @include space('element','t','');
+}
 .ove-category__prev {
-  //background-color: cs('bground-d');
+  font-size: 16px;
+  background-color: cs('bground-d');
   border-bottom: 1px solid cs('font-l');
+  position: fixed;
+  z-index: 800;
+  @include space('component', 'tb', '');
+  @include space('block', 'lr', '');
+  margin-top: 0;
+  right: 0;
+  width: 100%;
+
+  .icon {
+    position: absolute;
+    left:1%;
+  }
 
 }
-
+.ove-category__prevWrapper {
+  height: 90px;
+}
 .ove-category__next {
   background-color: #fff;
   border-bottom: 1px solid silver;
   margin-bottom: 4px;
   .icon {
-    float: right;
+    position: absolute;
+    right: 1%;
     fill: cs('accent');
   }
 
 }
 
 .ove-category__current {
+  position: relative;
   text-transform: uppercase;
   border-bottom: 2px solid cs('font-d');
   text-align: center;
   background-color: #fff;
   @include space('component', 'a', '');
   .icon {
-    float: left;
+    position: absolute;
+    left: 4%;
     width: 1em;
     height: 1em;
     fill: cs('font-d');
+    top: 50%;
+    margin-top: -.6em;
   }
 }
 

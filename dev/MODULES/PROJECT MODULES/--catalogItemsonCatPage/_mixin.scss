@@ -4,7 +4,13 @@
     text-align: right;
   }
   .catalogItem__priceAndBuy__price {
-    @include space('module','','b')
+    @include space('module','','b');
+    display: table;
+    width: 100%;
+    span {
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
   .catalogItem__quntCheck__marker {
     display: inline-block;

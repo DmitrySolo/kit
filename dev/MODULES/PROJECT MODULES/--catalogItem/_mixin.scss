@@ -41,9 +41,10 @@
     overflow: hidden;
   }
   .catalogItem__priceAndBuy__price {
+    font-size: 1.2em;
     text-align: center;
+    height: s-growLines(2);
     span{
-      font-size: 1.7em;
       font-weight: bold;
     }
   }

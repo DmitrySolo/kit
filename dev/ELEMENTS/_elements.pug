@@ -1,3 +1,7 @@
+mixin I(id,classModifier)
+	-if (!classModifier) classModifier =''
+	svg(class='icon '+classModifier)
+		use(xlink:href="#"+id)
 mixin B(value,className)
 	-if (!className) className =''
 	button.mainButton(class=''+className)=value
@@ -19,24 +23,19 @@ mixin B-ove-cardReg(value,className,disabledc)
 	button.ove-cardReg(class=''+className,disabled=disabledc)=value
 
 
-mixin A(content,href,className)
-	-if (!className) className =''
-	a(class='mainLink '+className,href=href)=content
 mixin INPUT-oveCard(type,className)
 	-if (!className) className =''
 	input(type=""+type, class='ove-cardRegInput '+className)
-mixin PL-spinner-circle(className)
+mixin A(content,href,className)
 	-if (!className) className =''
-		.spinner-circle(class=''+className)
-
-mixin A-socialLink(content,href,className)
-	-if (!className) className =''
-	a(class='socialLink '+className,href=href)=content
+	a(class='mainLink '+className,href=href)=content
 mixin A-ove-topNavLink(content,href,className)
 	-if (!className) className =''
 	a(class='ove-topNavLink '+className,href=href)=content
 
-mixin I(id,classModifier)
-	-if (!classModifier) classModifier =''
-	svg(class='icon '+classModifier)
-		use(xlink:href="#"+id)
+mixin A-socialLink(content,href,className)
+	-if (!className) className =''
+	a(class='socialLink '+className,href=href)=content
+mixin PL-spinner-circle(className)
+	-if (!className) className =''
+		.spinner-circle(class=''+className)
