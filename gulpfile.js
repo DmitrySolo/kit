@@ -36,6 +36,7 @@ var svgstore = require('gulp-svgstore');
 var svgmin = require('gulp-svgmin');
 var pugPHPFilter = require('pug-php-filter');
 var phplint = require('gulp-phplint');
+const html2pug = require('gulp-html2pug');
 
 
 gulp.task('phplint', function phplint() {
@@ -1133,4 +1134,11 @@ gulp.task('START QUANT', ['WATCHER', 'SERVER']);
 
 gulp.task('SCRIPT BUILDER', function(done) {
     runSequence('SCRIPTS-CLEAN', 'SCRIPTS-GO-CONTAINER','SCRIPTS-BUILD');
+});
+/////UTILITIES
+gulp.task('u-h2p', function() {
+    // Backend locales
+    return gulp.src('utilities/htmlToPug/inderx.html')
+        .pipe(html2pug())
+        .pipe(gulp.dest('utilities/htmlToPug/pr'));
 });

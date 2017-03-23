@@ -89,7 +89,7 @@
 				"": ""
 			}
 		},
-		"ove-cardReg": {
+		"<%= prefix %>": {
 			"js": {
 				"": {
 					"src": "",
@@ -112,26 +112,23 @@
 				"": ""
 			}
 		},
-		"<%= prefix %>": {
+		"FORM": {
 			"js": {
-				"": {
-					"src": "",
-					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"spinner-circle": {
-			"js": {
+				"validator": {
+					"src": "bower_components/validator-js/validator.min.js",
+					"container": "footer/libs"
+				},
+				"FORM-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--FORM/_FORM-script.js",
+					"container": "footer/init/init"
+				},
 				"lib": {
-					"src": "bower_components/please-wait/build/please-wait.min.js",
-					"container": "footer/top/preloader"
+					"src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
+					"container": "footer/libs"
 				},
 				"init": {
-					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
-					"container": "footer/top/preloader"
+					"src": "dev/MODULES/PROJECT MODULES/--owlSlider/owlSlider.js",
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
@@ -171,35 +168,23 @@
 				"": ""
 			}
 		},
-		"FORM": {
-			"js": {
-				"validator": {
-					"src": "bower_components/validator-js/validator.min.js",
-					"container": "footer/libs"
-				},
-				"FORM-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--FORM/_FORM-script.js",
-					"container": "footer/init/init"
-				},
-				"lib": {
-					"src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--owlSlider/owlSlider.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"hero_video": {
 			"js": {
 				"hero_video-script": {
 					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
 					"container": "footer/init",
 					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"ove-pagination": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "false"
 				}
 			},
 			"css": {
@@ -239,11 +224,49 @@
 				"": ""
 			}
 		},
+		"ove-cardReg": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"JQ": {
 			"js": {
 				"jquery": {
 					"src": "bower_components/jquery/dist/jquery.min.js",
 					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"styckyHeader": {
+			"js": {
+				"styckyHeader-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
+					"container": "footer/init/init",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"spinner-circle": {
+			"js": {
+				"lib": {
+					"src": "bower_components/please-wait/build/please-wait.min.js",
+					"container": "footer/top/preloader"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
+					"container": "footer/top/preloader"
 				}
 			},
 			"css": {
@@ -261,18 +284,6 @@
 					"src": "bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js",
 					"container": "footer/libsExts/",
 					"type": "lib"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"styckyHeader": {
-			"js": {
-				"styckyHeader-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
-					"container": "footer/init/init",
-					"type": "init"
 				}
 			},
 			"css": {
@@ -306,7 +317,7 @@
 	"siteWidth": "1240px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
@@ -455,18 +466,6 @@
 			}
 		}
 	},
-	"breadcrumbs": {
-		"1": "1"
-	},
-	"catalogItem": {
-		"catalogItem": "1"
-	},
-	"catalogItemsonCatPage": {
-		"catalogItemsonCatPage": "1"
-	},
-	"catalogMenu": {
-		"catalogMenu": "1"
-	},
 	"FORM": {
 		"TITLE": "Быть в курсе последних акций и новостей",
 		"action": "/",
@@ -505,8 +504,23 @@
 			}
 		}
 	},
+	"breadcrumbs": {
+		"1": "1"
+	},
+	"catalogItem": {
+		"catalogItem": "1"
+	},
+	"catalogItemsonCatPage": {
+		"catalogItemsonCatPage": "1"
+	},
+	"catalogMenu": {
+		"catalogMenu": "1"
+	},
 	"hero_video": {
 		"hero_video": "1"
+	},
+	"ove-pagination": {
+		"ove-pagination": "1"
 	},
 	"oveFeatures": {
 		"oveFeatures": "1"
@@ -7358,6 +7372,6 @@
 		"gridSize": 16
 	},
 	"externalSets": [],
-	"blueprint": "FORM",
+	"blueprint": "ove-pagination",
 	"izolate": "false"
 }

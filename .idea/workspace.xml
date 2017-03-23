@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a405dd0-215a-4030-b1ad-1ee92d874110" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utilities/htmlToPug/inderx.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blueprint/blueprint.json" afterPath="$PROJECT_DIR$/blueprint/blueprint.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blueprint/index.html" afterPath="$PROJECT_DIR$/blueprint/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blueprint/main.css" afterPath="$PROJECT_DIR$/blueprint/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.json" afterPath="$PROJECT_DIR$/data.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/MODULES/_modules.scss" afterPath="$PROJECT_DIR$/dev/MODULES/_modules.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/call.html" afterPath="$PROJECT_DIR$/dist/call.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/cardHolder.html" afterPath="$PROJECT_DIR$/dist/cardHolder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/cart.html" afterPath="$PROJECT_DIR$/dist/cart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/item.html" afterPath="$PROJECT_DIR$/dist/item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/mixins/module_includer.pug" afterPath="$PROJECT_DIR$/dev/templates/mixins/module_includer.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/main.css" afterPath="$PROJECT_DIR$/dist/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
@@ -125,19 +122,28 @@
       <file leaf-file-name="_project.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/scss/_project.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
+            <state relative-caret-position="15">
               <caret line="225" column="18" lean-forward="false" selection-start-line="225" selection-start-column="18" selection-end-line="225" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category.pug" pinned="false" current-in-tab="true">
+      <file leaf-file-name="category.pug" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="44" lean-forward="false" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
-              <folding />
+            <state relative-caret-position="135">
+              <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+              <folding>
+                <marker date="1490280105000" expanded="true" signature="128:565" ph="..." />
+                <marker date="1490280105000" expanded="true" signature="145:565" ph="..." />
+                <marker date="1490280105000" expanded="true" signature="151:452" ph="..." />
+                <marker date="1490280105000" expanded="true" signature="157:452" ph="..." />
+                <marker date="1490280105000" expanded="true" signature="435:452" ph="..." />
+                <marker date="1490280105000" expanded="true" signature="457:522" ph="..." />
+                <marker date="1490280105000" expanded="true" signature="490:522" ph="..." />
+                <marker date="1490280105000" expanded="true" signature="529:565" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,8 +151,8 @@
       <file leaf-file-name="item.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/item.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16181">
-              <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -155,8 +161,81 @@
       <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--sideBar/_mixin.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="15">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.php" pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/catalog/oveMobile/bitrix/catalog.section/.default/template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="52" column="21" lean-forward="true" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="section.php" pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/eshop/components/bitrix/catalog/feauture/section.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1094">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sections.php" pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/eshop/components/bitrix/catalog/feauture/sections.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1254">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="result_modifier.php" pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/eshop/components/bitrix/catalog/feauture/bitrix/catalog.section/.default/result_modifier.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="479" column="1" lean-forward="false" selection-start-line="479" selection-start-column="1" selection-end-line="479" selection-end-column="1" />
+              <folding>
+                <element signature="e#3#35#0#PHP" expanded="true" />
+                <marker date="0" expanded="true" signature="311:523" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="component.php" pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/components/bitrix/system.pagenavigation/component.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1500">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.php" pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/components/bitrix/system.pagenavigation/templates/visual/template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_mixin.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--ove-pagination/_mixin.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -165,78 +244,78 @@
       <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="558" column="0" lean-forward="false" selection-start-line="558" selection-start-column="0" selection-end-line="558" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="1138" column="31" lean-forward="true" selection-start-line="1138" selection-start-column="31" selection-end-line="1138" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inderx.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utilities/htmlToPug/inderx.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/index.pug">
+        <entry file="file://$PROJECT_DIR$/utilities/htmlToPug/index.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="45">
+              <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="24" column="45" lean-forward="false" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cart.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/cart.html">
+      <file leaf-file-name="index.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utilities/htmlToPug/pr/index.pug">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_elements.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/_elements.pug">
+      <file leaf-file-name="inderx.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utilities/htmlToPug/pr/inderx.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+            <state relative-caret-position="45">
+              <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/category.php">
+      <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--ove-pagination/_mixin.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="405">
+              <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mobile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/scripts/mobile.js">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="495">
+              <caret line="33" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="2704" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template_styles.css" pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/template_styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="2677" column="21" lean-forward="false" selection-start-line="2677" selection-start-column="21" selection-end-line="2677" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -249,10 +328,10 @@
       <list>
         <option value="AWS CloudFormation Template" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Empty Mind Map" />
-        <option value="Pug File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Pug File" />
       </list>
     </option>
   </component>
@@ -282,7 +361,8 @@
       <find>nav_</find>
       <find>1%</find>
       <find>side</find>
-      <find>pug</find>
+      <find>NAV_STRING</find>
+      <find>bx</find>
     </findStrings>
     <replaceStrings>
       <replace>mobile</replace>
@@ -291,18 +371,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--follow-tags" />
-        <option name="title" value="Current Branch" />
-      </GitPushTagMode>
+      <GitPushTagMode />
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--owlGoodsSlider/_mixin.scss" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug" />
-        <option value="$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--toCart/toCart.js" />
         <option value="$PROJECT_DIR$/dev/scss/ANIMATION SYSTEM/_animation.scss" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/sale.bestsellers/OVE/script.js" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/sale.bestsellers/OVE/style.css" />
@@ -316,6 +390,7 @@
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/menu/bottom_menu/style.css" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/menu/bottom_menu/template.php" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/menu/.default/template.php" />
+        <option value="$PROJECT_DIR$/dist/index.html" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/mobile/index.php" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/catalog/oveMobile/bitrix/catalog.section/.default/_template.php" />
         <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--catalogItemsonCatPage/_mixin.scss" />
@@ -328,29 +403,31 @@
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/catalog/oveMobile/element.php" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/catalog/oveMobile/section_horizontal.php" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/catalog/oveMobile/section_vertical.php" />
-        <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/catalog/oveMobile/bitrix/catalog.section/.default/template.php" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/mobile/catalog/index.php" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/catalog/oveMobile/bitrix/catalog.section.list/.default/style.css" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/catalog/oveMobile/bitrix/catalog.element/.default/style.css" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/index.php" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/eshop/header.php" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/stock/header.php" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/catalog/oveMobile/bitrix/catalog.element/.default/template.php" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/catalog/oveMobile/bitrix/catalog.section.list/.default/template.php" />
+        <option value="$PROJECT_DIR$/dist/category.html" />
+        <option value="$PROJECT_DIR$/dist/item.html" />
         <option value="$PROJECT_DIR$/dist/main.css" />
         <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--sideBar/_mixin.scss" />
         <option value="$PROJECT_DIR$/dev/scss/_project.scss" />
-        <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/template_styles.css" />
         <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/header.php" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/index.pug" />
-        <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug" />
-        <option value="$PROJECT_DIR$/dist/item.html" />
-        <option value="$PROJECT_DIR$/dist/cart.html" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug" />
-        <option value="$PROJECT_DIR$/dist/category.html" />
+        <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/eshop/components/bitrix/catalog/feauture/bitrix/catalog.section/.default/result_modifier.php" />
+        <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/eshop/components/bitrix/catalog/feauture/bitrix/catalog.section/.default/template.php" />
+        <option value="$PROJECT_DIR$/utilities/htmlToPug/index.pug" />
+        <option value="$PROJECT_DIR$/utilities/htmlToPug/index.html" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/dist/category.php" />
+        <option value="$PROJECT_DIR$/utilities/htmlToPug/inderx.html" />
+        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--ove-pagination/_mixin.pug" />
+        <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/components/bitrix/catalog/oveMobile/bitrix/catalog.section/.default/template.php" />
+        <option value="$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--ove-pagination/_mixin.scss" />
+        <option value="&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile/template_styles.css" />
       </list>
     </option>
   </component>
@@ -574,10 +651,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1684" />
-    <option name="height" value="1026" />
+    <option name="x" value="15" />
+    <option name="y" value="35" />
+    <option name="width" value="1920" />
+    <option name="height" value="979" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -692,8 +769,22 @@
               <option name="myItemId" value="dev" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MODULES" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -711,37 +802,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="MODULES" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PAGESYSTEM" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PAGESYSTEM" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PAGES" />
+              <option name="myItemId" value="PROJECT MODULES" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -759,29 +824,15 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="MODULES" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PAGESYSTEM" />
+              <option name="myItemId" value="PROJECT MODULES" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="LAYOUT" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kit" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
+              <option name="myItemId" value="--ove-pagination" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -812,6 +863,13 @@
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utilities/htmlToPug" />
+      <recent name="$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons" />
+      <recent name="$PROJECT_DIR$/dev/SOURCE_FABRIC/STORRAGE" />
+      <recent name="$PROJECT_DIR$/projectboard" />
+      <recent name="$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/dist/scripts" />
       <recent name="$PROJECT_DIR$/dist/icons" />
@@ -819,13 +877,125 @@
       <recent name="$PROJECT_DIR$/dev/ELEMENTS/ICONS" />
       <recent name="$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/oveIcons" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons" />
-      <recent name="$PROJECT_DIR$/dev/SOURCE_FABRIC/STORRAGE" />
-      <recent name="$PROJECT_DIR$/projectboard" />
-      <recent name="$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER" />
-      <recent name="$PROJECT_DIR$/dev/SOURCE_FABRIC" />
-    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/blueprint/main.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/data.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/MODULES/_modules.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/main.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/gulpfile.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/package.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/projectboard/main.css</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/category.html</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Gulp.js.START QUANT">
     <configuration default="false" name="concat-modules-and-mixes" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
@@ -834,6 +1004,17 @@
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
         <task>concat-modules-and-mixes</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="START QUANT" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>START QUANT</task>
       </tasks>
       <arguments />
       <envs />
@@ -872,17 +1053,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="START QUANT" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
-      <tasks>
-        <task>START QUANT</task>
-      </tasks>
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -916,7 +1086,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
+      <node-interpreter>/usr/local/bin/node</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -1194,15 +1364,15 @@
       <item index="19" class="java.lang.String" itemvalue="Gulp.js.PAGESYSTEM" />
       <item index="20" class="java.lang.String" itemvalue="Gulp.js.splitter" />
       <item index="21" class="java.lang.String" itemvalue="Gulp.js.concat-modules-and-mixes" />
-      <item index="22" class="java.lang.String" itemvalue="Gulp.js.concat-elements" />
-      <item index="23" class="java.lang.String" itemvalue="Gulp.js.SCRIPT BUILDER" />
-      <item index="24" class="java.lang.String" itemvalue="Gulp.js.blueprint-wright-json" />
-      <item index="25" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
+      <item index="22" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
+      <item index="23" class="java.lang.String" itemvalue="Gulp.js.concat-elements" />
+      <item index="24" class="java.lang.String" itemvalue="Gulp.js.SCRIPT BUILDER" />
+      <item index="25" class="java.lang.String" itemvalue="Gulp.js.blueprint-wright-json" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
-        <item index="1" class="java.lang.String" itemvalue="Gulp.js.concat-modules-and-mixes" />
+        <item index="0" class="java.lang.String" itemvalue="Gulp.js.concat-modules-and-mixes" />
+        <item index="1" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
         <item index="2" class="java.lang.String" itemvalue="Gulp.js.concat-elements" />
         <item index="3" class="java.lang.String" itemvalue="Gulp.js.blueprint-wright-json" />
         <item index="4" class="java.lang.String" itemvalue="Gulp.js.SCRIPT BUILDER" />
@@ -1332,8 +1502,8 @@
       <workItem from="1489751181174" duration="9715000" />
       <workItem from="1489911659991" duration="19393000" />
       <workItem from="1489998919014" duration="16572000" />
-      <workItem from="1490089510360" duration="28828000" />
-      <workItem from="1490205482529" duration="5494000" />
+      <workItem from="1490089510360" duration="29140000" />
+      <workItem from="1490260324864" duration="11206000" />
     </task>
     <task id="LOCAL-00001" summary="workspace commit">
       <created>1479982952535</created>
@@ -1587,11 +1757,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490197816166</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Pre Alpha 0.0.698">
+      <created>1490197981863</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1490197981863</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1065429000" />
+    <option name="totallyTimeSpent" value="1071453000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1603,24 +1780,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1684" height="1026" extended-state="0" />
-    <editor active="true" />
+    <frame x="15" y="35" width="1920" height="979" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3263158" sideWeight="0.4978701" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2015855" sideWeight="0.58506733" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30760235" sideWeight="0.49361023" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.3282887" sideWeight="0.42105263" order="4" side_tool="false" content_ui="tabs" x="958" y="369" width="579" height="369" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13333334" sideWeight="0.41493267" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19852035" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15967941" sideWeight="0.4853801" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="CSS Styles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15967941" sideWeight="0.5146199" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3059096" sideWeight="0.49361023" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.3282887" sideWeight="0.42105263" order="4" side_tool="false" content_ui="tabs" x="925" y="350" width="444" height="400" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13472706" sideWeight="0.41493267" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20255864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18923241" sideWeight="0.49012777" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18923241" sideWeight="0.50987226" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30597016" sideWeight="0.22237569" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889125" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.374269" sideWeight="0.49265605" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37427577" sideWeight="0.49265605" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24791418" sideWeight="0.35224587" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.28797084" sideWeight="0.35236937" order="3" side_tool="false" content_ui="tabs" x="1175" y="737" width="239" height="217" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44795322" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1700,8 +1876,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gulpfile.js</url>
-          <line>557</line>
-          <properties />
+          <line>559</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/gulpfile.js</url>
+          <line>508</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>remoteDeploymentFS://&lt;089dc67d-8d7e-4171-b7ad-e633e9742415&gt;/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/eshop/components/bitrix/catalog/feauture/bitrix/catalog.section/.default/result_modifier.php</url>
+          <line>1</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
@@ -1722,6 +1907,13 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/microControls/libs.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/microControls/microControls.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
@@ -1852,6 +2044,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="223" column="9" lean-forward="false" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1932,6 +2125,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="986" column="0" lean-forward="true" selection-start-line="986" selection-start-column="0" selection-end-line="989" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--catalogItemsonCatPage/_mixin.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1943,7 +2143,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1962,123 +2161,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--sideBar/_mixin.scss">
+    <entry file="file://$PROJECT_DIR$/dist/item.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/scss/_project.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
+        <state relative-caret-position="15">
           <caret line="225" column="18" lean-forward="false" selection-start-line="225" selection-start-column="18" selection-end-line="225" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2673" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/vd18zpi2virusdie.php" />
-    <entry file="file://$PROJECT_DIR$/bower_components/normalize-scss/fork-versions/typey-chroma-kss/base/_normalize.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/item.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16181">
-          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/cart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="904" column="28" lean-forward="false" selection-start-line="904" selection-start-column="28" selection-end-line="904" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/index.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/_elements.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="45" lean-forward="false" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="558" column="0" lean-forward="false" selection-start-line="558" selection-start-column="0" selection-end-line="558" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scripts/mobile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/PAGES/category.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="44" lean-forward="false" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+        <state relative-caret-position="135">
+          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding>
+            <marker date="1490280105000" expanded="true" signature="128:565" ph="..." />
+            <marker date="1490280105000" expanded="true" signature="145:565" ph="..." />
+            <marker date="1490280105000" expanded="true" signature="151:452" ph="..." />
+            <marker date="1490280105000" expanded="true" signature="157:452" ph="..." />
+            <marker date="1490280105000" expanded="true" signature="435:452" ph="..." />
+            <marker date="1490280105000" expanded="true" signature="457:522" ph="..." />
+            <marker date="1490280105000" expanded="true" signature="490:522" ph="..." />
+            <marker date="1490280105000" expanded="true" signature="529:565" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="95" column="58" lean-forward="false" selection-start-line="95" selection-start-column="58" selection-end-line="95" selection-end-column="142" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scripts/vd18zpi2virusdie.php" />
+    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--sideBar/_mixin.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="1138" column="31" lean-forward="true" selection-start-line="1138" selection-start-column="31" selection-end-line="1138" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/htmlToPug/pr/inderx.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/htmlToPug/inderx.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--ove-pagination/_mixin.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/htmlToPug/pr/index.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/htmlToPug/index.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="2704" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/MODULES/PROJECT MODULES/--ove-pagination/_mixin.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
           <folding />
         </state>
       </provider>

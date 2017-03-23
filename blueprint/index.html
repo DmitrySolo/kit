@@ -8,25 +8,26 @@
     <div class="blueprint_panel"></div>
     <div class="canvas">
       <div class="canvas__border">
-        <div class="canvas__blueprint container"><!-- split modules/FORM -->
-          <div class="FORM">
-            <!--h3.form__title=page.title-->
-            <form class="forme" method="get" name="subscribe" action="/" onsubmit="return validate()">
-              <p class="form__line">
-                <label for="name">Ваше имя<span class="form__validateMessage" id="js_val_name"></span><br/>
-                  <input class="form--name" type="text" name="name" value="" placeholder="" id=""/>
-                </label>
-              </p>
-              <p class="form__line">
-                <label for="email">Электронный ящик!<span class="form__validateMessage" id="js_val_email"></span><br/>
-                  <input class="form--mail" type="text" name="email" value="" placeholder="" id=""/>
-                </label>
-              </p>
-              <p class="form__line">
-                <input class="info__section__more" type="submit" value="ОТПРАВИТЬ" id=""/>
-                <div class="img_container--align_v form_img_ctn"><img src="images/wild_oliva.png"/></div>
-              </p>
-            </form>
+        <div class="canvas__blueprint container"><!-- split modules/ove-pagination -->
+          <div class="ove-pagination">
+            <div class="bx_pagination_bottom">
+              <div class="bx_pagination_section_one">
+                <div class="bx_pg_section pg_pagination_num">
+                  <div class="bx_pagination_page"><span class="bx_pg_text">Страницы:</span>
+                    <ul>
+                      <li>&larr;</li>
+                      <li class="bx_active" title="Текущая страница">1</li>
+                      <li><a href="/mobile/catalog/?SECTION_ID=123&amp;PAGEN_1=5&amp;SIZEN_1=60" title="Страница 2">2</a></li>
+                      <li><a href="/mobile/catalog/?SECTION_ID=123&amp;PAGEN_1=4&amp;SIZEN_1=60" title="Страница 3">3</a></li>
+                      <li><a href="/mobile/catalog/?SECTION_ID=123&amp;PAGEN_1=3&amp;SIZEN_1=60" title="Страница 4">4</a></li>
+                      <li><a href="/mobile/catalog/?SECTION_ID=123&amp;PAGEN_1=2&amp;SIZEN_1=60" title="Страница 5">5</a></li>
+                      <li><a href="/mobile/catalog/?SECTION_ID=123&amp;PAGEN_1=1&amp;SIZEN_1=60" title="Страница 6">6</a></li>
+                      <li><a href="/mobile/catalog/?SECTION_ID=123&amp;PAGEN_1=7&amp;SIZEN_1=60" title="Следующая страница">&rarr;​</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
