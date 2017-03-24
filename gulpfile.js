@@ -37,6 +37,7 @@ var svgmin = require('gulp-svgmin');
 var pugPHPFilter = require('pug-php-filter');
 var phplint = require('gulp-phplint');
 const html2pug = require('gulp-html2pug');
+var sftp = require('gulp-sftp');
 
 
 gulp.task('phplint', function phplint() {
@@ -185,6 +186,7 @@ gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-sc
     gulp.watch(['dev/MODULES/**/*.pug','dev/templates/**/*.pug','dev/MIXES/_mixes.pug','!dev/templates/PAGESYSTEM/SCRIPTS-STYLES/**/*'],function(){ runSequence('views', 'compile-blueprint-view') });
     gulp.watch(['blueprint/*.pug'],['compile-blueprint-view']);
     gulp.watch(['blueprint/*.scss'],['compile-blueprint-sass']);
+    gulp.watch(['dist/main.css'],['deploycss']);
 
     gulp.watch(['dev/MIXES/*/*.pug'],['concat-modules-and-mixes']);
     gulp.watch(['dev/**/*.json','blueprint/*json'],function(){ runSequence('mergeJson','views','compile-blueprint-view') });
@@ -1141,4 +1143,14 @@ gulp.task('u-h2p', function() {
     return gulp.src('utilities/htmlToPug/inderx.html')
         .pipe(html2pug())
         .pipe(gulp.dest('utilities/htmlToPug/pr'));
+});
+gulp.task('deploycss', function () {
+    return gulp.src('dist/main.css')
+        .pipe(rename('template_styles.css'))
+        .pipe(sftp({
+            host: 'ove-cfo.ru',
+            user: 'podpolkovnyk',
+            pass: 'xM9KsjsJ',
+            remotePath:'/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile'
+        }));
 });

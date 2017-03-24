@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Call</title>
+    <title>Категория</title>
     <meta name="description" content="This is test framework application">
     <meta name="keywords" content="application, test , hurray!!!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -893,60 +893,260 @@
           </section>
         </div>
       </div>
-    </header><!-- split call.html -->
+    </header><!-- split category.html -->
     <div class="ove-main">
       <div class="ove-shade"></div>
-      <div class="ove-callPage">
-        <h2>Воронеж</h2>
-        <ul class="ove-callList">
-          <li class="ove-callList__item">
-            <svg class="icon ">
-              <use xlink:href="#mobile"></use>
-            </svg><a href="tel: +74732334817,106">Общий многоканальный</a>
-          </li>
-          <li class="ove-callList__item">
-            <svg class="icon ">
-              <use xlink:href="#mobile"></use>
-            </svg><a href="tel: +74732334817,151">Торговый зал "Сантехника N1"</a>
-          </li>
-          <li class="ove-callList__item">
-            <svg class="icon ">
-              <use xlink:href="#mobile"></use>
-            </svg><a href="tel: +74732334817,151">Торговый зал "Сантехника N2"</a>
-          </li>
-          <li class="ove-callList__item">
-            <svg class="icon ">
-              <use xlink:href="#mobile"></use>
-            </svg><a href="tel: +74732334817,151">Торговый зал "Электрика"</a>
-          </li>
-          <li class="ove-callList__item">
-            <svg class="icon ">
-              <use xlink:href="#mobile"></use>
-            </svg><a href="tel: +74732334817,151">Торговый зал "VIP Сантехника"</a>
-          </li>
-          <li class="ove-callList__item">
-            <svg class="icon ">
-              <use xlink:href="#mobile"></use>
-            </svg><a href="tel: +74732334817,151">Оптовый отдел</a>
-          </li>
-          <li class="ove-callList__item">
-            <svg class="icon ">
-              <use xlink:href="#mobile"></use>
-            </svg><a href="tel: +74732334817,151">Строительный отдел</a>
-          </li>
-        </ul>
-        <h2>Белгород</h2>
-        <ul class="ove-callList">
-          <li class="ove-callList__item"><a href="tel: +74732334817,106">Андрейка</a></li>
-          <li class="ove-callList__item"><a href="tel: +74732334817,151">Я</a></li>
-          <li class="ove-callList__item"><a href="tel: +74732334817,151">Общий многоканальный</a></li>
-          <li class="ove-callList__item"><a href="tel: +74732334817,106">Андрейка</a></li>
-          <li class="ove-callList__item"><a href="tel: +74732334817,151">Я</a></li>
-          <li class="ove-callList__item"><a href="tel: +74732334817,151">Общий многоканальный</a></li>
-          <li class="ove-callList__item"><a href="tel: +74732334817,106">Андрейка</a></li>
-          <li class="ove-callList__item"><a href="tel: +74732334817,151">Я</a></li>
-          <li class="ove-callList__item"><a href="tel: +74732334817,151">Общий многоканальный</a></li>
-        </ul>
+      <div class="container">
+        <nav>
+          <ul class="ove-category__list"><?php if($a==2): ?>
+            <li class="ove-category__prevWrapper"><a class="ove-category ove-category__prev" href="#">
+                <svg class="icon ">
+                  <use xlink:href="#left"></use>
+                </svg><span><?php =$a ?></span></a></li><?php endif; ?>
+          </ul>
+          <li><a class="ove-category ove-category__next" href="#"><span>Ванны Угловые</span>
+              <svg class="icon ">
+                <use xlink:href="#right"></use>
+              </svg></a></li>
+        </nav>
+        <h3 class="ove-category__current text">
+          <svg class="icon ">
+            <use xlink:href="#down"></use>
+          </svg>
+        </h3>
+        <div class="row"><!-- split modules/catalogItemsonCatPage -->
+          <div class="container">
+            <div class="col-12-m">
+              <div class="catalogItem row">
+                <div class="col-6-m">
+                  <div class="catalogItem__imgCtn"><a href="#"><img class="catalogItem__img" src="images/catalog/1.jpg"/></a></div>
+                  <div class="catalogItem__title"><a href="/#">Набор разделочных досок Joseph Joseph Index Mini 60098 графит</a></div>
+                </div>
+                <div class="col-6-m">
+                  <div class="catalogItem__quntCheck"><span class="catalogItem__quntCheck__marker"></span><span class="catalogItem__quntCheck__titl">В наличии</span></div>
+                  <div class="catalogItem__priceAndBuy__price"><span>30 410Р</span></div>
+                  <div class="catalogItem__priceAndBuy__buy">
+                    <button class="toCart">
+                      <svg class="icon ">
+                        <use xlink:href="#cart"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="col-12-m">
+              <div class="catalogItem row">
+                <div class="col-6-m">
+                  <div class="catalogItem__imgCtn"><a href="#"><img class="catalogItem__img" src="images/catalog/2.jpg"/></a></div>
+                  <div class="catalogItem__title"><a href="/#">Набор разделочных досок Joseph Joseph Index Mini 60098 графит</a></div>
+                </div>
+                <div class="col-6-m">
+                  <div class="catalogItem__quntCheck"><span class="catalogItem__quntCheck__marker"></span><span class="catalogItem__quntCheck__titl">В наличии</span></div>
+                  <div class="catalogItem__priceAndBuy__price"><span>30 410Р</span></div>
+                  <div class="catalogItem__priceAndBuy__buy">
+                    <button class="toCart">
+                      <svg class="icon ">
+                        <use xlink:href="#cart"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="col-12-m">
+              <div class="catalogItem row">
+                <div class="col-6-m">
+                  <div class="catalogItem__imgCtn"><a href="#"><img class="catalogItem__img" src="images/catalog/3.jpg"/></a></div>
+                  <div class="catalogItem__title"><a href="/#">Набор разделочных досок Joseph Joseph Index Mini 60098 графит</a></div>
+                </div>
+                <div class="col-6-m">
+                  <div class="catalogItem__quntCheck"><span class="catalogItem__quntCheck__marker"></span><span class="catalogItem__quntCheck__titl">В наличии</span></div>
+                  <div class="catalogItem__priceAndBuy__price"><span>30 410Р</span></div>
+                  <div class="catalogItem__priceAndBuy__buy">
+                    <button class="toCart">
+                      <svg class="icon ">
+                        <use xlink:href="#cart"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="col-12-m">
+              <div class="catalogItem row">
+                <div class="col-6-m">
+                  <div class="catalogItem__imgCtn"><a href="#"><img class="catalogItem__img" src="images/catalog/4.jpg"/></a></div>
+                  <div class="catalogItem__title"><a href="/#">Набор разделочных досок Joseph Joseph Index Mini 60098 графит</a></div>
+                </div>
+                <div class="col-6-m">
+                  <div class="catalogItem__quntCheck"><span class="catalogItem__quntCheck__marker"></span><span class="catalogItem__quntCheck__titl">В наличии</span></div>
+                  <div class="catalogItem__priceAndBuy__price"><span>30 410Р</span></div>
+                  <div class="catalogItem__priceAndBuy__buy">
+                    <button class="toCart">
+                      <svg class="icon ">
+                        <use xlink:href="#cart"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="col-12-m">
+              <div class="catalogItem row">
+                <div class="col-6-m">
+                  <div class="catalogItem__imgCtn"><a href="#"><img class="catalogItem__img" src="images/catalog/5.jpg"/></a></div>
+                  <div class="catalogItem__title"><a href="/#">Набор разделочных досок Joseph Joseph Index Mini 60098 графит</a></div>
+                </div>
+                <div class="col-6-m">
+                  <div class="catalogItem__quntCheck"><span class="catalogItem__quntCheck__marker"></span><span class="catalogItem__quntCheck__titl">В наличии</span></div>
+                  <div class="catalogItem__priceAndBuy__price"><span>30 410Р</span></div>
+                  <div class="catalogItem__priceAndBuy__buy">
+                    <button class="toCart">
+                      <svg class="icon ">
+                        <use xlink:href="#cart"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="col-12-m">
+              <div class="catalogItem row">
+                <div class="col-6-m">
+                  <div class="catalogItem__imgCtn"><a href="#"><img class="catalogItem__img" src="images/catalog/6.jpg"/></a></div>
+                  <div class="catalogItem__title"><a href="/#">Набор разделочных досок Joseph Joseph Index Mini 60098 графит</a></div>
+                </div>
+                <div class="col-6-m">
+                  <div class="catalogItem__quntCheck"><span class="catalogItem__quntCheck__marker"></span><span class="catalogItem__quntCheck__titl">В наличии</span></div>
+                  <div class="catalogItem__priceAndBuy__price"><span>30 410Р</span></div>
+                  <div class="catalogItem__priceAndBuy__buy">
+                    <button class="toCart">
+                      <svg class="icon ">
+                        <use xlink:href="#cart"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="col-12-m">
+              <div class="catalogItem row">
+                <div class="col-6-m">
+                  <div class="catalogItem__imgCtn"><a href="#"><img class="catalogItem__img" src="images/catalog/7.jpg"/></a></div>
+                  <div class="catalogItem__title"><a href="/#">Набор разделочных досок Joseph Joseph Index Mini 60098 графит</a></div>
+                </div>
+                <div class="col-6-m">
+                  <div class="catalogItem__quntCheck"><span class="catalogItem__quntCheck__marker"></span><span class="catalogItem__quntCheck__titl">В наличии</span></div>
+                  <div class="catalogItem__priceAndBuy__price"><span>30 410Р</span></div>
+                  <div class="catalogItem__priceAndBuy__buy">
+                    <button class="toCart">
+                      <svg class="icon ">
+                        <use xlink:href="#cart"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="col-12-m">
+              <div class="catalogItem row">
+                <div class="col-6-m">
+                  <div class="catalogItem__imgCtn"><a href="#"><img class="catalogItem__img" src="images/catalog/8.jpg"/></a></div>
+                  <div class="catalogItem__title"><a href="/#">Набор разделочных досок Joseph Joseph Index Mini 60098 графит</a></div>
+                </div>
+                <div class="col-6-m">
+                  <div class="catalogItem__quntCheck"><span class="catalogItem__quntCheck__marker"></span><span class="catalogItem__quntCheck__titl">В наличии</span></div>
+                  <div class="catalogItem__priceAndBuy__price"><span>30 410Р</span></div>
+                  <div class="catalogItem__priceAndBuy__buy">
+                    <button class="toCart">
+                      <svg class="icon ">
+                        <use xlink:href="#cart"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="col-12-m">
+              <div class="catalogItem row">
+                <div class="col-6-m">
+                  <div class="catalogItem__imgCtn"><a href="#"><img class="catalogItem__img" src="images/catalog/9.jpg"/></a></div>
+                  <div class="catalogItem__title"><a href="/#">Набор разделочных досок Joseph Joseph Index Mini 60098 графит</a></div>
+                </div>
+                <div class="col-6-m">
+                  <div class="catalogItem__quntCheck"><span class="catalogItem__quntCheck__marker"></span><span class="catalogItem__quntCheck__titl">В наличии</span></div>
+                  <div class="catalogItem__priceAndBuy__price"><span>30 410Р</span></div>
+                  <div class="catalogItem__priceAndBuy__buy">
+                    <button class="toCart">
+                      <svg class="icon ">
+                        <use xlink:href="#cart"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="col-12-m">
+              <div class="catalogItem row">
+                <div class="col-6-m">
+                  <div class="catalogItem__imgCtn"><a href="#"><img class="catalogItem__img" src="images/catalog/10.jpg"/></a></div>
+                  <div class="catalogItem__title"><a href="/#">Набор разделочных досок Joseph Joseph Index Mini 60098 графит</a></div>
+                </div>
+                <div class="col-6-m">
+                  <div class="catalogItem__quntCheck"><span class="catalogItem__quntCheck__marker"></span><span class="catalogItem__quntCheck__titl">В наличии</span></div>
+                  <div class="catalogItem__priceAndBuy__price"><span>30 410Р</span></div>
+                  <div class="catalogItem__priceAndBuy__buy">
+                    <button class="toCart">
+                      <svg class="icon ">
+                        <use xlink:href="#cart"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="col-12-m">
+              <div class="catalogItem row">
+                <div class="col-6-m">
+                  <div class="catalogItem__imgCtn"><a href="#"><img class="catalogItem__img" src="images/catalog/11.jpg"/></a></div>
+                  <div class="catalogItem__title"><a href="/#">Набор разделочных досок Joseph Joseph Index Mini 60098 графит</a></div>
+                </div>
+                <div class="col-6-m">
+                  <div class="catalogItem__quntCheck"><span class="catalogItem__quntCheck__marker"></span><span class="catalogItem__quntCheck__titl">В наличии</span></div>
+                  <div class="catalogItem__priceAndBuy__price"><span>30 410Р</span></div>
+                  <div class="catalogItem__priceAndBuy__buy">
+                    <button class="toCart">
+                      <svg class="icon ">
+                        <use xlink:href="#cart"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div><!-- split footer.html -->
       <footer class="styckyFooter hide-d">
         <div class="container">

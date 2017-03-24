@@ -1,0 +1,23 @@
+mixin ove-pagination()
+	<!-- split modules/ove-pagination -->
+	.ove-pagination
+		.bx_pagination_bottom
+			.bx_pagination_section_one
+				.bx_pg_section.pg_pagination_num
+					.bx_pagination_page
+						span.bx_pg_text Страницы:
+						ul
+							li &larr;
+							li.bx_active(title='Текущая страница') 1
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=5&SIZEN_1=60', title='Страница 2') 2
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=4&SIZEN_1=60', title='Страница 3') 3
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=3&SIZEN_1=60', title='Страница 4') 4
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=2&SIZEN_1=60', title='Страница 5') 5
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=1&SIZEN_1=60', title='Страница 6') 6
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=7&SIZEN_1=60', title='Следующая страница') &rarr;​

@@ -1,0 +1,40 @@
+@mixin ove-pagination(){
+	
+.ove-pagination{
+  text-align: center;
+  .bx_pg_text{
+    display: none;
+  }
+  .bx_pagination_bottom {
+
+  padding: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+  }
+  .bx_pg_section {
+    background-color: transparent;
+    height: 100%;
+  }
+
+
+  @include space('component','a','t');
+  .bx_pagination_page li {
+    display: inline-block;
+    @include space('element','tb','r');
+    @include space('component','lr','b');
+    border-radius: 10%;
+    background-color: cs('primary');
+    color: #fff;
+    a {
+      color: #fff;
+
+    }
+    &.bx_active {
+      background-color: cs('accent');
+    }
+    &:first-child,&:last-child{
+      background-color: cs('primary-d');
+    }
+    }
+  }
+}

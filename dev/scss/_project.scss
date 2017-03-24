@@ -218,7 +218,7 @@ Category Page
   display: block;
   text-transform: uppercase;
   font-size: 1.3em;
-  @include space('component', 'tb', 't');
+  @include space('component', 'tb', '');
   @include space('block', 'lr', '');
 
   .icon {
@@ -232,7 +232,7 @@ Category Page
 }
 .ove-category__list {
   position: relative;
-  @include space('element','t','');
+ // @include space('component','t','');
 }
 .ove-category__prev {
   font-size: 16px;
@@ -240,9 +240,10 @@ Category Page
   border-bottom: 1px solid cs('font-l');
   position: fixed;
   z-index: 800;
-  @include space('component', 'tb', '');
-  @include space('block', 'lr', '');
-  margin-top: 0;
+ // @include space('component', 'tb', '');
+  //@include space('block', 'lr', '');
+ top: 5.1em;
+  margin:0;
   right: 0;
   width: 100%;
 
