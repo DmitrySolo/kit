@@ -460,3 +460,82 @@ Item Page
     @include space('element', 'l', '')
   }
 }
+.ove-pageCard__regSteps {
+  p{
+    text-transform: uppercase;
+  }
+}
+.ove-pageCard__regSteps_markers {
+  text-align: center;
+  @include space('module','','b');
+ @include space('component','t','');
+}
+.ove-pageCard__regSteps_marker {
+  display: inline-block;
+  @include space('element','','r');
+  width: 20px;
+  height: 20px;
+  background-color: cs('primary-d');
+  border-radius: 50%;
+  &.active {
+    background-color: #fff;
+  }
+}
+.ove-cart {
+  @include space('component','t','');
+}
+.ove-cart {
+  display: table;
+}
+.ove-cart-tab {
+  display: table-cell;
+  text-align: center;
+  @include space('element','tb','');
+  @include space('component','rl','');
+  span {
+    vertical-align: middle;
+  }
+  &:first-child {
+    border-right: 1px solid cs('bground-d');
+  }
+  &.active {
+    border-top: 1px solid cs('bground-d');
+    background-color: #fff;
+  }
+}
+.ove-cart__item {
+  height: s-height(8,'element');
+  @include space('element','a','');
+  background-color: #fff;
+  border-bottom: solid 1px cs('bground-d');
+  .icon{
+    height: 100%;
+    width: 1em;
+    fill: cs('font-d');
+  }
+}
+.ove-cart__item_Price {
+  display: inline-block;
+  padding: 4px;
+  background-color: cs('bground');
+}
+.ove-cart__item_titlePrice {
+  h6{
+    height: s-height(4,'element');
+    overflow: hidden;
+  }
+}
+.ove-cart__item_img {
+  height: 100%;
+  img{
+    width: 100%;
+    vertical-align: middle;
+    max-height: 100%;
+  }
+}
+.ove-cart__item_img, .ove-cart__item_titlePrice,.ove-cart__item_delete {
+  height: 100%;
+}
+.ove-cart__item_delete {
+  text-align: right;
+}

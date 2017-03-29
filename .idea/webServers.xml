@@ -11,7 +11,7 @@
         </fileTransfer>
       </webServer>
       <webServer id="089dc67d-8d7e-4171-b7ad-e633e9742415" name="OVECFO" url="http://ove-cfo.ru">
-        <fileTransfer host="ove-cfo.ru" port="22" rootFolder="/var/www/podpolkovnyk/data/www/ove-cfo.ru" accessType="SFTP">
+        <fileTransfer host="ove-cfo.ru" port="22" rootFolder="/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
