@@ -65,6 +65,54 @@
 			"dop_class": ""
 		}
 	},
+	"response": "true",
+	"vertical-rhythm": "true",
+	"linkFonts": "true",
+	"assetsFonts": "true",
+	"debug": "false",
+	"production": "false",
+	"body-color": "cs('font')",
+	"header-color": "cs('font-d')",
+	"background-color": "cs('bground')",
+	"LINKED_FONTS_MAP": {
+		"'MAIN'": "('Roboto')"
+	},
+	"element_space": ".4",
+	"component_space": "$element_space*1.618",
+	"module_space": "$component_space*1.618",
+	"block_space": "$module_space*1.618",
+	"body-font": "fs('MAIN'),san-serif",
+	"body-font-weight": "300",
+	"header-font": "fs('MAIN'),san-serif",
+	"header-font-weight": "900",
+	"mobile-font": "16px",
+	"screen-font": "16px",
+	"line-height-ratio": "1.6",
+	"siteWidth": "1240px",
+	"colums": "12",
+	"gutter-width": "1em",
+	"container-styles": "(\n\n)",
+	"siteMinWidth": "900px",
+	"colStyles": {
+		"width": "100%",
+		"float": "left"
+	},
+	"phone-upper-boundary": "600px",
+	"tablet-portrait-upper-boundary": "900px",
+	"tablet-landscape-upper-boundary": "1200px",
+	"desktop-upper-boundary": "1800px",
+	"grid-map": {
+		"mobile": "(prefix",
+		"container": "$siteWidth",
+		"breakpoint": "$desktop-upper-boundary)",
+		"tablet-p": "(prefix",
+		"tablet-l": "(prefix",
+		"mediumScreen": "(prefix",
+		"largeScreen": "(prefix"
+	},
+	"nr-colStyles": {
+		"float": "left"
+	},
 	"LIBS": {
 		"<%=name%>": {
 			"js": {
@@ -89,7 +137,7 @@
 				"": ""
 			}
 		},
-		"ove-cardReg": {
+		"<%= prefix %>": {
 			"js": {
 				"": {
 					"src": "",
@@ -112,26 +160,11 @@
 				"": ""
 			}
 		},
-		"<%= prefix %>": {
+		"ove-cardReg": {
 			"js": {
 				"": {
 					"src": "",
 					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"spinner-circle": {
-			"js": {
-				"lib": {
-					"src": "bower_components/please-wait/build/please-wait.min.js",
-					"container": "footer/top/preloader"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
-					"container": "footer/top/preloader"
 				}
 			},
 			"css": {
@@ -206,6 +239,17 @@
 				"": ""
 			}
 		},
+		"discountMetr": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"ove-pagination": {
 			"js": {
 				"": {
@@ -261,6 +305,21 @@
 				"": ""
 			}
 		},
+		"spinner-circle": {
+			"js": {
+				"lib": {
+					"src": "bower_components/please-wait/build/please-wait.min.js",
+					"container": "footer/top/preloader"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
+					"container": "footer/top/preloader"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"JQ": {
 			"js": {
 				"jquery": {
@@ -301,54 +360,6 @@
 				"": ""
 			}
 		}
-	},
-	"response": "true",
-	"vertical-rhythm": "true",
-	"linkFonts": "true",
-	"assetsFonts": "true",
-	"debug": "false",
-	"production": "false",
-	"body-color": "cs('font')",
-	"header-color": "cs('font-d')",
-	"background-color": "cs('bground')",
-	"LINKED_FONTS_MAP": {
-		"'MAIN'": "('Roboto')"
-	},
-	"element_space": ".4",
-	"component_space": "$element_space*1.618",
-	"module_space": "$component_space*1.618",
-	"block_space": "$module_space*1.618",
-	"body-font": "fs('MAIN'),san-serif",
-	"body-font-weight": "300",
-	"header-font": "fs('MAIN'),san-serif",
-	"header-font-weight": "900",
-	"mobile-font": "16px",
-	"screen-font": "16px",
-	"line-height-ratio": "1.6",
-	"siteWidth": "1240px",
-	"colums": "12",
-	"gutter-width": "1em",
-	"container-styles": "(\n\n)",
-	"siteMinWidth": "900px",
-	"colStyles": {
-		"width": "100%",
-		"float": "left"
-	},
-	"phone-upper-boundary": "600px",
-	"tablet-portrait-upper-boundary": "900px",
-	"tablet-landscape-upper-boundary": "1200px",
-	"desktop-upper-boundary": "1800px",
-	"grid-map": {
-		"mobile": "(prefix",
-		"container": "$siteWidth",
-		"breakpoint": "$desktop-upper-boundary)",
-		"tablet-p": "(prefix",
-		"tablet-l": "(prefix",
-		"mediumScreen": "(prefix",
-		"largeScreen": "(prefix"
-	},
-	"nr-colStyles": {
-		"float": "left"
 	},
 	"menuData1": {
 		"Home": {
@@ -529,6 +540,9 @@
 	},
 	"hero_video": {
 		"hero_video": "1"
+	},
+	"discountMetr": {
+		"discountMetr": "1"
 	},
 	"ove-pagination": {
 		"ove-pagination": "1"
@@ -7386,6 +7400,6 @@
 		"gridSize": 16
 	},
 	"externalSets": [],
-	"blueprint": "ove-pagination",
+	"blueprint": "discountMetr",
 	"izolate": "false"
 }

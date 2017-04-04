@@ -111,6 +111,88 @@
   }
 }
 @include breadcrumbs();
+@mixin catalogMenu(){
+	
+.catalogMenu{
+  position: relative;
+  .catalogMenu__button {
+    display: block;
+    background-color: cs('accent');
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    cursor: pointer;
+    @include a-hover('background-color',(from:0,to:cs('accent-l')),1s,ease);
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      width: 100%;
+      height: 3px;
+      left:0;
+      background-color: cs('accent-d');
+
+    }
+  }
+  .catalogMenu__list {
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    z-index: 6000;
+    box-shadow: 3px 0px 3px silver;
+  }
+  .catalogMenu__list__item {
+    position: relative;
+    @include space('element','tb','');
+    @include space('component','l','');
+    cursor: pointer;
+    font-weight: bold;
+    @include a-hover('background-color',(from:0,to:0),.13s,linear);
+    .angleR {
+      position: absolute;
+      right: 5%;
+    }
+
+  }
+  .catalogMenu__wrapper {
+    position: relative;
+    background-color: #fff;
+    display: none;
+  }
+  .catalogMenu__list--L1{
+    width: 99.8%;
+  }
+  .catalogMenu__list--L2{
+    width: 150%;
+    right: -149.8%;
+    display: none;
+    z-index: 5999;
+  }
+  .catalogMenu__list--L3{
+    width: 150%;
+    right: -299.8%;
+    display: none;
+    z-index: 5998;
+  }
+  .catalogMenu__list__item--active {
+    background-color: darken(cs('bground'),4%);
+
+
+  }
+}
+
+}
+@include catalogMenu();
+@mixin discountMetr(){
+	
+.discountMetr{
+  padding: 20px 10px;
+  background-color: #3f3f3f;
+}}
+@include discountMetr();
 @mixin hero_video(){
 	
 .hero_video{
@@ -201,81 +283,6 @@
   }
 }
 @include ove-pagination();
-@mixin catalogMenu(){
-	
-.catalogMenu{
-  position: relative;
-  .catalogMenu__button {
-    display: block;
-    background-color: cs('accent');
-    position: relative;
-    color: #fff;
-    text-transform: uppercase;
-    height: 70px;
-    line-height: 70px;
-    text-align: center;
-    cursor: pointer;
-    @include a-hover('background-color',(from:0,to:cs('accent-l')),1s,ease);
-    &:after{
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      width: 100%;
-      height: 3px;
-      left:0;
-      background-color: cs('accent-d');
-
-    }
-  }
-  .catalogMenu__list {
-    width: 100%;
-    background-color: #fff;
-    position: absolute;
-    z-index: 6000;
-    box-shadow: 3px 0px 3px silver;
-  }
-  .catalogMenu__list__item {
-    position: relative;
-    @include space('element','tb','');
-    @include space('component','l','');
-    cursor: pointer;
-    font-weight: bold;
-    @include a-hover('background-color',(from:0,to:0),.13s,linear);
-    .angleR {
-      position: absolute;
-      right: 5%;
-    }
-
-  }
-  .catalogMenu__wrapper {
-    position: relative;
-    background-color: #fff;
-    display: none;
-  }
-  .catalogMenu__list--L1{
-    width: 99.8%;
-  }
-  .catalogMenu__list--L2{
-    width: 150%;
-    right: -149.8%;
-    display: none;
-    z-index: 5999;
-  }
-  .catalogMenu__list--L3{
-    width: 150%;
-    right: -299.8%;
-    display: none;
-    z-index: 5998;
-  }
-  .catalogMenu__list__item--active {
-    background-color: darken(cs('bground'),4%);
-
-
-  }
-}
-
-}
-@include catalogMenu();
 @mixin oveFeatures() {
 
   .oveFeatures {
@@ -345,6 +352,78 @@
 
 }
 @include owlSlider();
+@mixin pagination(){
+	
+.pagination{
+  @include space('component','trl','');
+  @include space('block','b','');
+  background-color: #fff;
+
+}
+  .pagination__ctn{
+    padding: 0;
+    text-align: center;
+  }
+  .pagination__ctn__button {
+    list-style: none;
+    display: inline-block;
+    @include space('element','tb','r');
+    @include space('component','rl','');
+    background-color: cs('primary');
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    @include a-hover('background-color',(from:false,to:cs('primary-d')),.3s,ease)
+  }
+  .pagination__ctn__button--current {
+    background-color: cs('accent-l');
+    &:hover{
+      background-color: cs('accent-l');
+    }
+  }
+}
+@include pagination();
+@mixin sergTest(){
+	
+.sergTest{}}
+@include sergTest();
+@mixin sideBar(){
+
+.sideBar{
+  position: fixed;
+  overflow: auto;
+  width: 100%;
+  bottom: 0;
+  left: -100%;
+  z-index: 91000;
+  top: 0;
+  height: 100%;
+  @include space('block','a','');
+  background-color: #fff;
+}
+  .sideBar__menu--personal,.sideBar__menu--catalog {
+    @include space('component','','b')
+  }
+  .sideBar__menu--personal {
+    .sideBar__menu--catalog__item {
+      background-color: cs('bground');
+    }
+  }
+  .sideBar__closer {
+    text-align: right;
+    @include space('block','','b')
+  }
+  .sideBar__menu {
+    height: 100%;
+    font-size: 1.4em;
+  }
+  .sideBar__menu--catalog__item {
+    @include space('element','a','');
+    border-bottom: solid 1px cs('bground-d');
+  }
+}
+@include sideBar();
 @mixin catalogItemsonCatPage(){
   .catalogItem__quntCheck{
     @include space('module','','b');
@@ -463,75 +542,3 @@
   }
 }
 @include catalogItem();
-@mixin pagination(){
-	
-.pagination{
-  @include space('component','trl','');
-  @include space('block','b','');
-  background-color: #fff;
-
-}
-  .pagination__ctn{
-    padding: 0;
-    text-align: center;
-  }
-  .pagination__ctn__button {
-    list-style: none;
-    display: inline-block;
-    @include space('element','tb','r');
-    @include space('component','rl','');
-    background-color: cs('primary');
-    color: #fff;
-    font-size: 16px;
-    font-weight: 900;
-    cursor: pointer;
-    @include a-hover('background-color',(from:false,to:cs('primary-d')),.3s,ease)
-  }
-  .pagination__ctn__button--current {
-    background-color: cs('accent-l');
-    &:hover{
-      background-color: cs('accent-l');
-    }
-  }
-}
-@include pagination();
-@mixin sideBar(){
-
-.sideBar{
-  position: fixed;
-  overflow: auto;
-  width: 100%;
-  bottom: 0;
-  left: -100%;
-  z-index: 91000;
-  top: 0;
-  height: 100%;
-  @include space('block','a','');
-  background-color: #fff;
-}
-  .sideBar__menu--personal,.sideBar__menu--catalog {
-    @include space('component','','b')
-  }
-  .sideBar__menu--personal {
-    .sideBar__menu--catalog__item {
-      background-color: cs('bground');
-    }
-  }
-  .sideBar__closer {
-    text-align: right;
-    @include space('block','','b')
-  }
-  .sideBar__menu {
-    height: 100%;
-    font-size: 1.4em;
-  }
-  .sideBar__menu--catalog__item {
-    @include space('element','a','');
-    border-bottom: solid 1px cs('bground-d');
-  }
-}
-@include sideBar();
-@mixin sergTest(){
-	
-.sergTest{}}
-@include sergTest();

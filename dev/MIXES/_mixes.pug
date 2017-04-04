@@ -1,3 +1,12 @@
+mixin hamburger()
+    .menu-hamburger
+        .menu-hamburger__partsWrap
+            span.menu-hamburger__part.menu-hamburger--top
+            span.menu-hamburger__part.menu-hamburger--middle
+            span.menu-hamburger__part.menu-hamburger--bottom
+
+
+
 mixin hero-title-center(title)
     .heroTitle-ctn
         h1.heroTitle=title
@@ -19,14 +28,5 @@ mixin logo-svg(className,src)
 mixin vertical_centered_image(src,className)
     .img_container--align_v(class=''+className)
         img(src='images/'+src)
-
-
-
-mixin hamburger()
-    .menu-hamburger
-        .menu-hamburger__partsWrap
-            span.menu-hamburger__part.menu-hamburger--top
-            span.menu-hamburger__part.menu-hamburger--middle
-            span.menu-hamburger__part.menu-hamburger--bottom
 
 
