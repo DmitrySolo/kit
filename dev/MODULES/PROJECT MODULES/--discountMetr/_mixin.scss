@@ -1,0 +1,108 @@
+@mixin discountMetr(){
+	
+.discountMetr{
+  padding: 20px 10px;
+  background-color: #3f3f3f;
+  color: #fff;
+  width: 900px;
+  font-size:14px;
+  h6 {
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+}
+.discountMetr__title,.discountMetr__scaleWrapper{
+  display: inline-block;
+  vertical-align: top;
+
+}
+
+  .discountMetr__scaleWrapper{
+    width: 700px;
+  }
+
+  .discountMetr__scale__characters {
+    width: 100%;
+    .icon{
+      margin-left: -7px;
+      height: 2em;
+      width: 2.5em;
+    }
+  }
+  .discountMetr__startPointWrapper {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    background-color: #535353;
+    border-radius: 100%;
+    margin: 0 auto;
+  }
+  .discountMetr__startPoint {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    background-color: #FF4E00;
+    border-radius: 100%;
+    margin-top: -15px;
+    margin-left: -15px;
+  }
+  .discountMetr__scale__wrapper {
+    position: relative;
+    padding-bottom: 20px;
+  }
+  .discountMetr__scale__events {
+    padding: 18px;
+    position: relative;
+    height: 61px;
+  }
+
+
+  .discountMetr__scale__event {
+    position: absolute;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #ffffff;
+
+      .icon{
+        position: absolute;
+        bottom: -21px;
+        width: 13px;
+        left: -12px;
+      }
+
+  }
+
+  .discountMetr__scale__event--250 {
+    left: 102px;
+  }
+  .discountMetr__scale__event--delivery {
+    left: 196px;
+  }
+  .discountMetr__scale__event--500 {
+    left: 354px;
+  }
+  .discountMetr__scale__event--1000 {
+    left: 573px;
+  }
+  .discountMetr__scale_outer {
+    background-color: #504844;
+    position: absolute;
+    left:-43px;
+    height: 10px;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .discountMetr__scale_inner {
+    height: 100%;
+    background-color: #FF4E00;
+    width: 10%;
+  }
+  .discountMetr__scale__marks {
+    position: relative;
+  }
+  .discountMetr__scale__mark {
+    position: absolute;
+  }
+}
