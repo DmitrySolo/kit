@@ -170,9 +170,9 @@
 		},
 		"discountMetr": {
 			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
+				"discountMetr": {
+					"src": "dev/MODULES/PROJECT MODULES/--discountMetr/discountMetr.js",
+					"container": "footer/init/discoUntMetr"
 				}
 			},
 			"css": {
@@ -272,11 +272,12 @@
 				"": ""
 			}
 		},
-		"JQ": {
+		"styckyHeader": {
 			"js": {
-				"jquery": {
-					"src": "bower_components/jquery/dist/jquery.min.js",
-					"container": "footer/libs"
+				"styckyHeader-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
+					"container": "footer/init/init",
+					"type": "init"
 				}
 			},
 			"css": {
@@ -300,12 +301,11 @@
 				"": ""
 			}
 		},
-		"styckyHeader": {
+		"JQ": {
 			"js": {
-				"styckyHeader-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
-					"container": "footer/init/init",
-					"type": "init"
+				"jquery": {
+					"src": "bower_components/jquery/dist/jquery.min.js",
+					"container": "footer/libs"
 				}
 			},
 			"css": {
@@ -360,83 +360,6 @@
 	},
 	"nr-colStyles": {
 		"float": "left"
-	},
-	"FORM": {
-		"TITLE": "Быть в курсе последних акций и новостей",
-		"action": "/",
-		"method": "get",
-		"name": "subscribe",
-		"on_submit": "return validate()",
-		"dop_class": "forme",
-		"submit": {
-			"name": "name",
-			"value": "ОТПРАВИТЬ",
-			"id": "",
-			"dop_class": "info__section__more"
-		},
-		"inputs": {
-			"1": {
-				"type": "text",
-				"label": "Ваше имя",
-				"name": "name",
-				"value": "",
-				"id": "",
-				"dop_class": "form--name",
-				"requared": "true",
-				"placeholder": "",
-				"other_specific": ""
-			},
-			"2": {
-				"type": "text",
-				"label": "Электронный ящик!",
-				"name": "email",
-				"value": "",
-				"id": "",
-				"dop_class": "form--mail",
-				"requared": "true",
-				"placeholder": "",
-				"other_specific": {}
-			}
-		}
-	},
-	"breadcrumbs": {
-		"1": "1"
-	},
-	"catalogItem": {
-		"catalogItem": "1"
-	},
-	"catalogItemsonCatPage": {
-		"catalogItemsonCatPage": "1"
-	},
-	"catalogMenu": {
-		"catalogMenu": "1"
-	},
-	"discountMetr": {
-		"discountMetr": "1"
-	},
-	"hero_video": {
-		"hero_video": "1"
-	},
-	"ove-pagination": {
-		"ove-pagination": "1"
-	},
-	"oveFeatures": {
-		"oveFeatures": "1"
-	},
-	"owlGoodsSlider": {
-		"owlGoodsSlider": "1"
-	},
-	"owlSlider": {
-		"owlSlider": "1"
-	},
-	"pagination": {
-		"pagination": "1"
-	},
-	"sergTest": {
-		"sergTest": "1"
-	},
-	"sideBar": {
-		"sideBar": "1"
 	},
 	"menuData1": {
 		"Home": {
@@ -564,6 +487,83 @@
 				}
 			}
 		}
+	},
+	"FORM": {
+		"TITLE": "Быть в курсе последних акций и новостей",
+		"action": "/",
+		"method": "get",
+		"name": "subscribe",
+		"on_submit": "return validate()",
+		"dop_class": "forme",
+		"submit": {
+			"name": "name",
+			"value": "ОТПРАВИТЬ",
+			"id": "",
+			"dop_class": "info__section__more"
+		},
+		"inputs": {
+			"1": {
+				"type": "text",
+				"label": "Ваше имя",
+				"name": "name",
+				"value": "",
+				"id": "",
+				"dop_class": "form--name",
+				"requared": "true",
+				"placeholder": "",
+				"other_specific": ""
+			},
+			"2": {
+				"type": "text",
+				"label": "Электронный ящик!",
+				"name": "email",
+				"value": "",
+				"id": "",
+				"dop_class": "form--mail",
+				"requared": "true",
+				"placeholder": "",
+				"other_specific": {}
+			}
+		}
+	},
+	"breadcrumbs": {
+		"1": "1"
+	},
+	"catalogItem": {
+		"catalogItem": "1"
+	},
+	"catalogItemsonCatPage": {
+		"catalogItemsonCatPage": "1"
+	},
+	"catalogMenu": {
+		"catalogMenu": "1"
+	},
+	"discountMetr": {
+		"discountMetr": "1"
+	},
+	"hero_video": {
+		"hero_video": "1"
+	},
+	"ove-pagination": {
+		"ove-pagination": "1"
+	},
+	"oveFeatures": {
+		"oveFeatures": "1"
+	},
+	"owlGoodsSlider": {
+		"owlGoodsSlider": "1"
+	},
+	"owlSlider": {
+		"owlSlider": "1"
+	},
+	"pagination": {
+		"pagination": "1"
+	},
+	"sergTest": {
+		"sergTest": "1"
+	},
+	"sideBar": {
+		"sideBar": "1"
 	},
 	"metadata": {
 		"name": "Themify IconFonts 5-23-2014",

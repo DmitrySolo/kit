@@ -1,6 +1,7 @@
 mixin discountMetr()
 	<!-- split modules/discountMetr -->
 	.discountMetr
+		.testCart На сумму 3000 руб.
 		.discountMetr__warpper
 			.discountMetr__title
 				h6 Скидометр
@@ -18,12 +19,14 @@ mixin discountMetr()
 						+I('slash')
 				.discountMetr__scale__wrapper
 					.discountMetr__scale_outer
-						.discountMetr__scale_inner
+						.discountMetr__scale_starter
+						.discountMetr__scale_starter
+							.discountMetr__scale_inner
 				.discountMetr__scale__characters
 					+loop(20)
 						+I('scalePart')
 				.discountMetr__scale__marks
-					span.discountMetr__scale__mark 3000
-					span.discountMetr__scale__mark 6000
-					span.discountMetr__scale__mark 14 000
-					span.discountMetr__scale__mark 18 000
+					span.discountMetr__scale__mark.discountMetr__scale__mark--3000 3000 Р
+					span.discountMetr__scale__mark.discountMetr__scale__mark--6000 6000 Р
+					span.discountMetr__scale__mark.discountMetr__scale__mark--14000 14 000 Р
+					span.discountMetr__scale__mark.discountMetr__scale__mark--18000 18 000 Р

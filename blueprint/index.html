@@ -11,6 +11,7 @@
       <div class="canvas__border">
         <div class="canvas__blueprint container"><!-- split modules/discountMetr -->
           <div class="discountMetr">
+            <div class="testCart">На сумму 3000 руб.</div>
             <div class="discountMetr__warpper">
               <div class="discountMetr__title">
                 <h6>Скидометр</h6>
@@ -34,7 +35,10 @@
                     </svg></span></div>
                 <div class="discountMetr__scale__wrapper">
                   <div class="discountMetr__scale_outer">
-                    <div class="discountMetr__scale_inner"></div>
+                    <div class="discountMetr__scale_starter"></div>
+                    <div class="discountMetr__scale_starter">
+                      <div class="discountMetr__scale_inner"></div>
+                    </div>
                   </div>
                 </div>
                 <div class="discountMetr__scale__characters">
@@ -99,12 +103,21 @@
                     <use xlink:href="#scalePart"></use>
                   </svg>
                 </div>
-                <div class="discountMetr__scale__marks"><span class="discountMetr__scale__mark">3000</span><span class="discountMetr__scale__mark">6000</span><span class="discountMetr__scale__mark">14 000</span><span class="discountMetr__scale__mark">18 000</span></div>
+                <div class="discountMetr__scale__marks"><span class="discountMetr__scale__mark discountMetr__scale__mark--3000">3000 Р</span><span class="discountMetr__scale__mark discountMetr__scale__mark--6000">6000 Р</span><span class="discountMetr__scale__mark discountMetr__scale__mark--14000">14 000 Р</span><span class="discountMetr__scale__mark discountMetr__scale__mark--18000">18 000 Р</span></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="scripts/preloader.js" type="text/javascript"></script>
+    <script src="scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="scripts/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="scripts/validator.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery.maskedinput.min.js" type="text/javascript"></script>
+    <script src="scripts/discoUntMetr.js" type="text/javascript"></script>
+    <script src="scripts/init.js" type="text/javascript"></script>
+    <script src="scripts/mobile.js" type="text/javascript"></script>
+    <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
   </body>
 </html>

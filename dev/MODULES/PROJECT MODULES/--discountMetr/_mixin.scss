@@ -94,15 +94,44 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
   }
+  .discountMetr__scale_starter, .discountMetr__scale_inner {
+    float: left;
+  }
+  .discountMetr__scale_starter {
+    width: 5%;
+    height: 100%;
+
+  },
   .discountMetr__scale_inner {
     height: 100%;
     background-color: #FF4E00;
     width: 10%;
+    transition: width, .5s, linear;
   }
   .discountMetr__scale__marks {
     position: relative;
+    height: 30px;
   }
   .discountMetr__scale__mark {
     position: absolute;
+    top: 9px;
+    &:before{
+      content: "|";
+      position: absolute;
+      top:-1em;
+      left: 50%;
+    }
+  }
+  .discountMetr__scale__mark--3000 {
+    left: 68px;
+  }
+  .discountMetr__scale__mark--6000 {
+    left:163px;
+  }
+  .discountMetr__scale__mark--14000 {
+    left: 315px;
+  }
+  .discountMetr__scale__mark--18000 {
+    left: 535.5px;
   }
 }
