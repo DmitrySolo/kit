@@ -8,7 +8,7 @@ var  maxScale = 20000,
 console.log(currCartSize);
 // Get Percentage on change
 
-var percent =  (currCartSize / maxScale) * 100 + 5 + '%';
+var percent =  (currCartSize / maxScale) * 100 + '%';
 
 scale.css('width',percent);
 

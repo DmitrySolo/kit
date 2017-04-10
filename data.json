@@ -89,7 +89,7 @@
 				"": ""
 			}
 		},
-		"<%= prefix %>": {
+		"ove-cardReg": {
 			"js": {
 				"": {
 					"src": "",
@@ -106,6 +106,32 @@
 					"src": "dev/ELEMENTS/BUTTONS/--toCart/toCart.js",
 					"concat": "true",
 					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"<%= prefix %>": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"spinner-circle": {
+			"js": {
+				"lib": {
+					"src": "bower_components/please-wait/build/please-wait.min.js",
+					"container": "footer/top/preloader"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
+					"container": "footer/top/preloader"
 				}
 			},
 			"css": {
@@ -246,38 +272,11 @@
 				"": ""
 			}
 		},
-		"ove-cardReg": {
+		"JQ": {
 			"js": {
-				"": {
-					"src": "",
-					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"spinner-circle": {
-			"js": {
-				"lib": {
-					"src": "bower_components/please-wait/build/please-wait.min.js",
-					"container": "footer/top/preloader"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
-					"container": "footer/top/preloader"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"styckyHeader": {
-			"js": {
-				"styckyHeader-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
-					"container": "footer/init/init",
-					"type": "init"
+				"jquery": {
+					"src": "bower_components/jquery/dist/jquery.min.js",
+					"container": "footer/libs"
 				}
 			},
 			"css": {
@@ -301,11 +300,12 @@
 				"": ""
 			}
 		},
-		"JQ": {
+		"styckyHeader": {
 			"js": {
-				"jquery": {
-					"src": "bower_components/jquery/dist/jquery.min.js",
-					"container": "footer/libs"
+				"styckyHeader-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
+					"container": "footer/init/init",
+					"type": "init"
 				}
 			},
 			"css": {

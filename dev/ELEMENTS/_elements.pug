@@ -7,9 +7,6 @@ mixin B-gogog(value,className)
 	button.gogog(class=''+className)=value
 
 
-mixin INPUT-oveCard(type,className)
-	-if (!className) className =''
-	input(type=""+type, class='ove-cardRegInput '+className)
 mixin A(content,href,className)
 	-if (!className) className =''
 	a(class='mainLink '+className,href=href)=content
@@ -19,14 +16,20 @@ mixin B-toCart(value,className)
 		+I('cart')
 
 
-mixin A-ove-topNavLink(content,href,className)
-	-if (!className) className =''
-	a(class='ove-topNavLink '+className,href=href)=content
-
 mixin I(id,classModifier)
 	-if (!classModifier) classModifier =''
 	svg(class='icon '+classModifier)
 		use(xlink:href="#"+id)
+mixin INPUT-oveCard(type,className)
+	-if (!className) className =''
+	input(type=""+type, class='ove-cardRegInput '+className)
+mixin A-socialLink(content,href,className)
+	-if (!className) className =''
+	a(class='socialLink '+className,href=href)=content
+mixin A-ove-topNavLink(content,href,className)
+	-if (!className) className =''
+	a(class='ove-topNavLink '+className,href=href)=content
+
 mixin B-ove-cardReg(value,className,disabledc)
 	-if (!className) className =''
 	-if (!disabledc) disabled ='true'
@@ -36,7 +39,3 @@ mixin B-ove-cardReg(value,className,disabledc)
 mixin PL-spinner-circle(className)
 	-if (!className) className =''
 		.spinner-circle(class=''+className)
-
-mixin A-socialLink(content,href,className)
-	-if (!className) className =''
-	a(class='socialLink '+className,href=href)=content

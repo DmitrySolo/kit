@@ -186,7 +186,7 @@ gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-sc
     gulp.watch(['dev/MODULES/**/*.pug','dev/templates/**/*.pug','dev/MIXES/_mixes.pug','!dev/templates/PAGESYSTEM/SCRIPTS-STYLES/**/*'],function(){ runSequence('views', 'compile-blueprint-view') });
     gulp.watch(['blueprint/*.pug'],['compile-blueprint-view']);
     gulp.watch(['blueprint/*.scss'],['compile-blueprint-sass']);
-    gulp.watch(['dist/main.css'],['deploycss']);
+    gulp.watch(['dist/main.css']);
 
     gulp.watch(['dev/MIXES/*/*.pug'],['concat-modules-and-mixes']);
     gulp.watch(['dev/**/*.json','blueprint/*json'],function(){ runSequence('mergeJson','views','compile-blueprint-view') });

@@ -1,6 +1,311 @@
+/*
+ *  Owl Carousel - Core
+ */
 
+/* No Js */
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+
+/*
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+
+/*
+ * 	Owl Carousel - Video Plugin
+ */
+
+/*
+ * NORMALIZE
+ */
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default fonts family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of fonts size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* Document
+   ========================================================================== */
+html {
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+/**
+ * 1. Correct the inheritance and scaling of fonts size in all browsers.
+ * 2. Correct the odd `em` fonts sizing in all browsers.
+ */
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+/**
+ * Add the correct fonts weight in Chrome, Edge, and Safari.
+ */
+
+/**
+ * 1. Correct the inheritance and scaling of fonts size in all browsers.
+ * 2. Correct the odd `em` fonts sizing in all browsers.
+ */
+
+/**
+ * Add the correct fonts style in Android 4.3-.
+ */
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+/**
+ * Add the correct fonts size in all browsers.
+ */
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+/**
+ * Remove the border on not_opt_images inside links in IE 10-.
+ */
+
+/**
+ * Hide the overflow in IE.
+ */
 svg:not(:root) {
   overflow: hidden; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change fonts properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+
+/**
+ * Add the correct display in IE.
+ */
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+
+/*
+ * RESET
+ */
+
+/*
+* FONTS
+*/
+@font-face {
+  font-family: "Blanca";
+  src: url("fonts/BlankaRegular.eot");
+  /* IE9 Compat Modes */
+  src: url("fonts/BlankaRegular.eot?#iefix") format("embedded-opentype"), url("fonts/BlankaRegular.woff2") format("woff2"), url("fonts/BlankaRegular.woff") format("woff"), url("fonts/BlankaRegular.ttf") format("truetype"), url("fonts/BlankaRegular.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+  font-weight: Normal;
+  font-style: normal; }
+
+/*
+ * BASE STYLES
+ */
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #f6fafd; }
+
+/*
+ * TYPOGRAPHY
+ */
+html {
+  font-family: "Roboto", san-serif;
+  font-weight: 300;
+  color: #527192;
+  font-size: 16px;
+  line-height: 1.6; }
+  @media (min-width: 900px) {
+    html {
+      font-size: calc( 16px + (16 - 16) * ((100vw - 900px) / (1240 - 900))); } }
+  @media (min-width: 1240px) {
+    html {
+      font-size: 16px; } }
+
+h6 {
+  margin: 0;
+  padding: 0; }
+
+h6 {
+  font-family: "Roboto", san-serif;
+  font-weight: 900;
+  color: #405871;
+  clear: both; }
+
+h6 {
+  font-size: 16px; }
+  @media (min-width: 900px) {
+    h6 {
+      font-size: calc(16px + (16 - 16) * ((100vw - 900px) / (1240 - 900))); } }
+  @media (min-width: 1240px) {
+    h6 {
+      font-size: 16px; } }
+
+/*
+ * HIERARCHY
+ */
+
+/*
+ * GRID
+ */
+
+/*
+* LAYOUT HELPERS
+*/
 
 /*
 * MODULES  STYLES
@@ -48,10 +353,21 @@ svg:not(:root) {
   border-radius: 100%;
   margin-top: -15px;
   margin-left: -15px; }
+  .discountMetr__startPoint:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 38px;
+    height: 10px;
+    background-color: #FF4E00;
+    right: -37px;
+    top: 50%;
+    margin-top: -4px; }
 
 .discountMetr__scale__wrapper {
   position: relative;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  width: 636px; }
 
 .discountMetr__scale__events {
   padding: 18px;
@@ -83,17 +399,21 @@ svg:not(:root) {
 .discountMetr__scale_outer {
   background-color: #504844;
   position: absolute;
-  left: -43px;
+  left: -5px;
   height: 10px;
-  width: 100%;
+  width: 99%;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px; }
+
+.discountMetr__scale_inner {
+  float: left; }
+
 
 .discountMetr__scale_inner {
   height: 100%;
   background-color: #FF4E00;
   width: 10%;
-  transition: width, .3s, linear; }
+  transition: width, .5s, linear; }
 
 .discountMetr__scale__marks {
   position: relative;
@@ -120,6 +440,13 @@ svg:not(:root) {
 .discountMetr__scale__mark--18000 {
   left: 535.5px; }
 
+/*
+* MIXES  STYLES
+*/
+
+/*
+* ELEMENTS  STYLES
+*/
 
 .icon {
   display: inline-block;
@@ -128,3 +455,30 @@ svg:not(:root) {
   width: 2rem;
   max-width: 100%;
   fill: #fff; }
+
+/*
+* PROJECT  STYLES
+*/
+/*
+Header
+*/
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  /* For some Androids */ }
+
+/*
+logo
+*/
+
+/*
+Footer
+*/
+
+/*
+Category Page
+*/
+
+/*
+Item Page
+*/
