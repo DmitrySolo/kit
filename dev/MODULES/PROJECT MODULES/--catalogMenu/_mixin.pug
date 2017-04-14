@@ -1,9 +1,8 @@
 mixin catalogMenu()
 	<!-- split modules/catalogMenu -->
 	.catalogMenu
-		a.catalogMenu__button Каталог товаров
 		.catalogMenu__wrapper
-			ul.catalogMenu__list.catalogMenu__list--L1
+			ul.catalogMenu__list
 				li.catalogMenu__list__item.catalogMenu__list__item--active#catalogMenu__list__item--1--1
 					span Сантехника
 					span.angleR
@@ -40,23 +39,5 @@ mixin catalogMenu()
 					span Сток-товары
 					span.angleR
 						+I('right','icon--angle')
-			-var i = 1
-			-var ii = 1
-			-var i3 = 1
-			+loop(8)
-				ul(id="catalogMenuLevel--2--"+i).catalogMenu__list.catalogMenu__list--L2
-					-i++
-					+loop(8)
-						li(id='#catalogMenu__list__item--2--'+ii).catalogMenu__list__item
-							span="Акриловые ванны "+i
-							span.angleR
-								+I('right','icon--angle')
-						-ii++
-			+loop(64)
-				ul(id="catalogMenuLevel--3--"+i3).catalogMenu__list.catalogMenu__list--L3
-					-i3++
-					+loop(5)
-						li.catalogMenu__list__item#catalogMenu__list__item--3--1
-							span="Угловые симметричные " + i3
 
 

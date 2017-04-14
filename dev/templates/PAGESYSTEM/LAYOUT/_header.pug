@@ -1,65 +1,6 @@
 <!-- split header.html -->
 .hidden
     include ../../../../dist/icons/icons.svg
-+module('sideBar')
-header.ove-mainHeader
-    .container
-        .row
-            .col-12-tl
-                nav.ove-topNavigation
-                    ul
-                        li.ove-topNavigation__eshopMark
-                            +A-ove-topNavLink('Интернет-магазин','/')
-                        li
-                            +A-ove-topNavLink('Vip Сантехника','/')
-                        li
-                            +A-ove-topNavLink('Наши магазины','/')
-                        li
-                            +A-ove-topNavLink('Сервисный центр','/')
-                        li
-                            +A-ove-topNavLink('Сток центр','/')
-                        li
-                            +A-ove-topNavLink('Оптовый отдел','/')
-            section.ove-desctopControlPanel.clearfix
-                .col-5-d
-                    .row
-                        .col-6-d
-                            .ove-logo
-                                +logo-img('logo.svg','ove-logo')
-                        .col-6-d.no-gutter-l
-                            .ove-info info
-                .col-4-d
-                    .ove-personalDashboard dashboard
-                .col-1-d
-                    .ove-bookmarks bookmarks
-                .col-2-d
-                    .ove-cart cart
-    .ove-subControlPanel__wrapper.ove-subControlPanel--mobile
-        .container
-            section.ove-subControlPanel
-                .row
-                    .col-4-m.col-2-tp
-                        .ove-mobile-menu
-                            +I('menu','icon-menu__button')
-                    .col-4-m.col-6-tp
-                        +logo-img('logo.svg','ove-logo--mobile')
-                    .col-2-m.col-2-tp
-                        .ove-subControlPanel__section
-                            span.ove-cartCounter--phantom
-                            span.ove-cartCounter 0
-                            +I('cart')
-                    .col-2-m.col-2-tp
-                        .ove-subControlPanel__section.ove-subControlPanel__search_trigger
-                            +I('search','icon--search')
-                    .ove-subControlPanel__search_wrapper.push-2-tp.push-3-m.col-7-m.col-8-tp.col-7-tl
-                            .ove-subControlPanel__search
-                                .ove-subControlPanel__search__input
-                                    input(type='text')
-    .ove-subControlPanel__wrapper.ove-subControlPanel--desktop
-        .container
-            section.ove-subControlPanel
-                .row
-                    .col-5-d
-                        .row
-                            .col-6-d
-                                +module('catalogMenu')
+.oveX-header
+    h1 Распродажа
+.oveX-topMargin
