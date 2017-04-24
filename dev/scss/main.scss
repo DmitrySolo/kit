@@ -1,4 +1,4 @@
-@import "imports";
+  @import "imports";
 ///////////////////////////////////////////////////////
 /*
  * NORMALIZE
@@ -22,15 +22,24 @@
 @import "base";
 
 
-/*
+/**
  * TYPOGRAPHY
  */
 @include typographic();
-/*
+
+  /**
+  * ICONFONT
+  *
+  */
+  @import "../../dist/fonts/scss/_iconFont.scss";
+
+
+
+/**
  * HIERARCHY
  */
 @import "HIERARCHY/hierarchy";
-/*
+/**
  * GRID
  */
  @if($response){
@@ -40,28 +49,28 @@
  }
 
 
-/*
+/**
 * LAYOUT HELPERS
 */
 @include helpers();
 
 /////////////////////////////////////////////////////
-/*
+/**
 * MODULES  STYLES
 */
 @import "../MODULES/modules";
 
-/*
+/**
 * MIXES  STYLES
 */
 @import "../MIXES/mixes";
 
-/*
+/**
 * ELEMENTS  STYLES
 */
 @import "../ELEMENTS/elements";
 
-/*
+/**
 * PROJECT  STYLES
 */
 @import "project";

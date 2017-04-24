@@ -1,50 +1,87 @@
-<div class="ove-main">
-      <div class="ove-shade"></div>
-      <div class="ove-pageCard">
-        <p class="ove-pageCard__title">Ваша скидка по карте: №</p><span class="ove-pageCard__number">0945343</span><span class="ove-pageCard__percent">5%</span>
-        <p class="ove-pageCard__advance">Для скидки <span>6%</span> необходимо осуществить покупки на сумму 43 000Р</p>
-        <div class="ove-pageCard__scaleWrapper">
-          <div class="ove-pageCard__scale">
-            <div class="ove-pageCard__scaleCurrent"></div>
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-3">
+          <div class="inner-content">
+            <div class="fixedMenu">
+              <nav>
+                <ul>
+                  <li class="fixedMenu__item active icon-right">Смесители (110)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                  <li class="fixedMenu__item">Смесители (23)</li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
-        <div class="img_container--align_v ove-pageCard__code"><img src="images/code.png"/></div>
-        <div class="ove-pageCard__animMarkerWrapper">
-          <div class="ove-pageCard__animMarker"></div>
+        <div class="col-9">
+          <div class="inner-content catalog-content">
+            <div class="ove-pageCard">
+              <p class="ove-pageCard__title">Ваша скидка по карте: №</p><span class="ove-pageCard__number">0945343</span><span class="ove-pageCard__percent">5%</span>
+              <p class="ove-pageCard__advance">Для скидки <span>6%</span> необходимо осуществить покупки на сумму 43 000Р</p>
+              <div class="ove-pageCard__scaleWrapper">
+                <div class="ove-pageCard__scale">
+                  <div class="ove-pageCard__scaleCurrent"></div>
+                </div>
+              </div>
+              <div class="img_container--align_v ove-pageCard__code"><img src="images/code.png"/></div>
+              <div class="ove-pageCard__animMarkerWrapper">
+                <div class="ove-pageCard__animMarker"></div>
+              </div>
+            </div>
+            <div class="ove-pageCard">
+              <div class="ove-pageCard__regSteps">
+                <p>Шаг 1</p>
+              </div>
+              <div class="ove-pageCard__regSteps_markers"><span class="ove-pageCard__regSteps_marker active"></span><span class="ove-pageCard__regSteps_marker"></span><span class="ove-pageCard__regSteps_marker"></span></div>
+              <p class="ove-pageCard__title">Введите номер карты</p>
+              <form class="ove-pageCard__Form">
+                <input class="ove-cardRegInput ove-pageCard__Form__num" type="number"/><span class="ove-pageCard__Form__cleaner">
+                  <svg class="icon ">
+                    <use xlink:href="#close"></use>
+                  </svg></span>
+                <button class="ove-cardReg ove-cardReg--inactive">Привязать карту</button>
+              </form>
+            </div>
+            <div class="ove-pageCard">
+              <p class="ove-pageCard__title">Введите последние четыре цифры номера телефона привязанного к вашей карте</p>
+              <form class="ove-pageCard__Form">
+                <input class="ove-cardRegInput ove-pageCard__Form__phone" type="number"/><span class="ove-pageCard__Form__cleaner">
+                  <svg class="icon ">
+                    <use xlink:href="#close"></use>
+                  </svg></span>
+                <button class="ove-cardReg ove-cardReg--inactive">OK</button>
+              </form>
+            </div>
+            <div class="ove-pageCard">
+              <p class="ove-pageCard__title">На привязанный к карте номер телефона выслан код подтверждения</p>
+              <form class="ove-pageCard__Form">
+                <input class="ove-cardRegInput ove-pageCard__Form__sms" type="number"/><span class="ove-pageCard__Form__cleaner">
+                  <svg class="icon ">
+                    <use xlink:href="#close"></use>
+                  </svg></span>
+                <button class="ove-cardReg ove-cardReg--inactive">OK</button>
+              </form>
+            </div>
+            <div class="ove-pageCard">
+              <p class="ove-pageCard__error"><span>!</span>Последние четыре цифры номера телефона привязанного к карте отличаются от введенных!</p>
+              <p class="ove-pageCard__errorAdvace"></p>
+              <button class="ove-cardReg" disabled="false">Повторить привязку карты</button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="ove-pageCard">
-        <p class="ove-pageCard__title">Введите номер карты</p>
-        <form class="ove-pageCard__Form">
-          <input class="ove-cardRegInput ove-pageCard__Form__num" type="number"/><span class="ove-pageCard__Form__cleaner">
-            <svg class="icon ">
-              <use xlink:href="#close"></use>
-            </svg></span>
-          <button class="ove-cardReg ove-cardReg--inactive">Привязать карту</button>
-        </form>
-      </div>
-      <div class="ove-pageCard">
-        <p class="ove-pageCard__title">Введите последние четыре цифры номера телефона привязанного к вашей карте</p>
-        <form class="ove-pageCard__Form">
-          <input class="ove-cardRegInput ove-pageCard__Form__phone" type="number"/><span class="ove-pageCard__Form__cleaner">
-            <svg class="icon ">
-              <use xlink:href="#close"></use>
-            </svg></span>
-          <button class="ove-cardReg ove-cardReg--inactive">OK</button>
-        </form>
-      </div>
-      <div class="ove-pageCard">
-        <p class="ove-pageCard__title">На привязанный к карте номер телефона выслан код подтверждения</p>
-        <form class="ove-pageCard__Form">
-          <input class="ove-cardRegInput ove-pageCard__Form__sms" type="number"/><span class="ove-pageCard__Form__cleaner">
-            <svg class="icon ">
-              <use xlink:href="#close"></use>
-            </svg></span>
-          <button class="ove-cardReg ove-cardReg--inactive">OK</button>
-        </form>
-      </div>
-      <div class="ove-pageCard">
-        <p class="ove-pageCard__error"><span>!</span>Последние четыре цифры номера телефона привязанного к карте отличаются от введенных!</p>
-        <p class="ove-pageCard__errorAdvace"></p>
-        <button class="ove-cardReg" disabled="false">Повторить привязку карты</button>
       </div>

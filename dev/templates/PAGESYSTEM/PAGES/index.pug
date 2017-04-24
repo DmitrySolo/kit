@@ -4,17 +4,7 @@ block title
     title Главная
     -var page={slug:"index",title:"Главная"};
 block main
-        .row
-            .col-3
-                .inner-content
-                    .fixedMenu
-                        nav
-                            ul
-                                li.fixedMenu__item.active Смесители (111)
-                                +loop(17)
-                                    li.fixedMenu__item Смесители (23)
-            .col-9
-                .inner-content.catalog-content
+
                     ul
                     +loop(25)
                         li.col-product
@@ -30,6 +20,8 @@ block main
                                 .product-image-container
                                     img(src='images/catalog/4.jpg')
                                 footer
+                                    .oldPrice
+                                        span 32 000Р
                                     .price
                                         span 21 500Р
 
