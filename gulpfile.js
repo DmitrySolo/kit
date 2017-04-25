@@ -38,8 +38,9 @@ var pugPHPFilter = require('pug-php-filter');
 var phplint = require('gulp-phplint');
 const html2pug = require('gulp-html2pug');
 var sftp = require('gulp-sftp');
-
-
+var iconfont = require('gulp-iconfont');
+var runTimestamp = Math.round(Date.now()/1000);
+var iconfontCss = require('gulp-iconfont-css');
 gulp.task('phplint', function phplint() {
     gulp.src('dist/category.php')
         .pipe(phplint());
@@ -1153,4 +1154,22 @@ gulp.task('deploycss', function () {
             pass: 'xM9KsjsJ',
             remotePath:'/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/templates/mobile'
         }));
+});
+
+// ICON FONT
+
+var fontName = 'Icons';
+
+gulp.task('iconfont', function(){
+    gulp.src(['dev/SOURCE_FABRIC/ICONFONT/*.svg'])
+        .pipe(iconfontCss({
+            fontName: fontName,
+            path:'dev/scss/_iconFont.tmp',
+            targetPath: '../scss/_iconFont.scss',
+            fontPath: 'fonts/icons/'
+        }))
+        .pipe(iconfont({
+            fontName: fontName
+        }))
+        .pipe(gulp.dest('dist/fonts/icons/'));
 });

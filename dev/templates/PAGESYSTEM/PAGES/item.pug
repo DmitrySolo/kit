@@ -4,56 +4,30 @@ block title
     -var page={slug:'item',title:'item'};
     title item
 block main
-    .container
-        a(href="#").ove-category.ove-category__prev
-            +I('left')
-            span Ванны
-        .ove-item__desc.text
-            h2 Ванна акриловая БАС Сагра 160 * 90
+    section.catalogItem-page
+        span 2434322
+        .itemTitle Vidima Смеситель для биде Сириус B3181AA
+        .itemInfo
             .row
-                .ove-item__desc-img
-                    img(src="images/catalog/1.jpg")
-            .row
-                .col-6-m
-                    .catalogItem__priceAndBuy__price
-                        span 34 000Р
-                .col-6-m
-                    +B-toCart()
-            .row
-                dl.ove-item__desc-list
-                    .row
-                        dt.col-6-m Артикул:
-                        dd.col-6-m 100754
-                    .row
-                        dt.col-6-m Производитель:
-                        dd.col-6-m BAS
-                    .row
-                        dt.col-6-m Материал:
-                        dd.col-6-m Акрил
-                    .row
-                        dt.col-6-m Гарантия:
-                        dd.col-6-m  5 лет
-                    .row
-                        dt.col-6-m Страна-производител:
-                        dd.col-6-m Россия
-                    .row
-                        dt.col-6-m Длина:
-                        dd.col-6-m 170
-                    .row
-                        dt.col-6-m Ширина:
-                        dd.col-6-m 70
-                    .row
-                        dt.col-6-m Объем:
-                        dd.col-6-m 140
-                    .row
-                        dt.col-6-m Слив-перелив:
-                        dd.col-6-m Приобретается отдельно
-                    .row
-                        dt.col-6-m Тип:
-                        dd.col-6-m Прямая
-                    .row
-                        dt.col-6-m Цвет (Покрытие):
-                        dd.col-6-m Белый
-            p   Предлагаем Вашему вниманию ванны в комплектации Стандарт.
-                | Комплектация ванн Стандарт включает ванну с армирующим покрытием из безопасной, экологически чистой полиуретановой пены высокой плотности, упрощенный каркас в виде двух поперечных планок из металлического профиля, окрашенных порошковой краской с регулируемыми ножками, комплект настенного крепежа для жесткой фиксации ванны. Также предусмотрена возможность комплектации ванны более прочным X-образным каркасом класса стандарт.
-            +B-toCart()
+                .col-6
+                    .itemImageCtn
+                        img(src='images/77.jpg')
+                .col-6
+                    .oldPrice
+                        span 32 000Р
+                    .price
+                        span 21 500Р
+                    ul.itemProps
+                        +loop( 3 )
+                            li
+                                span Производитель:
+                                span Vidima
+                            li
+                                span Страна:
+                                span Болгария
+                            li
+                                span Заводской Артикул:
+                                span R234-3Fs
+                .col-12.itemAbout
+                    p.text Vidima (Видима) - локальный бренд Ideal Standard International, поставляемый в Россию и страны Восточной Европы. Сантехника ТМ Vidima производится в Болгарии.
+        +I('close','itemPage-closer')

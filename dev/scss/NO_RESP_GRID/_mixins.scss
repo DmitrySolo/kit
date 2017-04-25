@@ -10,7 +10,7 @@
     .col-#{$i} {
       width: percentage($i/$colums);
     }
-    .push-#{$i}-#{$prefix} {
+    .push-#{$i} {
       margin-left: percentage($i/$colums);
     }
   }

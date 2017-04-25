@@ -18,6 +18,14 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="c24d283a-42c9-444b-9f85-cbdb94f44f2f" name="sw" url="http://ftp.sitewidedesign.co.uk">
+        <fileTransfer host="ftp.sitewidedesign.co.uk" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

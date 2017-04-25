@@ -1,15 +1,17 @@
 {
-	"response": "true",
+	"response": "false",
 	"vertical-rhythm": "true",
 	"linkFonts": "true",
 	"assetsFonts": "true",
 	"debug": "false",
 	"production": "false",
+	"icon-font": "true",
 	"body-color": "cs('font')",
-	"header-color": "cs('font-d')",
+	"header-color": "#fff",
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
-		"'MAIN'": "('Roboto')"
+		"'MAIN'": "('Rubik')",
+		"'HEADER'": "('Rubik Mono One')\n)"
 	},
 	"element_space": ".4",
 	"component_space": "$element_space*1.618",
@@ -17,10 +19,10 @@
 	"block_space": "$module_space*1.618",
 	"body-font": "fs('MAIN'),san-serif",
 	"body-font-weight": "300",
-	"header-font": "fs('MAIN'),san-serif",
+	"header-font": "fs('HEADER'),san-serif",
 	"header-font-weight": "900",
 	"mobile-font": "16px",
-	"screen-font": "16px",
+	"screen-font": "18px",
 	"line-height-ratio": "1.6",
 	"siteWidth": "1240px",
 	"colums": "12",

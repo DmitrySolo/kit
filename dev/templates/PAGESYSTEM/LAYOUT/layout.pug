@@ -7,7 +7,17 @@ html(lang=''+head.lang)
     body
         include _header
         <!-- split #{page.slug}.html -->
-        .ove-main
-            .ove-shade
-            block main
+        .container-fluid
+            .row
+                .col-3
+                    .inner-content
+                        .fixedMenu
+                            nav
+                                ul
+                                    li.fixedMenu__item.active.icon-right Смесители (110)
+                                    +loop(17)
+                                        li.fixedMenu__item Смесители (23)
+                .col-9
+                    .inner-content.catalog-content
+                        block main
             include _footer
