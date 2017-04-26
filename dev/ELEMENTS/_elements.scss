@@ -1,19 +1,4 @@
-$color__button:#aaa;
-$color__button-hover:#aaa;
-$color__button-active:#aaa;
-//--Main Button
-.mainButton {
-  background-color: $color__button;
-
-  &:focus {
-    outline: thin dotted;
-  }
-  &:hover,
-  &:active {
-    outline: 0;
-  }
-}
-$bkgColor__gogog:#fff;
+$bkgColor__gogog: #68ff31;
 $bkgColor__gogog-hover:#fff;
 $color__gogog-hover:#fff;
 $color__gogog:#fff;
@@ -33,56 +18,50 @@ $color__gogog:#fff;
 			outline: none;
 	}
 }
-$color__link: cs('font-d');
-$color__link-visited:cs('font-d');
-$color__link-hover:cs('font-l');
+$color__button:#aaa;
+$color__button-hover:#aaa;
+$color__button-active:#aaa;
+//--Main Button
+.mainButton {
+  background-color: $color__button;
 
-a, a.mainLink {
-  color: $color__link;
-  text-decoration: none;
-
-  &:visited {
-    color: $color__link-visited;
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color__link-hover;
-  }
   &:focus {
-    outline: none;
+    outline: thin dotted;
   }
   &:hover,
   &:active {
-    outline: none;
+    outline: 0;
   }
 }
-$color__ove-topNavLink:cs('font');
-$color__ove-topNavLink-visited:cs('font');
-$color__ove-topNavLink-hover:cs('font-d');
+$bkgColor__ove-cardReg: transparent;
+$bkgColor__ove-cardReg-hover: cs('primary-l');
+$color__ove-cardReg-hover:#fff;
+$color__ove-cardReg:#fff;
 
-a.ove-topNavLink {
-	color: $color__ove-topNavLink;
-	display: inline-block;
-	text-decoration: none;
+.ove-cardReg {
+	position: relative;
+	margin: 0% auto;
+	background-color: $bkgColor__ove-cardReg;
+	color: $color__ove-cardReg;
+	border:3px solid #fff;
+	border-radius: 3px;
+	font-size: 1.4em;
 	@include space('element','a','');
-	background-color: #fff;
-
-	&:visited {
-		color: $color__ove-topNavLink-visited;
+		&:hover, &:focus, &:active {
+		color: $color__ove-cardReg-hover;
+		background-color: $bkgColor__ove-cardReg-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
 	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__ove-topNavLink-hover;
-		background-color: #87ff8b;
-	}
-	&:focus {
-		outline: none;
-	}
-	&:hover,
-	&:active {
-	outline: none;
+}
+.ove-cardReg--inactive{
+	opacity: .6;
+	&:hover{
+		background-color: transparent;
 	}
 }
 $bkgColor__toCart:cs('accent');
@@ -125,37 +104,6 @@ form.ove-pageCard__Form .ove-cardRegInput {
   border-bottom: 3px solid #fff;
   font-size: 2.5em;
   letter-spacing: .25em;
-}
-$bkgColor__ove-cardReg: transparent;
-$bkgColor__ove-cardReg-hover: cs('primary-l');
-$color__ove-cardReg-hover:#fff;
-$color__ove-cardReg:#fff;
-
-.ove-cardReg {
-	position: relative;
-	margin: 0% auto;
-	background-color: $bkgColor__ove-cardReg;
-	color: $color__ove-cardReg;
-	border:3px solid #fff;
-	border-radius: 3px;
-	font-size: 1.4em;
-	@include space('element','a','');
-		&:hover, &:focus, &:active {
-		color: $color__ove-cardReg-hover;
-		background-color: $bkgColor__ove-cardReg-hover;
-		}
-		&:focus {
-			outline: none;
-		}
-		&:hover, &:active {
-			outline: none;
-	}
-}
-.ove-cardReg--inactive{
-	opacity: .6;
-	&:hover{
-		background-color: transparent;
-	}
 }
 .icon {
   display: inline-block;
@@ -246,6 +194,58 @@ $color__ove-cardReg:#fff;
       }
   }
 
+$color__link: cs('font-d');
+$color__link-visited:cs('font-d');
+$color__link-hover:cs('font-l');
+
+a, a.mainLink {
+  color: $color__link;
+  text-decoration: none;
+
+  &:visited {
+    color: $color__link-visited;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover,
+  &:active {
+    outline: none;
+  }
+}
+$color__ove-topNavLink:cs('font');
+$color__ove-topNavLink-visited:cs('font');
+$color__ove-topNavLink-hover:cs('font-d');
+
+a.ove-topNavLink {
+	color: $color__ove-topNavLink;
+	display: inline-block;
+	text-decoration: none;
+	@include space('element','a','');
+	background-color: #fff;
+
+	&:visited {
+		color: $color__ove-topNavLink-visited;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__ove-topNavLink-hover;
+		background-color: #87ff8b;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover,
+	&:active {
+	outline: none;
+	}
+}
 $color__linksocialLink:red;
 $color__linksocialLink-visited:red;
 $color__linksocialLink-hover:red;

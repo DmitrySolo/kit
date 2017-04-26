@@ -67,6 +67,9 @@ gulp.task('views', function buildHTML() {
             pretty: true,
         })).pipe(gulp.dest('projectboard/'));
 });
+
+
+
 gulp.task('validate',function () {
     gulp.src("dist/*service.html")
         .pipe(htmlhint())
@@ -163,35 +166,114 @@ gulp.task('dep-js', function() {
 gulp.task('SERVER', [], function() {
 
     browserSync.init({
-        server: "./dist"
+        server: "./dist",
     });
-    //gulp.watch("dev/**/*.json").on('change', browserSync.reload);
-    gulp.watch("dist/*.html").on('change', browserSync.reload);
-    gulp.watch("dist/*.css").on('change', browserSync.reload);
-    //gulp.watch("dist/**/*.js").on('change', browserSync.reload);
+
+    gulp.watch(["dist/index.html","dist/*.css"]).on('change', browserSync.reload);
+    gulp.watch().on('change', browserSync.reload);
+
 });
-gulp.task('WATCHER', ['concat-modules-and-mixes','sass','cleanMainCss','build-script-js','throw-main-css','browser-reload','views','mergeJson','compile-blueprint-view','compile-blueprint-sass'], function() {
 
-    gulp.watch(['dev/MODULES/*.scss','!dev/MODULES/_modules.scss'],['concat-modules-and-mixes']);
-    gulp.watch(['dev/MIXES/*/*.scss'],['concat-modules-and-mixes']);
 
-    gulp.watch(['dev/ELEMENTS/*/--*/*.scss','dev/ELEMENTS/*/--*/*.pug'],['concat-elements']);
-        gulp.watch(['dev/ELEMENTS/_elements.scss'],['sass','compile-blueprint-sass']);
-        gulp.watch(['dev/ELEMENTS/_elements.pug'],['views','compile-blueprint-view']);
-        gulp.watch(['dev/ELEMENTS/**/*','!dev/ELEMENTS/_elements.scss','!dev/ELEMENTS/_elements.pug'],['concat-elements']);
 
-    //gulp.watch('dev/MODULES/PROJECT MODULES/--*/*.scss',['concat-modules-and-mixes','sass']);
-    gulp.watch(['dev/scss/**/*.scss','dev/MIXES/_mixes.scss'],['sass','throw-main-css']);
-    //gulp.watch('dev/MODULES/*/--*/*.pug',['views']);
-    gulp.watch(['dev/MODULES/**/*.js','!dev/SCRIPTS/CONTAINERS/**/*'],['SCRIPT BUILDER']);
-    gulp.watch(['dev/MODULES/**/*.pug','dev/templates/**/*.pug','dev/MIXES/_mixes.pug','!dev/templates/PAGESYSTEM/SCRIPTS-STYLES/**/*'],function(){ runSequence('views', 'compile-blueprint-view') });
-    gulp.watch(['blueprint/*.pug'],['compile-blueprint-view']);
-    gulp.watch(['blueprint/*.scss'],['compile-blueprint-sass']);
-    gulp.watch(['dist/main.css']);
 
-    gulp.watch(['dev/MIXES/*/*.pug'],['concat-modules-and-mixes']);
-    gulp.watch(['dev/**/*.json','blueprint/*json'],function(){ runSequence('mergeJson','views','compile-blueprint-view') });
+gulp.task('WATCHER', function() {
+
+
+    // BUILD VIEW
+
+        // final
+        gulp.watch([
+
+            'dev/ELEMENTS/_elements.pug',
+            'dev/ELEMENTS/_mixes.pug',
+            'dev/MODULES/_modules.pug',
+            'data.json',
+            'dev/templates/**/*.pug',
+            'blueprint/*.pug',
+            '!dev/templates/PAGESYSTEM/SCRIPTS-STYLES/**/*'
+            ],
+
+            ['views','compile-blueprint-view']);
+
+        // -1
+        gulp.watch([
+
+            'dev/ELEMENTS/**/*.pug',
+            '!dev/ELEMENTS/_elements.pug'],
+
+            ['concat-elements-pug']);
+
+        gulp.watch([
+
+                'dev/MIXES/**/*.pug',
+                '!dev/MIXES/_mixes.pug'],
+
+            ['concat-mixes-pug']);
+
+        gulp.watch([
+
+                'dev/**/*.json',
+                '!dev/scss/MASTER_OPTIONS/*.json',
+                '!dev/SOURCE_FABRIC/**/*.json'
+               ],
+
+            ['mergeJson']);
+
+        gulp.watch([
+
+                'dev/MODULES/**/*.pug',
+                '!dev/MODULES/_modules.pug'],
+
+            ['concat-modules-pug']);
+
+    // BUILD STYLES
+
+        // final
+
+        gulp.watch([
+                'dev/scss/**/*.scss',
+                'dev/ELEMENTS/_elements.scss',
+                'dev/ELEMENTS/_mixes.scss',
+                'dev/MODULES/_modules.scss',
+                'blueprint/*.scss',
+            ],
+
+            ['styles','compile-blueprint-sass','throw-main-css']);
+
+
+        // -1
+
+            gulp.watch([
+
+                    'dev/ELEMENTS/**/*.scss',
+                    '!dev/ELEMENTS/_elements.scss'],
+
+                ['concat-elements-scss']);
+
+            gulp.watch([
+
+                    'dev/MIXES/**/*.scss',
+                    '!dev/MIXES/_mixes.scss'],
+
+                ['concat-mixes-scss']);
+
+
+            gulp.watch([
+
+                    'dev/MODULES/**/*.scss',
+                    '!dev/MODULES/_modules.scss'],
+
+                ['concat-modules-scss']);
+
 });
+
+
+
+
+
+
+
 gulp.task('optimage', [], function() {
     gulp.src('dist/not_opt_images/*')
         .pipe(imagemin())
@@ -207,18 +289,25 @@ gulp.task('image_resize', [], function() {
         }))
         .pipe(gulp.dest('dist/images-rs'));
 });
+
+
+///////////////// CONCATS
+
 gulp.task('concat-modules-and-mixes', function() {
-        gulp.src(['dev/MODULES/MENUS/--*/*.scss','dev/MODULES/PROJECT MODULES/--*/*.scss'])
+    gulp.src(['dev/MODULES/MENUS/--*/*.scss','dev/MODULES/PROJECT MODULES/--*/*.scss'])
         .pipe(concat('_modules.scss'))
         .pipe(gulp.dest('dev/MODULES/'));
-        gulp.src(['dev/MIXES/**/_style.scss'])
+    gulp.src(['dev/MIXES/**/_style.scss'])
         .pipe(concat('_mixes.scss'))
         .pipe(gulp.dest('dev/MIXES/'));
-        gulp.src(['dev/MIXES/**/_mixin.pug'])
+    gulp.src(['dev/MIXES/**/_mixin.pug'])
         .pipe(concat('_mixes.pug'))
         .pipe(gulp.dest('dev/MIXES/'));
 
 });
+
+
+
 
 gulp.task('concat-elements', function() {
 
@@ -228,15 +317,64 @@ gulp.task('concat-elements', function() {
     gulp.src('dev/ELEMENTS/*/--*/*.pug')
         .pipe(concat('_elements.pug'))
         .pipe(gulp.dest('dev/ELEMENTS/'));
-////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////
 });
+
+gulp.task('concat-elements-pug', function() {
+
+
+    gulp.src('dev/ELEMENTS/*/--*/*.pug')
+        .pipe(concat('_elements.pug'))
+        .pipe(gulp.dest('dev/ELEMENTS/'));
+});
+
+gulp.task('concat-elements-scss', function() {
+
+
+    gulp.src('dev/ELEMENTS/*/--*/*.scss')
+        .pipe(concat('_elements.scss'))
+        .pipe(gulp.dest('dev/ELEMENTS/'));
+});
+
+gulp.task('concat-mixes-pug', function() {
+
+    gulp.src(['dev/MIXES/**/_mixin.pug'])
+        .pipe(concat('_mixes.pug'))
+        .pipe(gulp.dest('dev/MIXES/'));
+});
+
+gulp.task('concat-mixes-scss', function() {
+
+
+    gulp.src('dev/MIXES/**/*.scss')
+        .pipe(concat('_mixes.scss'))
+        .pipe(gulp.dest('dev/MIXES/'));
+});
+
+
+gulp.task('concat-modules-scss', function() {
+
+
+    gulp.src('dev/MODULES/*/--*/*.scss')
+        .pipe(concat('_modules.scss'))
+        .pipe(gulp.dest('dev/MODULES/'));
+
+});
+
+gulp.task('concat-modules-pug', function() {
+
+
+    gulp.src('dev/MODULES/*/--*/_mixin.pug')
+        .pipe(concat('_modules.pug'))
+        .pipe(gulp.dest('dev/MODULES/'));
+
+});
+
+
+
+
+
+
+
 
 var buildmodulesData = {
     string: 'name',
@@ -345,7 +483,7 @@ gulp.task('be', function() {
 
 
 var alredyCompile = false;
-gulp.task('sass', function () {
+gulp.task('styles', function () {
     if (!alredyCompile){
         alredyCompile = true;
         gulp.src('dev/scss/main.scss')
