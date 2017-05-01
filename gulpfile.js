@@ -41,11 +41,31 @@ var sftp = require('gulp-sftp');
 var iconfont = require('gulp-iconfont');
 var runTimestamp = Math.round(Date.now()/1000);
 var iconfontCss = require('gulp-iconfont-css');
+const scriptCleaner = require('./gulp plugins/scriptbuilder/scleaner');
+const scriptThrower = require('./gulp plugins/scriptbuilder/sthrower');
+const scriptBuilder = require('./gulp plugins/scriptbuilder/builder');
 gulp.task('phplint', function phplint() {
     gulp.src('dist/category.php')
         .pipe(phplint());
 })
 
+gulp.task('SCRIPTS1', function () {
+    gulp.src('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/**/*.pug')
+        .pipe(scriptCleaner());
+})
+
+gulp.task('SCRIPTS2', function () {
+    gulp.src('data.json')
+        .pipe(scriptThrower());
+})
+
+gulp.task('SCRIPTS3', function () {
+    gulp.src('data.json')
+        .pipe(scriptBuilder());
+})
+
+gulp.task('SCRIPTS ALL', gulpsync.sync(['SCRIPTS1','SCRIPTS2'])
+);
 
 
 gulp.task('views', function buildHTML() {
@@ -1139,117 +1159,7 @@ gulp.task('SCRIPTS-GO-CONTAINER',[], function () {
 })
 // 3
 gulp.task('SCRIPTS-BUILD',[], function () {
-function scrBuild() {
-    var scriptFiles = [];
-    var strCtn = "";
-    var strHeader = "";
-    var strFooter = "";
 
-
-
-
-
-    var concatAndDist=function (e, cnt) {
-
-        gulp.src('dev/SCRIPTS/CONTAINERS/'+cnt+'/*.js')
-            .pipe(foreach(function(stream, file){
-
-                var name = path.basename(file.path, '.js');
-
-                if(scriptFiles.indexOf(name)==-1){
-                    var ctnArr = cnt.split('/');
-                    var ctn1 = ctnArr[0];
-                    var ctn2 = ctnArr[1];
-
-
-
-                    strCtn ="\nscript(src='scripts/"+name+".js' type='text/javascript')";
-                    fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+ctn1+'/_'+ctn2+'.pug',strCtn);
-
-
-
-                    scriptFiles.push(name);
-
-                }
-                gulp.src('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug').pipe(insert.append(strHeader)).pipe(gulp.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
-                return stream
-            }))
-            .pipe(gulp.dest('dist/scripts'));//write to pugs and throw to dist scripts
-
-        for(var index in e) {
-            gulp.src('dev/SCRIPTS/CONTAINERS/'+cnt+'/'+e[index]+'/*.js')
-                .pipe(concat(e[index]+'.js')).pipe(gulp.dest('dist/scripts'));
-
-            name = e[index];
-
-
-            if(scriptFiles.indexOf(name)==-1){
-                var ctnArr = cnt.split('/');
-                var ctn1 = ctnArr[0];
-                var ctn2 = ctnArr[1];
-
-
-
-                strCtn ="\nscript(src='scripts/"+name+".js' type='text/javascript')";
-                fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+ctn1+'/_'+ctn2+'.pug',strCtn);
-
-
-
-                scriptFiles.push(name);
-
-            }
-
-
-
-
-
-        }
-
-
-    }
-
-    var getDirs = function(rootDir, cb, cnt) {
-
-        Sync(fs.readdir(rootDir, function(err, files) {
-
-            if (err == null){
-                console.log('OK');
-                var dirs = [];
-                for (var index = 0; index < files.length; ++index) {
-                    var file = files[index];
-                    if (file[0] !== '.') {
-                        var filePath = rootDir + '/' + file;
-                        fs.stat(filePath, function(err, stat) {
-                            if (stat.isDirectory()) {
-                                dirs.push(this.file);
-                            }
-                            if (files.length === (this.index + 1)) {
-                                return cb(dirs, cnt);
-                            }
-                        }.bind({index: index, file: file}));
-                    }
-                }
-            }
-
-        }))
-    }
-
-
-
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/TOP',concatAndDist,'FOOTER/top'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBS',concatAndDist,'FOOTER/libs'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/LIBSEXTS',concatAndDist,'FOOTER/libsExts'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INIT',concatAndDist,'FOOTER/INIT'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/INITEXT',concatAndDist,'FOOTER/initExt'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/FOOTER/BOTTOM',concatAndDist,'FOOTER/bottom'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/TOP',concatAndDist,'HEAD/top'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBS',concatAndDist,'HEAD/libs'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBSEXT',concatAndDist,'HEAD/libsExts'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INIT',concatAndDist,'HEAD/init'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INITEXT',concatAndDist,'HEAD/initExt'));
-    Sync(getDirs('dev/SCRIPTS/CONTAINERS/HEAD/BOTTOM',concatAndDist,'HEAD/bottom'));
-}
-   Sync(scrBuild())
 
 })
 gulp.task('svgstore', function () {
