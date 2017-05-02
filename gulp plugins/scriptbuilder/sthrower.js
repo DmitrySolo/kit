@@ -10,6 +10,10 @@ var foreach = require('gulp-foreach');
 var concat = require('gulp-concat');
 var path = require('path');
 var insert = require('gulp-insert');
+var rimraf = require('rimraf');
+var callback = function () {
+
+}
 
 module.exports = (options) => {
     // Какие-то действия с опциями. Например, проверка их существования,
@@ -29,10 +33,10 @@ module.exports = (options) => {
         }
 
         ///////////////////////////////////
-        del.sync('dev/SCRIPTS/CONTAINERS/FOOTER/**');
-        del.sync('dev/SCRIPTS/CONTAINERS/HEAD/**');
-        del.sync('dist/scripts');
-            console.log('dfgdfgdfg');
+        rimraf('dev/SCRIPTS/CONTAINERS/FOOTER/',callback);
+        rimraf('dev/SCRIPTS/CONTAINERS/HEAD/',callback);
+        rimraf('dist/scripts',callback);
+
             var scriptsMap = {};
 
         for(var index in data.LIBS) {
@@ -51,10 +55,10 @@ module.exports = (options) => {
                 console.log(dist);
                 if (!scriptsMap.hasOwnProperty(container)){
 
-                    scriptsMap.container = [pathtoScript];
+                    scriptsMap[container] = [pathtoScript];
 
                 }else {
-                    scriptsMap.container.push(pathtoScript);
+                    scriptsMap[container].push(pathtoScript);
                 }
 
                 vfs.src(pathtoScript).pipe(vfs.dest(dist));

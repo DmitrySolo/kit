@@ -1,3 +1,7 @@
+mixin I(id,classModifier)
+	-if (!classModifier) classModifier =''
+	svg(class='icon '+classModifier)
+		use(xlink:href="#"+id)
 mixin B(value,className)
 	-if (!className) className =''
 	button.mainButton(class=''+className)=value
@@ -19,10 +23,6 @@ mixin B-toCart(value,className)
 		+I('cart')
 
 
-mixin I(id,classModifier)
-	-if (!classModifier) classModifier =''
-	svg(class='icon '+classModifier)
-		use(xlink:href="#"+id)
 mixin INPUT-oveCard(type,className)
 	-if (!className) className =''
 	input(type=""+type, class='ove-cardRegInput '+className)

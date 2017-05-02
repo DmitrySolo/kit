@@ -1741,19 +1741,6 @@ td {
   .toCart.toCart--in {
     background-color: #3bd43b; }
 
-form.ove-pageCard__Form .ove-cardRegInput {
-  text-align: center;
-  outline: none;
-  border: none;
-  color: #fff;
-  width: 100%;
-  background-color: transparent;
-  margin-bottom: 0.64em;
-  padding: 0.64em;
-  border-bottom: 3px solid #fff;
-  font-size: 2.5em;
-  letter-spacing: .25em; }
-
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -1803,30 +1790,18 @@ form.ove-pageCard__Form .ove-cardRegInput {
 .ove-sectionHeader {
   margin-bottom: 0.64em; }
 
-.spinner-circle {
-  width: 40px;
-  height: 40px;
-  margin: 100px auto;
-  background-color: #ffffff;
-  border-radius: 100%;
-  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-  animation: sk-scaleout 1.0s infinite ease-in-out; }
-
-@-webkit-keyframes sk-scaleout {
-  0% {
-    -webkit-transform: scale(0); }
-  100% {
-    -webkit-transform: scale(1);
-    opacity: .4; } }
-
-@keyframes sk-scaleout {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0); }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 0; } }
+form.ove-pageCard__Form .ove-cardRegInput {
+  text-align: center;
+  outline: none;
+  border: none;
+  color: #fff;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 0.64em;
+  padding: 0.64em;
+  border-bottom: 3px solid #fff;
+  font-size: 2.5em;
+  letter-spacing: .25em; }
 
 a, a.mainLink {
   color: black;
@@ -1867,6 +1842,31 @@ a.socialLink {
     outline: thin dotted; }
   a.socialLink:hover, a.socialLink:active {
     outline: 0; }
+
+.spinner-circle {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+  background-color: #ffffff;
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out; }
+
+@-webkit-keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0); }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: .4; } }
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0; } }
 
 /**
 * PROJECT  STYLES

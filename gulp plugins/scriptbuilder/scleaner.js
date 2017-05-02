@@ -4,7 +4,10 @@ const through = require('through2');
 const del = require('del');
 var Sync = require('sync');
 const fs = require('fs');
-
+var rimraf = require('rimraf');
+var callback = function () {
+    
+}
 module.exports = (options) => {
     // Какие-то действия с опциями. Например, проверка их существования,
     // задание значения по умолчанию и т.д.
