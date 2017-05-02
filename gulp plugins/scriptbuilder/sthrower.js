@@ -33,6 +33,8 @@ module.exports = (options) => {
         del.sync('dev/SCRIPTS/CONTAINERS/HEAD/**');
         del.sync('dist/scripts');
             console.log('dfgdfgdfg');
+            var scriptsMap = {};
+
         for(var index in data.LIBS) {
             var mod_deps = data.LIBS[index]
             //console.log(mod_deps)
@@ -44,15 +46,23 @@ module.exports = (options) => {
                 var js_dep = js_deps[index];
                 var pathtoScript = js_dep.src;
                 console.log(js_dep.container)
-                var dist = 'dev/SCRIPTS/CONTAINERS/'+js_dep.container+'/';
+                    var container = js_dep.container
+                var dist = 'dev/SCRIPTS/CONTAINERS/'+container+'/';
                 console.log(dist);
+                if (!scriptsMap.hasOwnProperty(container)){
+
+                    scriptsMap.container = [pathtoScript];
+
+                }else {
+                    scriptsMap.container.push(pathtoScript);
+                }
 
                 vfs.src(pathtoScript).pipe(vfs.dest(dist));
 
 
             }}///throw to container
 
-
+                console.log(scriptsMap);
 
         ///////////////////////////////////
 
@@ -191,7 +201,7 @@ module.exports = (options) => {
             getDirs('dev/SCRIPTS/CONTAINERS/HEAD/BOTTOM',concatAndDist,'HEAD/bottom');
         }
 
-        setTimeout( buildscripts(),1000);
+        setTimeout( buildscripts,2000);
 
 
 
