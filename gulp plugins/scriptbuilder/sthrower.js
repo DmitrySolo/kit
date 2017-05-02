@@ -36,7 +36,7 @@ module.exports = (options) => {
             var scriptsMap = {};
 
         for(var index in data.LIBS) {
-            var mod_deps = data.LIBS[index]
+            var mod_deps = data.LIBS[index];
             //console.log(mod_deps)
             var js_deps =mod_deps['js'];
             //console.log(js_deps)

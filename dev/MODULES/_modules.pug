@@ -1,3 +1,278 @@
-//
-   Created by DSolo on 5/1/2017.
+mixin lightMenu(dataMenu)
+	if dataMenu=='MainMenu'
+		-var menuData = pages
+	else
+		-var menuData = menuData1
+	nav.lightMenu(role='navigation')
+		ul.lightMenu__list
+			each menuItem in menuData
+				if dataMenu=='MainMenu'
+					if menuItem.MainMenu
+						li(class='lightMenu__item ' + menuItem.dop_class)
+							a(href="" + menuItem.slug+".html")=menuItem.title
+				else
+					li(class='lightMenu__item ' + menuItem.dop_class)
+						a(href="" + menuItem.href)=menuItem.title
+mixin FORM(labelPosition,inputsPosition)
+	<!-- split modules/FORM -->
+	.FORM
+		-if(FORM.TITLE !="")
+			//h3.form__title=page.title
+		form(class=''+FORM.dop_class,method=''+FORM.method,name=''+FORM.name,action=''+FORM.action,onsubmit=''+FORM.on_submit)
+			each val in FORM.inputs
+				-var attrLine =val.other_specific
+				p.form__line
+					-if(val.type=='text')
+						label(for=''+val.name)=val.label
+							span.form__validateMessage&attributes({"id":'js_val_'+val.name})
+							-if(labelPosition=='over')
+								br
+							input(type=''+val.type,
+								name=''+val.name,
+								value=''+val.value,
+								class=''+val.dop_class,
+								placeholder=''+val.placeholder,
+								id=''+val.id,
+							)&attributes(attrLine)
+					-if(val.type=='radio')
+						-var name = val.name
+						label(for=''+val.name)=val.label
+							span.form__validateMessage&attributes({"id":'js_val_'+val.name})
+							-if(labelPosition=='over')
+								br
+							each radio, index in val.value
+								input(type='radio',name=name,value=radio,)&attributes(attrLine)
+								| #{index}
+								br
+					-if(val.type=='radio')
+						-var name = val.name
+						label(for='' + val.name)=val.label
+							-if(labelPosition=='over')
+								br
+							each radio, index in val.value
+								input(type='checkbox',name=name,value=radio,)&attributes(attrLine)
+								| #{index}
+								br
+					-if(val.type=='select')
+						-var name = val.name
+						label(for='' + val.name)=val.label
+							-if(labelPosition=='over')
+								br
+								select(name=val.name)
+									each opt, index in val.value
+										option(value=opt,)&attributes(attrLine)  #{index}
+			p.form__line
+				input(type='submit',value=''+FORM.submit.value,id=''+FORM.submit.id,class=''+FORM.submit.dop_class)
 
+mixin breadcrumbs()
+	nav.breadCrumb.visible-l
+		a(href='/').breadcrumb__section.breadCrumb__section--home Главная
+		+loop(3)
+			a(href='/').breadcrumb__section Другая страница12
+
+mixin catalogItem()
+	<!-- split modules/catalogItem -->
+		-var i = 1
+		+loop(6)
+			.catalogItem
+				.catalogItem__imgCtn
+					a(href="#")
+						img.catalogItem__img(src="images/catalog/"+i+".jpg")
+				.catalogItem__title
+					a(href='/#') Набор разделочных досок Joseph Joseph Index Mini 60098 графит
+				.catalogItem__priceAndBuy__price
+								span 30 400Р
+				.catalogItem__priceAndBuy__buy
+								+B-toCart()
+			-i++
+mixin catalogItemsonCatPage()
+	<!-- split modules/catalogItemsonCatPage -->
+		-var i = 1
+		+loop(11)
+			.container
+				.col-12-m
+					.catalogItem.row
+						.col-6-m
+							.catalogItem__imgCtn
+								a(href="#")
+									img.catalogItem__img(src="images/catalog/" + i + ".jpg")
+							.catalogItem__title
+								a(href='/#') Набор разделочных досок Joseph Joseph Index Mini 60098 графит
+						.col-6-m
+							.catalogItem__quntCheck
+								span.catalogItem__quntCheck__marker
+								span.catalogItem__quntCheck__titl В наличии
+							.catalogItem__priceAndBuy__price
+								span 30 410Р
+							.catalogItem__priceAndBuy__buy
+								+B-toCart()
+					-i++
+mixin catalogMenu()
+	<!-- split modules/catalogMenu -->
+	.catalogMenu
+		.catalogMenu__wrapper
+			ul.catalogMenu__list
+				li.catalogMenu__list__item.catalogMenu__list__item--active#catalogMenu__list__item--1--1
+					span Сантехника
+					span.angleR
+						+I('right','icon--angle')
+				li.catalogMenu__list__item#catalogMenu__list__item--1--2
+					span Мебель для ванной
+					span.angleR
+						+I('right','icon--angle')
+				li.catalogMenu__list__item#catalogMenu__list__item--1--3
+					span Водоснабжение
+					span.angleR
+						+I('right','icon--angle')
+				li.catalogMenu__list__item#catalogMenu__list__item--1--4
+					span Строительная химия
+					span.angleR
+						+I('right','icon--angle')
+				li.catalogMenu__list__item#catalogMenu__list__item--1--5
+					span Люстры/Светильники
+					span.angleR
+						+I('right','icon--angle')
+				li.catalogMenu__list__item#catalogMenu__list__item--1--6
+					span Электрика
+					span.angleR
+						+I('right','icon--angle')
+				li.catalogMenu__list__item#catalogMenu__list__item--1--7
+					span Аксессуары
+					span.angleR
+						+I('right','icon--angle')
+				li.catalogMenu__list__item#catalogMenu__list__item--1--8
+					span Отопление
+					span.angleR
+						+I('right','icon--angle')
+				li.catalogMenu__list__item#catalogMenu__list__item--1--9
+					span Сток-товары
+					span.angleR
+						+I('right','icon--angle')
+
+
+
+mixin discountMetr()
+	<!-- split modules/discountMetr -->
+	.discountMetr
+		.testCart На сумму 3100 руб.
+		.discountMetr__warpper
+			.discountMetr__title
+				h6 Скидометр
+				.discountMetr__startPointWrapper
+					.discountMetr__startPoint
+			.discountMetr__scaleWrapper
+				.discountMetr__scale__events
+					span.discountMetr__scale__event.discountMetr__scale__event--250 Скидка  250 Р
+						+I('slash')
+					span.discountMetr__scale__event.discountMetr__scale__event--delivery + Беспалтная доставка
+						+I('slash')
+					span.discountMetr__scale__event.discountMetr__scale__event--500 + Скидка  700 Р
+						+I('slash')
+					span.discountMetr__scale__event.discountMetr__scale__event--1000 + Скидка 1400 Р
+						+I('slash')
+				.discountMetr__scale__wrapper
+					.discountMetr__scale_outer
+							.discountMetr__scale_inner
+				.discountMetr__scale__characters
+					+loop(20)
+						+I('scalePart')
+				.discountMetr__scale__marks
+					span.discountMetr__scale__mark.discountMetr__scale__mark--3000 3000 Р
+					span.discountMetr__scale__mark.discountMetr__scale__mark--6000 6000 Р
+					span.discountMetr__scale__mark.discountMetr__scale__mark--14000 11 000 Р
+					span.discountMetr__scale__mark.discountMetr__scale__mark--18000 18 000 Р
+mixin hero_video()
+	<!-- split modules/hero_video -->
+	.hero_video
+		.homepage-hero-module
+			.video-container
+				.filter
+				video(autoplay loop class="fillWidth")
+					source(src="Hello-World.mp4" type="video/mp4")
+					|Your browser does not support the video tag. I suggest you upgrade your browser.
+					source(src="Hello-World.webm" type="video/webm")
+					|Your browser does not support the video tag. I suggest you upgrade your browser.
+				+hero-title-center('The best of the Rest')
+			.hero_video__poster.hidden
+				img(src="Hello-World.jpg" alt="x")
+mixin ove-pagination()
+	<!-- split modules/ove-pagination -->
+	.ove-pagination
+		.bx_pagination_bottom
+			.bx_pagination_section_one
+				.bx_pg_section.pg_pagination_num
+					.bx_pagination_page
+						span.bx_pg_text Страницы:
+						ul
+							li &larr;
+							li.bx_active(title='Текущая страница') 1
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=5&SIZEN_1=60', title='Страница 2') 2
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=4&SIZEN_1=60', title='Страница 3') 3
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=3&SIZEN_1=60', title='Страница 4') 4
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=2&SIZEN_1=60', title='Страница 5') 5
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=1&SIZEN_1=60', title='Страница 6') 6
+							li
+								a(href='/mobile/catalog/?SECTION_ID=123&PAGEN_1=7&SIZEN_1=60', title='Следующая страница') &rarr;​
+mixin oveFeatures()
+	<!-- split modules/oveFeatures -->
+	.oveFeatures
+			.oveFeatures__feature.oveFeatures__feature--delivery
+				.row
+					.col-6-m.col-6-tp
+						.oveFeatures__feature__desc
+							h3 Бесплатная доставка при заказе от 4000Р
+			.oveFeatures__feature.oveFeatures__feature--service
+				.row
+					.col-6-m.col-6-tp
+						.oveFeatures__feature__desc
+							h3 Собственная сервисная служба
+
+mixin owlGoodsSlider()
+	<!-- split modules/owlGoodsSlider -->
+	.owlGoodsSlider__wrapper
+		.owlGoodsSlider.owl-carousel
+			+module('catalogItem')
+mixin owlSlider()
+	<!-- split modules/owlSlider -->
+	.owlSlider
+		.ove-mainSlider.owl-carousel
+				img(src="images/partners.jpg")
+
+				img(src="images/guaranty.jpg")
+
+				img(src="images/10000.jpg")
+mixin pagination()
+	<!-- split modules/pagination.html -->
+	.pagination
+		.row
+			.col-12-m
+				ul.pagination__ctn
+					li.pagination__ctn__button.pagination__ctn__button--current 1
+					li.pagination__ctn__button 2
+					li.pagination__ctn__button 3a
+
+
+
+mixin sideBar()
+	<!-- split modules/sideBar -->
+		.sideBar.clearfix
+			.sideBar-bck
+				.sideBar__closer
+					+I('close','icon--close')
+				.sideBar__menu
+					h2.sideBar__menu--title Каталог
+					ul.sideBar__menu--catalog
+						li.sideBar__menu--catalog__item Сантехника
+						li.sideBar__menu--catalog__item Мебель для ванной
+						li.sideBar__menu--catalog__item Водоснабжение
+						li.sideBar__menu--catalog__item Строительная химия
+						li.sideBar__menu--catalog__item Люстры/Светильники
+						li.sideBar__menu--catalog__item Электрика
+						li.sideBar__menu--catalog__item Аксессуары
+						li.sideBar__menu--catalog__item Отопление
+						li.sideBar__menu--catalog__item Сток-товары

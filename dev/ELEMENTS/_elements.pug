@@ -1,11 +1,11 @@
+mixin B(value,className)
+	-if (!className) className =''
+	button.mainButton(class=''+className)=value
+
 mixin B-gogog(value,className)
 	-if (!className) className =''
 	button.gogog(class=''+className)=value
 
-
-mixin B(value,className)
-	-if (!className) className =''
-	button.mainButton(class=''+className)=value
 
 mixin B-ove-cardReg(value,className,disabledc)
 	-if (!className) className =''
@@ -19,13 +19,13 @@ mixin B-toCart(value,className)
 		+I('cart')
 
 
-mixin INPUT-oveCard(type,className)
-	-if (!className) className =''
-	input(type=""+type, class='ove-cardRegInput '+className)
 mixin I(id,classModifier)
 	-if (!classModifier) classModifier =''
 	svg(class='icon '+classModifier)
 		use(xlink:href="#"+id)
+mixin INPUT-oveCard(type,className)
+	-if (!className) className =''
+	input(type=""+type, class='ove-cardRegInput '+className)
 mixin A(content,href,className)
 	-if (!className) className =''
 	a(class='mainLink '+className,href=href)=content

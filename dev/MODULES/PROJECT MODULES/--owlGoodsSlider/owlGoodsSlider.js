@@ -8,6 +8,6 @@ $(".owlGoodsSlider").owlCarousel({
     "dots" : false,
     "lazyLoad": true
 });
-$('.oveX-header').css('backgroundColor','tomato');
+$('.oveX-header').css('backgroundColor','blue');
 console.log('test213');
 console.log('test23');

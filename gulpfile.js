@@ -13,7 +13,9 @@ var sassJson = require('gulp-sass-json');
 var fs = require('fs');
 var GulpSSH = require('gulp-ssh');
 var htmlsplit = require('gulp-htmlsplit');
+var watch = require('gulp-watch');
 var pug = require('gulp-pug');
+var batch = require('gulp-batch');
 var gm = require('gulp-gm');
 var insert = require('gulp-insert');
 var imageResize = require('gulp-image-resize');
@@ -38,12 +40,26 @@ var pugPHPFilter = require('pug-php-filter');
 var phplint = require('gulp-phplint');
 const html2pug = require('gulp-html2pug');
 var sftp = require('gulp-sftp');
+var colors = require('colors');
 var iconfont = require('gulp-iconfont');
 var runTimestamp = Math.round(Date.now()/1000);
 var iconfontCss = require('gulp-iconfont-css');
-const scriptCleaner = require('./gulp plugins/scriptbuilder/scleaner');
-const scriptThrower = require('./gulp plugins/scriptbuilder/sthrower');
-const scriptBuilder = require('./gulp plugins/scriptbuilder/builder');
+
+// QUANT PLUGINS&FUNCTIONS
+
+
+var qp_path = "./gulp plugins/";
+const scriptCleaner = require(qp_path+'scriptbuilder/scleaner');
+const scriptThrower = require(qp_path+'scriptbuilder/sthrower');
+const qM = require(qp_path+'q_functions');
+
+
+
+
+
+//**********************************************************************************************************************
+
+
 gulp.task('phplint', function phplint() {
     gulp.src('dist/category.php')
         .pipe(phplint());
@@ -167,16 +183,7 @@ gulp.task('BUILDMODULE', function() {
 
 
 
-gulp.task('own-js', function() {
-    gulp.src(['dev/SCRIPTS/_*js'])
-        .pipe(concat({ path: 'script.js', stat: { mode: 0666 }}))
-        .pipe(gulp.dest('dist/scripts'));
-});
-gulp.task('build-script-js', function() {
-    gulp.src(['dev/**/_FORM-search.js'])
-        .pipe(concat({ path: 'script.js', stat: { mode: 0666 }}))
-        .pipe(gulp.dest('dist/scripts'));
-});
+
 gulp.task('dep-js', function() {
     gulp.src(['bower_components/jquery/dist/jquery.min.js','bower_components/sass-to-js/js/dist/sass-to -js.min.js'])
         .pipe(gulp.dest('dist/scripts/'));
@@ -193,6 +200,78 @@ gulp.task('SERVER', [], function() {
 
 
 });
+
+
+gulp.task('stream', function () {
+    // Endless stream mode
+    return watch(
+        [
+
+            'dev/ELEMENTS/_elements.pug',
+            'dev/ELEMENTS/_mixes.pug',
+            'dev/MODULES/_modules.pug',
+            'data.json',
+            'dev/templates/**/*.pug',
+            'blueprint/*.pug',
+            '!dev/templates/PAGESYSTEM/SCRIPTS-STYLES/**/*'
+        ]
+    ).pipe(gulp.start('views')).pipe(gulp.start('compile-blueprint-view'));
+
+});
+
+
+
+gulp.task('VIEW-FINAL', function () {
+    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+    return watch([
+
+        'dev/ELEMENTS/_elements.pug',
+        'dev/ELEMENTS/_mixes.pug',
+        'dev/MODULES/_modules.pug',
+        'data.json',
+        'dev/templates/**/*.pug',
+        'blueprint/*.pug',
+        '!dev/templates/PAGESYSTEM/SCRIPTS-STYLES/**/*'
+    ], function () {
+        gulp.start('views');
+        gulp.start('compile-blueprint-view');
+    });
+});
+
+gulp.task('VIEW-1-ELEMENTS', function () {
+    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+    return watch([
+
+        'dev/ELEMENTS/**/*.pug',
+        '!dev/ELEMENTS/_elements.pug'
+    ], function () {
+        gulp.start('concat-elements-pug');
+    });
+});
+gulp.task('VIEW-1-MIXES', function () {
+    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+    return watch([
+
+        'dev/MIXES/**/*.pug',
+        '!dev/MIXES/_mixes.pug'
+    ], function () {
+        gulp.start('concat-mixes-pug');
+    });
+});
+gulp.task('VIEW-1-MODULES', function () {
+    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+    return watch([
+
+        'dev/MODULES/**/_mixin.pug',
+        '!dev/MODULES/_modules.pug'
+    ], function () {
+        gulp.start('concat-modules-pug');
+
+    });
+});
+
+
+
 
 
 
@@ -389,12 +468,13 @@ gulp.task('concat-modules-scss', function() {
 
 });
 
-gulp.task('concat-modules-pug', function() {
+gulp.task('concat-modules-pug', function(done) {
 
 
     gulp.src('dev/MODULES/*/--*/_mixin.pug')
         .pipe(concat('_modules.pug'))
         .pipe(gulp.dest('dev/MODULES/'));
+        done();
 
 });
 
@@ -506,6 +586,41 @@ gulp.task('be', function() {
         }
 
     });
+
+gulp.task('bm:new', function() {
+
+    if (!fs.existsSync('dev/MODULES/PROJECT MODULES/--'+options.name)) {
+
+
+        var moduleName = options.name,
+         elemData = {
+            moduleName: moduleName
+        },
+
+            moduleTemplates = fs.readdirSync('dev/MODULES/_templates/');
+        try{
+            for (var key in moduleTemplates) {
+
+                var file =  moduleTemplates[key].slice(1,-4);
+                if( file == 'moduleScript.js' ) file = moduleName+'.js';
+
+                gulp.src('dev/MODULES/_templates/'+moduleTemplates[key])
+                    .pipe(rename(file))
+                    .pipe(template(elemData))
+                    .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+moduleName+'/'))
+            }
+        }catch(e){
+
+            qM.err(e.name+' '+e.message);
+
+        }qM.ok('Module added!');
+
+
+
+
+    }else qM.err('THIS MODULE ALREADY EXIST!');
+
+});
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -677,7 +792,7 @@ gulp.task('buildblueprint', function buildHTML() {
         .pipe(gulp.dest('blueprint/'));
 });
 gulp.task('mergeJson',function () {
-    return gulp.src(['dev/**/*.json','blueprint/*.json'])
+    return gulp.src(['dev/**/*.json','blueprint/*.json','!dev/SOURCE_FABRIC/STORRAGE/**/*.json'])
         .pipe(merge('data.json'))
         .pipe(gulp.dest('./'));
 
