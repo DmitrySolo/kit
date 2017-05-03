@@ -783,7 +783,13 @@ gulp.task('buildblueprint', function buildHTML() {
         .pipe(gulp.dest('blueprint/'));
 });
 gulp.task('mergeJson',function () {
-    return gulp.src(['dev/**/*.json','blueprint/*.json','!dev/SOURCE_FABRIC/STORRAGE/**/*.json'])
+    return gulp.src([
+        'dev/{MODULES,ELEMENTS,SCRIPTS}/**/--*/*.json',
+        'dev/templates/**/*.json',
+        'blueprint/*.json',
+        '!dev/SOURCE_FABRIC/STORRAGE/**/*.json',
+        '!dev/{MODULES,ELEMENTS,SCRIPTS}/**/--*/off_*.json'
+    ])
         .pipe(merge('data.json'))
         .pipe(gulp.dest('./'));
 
@@ -833,28 +839,7 @@ gulp.task('testizmodul',[], function () {
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('blueprint/starter.css'));
 })
-gulp.task('buildLibs',[], function () {
-    for(var index in data.LIBS) {
-        var mod_deps = data.LIBS[index]
-        //console.log(mod_deps)
-        var js_deps =mod_deps['js'];
-        //console.log(js_deps)
-        var css_deps = mod_deps['css'];
-        //console.log(css_deps)
-        for (var index in js_deps){
-            var js_dep = js_deps[index];
-            var pathtoScript = js_dep.src;
-            console.log(js_dep.concat)
-            if(js_dep.concat == 'false'){
-                gulp.src(pathtoScript).pipe(gulp.dest('dist/scripts/libs/'));
-               var str ="\nscript(src='scripts/libs/"+index+"' type='text/javascript')";
-                gulp.src('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug').pipe(insert.append(str)).pipe(gulp.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
 
-            }
-        }
-
-    }
-});
 var resW = {
     number: 'w',
     default: 0,
