@@ -1,4 +1,48 @@
 {
+	"undefined": [
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		""
+	],
+	"footer/init/init": [
+		"dev/ELEMENTS/BUTTONS/--toCart/toCart.js",
+		"dev/MODULES/PROJECT MODULES/--owlGoodsSlider/owlGoodsSlider.js",
+		"dev/MODULES/PROJECT MODULES/--owlSlider/owlSlider.js",
+		"dev/MODULES/PROJECT MODULES/--FORM/_FORM-script.js",
+		"dev/SCRIPTS/SCRIPTS/microControls/microControls.js"
+	],
+	"footer/top/preloader": [
+		"bower_components/please-wait/build/please-wait.min.js",
+		"dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js"
+	],
+	"": [
+		""
+	],
+	"footer/init/discoUntMetr": [
+		"dev/MODULES/PROJECT MODULES/--discountMetr/discountMetr.js"
+	],
+	"footer/init": [
+		"dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js"
+	],
+	"footer/libsExts": [
+		"bower_components/owl.carousel/dist/owl.carousel.min.js",
+		"bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js"
+	],
+	"footer/libs": [
+		"bower_components/validator-js/validator.min.js",
+		"bower_components/jquery/dist/jquery.min.js"
+	],
+	"footer/init/mobile": [
+		"dev/MODULES/PROJECT MODULES/--sideBar/sideBar.js"
+	],
+	"footer/bottom": [
+		"dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js"
+	],
+	"DateTime": "5/3/2017, 5:35:09 PM",
 	"head": {
 		"lang": "ru",
 		"title": "TEST APPLICATION",
@@ -65,269 +109,6 @@
 			"dop_class": ""
 		}
 	},
-	"LIBS": {
-		"<%=name%>": {
-			"js": {
-				"<%=name%>-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/<%=name%>/<%=name%>.js",
-					"container": "footer",
-					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"ove-cardReg": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"gogog": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"toCart": {
-			"js": {
-				"ini": {
-					"src": "dev/ELEMENTS/BUTTONS/--toCart/toCart.js",
-					"concat": "true",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"<%= prefix %>": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"spinner-circle": {
-			"js": {
-				"lib": {
-					"src": "bower_components/please-wait/build/please-wait.min.js",
-					"container": "footer/top/preloader"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
-					"container": "footer/top/preloader"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"JQ": {
-			"js": {
-				"jquery": {
-					"src": "bower_components/jquery/dist/jquery.min.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"microControls": {
-			"js": {
-				"microControls-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/microControls/microControls.js",
-					"container": "footer/init/init",
-					"type": "init"
-				},
-				"maskedInput": {
-					"src": "bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js",
-					"container": "footer/libsExts/",
-					"type": "lib"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"styckyHeader": {
-			"js": {
-				"styckyHeader-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
-					"container": "footer/init/init",
-					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"catalogMenu": {
-			"js": {
-				"catalogMenu": {
-					"src": "",
-					"container": ""
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"catalogItem": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"catalogItemsonCatPage": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"discountMetr": {
-			"js": {
-				"discountMetr": {
-					"src": "dev/MODULES/PROJECT MODULES/--discountMetr/discountMetr.js",
-					"container": "footer/init/discoUntMetr"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"hero_video": {
-			"js": {
-				"hero_video-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
-					"container": "footer/init",
-					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"newtestm678": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--newtestm678/newtestm678.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"ove-pagination": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"oveFeatures": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"OWLGOODSSLIDER": {
-			"js": {
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--owlGoodsSlider/owlGoodsSlider.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"FORM": {
-			"js": {
-				"lib": {
-					"src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--owlSlider/owlSlider.js",
-					"container": "footer/init/init"
-				},
-				"validator": {
-					"src": "bower_components/validator-js/validator.min.js",
-					"container": "footer/libs"
-				},
-				"FORM-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--FORM/_FORM-script.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"sergTest": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"sideBar": {
-			"js": {
-				"catalogMenu": {
-					"src": "dev/MODULES/PROJECT MODULES/--sideBar/sideBar.js",
-					"container": "footer/init/mobile"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		}
-	},
 	"response": "false",
 	"vertical-rhythm": "true",
 	"linkFonts": "true",
@@ -377,6 +158,231 @@
 	},
 	"nr-colStyles": {
 		"float": "left"
+	},
+	"LIBS": {
+		"gogog": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"ove-cardReg": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"toCart": {
+			"js": {
+				"ini": {
+					"src": "dev/ELEMENTS/BUTTONS/--toCart/toCart.js",
+					"concat": "true",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"<%= prefix %>": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "true"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"spinner-circle": {
+			"js": {
+				"lib": {
+					"src": "bower_components/please-wait/build/please-wait.min.js",
+					"container": "footer/top/preloader"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
+					"container": "footer/top/preloader"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"catalogItem": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"catalogItemsonCatPage": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"catalogMenu": {
+			"js": {
+				"catalogMenu": {
+					"src": "",
+					"container": ""
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"discountMetr": {
+			"js": {
+				"discountMetr": {
+					"src": "dev/MODULES/PROJECT MODULES/--discountMetr/discountMetr.js",
+					"container": "footer/init/discoUntMetr"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"hero_video": {
+			"js": {
+				"hero_video-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
+					"container": "footer/init",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"ove-pagination": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"oveFeatures": {
+			"js": {
+				"": {
+					"src": "",
+					"concat": "false"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"OWLGOODSSLIDER": {
+			"js": {
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--owlGoodsSlider/owlGoodsSlider.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"FORM": {
+			"js": {
+				"lib": {
+					"src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
+					"container": "footer/libsExts"
+				},
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--owlSlider/owlSlider.js",
+					"container": "footer/init/init"
+				},
+				"validator": {
+					"src": "bower_components/validator-js/validator.min.js",
+					"container": "footer/libs"
+				},
+				"FORM-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--FORM/_FORM-script.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"sideBar": {
+			"js": {
+				"catalogMenu": {
+					"src": "dev/MODULES/PROJECT MODULES/--sideBar/sideBar.js",
+					"container": "footer/init/mobile"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"JQ": {
+			"js": {
+				"jquery": {
+					"src": "bower_components/jquery/dist/jquery.min.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"microControls": {
+			"js": {
+				"microControls-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/microControls/microControls.js",
+					"container": "footer/init/init",
+					"type": "init"
+				},
+				"maskedInput": {
+					"src": "bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js",
+					"container": "footer/libsExts",
+					"type": "lib"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"styckyHeader": {
+			"js": {
+				"styckyHeader-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/styckyHeader/styckyHeader.js",
+					"container": "footer/bottom",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		}
 	},
 	"menuData1": {
 		"Home": {
@@ -508,23 +514,20 @@
 	"breadcrumbs": {
 		"1": "22"
 	},
-	"catalogMenu": {
-		"catalogMenu": "1"
-	},
 	"catalogItem": {
 		"catalogItem": "1"
 	},
 	"catalogItemsonCatPage": {
 		"catalogItemsonCatPage": "1"
 	},
+	"catalogMenu": {
+		"catalogMenu": "1"
+	},
 	"discountMetr": {
 		"discountMetr": "1"
 	},
 	"hero_video": {
 		"hero_video": "1"
-	},
-	"newtestm678": {
-		"newtestm678": "1"
 	},
 	"ove-pagination": {
 		"ove-pagination": "1"
@@ -540,9 +543,6 @@
 	},
 	"pagination": {
 		"pagination": "1"
-	},
-	"sergTest": {
-		"sergTest": "1"
 	},
 	"sideBar": {
 		"sideBar": "1"

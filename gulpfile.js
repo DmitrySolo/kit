@@ -44,6 +44,7 @@ var colors = require('colors');
 var iconfont = require('gulp-iconfont');
 var runTimestamp = Math.round(Date.now()/1000);
 var iconfontCss = require('gulp-iconfont-css');
+const watchdir = require("gulp-watch-dir");
 
 // QUANT PLUGINS&FUNCTIONS
 
@@ -51,7 +52,7 @@ var iconfontCss = require('gulp-iconfont-css');
 var qp_path = "./gulp plugins/";
 const scriptCleaner = require(qp_path+'scriptbuilder/scleaner');
 const scriptThrower = require(qp_path+'scriptbuilder/sthrower');
-const qM = require(qp_path+'q_functions');
+var qM = require(qp_path+'q_functions');
 
 
 
@@ -79,7 +80,7 @@ gulp.task('SCRIPTS2', function () {
         .pipe(scriptThrower());
 })
 
-gulp.task('SCRIPTS ALL', gulpsync.sync(['SCRIPTS1','SCRIPTS2'])
+gulp.task('SCRIPTS ALL', gulpsync.sync(['SCRIPTS2'])
 );
 
 
@@ -225,6 +226,18 @@ gulp.task('VIEW-1-DATA', function () {
     });
 });
 
+// SERVER WATCHER
+gulp.task('SERVER WATCHER', function () {
+    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+    return watch(["dist/index.html","dist/*.css","dev/SCRIPTS/scriptMap.js"], function () {
+        browserSync.reload();
+
+    });
+});
+
+
+
+// STYLES
 
 gulp.task('STYLES-FINAL', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
@@ -281,12 +294,15 @@ gulp.task('SCRIPTS-FINAL', function () {
 gulp.task('WATCHER:NEW', [
     'VIEW-FINAL','VIEW-1-MIXES','VIEW-1-MODULES','VIEW-1-ELEMENTS','VIEW-1-DATA',
     'STYLES-FINAL','STYLES-1-MIXES','STYLES-1-ELEMENTS','STYLES-1-MODULES',
-    'SCRIPTS-FINAL'
+    'SCRIPTS-FINAL',
+    'SERVER WATCHER',
+    'readyWatcher'
     ],function(){
 
-    qM.ok('Watcher Started');
 })
-
+gulp.task('readyWatcher',function(){
+    qM.ok('WATCHER READY');
+})
 
 
 gulp.task('WATCHER', function() {
@@ -503,45 +519,7 @@ var buildmodulesData = {
     default: 'no',
 };
 var options = minimist(process.argv.slice(2), buildmodulesData);
-gulp.task('bm', function() {
-        if (!fs.existsSync('dev/MODULES/PROJECT MODULES/--'+options.name)) {
-            ///INCLUDE PUG
-            var str = "include _mixin\n+"+options.name+"()";
-            file('_include.pug', str)
-                .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
-            ///INCLUDE SCSS
-            var str = "@include "+options.name+"();";
 
-            file('_starter.scss', str)
-                .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
-
-            ///MIXIN PUG
-            var str = "mixin "+options.name+"()\n\t\<!-- split modules/"+options.name+" -->\n\t."+options.name+"";
-            file('_mixin.pug', str)
-                .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
-            ///MIXIN SCSS
-            var str = "@mixin "+options.name+"(){\n\t\n."+options.name+"{}}";
-            file('_mixin.scss', str)
-                .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
-            ///DATA
-            var str = '{\n\t"'+options.name+'" : {\n\t\t"'+options.name+'" : "1"\n\t}\n}';
-            file('data.json', str)
-                .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
-            ///JS
-            var str ="//"+options.name+" Script";
-            file('script.js',str)
-                .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
-            ///LIBS JSON
-            var str ='{"LIBS": {"'+options.name+'":{"js":{"":{"src":"","concat":"false"}},"css":{"":""}}}}';
-            file('libs.json', str)
-                .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/'));
-            ///MODULE INCLUDER
-            var str ="\n        when '"+options.name+"'\n            include ../../../dev/MODULES/PROJECT MODULES/--"+options.name+"/_include";
-            gulp.src('dev/templates/mixins/module_includer.pug').pipe(insert.append(str)).pipe(gulp.dest('dev/templates/mixins'));
-
-        }
-
-});
 //////////////////////////////////////////////////////////
 var type = {
     string: 'type',
@@ -1120,12 +1098,12 @@ gulp.task('bs',[], function () {
     var elemData = {
         name: options.name
     }
-    gulp.src('dev/SCRIPTS/SCRIPTS/_template.json')
+    gulp.src('dev/SCRIPTS/SCRIPTS/_template.json.tpl')
         .pipe(rename('libs.json'))
         .pipe(template(elemData))
         .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/'+options.name+'/'));
 
-    gulp.src('dev/SCRIPTS/SCRIPTS/_template.js')
+    gulp.src('dev/SCRIPTS/SCRIPTS/_template.js.tpl')
         .pipe(rename(options.name+'.js'))
         .pipe(template(elemData))
         .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/'+options.name+'/'));
@@ -1201,8 +1179,8 @@ gulp.task('svgstore', function () {
         .pipe(gulp.dest('dist/icons/'));
 });
 //////////////////////////////////////////////////////
-gulp.task('START QUANT', ['WATCHER', 'SERVER']);
-//gulp.task('SCRIPT BUILDERs', gulp.series('SCRIPTS-CLEAN', 'SCRIPTS-GO-CONTAINER', 'SCRIPTS-BUILD'));
+gulp.task('START QUANT', ['WATCHER:NEW', 'SERVER']);
+
 
 gulp.task('SCRIPT BUILDER', function(done) {
     runSequence('SCRIPTS-CLEAN', 'SCRIPTS-GO-CONTAINER','SCRIPTS-BUILD');

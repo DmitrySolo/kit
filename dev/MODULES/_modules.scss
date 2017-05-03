@@ -75,162 +75,6 @@
   }
 }
 @include breadcrumbs();
-@mixin catalogItem() {
-
-  .catalogItem {
-    @include space('element', 'a', '');
-    @include space('component','','b');
-    background-color: cs('fground');
-    border: 1px solid cs('bground-d');
-    & > div{
-      @include space('element', '', 'b');
-    }
-  }
-  .catalogItem__imgCtn {
-    box-sizing: content-box;
-    @include for-size(tablet-p-up){
-      height: 120px;
-          }
-    @include for-size(tablet-l-up){
-      height: 150px;
-    }
-    @include for-size(desktop-up){
-      height: 170px;
-    }
-    height: 90px;
-    max-width: 100%;
-    text-align: center;
-    line-height: 90px;
-    @include space('element','tb','');
-
-    img.catalogItem__img {
-      max-height: 170px;
-      display: inline;
-      @include for-size(phone-only){
-        max-width: 90px;
-        max-height: 90px;
-        vertical-align: middle;
-      }
-    }
-  }
-  .catalogItem__title {
-    height: s-growLines(4);
-    overflow: hidden;
-  }
-  .catalogItem__priceAndBuy__price {
-    font-size: 1.2em;
-    text-align: center;
-    height: s-growLines(2);
-    span{
-      font-weight: bold;
-    }
-  }
-}
-@include catalogItem();
-@mixin catalogItemsonCatPage(){
-  .catalogItem__quntCheck{
-    @include space('module','','b');
-    text-align: right;
-  }
-  .catalogItem__priceAndBuy__price {
-    @include space('module','','b');
-    display: table;
-    width: 100%;
-    span {
-      display: table-cell;
-      vertical-align: middle;
-    }
-  }
-  .catalogItem__quntCheck__marker {
-    display: inline-block;
-    font-size: .8em;
-    text-transform: uppercase;
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: #3cb774;
-    @include space('element','','r');
-  }
-  .catalogItem__quntCheck__titl {
-    display: inline-block;
-  }
-
-}
-@include catalogItemsonCatPage();
-@mixin catalogMenu(){
-	
-.catalogMenu{
-  position: relative;
-  .catalogMenu__button {
-    display: block;
-    background-color: cs('accent');
-    position: relative;
-    color: #fff;
-    text-transform: uppercase;
-    height: 70px;
-    line-height: 70px;
-    text-align: center;
-    cursor: pointer;
-    @include a-hover('background-color',(from:0,to:cs('accent-l')),1s,ease);
-    &:after{
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      width: 100%;
-      height: 3px;
-      left:0;
-      background-color: cs('accent-d');
-
-    }
-  }
-  .catalogMenu__list {
-    width: 100%;
-    background-color: #fff;
-    position: absolute;
-    z-index: 6000;
-    box-shadow: 3px 0px 3px silver;
-  }
-  .catalogMenu__list__item {
-    position: relative;
-    @include space('element','tb','');
-    @include space('component','l','');
-    cursor: pointer;
-    font-weight: bold;
-    @include a-hover('background-color',(from:0,to:0),.13s,linear);
-    .angleR {
-      position: absolute;
-      right: 5%;
-    }
-
-  }
-  .catalogMenu__wrapper {
-    position: relative;
-    background-color: #fff;
-  }
-  .catalogMenu__list--L1{
-    width: 99.8%;
-  }
-  .catalogMenu__list--L2{
-    width: 150%;
-    right: -149.8%;
-    display: none;
-    z-index: 5999;
-  }
-  .catalogMenu__list--L3{
-    width: 150%;
-    right: -299.8%;
-    display: none;
-    z-index: 5998;
-  }
-  .catalogMenu__list__item--active {
-    background-color: darken(cs('bground'),4%);
-
-
-  }
-}
-
-}
-@include catalogMenu();
 @mixin discountMetr(){
 	
 .discountMetr{
@@ -471,6 +315,36 @@
   }
 }
 @include ove-pagination();
+@mixin catalogItemsonCatPage(){
+  .catalogItem__quntCheck{
+    @include space('module','','b');
+    text-align: right;
+  }
+  .catalogItem__priceAndBuy__price {
+    @include space('module','','b');
+    display: table;
+    width: 100%;
+    span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  .catalogItem__quntCheck__marker {
+    display: inline-block;
+    font-size: .8em;
+    text-transform: uppercase;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #3cb774;
+    @include space('element','','r');
+  }
+  .catalogItem__quntCheck__titl {
+    display: inline-block;
+  }
+
+}
+@include catalogItemsonCatPage();
 @mixin oveFeatures() {
 
   .oveFeatures {
@@ -512,42 +386,6 @@
 
 }
 @include oveFeatures();
-@mixin owlGoodsSlider() {
-
-  .owlGoodsSlider {
-    position: relative;
-    @include space('module', '', 'b');
-
-    .owl-prev, .owl-next {
-      top: 30%;
-      position: absolute;
-      color: #fff;
-      width: 14%;
-      @include space('component', 'tb', '');
-      background-color: rgba(0, 0, 0, 0.29);
-      text-align: center;
-      &.disabled {
-        display: none;
-      }
-    }
-    .owl-prev {
-      left: 0;
-    }
-    .owl-next {
-      right: 0;
-    }
-    .catalogItem {
-      margin: 1px;
-    }
-    .catalogItem__priceAndBuy__price {
-      span {
-        font-size: 1.2em;
-        font-weight: bold;
-      }
-    }
-  }
-}
-@include owlGoodsSlider();
 @mixin owlSlider(){
 	
 .owlSlider{
@@ -576,6 +414,80 @@
 
 }
 @include owlSlider();
+@mixin catalogMenu(){
+	
+.catalogMenu{
+  position: relative;
+  .catalogMenu__button {
+    display: block;
+    background-color: cs('accent');
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    cursor: pointer;
+    @include a-hover('background-color',(from:0,to:cs('accent-l')),1s,ease);
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      width: 100%;
+      height: 3px;
+      left:0;
+      background-color: cs('accent-d');
+
+    }
+  }
+  .catalogMenu__list {
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    z-index: 6000;
+    box-shadow: 3px 0px 3px silver;
+  }
+  .catalogMenu__list__item {
+    position: relative;
+    @include space('element','tb','');
+    @include space('component','l','');
+    cursor: pointer;
+    font-weight: bold;
+    @include a-hover('background-color',(from:0,to:0),.13s,linear);
+    .angleR {
+      position: absolute;
+      right: 5%;
+    }
+
+  }
+  .catalogMenu__wrapper {
+    position: relative;
+    background-color: #fff;
+  }
+  .catalogMenu__list--L1{
+    width: 99.8%;
+  }
+  .catalogMenu__list--L2{
+    width: 150%;
+    right: -149.8%;
+    display: none;
+    z-index: 5999;
+  }
+  .catalogMenu__list--L3{
+    width: 150%;
+    right: -299.8%;
+    display: none;
+    z-index: 5998;
+  }
+  .catalogMenu__list__item--active {
+    background-color: darken(cs('bground'),4%);
+
+
+  }
+}
+
+}
+@include catalogMenu();
 @mixin pagination(){
 	
 .pagination{
@@ -608,10 +520,6 @@
   }
 }
 @include pagination();
-@mixin sergTest(){
-	
-.sergTest{}}
-@include sergTest();
 @mixin sideBar(){
 
 .sideBar{
@@ -648,3 +556,91 @@
   }
 }
 @include sideBar();
+@mixin owlGoodsSlider() {
+
+  .owlGoodsSlider {
+    position: relative;
+    @include space('module', '', 'b');
+
+    .owl-prev, .owl-next {
+      top: 30%;
+      position: absolute;
+      color: #fff;
+      width: 14%;
+      @include space('component', 'tb', '');
+      background-color: rgba(0, 0, 0, 0.29);
+      text-align: center;
+      &.disabled {
+        display: none;
+      }
+    }
+    .owl-prev {
+      left: 0;
+    }
+    .owl-next {
+      right: 0;
+    }
+    .catalogItem {
+      margin: 1px;
+    }
+    .catalogItem__priceAndBuy__price {
+      span {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    }
+  }
+}
+@include owlGoodsSlider();
+@mixin catalogItem() {
+
+  .catalogItem {
+    @include space('element', 'a', '');
+    @include space('component','','b');
+    background-color: cs('fground');
+    border: 1px solid cs('bground-d');
+    & > div{
+      @include space('element', '', 'b');
+    }
+  }
+  .catalogItem__imgCtn {
+    box-sizing: content-box;
+    @include for-size(tablet-p-up){
+      height: 120px;
+          }
+    @include for-size(tablet-l-up){
+      height: 150px;
+    }
+    @include for-size(desktop-up){
+      height: 170px;
+    }
+    height: 90px;
+    max-width: 100%;
+    text-align: center;
+    line-height: 90px;
+    @include space('element','tb','');
+
+    img.catalogItem__img {
+      max-height: 170px;
+      display: inline;
+      @include for-size(phone-only){
+        max-width: 90px;
+        max-height: 90px;
+        vertical-align: middle;
+      }
+    }
+  }
+  .catalogItem__title {
+    height: s-growLines(4);
+    overflow: hidden;
+  }
+  .catalogItem__priceAndBuy__price {
+    font-size: 1.2em;
+    text-align: center;
+    height: s-growLines(2);
+    span{
+      font-weight: bold;
+    }
+  }
+}
+@include catalogItem();

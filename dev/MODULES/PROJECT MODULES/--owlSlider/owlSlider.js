@@ -2,7 +2,7 @@
 $(document).ready(function(){
     $(".ove-mainSlider").owlCarousel(
         {
-            "items":1,
+            "items":45,
             "lazyLoad":true,
             "autoplay":true
         }

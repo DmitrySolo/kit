@@ -5,12 +5,12 @@ const del = require('del');
 var Sync = require('sync');
 const fs = require('fs');
 var vfs = require('vinyl-fs');
-var data = require('./../../data.json');
 var foreach = require('gulp-foreach');
 var concat = require('gulp-concat');
 var path = require('path');
 var insert = require('gulp-insert');
 var rimraf = require('rimraf');
+var qM = require('./../q_functions');
 var callback = function () {
 
 }
@@ -33,26 +33,36 @@ module.exports = (options) => {
         }
 
         ///////////////////////////////////
-        rimraf('dev/SCRIPTS/CONTAINERS/FOOTER/',callback);
-        rimraf('dev/SCRIPTS/CONTAINERS/HEAD/',callback);
+        var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+
+        //fs.unlink('./dev/SCRIPTS/scriptMap.json');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libsExts.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_initExts.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_top.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libsExts.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_initExts.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug');
         rimraf('dist/scripts',callback);
 
             var scriptsMap = {};
 
         for(var index in data.LIBS) {
             var mod_deps = data.LIBS[index];
-            //console.log(mod_deps)
             var js_deps =mod_deps['js'];
-            //console.log(js_deps)
             var css_deps = mod_deps['css'];
-            //console.log(css_deps)
+
             for (var index in js_deps){
+
                 var js_dep = js_deps[index];
                 var pathtoScript = js_dep.src;
-                console.log(js_dep.container)
-                    var container = js_dep.container
-                var dist = 'dev/SCRIPTS/CONTAINERS/'+container+'/';
-                console.log(dist);
+                var container = js_dep.container;
+
                 if (!scriptsMap.hasOwnProperty(container)){
 
                     scriptsMap[container] = [pathtoScript];
@@ -61,12 +71,66 @@ module.exports = (options) => {
                     scriptsMap[container].push(pathtoScript);
                 }
 
-                vfs.src(pathtoScript).pipe(vfs.dest(dist));
+
 
 
             }}///throw to container
 
-                console.log(scriptsMap);
+
+
+
+        for (var scontainer in scriptsMap){
+
+
+            if (scontainer && scontainer !='undefined'){
+
+                var srcArr = scriptsMap[scontainer];
+                var scontainerArr = scontainer.split('/');
+                var path1 = scontainerArr[0];
+                var path2 = scontainerArr[1];
+
+                if (scontainerArr.length == 3){
+
+                    var file = scontainerArr[2];
+
+                    //Add to Pug
+                    var strCtn ="\nscript(src='scripts/"+file+".js' type='text/javascript')";
+                    fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+path1+'/_'+path2+'.pug',strCtn);
+
+                    vfs.src(srcArr)
+                        .pipe(concat(file+'.js')).pipe(vfs.dest('dist/scripts'));
+
+                }else{
+
+                    for (var index in srcArr){
+
+                            var filePathArr = srcArr[index].split('/');
+                            var file = filePathArr[filePathArr.length -1];
+
+                        var strCtn ="\nscript(src='scripts/"+file+"' type='text/javascript')";
+                        fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+path1+'/_'+path2+'.pug',strCtn);
+
+                        vfs.src(srcArr[index])
+                            .pipe(vfs.dest('dist/scripts'));
+
+
+                    }
+
+
+                }
+
+
+            }
+
+
+        }
+        scriptsMap.DateTime = new Date().toLocaleString();
+        var str = JSON.stringify(scriptsMap);
+        fs.writeFileSync('./dev/SCRIPTS/scriptMap.json', str , { encoding: "utf8",
+            flag: "w+"},function () {
+            qM.ok('Scripts Builded');
+        });
+
 
         ///////////////////////////////////
 
@@ -74,138 +138,6 @@ module.exports = (options) => {
 
         cb();
     },function () {
-
-        function buildscripts(){
-
-            console.log('ghyhju');
-
-            var scriptFiles = [];
-            var strCtn = "";
-            var strHeader = "";
-            var strFooter = "";
-
-
-
-
-
-            var concatAndDist=function (e, cnt) {
-
-                vfs.src('dev/SCRIPTS/CONTAINERS/'+cnt+'/*.js')
-                    .pipe(foreach(function(stream, file){
-
-                        var name = path.basename(file.path, '.js');
-
-                        if(scriptFiles.indexOf(name)==-1){
-                            var ctnArr = cnt.split('/');
-                            var ctn1 = ctnArr[0];
-                            var ctn2 = ctnArr[1];
-
-
-
-                            strCtn ="\nscript(src='scripts/"+name+".js' type='text/javascript')";
-                            fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+ctn1+'/_'+ctn2+'.pug',strCtn);
-
-
-
-                            scriptFiles.push(name);
-
-                        }
-                        vfs.src('dev/templates/PAGESYSTEM/INCLUDES/_scriptsHeader.pug').pipe(insert.append(strHeader)).pipe(vfs.dest('dev/templates/PAGESYSTEM/INCLUDES/'));
-                        return stream
-                    }))
-                    .pipe(vfs.dest('dist/scripts'));//write to pugs and throw to dist scripts
-
-                for(var index in e) {
-                    vfs.src('dev/SCRIPTS/CONTAINERS/'+cnt+'/'+e[index]+'/*.js')
-                        .pipe(concat(e[index]+'.js')).pipe(vfs.dest('dist/scripts'));
-
-                    var name = e[index];
-
-
-                    if(scriptFiles.indexOf(name)==-1){
-                        var ctnArr = cnt.split('/');
-                        var ctn1 = ctnArr[0];
-                        var ctn2 = ctnArr[1];
-
-
-
-                        strCtn ="\nscript(src='scripts/"+name+".js' type='text/javascript')";
-                        fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+ctn1+'/_'+ctn2+'.pug',strCtn);
-
-
-
-                        scriptFiles.push(name);
-
-                    }
-
-
-
-
-
-                }
-
-
-            }
-
-            var getDirs = function(rootDir, cb, cnt) {
-
-
-
-
-                if (fs.existsSync(rootDir)){
-                    console.log('OK');
-                    var files =  fs.readdirSync(rootDir);
-                    var dirs = [];
-                    for (var index = 0; index < files.length; ++index) {
-                        var file = files[index];
-                        if (file[0] !== '.') {
-                            var filePath = rootDir + '/' + file;
-                            fs.stat(filePath, function(err, stat) {
-                                if (stat.isDirectory()) {
-                                    dirs.push(this.file);
-                                }
-                                if (files.length === (this.index + 1)) {
-                                    return cb(dirs, cnt);
-                                }
-                            }.bind({index: index, file: file}));
-                        }
-                    }
-                }
-
-
-
-
-
-
-
-
-
-
-            }
-
-
-
-
-
-
-
-
-
-            getDirs('dev/SCRIPTS/CONTAINERS/footer/top',concatAndDist,'FOOTER/top');
-            getDirs('dev/SCRIPTS/CONTAINERS/footer/libs',concatAndDist,'FOOTER/libs');
-            getDirs('dev/SCRIPTS/CONTAINERS/footer/libsExts',concatAndDist,'FOOTER/libsExts');
-            getDirs('dev/SCRIPTS/CONTAINERS/footer/init',concatAndDist,'FOOTER/INIT');
-            getDirs('dev/SCRIPTS/CONTAINERS/footer/initext',concatAndDist,'FOOTER/initExt');
-            getDirs('dev/SCRIPTS/CONTAINERS/footer/bottom',concatAndDist,'FOOTER/bottom');
-            getDirs('dev/SCRIPTS/CONTAINERS/HEAD/TOP',concatAndDist,'HEAD/top');
-            getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBS',concatAndDist,'HEAD/libs');
-            getDirs('dev/SCRIPTS/CONTAINERS/HEAD/LIBSEXT',concatAndDist,'HEAD/libsExts');
-            getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INIT',concatAndDist,'HEAD/init');
-            getDirs('dev/SCRIPTS/CONTAINERS/HEAD/INITEXT',concatAndDist,'HEAD/initExt');
-            getDirs('dev/SCRIPTS/CONTAINERS/HEAD/BOTTOM',concatAndDist,'HEAD/bottom');
-        }
-
-        setTimeout( buildscripts,2000);
 
 
 
