@@ -1,61 +1,9 @@
-mixin lightMenu(dataMenu)
-	if dataMenu=='MainMenu'
-		-var menuData = pages
-	else
-		-var menuData = menuData1
-	nav.lightMenu(role='navigation')
-		ul.lightMenu__list
-			each menuItem in menuData
-				if dataMenu=='MainMenu'
-					if menuItem.MainMenu
-						li(class='lightMenu__item ' + menuItem.dop_class)
-							a(href="" + menuItem.slug+".html")=menuItem.title
-				else
-					li(class='lightMenu__item ' + menuItem.dop_class)
-						a(href="" + menuItem.href)=menuItem.title
 mixin breadcrumbs()
 	nav.breadCrumb.visible-l
 		a(href='/').breadcrumb__section.breadCrumb__section--home Главная
 		+loop(3)
 			a(href='/').breadcrumb__section Другая страница12
 
-mixin catalogItem()
-	<!-- split modules/catalogItem -->
-		-var i = 1
-		+loop(6)
-			.catalogItem
-				.catalogItem__imgCtn
-					a(href="#")
-						img.catalogItem__img(src="images/catalog/"+i+".jpg")
-				.catalogItem__title
-					a(href='/#') Набор разделочных досок Joseph Joseph Index Mini 60098 графит
-				.catalogItem__priceAndBuy__price
-								span 30 400Р
-				.catalogItem__priceAndBuy__buy
-								+B-toCart()
-			-i++
-mixin catalogItemsonCatPage()
-	<!-- split modules/catalogItemsonCatPage -->
-		-var i = 1
-		+loop(11)
-			.container
-				.col-12-m
-					.catalogItem.row
-						.col-6-m
-							.catalogItem__imgCtn
-								a(href="#")
-									img.catalogItem__img(src="images/catalog/" + i + ".jpg")
-							.catalogItem__title
-								a(href='/#') Набор разделочных досок Joseph Joseph Index Mini 60098 графит
-						.col-6-m
-							.catalogItem__quntCheck
-								span.catalogItem__quntCheck__marker
-								span.catalogItem__quntCheck__titl В наличии
-							.catalogItem__priceAndBuy__price
-								span 30 410Р
-							.catalogItem__priceAndBuy__buy
-								+B-toCart()
-					-i++
 mixin catalogMenu()
 	<!-- split modules/catalogMenu -->
 	.catalogMenu

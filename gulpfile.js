@@ -44,7 +44,6 @@ var colors = require('colors');
 var iconfont = require('gulp-iconfont');
 var runTimestamp = Math.round(Date.now()/1000);
 var iconfontCss = require('gulp-iconfont-css');
-const watchdir = require("gulp-watch-dir");
 
 // QUANT PLUGINS&FUNCTIONS
 
@@ -66,14 +65,7 @@ gulp.task('phplint', function phplint() {
         .pipe(phplint());
 })
 
-gulp.task('SCRIPTS1', function () {
-    gulp.src([
-        'dev/templates/PAGESYSTEM/SCRIPTS-STYLES/**/*.pug',
-        '!dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_footerScripts.pug',
-        '!dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_headScripts.pug'
-    ])
-        .pipe(scriptCleaner());
-})
+
 
 gulp.task('SCRIPTS2', function () {
     gulp.src('data.json')
@@ -257,7 +249,7 @@ gulp.task('STYLES-FINAL', function () {
 gulp.task('STYLES-1-ELEMENTS', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
     return watch([
-        'dev/ELEMENTS/**/*.scss',
+        'dev/ELEMENTS/**/--*/*.scss',
         '!dev/ELEMENTS/_elements.scss'
         ], function () {
         gulp.start('concat-elements-scss');
@@ -277,7 +269,7 @@ gulp.task('STYLES-1-MODULES', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
     return watch([
 
-        'dev/MODULES/**/*.scss',
+        'dev/MODULES/**/--*/*.scss',
         '!dev/MODULES/_modules.scss']
         , function () {
         gulp.start('concat-modules-scss');
@@ -786,6 +778,7 @@ gulp.task('mergeJson',function () {
     return gulp.src([
         'dev/{MODULES,ELEMENTS,SCRIPTS}/**/--*/*.json',
         'dev/templates/**/*.json',
+        'dev/scss/MASTER_OPTIONS/*.json',
         'blueprint/*.json',
         '!dev/SOURCE_FABRIC/STORRAGE/**/*.json',
         '!dev/{MODULES,ELEMENTS,SCRIPTS}/**/--*/off_*.json'

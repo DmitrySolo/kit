@@ -4,10 +4,6 @@ mixin module(modulename,moduleData)
     else
         - var moduleData = false
     case modulename
-        when 'Light_menu'
-            include ../../../dev/MODULES/MENUS/--Light_menu/_include
-        when 'breadcrumbs'
-            include ../../../dev/MODULES/PROJECT MODULES/--breadcrumbs/_include
         when 'pagination'
             include ../../../dev/MODULES/PROJECT MODULES/--pagination/_include
         when 'hero_video'
@@ -22,10 +18,6 @@ mixin module(modulename,moduleData)
             include ../../../dev/MODULES/PROJECT MODULES/--oveFeatures/_include
         when 'owlGoodsSlider'
             include ../../../dev/MODULES/PROJECT MODULES/--owlGoodsSlider/_include
-        when 'catalogItem'
-            include ../../../dev/MODULES/PROJECT MODULES/--catalogItem/_include
-        when 'catalogItemsonCatPage'
-            include ../../../dev/MODULES/PROJECT MODULES/--catalogItemsonCatPage/_include
         when 'ove-pagination'
             include ../../../dev/MODULES/PROJECT MODULES/--ove-pagination/_include
         when 'discountMetr'

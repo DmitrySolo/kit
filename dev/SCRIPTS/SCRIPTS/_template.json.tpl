@@ -3,7 +3,7 @@
     "<%=name%>": {
       "js": {
         "<%=name%>-script": {
-          "src": "dev/SCRIPTS/SCRIPTS/<%=name%>/<%=name%>.js",
+          "src": "dev/SCRIPTS/SCRIPTS/--<%=name%>/<%=name%>.js",
           "container": "footer",
           "type":"init"
         }
