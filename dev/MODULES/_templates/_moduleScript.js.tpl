@@ -1,1 +1,3 @@
-/*** <%= moduleName %> script ***/
+/**
+* MODULE: <%= moduleName %> script
+*/

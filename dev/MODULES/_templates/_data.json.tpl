@@ -1,0 +1,5 @@
+{
+  "<%= moduleName %>" : {
+    "<%= moduleName %>" : "1"
+  }
+}

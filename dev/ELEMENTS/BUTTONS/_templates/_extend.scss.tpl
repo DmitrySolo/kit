@@ -1,4 +1,4 @@
-.<%= prefix %> {
+.<%= elementName %> {
 @extend .<%= extend %>;
 
 }

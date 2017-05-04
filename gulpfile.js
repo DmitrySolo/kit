@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var foreach = require('gulp-foreach');
 var wait = require('gulp-wait');
 var path = require('path');
+var cache = require('gulp-cache');
 var runSequence  = require('run-sequence');
 const template = require('gulp-template');
 var merge = require('gulp-merge-json');
@@ -517,60 +518,69 @@ var type = {
     string: 'type',
     default: 'link',
 };
-var prefix = {
-        string: 'prefix',
-        default: '----',
-};
+
 var extend = {
     string: 'extend',
     default: 'NO',
 };
 var elemType = minimist(process.argv.slice(2), type);
-var elemPrefix = minimist(process.argv.slice(2), prefix);
+var elementName = minimist(process.argv.slice(2), buildmodulesData);
 var elemExtend = minimist(process.argv.slice(2), extend);
 
 gulp.task('be', function() {
 
 
     var dir = elemType.type.toUpperCase()+'S';
-    var elemName = elemPrefix.prefix;
-    var elemFolder = elemName;
-    var scssTpl = '_templateScss.tpl';
-    var libsTpl = '_libs.json';
-    var pugTpl = '_templatePug.tpl';
+    var elemName = elementName.name;
     var elemData = {
-            prefix: elemName
+            elementName: elemName,
+            dir : dir
         }
-        if (elemExtend.extend){
-            elemData.extend = elemExtend.extend;
-            elemFolder +='( '+elemExtend.extend+' )';
-            scssTpl = '_extendScss.tpl';
-        }
-        if (!fs.existsSync('dev/ELEMENTS/'+dir+'/--'+elemFolder )) {
+
+        if (!fs.existsSync('dev/ELEMENTS/'+dir+'/--'+elemName )) {
+
+
+            var elemTemplates = fs.readdirSync('dev/ELEMENTS/'+dir+'/_templates/');
+
+            if (elemExtend.extend){
+
+                elemData.extend = elemExtend.extend;
+                elemName +='( '+elemExtend.extend+' )';
+
+
+            }
+
+            for (var key in elemTemplates) {
+
+                var file =  elemTemplates[key].slice(1,-4);
+
+                if (elemExtend.extend && file =='extend.scss'){
+
+                    file = 'style.scss'
+                }
+
+                else if (elemExtend.extend && file =='style.scss'){
+                    continue;
+                }else if (!elemExtend.extend && file =='extend.scss'){
+                    continue;
+                }
+                if (file == 'elementScript.js') file = elemName+'.js';
+
+                    gulp.src('dev/ELEMENTS/'+dir+'/_templates/'+elemTemplates[key])
+                        .pipe(rename(file))
+                        .pipe(template(elemData))
+                        .pipe(gulp.dest('dev/ELEMENTS/'+dir+'/--'+elemName+'/'))
 
 
 
+            }
 
-                gulp.src('dev/ELEMENTS/'+dir+'/_templates/'+pugTpl)
-                    .pipe(rename('mixin.pug'))
-                    .pipe(template(elemData))
-                    .pipe(gulp.dest('dev/ELEMENTS/'+dir+'/--'+elemFolder+'/'))
-
-                gulp.src('dev/ELEMENTS/'+dir+'/_templates/'+scssTpl)
-                    .pipe(rename('style.scss'))
-                    .pipe(template(elemData))
-                    .pipe(gulp.dest('dev/ELEMENTS/'+dir+'/--'+elemFolder+'/'))
-
-                gulp.src('dev/ELEMENTS/'+dir+'/_templates/'+libsTpl)
-                    .pipe(rename('libs.json'))
-                    .pipe(template(elemData))
-                    .pipe(gulp.dest('dev/ELEMENTS/'+dir+'/--'+elemFolder+'/'))
-
-        }
+            qM.ok('Element added!');
+        }else qM.err('THIS ELEMENT ALREADY EXIST!');
 
     });
 
-gulp.task('bm:new', function() {
+gulp.task('bm', function() {
 
     if (!fs.existsSync('dev/MODULES/PROJECT MODULES/--'+options.name)) {
 
@@ -604,6 +614,44 @@ gulp.task('bm:new', function() {
     }else qM.err('THIS MODULE ALREADY EXIST!');
 
 });
+
+gulp.task('bs', function() {
+
+    if (!fs.existsSync('dev/SCRIPTS/SCRIPTS/--'+options.name)) {
+
+
+        var scrName = options.name,
+            elemData = {
+                name: scrName
+            },
+
+            templates = fs.readdirSync('dev/SCRIPTS/SCRIPTS/_templates/');
+        try{
+            for (var key in templates) {
+
+                var file =  templates[key].slice(1,-4);
+
+                if( file == 'template.js' ) file = scrName+'.js';
+
+                gulp.src('dev/SCRIPTS/SCRIPTS/_templates/'+templates[key])
+                    .pipe(rename(file))
+                    .pipe(template(elemData))
+                    .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/--'+scrName+'/'))
+            }
+        }catch(e){
+
+            qM.err(e.name+' '+e.message);
+
+        }qM.ok('Script added!');
+
+
+
+
+    }else qM.err('THIS SCRIPT ALREADY EXIST!');
+
+});
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1072,7 +1120,7 @@ return gulp
 
 
 ////////////////////////////////////////////////////
-gulp.task('bs',[], function () {
+gulp.task('bsold',[], function () {
     var elemData = {
         name: options.name
     }
@@ -1086,59 +1134,7 @@ gulp.task('bs',[], function () {
         .pipe(template(elemData))
         .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/'+options.name+'/'));
 });
-// 1
-gulp.task('SCRIPTS-CLEAN', function () {
 
-function scrclean() {
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libsExts.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_initExts.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_top.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libsExts.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_initExts.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug');
-        del.sync('dev/SCRIPTS/CONTAINERS/FOOTER/**');
-        del.sync('dev/SCRIPTS/CONTAINERS/HEAD/**');
-        del.sync('dist/scripts');
-}
-Sync(scrclean());
-
-})
-// 2
-gulp.task('SCRIPTS-GO-CONTAINER',[], function () {
-
-        for(var index in data.LIBS) {
-            var mod_deps = data.LIBS[index]
-            //console.log(mod_deps)
-            var js_deps =mod_deps['js'];
-            //console.log(js_deps)
-            var css_deps = mod_deps['css'];
-            //console.log(css_deps)
-            for (var index in js_deps){
-                var js_dep = js_deps[index];
-                var pathtoScript = js_dep.src;
-                console.log(js_dep.container)
-                var dist = 'dev/SCRIPTS/CONTAINERS/'+js_dep.container+'/';
-                console.log(dist);
-
-                var stream = gulp.src(pathtoScript).pipe(gulp.dest(dist)).pipe(wait(4500));
-
-
-            }}///throw to container
-        return stream
-
-
-})
-// 3
-gulp.task('SCRIPTS-BUILD',[], function () {
-
-
-})
 gulp.task('svgstore', function () {
     return gulp
         .src('dev/SOURCE_FABRIC/ICONS_COMBINER/icons/**/*.svg')
@@ -1160,9 +1156,6 @@ gulp.task('svgstore', function () {
 gulp.task('START QUANT', ['WATCHER:NEW', 'SERVER']);
 
 
-gulp.task('SCRIPT BUILDER', function(done) {
-    runSequence('SCRIPTS-CLEAN', 'SCRIPTS-GO-CONTAINER','SCRIPTS-BUILD');
-});
 /////UTILITIES
 gulp.task('u-h2p', function() {
     // Backend locales
@@ -1197,4 +1190,7 @@ gulp.task('iconfont', function(){
             fontName: fontName
         }))
         .pipe(gulp.dest('dist/fonts/icons/'));
+});
+gulp.task('cache', function (done) {
+    return cache.clearAll(done);
 });

@@ -1,4 +1,6 @@
-/*** <%= moduleName %> styles ***/
+/**
+* <%= moduleName %> styles
+*/
 
 @mixin <%= moduleName %>(){
 
