@@ -1,5 +1,7 @@
 //FORM VALIDATE
+
 var validate = function () {
+
     var valid = true;
     var name=document.forms["subscribe"]["name"].value;
     var email=document.forms["subscribe"]["email"].value;

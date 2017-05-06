@@ -1,33 +1,8 @@
 {
-	"breadcrumbs": {
-		"1": "22"
-	},
-	"discountMetr": {
-		"discountMetr": "1"
+	"hero_video": {
+		"hero_video": "1"
 	},
 	"LIBS": {
-		"discountMetr": {
-			"js": {
-				"discountMetr": {
-					"src": "dev/MODULES/PROJECT MODULES/--discountMetr/discountMetr.js",
-					"container": "footer/init/discoUntMetr"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"catalogMenu": {
-			"js": {
-				"catalogMenu": {
-					"src": "",
-					"container": ""
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"hero_video": {
 			"js": {
 				"hero_video-script": {
@@ -40,108 +15,15 @@
 				"": ""
 			}
 		},
-		"ove-pagination": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"oveFeatures": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "false"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"OWLGOODSSLIDER": {
 			"js": {
 				"init": {
 					"src": "dev/MODULES/PROJECT MODULES/--owlGoodsSlider/owlGoodsSlider.js",
 					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"owlSlider": {
-			"js": {
+				},
 				"lib": {
 					"src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
-					"container": "footer/libsExts"
-				},
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--owlSlider/owlSlider.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"sideBar": {
-			"js": {
-				"catalogMenu": {
-					"src": "dev/MODULES/PROJECT MODULES/--sideBar/sideBar.js",
-					"container": "footer/init/mobile"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"gogog": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"ove-cardReg": {
-			"js": {
-				"": {
-					"src": "",
-					"concat": "true"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"toCart": {
-			"js": {
-				"ini": {
-					"src": "dev/ELEMENTS/BUTTONS/--toCart/toCart.js",
-					"concat": "true",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"spinner-circle": {
-			"js": {
-				"lib": {
-					"src": "bower_components/please-wait/build/please-wait.min.js",
-					"container": "footer/top/preloader"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/PRELOADERS/--spinner-circle/zpreloader.js",
-					"container": "footer/top/preloader"
+					"container": "footer/libs+/"
 				}
 			},
 			"css": {
@@ -158,60 +40,10 @@
 			"css": {
 				"": ""
 			}
-		},
-		"microControls": {
-			"js": {
-				"microControls-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--microControls/microControls.js",
-					"container": "footer/init/init",
-					"type": "init"
-				},
-				"maskedInput": {
-					"src": "bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js",
-					"container": "footer/libsExts",
-					"type": "lib"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"styckyHeader": {
-			"js": {
-				"styckyHeader-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--styckyHeader/styckyHeader.js",
-					"container": "footer/bottom",
-					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
 		}
-	},
-	"catalogMenu": {
-		"catalogMenu": "1"
-	},
-	"hero_video": {
-		"hero_video": "1"
-	},
-	"ove-pagination": {
-		"ove-pagination": "1"
-	},
-	"oveFeatures": {
-		"oveFeatures": "1"
 	},
 	"owlGoodsSlider": {
 		"owlGoodsSlider": "1"
-	},
-	"owlSlider": {
-		"owlSlider": "1"
-	},
-	"pagination": {
-		"pagination": "1"
-	},
-	"sideBar": {
-		"sideBar": "1"
 	},
 	"head": {
 		"lang": "ru",
@@ -233,45 +65,9 @@
 			"group": false,
 			"dop_class": ""
 		},
-		"category": {
-			"title": "Категория",
-			"slug": "category",
-			"kw": "application, test , hurray!!!",
-			"layout": "default",
-			"MainMenu": false,
-			"group": false,
-			"dop_class": ""
-		},
-		"item": {
-			"title": "item",
-			"slug": "item",
-			"kw": "application, test , hurray!!!",
-			"layout": "default",
-			"MainMenu": false,
-			"group": false,
-			"dop_class": ""
-		},
-		"card": {
-			"title": "Card",
-			"slug": "cardHolder",
-			"kw": "application, test , hurray!!!",
-			"layout": "default",
-			"MainMenu": false,
-			"group": false,
-			"dop_class": ""
-		},
-		"cart": {
-			"title": "Cart",
-			"slug": "cart",
-			"kw": "application, test , hurray!!!",
-			"layout": "default",
-			"MainMenu": false,
-			"group": false,
-			"dop_class": ""
-		},
-		"call": {
-			"title": "Call",
-			"slug": "call",
+		"about": {
+			"title": "About",
+			"slug": "about",
 			"kw": "application, test , hurray!!!",
 			"layout": "default",
 			"MainMenu": false,

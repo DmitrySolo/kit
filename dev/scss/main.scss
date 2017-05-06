@@ -75,6 +75,11 @@
 */
 @import "project";
 
+/**
+* PAGES STYLES
+*/
+  @import "PAGES/pages";
+
 //NO PRODUCTION
 @import "debug";
 @if($production == false){

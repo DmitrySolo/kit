@@ -5,19 +5,14 @@ html(lang=''+head.lang)
     head
         include ../INCLUDES/_head
     body
-        include _header
-        <!-- split #{page.slug}.html -->
-        .container-fluid
+        .container
             .row
-                .col-3
-                    .inner-content
-                        .fixedMenu
-                            nav
-                                ul
-                                    li.fixedMenu__item.active.icon-right Смесители (110)
-                                    +loop(17)
-                                        li.fixedMenu__item Смесители (23)
+                .col-12
+                    include _header
+            <!-- split #{page.slug}.html -->
                 .col-9
-                    .inner-content.catalog-content
-                        block main
-            include _footer
+                    block main
+                .col-3
+                    block sidebar
+                        h2 tet sidebar
+        include _footer
