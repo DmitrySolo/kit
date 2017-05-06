@@ -1,3 +1,9 @@
+mixin breadcrumbs()
+	nav.breadCrumb.visible-l
+		a(href='/').breadcrumb__section.breadCrumb__section--home Главная
+		+loop(3)
+			a(href='/').breadcrumb__section Другая страница12
+
 mixin MODULE-hero_video()
 	<!-- split modules/hero_video -->
 	.hero_video

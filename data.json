@@ -1,4 +1,7 @@
 {
+	"breadcrumbs": {
+		"1": "22"
+	},
 	"hero_video": {
 		"hero_video": "1"
 	},
@@ -24,6 +27,21 @@
 				"lib": {
 					"src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
 					"container": "footer/libs+/"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"baseButton": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
+					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -125,6 +143,6 @@
 	"nr-colStyles": {
 		"float": "left"
 	},
-	"blueprint": "discountMetr",
+	"blueprint": "breadcrumbs",
 	"izolate": "false"
 }

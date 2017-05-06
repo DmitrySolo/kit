@@ -12,7 +12,7 @@ var insert = require('gulp-insert');
 var rimraf = require('rimraf');
 var qM = require('./../q_functions');
 var callback = function () {
-
+console.log('test-deleted');
 }
 
 module.exports = (options) => {
@@ -34,8 +34,25 @@ module.exports = (options) => {
 
         ///////////////////////////////////
         var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+        var deleteFolderRecursive = function(path) {
+            if( fs.existsSync(path) ) {
+                fs.readdirSync(path).forEach(function(file,index){
+                    var curPath = path + "/" + file;
+                    if(fs.lstatSync(curPath).isDirectory()) { // recurse
+                        deleteFolderRecursive(curPath);
+                    } else { // delete file
+                        fs.unlinkSync(curPath);
+                    }
+                });
+                fs.rmdirSync(path);
+            }
+        };
+
+
+
 
         //fs.unlink('./dev/SCRIPTS/scriptMap.json');
+        deleteFolderRecursive('dist/scripts');
         fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
         fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
         fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs+.pug');
@@ -48,7 +65,7 @@ module.exports = (options) => {
         fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug');
         fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init+.pug');
         fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug');
-        rimraf('dist/scripts',callback);
+
 
             var scriptsMap = {};
 
