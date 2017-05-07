@@ -1,6 +1,6 @@
 section {
-  @include space-i('block','v','tlr','');
-  @include space-i('module','s','b','');
+  @include space-i('block','s','tbrl','');
+  //@include space-i('module','s','b','');
   &:nth-child(odd){
     background-color: #ff6547;
   }

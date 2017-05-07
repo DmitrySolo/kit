@@ -13,6 +13,18 @@ $color__button-active:#aaa;
     outline: 2;
   }
 }
+form.ove-pageCard__Form .ove-cardRegInput {
+  text-align: center;
+  outline: none;
+  border:none;
+  color: #fff;
+  width: 100%;
+  background-color: transparent;
+  @include space('element','a','b');
+  border-bottom: 3px solid #fff;
+  font-size: 2.5em;
+  letter-spacing: .25em;
+}
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -23,12 +35,24 @@ $color__button-active:#aaa;
 }
 
 .icon--close {
-  height: 2.8rem;
-  width: 2.8rem;
+  height: 6.8rem;
+  width: 6.8rem;
   fill: cs('font-d');
   cursor: pointer;
 }
-
+.icon--heart {
+   height: 6.8rem;
+   width: 6.8rem;
+   fill: red;
+   cursor: pointer;
+ }
+.icon--heart--animate {
+  @include a-set-frame(heart, 1.5s,  1s,  1,linear,$frames:(
+            0  :(transform:rotate(30deg)),
+            .5 :(transform:rotate(60deg)),
+            1 :(transform:rotate(180deg))
+    ));
+}
 .icon--search {
   width: 2rem;
 }
@@ -71,17 +95,49 @@ $color__button-active:#aaa;
 .ove-sectionHeader {
   @include space('element','','b');
 }
-form.ove-pageCard__Form .ove-cardRegInput {
-  text-align: center;
-  outline: none;
-  border:none;
-  color: #fff;
-  width: 100%;
-  background-color: transparent;
-  @include space('element','a','b');
-  border-bottom: 3px solid #fff;
-  font-size: 2.5em;
-  letter-spacing: .25em;
+$bkgColor__baseButton:#0a7c84;
+$bkgColor__baseButton-hover:lighten($bkgColor__baseButton,10%);
+$color__baseButton-hover:#fff;
+$color__baseButton:#fff;
+$end_color: #00aab5;
+.baseButton {
+	display: inline-block;
+	font-family: fs('HEADER');
+	padding:0;
+	background-color: $bkgColor__baseButton;
+	color: $color__baseButton;
+	//border-radius: 15px;
+	border: 1px solid $bkgColor__baseButton-hover;
+	@include space('element','tb','');
+	@include space('component','lr','');
+
+	@include i-gradient(90,($bkgColor__baseButton,$end_color),$points:(65%),$type:'linear');
+
+		&:hover, &:focus, &:active {
+		color: $color__baseButton-hover;
+		background-color: $bkgColor__baseButton-hover;
+			@include i-gradient(90,($bkgColor__baseButton,$end_color),$points:(25%),$type:'linear');
+		}
+
+		&:visited {
+		color: #fff;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+		color: $color__baseButton-hover;
+		}
+		&:focus {
+		outline: none;
+		}
+		&:hover,
+		&:active {
+		outline: none;
+		}
+	&.login{
+		text-transform: uppercase;
+
+	}
 }
 $color__link: cs('font-d');
 $color__link-visited:cs('font-d');

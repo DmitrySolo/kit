@@ -1,4 +1,33 @@
 {
+	"menuData1": {
+		"Home": {
+			"title": "Продукция",
+			"href": "/production.html",
+			"dop_class": ""
+		},
+		"Products and help": {
+			"title": "Гарантия и сервис",
+			"href": "service.html",
+			"dop_class": ""
+		},
+		"Support": {
+			"title": "Партнерам",
+			"href": "partners.html",
+			"dop_class": ""
+		},
+		"AboutUs": {
+			"title": "Где купить",
+			"href": "buy.html",
+			"dop_class": "",
+			"childs": ""
+		},
+		"acc": {
+			"title": "Акции",
+			"href": "sale.html",
+			"dop_class": "lightmenu__item--active",
+			"childs": ""
+		}
+	},
 	"hero_video": {
 		"hero_video": "1"
 	},
@@ -9,6 +38,21 @@
 					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
 					"container": "footer/init",
 					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"baseButton": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
+					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -55,6 +99,15 @@
 			"MainMenu": true,
 			"group": false,
 			"dop_class": ""
+		},
+		"contacts": {
+			"title": "Contacts",
+			"slug": "contacts",
+			"kw": "application, test , hurray!!!",
+			"layout": "default",
+			"MainMenu": true,
+			"group": false,
+			"dop_class": ""
 		}
 	},
 	"response": "false",
@@ -69,12 +122,22 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Rubik')",
-		"'HEADER'": "('Rubik Mono One')\n)"
+		"'HEADER'": "('Rubik Mono One')\r\n)"
 	},
+	"space": "px",
 	"element_space": "5",
 	"component_space": "$element_space*1.618",
 	"module_space": "$component_space*1.618",
 	"block_space": "$module_space*1.618",
+	"section_space": "$block_space*1.618",
+	"element_space_i": "2",
+	"element_space_o": "4",
+	"component_space_i": "6",
+	"component_space_o": "10",
+	"module_space_i": "16",
+	"module_space_o": "26",
+	"block_space_i": "42",
+	"block_space_o": "68",
 	"body-font": "fs('MAIN'),san-serif",
 	"body-font-weight": "300",
 	"header-font": "fs('HEADER'),san-serif",
@@ -85,7 +148,7 @@
 	"siteWidth": "1240px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\n\n)",
+	"container-styles": "(\r\n\r\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
@@ -107,16 +170,6 @@
 	"nr-colStyles": {
 		"float": "left"
 	},
-	"space": "px",
-	"section_space": "$block_space*1.618",
-	"element_space_i": "2",
-	"element_space_o": "4",
-	"component_space_i": "6",
-	"component_space_o": "10",
-	"module_space_i": "16",
-	"module_space_o": "26",
-	"block_space_i": "42",
-	"block_space_o": "68",
 	"blueprint": "breadcrumbs",
 	"izolate": "false"
 }

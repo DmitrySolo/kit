@@ -1,0 +1,8 @@
+a.loginButton {
+@extend .baseButton;
+
+  @include i-gradient(90,(red,blue),$points:(65%),$type:'linear');
+  &:hover{
+    @include i-gradient(90,(blue,red),$points:(65%),$type:'linear');
+  }
+}

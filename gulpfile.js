@@ -329,7 +329,7 @@ gulp.task('SCRIPTS-FINAL', function () {
 });
 gulp.task('WATCHER:NEW' ,function(){
     runSequence([
-        'WATCH-MODULE-FOLDERS',
+
         'VIEW-FINAL','VIEW-1-MIXES','VIEW-1-MODULES','VIEW-1-ELEMENTS','VIEW-1-DATA',
         'STYLES-FINAL','STYLES-1-MIXES','STYLES-1-ELEMENTS','STYLES-1-MODULES','STYLES-1-PAGES',
         'SCRIPTS-FINAL',
@@ -342,17 +342,17 @@ gulp.task('BUILDUP'
 
 ,function(){
 
-runSequence([
+runSequence(
+        'concat-modules-pug',
         'mergeJson',
         'concat-mixes-scss',
         'concat-elements-scss',
         'concat-modules-scss',
         'concat-mixes-pug',
         'concat-elements-pug',
-        'concat-modules-pug',
         'styles',
         'views',
-        'SCRIPTS ALL'])
+        'SCRIPTS ALL')
 
 })
 

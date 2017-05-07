@@ -8,12 +8,24 @@
 }
 
 .icon--close {
-  height: 2.8rem;
-  width: 2.8rem;
+  height: 6.8rem;
+  width: 6.8rem;
   fill: cs('font-d');
   cursor: pointer;
 }
-
+.icon--heart {
+   height: 6.8rem;
+   width: 6.8rem;
+   fill: red;
+   cursor: pointer;
+ }
+.icon--heart--animate {
+  @include a-set-frame(heart, 1.5s,  1s,  1,linear,$frames:(
+            0  :(transform:rotate(30deg)),
+            .5 :(transform:rotate(60deg)),
+            1 :(transform:rotate(180deg))
+    ));
+}
 .icon--search {
   width: 2rem;
 }

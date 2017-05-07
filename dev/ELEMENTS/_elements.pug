@@ -2,13 +2,19 @@ mixin B(value,className)
 	-if (!className) className =''
 	button.mainButton(class=''+className)=value
 
+mixin INPUT-oveCard(type,className)
+	-if (!className) className =''
+	input(type=""+type, class='ove-cardRegInput '+className)
 mixin I(id,classModifier)
 	-if (!classModifier) classModifier =''
 	svg(class='icon '+classModifier)
 		use(xlink:href="#"+id)
-mixin INPUT-oveCard(type,className)
+mixin BL-baseButton(value,href,className)
 	-if (!className) className =''
-	input(type=""+type, class='ove-cardRegInput '+className)
+	-if (!href) href ='#'
+	a.baseButton(class=''+className,href=''+href)=value
+
+
 mixin A(content,href,className)
 	-if (!className) className =''
 	a(class='mainLink '+className,href=href)=content

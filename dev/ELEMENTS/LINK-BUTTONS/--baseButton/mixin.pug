@@ -1,0 +1,5 @@
+mixin BL-baseButton(value,href,className)
+	-if (!className) className =''
+	-if (!href) href ='#'
+	a.baseButton(class=''+className,href=''+href)=value
+

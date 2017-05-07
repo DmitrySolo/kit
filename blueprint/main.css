@@ -1074,9 +1074,9 @@ td {
 */
 section {
   padding-top: 68px;
-  padding-right: 42px;
-  padding-left: 42px;
-  padding-bottom: 26px; }
+  padding-right: 68px;
+  padding-bottom: 68px;
+  padding-left: 68px; }
   section:nth-child(odd) {
     background-color: #ff6547; }
   section:nth-child(even) {
@@ -1085,11 +1085,6 @@ section {
 /**
 * MODULES  STYLES
 */
-.lightMenu li {
-  display: inline-block; }
-  .lightMenu li:first-child {
-    margin-left: 0; }
-
 .lightMenu li {
   list-style: none;
   margin-right: 8px;
@@ -4476,6 +4471,118 @@ section {
   bottom: 0;
   right: 0; }
 
+.menu-hamburger {
+  display: table;
+  position: relative;
+  margin: 0 auto;
+  height: 27.77924em;
+  cursor: pointer; }
+  .menu-hamburger .menu-hamburger__part {
+    position: relative;
+    vertical-align: middle;
+    margin-bottom: 8px;
+    border-radius: 1px;
+    display: block;
+    width: 2rem;
+    height: .2rem;
+    background-color: #fefff9; }
+    .menu-hamburger .menu-hamburger__part:last-child {
+      margin-bottom: 0; }
+
+.menu-hamburger__partsWrap {
+  display: table-cell;
+  vertical-align: middle; }
+
+.heroTitle-ctn {
+  width: 100%;
+  display: table;
+  text-align: center;
+  height: 100%; }
+  .heroTitle-ctn h1.heroTitle {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Blanca"; }
+
+.logo__link {
+  display: block;
+  text-align: center; }
+  .logo__link img {
+    width: 100%;
+    vertical-align: bottom; }
+
+.logo__link {
+  display: block; }
+  .logo__link .logo__container {
+    text-align: center;
+    overflow: hidden; }
+
+.img_container--align_v {
+  position: relative; }
+
+.img_container--align_v img {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0; }
+
+.menu-hamburger {
+  display: table;
+  position: relative;
+  margin: 0 auto;
+  height: 27.77924em;
+  cursor: pointer; }
+  .menu-hamburger .menu-hamburger__part {
+    position: relative;
+    vertical-align: middle;
+    margin-bottom: 8px;
+    border-radius: 1px;
+    display: block;
+    width: 2rem;
+    height: .2rem;
+    background-color: #fefff9; }
+    .menu-hamburger .menu-hamburger__part:last-child {
+      margin-bottom: 0; }
+
+.menu-hamburger__partsWrap {
+  display: table-cell;
+  vertical-align: middle; }
+
+.heroTitle-ctn {
+  width: 100%;
+  display: table;
+  text-align: center;
+  height: 100%; }
+  .heroTitle-ctn h1.heroTitle {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Blanca"; }
+
+.logo__link {
+  display: block;
+  text-align: center; }
+  .logo__link img {
+    width: 100%;
+    vertical-align: bottom; }
+
+.img_container--align_v {
+  position: relative; }
+
+.img_container--align_v img {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0; }
+
+.logo__link {
+  display: block; }
+  .logo__link .logo__container {
+    text-align: center;
+    overflow: hidden; }
+
 /**
 * ELEMENTS  STYLES
 */
@@ -4486,6 +4593,19 @@ section {
   .mainButton:hover, .mainButton:active {
     outline: 2; }
 
+form.ove-pageCard__Form .ove-cardRegInput {
+  text-align: center;
+  outline: none;
+  border: none;
+  color: #fff;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-bottom: 3px solid #fff;
+  font-size: 2.5em;
+  letter-spacing: .25em; }
+
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -4495,10 +4615,32 @@ section {
   fill: #fff; }
 
 .icon--close {
-  height: 2.8rem;
-  width: 2.8rem;
+  height: 6.8rem;
+  width: 6.8rem;
   fill: black;
   cursor: pointer; }
+
+.icon--heart {
+  height: 6.8rem;
+  width: 6.8rem;
+  fill: red;
+  cursor: pointer; }
+
+.icon--heart--animate {
+  animation-name: heart;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1s; }
+
+@keyframes heart {
+  0% {
+    transform: rotate(30deg); }
+  50% {
+    transform: rotate(60deg); }
+  100% {
+    transform: rotate(180deg); } }
 
 .icon--search {
   width: 2rem; }
@@ -4535,18 +4677,32 @@ section {
 .ove-sectionHeader {
   margin-bottom: 8px; }
 
-form.ove-pageCard__Form .ove-cardRegInput {
-  text-align: center;
-  outline: none;
-  border: none;
+.baseButton {
+  display: inline-block;
+  font-family: "Rubik Mono One";
+  padding: 0;
+  background-color: #0a7c84;
   color: #fff;
-  width: 100%;
-  background-color: transparent;
-  margin-bottom: 8px;
-  padding: 8px;
-  border-bottom: 3px solid #fff;
-  font-size: 2.5em;
-  letter-spacing: .25em; }
+  border: 1px solid #0ea9b3;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 12.944px;
+  padding-left: 12.944px;
+  background: linear-gradient(90deg, #0a7c84, #00aab5 65%); }
+  .baseButton:hover, .baseButton:focus, .baseButton:active {
+    color: #fff;
+    background-color: #0ea9b3;
+    background: linear-gradient(90deg, #0a7c84, #00aab5 25%); }
+  .baseButton:visited {
+    color: #fff; }
+  .baseButton:hover, .baseButton:focus, .baseButton:active {
+    color: #fff; }
+  .baseButton:focus {
+    outline: none; }
+  .baseButton:hover, .baseButton:active {
+    outline: none; }
+  .baseButton.login {
+    text-transform: uppercase; }
 
 a, a.mainLink {
   color: black;

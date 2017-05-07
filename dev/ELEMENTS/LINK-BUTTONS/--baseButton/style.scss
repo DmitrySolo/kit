@@ -1,0 +1,44 @@
+$bkgColor__baseButton:#0a7c84;
+$bkgColor__baseButton-hover:lighten($bkgColor__baseButton,10%);
+$color__baseButton-hover:#fff;
+$color__baseButton:#fff;
+$end_color: #00aab5;
+.baseButton {
+	display: inline-block;
+	font-family: fs('HEADER');
+	padding:0;
+	background-color: $bkgColor__baseButton;
+	color: $color__baseButton;
+	//border-radius: 15px;
+	border: 1px solid $bkgColor__baseButton-hover;
+	@include space('element','tb','');
+	@include space('component','lr','');
+
+	@include i-gradient(90,($bkgColor__baseButton,$end_color),$points:(65%),$type:'linear');
+
+		&:hover, &:focus, &:active {
+		color: $color__baseButton-hover;
+		background-color: $bkgColor__baseButton-hover;
+			@include i-gradient(90,($bkgColor__baseButton,$end_color),$points:(25%),$type:'linear');
+		}
+
+		&:visited {
+		color: #fff;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+		color: $color__baseButton-hover;
+		}
+		&:focus {
+		outline: none;
+		}
+		&:hover,
+		&:active {
+		outline: none;
+		}
+	&.login{
+		text-transform: uppercase;
+
+	}
+}
