@@ -1,9 +1,18 @@
-mixin breadcrumbs()
-	nav.breadCrumb.visible-l
-		a(href='/').breadcrumb__section.breadCrumb__section--home Главная
-		+loop(3)
-			a(href='/').breadcrumb__section Другая страница12
-
+mixin MODULE-lightMenu(dataMenu)
+	if dataMenu=='MainMenu'
+		-var menuData = pages
+	else
+		-var menuData = menuData1
+	nav.lightMenu(role='navigation')
+		ul.lightMenu__list
+			each menuItem in menuData
+				if dataMenu=='MainMenu'
+					if menuItem.MainMenu
+						li(class='lightMenu__item ' + menuItem.dop_class)
+							a(href="" + menuItem.slug+".html")=menuItem.title
+				else
+					li(class='lightMenu__item ' + menuItem.dop_class)
+						a(href="" + menuItem.href)=menuItem.title
 mixin MODULE-hero_video()
 	<!-- split modules/hero_video -->
 	.hero_video
@@ -18,8 +27,3 @@ mixin MODULE-hero_video()
 				+hero-title-center('The best of the Rest')
 			.hero_video__poster.hidden
 				img(src="Hello-World.jpg" alt="x")
-mixin owlGoodsSlider()
-	<!-- split modules/owlGoodsSliderw -->
-	.owlGoodsSlider__wrapper
-		.owlGoodsSlider.owl-carousel
-			+module('catalogItem')

@@ -234,7 +234,28 @@ gulp.task('SERVER WATCHER', function () {
 
     });
 });
+gulp.task('WATCH-MODULE-FOLDERS', function () {
+    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+    return watch([
 
+        'dev/MODULES/**/*/',
+        '!dev/MODULES/_modules.pug',
+        '!dev/MODULES/_modules.scss',
+        '!dev/MODULES/**/_include.pug',
+        '!dev/MODULES/**/_mixin.scss',
+        '!dev/MODULES/**/data.json',
+        '!dev/MODULES/**/_starter.scss',
+        '!dev/MODULES/**/info.mmd',
+        '!dev/MODULES/**/_mixin.pug',
+        '!dev/MODULES/**/libs.json',
+
+
+
+    ], function () {
+        runSequence('concat-modules-pug','concat-modules-scss');
+
+    });
+});
 
 
 // STYLES
@@ -308,6 +329,7 @@ gulp.task('SCRIPTS-FINAL', function () {
 });
 gulp.task('WATCHER:NEW' ,function(){
     runSequence([
+        'WATCH-MODULE-FOLDERS',
         'VIEW-FINAL','VIEW-1-MIXES','VIEW-1-MODULES','VIEW-1-ELEMENTS','VIEW-1-DATA',
         'STYLES-FINAL','STYLES-1-MIXES','STYLES-1-ELEMENTS','STYLES-1-MODULES','STYLES-1-PAGES',
         'SCRIPTS-FINAL',
@@ -316,18 +338,21 @@ gulp.task('WATCHER:NEW' ,function(){
     ])
 })
 
-gulp.task('BUILDUP', [
-    'mergeJson',
-    'concat-mixes-scss',
-    'concat-elements-scss',
-    'concat-modules-scss',
-    'concat-mixes-pug',
-    'concat-elements-pug',
-    'concat-modules-pug',
-    'styles',
-    'views',
-    'SCRIPTS ALL'
-],function(){
+gulp.task('BUILDUP'
+
+,function(){
+
+runSequence([
+        'mergeJson',
+        'concat-mixes-scss',
+        'concat-elements-scss',
+        'concat-modules-scss',
+        'concat-mixes-pug',
+        'concat-elements-pug',
+        'concat-modules-pug',
+        'styles',
+        'views',
+        'SCRIPTS ALL'])
 
 })
 

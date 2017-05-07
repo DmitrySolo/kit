@@ -1,36 +1,47 @@
-@mixin breadcrumbs(){
-	.breadCrumb {
-      @include space('component','tb','');
-      @include space('block','lr','');
-      background-color: cs('fground');
-      text-transform: uppercase;
-      font-size: .9em;
-      a:link,a:visited {
-        color: cs('font-l');
-        text-decoration: none;
+@mixin lightMenu($rotation:'v'){
+  @if($rotation=='h'){
+    .lightMenu li {
+      display: inline-block;
+      &:first-child{
+        margin-left: 0;
       }
-      a:hover{
-        color: cs('font-d');
-      }
-    }
-  .breadcrumb__section {
-    display: inline-block;
-    @include space('element','','tbrl');
-    &:before {
-      content: '/rsssdssesss[[sshuray it workss';
-      margin-right: 20px;
     }
   }
-  .breadCrumb__section--home {
-    font-weight: 600;
-    &:before{
-      content: '';
-      margin-right:0;
-
+  .lightMenu li {
+    list-style: none;
+    @include space('element','lr','r');
+    @include media('mobile'){
+      @include space('element','tb','');
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-left: 0;
     }
+  }
+  .lightMenu__list{
+
+  }
+  .lightMenu li a{
+    @extend %hierarhiLevel-4;
+    color: #f9f2f4;
+    text-decoration: none;
+  }
+  .lightMenu {
+    @include space('block','tb','');
+    text-align: center;
+  }
+  .lightmenu__item--active {
+      background-color: cs('accent');
+      @include a-hover('background-color',(from:false,to:cs('accent-d')),.3s,ease);
+      @include media('tablet'){
+        background-color: inherit;
+      }
   }
 }
-@include breadcrumbs();
+//[h] -horizontal menu [v] -vertical menu
+@include lightMenu('h');
+
+
 @mixin hero_video(){
 	
 .hero_video{
@@ -80,39 +91,3 @@
   }
 }
 @include hero_video();
-@mixin owlGoodsSlider() {
-
-  .owlGoodsSlider {
-    position: relative;
-    @include space('module', '', 'b');
-
-    .owl-prev, .owl-next {
-      top: 30%;
-      position: absolute;
-      color: #fff;
-      width: 14%;
-      @include space('component', 'tb', '');
-      background-color: rgba(0, 0, 0, 0.29);
-      text-align: center;
-      &.disabled {
-        display: none;
-      }
-    }
-    .owl-prev {
-      left: 0;
-    }
-    .owl-next {
-      right: 0;
-    }
-    .catalogItem {
-      margin: 1px;
-    }
-    .catalogItem__priceAndBuy__price {
-      span {
-        font-size: 1.2em;
-        font-weight: bold;
-      }
-    }
-  }
-}
-@include owlGoodsSlider();

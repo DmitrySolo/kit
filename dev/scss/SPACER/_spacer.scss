@@ -8,43 +8,143 @@
     $space_ratio: $component_space;
   } @else if ($e=='element') {
     $space_ratio: $element_space;
+  }@else if ($e=='section') {
+    $space_ratio: $section_space;
   }
+
 
   @if ($m!=0) {
     @if (str-index($m, 't')) {
-      margin-top: #{$line-height-ratio*$space_ratio}em;
+      margin-top: #{$line-height-ratio*$space_ratio}$space;
     }
     @if (str-index($m, 'r')) {
-      margin-right: #{$line-height-ratio*$space_ratio}em;
+      margin-right: #{$line-height-ratio*$space_ratio}$space;
     }
     @if (str-index($m, 'b')) {
-      margin-bottom: #{$line-height-ratio*$space_ratio}em;
+      margin-bottom: #{$line-height-ratio*$space_ratio}$space;
     }
     @if (str-index($m, 'l')) {
-      margin-left: #{$line-height-ratio*$space_ratio}em;
+      margin-left: #{$line-height-ratio*$space_ratio}$space;
     }
     @if (str-index($m, 'a')) {
-      margin: #{$line-height-ratio*$space_ratio}em;
+      margin: #{$line-height-ratio*$space_ratio}$space;
     }
   }
   @if($p!=0){
     @if(str-index($p, 't')){
-      padding-top: #{$line-height-ratio*$space_ratio}em;
+      padding-top: #{$line-height-ratio*$space_ratio}$space;
     }
     @if(str-index($p, 'r')){
-      padding-right: #{$line-height-ratio*$space_ratio}em;
+      padding-right: #{$line-height-ratio*$space_ratio}$space;
     }
     @if(str-index($p, 'b')){
-      padding-bottom: #{$line-height-ratio*$space_ratio}em;
+      padding-bottom: #{$line-height-ratio*$space_ratio}$space;
     }
     @if(str-index($p, 'l')){
-      padding-left: #{$line-height-ratio*$space_ratio}em;
+      padding-left: #{$line-height-ratio*$space_ratio}$space;
     }
     @if(str-index($p, 'a')){
-      padding: #{$line-height-ratio*$space_ratio}em;
+      padding: #{$line-height-ratio*$space_ratio}$space;
     }
   }
 }
+
+@mixin space-i($e,$type:'s',$p:0,$m:0) {
+  $space_ratio: 0;
+  $space_ratio_v:0;
+  $space_ratio_h:0;
+  @if($type=='s' or $type == 'v'){
+  @if ($e=='block') {
+    $space_ratio_v: $block_space_o;
+
+  } @else if ($e=='module') {
+    $space_ratio_v: $module_space_o;
+
+  } @else if ($e=='component') {
+    $space_ratio_v: $component_space_o;
+
+  } @else if ($e=='element') {
+    $space_ratio_v: $element_space_o;
+
+  }
+  @if($type == 's'){
+  $space_ratio_h:$space_ratio_v;
+}@else {
+  @if ($e=='block') {
+    $space_ratio_h: $block_space_i;
+
+  } @else if ($e=='module') {
+    $space_ratio_h: $module_space_i;
+
+  } @else if ($e=='component') {
+    $space_ratio_h: $component_space_i;
+
+  } @else if ($e=='element') {
+    $space_ratio_h: $element_space_i;
+  }
+}
+
+  }@else if($type=='h'){
+
+  @if ($e=='block') {
+    $space_ratio_v: $block_space_i;
+    $space_ratio_h: $block_space_o;
+  } @else if ($e=='module') {
+    $space_ratio_v: $module_space_i;
+    $space_ratio_h: $block_space_o;
+  } @else if ($e=='component') {
+    $space_ratio_v: $component_space_i;
+    $space_ratio_h: $block_space_o;
+  } @else if ($e=='element') {
+    $space_ratio_v: $element_space_i;
+    $space_ratio_h: $block_space_o;
+  }
+
+
+  }
+
+@if($space == px){
+  $line-height-ratio : 1;
+
+  @if ($m!=0) {
+    @if (str-index($m, 't')) {
+      margin-top: #{$line-height-ratio*$space_ratio_v}$space;
+    }
+    @if (str-index($m, 'r')) {
+      margin-right: #{$line-height-ratio*$space_ratio_h}$space;
+    }
+    @if (str-index($m, 'b')) {
+      margin-bottom: #{$line-height-ratio*$space_ratio_v}$space;
+    }
+    @if (str-index($m, 'l')) {
+      margin-left: #{$line-height-ratio*$space_ratio_h}$space;
+    }
+    @if (str-index($m, 'a')) {
+      margin: #{$line-height-ratio*$space_ratio_v}$space,#{$line-height-ratio*$space_ratio_h}$space;
+    }
+  }
+  @if($p!=0){
+    @if(str-index($p, 't')){
+      padding-top: #{$line-height-ratio*$space_ratio_v}$space;
+    }
+    @if(str-index($p, 'r')){
+      padding-right: #{$line-height-ratio*$space_ratio_h}$space;
+    }
+    @if(str-index($p, 'b')){
+      padding-bottom: #{$line-height-ratio*$space_ratio_v}$space;
+    }
+    @if(str-index($p, 'l')){
+      padding-left: #{$line-height-ratio*$space_ratio_h}$space;
+    }
+    @if(str-index($p, 'a')){
+      padding: #{$line-height-ratio*$space_ratio_v}$space,#{$line-height-ratio*$space_ratio_h}$space;
+    }
+  }
+}
+
+}
+
+
 @function s-growLines($lines,$linesRatio:0,$linesBlocks:1,$font-size:1){
   $space_ratio: 0;
   @if ($linesRatio=='block') {

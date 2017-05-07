@@ -1,0 +1,10 @@
+section {
+  @include space-i('block','v','tlr','');
+  @include space-i('module','s','b','');
+  &:nth-child(odd){
+    background-color: #ff6547;
+  }
+  &:nth-child(even){
+    background-color: #12743a;
+  }
+}

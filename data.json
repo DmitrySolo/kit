@@ -1,7 +1,4 @@
 {
-	"breadcrumbs": {
-		"1": "22"
-	},
 	"hero_video": {
 		"hero_video": "1"
 	},
@@ -12,36 +9,6 @@
 					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
 					"container": "footer/init",
 					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"OWLGOODSSLIDER": {
-			"js": {
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--owlGoodsSlider/owlGoodsSlider.js",
-					"container": "footer/init/init"
-				},
-				"lib": {
-					"src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
-					"container": "footer/libs+/"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"baseButton": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
-					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -59,9 +26,6 @@
 				"": ""
 			}
 		}
-	},
-	"owlGoodsSlider": {
-		"owlGoodsSlider": "1"
 	},
 	"head": {
 		"lang": "ru",
@@ -88,7 +52,7 @@
 			"slug": "about",
 			"kw": "application, test , hurray!!!",
 			"layout": "default",
-			"MainMenu": false,
+			"MainMenu": true,
 			"group": false,
 			"dop_class": ""
 		}
@@ -105,9 +69,9 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Rubik')",
-		"'HEADER'": "('Rubik Mono One')\r\n)"
+		"'HEADER'": "('Rubik Mono One')\n)"
 	},
-	"element_space": ".4",
+	"element_space": "5",
 	"component_space": "$element_space*1.618",
 	"module_space": "$component_space*1.618",
 	"block_space": "$module_space*1.618",
@@ -121,7 +85,7 @@
 	"siteWidth": "1240px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"siteMinWidth": "900px",
 	"colStyles": {
 		"width": "100%",
@@ -143,6 +107,16 @@
 	"nr-colStyles": {
 		"float": "left"
 	},
+	"space": "px",
+	"section_space": "$block_space*1.618",
+	"element_space_i": "2",
+	"element_space_o": "4",
+	"component_space_i": "6",
+	"component_space_o": "10",
+	"module_space_i": "16",
+	"module_space_o": "26",
+	"block_space_i": "42",
+	"block_space_o": "68",
 	"blueprint": "breadcrumbs",
 	"izolate": "false"
 }
