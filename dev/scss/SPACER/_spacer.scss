@@ -91,13 +91,13 @@
     $space_ratio_h: $block_space_o;
   } @else if ($e=='module') {
     $space_ratio_v: $module_space_i;
-    $space_ratio_h: $block_space_o;
+    $space_ratio_h: $module_space_o;
   } @else if ($e=='component') {
     $space_ratio_v: $component_space_i;
-    $space_ratio_h: $block_space_o;
+    $space_ratio_h: $component_space_o;
   } @else if ($e=='element') {
     $space_ratio_v: $element_space_i;
-    $space_ratio_h: $block_space_o;
+    $space_ratio_h: $element_space_o;
   }
 
 

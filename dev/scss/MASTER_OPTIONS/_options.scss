@@ -29,7 +29,7 @@ $LINKED_FONTS_MAP:(
 $space:  px;
 
 //one size
-$element_space: 5;
+$element_space: .5;
 $component_space: $element_space*1.618;
 $module_space: $component_space*1.618;
 $block_space: $module_space*1.618;
@@ -45,7 +45,7 @@ $module_space_i: 16;
 $module_space_o: 26;
 
 $block_space_i: 30;
-$block_space_o: 50;
+$block_space_o: 51;
 
 
 
@@ -75,6 +75,7 @@ $siteMinWidth: 900px;
 $colStyles:(
           width: 100%,
           float: left,
+          min-height: 1px
 );
 
 $phone-upper-boundary: 600px;

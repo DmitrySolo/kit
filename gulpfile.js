@@ -343,12 +343,12 @@ gulp.task('BUILDUP'
 ,function(){
 
 runSequence(
+        'concat-mixes-pug',
         'concat-modules-pug',
         'mergeJson',
         'concat-mixes-scss',
         'concat-elements-scss',
         'concat-modules-scss',
-        'concat-mixes-pug',
         'concat-elements-pug',
         'styles',
         'views',

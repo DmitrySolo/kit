@@ -33,6 +33,91 @@ ul.infoElement__container {
 
 
 }
+$bkgColor__baseButton:#0a7c84;
+$bkgColor__baseButton-hover:lighten($bkgColor__baseButton,10%);
+$color__baseButton-hover:#fff;
+$color__baseButton:#fff;
+$end_color: #00aab5;
+.baseButton {
+	display: inline-block;
+	font-family: fs('HEADER');
+	padding:0;
+	background-color: $bkgColor__baseButton;
+	color: $color__baseButton;
+	//border-radius: 15px;
+	border: 1px solid $bkgColor__baseButton-hover;
+	@include space('element','tb','');
+	@include space('component','lr','');
+
+	@include i-gradient(90,($bkgColor__baseButton,$end_color),$points:(65%),$type:'linear');
+
+		&:hover, &:focus, &:active {
+		color: $color__baseButton-hover;
+		background-color: $bkgColor__baseButton-hover;
+			@include i-gradient(90,($bkgColor__baseButton,$end_color),$points:(25%),$type:'linear');
+		}
+
+		&:visited {
+		color: #fff;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+		color: $color__baseButton-hover;
+		}
+		&:focus {
+		outline: none;
+		}
+		&:hover,
+		&:active {
+		outline: none;
+		}
+	&.login{
+		text-transform: uppercase;
+
+	}
+}
+$bkgColor__learnMoreButton:transparent;
+$bkgColor__learnMoreButton-hover:cs('accent');
+$color__learnMoreButton-hover:#fff;
+$color__learnMoreButton:#000000;
+$color__learnMoreButton-visited: #232323;
+
+.learnMoreButton {
+	display: inline-block;
+	background-color: $bkgColor__learnMoreButton;
+	color: $color__learnMoreButton;
+	border: 2px solid cs('accent');
+	@include space-i('component','=','tb','b');
+	@include space-i('block','-','rl','');
+
+		&:hover, &:focus{
+		color: $color__learnMoreButton-hover;
+		background-color: $bkgColor__learnMoreButton-hover;
+		}
+	&:active {
+		background-color: darken($bkgColor__learnMoreButton-hover,5%);
+		border-color: darken($bkgColor__learnMoreButton-hover,5%);;
+	}
+	&:visited {
+		color: $color__learnMoreButton-visited;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+		color: $color__learnMoreButton-hover;
+		}
+		&:focus {
+		outline: none;
+		}
+		&:hover,
+		&:active {
+		outline: none;
+		}
+	&.learnMoreButton--onImage{
+		color: #fff;
+	}
+}
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -111,86 +196,6 @@ input[type='text'].ove-cardRegInput {
   background-color: transparent;
   @include space-i('component','=','tbr','');
   @include space-i('module','=','l','b');
-}
-$bkgColor__baseButton:#0a7c84;
-$bkgColor__baseButton-hover:lighten($bkgColor__baseButton,10%);
-$color__baseButton-hover:#fff;
-$color__baseButton:#fff;
-$end_color: #00aab5;
-.baseButton {
-	display: inline-block;
-	font-family: fs('HEADER');
-	padding:0;
-	background-color: $bkgColor__baseButton;
-	color: $color__baseButton;
-	//border-radius: 15px;
-	border: 1px solid $bkgColor__baseButton-hover;
-	@include space('element','tb','');
-	@include space('component','lr','');
-
-	@include i-gradient(90,($bkgColor__baseButton,$end_color),$points:(65%),$type:'linear');
-
-		&:hover, &:focus, &:active {
-		color: $color__baseButton-hover;
-		background-color: $bkgColor__baseButton-hover;
-			@include i-gradient(90,($bkgColor__baseButton,$end_color),$points:(25%),$type:'linear');
-		}
-
-		&:visited {
-		color: #fff;
-		}
-		&:hover,
-		&:focus,
-		&:active {
-		color: $color__baseButton-hover;
-		}
-		&:focus {
-		outline: none;
-		}
-		&:hover,
-		&:active {
-		outline: none;
-		}
-	&.login{
-		text-transform: uppercase;
-
-	}
-}
-$bkgColor__learnMoreButton:transparent;
-$bkgColor__learnMoreButton-hover:cs('accent');
-$color__learnMoreButton-hover:#fff;
-$color__learnMoreButton:#000000;
-$color__learnMoreButton-visited:#fff;
-
-.learnMoreButton {
-	display: inline-block;
-	background-color: $bkgColor__learnMoreButton;
-	color: $color__learnMoreButton;
-	border: 2px solid cs('accent');
-	@include space-i('element','-','trlb','');
-		&:hover, &:focus, &:active {
-		color: $color__learnMoreButton-hover;
-		background-color: $bkgColor__learnMoreButton-hover;
-		}
-
-		&:visited {
-		color: $color__learnMoreButton-visited;
-		}
-		&:hover,
-		&:focus,
-		&:active {
-		color: $color__learnMoreButton-hover;
-		}
-		&:focus {
-		outline: none;
-		}
-		&:hover,
-		&:active {
-		outline: none;
-		}
-	&.learnMoreButton--onImage{
-		color: #fff;
-	}
 }
 $color__link: cs('font-d');
 $color__link-visited:cs('font-d');

@@ -2,41 +2,52 @@
   @if($rotation=='h'){
     .lightMenu li {
       display: inline-block;
+      vertical-align: top;
       &:first-child{
         margin-left: 0;
       }
     }
   }
   .lightMenu {
+    font-size: 0;
+    background-color: cs('primary');
     border-right: 2px solid cs('primary-d');
     border-left: 2px solid cs('primary-d');
     text-align: center;
-  }
-  .lightMenu li {
-    list-style: none;
-    @include space('element','lr','');
-    @include media('mobile'){
-      @include space('element','tb','');
-      display: block;
-      width: 100%;
-      text-align: center;
-      margin-left: 0;
+    @include for-size(phone-only){
+      line-height: 2em;
+      @include space-i('module','-','t','');
+      @include space-i('module','=','b','');
     }
   }
-  .lightMenu__item{
-    @include a-hover(background-color,$points:(from:0,to:cs('primary-d')),$time:$allAnimationTime,$func:$allAnimationFunc)
-  }
-  .lightMenu li a{
+  .lightMenu__item {
+
+    @include a-hover(background-color,$points:(from:0,to:cs('primary-d')),$time:$allAnimationTime,$func:$allAnimationFunc);
+
     @extend %hierarhiLevel-4;
-    color: #f9f2f4;
+    list-style: none;
+
+    @include space-i('module','|','lr','');
+
+    @include for-size(phone-only){
+            @include space-i('module','=','tbrl','');
+            display: block;
+            width:100%;
+            text-align: center;
+          }
+  }
+  .lightMenu__item a{
+    display: inline-block;
+    color: #ffffff;
     text-decoration: none;
+    &:visited,
+    &:hover,
+    &:active{
+      color: #ffffff;
+    }
   }
 
   .lightmenu__item--active {
-      background-color: cs('accent');
-      @include a-hover('background-color',(from:false,to:cs('accent-d')),.3s,ease);
-      @include media('tablet'){
-        background-color: inherit;
-      }
+      background-color: cs('primary-d');
   }
 }
