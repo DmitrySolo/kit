@@ -2,17 +2,34 @@ mixin B(value,className)
 	-if (!className) className =''
 	button.mainButton(class=''+className)=value
 
-mixin INPUT-oveCard(type,className)
-	-if (!className) className =''
-	input(type=""+type, class='ove-cardRegInput '+className)
+mixin infoElement(icon,title,text,classModifier)
+	-if (!classModifier) classModifier =''
+	li(class='infoElement')
+		.iconWrapper
+			svg(class='infoElement__icon ' + classModifier)
+				use(xlink:href="#" + icon)
+		h5=title+':'
+		span=text
+
+
+
 mixin I(id,classModifier)
 	-if (!classModifier) classModifier =''
 	svg(class='icon '+classModifier)
 		use(xlink:href="#"+id)
+mixin INPUT-oveCard(type,className)
+	-if (!className) className =''
+	input(type=""+type, class='ove-cardRegInput '+className placeholder='Это плейсхолдер')
 mixin BL-baseButton(value,href,className)
 	-if (!className) className =''
 	-if (!href) href ='#'
 	a.baseButton(class=''+className,href=''+href)=value
+
+
+mixin BL-learnMoreButtom(value,href,className)
+	-if (!className) className =''
+	-if (!href) href ='#'
+	a.learnMoreButton(class=''+className,href=''+href)=value
 
 
 mixin A(content,href,className)

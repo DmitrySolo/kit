@@ -1,47 +1,3 @@
-@mixin lightMenu($rotation:'v'){
-  @if($rotation=='h'){
-    .lightMenu li {
-      display: inline-block;
-      &:first-child{
-        margin-left: 0;
-      }
-    }
-  }
-  .lightMenu li {
-    list-style: none;
-    @include space('element','lr','r');
-    @include media('mobile'){
-      @include space('element','tb','');
-      display: block;
-      width: 100%;
-      text-align: center;
-      margin-left: 0;
-    }
-  }
-  .lightMenu__list{
-
-  }
-  .lightMenu li a{
-    @extend %hierarhiLevel-4;
-    color: #f9f2f4;
-    text-decoration: none;
-  }
-  .lightMenu {
-    @include space('block','tb','');
-    text-align: center;
-  }
-  .lightmenu__item--active {
-      background-color: cs('accent');
-      @include a-hover('background-color',(from:false,to:cs('accent-d')),.3s,ease);
-      @include media('tablet'){
-        background-color: inherit;
-      }
-  }
-}
-//[h] -horizontal menu [v] -vertical menu
-@include lightMenu('v');
-
-
 @mixin hero_video(){
 	
 .hero_video{
@@ -91,3 +47,48 @@
   }
 }
 @include hero_video();
+@mixin lightMenu($rotation:'v'){
+  @if($rotation=='h'){
+    .lightMenu li {
+      display: inline-block;
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+  .lightMenu {
+    border-right: 2px solid cs('primary-d');
+    border-left: 2px solid cs('primary-d');
+    text-align: center;
+  }
+  .lightMenu li {
+    list-style: none;
+    @include space('element','lr','');
+    @include media('mobile'){
+      @include space('element','tb','');
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-left: 0;
+    }
+  }
+  .lightMenu__item{
+    @include a-hover(background-color,$points:(from:0,to:cs('primary-d')),$time:$allAnimationTime,$func:$allAnimationFunc)
+  }
+  .lightMenu li a{
+    @extend %hierarhiLevel-4;
+    color: #f9f2f4;
+    text-decoration: none;
+  }
+
+  .lightmenu__item--active {
+      background-color: cs('accent');
+      @include a-hover('background-color',(from:false,to:cs('accent-d')),.3s,ease);
+      @include media('tablet'){
+        background-color: inherit;
+      }
+  }
+}
+//[h] -horizontal menu [v] -vertical menu
+@include lightMenu('h');
+

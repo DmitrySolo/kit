@@ -1,10 +1,11 @@
-section {
-  @include space-i('block','s','tbrl','');
-  //@include space-i('module','s','b','');
-  &:nth-child(odd){
-    background-color: #ff6547;
-  }
-  &:nth-child(even){
-    background-color: #12743a;
+section.block {
+  @include space-i('block','=','t','');
+  @include space-i('block','-','b','');
+  h2.block_title {
+    text-align: center;
+    width: 100%;
+    border-bottom: 3px solid cs('hl');
+    @include space-i('component','=','b','');
+    @include space-i('module','=','','b');
   }
 }

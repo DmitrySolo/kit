@@ -1,1 +1,8 @@
 //PROJECT SCSS
+
+header.mainHeader {
+  background-color: cs('primary');
+  height: 110px;
+  line-height: 110px;
+  border-bottom: 3px solid cs('primary-d');
+}

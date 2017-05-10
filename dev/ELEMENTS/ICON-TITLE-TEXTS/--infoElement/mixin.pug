@@ -1,0 +1,10 @@
+mixin infoElement(icon,title,text,classModifier)
+	-if (!classModifier) classModifier =''
+	li(class='infoElement')
+		.iconWrapper
+			svg(class='infoElement__icon ' + classModifier)
+				use(xlink:href="#" + icon)
+		h5=title+':'
+		span=text
+
+

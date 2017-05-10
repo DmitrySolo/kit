@@ -1,12 +1,9 @@
-form.ove-pageCard__Form .ove-cardRegInput {
-  text-align: center;
+input[type='text'].ove-cardRegInput {
   outline: none;
-  border:none;
-  color: #fff;
+  color: #000000;
   width: 100%;
+  border: solid 2px cs('accent');
   background-color: transparent;
-  @include space('element','a','b');
-  border-bottom: 3px solid #fff;
-  font-size: 2.5em;
-  letter-spacing: .25em;
+  @include space-i('component','=','tbr','');
+  @include space-i('module','=','l','b');
 }

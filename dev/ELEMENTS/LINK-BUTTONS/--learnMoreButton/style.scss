@@ -1,0 +1,36 @@
+$bkgColor__learnMoreButton:transparent;
+$bkgColor__learnMoreButton-hover:cs('accent');
+$color__learnMoreButton-hover:#fff;
+$color__learnMoreButton:#000000;
+$color__learnMoreButton-visited:#fff;
+
+.learnMoreButton {
+	display: inline-block;
+	background-color: $bkgColor__learnMoreButton;
+	color: $color__learnMoreButton;
+	border: 2px solid cs('accent');
+	@include space-i('element','-','trlb','');
+		&:hover, &:focus, &:active {
+		color: $color__learnMoreButton-hover;
+		background-color: $bkgColor__learnMoreButton-hover;
+		}
+
+		&:visited {
+		color: $color__learnMoreButton-visited;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+		color: $color__learnMoreButton-hover;
+		}
+		&:focus {
+		outline: none;
+		}
+		&:hover,
+		&:active {
+		outline: none;
+		}
+	&.learnMoreButton--onImage{
+		color: #fff;
+	}
+}

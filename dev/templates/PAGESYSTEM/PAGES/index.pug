@@ -4,12 +4,18 @@ block title
     title Главная
     -var page={slug:"index",title:"Главная"};
 block main
-    section Hello
-        +MODULE-lightMenu()
-    section
-        +I('heart','icon--heart icon--heart--animate')
-    section Hello2
-block sidebar
-    h6 this is sidebar
-    +MODULE-hero_video()
+    section.block
+        h2.block_title Платные Услуги
+        +BL-learnMoreButtom('Узнать')
+        +INPUT-oveCard('text')
+        +BL-learnMoreButtom('Узнать','#','learnMoreButton--onImage')
+    section.block
+        h2.block_title Отделения
+        ul.infoElement__container
+            +infoElement('book','Адреcc','394033 г. Воронеж, ул. Минская, 43')
+            +infoElement('bus','Автобусы','80, 90, 37a.')
+            +infoElement('phone','Телефон','+7 (473) 228-65-07')
+            +infoElement('mail','E-mail','elektronika@gkbsmp10.vrn.ru')
+    section.block
+        h2.block_title Как нас найти
 

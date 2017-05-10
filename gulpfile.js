@@ -169,7 +169,7 @@ gulp.task('VIEW-FINAL', function () {
     return watch([
 
         'dev/ELEMENTS/_elements.pug',
-        'dev/ELEMENTS/_mixes.pug',
+        'dev/MIXES/_mixes.pug',
         'dev/MODULES/_modules.pug',
         'data.json',
         'dev/templates/**/*.pug',
@@ -266,7 +266,7 @@ gulp.task('STYLES-FINAL', function () {
         'dev/scss/**/*.scss',
         '!dev/scss/PAGES/*-page.scss',
         'dev/ELEMENTS/_elements.scss',
-        'dev/ELEMENTS/_mixes.scss',
+        'dev/MIXES/_mixes.scss',
         'dev/MODULES/_modules.scss',
         'blueprint/*.scss',
     ], function () {
@@ -444,7 +444,7 @@ gulp.task('concat-mixes-pug', function() {
 gulp.task('concat-mixes-scss', function() {
 
 
-    gulp.src('dev/MIXES/**/*.scss')
+    gulp.src('dev/MIXES/**/_style.scss')
         .pipe(concat('_mixes.scss'))
         .pipe(gulp.dest('dev/MIXES/'));
 });

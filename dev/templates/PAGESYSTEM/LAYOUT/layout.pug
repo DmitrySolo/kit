@@ -7,14 +7,9 @@ html(lang=''+head.lang)
     body
         .hidden
             include ../../../../dist/icons/icons.svg
-        .container
-            .row
-                .col-12
-                    include _header
+        include _header
             <!-- split #{page.slug}.html -->
-                .col-10
-                    block main
-                .col-2
-                    block sidebar
-                        h2 DEFAULT SIDEBAR
+        main
+            .container
+                block main
         include _footer

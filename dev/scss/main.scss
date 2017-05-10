@@ -5,10 +5,6 @@
  */
 @import "NORMALIZE/normalize-5-0-0";
 
-/*
- * RESET
- */
-@import "reset";
 @if($assetsFonts){
 /*
 * FONTS
@@ -33,7 +29,10 @@
   */
   @import "../../dist/fonts/scss/_iconFont.scss";
 
-
+  /*
+   * RESET
+   */
+  @import "reset";
 
 /**
  * HIERARCHY

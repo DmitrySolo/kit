@@ -77,7 +77,7 @@
 		"desc": "This is test framework application",
 		"kw": "application, test , hurray!!!",
 		"fontlinks": {
-			"1": "https://fonts.googleapis.com/css?family=Rubik+Mono+One|Rubik:400,900&amp;subset=cyrillic"
+			"1": "https://fonts.googleapis.com/css?family=Oswald|Roboto+Slab:700"
 		},
 		"debug": false
 	},
@@ -91,18 +91,45 @@
 			"group": false,
 			"dop_class": ""
 		},
-		"about": {
-			"title": "About",
-			"slug": "about",
+		"2": {
+			"title": "Диспанцеризация",
+			"slug": "dispanser",
 			"kw": "application, test , hurray!!!",
 			"layout": "default",
 			"MainMenu": true,
 			"group": false,
 			"dop_class": ""
 		},
-		"contacts": {
-			"title": "Contacts",
-			"slug": "contacts",
+		"3": {
+			"title": "Платные услуги",
+			"slug": "pay",
+			"kw": "application, test , hurray!!!",
+			"layout": "default",
+			"MainMenu": true,
+			"group": false,
+			"dop_class": ""
+		},
+		"4": {
+			"title": "Документы",
+			"slug": "docs",
+			"kw": "application, test , hurray!!!",
+			"layout": "default",
+			"MainMenu": true,
+			"group": false,
+			"dop_class": ""
+		},
+		"5": {
+			"title": "Мед работникам",
+			"slug": "docs",
+			"kw": "application, test , hurray!!!",
+			"layout": "default",
+			"MainMenu": true,
+			"group": false,
+			"dop_class": ""
+		},
+		"pacients": {
+			"title": "Пациентам",
+			"slug": "pacients",
 			"kw": "application, test , hurray!!!",
 			"layout": "default",
 			"MainMenu": true,
@@ -110,19 +137,19 @@
 			"dop_class": ""
 		}
 	},
-	"response": "false",
+	"response": "true",
 	"vertical-rhythm": "true",
 	"linkFonts": "true",
-	"assetsFonts": "true",
+	"assetsFonts": "false",
 	"debug": "false",
 	"production": "false",
-	"icon-font": "true",
+	"icon-font": "false",
 	"body-color": "cs('font')",
-	"header-color": "#fff",
+	"header-color": "cs('primary')",
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
-		"'MAIN'": "('Rubik')",
-		"'HEADER'": "('Rubik Mono One')\r\n)"
+		"'MAIN'": "('Oswald')",
+		"'HEADER'": "('Roboto Slab')\r\n)"
 	},
 	"space": "px",
 	"element_space": "5",
@@ -136,16 +163,16 @@
 	"component_space_o": "10",
 	"module_space_i": "16",
 	"module_space_o": "26",
-	"block_space_i": "42",
-	"block_space_o": "68",
+	"block_space_i": "30",
+	"block_space_o": "50",
 	"body-font": "fs('MAIN'),san-serif",
-	"body-font-weight": "300",
+	"body-font-weight": "400",
 	"header-font": "fs('HEADER'),san-serif",
-	"header-font-weight": "900",
-	"mobile-font": "16px",
+	"header-font-weight": "700",
+	"mobile-font": "14px",
 	"screen-font": "18px",
 	"line-height-ratio": "1.6",
-	"siteWidth": "1240px",
+	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": "1em",
 	"container-styles": "(\r\n\r\n)",

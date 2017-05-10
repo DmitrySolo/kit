@@ -1,0 +1,1 @@
+// Element: learnMoreButton script.

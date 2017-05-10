@@ -49,11 +49,11 @@
   }
 }
 
-@mixin space-i($e,$type:'s',$p:0,$m:0) {
+@mixin space-i($e,$type:'=',$p:0,$m:0) {
   $space_ratio: 0;
   $space_ratio_v:0;
   $space_ratio_h:0;
-  @if($type=='s' or $type == 'v'){
+  @if($type=='=' or $type == '|'){
   @if ($e=='block') {
     $space_ratio_v: $block_space_o;
 
@@ -67,7 +67,7 @@
     $space_ratio_v: $element_space_o;
 
   }
-  @if($type == 's'){
+  @if($type == '='){
   $space_ratio_h:$space_ratio_v;
 }@else {
   @if ($e=='block') {
@@ -84,7 +84,7 @@
   }
 }
 
-  }@else if($type=='h'){
+  }@else if($type=='-'){
 
   @if ($e=='block') {
     $space_ratio_v: $block_space_i;

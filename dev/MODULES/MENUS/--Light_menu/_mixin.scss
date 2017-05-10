@@ -7,9 +7,14 @@
       }
     }
   }
+  .lightMenu {
+    border-right: 2px solid cs('primary-d');
+    border-left: 2px solid cs('primary-d');
+    text-align: center;
+  }
   .lightMenu li {
     list-style: none;
-    @include space('element','lr','r');
+    @include space('element','lr','');
     @include media('mobile'){
       @include space('element','tb','');
       display: block;
@@ -18,18 +23,15 @@
       margin-left: 0;
     }
   }
-  .lightMenu__list{
-
+  .lightMenu__item{
+    @include a-hover(background-color,$points:(from:0,to:cs('primary-d')),$time:$allAnimationTime,$func:$allAnimationFunc)
   }
   .lightMenu li a{
     @extend %hierarhiLevel-4;
     color: #f9f2f4;
     text-decoration: none;
   }
-  .lightMenu {
-    @include space('block','tb','');
-    text-align: center;
-  }
+
   .lightmenu__item--active {
       background-color: cs('accent');
       @include a-hover('background-color',(from:false,to:cs('accent-d')),.3s,ease);

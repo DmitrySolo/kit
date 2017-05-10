@@ -4,14 +4,15 @@
 
 // FOREGROUND -> MAIN -> SECONDARY
 $colors: (
-        'primary':#570062,
-        'secondary': #FF5800,
-        'accent': #FF5800,
-        'fground': #fefff9,
-        'bground': #D0C8C8,
-        'font': #000000
+        'primary':#3b68c9,
+        'secondary': #ebebeb,
+        'accent': #00aab5,
+        'fground': #ebebeb,
+        'bground': #ffffff,
+        'font': #000000,
+        'hl': #e32a8e
 );
-$color-step: .05;
+$color-step: .15;
 
 
 $colors-map:(

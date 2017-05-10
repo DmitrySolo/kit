@@ -13,17 +13,25 @@ $color__button-active:#aaa;
     outline: 2;
   }
 }
-form.ove-pageCard__Form .ove-cardRegInput {
-  text-align: center;
-  outline: none;
-  border:none;
-  color: #fff;
-  width: 100%;
-  background-color: transparent;
-  @include space('element','a','b');
-  border-bottom: 3px solid #fff;
-  font-size: 2.5em;
-  letter-spacing: .25em;
+ul.infoElement__container {
+
+}
+.infoElement{
+  line-height:60px;
+
+  .iconWrapper,h5,span{
+    @include space-i('element','=','rl','');
+    display: inline-block;
+    //vertical-align: top;
+  }
+  .infoElement__icon{
+    width: 60px;
+    height: 60px;
+    fill: cs('accent');
+    vertical-align: top;
+  }
+
+
 }
 .icon {
   display: inline-block;
@@ -95,6 +103,15 @@ form.ove-pageCard__Form .ove-cardRegInput {
 .ove-sectionHeader {
   @include space('element','','b');
 }
+input[type='text'].ove-cardRegInput {
+  outline: none;
+  color: #000000;
+  width: 100%;
+  border: solid 2px cs('accent');
+  background-color: transparent;
+  @include space-i('component','=','tbr','');
+  @include space-i('module','=','l','b');
+}
 $bkgColor__baseButton:#0a7c84;
 $bkgColor__baseButton-hover:lighten($bkgColor__baseButton,10%);
 $color__baseButton-hover:#fff;
@@ -137,6 +154,42 @@ $end_color: #00aab5;
 	&.login{
 		text-transform: uppercase;
 
+	}
+}
+$bkgColor__learnMoreButton:transparent;
+$bkgColor__learnMoreButton-hover:cs('accent');
+$color__learnMoreButton-hover:#fff;
+$color__learnMoreButton:#000000;
+$color__learnMoreButton-visited:#fff;
+
+.learnMoreButton {
+	display: inline-block;
+	background-color: $bkgColor__learnMoreButton;
+	color: $color__learnMoreButton;
+	border: 2px solid cs('accent');
+	@include space-i('element','-','trlb','');
+		&:hover, &:focus, &:active {
+		color: $color__learnMoreButton-hover;
+		background-color: $bkgColor__learnMoreButton-hover;
+		}
+
+		&:visited {
+		color: $color__learnMoreButton-visited;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+		color: $color__learnMoreButton-hover;
+		}
+		&:focus {
+		outline: none;
+		}
+		&:hover,
+		&:active {
+		outline: none;
+		}
+	&.learnMoreButton--onImage{
+		color: #fff;
 	}
 }
 $color__link: cs('font-d');
