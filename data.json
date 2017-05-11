@@ -69,6 +69,17 @@
 			"css": {
 				"": ""
 			}
+		},
+		"xRayView": {
+			"js": {
+				"xRayView-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
 		}
 	},
 	"head": {
@@ -149,10 +160,10 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\n)"
+		"'HEADER'": "('Roboto Slab')\r\n)"
 	},
 	"space": "px",
-	"element_space": "5",
+	"element_space": ".5",
 	"component_space": "$element_space*1.618",
 	"module_space": "$component_space*1.618",
 	"block_space": "$module_space*1.618",
@@ -164,7 +175,7 @@
 	"module_space_i": "16",
 	"module_space_o": "26",
 	"block_space_i": "30",
-	"block_space_o": "50",
+	"block_space_o": "51",
 	"body-font": "fs('MAIN'),san-serif",
 	"body-font-weight": "400",
 	"header-font": "fs('HEADER'),san-serif",
@@ -175,16 +186,17 @@
 	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\n\n)",
-	"siteMinWidth": "900px",
+	"container-styles": "(\r\n\r\n)",
+	"siteMinWidth": "690px",
 	"colStyles": {
 		"width": "100%",
-		"float": "left"
+		"float": "left",
+		"min-height": "1px\r\n)"
 	},
 	"phone-upper-boundary": "600px",
-	"tablet-portrait-upper-boundary": "900px",
-	"tablet-landscape-upper-boundary": "1200px",
-	"desktop-upper-boundary": "1800px",
+	"tablet-portrait-upper-boundary": "768px",
+	"tablet-landscape-upper-boundary": "994px",
+	"desktop-upper-boundary": "1200px",
 	"grid-map": {
 		"mobile": "(prefix",
 		"container": "$siteWidth",

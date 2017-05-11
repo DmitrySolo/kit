@@ -2,11 +2,20 @@
 header.mainHeader
     .container
         .row
-            .col-3-m.col-2-tp.col-1-d
+            .col-3-m.col-2-tp.col-1-d.logo
                 +logo-img('logo.png')
-            .col-8-tp
+            .col-7-tp.headerSectionDivider
                 +MODULE-lightMenu('MainMenu')
-            .col-3-tp
+            .col-4-tp
                 .row
-                    .col-8-tp phone
-                    .col-4-tp look
+                    .col-6-tp.headerSectionDivider
+                        .headerSection
+                            span.headerPhone +7 (473) 228-65-07
+                            span.headerAddress г. Воронеж, ул. Минская, 43
+
+                    .col-3-tp.headerSectionDivider#js-triggerSearch
+                            .headerSection
+                                +I('magnify','headerIcon')
+                    .col-3-tp.headerSectionDivider#js-triggerEye
+                            .headerSection
+                                +I('eye','headerIcon')

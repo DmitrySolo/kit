@@ -11,8 +11,6 @@
   .lightMenu {
     font-size: 0;
     background-color: cs('primary');
-    border-right: 2px solid cs('primary-d');
-    border-left: 2px solid cs('primary-d');
     text-align: center;
     @include for-size(phone-only){
       line-height: 2em;
@@ -34,6 +32,8 @@
             display: block;
             width:100%;
             text-align: center;
+
+
           }
   }
   .lightMenu__item a{

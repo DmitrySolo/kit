@@ -71,7 +71,7 @@ $container-styles:(
 
 // IF RESPONSE ////////////////////////////////////////
 
-$siteMinWidth: 900px;
+$siteMinWidth: 690px;
 $colStyles:(
           width: 100%,
           float: left,
@@ -79,9 +79,9 @@ $colStyles:(
 );
 
 $phone-upper-boundary: 600px;
-$tablet-portrait-upper-boundary: 900px;
-$tablet-landscape-upper-boundary: 1200px;
-$desktop-upper-boundary: 1800px;
+$tablet-portrait-upper-boundary: 768px;
+$tablet-landscape-upper-boundary: 994px;
+$desktop-upper-boundary: 1200px;
 
 
 $grid-map: (
