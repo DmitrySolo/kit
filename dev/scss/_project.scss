@@ -45,10 +45,24 @@ header.mainHeader {
     height: 100%;
   }
 }
-div[id^='js-trigger']{
-  cursor: pointer;
+.js-trigger{
   @include a-hover('background-color',(from:0,to:cs('primary-d')));
   &.active{
     background-color: cs('primary-d');
   }
+}
+.heroImageHolder{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.heroimagebutton img{
+  width: 100%;
+  height: auto;
+}
+.recordButton{
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  font-size: 1.5em;
 }

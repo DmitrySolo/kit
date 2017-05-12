@@ -13,13 +13,13 @@ mixin infoElement(icon,title,text,classModifier)
 
 
 
-mixin INPUT-oveCard(type,className)
-	-if (!className) className =''
-	input(type=""+type, class='ove-cardRegInput '+className placeholder='Это плейсхолдер')
 mixin I(id,classModifier)
 	-if (!classModifier) classModifier =''
 	svg(class='icon '+classModifier)
 		use(xlink:href="#"+id)
+mixin INPUT-oveCard(type,className)
+	-if (!className) className =''
+	input(type=""+type, class='ove-cardRegInput '+className placeholder='Это плейсхолдер')
 mixin BL-baseButton(value,href,className)
 	-if (!className) className =''
 	-if (!href) href ='#'

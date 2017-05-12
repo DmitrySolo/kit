@@ -4,6 +4,9 @@ block title
     title Главная
     -var page={slug:"index",title:"Главная"};
 block main
+    .heroImageButton
+        .heroImageHolder
+            +BL-baseButton('Записаться к врачу','http://www.rmis36.ru','recordButton')
     section.block
         h2.block_title Платные Услуги
         +BL-learnMoreButtom('Узнать')

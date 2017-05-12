@@ -1159,7 +1159,7 @@ gulp.task('svgstore', function () {
 });
 //////////////////////////////////////////////////////
 gulp.task('START QUANT', function(){
-    runSequence('BUILDUP','WATCHER:NEW', 'SERVER')
+    runSequence('WATCHER:NEW', 'SERVER')
 });
 
 

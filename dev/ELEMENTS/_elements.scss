@@ -33,15 +33,6 @@ ul.infoElement__container {
 
 
 }
-input[type='text'].ove-cardRegInput {
-  outline: none;
-  color: #000000;
-  width: 100%;
-  border: solid 2px cs('accent');
-  background-color: transparent;
-  @include space-i('component','=','tbr','');
-  @include space-i('module','=','l','b');
-}
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -111,6 +102,15 @@ input[type='text'].ove-cardRegInput {
 }
 .ove-sectionHeader {
   @include space('element','','b');
+}
+input[type='text'].ove-cardRegInput {
+  outline: none;
+  color: #000000;
+  width: 100%;
+  border: solid 2px cs('accent');
+  background-color: transparent;
+  @include space-i('component','=','tbr','');
+  @include space-i('module','=','l','b');
 }
 $bkgColor__baseButton:#0a7c84;
 $bkgColor__baseButton-hover:lighten($bkgColor__baseButton,10%);
