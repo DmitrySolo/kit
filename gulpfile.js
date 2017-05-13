@@ -340,21 +340,24 @@ gulp.task('WATCHER:NEW' ,function(){
 
 gulp.task('BUILDUP'
 
-,function(){
+,function(callback){
 
 runSequence(
+        'mergeJson',
+        'concat-elements-pug',
         'concat-mixes-pug',
         'concat-modules-pug',
-        'mergeJson',
+
+        'views',
         'concat-mixes-scss',
         'concat-elements-scss',
         'concat-modules-scss',
-        'concat-elements-pug',
         'styles',
-        'views',
         'SCRIPTS ALL')
+callback();
+}
 
-})
+)
 
 
 

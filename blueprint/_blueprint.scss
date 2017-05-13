@@ -6,8 +6,12 @@
     background-image: //linear-gradient(white 2px, transparent 2px),
     //linear-gradient(90deg, white 2px, transparent 2px);
     linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
-    background-size: #{$line-height-ratio}em #{$line-height-ratio}em, #{$line-height-ratio}em #{$line-height-ratio}em;
+    linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px),
+    linear-gradient(#1cff70 1px, transparent 1px),
+    linear-gradient(90deg, #1cff70 1px, transparent 1px)
+  ;
+    background-size: #{$block_space_i}em #{$block_space_i}em, #{$block_space_i}em #{$block_space_i}em,
+                    #{$block_space_o}em #{$block_space_o}em, #{$block_space_o}em #{$block_space_o}em;
     background-position:-2px -2px, -2px -2px, -1px -1px, -1px -7px
   }
   .canvas__border{

@@ -1,10 +1,27 @@
 //  quant-lib script
-var quantFuncs={};
+var qntEventFuncs={};
+
+var qntSwitchSVGIcon = function (el,icon1,icon2){
+
+    var $currAtr = $('svg use',el).attr('xlink:href');
+
+
+    if ($currAtr == icon1 && !el.hasClass('active')){
+        $('svg use',el).attr('xlink:href',icon2);
+        el.addClass('active');
+    }
+    else{
+        $('svg use',el).attr('xlink:href',icon1);
+        el.removeClass('active')
+    }
+}
+
+
 $( document ).ready(function() {
 
     //Action starter
     var trigger = $('.js-trigger');
-    var actionStarter = function () {
+    var qntActionStarter = function () {
 
         $(trigger).on('click', function () {
 
@@ -14,7 +31,7 @@ $( document ).ready(function() {
 
             if (action){
 
-                quantFuncs[action](_this);
+                qntEventFuncs[action](_this);
 
             }else{
                 console.log('No data-action Attribute, Dude!');
@@ -22,6 +39,9 @@ $( document ).ready(function() {
         })
 
     }
-    actionStarter();
+    qntActionStarter();
+
+
+
 
 });

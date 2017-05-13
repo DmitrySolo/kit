@@ -1,5 +1,49 @@
 {
+	"menuData1": {
+		"Home": {
+			"title": "Продукция",
+			"href": "/production.html",
+			"dop_class": ""
+		},
+		"Products and help": {
+			"title": "Гарантия и сервис",
+			"href": "service.html",
+			"dop_class": ""
+		},
+		"Support": {
+			"title": "Партнерам",
+			"href": "partners.html",
+			"dop_class": ""
+		},
+		"AboutUs": {
+			"title": "Где купить",
+			"href": "buy.html",
+			"dop_class": "",
+			"childs": ""
+		},
+		"acc": {
+			"title": "Акции",
+			"href": "sale.html",
+			"dop_class": "lightmenu__item--active",
+			"childs": ""
+		}
+	},
+	"hero_video": {
+		"hero_video": "1"
+	},
 	"LIBS": {
+		"hero_video": {
+			"js": {
+				"hero_video-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
+					"container": "footer/init",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"baseButton": {
 			"js": {
 				"lib1": {
@@ -47,51 +91,7 @@
 			"css": {
 				"": ""
 			}
-		},
-		"hero_video": {
-			"js": {
-				"hero_video-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
-					"container": "footer/init",
-					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
 		}
-	},
-	"menuData1": {
-		"Home": {
-			"title": "Продукция",
-			"href": "/production.html",
-			"dop_class": ""
-		},
-		"Products and help": {
-			"title": "Гарантия и сервис",
-			"href": "service.html",
-			"dop_class": ""
-		},
-		"Support": {
-			"title": "Партнерам",
-			"href": "partners.html",
-			"dop_class": ""
-		},
-		"AboutUs": {
-			"title": "Где купить",
-			"href": "buy.html",
-			"dop_class": "",
-			"childs": ""
-		},
-		"acc": {
-			"title": "Акции",
-			"href": "sale.html",
-			"dop_class": "lightmenu__item--active",
-			"childs": ""
-		}
-	},
-	"hero_video": {
-		"hero_video": "1"
 	},
 	"head": {
 		"lang": "ru",
@@ -171,15 +171,15 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\r\n)"
+		"'HEADER'": "('Roboto Slab')\n)"
 	},
-	"space": "px",
+	"space": "em",
 	"element_space": ".5",
 	"component_space": "$element_space*1.618",
 	"module_space": "$component_space*1.618",
 	"block_space": "$module_space*1.618",
 	"section_space": "$block_space*1.618",
-	"element_space_i": "2",
+	"element_space_i": ".5",
 	"element_space_o": "4",
 	"component_space_i": "6",
 	"component_space_o": "10",
@@ -197,12 +197,12 @@
 	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"siteMinWidth": "690px",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\r\n)"
+		"min-height": "1px\n)"
 	},
 	"phone-upper-boundary": "600px",
 	"tablet-portrait-upper-boundary": "768px",
@@ -220,6 +220,8 @@
 	"nr-colStyles": {
 		"float": "left"
 	},
-	"blueprint": "breadcrumbs",
+	"progressive": "true",
+	"progressive_number": "1.618",
+	"blueprint": "undefined",
 	"izolate": "false"
 }

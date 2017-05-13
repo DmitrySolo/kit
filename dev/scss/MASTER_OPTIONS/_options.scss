@@ -26,7 +26,7 @@ $LINKED_FONTS_MAP:(
 
 
 
-$space:  px;
+$space:  em;
 
 //one size
 $element_space: .5;
@@ -34,18 +34,52 @@ $component_space: $element_space*1.618;
 $module_space: $component_space*1.618;
 $block_space: $module_space*1.618;
 $section_space: $block_space*1.618;
+
+//PROGRESSIVE
+$progressive : true;
+$progressive_number: 1.618;
+
 //two size
-$element_space_i: 2;
-$element_space_o: 4;
+$element_space_i:0;
+$element_space_o:0;
 
-$component_space_i: 6;
-$component_space_o: 10;
+$component_space_i:0;
+$component_space_o:0;
 
-$module_space_i: 16;
-$module_space_o: 26;
+$module_space_i:0;
+$module_space_o:0;
 
-$block_space_i: 30;
-$block_space_o: 51;
+$block_space_i:0;
+$block_space_o:0;
+@if($progressive == true){
+
+  $element_space_i: .1;
+  $element_space_o: $element_space_i*$progressive_number;
+
+  $component_space_i: $element_space_o*$progressive_number;
+  $component_space_o: $component_space_i*$progressive_number;
+
+  $module_space_i: $component_space_o*$progressive_number;
+  $module_space_o: $module_space_i*$progressive_number;
+
+  $block_space_i: $module_space_o*$progressive_number;
+  $block_space_o: $block_space_i*$progressive_number;
+
+}@else{
+  $element_space_i: .5;
+  $element_space_o: 4;
+
+  $component_space_i: 6;
+  $component_space_o: 10;
+
+  $module_space_i: 16;
+  $module_space_o: 26;
+
+  $block_space_i: 30;
+  $block_space_o: 51;
+}
+
+
 
 
 

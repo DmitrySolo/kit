@@ -25,7 +25,7 @@
     @extend %hierarhiLevel-4;
     list-style: none;
 
-    @include space-i('module','|','lr','');
+    @include space-i('component','=','lr','');
 
     @include for-size(phone-only){
             @include space-i('module','=','tbrl','');

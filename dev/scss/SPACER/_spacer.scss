@@ -105,6 +105,8 @@
 
 @if($space == px){
   $line-height-ratio : 1;
+}
+
 
   @if ($m!=0) {
     @if (str-index($m, 't')) {
@@ -140,7 +142,7 @@
       padding: #{$line-height-ratio*$space_ratio_v}$space,#{$line-height-ratio*$space_ratio_h}$space;
     }
   }
-}
+
 
 }
 
