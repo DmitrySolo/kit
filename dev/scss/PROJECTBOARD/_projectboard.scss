@@ -93,5 +93,147 @@
   .hl-1 {@extend %hierarhiLevel--1}
   .hl-2 {@extend %hierarhiLevel--2}
 
+  .spacer{
+    min-height: 1em;
+    width: 100%;
+    //margin-top:1em;
+    span {
+      text-shadow: 1px 1px rgb(6, 19, 25);
+      @include space-i('element','-','trbl','tl');
+      box-shadow: 2px 2px 2px silver;
+      color:#fff;
+      display: inline-block;
+    }
+
+  }
+  .element-i {
+    span{background-color: #1cfd6f;}
+
+    background-image:
+            linear-gradient(#1cff70 1px, transparent 1px),
+            linear-gradient(90deg, #1cff70 1px, transparent 1px);
+
+    background-size: #{$line-height-ratio*$element_space_i}em #{$line-height-ratio*$element_space_i}em;
+
+    height: size(10,'ei');
+
+  }
+  .element-o {
+    span{
+      background-color: #3f8a00;
+    }
+
+    background-image:
+            linear-gradient(#408b00 1px, transparent 1px),
+            linear-gradient(90deg, #3f8a00 1px, transparent 1px);
+
+    background-size: #{$line-height-ratio*$element_space_o}em #{$line-height-ratio*$element_space_o}em;
+    height: size(8,'eo');
+
+  }
+  .component-i{
+    span{
+      background-color: #2d377a;
+    }
+
+    background-image:
+            linear-gradient(#2d377b 1px, transparent 1px),
+            linear-gradient(90deg, #2d377a 1px, transparent 1px);
+
+    background-size: #{$line-height-ratio*$component_space_i}em #{$line-height-ratio*$component_space_i}em;
+    height: size(6,'ci');
+
+  }
+  .component-o{
+    span {
+      background-color: #333e8a;
+    }
+
+    background-image:
+            linear-gradient(#333e8b 1px, transparent 1px),
+            linear-gradient(90deg, #333e8a 1px, transparent 1px);
+
+    background-size: #{$line-height-ratio*$component_space_o}em #{$line-height-ratio*$component_space_o}em;
+    height: size(5,'co');
+
+  }
+
+  .module-i{
+    span{
+      background-color: #fc6446;
+    }
+
+    background-image:
+            linear-gradient(#ff6547 1px, transparent 1px),
+            linear-gradient(90deg, #fd6446 1px, transparent 1px);
+
+    background-size: #{$line-height-ratio*$module_space_i}em #{$line-height-ratio*$module_space_i}em;
+    height: size(4,'mi');
+
+  }
+  .module-o{
+    span {
+      background-color: #b34530;
+    }
+
+    background-image:
+            linear-gradient(#b44630 1px, transparent 1px),
+            linear-gradient(90deg, #b34530 1px, transparent 1px);
+
+    background-size: #{$line-height-ratio*$module_space_o}em #{$line-height-ratio*$module_space_o}em;
+    height: size(3,'mo');
+
+  }
+
+  .block-i{
+    span {
+      background-color: #fd312c;
+    }
+
+    background-image:
+            linear-gradient(#ff312c 1px, transparent 1px),
+            linear-gradient(90deg, #fc302b 1px, transparent 1px);
+
+    background-size: #{$line-height-ratio*$block_space_i}em #{$line-height-ratio*$block_space_i}em;
+    height: size(2,'bi');
+
+  }
+  .block-o{
+    span{
+      background-color: #b26000;
+    }
+
+    background-image:
+            linear-gradient(#b46100 1px, transparent 1px),
+            linear-gradient(90deg, #b36000 1px, transparent 1px);
+
+    background-size: #{$line-height-ratio*$block_space_o}em #{$line-height-ratio*$block_space_o}em;
+    height: size(1,'bo');
+    width: size(10,'bo');
+
+  }
+
+
+  .pb-projectBoard .row>div{
+    position: relative;
+    background-color: rgba(86, 12, 12, 0.36);
+    border-left: $gutter-width/2 solid #ff6547;
+    border-right: $gutter-width/2 solid #ff6547;
+    height: size(10,bi);
+    text-align: center;
+    color: #fff;
+    padding-top: 40px;
+    &:after{
+      content: '';
+      width: .07em;
+      position: absolute;
+      right: - $gutter-width/2 ;
+      bottom: 0;
+      top: 0;
+      background-color: darken(#b43304,15%);
+    }
+  }
+
+
 
 }
