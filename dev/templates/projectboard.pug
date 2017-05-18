@@ -3,131 +3,215 @@ html(lang=''+head.lang)
     head
         include PAGESYSTEM/INCLUDES/_head
     body
+        script(src='projectBoard.js')
         .pb-projectBoard
-            section.pb-section.clearfix
-                .pb-element.f-left
-                    .pb-colorBox
-                    .pb-colorBox
-                        span.pb-elementHeader Base
-                    .pb-colorBox
-                        span.pb-elementHeader Darken
-                    .pb-colorBox
-                        span.pb-elementHeader light
-                .pb-element.f-left
-                    span.pb-elementHeader Primary
-                    .pb-colorBox.pb-colorBox--primary
-                    .pb-colorBox.pb-colorBox--primary-d
-                    .pb-colorBox.pb-colorBox--primary-l
-                .pb-element.f-left
-                    span.pb-elementHeader Secondary
-                    .pb-colorBox.pb-colorBox--secondary
-                    .pb-colorBox.pb-colorBox--secondary-d
-                    .pb-colorBox.pb-colorBox--secondary-l
-                .pb-element.f-left
-                    span.pb-elementHeader Accent
-                    .pb-colorBox.pb-colorBox--accent
-                    .pb-colorBox.pb-colorBox--accent-d
-                    .pb-colorBox.pb-colorBox--accent-l
-                .pb-element.f-left
-                    span.pb-elementHeader Foreground
-                    .pb-colorBox.pb-colorBox--fground
-                    .pb-colorBox.pb-colorBox--fground-d
-                    .pb-colorBox.pb-colorBox--fground-l
-                .pb-element.f-left
-                    span.pb-elementHeader Background
-                    .pb-colorBox.pb-colorBox--bground
-                    .pb-colorBox.pb-colorBox--bground-d
-                    .pb-colorBox.pb-colorBox--bground-l
-                .pb-element.f-left
-                    span.pb-elementHeader Font Color
-                    .pb-colorBox.pb-colorBox--font
-                    .pb-colorBox.pb-colorBox--font-d
-                    .pb-colorBox.pb-colorBox--font-l
-            section.pb-section.clearfix
-                .pb-colorMaket
-                    .pb-colorMaket__ctn
-                        section
-
-                        section
-                            .pb-colorMaket__header.clearfix
-                                .pb-colorMaket__header__primary.f-left COLORMAKET
-                                .pb-colorMaket__header__secondary.f-left
-                                    .pb-colorMaket__header__accent.f-right
-                        section
-                            .pb-colorMarket__body.clearfix
-                                +loop(6)
-                                    .pb-colorMaket__body__sections_ctn.col-4-t
-                                        .pb-colorMaket__body__section
-                                            .pb-colorMaket__body__section__header
-                                        .pb-colorMaket__body__section__accent
-                        section
-                            .pb-colorMaket__hero
-                                h1 HERO
-                                button ACTION
-                                button ACTION
-                        section
-                            .pb-colorMaket__footer
-            section.pb-section.clearfix
-                .pb-element.f-left
-                    h1 Header 1
-                    h2 Header 2
-                    h3 Header 3
-                    h4 Header 4
-                    h5 Header 5
-                    h6 Header 6
-                .pb-element.f-left.text
-                    h1 Header 1
-                    h2 Header 2
-                    h3 Header 3
-                    h4 Header 4
-                    h5 Header 5
-                    h6 Header 6
-                .pb-element.f-left.text
-                    p It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-            section.pb-section.clearfix.hierarchy
-                .hl1 Level 1
-                .hl2 Level 2
-                .hl3 Level 3
-                .hl4 Level 4
-                .hl-1 Level -1
-                .hl-2 Level -2
-                ul
-                    li sdfsd
-                    li sdfsdf
-                    li sdfsdf
-                    li dsf
-                    li sdfsdf
-            section.pb-section.clearfix
-                .spacer.element-i
-                    span Element i
-                .spacer.element-o
-                    span Element o
-                .spacer.component-i
-                    span Component i
-                .spacer.component-o
-                    span Component o
-                .spacer.module-i
-                    span Module ii
-                .spacer.module-o
-                    span Module o
-                .spacer.block-i
-                    span block i
-                .spacer.block-o
-                    span block o
-            section.pb-section.clearfix
             .container
-                .row
-                    .col-1-m.col-1-tp 1
-                    .col-1-m.col-1-tp 2
-                    .col-1-m.col-1-tp 3
-                    .col-1-m.col-1-tp 4
-                    .col-1-m.col-1-tp 5
-                    .col-1-m.col-1-tp 6
-                    .col-1-m.col-1-tp 7
-                    .col-1-m.col-1-tp 8
-                    .col-1-m.col-1-tp 9
-                    .col-1-m.col-1-tp 10
-                    .col-1-m.col-1-tp 11
-                    .col-1-m.col-1-tp 12
+                section.pb-section.clearfix
+                    .pb-element.f-left
+                        .pb-colorBox
+                        .pb-colorBox
+                            span.pb-elementHeader Base
+                        .pb-colorBox
+                            span.pb-elementHeader Darken
+                        .pb-colorBox
+                            span.pb-elementHeader light
+                    .pb-element.f-left
+                        span.pb-elementHeader Primary
+                        .pb-colorBox.pb-colorBox--primary
+                        .pb-colorBox.pb-colorBox--primary-d
+                        .pb-colorBox.pb-colorBox--primary-l
+                    .pb-element.f-left
+                        span.pb-elementHeader Secondary
+                        .pb-colorBox.pb-colorBox--secondary
+                        .pb-colorBox.pb-colorBox--secondary-d
+                        .pb-colorBox.pb-colorBox--secondary-l
+                    .pb-element.f-left
+                        span.pb-elementHeader Accent
+                        .pb-colorBox.pb-colorBox--accent
+                        .pb-colorBox.pb-colorBox--accent-d
+                        .pb-colorBox.pb-colorBox--accent-l
+                    .pb-element.f-left
+                        span.pb-elementHeader Foreground
+                        .pb-colorBox.pb-colorBox--fground
+                        .pb-colorBox.pb-colorBox--fground-d
+                        .pb-colorBox.pb-colorBox--fground-l
+                    .pb-element.f-left
+                        span.pb-elementHeader Background
+                        .pb-colorBox.pb-colorBox--bground
+                        .pb-colorBox.pb-colorBox--bground-d
+                        .pb-colorBox.pb-colorBox--bground-l
+                    .pb-element.f-left
+                        span.pb-elementHeader Font Color
+                        .pb-colorBox.pb-colorBox--font
+                        .pb-colorBox.pb-colorBox--font-d
+                        .pb-colorBox.pb-colorBox--font-l
+                section.pb-section.clearfix
+                    .pb-colorMaket
+                        .pb-colorMaket__ctn
+                            section
+
+                            section
+                                .pb-colorMaket__header.clearfix
+                                    .pb-colorMaket__header__primary.f-left COLORMAKET
+                                    .pb-colorMaket__header__secondary.f-left
+                                        .pb-colorMaket__header__accent.f-right
+                            section
+                                .pb-colorMarket__body.clearfix
+                                    +loop(6)
+                                        .pb-colorMaket__body__sections_ctn.col-4-t
+                                            .pb-colorMaket__body__section
+                                                .pb-colorMaket__body__section__header
+                                            .pb-colorMaket__body__section__accent
+                            section.clearfix
+                                .pb-colorMaket__hero.pr
+                                    h1.pr HERO
+                                    h1.sc HERO
+                                    h1.ac HERO
+                                    h1.bg
+                                    h1.fg HERO
+                                    h1.cl HERO
+                                    button.pr ACTION
+                                    button.sc ACTION
+                                    button.ac ACTION
+                                    button.bg ACTION
+                                    button.fg ACTION
+                                    button.cl ACTION
+                                .pb-colorMaket__hero.ac
+                                    h1.cbg.pr HERO
+                                    h1.cbg.sc HERO
+                                    h1.cbg.ac HERO
+                                    h1.cbg.bg
+                                    h1.cbg.cbg.fg HERO
+                                    h1.cbg.cl HERO
+                                    button.cbg.pr ACTION
+                                    button.cbg.sc ACTION
+                                    button.cbg.ac ACTION
+                                    button.cbg.bg ACTION
+                                    button.cbg.fg ACTION
+                                    button.cbg.cl ACTION
+                                .pb-colorMaket__hero.fg
+                                    h1.pr HERO
+                                    h1.sc HERO
+                                    h1.ac HERO
+                                    h1.bg
+                                    h1.fg HERO
+                                    h1.cl HERO
+                                    button.pr ACTION
+                                    button.sc ACTION
+                                    button.ac ACTION
+                                    button.bg ACTION
+                                    button.fg ACTION
+                                    button.cl ACTION
+                                .pb-colorMaket__hero.bg
+                                    h1.pr HERO
+                                    h1.sc HERO
+                                    h1.ac HERO
+                                    h1.bg
+                                    h1.fg HERO
+                                    h1.cl HERO
+                                    button.pr ACTION
+                                    button.sc ACTION
+                                    button.ac ACTION
+                                    button.bg ACTION
+                                    button.fg ACTION
+                                    button.cl ACTION
+                                .pb-colorMaket__hero
+                                    h1.pr HERO
+                                    h1.sc HERO
+                                    h1.ac HERO
+                                    h1.bg
+                                    h1.fg HERO
+                                    h1.cl HERO
+                                    button.pr ACTION
+                                    button.sc ACTION
+                                    button.ac ACTION
+                                    button.bg ACTION
+                                    button.fg ACTION
+                                    button.cl ACTION
+                                .pb-colorMaket__hero
+                                    h1.pr HERO
+                                    h1.sc HERO
+                                    h1.ac HERO
+                                    h1.bg
+                                    h1.fg HERO
+                                    h1.cl HERO
+                                    button.pr ACTION
+                                    button.sc ACTION
+                                    button.ac ACTION
+                                    button.bg ACTION
+                                    button.fg ACTION
+                                    button.cl ACTION
+                            section
+                                .pb-colorMaket__footer
+                section.pb-section.clearfix
+                    .pb-element.f-left
+                        h1 Header 1
+                        h2 Header 2
+                        h3 Header 3
+                        h4 Header 4
+                        h5 Header 5
+                        h6 Header 6
+                    .pb-element.f-left.text
+                        h1 Header 1
+                        h2 Header 2
+                        h3 Header 3
+                        h4 Header 4
+                        h5 Header 5
+                        h6 Header 6
+                    .pb-element.f-left.text
+                        p It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                section.pb-section.clearfix.hierarchy
+                    .hl1 Level 1
+                    .hl2 Level 2
+                    .hl3 Level 3
+                    .hl4 Level 4
+                    .hl-1 Level -1
+                    .hl-2 Level -2
+                    ul
+                        li sdfsd
+                        li sdfsdf
+                        li sdfsdf
+                        li dsf
+                        li sdfsdf
+                section.pb-section.clearfix#ball
+                    .fontSelector
+                        input(type='text',name='size',value='1')
+                        select(name='del')
+                            option(value='em',selected='selected') em
+                            option(value='px') px
+                        button OK
+                    span.lh Line height
+                    .spacer.element-i
+                        span Element i
+                    .spacer.element-o
+                        span Element o
+                    .spacer.component-i
+                        span Component i
+                    .spacer.component-o
+                        span Component o
+                    .spacer.module-i
+                        span Module ii
+                    .spacer.module-o
+                        span Module o
+                    .spacer.block-i
+                        span block i
+                    .spacer.block-o
+                        span block o
+                section.pb-section.clearfix.grid
+                    h3 Load current container size state...
+                    .container
+                        .row
+                            .col-1-m.col-1-tp 1
+                            .col-1-m.col-1-tp 2
+                            .col-1-m.col-1-tp 3
+                            .col-1-m.col-1-tp 4
+                            .col-1-m.col-1-tp 5
+                            .col-1-m.col-1-tp 6
+                            .col-1-m.col-1-tp 7
+                            .col-1-m.col-1-tp 8
+                            .col-1-m.col-1-tp 9
+                            .col-1-m.col-1-tp 10
+                            .col-1-m.col-1-tp 11
+                            .col-1-m.col-1-tp 12
 
 

@@ -1,10 +1,30 @@
 @mixin projectBoard(){
+  .pr {
+    background-color: cs('primary');}
+  .sc {
+    background-color: cs('secondary');
+  }
+  .ac { background-color: cs('accent');}
+  .bg { background-color: cs('bground');}
+  .fg { background-color: cs('fground');}
+  .cl { background-color: cs('font');}
+
+  .cpr {
+    color: cs('primary');}
+  .csc {
+    color: cs('secondary');}
+
+  .cac { color: cs('accent');}
+  .cbg { color: cs('background');}
+  .cfg { color: cs('foreground');}
+  .ccl { color: cs('font');}
+
   .pb-projectBoard {
     background: white;
   }
   .pb-section {
     border-bottom: 1px solid #ededed;
-    @include space('module','trbl','');
+    @include space('module','tb','');
   }
   .pb-elementHeader{
     display:block;
@@ -27,14 +47,28 @@
     @include space('block','','tb');
   }
   .pb-colorMaket {
-    width: 40%;
+    position: relative;
+    border: solid;
     background-color: cs('bground');
+    &:before{
+      position: absolute;
+      content: 'Background Color';
+      top:5%;
+      font-style: italic;
+    }
   }
   .pb-colorMaket__ctn{
+    position: relative;
     width: 80%;
     background-color: cs('fground');
     @include space('block','trbl','');
     margin: 0 auto;
+    &:before{
+      position: absolute;
+      content: 'Foreground Color';
+      top:2%;
+      font-style: italic;
+    }
   }
   .pb-colorMaket__header{
     height: 60px;
@@ -50,8 +84,8 @@
     width: 30%;
   }
   .pb-colorMaket__header__accent{
-    width: 40%;
-    @include space('element','trbl','');
+    width: 100%;
+    @include space('component','trbl','');
     background-color: cs('accent');
   }
   .pb-colorMaket__body{
@@ -77,11 +111,17 @@
     background-color: cs('primary');
   }
   .pb-colorMaket__hero{
+    width: 30%;
+    @include space('element','','r');
+    float: left;
     font-size:16px;
-    @include space('block','trbl','');
-    background-color: cs('primary');
+    @include space('block','rl','');
+    @include space('element','','b');
     color: cs('secondary');
-    border-bottom: solid 4em cs('secondary');
+    //border-bottom: solid 4em cs('secondary');
+    button {
+      border: none;
+    }
   }
   .hierarchy{
     font-size: 1rem;
@@ -93,6 +133,24 @@
   .hl-1 {@extend %hierarhiLevel--1}
   .hl-2 {@extend %hierarhiLevel--2}
 
+  .lh {
+    background-color: #c73d60;
+    color: #fff;
+    text-shadow: 1px 1px rgb(6, 19, 25);
+    @include space('element','l','');
+    display: inline-block;
+    width: 100%;
+
+  }
+  .fontSelector {
+    @include space('component','','b');
+
+    button {
+      @include space('element','','t')
+    }
+
+  }
+  
   .spacer{
     min-height: 1em;
     width: 100%;
@@ -120,12 +178,12 @@
   }
   .element-o {
     span{
-      background-color: #3f8a00;
+      background-color: #19cd63;
     }
 
     background-image:
-            linear-gradient(#408b00 1px, transparent 1px),
-            linear-gradient(90deg, #3f8a00 1px, transparent 1px);
+            linear-gradient(#19cd63 1px, transparent 1px),
+            linear-gradient(90deg, #19cb62 1px, transparent 1px);
 
     background-size: #{$line-height-ratio*$element_space_o}em #{$line-height-ratio*$element_space_o}em;
     height: size(8,'eo');
@@ -146,12 +204,12 @@
   }
   .component-o{
     span {
-      background-color: #333e8a;
+      background-color: #2a2a55;
     }
 
     background-image:
-            linear-gradient(#333e8b 1px, transparent 1px),
-            linear-gradient(90deg, #333e8a 1px, transparent 1px);
+            linear-gradient(#282855 1px, transparent 1px),
+            linear-gradient(90deg, #282854 1px, transparent 1px);
 
     background-size: #{$line-height-ratio*$component_space_o}em #{$line-height-ratio*$component_space_o}em;
     height: size(5,'co');
@@ -160,12 +218,12 @@
 
   .module-i{
     span{
-      background-color: #fc6446;
+      background-color: #fc4f1f;
     }
 
     background-image:
-            linear-gradient(#ff6547 1px, transparent 1px),
-            linear-gradient(90deg, #fd6446 1px, transparent 1px);
+            linear-gradient(#fb4f1f 1px, transparent 1px),
+            linear-gradient(90deg, #f94e1f 1px, transparent 1px);
 
     background-size: #{$line-height-ratio*$module_space_i}em #{$line-height-ratio*$module_space_i}em;
     height: size(4,'mi');
@@ -173,12 +231,12 @@
   }
   .module-o{
     span {
-      background-color: #b34530;
+      background-color: #ce441f;
     }
 
     background-image:
-            linear-gradient(#b44630 1px, transparent 1px),
-            linear-gradient(90deg, #b34530 1px, transparent 1px);
+            linear-gradient(#cc431f 1px, transparent 1px),
+            linear-gradient(90deg, #ca421f 1px, transparent 1px);
 
     background-size: #{$line-height-ratio*$module_space_o}em #{$line-height-ratio*$module_space_o}em;
     height: size(3,'mo');
@@ -187,12 +245,12 @@
 
   .block-i{
     span {
-      background-color: #fd312c;
+      background-color: #c82064;
     }
 
     background-image:
-            linear-gradient(#ff312c 1px, transparent 1px),
-            linear-gradient(90deg, #fc302b 1px, transparent 1px);
+            linear-gradient(#c72064 1px, transparent 1px),
+            linear-gradient(90deg, #c62064 1px, transparent 1px);
 
     background-size: #{$line-height-ratio*$block_space_i}em #{$line-height-ratio*$block_space_i}em;
     height: size(2,'bi');
@@ -200,16 +258,15 @@
   }
   .block-o{
     span{
-      background-color: #b26000;
+      background-color: #9a214d;
     }
 
     background-image:
-            linear-gradient(#b46100 1px, transparent 1px),
-            linear-gradient(90deg, #b36000 1px, transparent 1px);
+            linear-gradient(#99214c 1px, transparent 1px),
+            linear-gradient(90deg, #99214c 1px, transparent 1px);
 
     background-size: #{$line-height-ratio*$block_space_o}em #{$line-height-ratio*$block_space_o}em;
     height: size(1,'bo');
-    width: size(10,'bo');
 
   }
 
@@ -233,7 +290,14 @@
       background-color: darken(#b43304,15%);
     }
   }
-
+  .grid{
+    h3{
+      text-align: center;
+    }
+  }
+#ball {
+  width:100%;
+}
 
 
 }

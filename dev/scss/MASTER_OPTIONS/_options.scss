@@ -4,7 +4,7 @@ $response: true;
 $vertical-rhythm: true;
 $linkFonts: true; // USE REMOTE FONTS
 $assetsFonts: false; // USE OWN FONTS
-$debug: false;
+$debug: true;
 $production: false;
 $icon-font: false;
 
@@ -91,7 +91,7 @@ $header-font        : fs('HEADER'),san-serif;//'Roboto Condensed', sans-serif; /
 $header-font-weight : 700;
 $mobile-font           : 14px;
 $screen-font           : 18px;
-$line-height-ratio: 1.6;
+$line-height-ratio: 1.7;
 
 
 // LAYOUT ///////////////////////////////////////////////
@@ -112,6 +112,7 @@ $colStyles:(
           min-height: 1px
 );
 
+// BREAKPOINTS
 $phone-upper-boundary: 600px;
 $tablet-portrait-upper-boundary: 768px;
 $tablet-landscape-upper-boundary: 994px;
@@ -120,8 +121,8 @@ $desktop-upper-boundary: 1200px;
 
 $grid-map: (
         mobile       :(prefix:m, container:100%, breakpoint:$phone-upper-boundary - 1),
-        tablet-p     :(prefix:tp, container:100%, breakpoint:$phone-upper-boundary),
-        tablet-l     :(prefix:tl, container:90%, breakpoint:$tablet-portrait-upper-boundary),
+        tablet-p     :(prefix:tp, container:$siteMinWidth, breakpoint:$phone-upper-boundary),
+        tablet-l     :(prefix:tl, container:900px, breakpoint:$tablet-portrait-upper-boundary),
         mediumScreen :(prefix:d, container:1120px, breakpoint:$tablet-landscape-upper-boundary),
         largeScreen  :(prefix:dl, container:$siteWidth, breakpoint:$desktop-upper-boundary),
 );

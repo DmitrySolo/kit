@@ -5,6 +5,7 @@ var path = require('path');
 var cache = require('gulp-cache');
 var runSequence  = require('run-sequence');
 const template = require('gulp-template');
+const zip = require('gulp-zip');
 var merge = require('gulp-merge-json');
 var data = require('./data.json');
 htmlv = require('gulp-html-validator');
@@ -1203,4 +1204,11 @@ gulp.task('iconfont', function(){
 });
 gulp.task('cache', function (done) {
     return cache.clearAll(done);
+});
+
+gulp.task('[D] DIST FRONT-END', function (done) {
+    var dateTime = new Date().toString();
+    gulp.src('dist/**/*')
+        .pipe(zip('dist_'+dateTime+'.zip'))
+        .pipe(gulp.dest('../'))
 });
