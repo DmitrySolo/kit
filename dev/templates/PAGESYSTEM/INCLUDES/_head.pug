@@ -1,4 +1,8 @@
 meta(charset="utf-8")
+-if (switchers.debug == "true")
+    -var bodyClass = 'debug'
+-else
+    -var bodyClass = 'project'
 block title
     title=head.title
 include ../SCRIPTS-STYLES/HEAD/_top

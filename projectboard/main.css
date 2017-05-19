@@ -1480,8 +1480,8 @@ section.block {
   transition-duration: 0.2s;
   transition-timing-function: linear;
   list-style: none;
-  padding-right: 1.86592em;
-  padding-left: 1.86592em; }
+  padding-right: 0.952em;
+  padding-left: 0.952em; }
   .lightMenu__item:hover {
     background-color: #284990; }
   @media (max-width: 599px) {
@@ -1595,6 +1595,62 @@ section.block {
   max-height: 110px;
   vertical-align: middle;
   height: auto; }
+
+.logo__link {
+  display: block; }
+  .logo__link .logo__container {
+    text-align: center;
+    overflow: hidden; }
+
+.img_container--align_v {
+  position: relative; }
+
+.img_container--align_v img {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0; }
+
+.menu-hamburger {
+  display: table;
+  position: relative;
+  margin: 0 auto;
+  height: 4.31792em;
+  cursor: pointer; }
+  .menu-hamburger .menu-hamburger__part {
+    position: relative;
+    vertical-align: middle;
+    margin-bottom: 8px;
+    border-radius: 1px;
+    display: block;
+    width: 2rem;
+    height: .2rem;
+    background-color: #ebebeb; }
+    .menu-hamburger .menu-hamburger__part:last-child {
+      margin-bottom: 0; }
+
+.menu-hamburger__partsWrap {
+  display: table-cell;
+  vertical-align: middle; }
+
+.logo__link {
+  display: block;
+  text-align: center; }
+  .logo__link img {
+    width: 100%;
+    vertical-align: bottom; }
+
+.heroTitle-ctn {
+  width: 100%;
+  display: table;
+  text-align: center;
+  height: 100%; }
+  .heroTitle-ctn h1.heroTitle {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Blanca"; }
 
 .logo__link {
   display: block; }
@@ -1807,9 +1863,7 @@ header.mainHeader {
 .headerSection {
   line-height: 2em;
   height: 110px;
-  text-align: center;
-  padding-top: 2.61229em;
-  padding-bottom: 2.61229em; }
+  text-align: center; }
   .headerSection .headerPhone, .headerSection .headerAddress {
     display: block;
     color: #fff; }
@@ -2091,7 +2145,7 @@ header.mainHeader {
   font-size: 1rem; }
 
 .lh {
-  background-color: #c73d60;
+  background-color: rgba(199, 61, 96, 0.63);
   color: #fff;
   text-shadow: 1px 1px #061319;
   padding-left: 0.85em;
@@ -2216,21 +2270,27 @@ body.blueprint {
   width: 100%;
   border-bottom: solid 3px #194a6f; }
 
+#ball {
+  top: 0; }
+
+.debug main * {
+  background: none; }
+
 body {
   background: linear-gradient(to top, rgba(8, 0, 243, 0.1) 5%, white 5%);
   background-size: 100% 1.7em; }
 
-body {
+body.debug {
   background-color: #ad9337; }
 
-h1, h2, h3, h4, h5, h6 {
+.debug h1, .debug h2, .debug h3, .debug h4, .debug h5, .debug h6 {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #e74c3c 0%, #e74c3c 100%), linear-gradient(to bottom, #ed7669 0%, #ed7669);
   background-clip: content-box, padding-box; }
-  h1 ~ .debug-margins, h2 ~ .debug-margins, h3 ~ .debug-margins, h4 ~ .debug-margins, h5 ~ .debug-margins, h6 ~ .debug-margins {
+  .debug h1 ~ .debug-margins, .debug h2 ~ .debug-margins, .debug h3 ~ .debug-margins, .debug h4 ~ .debug-margins, .debug h5 ~ .debug-margins, .debug h6 ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
@@ -2239,14 +2299,14 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     border-radius: 20%; }
 
-p {
+.debug p {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #ffc114 0%, #ffc114 100%), linear-gradient(to bottom, #ffce47 0%, #ffce47);
   background-clip: content-box, padding-box; }
-  p ~ .debug-margins {
+  .debug p ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
@@ -2255,14 +2315,14 @@ p {
     line-height: 1.1;
     border-radius: 20%; }
 
-ul {
+.debug ul {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #27ae60 0%, #27ae60 100%), linear-gradient(to bottom, #36d278 0%, #36d278);
   background-clip: content-box, padding-box; }
-  ul ~ .debug-margins {
+  .debug ul ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
@@ -2271,14 +2331,14 @@ ul {
     line-height: 1.1;
     border-radius: 20%; }
 
-li {
+.debug li {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #2980b9 0%, #2980b9 100%), linear-gradient(to bottom, #409ad5 0%, #409ad5);
   background-clip: content-box, padding-box; }
-  li ~ .debug-margins {
+  .debug li ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
@@ -2287,14 +2347,14 @@ li {
     line-height: 1.1;
     border-radius: 20%; }
 
-*[class^="col-"] {
+.debug *[class^="col-"] {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #9e9b95 0%, #9e9b95 100%), linear-gradient(to bottom, #b6b4b0 0%, #b6b4b0);
   background-clip: content-box, padding-box; }
-  *[class^="col-"] ~ .debug-margins {
+  .debug *[class^="col-"] ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
@@ -2303,14 +2363,14 @@ li {
     line-height: 1.1;
     border-radius: 20%; }
 
-.container {
+.debug .container {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #f39c12 0%, #f39c12 100%), linear-gradient(to bottom, #f5b043 0%, #f5b043);
   background-clip: content-box, padding-box; }
-  .container ~ .debug-margins {
+  .debug .container ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
@@ -2319,14 +2379,14 @@ li {
     line-height: 1.1;
     border-radius: 20%; }
 
-.row {
+.debug .row {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #f1c40f 0%, #f1c40f 100%), linear-gradient(to bottom, #f4d03f 0%, #f4d03f);
   background-clip: content-box, padding-box; }
-  .row ~ .debug-margins {
+  .debug .row ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
@@ -2335,18 +2395,82 @@ li {
     line-height: 1.1;
     border-radius: 20%; }
 
-.block {
+.debug .block {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #8e44ad 0%, #8e44ad 100%), linear-gradient(to bottom, #a563c1 0%, #a563c1);
   background-clip: content-box, padding-box; }
-  .block ~ .debug-margins {
+  .debug .block ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
     background-color: #8e44ad;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.debug a {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #000786 0%, #000786 100%), linear-gradient(to bottom, #000ab9 0%, #000ab9);
+  background-clip: content-box, padding-box; }
+  .debug a ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #000786;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.debug button {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #5b7686 0%, #5b7686 100%), linear-gradient(to bottom, #7490a0 0%, #7490a0);
+  background-clip: content-box, padding-box; }
+  .debug button ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #5b7686;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.debug span:not([class^="lh"]) {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #86432c 0%, #86432c 100%), linear-gradient(to bottom, #ac5639 0%, #ac5639);
+  background-clip: content-box, padding-box; }
+  .debug span:not([class^="lh"]) ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #86432c;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.debug img, .debug svg {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #d8ff00 0%, #d8ff00 100%), linear-gradient(to bottom, #e0ff33 0%, #e0ff33);
+  background-clip: content-box, padding-box; }
+  .debug img ~ .debug-margins, .debug svg ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #d8ff00;
     font-size: 12px;
     line-height: 1.1;
     border-radius: 20%; }

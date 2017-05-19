@@ -15,6 +15,18 @@
 				"": ""
 			}
 		},
+		"hero_video": {
+			"js": {
+				"hero_video-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
+					"container": "footer/init",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"JQ": {
 			"js": {
 				"jquery": {
@@ -31,6 +43,10 @@
 				"quant-debug-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
 					"container": "footer/init"
+				},
+				"notify": {
+					"src": "bower_components/notifyjs/dist/notify.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -53,18 +69,6 @@
 				"xRayView-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
 					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"hero_video": {
-			"js": {
-				"hero_video-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
-					"container": "footer/init",
-					"type": "init"
 				}
 			},
 			"css": {
@@ -174,7 +178,7 @@
 	"vertical-rhythm": "true",
 	"linkFonts": "true",
 	"assetsFonts": "false",
-	"debug": "false",
+	"debug": "true",
 	"production": "false",
 	"icon-font": "false",
 	"body-color": "cs('font')",
@@ -182,7 +186,7 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\n)"
+		"'HEADER'": "('Roboto Slab')\r\n)"
 	},
 	"space": "em",
 	"element_space": ".5",
@@ -190,6 +194,8 @@
 	"module_space": "$component_space*1.618",
 	"block_space": "$module_space*1.618",
 	"section_space": "$block_space*1.618",
+	"progressive": "true",
+	"progressive_number": "1.4",
 	"element_space_i": ".5",
 	"element_space_o": "4",
 	"component_space_i": "6",
@@ -208,12 +214,12 @@
 	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\n\n)",
+	"container-styles": "(\r\n\r\n)",
 	"siteMinWidth": "690px",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\n)"
+		"min-height": "1px\r\n)"
 	},
 	"phone-upper-boundary": "600px",
 	"tablet-portrait-upper-boundary": "768px",
@@ -231,8 +237,15 @@
 	"nr-colStyles": {
 		"float": "left"
 	},
-	"progressive": "true",
-	"progressive_number": "1.4",
+	"switchers": {
+		"response": "true",
+		"vertical-rhythm": "true",
+		"linkFonts": "true",
+		"assetsFonts": "false",
+		"debug": "true",
+		"production": "false",
+		"icon-font": "false"
+	},
 	"blueprint": "undefined",
 	"izolate": "false"
 }

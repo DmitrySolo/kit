@@ -3,14 +3,8 @@ footer This is footer
 
 ///////////////////////////////////////////////////////////////////
 include ../SCRIPTS-STYLES/FOOTER/_footerScripts
--if(data.debug == "true")
+-if(switchers.debug=="true")
     section.pb-section.clearfix#ball
-        .fontSelector
-            input(type='text',name='size',value='1')
-            select(name='del')
-                option(value='em',selected='selected') em
-                option(value='px') px
-            button OK
         span.lh Line height
         .spacer.element-i
             span Element i

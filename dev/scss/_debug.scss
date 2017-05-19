@@ -17,6 +17,7 @@
 }
 
 @mixin debug(){
+
   $db-headers-color: #e74c3c;
   $db-block-color: #8e44ad;
   $db-body-color: #ad9337;
@@ -26,35 +27,60 @@
   $db-col-color: #9e9b95;
   $db-ctn-color: #f39c12;
   $db-row-color: #f1c40f;
+  $db-button-color: #5b7686;
+  $db-link-color: #000786;
+  $db-span-color: #86432c;
+  $db-img-color: #d8ff00;
+  $db-div-color: #401515;
+  #ball {
+    //position: fixed !important;
+    top:0;
+  }
+  .debug main *{
+    background:none;
+  }
 
   @include grid-overlay(#0800f3);
 
-  body {
+  body.debug {
     background-color: $db-body-color;
   }
-  h1,h2,h3,h4,h5,h6 {
+  .debug h1,.debug h2,.debug h3,.debug h4,.debug h5,.debug h6 {
     @include debug-elem($db-headers-color);
   }
-  p {
+  .debug p {
     @include debug-elem($db-p-color);
   }
-  ul {
+  .debug ul {
     @include debug-elem($db-ul-color);
   }
-  li {
+  .debug li {
     @include debug-elem($db-li-color);
   }
-  *[class^="col-"]{
+  .debug *[class^="col-"]{
     @include debug-elem($db-col-color);
   }
 
-  .container {
+  .debug .container {
     @include debug-elem($db-ctn-color);
   }
-  .row {
+  .debug .row {
     @include debug-elem($db-row-color);
   }
-  .block {
+  .debug .block {
     @include debug-elem($db-block-color);
   }
+  .debug a {
+    @include debug-elem($db-link-color);
+  }
+  .debug button {
+    @include debug-elem($db-button-color);
+  }
+  .debug span:not([class^="lh"]){
+    @include debug-elem($db-span-color);
+  }
+  .debug img,.debug svg{
+    @include debug-elem($db-img-color);
+  }
+
 }

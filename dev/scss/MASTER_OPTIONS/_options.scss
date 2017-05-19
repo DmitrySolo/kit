@@ -1,5 +1,13 @@
 // SWITCHERS ////////////////////////////////////////////
-
+$switchers:(
+    response: true,
+    vertical-rhythm: true,
+    linkFonts: true,
+    assetsFonts: false,
+    debug: true,
+    production: false,
+    icon-font: false,
+);
 $response: true;
 $vertical-rhythm: true;
 $linkFonts: true; // USE REMOTE FONTS

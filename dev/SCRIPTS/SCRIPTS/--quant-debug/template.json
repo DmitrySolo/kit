@@ -5,6 +5,9 @@
         "quant-debug-script": {
           "src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
           "container": "footer/init"
+        },        "notify": {
+          "src": "bower_components/notifyjs/dist/notify.js",
+          "container": "footer/libs+"
         }
       },
       "css": {
