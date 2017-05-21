@@ -1453,7 +1453,7 @@ section.block {
     text-align: center;
     width: 100%;
     border-bottom: 3px solid #e32a8e;
-    padding-bottom: 1.86592em;
+    padding-bottom: 1.3328em;
     margin-bottom: 7.16812em; }
 
 /**
@@ -1613,62 +1613,6 @@ section.block {
   bottom: 0;
   right: 0; }
 
-.menu-hamburger {
-  display: table;
-  position: relative;
-  margin: 0 auto;
-  height: 4.31792em;
-  cursor: pointer; }
-  .menu-hamburger .menu-hamburger__part {
-    position: relative;
-    vertical-align: middle;
-    margin-bottom: 8px;
-    border-radius: 1px;
-    display: block;
-    width: 2rem;
-    height: .2rem;
-    background-color: #ebebeb; }
-    .menu-hamburger .menu-hamburger__part:last-child {
-      margin-bottom: 0; }
-
-.menu-hamburger__partsWrap {
-  display: table-cell;
-  vertical-align: middle; }
-
-.logo__link {
-  display: block;
-  text-align: center; }
-  .logo__link img {
-    width: 100%;
-    vertical-align: bottom; }
-
-.heroTitle-ctn {
-  width: 100%;
-  display: table;
-  text-align: center;
-  height: 100%; }
-  .heroTitle-ctn h1.heroTitle {
-    display: table-cell;
-    vertical-align: middle;
-    font-family: "Blanca"; }
-
-.logo__link {
-  display: block; }
-  .logo__link .logo__container {
-    text-align: center;
-    overflow: hidden; }
-
-.img_container--align_v {
-  position: relative; }
-
-.img_container--align_v img {
-  position: absolute;
-  margin: auto;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0; }
-
 /**
 * ELEMENTS  STYLES
 */
@@ -1806,11 +1750,11 @@ input[type='text'].ove-cardRegInput {
   background-color: transparent;
   color: #000000;
   border: 2px solid #00aab5;
-  margin-bottom: 1.86592em;
-  padding-top: 1.86592em;
-  padding-bottom: 1.86592em;
-  padding-right: 7.16812em;
-  padding-left: 7.16812em; }
+  margin-bottom: 0.68em;
+  padding-top: 0.68em;
+  padding-bottom: 0.68em;
+  padding-right: 2.61229em;
+  padding-left: 2.61229em; }
   .learnMoreButton:hover, .learnMoreButton:focus {
     color: #fff;
     background-color: #00aab5; }

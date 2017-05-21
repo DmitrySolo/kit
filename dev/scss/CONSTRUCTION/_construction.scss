@@ -5,7 +5,7 @@ section.block {
     text-align: center;
     width: 100%;
     border-bottom: 3px solid cs('hl');
-    @include space-i('component','=','b','');
+    @include space-i('component','-','b','');
     @include space-i('block','=','','b');
   }
 }

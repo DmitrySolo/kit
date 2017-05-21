@@ -1,4 +1,33 @@
 {
+	"menuData1": {
+		"Home": {
+			"title": "Продукция",
+			"href": "/production.html",
+			"dop_class": ""
+		},
+		"Products and help": {
+			"title": "Гарантия и сервис",
+			"href": "service.html",
+			"dop_class": ""
+		},
+		"Support": {
+			"title": "Партнерам",
+			"href": "partners.html",
+			"dop_class": ""
+		},
+		"AboutUs": {
+			"title": "Где купить",
+			"href": "buy.html",
+			"dop_class": "",
+			"childs": ""
+		},
+		"acc": {
+			"title": "Акции",
+			"href": "sale.html",
+			"dop_class": "lightmenu__item--active",
+			"childs": ""
+		}
+	},
 	"LIBS": {
 		"baseButton": {
 			"js": {
@@ -53,6 +82,17 @@
 				"": ""
 			}
 		},
+		"JQUI": {
+			"js": {
+				"JQUI-script": {
+					"src": "bower_components/jquery-ui/jquery-ui.min.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-lib": {
 			"js": {
 				"quant-lib-script": {
@@ -74,35 +114,6 @@
 			"css": {
 				"": ""
 			}
-		}
-	},
-	"menuData1": {
-		"Home": {
-			"title": "Продукция",
-			"href": "/production.html",
-			"dop_class": ""
-		},
-		"Products and help": {
-			"title": "Гарантия и сервис",
-			"href": "service.html",
-			"dop_class": ""
-		},
-		"Support": {
-			"title": "Партнерам",
-			"href": "partners.html",
-			"dop_class": ""
-		},
-		"AboutUs": {
-			"title": "Где купить",
-			"href": "buy.html",
-			"dop_class": "",
-			"childs": ""
-		},
-		"acc": {
-			"title": "Акции",
-			"href": "sale.html",
-			"dop_class": "lightmenu__item--active",
-			"childs": ""
 		}
 	},
 	"hero_video": {
@@ -174,6 +185,15 @@
 			"dop_class": ""
 		}
 	},
+	"switchers": {
+		"response": "true",
+		"vertical-rhythm": "true",
+		"linkFonts": "true",
+		"assetsFonts": "false",
+		"debug": "true",
+		"production": "false",
+		"icon-font": "false"
+	},
 	"response": "true",
 	"vertical-rhythm": "true",
 	"linkFonts": "true",
@@ -186,7 +206,7 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\r\n)"
+		"'HEADER'": "('Roboto Slab')\n)"
 	},
 	"space": "em",
 	"element_space": ".5",
@@ -214,12 +234,12 @@
 	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"siteMinWidth": "690px",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\r\n)"
+		"min-height": "1px\n)"
 	},
 	"phone-upper-boundary": "600px",
 	"tablet-portrait-upper-boundary": "768px",
@@ -236,15 +256,6 @@
 	},
 	"nr-colStyles": {
 		"float": "left"
-	},
-	"switchers": {
-		"response": "true",
-		"vertical-rhythm": "true",
-		"linkFonts": "true",
-		"assetsFonts": "false",
-		"debug": "true",
-		"production": "false",
-		"icon-font": "false"
 	},
 	"blueprint": "undefined",
 	"izolate": "false"

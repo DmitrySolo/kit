@@ -1,6 +1,7 @@
 //  quant-debug script
 
 $( document ).ready(function() {
+
 $('a').removeAttr('href');
 qntDragDrop( document.getElementById('ball'));
 
@@ -33,7 +34,16 @@ qntDragDrop( document.getElementById('ball'));
     })
     $('*:not(#ball)').on('click',function (e) {
 
-
+        $(this).addClass('resizeble');
+        $(this).css({
+            "textAlign":"center",
+        });
+        var _this = $(this);
+        //$( ".resizeble" ).resizable( "disable" );
+        $(this).resizable({stop: function( event, ui ) {
+            _this.css("lineHeight",_this.height()+'px');
+            _this.resizable( "destroy" );
+        }}).draggable();
         let tmp   = document.createElement('INPUT'), // Создаём новый текстовой input
             focus = document.activeElement; // Получаем ссылку на элемент в фокусе (чтобы не терять фокус)
 
@@ -47,10 +57,13 @@ qntDragDrop( document.getElementById('ball'));
         fontSize = $(this).css('fontSize');
         $('#ball').css('fontSize',fontSize);
         $('.lh').text('Line height of font-size ='+ fontSize);
+
         $.notify($(this).attr('class'),{autoHideDelay: 15000});
         e.stopPropagation()
 
+
     })
+
 
 
 });
