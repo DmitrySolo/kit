@@ -28,7 +28,22 @@
 			"childs": ""
 		}
 	},
+	"hero_video": {
+		"hero_video": "1"
+	},
 	"LIBS": {
+		"hero_video": {
+			"js": {
+				"hero_video-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
+					"container": "footer/init",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"baseButton": {
 			"js": {
 				"lib1": {
@@ -38,18 +53,6 @@
 				"init": {
 					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
 					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"hero_video": {
-			"js": {
-				"hero_video-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
-					"container": "footer/init",
-					"type": "init"
 				}
 			},
 			"css": {
@@ -67,6 +70,17 @@
 				"": ""
 			}
 		},
+		"quant-lib": {
+			"js": {
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-debug": {
 			"js": {
 				"quant-debug-script": {
@@ -76,27 +90,9 @@
 				"notify": {
 					"src": "bower_components/notifyjs/dist/notify.js",
 					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"JQUI": {
-			"js": {
+				},
 				"JQUI-script": {
 					"src": "bower_components/jquery-ui/jquery-ui.min.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-lib": {
-			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
 					"container": "footer/libs+"
 				}
 			},
@@ -115,9 +111,6 @@
 				"": ""
 			}
 		}
-	},
-	"hero_video": {
-		"hero_video": "1"
 	},
 	"head": {
 		"lang": "ru",

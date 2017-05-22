@@ -2,8 +2,8 @@
 
 header.mainHeader {
   background-color: cs('primary');
-  height: 113px;
-  line-height: 110px;
+  height: size(1,bo);
+  line-height:  size(1,bo);
   border-bottom: 3px solid cs('primary-d');
   &>.headerSectionDivider:first-child{
     border-left: 2px solid cs('primary-d');
@@ -22,8 +22,8 @@ header.mainHeader {
 }
 
 .headerSection {
-  line-height: 2em;
-  height: 110px;
+  //line-height: 2em;
+  //height: 110px;
   text-align: center;
 
   //border-right: 2px solid cs('primary-d');
@@ -33,7 +33,7 @@ header.mainHeader {
     color: #fff;
   }
   .headerPhone{
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bold;
     @include space-i('element','=','','b');
   }
@@ -62,7 +62,7 @@ header.mainHeader {
 }
 .recordButton{
   position: absolute;
-  top: 40%;
-  left: 10%;
+  top: size(2,'bi');
+  left: size(1,'bi');
   font-size: 1.5em;
 }

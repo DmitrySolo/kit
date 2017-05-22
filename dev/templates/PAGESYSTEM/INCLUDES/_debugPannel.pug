@@ -1,0 +1,48 @@
+//Debug Panel
+section.pb-section.clearfix#ball.hidden
+    span.lh Line height
+    .spacer.element-i
+        span Element i
+    .spacer.element-o
+        span Element o
+    .spacer.component-i
+        span Component i
+    .spacer.component-o
+        span Component o
+    .spacer.module-i
+        span Module ii
+    .spacer.module-o
+        span Module o
+    .spacer.block-i
+        span block i
+    .spacer.block-o
+        span block o
+.debugPannel__wrapper
+    .debugPannel.clearfix
+        .debugPannel__section.f-left
+            ul.debugPannel__colorSpecific
+                li.headers
+                    h6(style={margin: '0',"font-size":'1rem',"font-weight":'400',"text-shadow":"1px 1px 1px black"}) h1-h6
+                li
+                    p(style={"text-shadow":"1px 1px 1px black"})  P
+                li
+                    ul(style={"text-shadow":"1px 1px 1px black"})  ul
+                    li(style={"text-shadow":"1px 1px 1px black"})  li
+                li
+                    .col-(style={"text-shadow":"1px 1px 1px black"})  .Col
+                li
+                    .container(style={width: '100%', padding: '0',"text-shadow":"2px 2px 2px black"}) .Cnt
+                li
+                    .row(style={margin: '0',"text-shadow":"1px 1px 1px black"}) .Row
+                li
+                    a(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) A
+                li
+                    span(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) Span
+                li
+                    img(alt='img/svg',style={display: 'inline-flex', "vertical-align": 'middle',"text-shadow":"1px 1px 1px black"})
+                li
+                    div Div
+        .debugPannel__section.f-left
+            button#spacerSwitcher Spacer
+            button#debugViewSwitcher Debug View
+        .debugPannel__section.f-left 1

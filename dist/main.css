@@ -1480,8 +1480,8 @@ section.block {
   transition-duration: 0.2s;
   transition-timing-function: linear;
   list-style: none;
-  padding-right: 0.952em;
-  padding-left: 0.952em; }
+  padding-right: 0.68em;
+  padding-left: 0.68em; }
   .lightMenu__item:hover {
     background-color: #284990; }
   @media (max-width: 599px) {
@@ -1789,8 +1789,8 @@ a, a.mainLink {
 */
 header.mainHeader {
   background-color: #3b68c9;
-  height: 113px;
-  line-height: 110px;
+  height: 7.16812em;
+  line-height: 7.16812em;
   border-bottom: 3px solid #284990; }
   header.mainHeader > .headerSectionDivider:first-child {
     border-left: 2px solid #284990; }
@@ -1805,14 +1805,12 @@ header.mainHeader {
     border-right: 2px solid #284990; }
 
 .headerSection {
-  line-height: 2em;
-  height: 110px;
   text-align: center; }
   .headerSection .headerPhone, .headerSection .headerAddress {
     display: block;
     color: #fff; }
   .headerSection .headerPhone {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bold;
     margin-bottom: 0.952em; }
   .headerSection .headerAddress {
@@ -1841,8 +1839,8 @@ header.mainHeader {
 
 .recordButton {
   position: absolute;
-  top: 40%;
-  left: 10%;
+  top: 10.24017em;
+  left: 5.12008em;
   font-size: 1.5em; }
 
 /**
@@ -2117,60 +2115,60 @@ header.mainHeader {
     display: inline-block; }
 
 .element-i {
-  background-image: linear-gradient(#1cff70 1px, transparent 1px), linear-gradient(90deg, #1cff70 1px, transparent 1px);
+  background-image: linear-gradient(#1cff70 1px, transparent 1px), linear-gradient(90deg, #1cff70 1px, transparent 1px) !important;
   background-size: 0.68em 0.68em;
   height: 6.8em; }
   .element-i span {
-    background-color: #1cfd6f; }
+    background: #1cfd6f !important; }
 
 .element-o {
-  background-image: linear-gradient(#19cd63 1px, transparent 1px), linear-gradient(90deg, #19cb62 1px, transparent 1px);
+  background-image: linear-gradient(#19cd63 1px, transparent 1px), linear-gradient(90deg, #19cb62 1px, transparent 1px) !important;
   background-size: 0.952em 0.952em;
   height: 7.616em; }
   .element-o span {
-    background-color: #19cd63; }
+    background: #19cd63 !important; }
 
 .component-i {
-  background-image: linear-gradient(#2d377b 1px, transparent 1px), linear-gradient(90deg, #2d377a 1px, transparent 1px);
+  background-image: linear-gradient(#2d377b 1px, transparent 1px), linear-gradient(90deg, #2d377a 1px, transparent 1px) !important;
   background-size: 1.3328em 1.3328em;
   height: 7.9968em; }
   .component-i span {
-    background-color: #2d377a; }
+    background: #2d377a !important; }
 
 .component-o {
-  background-image: linear-gradient(#282855 1px, transparent 1px), linear-gradient(90deg, #282854 1px, transparent 1px);
+  background-image: linear-gradient(#282855 1px, transparent 1px), linear-gradient(90deg, #282854 1px, transparent 1px) !important;
   background-size: 1.86592em 1.86592em;
   height: 9.3296em; }
   .component-o span {
-    background-color: #2a2a55; }
+    background: #2a2a55 !important; }
 
 .module-i {
-  background-image: linear-gradient(#fb4f1f 1px, transparent 1px), linear-gradient(90deg, #f94e1f 1px, transparent 1px);
+  background-image: linear-gradient(#fb4f1f 1px, transparent 1px), linear-gradient(90deg, #f94e1f 1px, transparent 1px) !important;
   background-size: 2.61229em 2.61229em;
   height: 10.44915em; }
   .module-i span {
-    background-color: #fc4f1f; }
+    background: #fc4f1f !important; }
 
 .module-o {
-  background-image: linear-gradient(#cc431f 1px, transparent 1px), linear-gradient(90deg, #ca421f 1px, transparent 1px);
+  background-image: linear-gradient(#cc431f 1px, transparent 1px), linear-gradient(90deg, #ca421f 1px, transparent 1px) !important;
   background-size: 3.6572em 3.6572em;
   height: 10.97161em; }
   .module-o span {
-    background-color: #ce441f; }
+    background: #ce441f !important; }
 
 .block-i {
-  background-image: linear-gradient(#c72064 1px, transparent 1px), linear-gradient(90deg, #c62064 1px, transparent 1px);
+  background-image: linear-gradient(#c72064 1px, transparent 1px), linear-gradient(90deg, #c62064 1px, transparent 1px) !important;
   background-size: 5.12008em 5.12008em;
   height: 10.24017em; }
   .block-i span {
-    background-color: #c82064; }
+    background: #c82064 !important; }
 
 .block-o {
-  background-image: linear-gradient(#99214c 1px, transparent 1px), linear-gradient(90deg, #99214c 1px, transparent 1px);
+  background-image: linear-gradient(#99214c 1px, transparent 1px), linear-gradient(90deg, #99214c 1px, transparent 1px) !important;
   background-size: 7.16812em 7.16812em;
   height: 7.16812em; }
   .block-o span {
-    background-color: #9a214d; }
+    background: #9a214d !important; }
 
 .pb-projectBoard .row > div {
   position: relative;
@@ -2215,26 +2213,50 @@ body.blueprint {
   border-bottom: solid 3px #194a6f; }
 
 #ball {
-  top: 0; }
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 30%; }
 
 .debug main * {
   background: none; }
+
+.debugElement {
+  text-align: center;
+  z-index: 100000000;
+  opacity: .7; }
 
 body {
   background: linear-gradient(to top, rgba(8, 0, 243, 0.1) 5%, white 5%);
   background-size: 100% 1.7em; }
 
 body.debug {
-  background-color: #ad9337; }
+  background-color: #312034; }
 
-.debug h1, .debug h2, .debug h3, .debug h4, .debug h5, .debug h6 {
+.debug div {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #401515 0%, #401515 100%), linear-gradient(to bottom, #662222 0%, #662222);
+  background-clip: content-box, padding-box; }
+  .debug div ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #401515;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.debug h1, .debug h2, .debug h3, .debug h4, .debug h5, .debug h6, .headers {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #e74c3c 0%, #e74c3c 100%), linear-gradient(to bottom, #ed7669 0%, #ed7669);
   background-clip: content-box, padding-box; }
-  .debug h1 ~ .debug-margins, .debug h2 ~ .debug-margins, .debug h3 ~ .debug-margins, .debug h4 ~ .debug-margins, .debug h5 ~ .debug-margins, .debug h6 ~ .debug-margins {
+  .debug h1 ~ .debug-margins, .debug h2 ~ .debug-margins, .debug h3 ~ .debug-margins, .debug h4 ~ .debug-margins, .debug h5 ~ .debug-margins, .debug h6 ~ .debug-margins, .headers ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
@@ -2418,3 +2440,40 @@ body.debug {
     font-size: 12px;
     line-height: 1.1;
     border-radius: 20%; }
+
+.debugPannel__wrapper {
+  position: fixed !important;
+  background: #fff !important;
+  z-index: 100000000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 7.31441em;
+  box-shadow: -2px 3px 20px 0px #000000;
+  padding-top: 1.3328em;
+  padding-bottom: 1.3328em;
+  padding-right: 1.3328em;
+  padding-left: 1.3328em; }
+  .debugPannel__wrapper * {
+    outline: none !important;
+    color: #fff; }
+
+.debugPannel {
+  background: #fff !important; }
+
+.debugPannel__section {
+  width: 33%;
+  background: #fff !important; }
+  .debugPannel__section ul.debugPannel__colorSpecific {
+    background: #fff !important; }
+
+.debugPannel__colorSpecific li {
+  display: inline-block;
+  vert-align: top;
+  width: 10%;
+  text-align: center;
+  margin-left: -4px; }
+
+.ui-resizable-handle {
+  background: transparent !important; }

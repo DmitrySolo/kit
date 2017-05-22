@@ -3,8 +3,9 @@
 $( document ).ready(function() {
 
 $('a').removeAttr('href');
-qntDragDrop( document.getElementById('ball'));
-
+//qntDragDrop( document.getElementById('ball'));
+    $('#ball').draggable();
+    $('.spacer').resizable();
 
             var elements = ['ul','nav','div','h1,h2,h3,h4,h5,h6','li','.container','.block'];
 
@@ -32,12 +33,11 @@ qntDragDrop( document.getElementById('ball'));
         $('body').css('fontSize',size+del);
 
     })
-    $('*:not(#ball)').on('click',function (e) {
-
+    var notifyStr = '';
+    $('*,spacer block-i').not('#ball,#ball *,.debugPannel,.debugPannel *').on('click',function (e) {
+        $('*').removeClass('debugElement');
         $(this).addClass('resizeble');
-        $(this).css({
-            "textAlign":"center",
-        });
+        $(this).addClass('debugElement');
         var _this = $(this);
         //$( ".resizeble" ).resizable( "disable" );
         $(this).resizable({stop: function( event, ui ) {
@@ -47,8 +47,25 @@ qntDragDrop( document.getElementById('ball'));
         let tmp   = document.createElement('INPUT'), // Создаём новый текстовой input
             focus = document.activeElement; // Получаем ссылку на элемент в фокусе (чтобы не терять фокус)
 
-        tmp.value = $(this).attr('class'); // Временному input вставляем текст для копирования
+        var Classes = $(this).attr('class').replace(/resizeble/,'')
+            .replace(/debugElement/g,'')
+            .replace(/ui-resizable/g,'')
+            .replace(/ui-draggable-handle/g,'')
+            .replace(/ui-draggable/g,'');
+        var tag = $(this).prop("tagName");
+        newnotifyStr = tag+'>'+Classes;
+        if (newnotifyStr != notifyStr)
+        {$.notify(newnotifyStr,{autoHideDelay: 5000});
+            notifyStr =newnotifyStr}
+        buferMsgArr = Classes.split(" ");
+        var buferMsg ='';
+        var clName ='';
+        for (clName in buferMsgArr){
+            if (buferMsgArr[clName] != '')
+            buferMsg+='.'+buferMsgArr[clName]+' ';
+        }
 
+        tmp.value =buferMsg;  // Временному input вставляем текст для копирования
         document.body.appendChild(tmp); // Вставляем input в DOM
         tmp.select(); // Выделяем весь текст в input
         document.execCommand('copy'); // Магия! Копирует в буфер выделенный текст (см. команду выше)
@@ -58,12 +75,18 @@ qntDragDrop( document.getElementById('ball'));
         $('#ball').css('fontSize',fontSize);
         $('.lh').text('Line height of font-size ='+ fontSize);
 
-        $.notify($(this).attr('class'),{autoHideDelay: 15000});
-        e.stopPropagation()
 
+
+        e.stopPropagation()
 
     })
 
-
+///////////////
+    $('#spacerSwitcher').on('click',function () {
+        $('#ball').toggleClass('hidden');
+    })
+    $('#debugViewSwitcher').on('click',function () {
+        $('body').toggleClass('debug');
+    })
 
 });

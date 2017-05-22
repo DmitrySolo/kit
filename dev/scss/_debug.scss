@@ -1,14 +1,14 @@
-@mixin debug-elem($db-color){
+@mixin debug-elem($db-color) {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
-  background-image:linear-gradient(to bottom, $db-color 0%, $db-color 100%), linear-gradient(to bottom, lighten($db-color,10%) 0%,  lighten($db-color,10%));
+  background-image: linear-gradient(to bottom, $db-color 0%, $db-color 100%), linear-gradient(to bottom, lighten($db-color, 10%) 0%, lighten($db-color, 10%));
   background-clip: content-box, padding-box;
-  & ~ .debug-margins{
+  & ~ .debug-margins {
     position: absolute;
-    font-weight:900;
-    color:#fff;
+    font-weight: 900;
+    color: #fff;
     background-color: $db-color;
     font-size: 12px;
     line-height: 1.1;
@@ -16,11 +16,11 @@
   }
 }
 
-@mixin debug(){
+@mixin debug() {
 
   $db-headers-color: #e74c3c;
   $db-block-color: #8e44ad;
-  $db-body-color: #ad9337;
+  $db-body-color: #312034;
   $db-p-color: #ffc114;
   $db-ul-color: #27ae60;
   $db-li-color: #2980b9;
@@ -33,11 +33,18 @@
   $db-img-color: #d8ff00;
   $db-div-color: #401515;
   #ball {
-    //position: fixed !important;
-    top:0;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 30%;
   }
-  .debug main *{
-    background:none;
+  .debug main * {
+    background: none;
+  }
+  .debugElement {
+    text-align: center;
+    z-index: 100000000;
+    opacity: .7;
   }
 
   @include grid-overlay(#0800f3);
@@ -45,7 +52,10 @@
   body.debug {
     background-color: $db-body-color;
   }
-  .debug h1,.debug h2,.debug h3,.debug h4,.debug h5,.debug h6 {
+  .debug div {
+    @include debug-elem($db-div-color);
+  }
+  .debug h1, .debug h2, .debug h3, .debug h4, .debug h5, .debug h6, .headers {
     @include debug-elem($db-headers-color);
   }
   .debug p {
@@ -57,7 +67,7 @@
   .debug li {
     @include debug-elem($db-li-color);
   }
-  .debug *[class^="col-"]{
+  .debug *[class^="col-"] {
     @include debug-elem($db-col-color);
   }
 
@@ -76,11 +86,51 @@
   .debug button {
     @include debug-elem($db-button-color);
   }
-  .debug span:not([class^="lh"]){
+  .debug span:not([class^="lh"]) {
     @include debug-elem($db-span-color);
   }
-  .debug img,.debug svg{
+  .debug img, .debug svg {
     @include debug-elem($db-img-color);
+  }
+
+  .debugPannel__wrapper {
+    position: fixed !important;
+    background: #fff !important;
+    z-index: 100000000;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: size(2, mo);
+    box-shadow: -2px 3px 20px 0px #000000;
+    @include space-i('component', '-', 'tb', '');
+    @include space-i('component', '|', 'rl', '');
+    * {
+      outline: none !important;
+      color: #fff;
+    }
+  }
+  .debugPannel {
+    background: #fff !important;
+  }
+  .debugPannel__section {
+    width: 33%;
+    background: #fff !important;
+    ul.debugPannel__colorSpecific {
+      background: #fff !important;
+    }
+  }
+
+  .debugPannel__colorSpecific li {
+    display: inline-block;
+    vert-align: top;
+    width: 10%;
+    text-align: center;
+    margin-left: -4px;
+    //background: #fff !important;
+  }
+  .ui-resizable-handle {
+    background: transparent !important;
   }
 
 }
