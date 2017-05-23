@@ -25,8 +25,8 @@ $('a').removeAttr('href');
 
     $('*,spacer block-i').not($('.debugPannel,.debugPannel__wrapper,body,html,.debugPannel *,#ball,#ball *')).on('click',function (e) {
 
-        if (!$(this).parents().hasClass('grid')){
-            console.log($(this));
+        if (!$(this).parents('section').hasClass('grid') || !$(this).hasClass('grid')){
+            console.log(!$(this).parents('section').hasClass('grid') || !$(this).hasClass('grid'));
 
         $('*').removeClass('debugElement');
         $(this).addClass('resizeble');
@@ -73,6 +73,7 @@ $('a').removeAttr('href');
         e.stopPropagation()}
 
     })
+    $('.grid,.grid *').unbind('click');
 
 ///////////////
     $('#spacerSwitcher').on('click',function () {
@@ -88,6 +89,16 @@ $('a').removeAttr('href');
         $('body').append( "<div class='mod rect'></div>" );
         $('.mod.rect').draggable();
         $('.mod.rect').resizable();
+    })
+    $('#addHeader').on('click',function () {
+        $('body').append( "<h1 class='mod header'>This is H1 title</h1><h2 class='mod header'>This is H1 title</h2><h3 class='mod header'>This is H1 title</h3><h4 class='mod header'>This is H1 title</h4><h5 class='mod header'>This is H1 title</h5><h6 class='mod header'>This is H1 title</h6>" );
+        $('.mod.header').draggable();
+        $('.mod.header').resizable();
+    })
+    $('#addP').on('click',function () {
+        $('body').append( "<p class='mod prgph'>Platy bonito oceanic whitetip shark orangespine unicorn fish loach goby rockweed gunnel turkeyfish Port Jackson shark buffalofish, southern grayling. Arapaima viperfish eeltail catfish pearl danio Black swallower, Atlantic trout sailfin silverside. Tang, marlin tui chub Indian mul flashlight fish, skilfish loosejaw lenok porcupinefish bandfish. Clownfish eeltail catfish: freshwater hatchetfish codlet tenpounder ladyfish scissor-tail rasbora lancetfish tigerperch king of herring. Grideye Mozambique tilapia oceanic whitetip shark clingfish North American darter mail-cheeked fish lamprey bramble shark. Parrotfish loweye catfish squaretail. Lighthousefish yellowhead jawfish shark mola mola sunfish.</p>" );
+        $('.mod.prgph').draggable();
+        $('.mod.prgph').resizable();
     })
     $('#clone').on('click',function () {
         $( ".debugElement" ).clone().appendTo( "body" ).css({"position":"absolute","top":"0"}).removeClass("debugElement")
