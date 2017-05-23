@@ -7,24 +7,6 @@ $('a').removeAttr('href');
     $('#ball').draggable();
     $('.spacer').resizable();
 
-            var elements = ['ul','nav','div','h1,h2,h3,h4,h5,h6','li','.container','.block'];
-
-            $.each(elements, function( index, elem ) {
-                var mt = $(elem).css('margin-top');
-                var ml = $(elem).css('margin-left');
-                var mb = $(elem).css('margin-bottom');
-                var mr = $(elem).css('margin-right');
-                $(elem).parent().css("position","relative");
-                if(mb !='0px')
-                    $(elem).after( "<span style='bottom: 0; left: 45%;' class='debug-margins'>&#x2193;"+mb+"</span>" ).css("position","relative");
-                if(ml !='0px')
-                    $(elem).after( "<span style='bottom: 50%; left: 0%;' class='debug-margins'>&#x2190;"+ml+"</span>" ).css("position","relative");
-                if(mt !='0px')
-                    $(elem).after( "<span style='top: 0%; left: 45%;' class='debug-margins'>&#x2191;"+mt+"</span>" ).css("position","relative");
-                if(mr !='0px')
-                    $(elem).after( "<span style='top: 50%; right: 0%;' class='debug-margins'>"+mr+"&#x2192;</span>" ).css("position","relative");
-
-            })
     $('button','.fontSelector').on('click',function () {
 
         var  size = $("input[name='size']").val();
@@ -34,7 +16,18 @@ $('a').removeAttr('href');
 
     })
     var notifyStr = '';
-    $('*,spacer block-i').not('#ball,#ball *,.debugPannel,.debugPannel *').on('click',function (e) {
+            $.notify.addStyle('tagClassInfo',{html:
+    "<div class='tagClassInfo'>" +
+    "<span data-notify-text>dsd</span>" +
+    "</div>"
+            })
+
+
+    $('*,spacer block-i').not($('.debugPannel,.debugPannel__wrapper,body,html,.debugPannel *,#ball,#ball *')).on('click',function (e) {
+
+        if (!$(this).parents().hasClass('grid')){
+            console.log($(this));
+
         $('*').removeClass('debugElement');
         $(this).addClass('resizeble');
         $(this).addClass('debugElement');
@@ -55,7 +48,7 @@ $('a').removeAttr('href');
         var tag = $(this).prop("tagName");
         newnotifyStr = tag+'>'+Classes;
         if (newnotifyStr != notifyStr)
-        {$.notify(newnotifyStr,{autoHideDelay: 5000});
+        {$(this).notify(newnotifyStr,{autoHideDelay: 200000000000000,style:'tagClassInfo'});
             notifyStr =newnotifyStr}
         buferMsgArr = Classes.split(" ");
         var buferMsg ='';
@@ -77,7 +70,7 @@ $('a').removeAttr('href');
 
 
 
-        e.stopPropagation()
+        e.stopPropagation()}
 
     })
 
@@ -85,8 +78,22 @@ $('a').removeAttr('href');
     $('#spacerSwitcher').on('click',function () {
         $('#ball').toggleClass('hidden');
     })
+    $('#gridb').on('click',function () {
+        $('#grid').toggleClass('hidden')
+    })
     $('#debugViewSwitcher').on('click',function () {
         $('body').toggleClass('debug');
+    })
+    $('#addRect').on('click',function () {
+        $('body').append( "<div class='mod rect'></div>" );
+        $('.mod.rect').draggable();
+        $('.mod.rect').resizable();
+    })
+    $('#clone').on('click',function () {
+        $( ".debugElement" ).clone().appendTo( "body" ).css({"position":"absolute","top":"0"}).removeClass("debugElement")
+            .draggable()
+            .resizable();
+
     })
 
 });

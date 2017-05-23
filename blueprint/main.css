@@ -2117,49 +2117,49 @@ header.mainHeader {
 .element-i {
   background-image: linear-gradient(#1cff70 1px, transparent 1px), linear-gradient(90deg, #1cff70 1px, transparent 1px) !important;
   background-size: 0.68em 0.68em;
-  height: 6.8em; }
+  height: 2.72em; }
   .element-i span {
     background: #1cfd6f !important; }
 
 .element-o {
   background-image: linear-gradient(#19cd63 1px, transparent 1px), linear-gradient(90deg, #19cb62 1px, transparent 1px) !important;
   background-size: 0.952em 0.952em;
-  height: 7.616em; }
+  height: 2.856em; }
   .element-o span {
     background: #19cd63 !important; }
 
 .component-i {
   background-image: linear-gradient(#2d377b 1px, transparent 1px), linear-gradient(90deg, #2d377a 1px, transparent 1px) !important;
   background-size: 1.3328em 1.3328em;
-  height: 7.9968em; }
+  height: 3.9984em; }
   .component-i span {
     background: #2d377a !important; }
 
 .component-o {
   background-image: linear-gradient(#282855 1px, transparent 1px), linear-gradient(90deg, #282854 1px, transparent 1px) !important;
   background-size: 1.86592em 1.86592em;
-  height: 9.3296em; }
+  height: 5.59776em; }
   .component-o span {
     background: #2a2a55 !important; }
 
 .module-i {
   background-image: linear-gradient(#fb4f1f 1px, transparent 1px), linear-gradient(90deg, #f94e1f 1px, transparent 1px) !important;
   background-size: 2.61229em 2.61229em;
-  height: 10.44915em; }
+  height: 5.22458em; }
   .module-i span {
     background: #fc4f1f !important; }
 
 .module-o {
   background-image: linear-gradient(#cc431f 1px, transparent 1px), linear-gradient(90deg, #ca421f 1px, transparent 1px) !important;
   background-size: 3.6572em 3.6572em;
-  height: 10.97161em; }
+  height: 7.31441em; }
   .module-o span {
     background: #ce441f !important; }
 
 .block-i {
   background-image: linear-gradient(#c72064 1px, transparent 1px), linear-gradient(90deg, #c62064 1px, transparent 1px) !important;
   background-size: 5.12008em 5.12008em;
-  height: 10.24017em; }
+  height: 5.12008em; }
   .block-i span {
     background: #c82064 !important; }
 
@@ -2477,3 +2477,35 @@ body.debug {
 
 .ui-resizable-handle {
   background: transparent !important; }
+
+.notifyjs-tagClassInfo-base {
+  background: #ffff00 !important;
+  padding-top: 0.68em;
+  padding-right: 0.952em;
+  padding-bottom: 0.68em;
+  padding-left: 0.952em;
+  z-index: 1111111111111111111111;
+  position: absolute;
+  line-height: 1.7rem !important; }
+  .notifyjs-tagClassInfo-base span {
+    background: transparent !important; }
+
+.mod.rect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: #ffef8f; }
+
+.debugPannel button {
+  display: inline-block; }
+
+.grid--debug {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-right: 585px; }
