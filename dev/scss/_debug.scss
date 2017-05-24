@@ -45,6 +45,28 @@
     text-align: center;
     z-index: 100000000;
     opacity: .7;
+    &:before{
+      content:'';
+      left: -.5em;
+      position: absolute;
+      width: 1em;
+      margin-top:-.5em;
+      top:50%;
+      height: 1em;
+      background-color: purple;
+      border-radius: 50%;
+    }
+    &:after{
+      content:'';
+      position: absolute;
+      right:-.5em;
+      top:50%;
+      margin-top:-.5em;
+      width: 1em;
+      height: 1em;
+      background-color: purple;
+      border-radius: 50%;
+    }
   }
 
   @include grid-overlay(#0800f3);
@@ -52,7 +74,7 @@
   body.debug {
     background-color: $db-body-color;
   }
-  .debug div {
+  .debug div:not(.colors div) {
     @include debug-elem($db-div-color);
   }
   .debug h1, .debug h2, .debug h3, .debug h4, .debug h5, .debug h6, .headers {
@@ -86,7 +108,7 @@
   .debug button {
     @include debug-elem($db-button-color);
   }
-  .debug span:not([class^="lh"]) {
+  .debug span:not([class^="lh"],.colors div) {
     @include debug-elem($db-span-color);
   }
   .debug img, .debug svg {
@@ -114,7 +136,10 @@
     background: #fff !important;
   }
   .debugPannel__section {
-    width: 33%;
+    width: 40%;
+    &:last-child{
+      width: 18%;
+    }
     background: #fff !important;
     ul.debugPannel__colorSpecific {
       background: #fff !important;
@@ -174,8 +199,25 @@
       height: 100%;
     }
     div[class^='col-']{
-     // background: brown !important;
+
     }
 
+  }
+  .debug .pb-colorBox {
+    width: 12px;
+    height: 12px;
+    div {}
+  }
+  .colors{
+    .pb-element:first-child{
+      padding-right:50px;
+    }
+  }
+  .colors  *{
+
+    color: #000000 !important;
+    .pb-colorBox {
+      margin-top: .45em;
+    }
   }
 }

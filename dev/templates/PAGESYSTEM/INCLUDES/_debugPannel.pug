@@ -1,68 +1,109 @@
 //Debug Panel
-section.pb-section.clearfix#ball.hidden
-    span.lh Line height
-    .spacer.element-i
-        span Element i
-    .spacer.element-o
-        span Element o
-    .spacer.component-i
-        span Component i
-    .spacer.component-o
-        span Component o
-    .spacer.module-i
-        span Module ii
-    .spacer.module-o
-        span Module o
-    .spacer.block-i
-        span block i
-    .spacer.block-o
-        span block o
-section.pb-section.clearfix.grid.grid--debug.hidden#grid
-    .container
-        .row
-            .col-1-m.col-1-tp 1
-            .col-1-m.col-1-tp 2
-            .col-1-m.col-1-tp 3
-            .col-1-m.col-1-tp 4
-            .col-1-m.col-1-tp 5
-            .col-1-m.col-1-tp 6
-            .col-1-m.col-1-tp 7
-            .col-1-m.col-1-tp 8
-            .col-1-m.col-1-tp 9
-            .col-1-m.col-1-tp 10
-            .col-1-m.col-1-tp 11
-            .col-1-m.col-1-tp 12
-.debugPannel__wrapper
-    .debugPannel.clearfix
-        .debugPannel__section.f-left
-            ul.debugPannel__colorSpecific
-                li.headers
-                    h6(style={margin: '0',"font-size":'1rem',"font-weight":'400',"text-shadow":"1px 1px 1px black"}) h1-h6
-                li
-                    p(style={"text-shadow":"1px 1px 1px black"})  P
-                li
-                    ul(style={"text-shadow":"1px 1px 1px black"})  ul
-                    li(style={"text-shadow":"1px 1px 1px black"})  li
-                li
-                    .col-(style={"text-shadow":"1px 1px 1px black"})  .Col
-                li
-                    .container(style={width: '100%', padding: '0',"text-shadow":"2px 2px 2px black"}) .Cnt
-                li
-                    .row(style={margin: '0',"text-shadow":"1px 1px 1px black"}) .Row
-                li
-                    a(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) A
-                li
-                    span(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) Span
-                li
-                    img(alt='img/svg',style={display: 'inline-flex', "vertical-align": 'middle',"text-shadow":"1px 1px 1px black"})
-                li
-                    div Div
-        .debugPannel__section.f-left
-            button#spacerSwitcher Spacer
-            button#gridb grid
-            button#debugViewSwitcher Debug View
-            button#addRect add rect
-            button#addHeader add H1
-            button#addP add P
-            button#clone Clone
-        .debugPannel__section.f-left 1
+.debug
+    section.pb-section.clearfix#ball.hidden
+        span.lh Line height
+        .spacer.element-i
+            span Element i
+        .spacer.element-o
+            span Element o
+        .spacer.component-i
+            span Component i
+        .spacer.component-o
+            span Component o
+        .spacer.module-i
+            span Module ii
+        .spacer.module-o
+            span Module o
+        .spacer.block-i
+            span block i
+        .spacer.block-o
+            span block o
+    section.pb-section.clearfix.grid.grid--debug.hidden#grid
+        .container
+            .row
+                .col-1-m.col-1-tp 1
+                .col-1-m.col-1-tp 2
+                .col-1-m.col-1-tp 3
+                .col-1-m.col-1-tp 4
+                .col-1-m.col-1-tp 5
+                .col-1-m.col-1-tp 6
+                .col-1-m.col-1-tp 7
+                .col-1-m.col-1-tp 8
+                .col-1-m.col-1-tp 9
+                .col-1-m.col-1-tp 10
+                .col-1-m.col-1-tp 11
+                .col-1-m.col-1-tp 12
+    .debugPannel__wrapper
+        .debugPannel.clearfix
+            .debugPannel__section.f-left
+                ul.debugPannel__colorSpecific
+                    li.headers
+                        h6(style={margin: '0',"font-size":'1rem',"font-weight":'400',"text-shadow":"1px 1px 1px black"}) h1-h6
+                    li
+                        p(style={"text-shadow":"1px 1px 1px black"})  P
+                    li
+                        ul(style={"text-shadow":"1px 1px 1px black"})  ul
+                        li(style={"text-shadow":"1px 1px 1px black"})  li
+                    li
+                        .col-(style={"text-shadow":"1px 1px 1px black"})  .Col
+                    li
+                        .container(style={width: '100%', padding: '0',"text-shadow":"2px 2px 2px black"}) .Cnt
+                    li
+                        .row(style={margin: '0',"text-shadow":"1px 1px 1px black"}) .Row
+                    li
+                        a(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) A
+                    li
+                        span(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) Span
+                    li
+                        img(alt='img/svg',style={display: 'inline-flex', "vertical-align": 'middle',"text-shadow":"1px 1px 1px black"})
+                    li
+                        div Div
+            .debugPannel__section.f-left
+                button#spacerSwitcher Spacer
+                button#gridb grid
+                button#debugViewSwitcher Debug View
+                button#addRect add rect
+                button#addHeader add H1
+                button#addP add P
+                button#clone Clone
+                button#up Up
+                button#down Down
+            .debugPannel__section.f-left.colors
+                    .pb-element.f-left
+                        .pb-colorBox
+                        .pb-colorBox
+                            span.pb-elementHeader Base
+                        .pb-colorBox
+                            span.pb-elementHeader Darken
+                        .pb-colorBox
+                            span.pb-elementHeader light
+                    .pb-element.f-left
+                        span.pb-elementHeader 1
+                        .pb-colorBox.pb-colorBox--primary
+                        .pb-colorBox.pb-colorBox--primary-d
+                        .pb-colorBox.pb-colorBox--primary-l
+                    .pb-element.f-left
+                        span.pb-elementHeader 2
+                        .pb-colorBox.pb-colorBox--secondary
+                        .pb-colorBox.pb-colorBox--secondary-d
+                        .pb-colorBox.pb-colorBox--secondary-l
+                    .pb-element.f-left
+                        span.pb-elementHeader A
+                        .pb-colorBox.pb-colorBox--accent
+                        .pb-colorBox.pb-colorBox--accent-d
+                        .pb-colorBox.pb-colorBox--accent-l
+                    .pb-element.f-left
+                        span.pb-elementHeader Fg
+                        .pb-colorBox.pb-colorBox--fground
+                        .pb-colorBox.pb-colorBox--fground-d
+                        .pb-colorBox.pb-colorBox--fground-l
+                    .pb-element.f-left
+                        span.pb-elementHeader Bg
+                        .pb-colorBox.pb-colorBox--bground
+                        .pb-colorBox.pb-colorBox--bground-d
+                        .pb-colorBox.pb-colorBox--bground-l
+                    .pb-element.f-left
+                        span.pb-elementHeader F
+                        .pb-colorBox.pb-colorBox--font
+                        .pb-colorBox.pb-colorBox--font-d
+                        .pb-colorBox.pb-colorBox--font-l

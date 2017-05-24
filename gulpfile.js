@@ -676,7 +676,7 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('blueprint'))
         .pipe(gulp.dest('projectboard'));
 
-        gulp.src('dev/scss/MASTER_OPTIONS/*.scss')
+        gulp.src('dev/scss/{MASTER_OPTIONS,COLOR}/*.scss')
         .pipe(sassJson())
         .pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
         alredyCompile = false;

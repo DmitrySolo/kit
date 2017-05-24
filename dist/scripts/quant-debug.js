@@ -1,7 +1,8 @@
 //  quant-debug script
 
 $( document ).ready(function() {
-
+var engP = 'Platy bonito oceanic whitetip shark orangespine unicorn fish loach goby rockweed gunnel turkeyfish Port Jackson shark buffalofish, southern grayling. Arapaima viperfish eeltail catfish pearl danio Black swallower, Atlantic trout sailfin silverside. Tang, marlin tui chub Indian mul flashlight fish, skilfish loosejaw lenok porcupinefish bandfish. Clownfish eeltail catfish: freshwater hatchetfish codlet tenpounder ladyfish scissor-tail rasbora lancetfish tigerperch king of herring. Grideye Mozambique tilapia oceanic whitetip shark clingfish North American darter mail-cheeked fish lamprey bramble shark. Parrotfish loweye catfish squaretail. Lighthousefish yellowhead jawfish shark mola mola sunfish.';
+var eHead = 'This is Header';
 $('a').removeAttr('href');
 //qntDragDrop( document.getElementById('ball'));
     $('#ball').draggable();
@@ -22,11 +23,8 @@ $('a').removeAttr('href');
     "</div>"
             })
 
-
-    $('*,spacer block-i').not($('.debugPannel,.debugPannel__wrapper,body,html,.debugPannel *,#ball,#ball *')).on('click',function (e) {
-
-        if (!$(this).parents('section').hasClass('grid') || !$(this).hasClass('grid')){
-            console.log(!$(this).parents('section').hasClass('grid') || !$(this).hasClass('grid'));
+    function MakeEditable (elem) {
+    elem.on('click',function(e){
 
         $('*').removeClass('debugElement');
         $(this).addClass('resizeble');
@@ -48,14 +46,14 @@ $('a').removeAttr('href');
         var tag = $(this).prop("tagName");
         newnotifyStr = tag+'>'+Classes;
         if (newnotifyStr != notifyStr)
-        {$(this).notify(newnotifyStr,{autoHideDelay: 200000000000000,style:'tagClassInfo'});
+        {$(this).notify(newnotifyStr,{autoHideDelay: 2000,style:'tagClassInfo'});
             notifyStr =newnotifyStr}
         buferMsgArr = Classes.split(" ");
         var buferMsg ='';
         var clName ='';
         for (clName in buferMsgArr){
             if (buferMsgArr[clName] != '')
-            buferMsg+='.'+buferMsgArr[clName]+' ';
+                buferMsg+='.'+buferMsgArr[clName]+' ';
         }
 
         tmp.value =buferMsg;  // Временному input вставляем текст для копирования
@@ -70,9 +68,16 @@ $('a').removeAttr('href');
 
 
 
-        e.stopPropagation()}
+        e.stopPropagation()})
 
-    })
+
+    }
+
+
+
+
+    MakeEditable($('*,spacer block-i').not($('.debug,.debugPannel,.debugPannel__wrapper,body,html,.debugPannel *,#ball,#ball *')));
+
     $('.grid,.grid *').unbind('click');
 
 ///////////////
@@ -86,25 +91,39 @@ $('a').removeAttr('href');
         $('body').toggleClass('debug');
     })
     $('#addRect').on('click',function () {
-        $('body').append( "<div class='mod rect'></div>" );
-        $('.mod.rect').draggable();
-        $('.mod.rect').resizable();
+        $(".debugElement").append( "<div class='mod rect'></div>" );
+        MakeEditable($('.mod.rect'));
     })
     $('#addHeader').on('click',function () {
-        $('body').append( "<h1 class='mod header'>This is H1 title</h1><h2 class='mod header'>This is H1 title</h2><h3 class='mod header'>This is H1 title</h3><h4 class='mod header'>This is H1 title</h4><h5 class='mod header'>This is H1 title</h5><h6 class='mod header'>This is H1 title</h6>" );
-        $('.mod.header').draggable();
-        $('.mod.header').resizable();
+        $(".debugElement").append( "<h1 class='mod header'>"+eHead+"</h1><h2 class='mod header'>"+eHead+"</h2><h3 class='mod header'>"+eHead+"</h3><h4 class='mod header'>"+eHead+"</h4><h5 class='mod header'>"+eHead+"</h5><h6 class='mod header'>"+eHead+"</h6>" );
+        MakeEditable($('.mod.header'));
     })
     $('#addP').on('click',function () {
-        $('body').append( "<p class='mod prgph'>Platy bonito oceanic whitetip shark orangespine unicorn fish loach goby rockweed gunnel turkeyfish Port Jackson shark buffalofish, southern grayling. Arapaima viperfish eeltail catfish pearl danio Black swallower, Atlantic trout sailfin silverside. Tang, marlin tui chub Indian mul flashlight fish, skilfish loosejaw lenok porcupinefish bandfish. Clownfish eeltail catfish: freshwater hatchetfish codlet tenpounder ladyfish scissor-tail rasbora lancetfish tigerperch king of herring. Grideye Mozambique tilapia oceanic whitetip shark clingfish North American darter mail-cheeked fish lamprey bramble shark. Parrotfish loweye catfish squaretail. Lighthousefish yellowhead jawfish shark mola mola sunfish.</p>" );
-        $('.mod.prgph').draggable();
-        $('.mod.prgph').resizable();
+        $(".debugElement").append( "<p class='mod prgph'></p>" );
+        MakeEditable($('.mod.prgph'));
     })
     $('#clone').on('click',function () {
         $( ".debugElement" ).clone().appendTo( "body" ).css({"position":"absolute","top":"0"}).removeClass("debugElement")
             .draggable()
             .resizable();
 
+
     })
+    $('#down').on('click',function () {
+        $( ".debugElement" ).css('zIndex',$( ".debugElement" ).css('zIndex')-10000000000000000);
+
+
+    })
+    $('#up').on('click',function () {
+        $( ".debugElement" ).css('zIndex',$( ".debugElement" ).css('zIndex')+10000000000000000);
+
+
+    })
+    $('.pb-colorBox').on('click',function () {
+        $( ".debugElement" ).css('backgroundColor',$(this).css('backgroundColor'));
+
+
+    })
+
 
 });

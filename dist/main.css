@@ -2225,6 +2225,26 @@ body.blueprint {
   text-align: center;
   z-index: 100000000;
   opacity: .7; }
+  .debugElement:before {
+    content: '';
+    left: -.5em;
+    position: absolute;
+    width: 1em;
+    margin-top: -.5em;
+    top: 50%;
+    height: 1em;
+    background-color: purple;
+    border-radius: 50%; }
+  .debugElement:after {
+    content: '';
+    position: absolute;
+    right: -.5em;
+    top: 50%;
+    margin-top: -.5em;
+    width: 1em;
+    height: 1em;
+    background-color: purple;
+    border-radius: 50%; }
 
 body {
   background: linear-gradient(to top, rgba(8, 0, 243, 0.1) 5%, white 5%);
@@ -2233,14 +2253,14 @@ body {
 body.debug {
   background-color: #312034; }
 
-.debug div {
+.debug div:not(.colors div) {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #401515 0%, #401515 100%), linear-gradient(to bottom, #662222 0%, #662222);
   background-clip: content-box, padding-box; }
-  .debug div ~ .debug-margins {
+  .debug div:not(.colors div) ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
@@ -2409,14 +2429,14 @@ body.debug {
     line-height: 1.1;
     border-radius: 20%; }
 
-.debug span:not([class^="lh"]) {
+.debug span:not([class^="lh"]):not(.colors div) {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #86432c 0%, #86432c 100%), linear-gradient(to bottom, #ac5639 0%, #ac5639);
   background-clip: content-box, padding-box; }
-  .debug span:not([class^="lh"]) ~ .debug-margins {
+  .debug span:not([class^="lh"]):not(.colors div) ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
@@ -2463,8 +2483,10 @@ body.debug {
   background: #fff !important; }
 
 .debugPannel__section {
-  width: 33%;
+  width: 40%;
   background: #fff !important; }
+  .debugPannel__section:last-child {
+    width: 18%; }
   .debugPannel__section ul.debugPannel__colorSpecific {
     background: #fff !important; }
 
@@ -2519,3 +2541,15 @@ body.debug {
   opacity: .5; }
   .grid--debug .container, .grid--debug .row, .grid--debug div[class^='col-'] {
     height: 100%; }
+
+.debug .pb-colorBox {
+  width: 12px;
+  height: 12px; }
+
+.colors .pb-element:first-child {
+  padding-right: 50px; }
+
+.colors * {
+  color: #000000 !important; }
+  .colors * .pb-colorBox {
+    margin-top: .45em; }
