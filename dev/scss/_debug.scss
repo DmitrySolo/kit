@@ -220,4 +220,26 @@
       margin-top: .45em;
     }
   }
+  .htmlToPug {
+    position: fixed;
+    top:0;
+    bottom:0;
+  }
+  .tagChecker {
+    position: absolute;
+    font-size:10px;
+    top:5px;
+    line-height: 1rem;
+    background-color: tomato;
+    color: #fff;
+  }
+  .eventLock {
+    pointer-events: none;
+    &:before{
+      content:'Lock';
+      position: absolute;
+      top:10px;
+      left: 0;
+    }
+  }
 }

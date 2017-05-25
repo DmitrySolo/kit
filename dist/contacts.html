@@ -59,15 +59,17 @@
     </main><!-- split footer.html -->
     <footer>This is footer</footer>
     <!--/////////////////////////////////////////////////////////////////-->
-    <script src="scripts/" type="text/javascript"></script>
     <script src="scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="scripts/" type="text/javascript"></script>
     <script src="scripts/notify.js" type="text/javascript"></script>
     <script src="scripts/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="scripts/html2jade.js" type="text/javascript"></script>
     <script src="scripts/quant-lib.js" type="text/javascript"></script>
-    <script src="scripts/baseButton.js" type="text/javascript"></script>
-    <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
+    <script src="scripts/jadejs.js" type="text/javascript"></script>
     <script src="scripts/quant-debug.js" type="text/javascript"></script>
     <script src="scripts/xRayView.js" type="text/javascript"></script>
+    <script src="scripts/baseButton.js" type="text/javascript"></script>
+    <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
     <!--Debug Panel-->
     <div class="debug">
       <section class="pb-section clearfix hidden" id="ball"><span class="lh">Line height</span>
@@ -102,10 +104,10 @@
         <div class="debugPannel clearfix">
           <div class="debugPannel__section f-left">
             <ul class="debugPannel__colorSpecific">
-              <li class="headers">
+              <li class="headers" id="addHeader">
                 <h6 style="margin:0;font-size:1rem;font-weight:400;text-shadow:1px 1px 1px black;">h1-h6</h6>
               </li>
-              <li>
+              <li id="addP">
                 <p style="text-shadow:1px 1px 1px black;"> P</p>
               </li>
               <li>
@@ -124,7 +126,7 @@
               <li><a style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">A</a></li>
               <li><span style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">Span</span></li>
               <li><img alt="img/svg" style="display:inline-flex;vertical-align:middle;text-shadow:1px 1px 1px black;"></li>
-              <li>
+              <li id="addRect">
                 <div>Div</div>
               </li>
             </ul>
@@ -133,12 +135,14 @@
             <button id="spacerSwitcher">Spacer</button>
             <button id="gridb">grid</button>
             <button id="debugViewSwitcher">Debug View</button>
-            <button id="addRect">add rect</button>
-            <button id="addHeader">add H1</button>
-            <button id="addP">add P</button>
             <button id="clone">Clone</button>
+            <button id="getHtml">Get View!</button>
             <button id="up">Up</button>
             <button id="down">Down</button>
+            <button id="100p">100%</button>
+            <button id="del">Delete</button>
+            <button id="lock">Lock</button>
+            <button id="unlock">UnLock</button>
           </div>
           <div class="debugPannel__section f-left colors">
             <div class="pb-element f-left">

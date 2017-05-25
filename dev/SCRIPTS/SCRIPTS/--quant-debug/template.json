@@ -12,6 +12,11 @@
         "JQUI-script": {
           "src": "bower_components/jquery-ui/jquery-ui.min.js",
           "container": "footer/libs+"
+        },
+
+        "htmlJade": {
+          "src": "node_modules/html2jade/lib/html2jade.js",
+          "container": "footer/libs+"
         }
       },
       "css": {

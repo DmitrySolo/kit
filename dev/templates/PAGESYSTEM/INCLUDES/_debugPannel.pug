@@ -37,9 +37,9 @@
         .debugPannel.clearfix
             .debugPannel__section.f-left
                 ul.debugPannel__colorSpecific
-                    li.headers
+                    li.headers#addHeader
                         h6(style={margin: '0',"font-size":'1rem',"font-weight":'400',"text-shadow":"1px 1px 1px black"}) h1-h6
-                    li
+                    li#addP
                         p(style={"text-shadow":"1px 1px 1px black"})  P
                     li
                         ul(style={"text-shadow":"1px 1px 1px black"})  ul
@@ -56,18 +56,20 @@
                         span(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) Span
                     li
                         img(alt='img/svg',style={display: 'inline-flex', "vertical-align": 'middle',"text-shadow":"1px 1px 1px black"})
-                    li
+                    li#addRect
                         div Div
             .debugPannel__section.f-left
                 button#spacerSwitcher Spacer
                 button#gridb grid
                 button#debugViewSwitcher Debug View
-                button#addRect add rect
-                button#addHeader add H1
-                button#addP add P
                 button#clone Clone
+                button#getHtml Get View!
                 button#up Up
                 button#down Down
+                button#100p 100%
+                button#del Delete
+                button#lock Lock
+                button#unlock UnLock
             .debugPannel__section.f-left.colors
                     .pb-element.f-left
                         .pb-colorBox
