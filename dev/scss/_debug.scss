@@ -140,6 +140,9 @@
     &:last-child{
       width: 18%;
     }
+    button{
+      font-size:10px !important;
+    }
     background: #fff !important;
     ul.debugPannel__colorSpecific {
       background: #fff !important;
@@ -241,5 +244,13 @@
       top:10px;
       left: 0;
     }
+  }
+  .debug-Pannel-Right {
+    position: fixed;
+    top:0;
+    width: 10%;
+    right: 0;
+    bottom:0;
+    background-color: #fff;
   }
 }

@@ -47,8 +47,8 @@ var addToBufer= function (content) {
         var _this = $(this);
         //$( ".resizeble" ).resizable( "disable" );
         $(this).resizable({stop: function( event, ui ) {
-            _this.css("lineHeight",_this.height()+'px');
-            _this.resizable( "destroy" );
+            //_this.css("lineHeight",_this.height()+'px');
+            //_this.resizable( "destroy" );
         }}).draggable();
 
 
@@ -79,8 +79,11 @@ var addToBufer= function (content) {
 
          // Возвращаем фокус туда, где был
         fontSize = $(this).css('fontSize');
-        $('#ball').css('fontSize',fontSize);
-        $('.lh').text('Line height of font-size ='+ fontSize);
+         if (! $('#ball').hasClass('eventLock')){
+             $('#ball').css('fontSize',fontSize);
+             $('.lh').text('Line height of font-size ='+ fontSize);
+         }
+
 
 
 
@@ -118,6 +121,19 @@ var addToBufer= function (content) {
         $(".debugElement").append( "<p class='mod prgph'>"+engP+"</p>" );
         MakeEditable($('.mod.prgph'));
     })
+
+    $('#addImg').on('click',function () {
+        $("body").append( "<div class='mod img' style='width:200px; height: 200px;'><img  src='"+$('#imginpt').val()+"' width='100%'></div>" );
+        //var iframe = $('#pugIfrm').contents().find( "a" ).css( "background-color", "#6bdabd" );
+        MakeEditable($('.mod.img'));
+    })
+    $('#addBkg').on('click',function () {
+        console.log("url='"+$('#imginpt').val()+"'");
+        $(".debugElement").css( "background","url("+$('#imginpt').val()+")");
+    })
+
+
+
     $('#clone').on('click',function () {
         var clone = $( ".debugElement" ).clone().appendTo( "body" ).css({"position":"absolute","top":"0"}).removeClass("debugElement")
             .draggable()
@@ -129,6 +145,13 @@ var addToBufer= function (content) {
 
     $('#del').on('click',function () {
         $(".debugElement").remove();
+    })
+
+    $('#colorPicker').on('change',function () {
+        $(".debugElement").css('opacity','1').css('backgroundColor',$(this).val());
+    })
+    $('#colorPickerFont').on('change',function () {
+        $(".debugElement").css('opacity','1').css('color',$(this).val());
     })
     $('#100p').on('click',function () {
         $(".debugElement").css('width','100%');
@@ -153,6 +176,7 @@ var addToBufer= function (content) {
        if (document.getElementById('htmlToPugctn') == null){
            $('body').append('<div id="htmlToPugctn" class="htmlToPug"><iframe id="pugIfrm" src="http://jumplink.github.io/jade2html2jade/" width="400" height="700" align="left"></iframe><span class="js-trigger">close</span></div>');
        }
+
 
 
        //Html2Jade.convertDocument(document, {}, function (err, jade) {
@@ -185,11 +209,31 @@ var addToBufer= function (content) {
 
 
     })
+
+    $('#lockSpacer').on('click',function () {
+        $( "#ball" ).toggleClass('eventLock');
+
+
+    })
+
     $('#htmlToPugctn .js-trigger').on('click',function () {
         $('#htmlToPugctn').remove();
 
 
     })
+
+    $('#save').on('click',function () {
+        localStorage.setItem('save', $('body').not($('#__bs_script__')).html());
+
+
+    })
+
+    $('#load').on('click',function () {
+        $('body').html(localStorage.getItem('save'));
+
+        console.log(localStorage.getItem('save'))
+    })
+
     $('#showAllTags--').on('click',function () {
 
         $('*').each(function () {
@@ -208,6 +252,11 @@ var addToBufer= function (content) {
             $( this ).prepend("<div style='position: relative';><span class='tagChecker' style='background:"+$(this).css('background')+"'>"+newnotifyStr+"</span></div>")
 
         }})
+
+    })
+    $('#unsplash').on('click',function () {
+
+        $('body').append('<div id="imagesOnline" class="htmlToPug"><iframe id="pugIfrm" src="http://allthefreestock.com/" width="1200" height="800" align="left"></iframe><span class="js-trigger">close</span></div>');
 
     })
 

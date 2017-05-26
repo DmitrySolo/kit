@@ -2487,6 +2487,8 @@ body.debug {
   background: #fff !important; }
   .debugPannel__section:last-child {
     width: 18%; }
+  .debugPannel__section button {
+    font-size: 10px !important; }
   .debugPannel__section ul.debugPannel__colorSpecific {
     background: #fff !important; }
 
@@ -2574,3 +2576,11 @@ body.debug {
     position: absolute;
     top: 10px;
     left: 0; }
+
+.debug-Pannel-Right {
+  position: fixed;
+  top: 0;
+  width: 10%;
+  right: 0;
+  bottom: 0;
+  background-color: #fff; }

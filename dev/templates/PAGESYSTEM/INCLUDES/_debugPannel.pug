@@ -1,4 +1,12 @@
 //Debug Panel
+.debug-Pannel-Right
+    .debug-Pannel-Right__section
+        button#unsplash Unsplash
+        input
+        input
+    .debug-Pannel-Right__section
+    .debug-Pannel-Right__section
+    .debug-Pannel-Right__section
 .debug
     section.pb-section.clearfix#ball.hidden
         span.lh Line height
@@ -55,6 +63,8 @@
                     li
                         span(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) Span
                     li
+                        input(type='text')#imginpt
+                    li#addImg
                         img(alt='img/svg',style={display: 'inline-flex', "vertical-align": 'middle',"text-shadow":"1px 1px 1px black"})
                     li#addRect
                         div Div
@@ -70,6 +80,10 @@
                 button#del Delete
                 button#lock Lock
                 button#unlock UnLock
+                button#save Save
+                button#load Load
+                button#lockSpacer lock Spacer
+                button#addBkg add Background
             .debugPannel__section.f-left.colors
                     .pb-element.f-left
                         .pb-colorBox
@@ -109,3 +123,8 @@
                         .pb-colorBox.pb-colorBox--font
                         .pb-colorBox.pb-colorBox--font-d
                         .pb-colorBox.pb-colorBox--font-l
+                    .pb-element.f-left
+                        span B
+                            input(id='colorPicker',type='color')
+                        span C
+                            input(id='colorPickerFont',type='color')
