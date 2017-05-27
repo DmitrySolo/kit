@@ -14,6 +14,16 @@ var mediaBreakPoinsChecker= function () {
     $( window ).resize(function(){
         var size = window.innerWidth;
         switch (size){
+            case size > mediaMap.desktoplBreakpoint: icon='cursor';
+                break;
+            case size > mediaMap.desktopBreakpoint: icon='cursor';
+                break;
+            case size > mediaMap.tabletLandscapeBreakpoint: icon='computer1';
+                break;
+            case size > mediaMap.tabletPortraitBreakpoint: icon='computer2';
+                break;
+            default:
+                icon='computer3';
 
         }
 
