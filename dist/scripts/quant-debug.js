@@ -13,22 +13,26 @@ var mediaMap = {
 var mediaBreakPoinsChecker= function () {
     $( window ).resize(function(){
         var size = window.innerWidth;
-        switch (size){
-            case size > mediaMap.desktoplBreakpoint: icon='cursor';
+        console.log(size > mediaMap.desktoplBreakpoint)
+        var icon=''
+        switch (true){
+            case (size > mediaMap.desktoplBreakpoint): icon='#arrow';
                 break;
-            case size > mediaMap.desktopBreakpoint: icon='cursor';
+            case (size > mediaMap.desktopBreakpoint): icon='#computer';
                 break;
-            case size > mediaMap.tabletLandscapeBreakpoint: icon='computer1';
+            case (size > mediaMap.tabletLandscapeBreakpoint): icon='#computer1';
                 break;
-            case size > mediaMap.tabletPortraitBreakpoint: icon='computer2';
+            case (size > mediaMap.tabletPortraitBreakpoint): icon='#computer2';
                 break;
             default:
-                icon='computer3';
+                icon='#computer3';
 
         }
-
+        $('use','.icon-breakpoits').attr('xlink:href',icon);
+        $('#widthOf').text(size)
     })
 }
+mediaBreakPoinsChecker();
 
 var addToBufer= function (content) {
     let tmp   = document.createElement('INPUT'), // Создаём новый текстовой input
