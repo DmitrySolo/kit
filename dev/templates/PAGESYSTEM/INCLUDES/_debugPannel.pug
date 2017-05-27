@@ -8,17 +8,34 @@
     .debug-Pannel-Right__section
     .debug-Pannel-Right__section
 .debug
+    .hidden
+        include   ../../../../vendor/icons/icons-debug.svg
     section.mediaMap(style="height:50px;")
         .mediaMap__bounder.dl
             .mediaMap__container.dl
-        .mediaMap__bounder.d
-            .mediaMap__container.d
-        .mediaMap__bounder.tl
-            .mediaMap__container.tl
+        .mediaMap__bounder.d(style="width:"+MEDIA.desktopBreakpoint)
+            span=MEDIA.desktopBreakpoint
+            .mediaMap__container.d(style="width:"+MEDIA.desktopContainer)
+                span=MEDIA.desktopContainer
+        .mediaMap__bounder.tl(style="width:"+MEDIA.tabletLandscapeBreakpoint)
+            span=MEDIA.tabletLandscapeBreakpoint
+            .mediaMap__container.tl(style="width:"+MEDIA.tabletLcontainer)
+                span=MEDIA.tabletLcontainer
         .mediaMap__bounder.tp(style="width:"+MEDIA.tabletPortraitBreakpoint)
+            span=MEDIA.tabletPortraitBreakpoint
             .mediaMap__container.tp(style="width:"+MEDIA.tabletPcontainer)
+                span=MEDIA.tabletPcontainer
         .mediaMap__bounder.m(style="width:"+MEDIA.phoneBreakpoint+"; color:#27ae60;",)
+            span=MEDIA.phoneBreakpoint
             .mediaMap__container.m(style="width:100%; background:#27ae60;")
+                span=MEDIA.phoneBreakpoint
+                .mediaInfo
+                    +I('arrow','icon-breakpoits')
+                    +I('computer')
+                    +I('computer1')
+                    +I('computer2')
+                    +I('computer3')
+
 
     section.pb-section.clearfix#ball.hidden
         span.lh Line height

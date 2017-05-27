@@ -1161,6 +1161,25 @@ gulp.task('svgstore', function () {
         .pipe(svgstore())
         .pipe(gulp.dest('dist/icons/'));
 });
+gulp.task('svgstore-debug', function () {
+    return gulp
+        .src('dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug/**/*.svg')
+        .pipe(svgmin(function (file) {
+            var prefix = path.basename(file.relative, path.extname(file.relative));
+            return {
+                plugins: [{
+                    cleanupIDs: {
+                        prefix: prefix + '-',
+                        minify: true
+                    }
+                }]
+            }
+        }))
+        .pipe(svgstore())
+        .pipe(gulp.dest('vendor/icons/'));
+});
+
+
 //////////////////////////////////////////////////////
 gulp.task('START QUANT', function(){
     runSequence('WATCHER:NEW', 'SERVER')

@@ -275,6 +275,16 @@
     width:100%;
     bottom:130px;
     background-color: #d2cfd2;
+    .icon {
+      width: 2em;
+      height: 2em;
+      background: transparent !important;
+    }
+    span {
+      color: #fff;
+      font-size: 11px;
+      margin-left: -15px;
+    }
   }
   .mediaMap__bounder{
     position: absolute;
@@ -283,10 +293,25 @@
     margin: auto;
     top:0;
     bottom:0;
-    border-left: 2px dashed;
-    border-right: 2px dashed;
+    border-left: 4px solid;
+    border-right: 4px solid;
     &.tp{
       color: #444386;
+      span{
+        background-color: #444386;
+      }
+    }
+    &.tl{
+      color: #862e28;
+      span{
+        background-color: #862e28;
+      }
+    }
+    &.d{
+      color: #a45b13;
+      span{
+        background-color: #a45b13;
+      }
     }
   }
   .mediaMap__container{
@@ -298,6 +323,21 @@
     bottom:0;
     &.tp{
       background: #4b4f86;
+      span{
+        background-color: #444386;
+      }
+    }
+    &.tl{
+      background: #86242a;
+      span{
+        background-color: #86242a;
+      }
+    }
+    &.d{
+      background: #a46417;
+      span{
+        background-color: #a46417;
+      }
     }
   }
 }

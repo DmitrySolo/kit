@@ -2601,6 +2601,14 @@ body.debug {
   width: 100%;
   bottom: 130px;
   background-color: #d2cfd2; }
+  .mediaMap .icon {
+    width: 2em;
+    height: 2em;
+    background: transparent !important; }
+  .mediaMap span {
+    color: #fff;
+    font-size: 11px;
+    margin-left: -15px; }
 
 .mediaMap__bounder {
   position: absolute;
@@ -2609,10 +2617,20 @@ body.debug {
   margin: auto;
   top: 0;
   bottom: 0;
-  border-left: 2px dashed;
-  border-right: 2px dashed; }
+  border-left: 4px solid;
+  border-right: 4px solid; }
   .mediaMap__bounder.tp {
     color: #444386; }
+    .mediaMap__bounder.tp span {
+      background-color: #444386; }
+  .mediaMap__bounder.tl {
+    color: #862e28; }
+    .mediaMap__bounder.tl span {
+      background-color: #862e28; }
+  .mediaMap__bounder.d {
+    color: #a45b13; }
+    .mediaMap__bounder.d span {
+      background-color: #a45b13; }
 
 .mediaMap__container {
   position: absolute;
@@ -2623,3 +2641,13 @@ body.debug {
   bottom: 0; }
   .mediaMap__container.tp {
     background: #4b4f86; }
+    .mediaMap__container.tp span {
+      background-color: #444386; }
+  .mediaMap__container.tl {
+    background: #86242a; }
+    .mediaMap__container.tl span {
+      background-color: #86242a; }
+  .mediaMap__container.d {
+    background: #a46417; }
+    .mediaMap__container.d span {
+      background-color: #a46417; }

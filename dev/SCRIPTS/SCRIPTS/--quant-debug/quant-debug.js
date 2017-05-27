@@ -3,6 +3,22 @@
 $( document ).ready(function() {
 var engP = 'Platy bonito oceanic whitetip shark orangespine unicorn fish loach goby rockweed gunnel turkeyfish Port Jackson shark buffalofish, southern grayling. Arapaima viperfish eeltail catfish pearl danio Black swallower, Atlantic trout sailfin silverside. Tang, marlin tui chub Indian mul flashlight fish, skilfish loosejaw lenok porcupinefish bandfish. Clownfish eeltail catfish: freshwater hatchetfish codlet tenpounder ladyfish scissor-tail rasbora lancetfish tigerperch king of herring. Grideye Mozambique tilapia oceanic whitetip shark clingfish North American darter mail-cheeked fish lamprey bramble shark. Parrotfish loweye catfish squaretail. Lighthousefish yellowhead jawfish shark mola mola sunfish.';
 var eHead = 'This is Header';
+var mediaMap = {
+    phoneBreakpoint: parseInt($('#phone-upper-boundary').text(),10),
+    tabletPortraitBreakpoint:parseInt($('#tablet-portrait-upper-boundary').text(),10),
+    tabletLandscapeBreakpoint:parseInt($('#tablet-landscape-upper-boundary').text(),10),
+    desktopBreakpoint:parseInt($('#desktop-upper-boundary').text(),10),
+    desktoplBreakpoint:parseInt($('#desktopl-upper-boundary').text(),10)
+}
+var mediaBreakPoinsChecker= function () {
+    $( window ).resize(function(){
+        var size = window.innerWidth;
+        switch (size){
+
+        }
+
+    })
+}
 
 var addToBufer= function (content) {
     let tmp   = document.createElement('INPUT'), // Создаём новый текстовой input
