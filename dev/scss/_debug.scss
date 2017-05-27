@@ -269,4 +269,35 @@
     bottom:0;
     background-color: #fff;
   }
+
+  .mediaMap {
+    position: fixed !important;
+    width:100%;
+    bottom:130px;
+    background-color: #d2cfd2;
+  }
+  .mediaMap__bounder{
+    position: absolute;
+    left:0;
+    right:0;
+    margin: auto;
+    top:0;
+    bottom:0;
+    border-left: 2px dashed;
+    border-right: 2px dashed;
+    &.tp{
+      color: #444386;
+    }
+  }
+  .mediaMap__container{
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    margin: auto;
+    bottom:0;
+    &.tp{
+      background: #4b4f86;
+    }
+  }
 }

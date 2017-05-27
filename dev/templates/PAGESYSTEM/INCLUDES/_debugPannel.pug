@@ -1,13 +1,25 @@
 //Debug Panel
 .debug-Pannel-Right
     .debug-Pannel-Right__section
-        button#unsplash Unsplash
+        button#unsplash Gallery
         input
         input
     .debug-Pannel-Right__section
     .debug-Pannel-Right__section
     .debug-Pannel-Right__section
 .debug
+    section.mediaMap(style="height:50px;")
+        .mediaMap__bounder.dl
+            .mediaMap__container.dl
+        .mediaMap__bounder.d
+            .mediaMap__container.d
+        .mediaMap__bounder.tl
+            .mediaMap__container.tl
+        .mediaMap__bounder.tp(style="width:"+MEDIA.tabletPortraitBreakpoint)
+            .mediaMap__container.tp(style="width:"+MEDIA.tabletPcontainer)
+        .mediaMap__bounder.m(style="width:"+MEDIA.phoneBreakpoint+"; color:#27ae60;",)
+            .mediaMap__container.m(style="width:100%; background:#27ae60;")
+
     section.pb-section.clearfix#ball.hidden
         span.lh Line height
         .spacer.element-i
@@ -129,3 +141,12 @@
                             input(id='colorPicker',type='color')
                         span C
                             input(id='colorPickerFont',type='color')
+            .debugPannel__section.hidden
+                span#phone-upper-boundary= MEDIA.phoneBreakpoint
+                span#tablet-portrait-upper-boundary=MEDIA.tabletPortraitBreakpoint
+                span#tablet-landscape-upper-boundary=MEDIA.tabletLandscapeBreakpoint
+                span#desktop-upper-boundary=MEDIA.desktopBreakpoint
+                span#desktopl-upper-boundary=MEDIA.desktoplBreakpoint
+                span#tablet-p-container=MEDIA.tabletPcontainer
+                span#tablet-l-container=MEDIA.tabletLcontainer
+                span#desktop-container=MEDIA.desktopContainer
