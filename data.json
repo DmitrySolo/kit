@@ -1,5 +1,43 @@
 {
 	"LIBS": {
+		"baseButton": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"hero_video": {
+			"js": {
+				"hero_video-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
+					"container": "footer/init",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"jadejs": {
+			"js": {
+				"jadejs-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--jadejs/jadejs.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"JQ": {
 			"js": {
 				"jquery": {
@@ -34,36 +72,10 @@
 				"": ""
 			}
 		},
-		"baseButton": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"quant-lib": {
 			"js": {
 				"quant-lib-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"jadejs": {
-			"js": {
-				"jadejs-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--jadejs/jadejs.js",
 					"container": "footer/libs+"
 				}
 			},
@@ -81,22 +93,7 @@
 			"css": {
 				"": ""
 			}
-		},
-		"hero_video": {
-			"js": {
-				"hero_video-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
-					"container": "footer/init",
-					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
 		}
-	},
-	"hero_video": {
-		"hero_video": "1"
 	},
 	"menuData1": {
 		"Home": {
@@ -126,6 +123,9 @@
 			"dop_class": "lightmenu__item--active",
 			"childs": ""
 		}
+	},
+	"hero_video": {
+		"hero_video": "1"
 	},
 	"head": {
 		"lang": "ru",
@@ -214,7 +214,7 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\n)"
+		"'HEADER'": "('Roboto Slab')\r\n)"
 	},
 	"space": "em",
 	"element_space": ".5",
@@ -242,17 +242,17 @@
 	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\n\n)",
-	"siteMinWidth": "690px",
+	"container-styles": "(\r\n\r\n)",
+	"siteMinWidth": "$tablet-p-container",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\n)"
+		"min-height": "1px\r\n)"
 	},
 	"phone-upper-boundary": "600px",
 	"tablet-portrait-upper-boundary": "768px",
 	"tablet-landscape-upper-boundary": "994px",
-	"desktop-upper-boundary": "1200px",
+	"desktop-upper-boundary": "1400px",
 	"grid-map": {
 		"mobile": "(prefix",
 		"container": "$siteWidth",
@@ -265,6 +265,9 @@
 	"nr-colStyles": {
 		"float": "left"
 	},
+	"tablet-p-container": "690px",
+	"tablet-l-container": "900px",
+	"desktop-container": "1120px",
 	"blueprint": "undefined",
 	"izolate": "false"
 }

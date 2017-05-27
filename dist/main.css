@@ -2462,15 +2462,16 @@ body.debug {
     border-radius: 20%; }
 
 .debugPannel__wrapper {
+  background: #3c3f41 !important;
+  box-shadow: 2px -1px 0px 0px #2f2d2d;
+  border-top: solid 1px #b19e9e;
   position: fixed !important;
-  background: #fff !important;
   z-index: 100000000;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
   height: 7.31441em;
-  box-shadow: -2px 3px 20px 0px #000000;
   padding-top: 1.3328em;
   padding-bottom: 1.3328em;
   padding-right: 1.3328em;
@@ -2480,17 +2481,27 @@ body.debug {
     color: #fff; }
 
 .debugPannel {
-  background: #fff !important; }
+  background: #3c3f41 !important; }
 
 .debugPannel__section {
   width: 40%;
-  background: #fff !important; }
+  background: #3c3f41 !important; }
   .debugPannel__section:last-child {
     width: 18%; }
   .debugPannel__section button {
-    font-size: 10px !important; }
+    font-size: 10px !important;
+    border: none;
+    background: #27ae60;
+    margin: 0; }
+    .debugPannel__section button:hover {
+      background-color: #229955; }
+    .debugPannel__section button:active {
+      background-color: #19703e; }
+    .debugPannel__section button.on {
+      background-color: #0b311b;
+      border-bottom: 1px solid #27ae60; }
   .debugPannel__section ul.debugPannel__colorSpecific {
-    background: #fff !important; }
+    background: #3c3f41 !important; }
 
 .debugPannel__colorSpecific li {
   display: inline-block;

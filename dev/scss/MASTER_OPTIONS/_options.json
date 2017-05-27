@@ -49,7 +49,6 @@
 	"colums": "12",
 	"gutter-width": "1em",
 	"container-styles": "(\r\n\r\n)",
-	"siteMinWidth": "690px",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
@@ -58,7 +57,11 @@
 	"phone-upper-boundary": "600px",
 	"tablet-portrait-upper-boundary": "768px",
 	"tablet-landscape-upper-boundary": "994px",
-	"desktop-upper-boundary": "1200px",
+	"desktop-upper-boundary": "1400px",
+	"tablet-p-container": "690px",
+	"siteMinWidth": "$tablet-p-container",
+	"tablet-l-container": "900px",
+	"desktop-container": "1120px",
 	"grid-map": {
 		"mobile": "(prefix",
 		"container": "$siteWidth",

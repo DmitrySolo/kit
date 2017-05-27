@@ -17,6 +17,31 @@ var addToBufer= function (content) {
     focus.focus();
 
 }
+    function paste(elem) {
+             elem.focus();
+        document.execCommand('paste');
+        console.log(elem.val())
+        return elem.val();
+
+
+
+    }
+    function handlePaste (e) {
+        var clipboardData, pastedData;
+
+        // Stop data actually being pasted into div
+        e.stopPropagation();
+        e.preventDefault();
+
+        // Get pasted data via clipboard API
+        clipboardData = e.clipboardData || window.clipboardData;
+        pastedData = clipboardData.getData('Text');
+
+        // Do whatever with pasteddata
+        alert(pastedData);
+    }
+
+    document.getElementById('editableDiv').addEventListener('paste', handlePaste);
 
     $('a').removeAttr('href');
 //qntDragDrop( document.getElementById('ball'));
@@ -40,54 +65,57 @@ var addToBufer= function (content) {
 
     function MakeEditable (elem) {
     elem.on('click',function(e){
+        if (!$(this).hasClass('debugElement')){
+            $('*').removeClass('debugElement');
+            $('*').removeAttr('contentEditable');
+            $(this).addClass('resizeble');
+            $(this).addClass('debugElement');
+            var _this = $(this);
+            //$( ".resizeble" ).resizable( "disable" );
+            $(this).resizable({stop: function( event, ui ) {
+                //_this.css("lineHeight",_this.height()+'px');
+                //_this.resizable( "destroy" );
+            }}).draggable();
 
-        $('*').removeClass('debugElement');
-        $(this).addClass('resizeble');
-        $(this).addClass('debugElement');
-        var _this = $(this);
-        //$( ".resizeble" ).resizable( "disable" );
-        $(this).resizable({stop: function( event, ui ) {
-            //_this.css("lineHeight",_this.height()+'px');
-            //_this.resizable( "destroy" );
-        }}).draggable();
+
+            $(this).attr('contentEditable','true');
+
+            var Classes = $(this).attr('class').replace(/resizeble/,'')
+                .replace(/debugElement/g,'')
+                .replace(/ui-resizable/g,'')
+                .replace(/ui-draggable-handle/g,'')
+                .replace(/ui-draggable/g,'');
+
+            var tag = $(this).prop("tagName");
+
+            newnotifyStr = tag+'>'+Classes;
+
+            //$(this).append("<span style='position: absolute;top:-20px; left:0;font-size:10px;'>"+newnotifyStr+"</span>")
+            if (newnotifyStr != notifyStr)
+            {$(this).notify(newnotifyStr,{autoHideDelay: 2000,style:'tagClassInfo'});
+                notifyStr =newnotifyStr}
+            buferMsgArr = Classes.split(" ");
+            var buferMsg ='';
+            var clName ='';
+            for (clName in buferMsgArr){
+                if (buferMsgArr[clName] != '')
+                    buferMsg+='.'+buferMsgArr[clName]+' ';
+            }
+            addToBufer(buferMsg);
+
+            // Возвращаем фокус туда, где был
+            fontSize = $(this).css('fontSize');
+            if (! $('#ball').hasClass('eventLock')){
+                $('#ball').css('fontSize',fontSize);
+                $('.lh').text('Line height of font-size ='+ fontSize);
+            }
 
 
 
 
-        var Classes = $(this).attr('class').replace(/resizeble/,'')
-            .replace(/debugElement/g,'')
-            .replace(/ui-resizable/g,'')
-            .replace(/ui-draggable-handle/g,'')
-            .replace(/ui-draggable/g,'');
 
-        var tag = $(this).prop("tagName");
-
-        newnotifyStr = tag+'>'+Classes;
-
-        //$(this).append("<span style='position: absolute;top:-20px; left:0;font-size:10px;'>"+newnotifyStr+"</span>")
-        if (newnotifyStr != notifyStr)
-        {$(this).notify(newnotifyStr,{autoHideDelay: 2000,style:'tagClassInfo'});
-            notifyStr =newnotifyStr}
-        buferMsgArr = Classes.split(" ");
-        var buferMsg ='';
-        var clName ='';
-        for (clName in buferMsgArr){
-            if (buferMsgArr[clName] != '')
-                buferMsg+='.'+buferMsgArr[clName]+' ';
         }
-        addToBufer(buferMsg);
-
-         // Возвращаем фокус туда, где был
-        fontSize = $(this).css('fontSize');
-         if (! $('#ball').hasClass('eventLock')){
-             $('#ball').css('fontSize',fontSize);
-             $('.lh').text('Line height of font-size ='+ fontSize);
-         }
-
-
-
-
-        e.stopPropagation()})
+        e.stopPropagation() })
 
 
     }
@@ -102,19 +130,23 @@ var addToBufer= function (content) {
 ///////////////
     $('#spacerSwitcher').on('click',function () {
         $('#ball').toggleClass('hidden');
+        $(this).toggleClass('on')
     })
     $('#gridb').on('click',function () {
         $('#grid').toggleClass('hidden')
+        $(this).toggleClass('on')
     })
     $('#debugViewSwitcher').on('click',function () {
         $('body').toggleClass('debug');
+        $(this).toggleClass('on');
+
     })
     $('#addRect').on('click',function () {
         $(".debugElement").append( "<div class='mod rect'></div>" );
         MakeEditable($('.mod.rect'));
     })
     $('#addHeader').on('click',function () {
-        $(".debugElement").append( "<h1 class='mod header'>"+eHead+"</h1><h2 class='mod header'>"+eHead+"</h2><h3 class='mod header'>"+eHead+"</h3><h4 class='mod header'>"+eHead+"</h4><h5 class='mod header'>"+eHead+"</h5><h6 class='mod header'>"+eHead+"</h6>" );
+        $(".debugElement").append( "<h1 class='mod header' contenteditable='true'>"+eHead+"</h1><h2 class='mod header'>"+eHead+"</h2><h3 class='mod header'>"+eHead+"</h3><h4 class='mod header'>"+eHead+"</h4><h5 class='mod header'>"+eHead+"</h5><h6 class='mod header'>"+eHead+"</h6>" );
         MakeEditable($('.mod.header'));
     })
     $('#addP').on('click',function () {
@@ -123,7 +155,8 @@ var addToBufer= function (content) {
     })
 
     $('#addImg').on('click',function () {
-        $("body").append( "<div class='mod img' style='width:200px; height: 200px;'><img  src='"+$('#imginpt').val()+"' width='100%'></div>" );
+       var url = paste($('#imginpt'));
+        $("body").append( "<div class='mod img' style='width:200px; height: 200px;'><img  src='"+window.clipboardData+"' width='100%'></div>" );
         //var iframe = $('#pugIfrm').contents().find( "a" ).css( "background-color", "#6bdabd" );
         MakeEditable($('.mod.img'));
     })
@@ -168,6 +201,7 @@ var addToBufer= function (content) {
                 .replace(/eventLock/g,'')
                 .replace(/ui-resizable/g,'')
                 .replace(/ui-resizable-handle/g,'')
+                .replace(/class='mod header' contenteditable='true'/g,'')
                 .replace(/ui-draggable/g,'')
                 .replace(/ui-draggable-handle/g,'')
                 .replace(/debugElement/g,'');
@@ -201,26 +235,23 @@ var addToBufer= function (content) {
     })
     $('#lock').on('click',function () {
         $( ".debugElement" ).toggleClass('eventLock');
+        $(this).toggleClass('on')
 
 
     })
     $('#unlock').on('click',function () {
-        $( ".eventLock" ).removeClass("eventLock");
-
+        $( ".eventLock" ).not('#ball').removeClass("eventLock");
+            $('#lock').removeClass('on');
 
     })
 
     $('#lockSpacer').on('click',function () {
         $( "#ball" ).toggleClass('eventLock');
+        $(this).toggleClass('on');
 
 
     })
 
-    $('#htmlToPugctn .js-trigger').on('click',function () {
-        $('#htmlToPugctn').remove();
-
-
-    })
 
     $('#save').on('click',function () {
         localStorage.setItem('save', $('body').not($('#__bs_script__')).html());
@@ -257,9 +288,33 @@ var addToBufer= function (content) {
     $('#unsplash').on('click',function () {
 
         $('body').append('<div id="imagesOnline" class="htmlToPug"><iframe id="pugIfrm" src="http://allthefreestock.com/" width="1200" height="800" align="left"></iframe><span class="js-trigger">close</span></div>');
+        $('#imagesOnline .js-trigger-close').on('click',function () {
+            $('#imagesOnline').remove();
+
+
+        })
+        $('#imagesOnline').closest('.js-trigger-hide').on('click',function () {
+            $('#imagesOnline').css('left',"-"+$(this).width)*0.9+"px";
+
+
+        })
+
 
     })
+    function download(filename, text) {
+        var pom = document.createElement('a');
+        pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        pom.setAttribute('download', filename);
 
-
+        if (document.createEvent) {
+            var event = document.createEvent('MouseEvents');
+            event.initEvent('click', true, true);
+            pom.dispatchEvent(event);
+        }
+        else {
+            pom.click();
+        }
+    }
+    //download('test.txt', 'Hello world!');
 
 });
