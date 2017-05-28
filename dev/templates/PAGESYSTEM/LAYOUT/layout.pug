@@ -5,6 +5,7 @@ html(lang=''+head.lang)
     head
         include ../INCLUDES/_head
     body(class=''+bodyClass)
+        iframe(id="project-debug", name="content", frameborder="0" src="http://localhost:3000/", style="background-color: rgb(49, 32, 52)" width='100%',height='100%')
         .hidden
             include ../../../../dist/icons/icons.svg
         include _header
@@ -13,3 +14,5 @@ html(lang=''+head.lang)
             .container
                 block main
         include _footer
+        include ../SCRIPTS-STYLES/FOOTER/_footerScripts
+    include ../INCLUDES/_debugPannel

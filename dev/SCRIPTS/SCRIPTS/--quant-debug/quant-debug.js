@@ -1,6 +1,38 @@
 //  quant-debug script
 
 $( document ).ready(function() {
+
+    //Viewport Resizer
+
+    //$('body').wrapInner( "<div id='project-debug'></div>");
+    $( "#__bs_script__" ).insertAfter( "body" );
+    var v_options = {
+        viewports : [
+            {
+                size: '320',
+                name:  'Mobile'
+            },
+            {
+                size: '768',
+                name:  'Tablet'
+            },
+            {
+                size: '1024',
+                name: 'Horizontal Tablet'
+            },
+            {
+                size: '1280',
+                name: 'Desktop'
+            }
+        ],
+        showName: true,
+        reset: 'Original',
+        animation: '',
+        wrapper:'project-debug'
+    };
+    viewpr(v_options);
+
+
 var engP = 'Platy bonito oceanic whitetip shark orangespine unicorn fish loach goby rockweed gunnel turkeyfish Port Jackson shark buffalofish, southern grayling. Arapaima viperfish eeltail catfish pearl danio Black swallower, Atlantic trout sailfin silverside. Tang, marlin tui chub Indian mul flashlight fish, skilfish loosejaw lenok porcupinefish bandfish. Clownfish eeltail catfish: freshwater hatchetfish codlet tenpounder ladyfish scissor-tail rasbora lancetfish tigerperch king of herring. Grideye Mozambique tilapia oceanic whitetip shark clingfish North American darter mail-cheeked fish lamprey bramble shark. Parrotfish loweye catfish squaretail. Lighthousefish yellowhead jawfish shark mola mola sunfish.';
 var eHead = 'This is Header';
 var mediaMap = {
@@ -73,7 +105,7 @@ var addToBufer= function (content) {
 
     document.getElementById('editableDiv').addEventListener('paste', handlePaste);
 
-    $('a').removeAttr('href');
+    $('a','#project-debug').removeAttr('href');
 //qntDragDrop( document.getElementById('ball'));
     $('#ball').draggable();
     $('.spacer').resizable();
@@ -153,7 +185,7 @@ var addToBufer= function (content) {
 
 
 
-    MakeEditable($('*,spacer block-i').not($('.debug,.debugPannel,.debugPannel__wrapper,body,html,.debugPannel *,#ball,#ball *')));
+    MakeEditable($('*,spacer block-i','#project-debug').not($('.debug,.debugPannel,.debugPannel__wrapper,body,html,.debugPannel *,#ball,#ball *')));
 
     $('.grid,.grid *').unbind('click');
 
@@ -284,13 +316,13 @@ var addToBufer= function (content) {
 
 
     $('#save').on('click',function () {
-        localStorage.setItem('save', $('body').not($('#__bs_script__')).html());
+        localStorage.setItem('save', $('#project-debug').html());
 
 
     })
 
     $('#load').on('click',function () {
-        $('body').html(localStorage.getItem('save'));
+        $('#project-debug').html(localStorage.getItem('save'));
 
         console.log(localStorage.getItem('save'))
     })
