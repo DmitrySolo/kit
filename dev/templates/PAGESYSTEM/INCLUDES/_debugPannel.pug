@@ -29,10 +29,10 @@
             span=MEDIA.phoneBreakpoint
             .mediaMap__container.m(style="width:100%; background:#27ae60;")
                 span=MEDIA.phoneBreakpoint
-                .mediaInfo
+                .mediaInfo.clearfix
                     +I('arrow','icon-breakpoits')
-                    #widthOf
-                    #viewpr-list
+                    #widthOf.f-left
+                    #viewpr-list.f-left
     section.pb-section.clearfix#ball.hidden
         span.lh Line height
         .spacer.element-i
@@ -109,6 +109,7 @@
                 button#load Load
                 button#lockSpacer lock Spacer
                 button#addBkg add Background
+                button#startMediaTest Media
                 #editableDiv(contenteditable='true') Paste
             .debugPannel__section.f-left.colors
                     .pb-element.f-left

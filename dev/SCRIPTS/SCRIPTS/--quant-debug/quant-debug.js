@@ -6,31 +6,7 @@ $( document ).ready(function() {
 
     //$('body').wrapInner( "<div id='project-debug'></div>");
     $( "#__bs_script__" ).insertAfter( "body" );
-    var v_options = {
-        viewports : [
-            {
-                size: '320',
-                name:  'Mobile'
-            },
-            {
-                size: '768',
-                name:  'Tablet'
-            },
-            {
-                size: '1024',
-                name: 'Horizontal Tablet'
-            },
-            {
-                size: '1280',
-                name: 'Desktop'
-            }
-        ],
-        showName: true,
-        reset: 'Original',
-        animation: '',
-        wrapper:'project-debug'
-    };
-    viewpr(v_options);
+
 
 
 var engP = 'Platy bonito oceanic whitetip shark orangespine unicorn fish loach goby rockweed gunnel turkeyfish Port Jackson shark buffalofish, southern grayling. Arapaima viperfish eeltail catfish pearl danio Black swallower, Atlantic trout sailfin silverside. Tang, marlin tui chub Indian mul flashlight fish, skilfish loosejaw lenok porcupinefish bandfish. Clownfish eeltail catfish: freshwater hatchetfish codlet tenpounder ladyfish scissor-tail rasbora lancetfish tigerperch king of herring. Grideye Mozambique tilapia oceanic whitetip shark clingfish North American darter mail-cheeked fish lamprey bramble shark. Parrotfish loweye catfish squaretail. Lighthousefish yellowhead jawfish shark mola mola sunfish.';
@@ -185,7 +161,7 @@ var addToBufer= function (content) {
 
 
 
-    MakeEditable($('*,spacer block-i','#project-debug').not($('.debug,.debugPannel,.debugPannel__wrapper,body,html,.debugPannel *,#ball,#ball *')));
+    MakeEditable($('*,spacer block-i').not($('.debug,.debugPannel,.debugPannel__wrapper,body,html,.debugPannel *,#ball,#ball *')));
 
     $('.grid,.grid *').unbind('click');
 
@@ -363,6 +339,39 @@ var addToBufer= function (content) {
 
 
     })
+    $('#startMediaTest').on('click',function () {
+        $('*').not($('.debug')).not($('.debugPannel__wrapper')).not($('html')).not($('body')).not($('.debugPannel__wrapper *')).css('display','none')
+        $('body').prepend(
+            "<div class='iframeWrapper'> <iframe id='project-debug' name='content' frameborder='0' src='http://localhost:3000/' style='background-color: rgb(49, 32, 52)' width='100%'height='100%'></iframe>")
+
+        var v_options = {
+            viewports : [
+                {
+                    size: '320',
+                    name:  'Mobile'
+                },
+                {
+                    size: '768',
+                    name:  'Tablet'
+                },
+                {
+                    size: '1024',
+                    name: 'Horizontal Tablet'
+                },
+                {
+                    size: '1280',
+                    name: 'Desktop'
+                }
+            ],
+            showName: true,
+            reset: 'Original',
+            animation: '',
+            wrapper:'project-debug'
+        };
+        viewpr(v_options);
+
+    })
+
     function download(filename, text) {
         var pom = document.createElement('a');
         pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));

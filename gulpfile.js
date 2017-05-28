@@ -118,7 +118,8 @@ gulp.task('default', function() {
 gulp.task('bro', function() {
     browserSync.init({
         server: {
-            baseDir: "dist/"
+            baseDir: "dist/",
+            ghostMode: false
         }
     });
 });
