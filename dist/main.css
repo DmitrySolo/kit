@@ -305,7 +305,7 @@ body.pg-loading {
   text-transform: none; }
 
 .icon-right:before {
-  content: '6'; }
+  content: ""; }
 
 /*
  * NORMALIZE
@@ -696,7 +696,7 @@ html {
   line-height: 1.7; }
   @media (min-width: 690px) {
     html {
-      font-size: calc( 14px + (18 - 14)* ((100vw - 690px) / (1170 - 690))); } }
+      font-size: calc( 14px + (18 - 14) * ((100vw - 690px) / (1170 - 690))); } }
   @media (min-width: 1170px) {
     html {
       font-size: 18px; } }

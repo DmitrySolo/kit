@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var downloadPath= '../../../Downloads/';
 var foreach = require('gulp-foreach');
 var wait = require('gulp-wait');
 var path = require('path');
@@ -1240,3 +1241,16 @@ gulp.task('parc', function () {
     fs.writeFile("dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js", JSON.stringify(ast));
 
 });
+gulp.task('cocs', function () {
+    gulp.src([ downloadPath+'/*.scss','dev/scss/_draft.scss'])
+        .pipe(concat('_draft3.scss'))
+        .pipe(gulp.dest('dev/scss/'));
+
+});
+gulp.task('cocsWatch', function () {
+    return watch([downloadPath+'/*.scss'], function () {
+        gulp.start('cocs');
+    });
+
+});
+

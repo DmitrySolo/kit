@@ -4,19 +4,30 @@ $( document ).ready(function() {
     function getObjects(elemClassStr) {
 
         elemClassStr= elemClassStr.trim();
-
+        var result={};
+        result.selectors=[];
+        result.styles=[];
         for (var i in jsonCss.stylesheet.rules){
             selObj = jsonCss.stylesheet.rules[i];
             //console.log(selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr))
             if(selObj.hasOwnProperty('selectors') && selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr) != -1){
                 //console.log('ss'+selObj.selectors.toString().replace(/\./g,'')+'sss', elemClassStr)
+
+                result.selectors.push(selObj.selectors.toString());
+                var stylesArr=[];
                 for(var zi in selObj.declarations){
 
                     var dec = selObj.declarations[zi];
-                   console.log(  dec.property+":::"+dec.value)
+                    var propVal ={
+                        propery:dec.property,
+                        value : dec.value
+                    }
+                    stylesArr.push(propVal)
                 }
+                result.styles.push(stylesArr)
             }
         }
+        return result;
     }
     //console.log(jsonCss.stylesheet.rules);
 
@@ -124,17 +135,7 @@ var addToBufer= function (content) {
     function MakeEditable (elem) {
 
 
-        elem.dblclick(function(e) {
-           classStr =  $(this).attr('class').replace(/resizeble/,'')
-                .replace(/debugElement/g,'')
-                .replace(/ui-resizable/g,'')
-                .replace(/ui-draggable-handle/g,'')
-                .replace(/ui-draggable/g,'');
-            getObjects(classStr);
 
-            $('body').prepend('<div id="modPannel">'+$(this).css('color')+'</div>');
-            e.stopPropagation();
-        });
 
     elem.on('click',function(e){
         if (!$(this).hasClass('debugElement')){
@@ -149,7 +150,42 @@ var addToBufer= function (content) {
                 //_this.resizable( "destroy" );
             }}).draggable();
 
+            $('.debugElement').keypress(function (e) {
+                if (e.keyCode === 0 || e.keyCode === 32) {
+                    e.preventDefault()
+                    console.log('ewe')
+                    classStr =  $(this).attr('class').replace(/resizeble/,'')
+                        .replace(/debugElement/g,'')
+                        .replace(/ui-resizable/g,'')
+                        .replace(/ui-draggable-handle/g,'')
+                        .replace(/ui-draggable/g,'');
+                    getObjects(classStr);
 
+                    $('body').prepend('<div id="modPannel">'+$(this).css('color')+'</div>');
+                    e.stopPropagation();
+                }
+            })
+
+
+            $('.debugElement').contextmenu(function(e) {
+                classStr =  $(this).attr('class').replace(/resizeble/,'')
+                    .replace(/debugElement/g,'')
+                    .replace(/ui-resizable/g,'')
+                    .replace(/ui-draggable-handle/g,'')
+                    .replace(/ui-draggable/g,'');
+               var resMap = getObjects(classStr);
+                    var cssModPanelText ='';
+                    for (var i in resMap.selectors){
+                        cssModPanelText+=resMap.selectors[i]+'{';
+                        for (var zi in resMap.styles[i]){
+                            cssModPanelText+=resMap.styles[i][zi].propery+':'+resMap.styles[i][zi].value+';'
+                        }cssModPanelText+='}';
+                    }
+
+                $('body').prepend('<div id="modPannel">'+cssModPanelText+'</div>');
+                e.stopPropagation();
+                download('style.scss', cssModPanelText)
+            });
             //$(this).attr('contentEditable','true');
 
             var Classes = $(this).attr('class').replace(/resizeble/,'')
