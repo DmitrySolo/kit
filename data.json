@@ -44,6 +44,21 @@
 				"": ""
 			}
 		},
+		"baseButton": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"JQ": {
 			"js": {
 				"jquery": {
@@ -72,6 +87,21 @@
 				"vieport": {
 					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
 					"container": "footer/libs+"
+				},
+				"viewportResizer": {
+					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
 				}
 			},
 			"css": {
@@ -93,21 +123,6 @@
 			"js": {
 				"xRayView-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"baseButton": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
 					"container": "footer/init"
 				}
 			},
@@ -203,7 +218,7 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\r\n)"
+		"'HEADER'": "('Roboto Slab')\n)"
 	},
 	"space": "em",
 	"element_space": ".5",
@@ -231,31 +246,19 @@
 	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
-	"siteMinWidth": "$tablet-p-container",
+	"container-styles": "(\n\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\r\n)"
+		"min-height": "1px\n)"
 	},
 	"phone-upper-boundary": "600px",
 	"tablet-portrait-upper-boundary": "768px",
 	"tablet-landscape-upper-boundary": "994px",
 	"desktop-upper-boundary": "1200px",
-	"grid-map": {
-		"mobile": "(prefix",
-		"container": "$siteWidth",
-		"breakpoint": "$desktop-upper-boundary)",
-		"tablet-p": "(prefix",
-		"tablet-l": "(prefix",
-		"mediumScreen": "(prefix",
-		"largeScreen": "(prefix"
-	},
-	"nr-colStyles": {
-		"float": "left"
-	},
 	"desktopl-upper-boundary": "1400px",
 	"tablet-p-container": "690px",
+	"siteMinWidth": "$tablet-p-container",
 	"tablet-l-container": "900px",
 	"desktop-container": "1120px",
 	"MEDIA": {
@@ -267,6 +270,18 @@
 		"tabletPcontainer": "690px",
 		"tabletLcontainer": "900px",
 		"desktopContainer": "1120px"
+	},
+	"grid-map": {
+		"mobile": "(prefix",
+		"container": "$siteWidth",
+		"breakpoint": "$desktop-upper-boundary)",
+		"tablet-p": "(prefix",
+		"tablet-l": "(prefix",
+		"mediumScreen": "(prefix",
+		"largeScreen": "(prefix"
+	},
+	"nr-colStyles": {
+		"float": "left"
 	},
 	"blueprint": "undefined",
 	"izolate": "false"

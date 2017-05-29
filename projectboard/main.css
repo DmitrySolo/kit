@@ -2594,7 +2594,8 @@ body.debug {
   width: 10%;
   right: 0;
   bottom: 0;
-  background-color: #fff; }
+  background-color: #fff;
+  display: none; }
 
 .mediaMap {
   position: fixed !important;
@@ -2609,6 +2610,9 @@ body.debug {
     color: #fff;
     font-size: 11px;
     margin-left: -15px; }
+  .mediaMap li {
+    display: inline-block;
+    background: none !important; }
 
 .mediaMap__bounder {
   position: absolute;
@@ -2655,5 +2659,20 @@ body.debug {
 .icon-breakpoits {
   margin-top: -30px; }
 
-#project-debug .debugPannel {
-  display: none; }
+#project-debug {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto; }
+  #project-debug .debugPannel {
+    display: none; }
+
+#viewpr-list {
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.modPannel {
+  position: absolute;
+  background: #fff;
+  box-shadow: 3px 3px 3px silver; }

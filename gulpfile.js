@@ -6,6 +6,7 @@ var cache = require('gulp-cache');
 var runSequence  = require('run-sequence');
 const template = require('gulp-template');
 const zip = require('gulp-zip');
+var css = require('css');
 var merge = require('gulp-merge-json');
 var data = require('./data.json');
 htmlv = require('gulp-html-validator');
@@ -1231,4 +1232,11 @@ gulp.task('[D] DIST FRONT-END', function (done) {
     gulp.src('dist/**/*')
         .pipe(zip('dist_'+dateTime+'.zip'))
         .pipe(gulp.dest('../'))
+});
+
+gulp.task('parc', function () {
+    var css = require('css');
+    var ast=css.parse(file = fs.readFileSync('dist/main.css', "utf8"));
+    fs.writeFile("dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js", JSON.stringify(ast));
+
 });

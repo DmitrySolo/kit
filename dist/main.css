@@ -305,7 +305,7 @@ body.pg-loading {
   text-transform: none; }
 
 .icon-right:before {
-  content: ""; }
+  content: '6'; }
 
 /*
  * NORMALIZE
@@ -696,7 +696,7 @@ html {
   line-height: 1.7; }
   @media (min-width: 690px) {
     html {
-      font-size: calc( 14px + (18 - 14) * ((100vw - 690px) / (1170 - 690))); } }
+      font-size: calc( 14px + (18 - 14)* ((100vw - 690px) / (1170 - 690))); } }
   @media (min-width: 1170px) {
     html {
       font-size: 18px; } }
@@ -2594,7 +2594,8 @@ body.debug {
   width: 10%;
   right: 0;
   bottom: 0;
-  background-color: #fff; }
+  background-color: #fff;
+  display: none; }
 
 .mediaMap {
   position: fixed !important;
@@ -2609,6 +2610,9 @@ body.debug {
     color: #fff;
     font-size: 11px;
     margin-left: -15px; }
+  .mediaMap li {
+    display: inline-block;
+    background: none !important; }
 
 .mediaMap__bounder {
   position: absolute;
@@ -2655,5 +2659,20 @@ body.debug {
 .icon-breakpoits {
   margin-top: -30px; }
 
-#project-debug .debugPannel {
-  display: none; }
+#project-debug {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto; }
+  #project-debug .debugPannel {
+    display: none; }
+
+#viewpr-list {
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.modPannel {
+  position: absolute;
+  background: #fff;
+  box-shadow: 3px 3px 3px silver; }

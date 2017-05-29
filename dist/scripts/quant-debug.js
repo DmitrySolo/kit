@@ -1,10 +1,30 @@
 //  quant-debug script
 
 $( document ).ready(function() {
+    function getObjects(elemClassStr) {
+
+        elemClassStr= elemClassStr.trim();
+
+        for (var i in jsonCss.stylesheet.rules){
+            selObj = jsonCss.stylesheet.rules[i];
+            //console.log(selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr))
+            if(selObj.hasOwnProperty('selectors') && selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr) != -1){
+                //console.log('ss'+selObj.selectors.toString().replace(/\./g,'')+'sss', elemClassStr)
+                for(var zi in selObj.declarations){
+
+                    var dec = selObj.declarations[zi];
+                   console.log(  dec.property+":::"+dec.value)
+                }
+            }
+        }
+    }
+    //console.log(jsonCss.stylesheet.rules);
+
 
     //Viewport Resizer
 
     //$('body').wrapInner( "<div id='project-debug'></div>");
+    $('a').removeAttr('href');
     $( "#__bs_script__" ).insertAfter( "body" );
 
 
@@ -81,7 +101,7 @@ var addToBufer= function (content) {
 
     document.getElementById('editableDiv').addEventListener('paste', handlePaste);
 
-    $('a','#project-debug').removeAttr('href');
+
 //qntDragDrop( document.getElementById('ball'));
     $('#ball').draggable();
     $('.spacer').resizable();
@@ -102,10 +122,24 @@ var addToBufer= function (content) {
             })
 
     function MakeEditable (elem) {
+
+
+        elem.dblclick(function(e) {
+           classStr =  $(this).attr('class').replace(/resizeble/,'')
+                .replace(/debugElement/g,'')
+                .replace(/ui-resizable/g,'')
+                .replace(/ui-draggable-handle/g,'')
+                .replace(/ui-draggable/g,'');
+            getObjects(classStr);
+
+            $('body').prepend('<div id="modPannel">'+$(this).css('color')+'</div>');
+            e.stopPropagation();
+        });
+
     elem.on('click',function(e){
         if (!$(this).hasClass('debugElement')){
             $('*').removeClass('debugElement');
-            $('*').removeAttr('contentEditable');
+           // $('*').removeAttr('contentEditable');
             $(this).addClass('resizeble');
             $(this).addClass('debugElement');
             var _this = $(this);
@@ -116,7 +150,7 @@ var addToBufer= function (content) {
             }}).draggable();
 
 
-            $(this).attr('contentEditable','true');
+            //$(this).attr('contentEditable','true');
 
             var Classes = $(this).attr('class').replace(/resizeble/,'')
                 .replace(/debugElement/g,'')
@@ -210,6 +244,7 @@ var addToBufer= function (content) {
             .draggable()
             .resizable();
         MakeEditable($(clone));
+        MakeEditable($('*',clone));
 
 
     })
@@ -340,9 +375,9 @@ var addToBufer= function (content) {
 
     })
     $('#startMediaTest').on('click',function () {
-        $('*').not($('.debug')).not($('.debugPannel__wrapper')).not($('html')).not($('body')).not($('.debugPannel__wrapper *')).css('display','none')
-        $('body').prepend(
-            "<div class='iframeWrapper'> <iframe id='project-debug' name='content' frameborder='0' src='http://localhost:3000/' style='background-color: rgb(49, 32, 52)' width='100%'height='100%'></iframe>")
+        $('*').not($('.debug')).not($('.mediaMap')).not($('.mediaMap *')).not($('.debugPannel__wrapper')).not($('html')).not($('body')).not($('.debugPannel__wrapper *')).css('display','none')
+        $('body').css('background','#3c3f41').prepend(
+            "<div class='iframeWrapper'> <iframe id='project-debug' name='content' frameborder='0' src='http://localhost:3000/' scrolling='no' style='background-color: rgb(49, 32, 52)' width='100%'height='1000px'></iframe>")
 
         var v_options = {
             viewports : [
