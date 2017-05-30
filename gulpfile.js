@@ -2,12 +2,17 @@ var gulp = require('gulp');
 var downloadPath= '../../../Downloads/';
 var foreach = require('gulp-foreach');
 var wait = require('gulp-wait');
+var frep = require('gulp-frep');
 var path = require('path');
 var cache = require('gulp-cache');
 var runSequence  = require('run-sequence');
+var sourcemaps = require('gulp-sourcemaps');
 const template = require('gulp-template');
+var convert = require('convert-source-map');
 const zip = require('gulp-zip');
+var scsslint = require('gulp-scss-lint');
 var css = require('css');
+const cssScss = require('gulp-css-scss');
 var merge = require('gulp-merge-json');
 var data = require('./data.json');
 htmlv = require('gulp-html-validator');
@@ -674,7 +679,9 @@ gulp.task('styles', function () {
     if (!alredyCompile){
         alredyCompile = true;
         gulp.src('dev/scss/main.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass.sync().on('error', sass.logError))
+        .pipe(sourcemaps.write('maps/'))
         .pipe(gulp.dest('dist'))
         .pipe(gulp.dest('blueprint'))
         .pipe(gulp.dest('projectboard'));
@@ -1253,4 +1260,27 @@ gulp.task('cocsWatch', function () {
     });
 
 });
+gulp.task('scss-lint', function() {
+    return gulp.src('dev/scss/_draft3.scss')
+        .pipe(scsslint({
+            'config': 'slint.yml',
+        }))
+        .pipe(gulp.dest('dev/scss/_draft3e.scss'));
+});
+gulp.task('frep', function() {
+    var patterns= [
+        {
 
+            pattern:/header\.mainHeader/ig,
+            replacement:'header.mainHeaderoooo'
+        }
+    ];
+    gulp.src('dev/scss/_draft3.scss')
+        .pipe(frep(patterns))
+        .pipe(gulp.dest('dev/scss/_draft4.scss'))
+});
+gulp.task('css-scss', () => {
+    return gulp.src('dev/scss/_draft3.scss')
+        .pipe(cssScss())
+        .pipe(gulp.dest('scss'));
+});
