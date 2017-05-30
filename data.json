@@ -44,21 +44,6 @@
 				"": ""
 			}
 		},
-		"baseButton": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"JQ": {
 			"js": {
 				"jquery": {
@@ -123,6 +108,21 @@
 			"js": {
 				"xRayView-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"baseButton": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
 					"container": "footer/init"
 				}
 			},

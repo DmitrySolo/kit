@@ -53,6 +53,7 @@ var colors = require('colors');
 var iconfont = require('gulp-iconfont');
 var runTimestamp = Math.round(Date.now()/1000);
 var iconfontCss = require('gulp-iconfont-css');
+var sourceMap = require('source-map');
 
 // QUANT PLUGINS&FUNCTIONS
 
@@ -1284,3 +1285,22 @@ gulp.task('css-scss', () => {
         .pipe(cssScss())
         .pipe(gulp.dest('scss'));
 });
+
+gulp.task('readMap', () => {
+
+    var data = JSON.parse(fs.readFileSync('dist/maps/main.css.map', 'utf8'));
+
+    var smc = new sourceMap.SourceMapConsumer(data);
+
+    smc.eachMapping(function (m) {
+
+        if (m.generatedLine==1810 && m.generatedColumn==4){console.log(m)}
+
+    })
+
+});
+file = fs.readFileSync('test.test', "utf8")
+gulp.task('shorthand', shell.task([
+    file
+
+]))

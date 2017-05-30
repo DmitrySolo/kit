@@ -11,7 +11,7 @@ $( document ).ready(function() {
             selObj = jsonCss.stylesheet.rules[i];
             //console.log(selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr))
             if(selObj.hasOwnProperty('selectors') && selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr) != -1){
-                //console.log('ss'+selObj.selectors.toString().replace(/\./g,'')+'sss', elemClassStr)
+                console.log(selObj)
 
                 result.selectors.push(selObj.selectors.toString());
                 var stylesArr=[];
