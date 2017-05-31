@@ -7,12 +7,14 @@ $( document ).ready(function() {
         var result={};
         result.selectors=[];
         result.styles=[];
+        result.position = []
         for (var i in jsonCss.stylesheet.rules){
             selObj = jsonCss.stylesheet.rules[i];
             //console.log(selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr))
             if(selObj.hasOwnProperty('selectors') && selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr) != -1){
                 console.log(selObj)
-
+                result.position.push(selObj.position.start.column)
+                result.position.push(selObj.position.start.line)
                 result.selectors.push(selObj.selectors.toString());
                 var stylesArr=[];
                 for(var zi in selObj.declarations){
@@ -134,9 +136,6 @@ var addToBufer= function (content) {
 
     function MakeEditable (elem) {
 
-
-
-
     elem.on('click',function(e){
         if (!$(this).hasClass('debugElement')){
             $('*').removeClass('debugElement');
@@ -174,7 +173,10 @@ var addToBufer= function (content) {
                     .replace(/ui-draggable-handle/g,'')
                     .replace(/ui-draggable/g,'');
                var resMap = getObjects(classStr);
+               console.log(resMap)
                     var cssModPanelText ='';
+                    var mapLine = resMap.position[1];
+                    var mapCol = resMap.position[0];
                     for (var i in resMap.selectors){
                         cssModPanelText+=resMap.selectors[i]+'{';
                         for (var zi in resMap.styles[i]){
@@ -184,7 +186,7 @@ var addToBufer= function (content) {
 
                 $('body').prepend('<div id="modPannel">'+cssModPanelText+'</div>');
                 e.stopPropagation();
-                download('style.scss', cssModPanelText)
+                download('msg.qnt',mapLine+'-'+mapCol)
             });
             //$(this).attr('contentEditable','true');
 
@@ -457,6 +459,6 @@ var addToBufer= function (content) {
             pom.click();
         }
     }
-    //download('test.txt', 'Hello world!');
+    download('inf.inf', '/Applications/PhpStorm.app/Contents/MacOS/phpstorm /Users/admin/Desktop/QUANT/kit --line 3 /Users/admin/Desktop/QUANT/kit/scss/main.css');
 
 });

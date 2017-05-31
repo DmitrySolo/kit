@@ -1256,8 +1256,8 @@ gulp.task('cocs', function () {
 
 });
 gulp.task('cocsWatch', function () {
-    return watch([downloadPath+'/*.scss'], function () {
-        gulp.start('cocs');
+    return watch([downloadPath+'/*.inf'], function () {
+        gulp.start('shorthand');
     });
 
 });
@@ -1286,21 +1286,50 @@ gulp.task('css-scss', () => {
         .pipe(gulp.dest('scss'));
 });
 
-gulp.task('readMap', () => {
 
-    var data = JSON.parse(fs.readFileSync('dist/maps/main.css.map', 'utf8'));
 
-    var smc = new sourceMap.SourceMapConsumer(data);
 
+
+    gulp.task('readMap', () => {
+    var resursPath = '';
+    var dataMap = JSON.parse(fs.readFileSync('dist/maps/main.css.map', 'utf8'));//
+    var file = fs.readFileSync(downloadPath+'msg.qnt', "utf8")//
+
+    var fileArr = file.split('-');
+        console.log(fileArr);
+    var col = fileArr[1];
+    var line = fileArr[0];
+
+    var smc = new sourceMap.SourceMapConsumer(dataMap);
+    var orLine='';
     smc.eachMapping(function (m) {
 
-        if (m.generatedLine==1810 && m.generatedColumn==4){console.log(m)}
+        if (m.generatedLine==line && m.generatedColumn==col){
+
+            resursPath  = m.source;
+            orLine = m.originalLine;
+            console.log(orLine);
+            gulp.src('dist/maps/main.css.map', {read: false}).pipe(shell(['/Applications/PhpStorm.app/Contents/MacOS/phpstorm --line '+orLine+' ~/Desktop/QUANT/kit/dev/scss/'+resursPath]))
+            fs.unlinkSync(downloadPath+'msg.qnt', "utf8")
+        }
 
     })
 
-});
-file = fs.readFileSync('test.test', "utf8")
-gulp.task('shorthand', shell.task([
-    file
 
-]))
+});
+
+gulp.task('browserCMDWATCHER', function () {
+    return watch([downloadPath+'/msg.qnt'], function () {
+        gulp.start('readMap');
+    });
+
+});
+
+//gulp.task('openStorm', shell.task(['/Applications/PhpStorm.app/Contents/MacOS/phpstorm /Users/admin/Desktop/QUANT/kit --line 1 /Users/admin/Desktop/QUANT/kit/dev/scss/'+resursPath]))
+
+
+// file = fs.readFileSync(downloadPath+'inf.inf', "utf8")
+// gulp.task('shorthand', shell.task([
+//     file
+//
+// ]))
