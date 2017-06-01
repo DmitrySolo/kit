@@ -353,7 +353,7 @@ var addToBufer= function (content) {
 
     $('#getScssCode').on('click',function () {
 
-
+//Руддщ Вгву
 
         $.ajax({
             url: "http://localhost:8080/?line=2647&col=4",
