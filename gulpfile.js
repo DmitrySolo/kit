@@ -127,8 +127,26 @@ gulp.task('bro', function() {
     browserSync.init({
         server: {
             baseDir: "dist/",
-            ghostMode: false
-        }
+            //ghostMode: false
+        },proxy: {
+            target: "http://yourlocal.dev",
+            proxyRes: [
+                function(proxyRes, req, res) {
+                    console.log(proxyRes.headers);
+                }
+            ]
+        },middleware:[ function (req, res, next) {
+
+
+
+                console.log('API request');
+
+                // access post body payload
+                console.log(req.body);
+
+
+            next();
+            }]
     });
 });
 
@@ -1292,11 +1310,11 @@ gulp.task('css-scss', () => {
 
     gulp.task('readMap', () => {
     var resursPath = '';
-    var dataMap = JSON.parse(fs.readFileSync('dist/maps/main.css.map', 'utf8'));//
-    var file = fs.readFileSync(downloadPath+'msg.qnt', "utf8")//
-
-    var fileArr = file.split('-');
-        console.log(fileArr);
+    // var dataMap = JSON.parse(fs.readFileSync('dist/maps/main.css.map', 'utf8'));//
+    // var file = fs.readFileSync(downloadPath+'msg.qnt', "utf8")//
+    //
+    // var fileArr = file.split('-');
+    //     console.log(fileArr);
     var col = fileArr[1];
     var line = fileArr[0];
 
@@ -1314,7 +1332,7 @@ gulp.task('css-scss', () => {
         }
 
     })
-
+            return resursPath
 
 });
 
@@ -1333,3 +1351,55 @@ gulp.task('browserCMDWATCHER', function () {
 //     file
 //
 // ]))
+gulp.task('shorthand', shell.task(['/Applications/PhpStorm.app/Contents/MacOS/phpstorm --line 12 ~/Desktop/QUANT/kit/dev/scss/main.css']));
+
+var http = require('http');
+var url = require('url');
+var querystring = require('querystring');
+
+function accept(req, res) {
+
+    res.writeHead(200, {
+        'Content-Type': 'text/plain',
+        'Cache-Control': 'no-cache',
+        'Access-Control-Allow-Origin': '*'
+    });
+    if(req.method=='GET') {
+        var url_parts = url.parse(req.url,true);
+        console.log(url_parts);
+        if (url_parts.query.hasOwnProperty('line') && url_parts.query.hasOwnProperty('col')){
+            var line =url_parts.query.line;
+            var col =url_parts.query.col;
+            var srvRes = getCssSource(line,col);
+        }
+
+        res.end(srvRes);
+
+    }
+
+
+
+
+}
+
+http.createServer(accept).listen(8080);
+
+//////////////////////// SERVER FUNCTIONS
+
+function getCssSource(line,col){
+    var resursPath = '';
+    var dataMap = JSON.parse(fs.readFileSync('dist/maps/main.css.map', 'utf8'));
+    var smc = new sourceMap.SourceMapConsumer(dataMap);
+    var orLine='';
+    smc.eachMapping(function (m) {
+        if (m.generatedLine==line && m.generatedColumn==col){
+
+            resursPath  = m.source;
+            orLine = m.originalLine;
+
+        }
+
+    })
+    return resursPath+'='+orLine
+
+}

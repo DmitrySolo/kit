@@ -350,6 +350,43 @@ var addToBufer= function (content) {
 
 
     })
+
+    $('#getScssCode').on('click',function () {
+
+
+
+        $.ajax({
+            url: "http://localhost:8080/?line=2647&col=4",
+        })
+            .done(function( data ) {
+                var dataArr = data.split('=')
+                var rsourse = dataArr[0];
+                var line = dataArr[1];
+
+                $.getJSON("maps/main.css.map", function (dataMap) {
+
+
+                    var filetoEditIndex = dataMap.sources.indexOf(rsourse)
+
+                    filetoEdit = dataMap.sourcesContent[filetoEditIndex];
+                    editor.insert(filetoEdit);
+                    editor.$blockScrolling = Infinity
+                    editor.gotoLine(line);
+                });
+
+
+
+
+            });
+
+
+
+
+
+
+    })
+
+
     $('#unlock').on('click',function () {
         $( ".eventLock" ).not('#ball').removeClass("eventLock");
             $('#lock').removeClass('on');
@@ -459,6 +496,6 @@ var addToBufer= function (content) {
             pom.click();
         }
     }
-    download('inf.inf', '/Applications/PhpStorm.app/Contents/MacOS/phpstorm /Users/admin/Desktop/QUANT/kit --line 3 /Users/admin/Desktop/QUANT/kit/scss/main.css');
+    //download('inf.inf', '/Applications/PhpStorm.app/Contents/MacOS/phpstorm /Users/admin/Desktop/QUANT/kit --line 3 /Users/admin/Desktop/QUANT/kit/scss/main.css');
 
 });

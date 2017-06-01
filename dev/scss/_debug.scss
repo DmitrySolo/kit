@@ -370,7 +370,14 @@
   .modPannel {
     position: absolute;
     background: #fff;
-    box-shadow: 3px 3px 3px silver;
+    box-shadow: 3px 3px 2px silver;
+  }
+  #editor {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    left: 0;
+    bottom: 0;
   }
 }
 
