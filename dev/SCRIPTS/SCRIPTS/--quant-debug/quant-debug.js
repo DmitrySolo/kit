@@ -142,6 +142,9 @@ var addToBufer= function (content) {
            // $('*').removeAttr('contentEditable');
             $(this).addClass('resizeble');
             $(this).addClass('debugElement');
+            $(this).append('<div class=".notEdit" style="position: relative"><span id="getCode" style="position: absolute">Get Code</span></div>')
+
+
             var _this = $(this);
             //$( ".resizeble" ).resizable( "disable" );
             $(this).resizable({stop: function( event, ui ) {
@@ -166,28 +169,28 @@ var addToBufer= function (content) {
             })
 
 
-            $('.debugElement').contextmenu(function(e) {
-                classStr =  $(this).attr('class').replace(/resizeble/,'')
-                    .replace(/debugElement/g,'')
-                    .replace(/ui-resizable/g,'')
-                    .replace(/ui-draggable-handle/g,'')
-                    .replace(/ui-draggable/g,'');
-               var resMap = getObjects(classStr);
-               console.log(resMap)
-                    var cssModPanelText ='';
-                    var mapLine = resMap.position[1];
-                    var mapCol = resMap.position[0];
-                    for (var i in resMap.selectors){
-                        cssModPanelText+=resMap.selectors[i]+'{';
-                        for (var zi in resMap.styles[i]){
-                            cssModPanelText+=resMap.styles[i][zi].propery+':'+resMap.styles[i][zi].value+';'
-                        }cssModPanelText+='}';
-                    }
-
-                $('body').prepend('<div id="modPannel">'+cssModPanelText+'</div>');
-                e.stopPropagation();
-                download('msg.qnt',mapLine+'-'+mapCol)
-            });
+            // $('.debugElement').contextmenu(function(e) {
+            //     classStr =  $(this).attr('class').replace(/resizeble/,'')
+            //         .replace(/debugElement/g,'')
+            //         .replace(/ui-resizable/g,'')
+            //         .replace(/ui-draggable-handle/g,'')
+            //         .replace(/ui-draggable/g,'');
+            //    var resMap = getObjects(classStr);
+            //    console.log(resMap)
+            //         var cssModPanelText ='';
+            //         var mapLine = resMap.position[1];
+            //         var mapCol = resMap.position[0];
+            //         for (var i in resMap.selectors){
+            //             cssModPanelText+=resMap.selectors[i]+'{';
+            //             for (var zi in resMap.styles[i]){
+            //                 cssModPanelText+=resMap.styles[i][zi].propery+':'+resMap.styles[i][zi].value+';'
+            //             }cssModPanelText+='}';
+            //         }
+            //
+            //     $('body').prepend('<div id="modPannel">'+cssModPanelText+'</div>');
+            //     e.stopPropagation();
+            //     download('msg.qnt',mapLine+'-'+mapCol)
+            // });
             //$(this).attr('contentEditable','true');
 
             var Classes = $(this).attr('class').replace(/resizeble/,'')
@@ -233,7 +236,7 @@ var addToBufer= function (content) {
 
 
 
-    MakeEditable($('*,spacer block-i').not($('.debug,.debugPannel,.debugPannel__wrapper,body,html,.debugPannel *,#ball,#ball *')));
+    MakeEditable($('*,spacer block-i').not($('.notEdit,body,html,.ace_editor,.ace_editor *')).not('.notEdit *'));
 
     $('.grid,.grid *').unbind('click');
 
@@ -350,13 +353,27 @@ var addToBufer= function (content) {
 
 
     })
-
-    $('#getScssCode').on('click',function () {
-
-//Руддщ Вгву
+    var getcode = function () {
+        console.log('hekol')
+        classStr =  $('.debugElement').attr('class').replace(/resizeble/,'')
+            .replace(/debugElement/g,'')
+            .replace(/ui-resizable/g,'')
+            .replace(/ui-draggable-handle/g,'')
+            .replace(/ui-draggable/g,'');
+        var resMap = getObjects(classStr);
+        console.log(resMap)
+        var cssModPanelText ='';
+        var mapLine = resMap.position[1];
+        var mapCol = resMap.position[0];
+        for (var i in resMap.selectors){
+            cssModPanelText+=resMap.selectors[i]+'{';
+            for (var zi in resMap.styles[i]){
+                cssModPanelText+=resMap.styles[i][zi].propery+':'+resMap.styles[i][zi].value+';'
+            }cssModPanelText+='}';
+        }
 
         $.ajax({
-            url: "http://localhost:8080/?line=2647&col=4",
+            url: "http://localhost:8181/?line="+(mapLine)+"&col="+(mapCol-1),
         })
             .done(function( data ) {
                 var dataArr = data.split('=')
@@ -374,17 +391,11 @@ var addToBufer= function (content) {
                     editor.gotoLine(line);
                 });
 
-
-
-
             });
 
+    }
+    $("body").on('click','#getCode',getcode);
 
-
-
-
-
-    })
 
 
     $('#unlock').on('click',function () {

@@ -1366,11 +1366,12 @@ function accept(req, res) {
     });
     if(req.method=='GET') {
         var url_parts = url.parse(req.url,true);
-        console.log(url_parts);
-        if (url_parts.query.hasOwnProperty('line') && url_parts.query.hasOwnProperty('col')){
+        console.log(url_parts.query);
+        if (url_parts.query.line && url_parts.query.col){
             var line =url_parts.query.line;
             var col =url_parts.query.col;
             var srvRes = getCssSource(line,col);
+            console.log(srvRes);
         }
 
         res.end(srvRes);
@@ -1382,7 +1383,7 @@ function accept(req, res) {
 
 }
 
-http.createServer(accept).listen(8080);
+http.createServer(accept).listen(8181);
 
 //////////////////////// SERVER FUNCTIONS
 
@@ -1393,7 +1394,7 @@ function getCssSource(line,col){
     var orLine='';
     smc.eachMapping(function (m) {
         if (m.generatedLine==line && m.generatedColumn==col){
-
+            console.log(m);
             resursPath  = m.source;
             orLine = m.originalLine;
 

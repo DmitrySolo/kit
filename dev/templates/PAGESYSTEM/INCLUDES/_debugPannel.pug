@@ -1,19 +1,18 @@
 //Debug Panel
-#editor some text
-script(src='ace-builds-master/src/ace.js', type='text/javascript', charset='utf-8')
-script(src='ace-builds-master/src/theme-solarized_light.js', type='text/javascript', charset='utf-8')
-script(src='ace-builds-master/src/mode-scss.js', type='text/javascript', charset='utf-8')
-script(src='ace-builds-master/src/ext-language_tools.js')
+.editorsContainer.clearfix.notEdit
+    #editorPug.editor some textqqq
+    #editorScss.editor some text
+    #editorJs.editor some text
+script(src='node_modules/ace-builds/src/ace.js', type='text/javascript', charset='utf-8')
+script(src='node_modules/ace-builds/src/theme-tomorrow_night_eighties.js', type='text/javascript', charset='utf-8')
+script(src='node_modules/ace-builds/src/mode-scss.js', type='text/javascript', charset='utf-8')
+script(src='node_modules/ace-builds/src/ext-language_tools.js')
 script(src='maps/main.css.map')
-script.
-    var editor = ace.edit("editor");
-    var filetoEdit = '';
-script.
-    var editor = ace.edit("editor");
+script(role='scss').
+    var editor = ace.edit("editorScss");
     ace.require("ace/ext/language_tools");
     ace.require('ace/multi_select');
-    editor.setTheme("ace/theme/twilight");
-    editor.setTheme("ace/theme/solarized_light");
+    editor.setTheme("ace/theme/tomorrow_night_eighties");
     var JavaScriptMode = ace.require("ace/mode/scss").Mode;
     editor.session.setMode(new JavaScriptMode());
 
@@ -34,171 +33,215 @@ script.
         enableSnippets: true,
         enableLiveAutocompletion: true
     });
+script(role='pug').
+    var editor = ace.edit("editorPug");
+    ace.require("ace/ext/language_tools");
+    ace.require('ace/multi_select');
+    editor.setTheme("ace/theme/tomorrow_night_eighties");
+    var JavaScriptMode = ace.require("ace/mode/jade").Mode;
+    editor.session.setMode(new JavaScriptMode());
 
+    var staticWordCompleter = {
+        getCompletions: function(editor, session, pos, prefix, callback) {
+            var wordList = ["foo", "bar", "baz"];
+            callback(null, wordList.map(function(word) {
+                return {
+                    caption: word,
+                    value: word,
+                    meta: "static"
+                };
+            }));
+        }
+    }
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
+script(role='pug').
+    var editor = ace.edit("editorJs");
+    ace.require("ace/ext/language_tools");
+    ace.require('ace/multi_select');
+    editor.setTheme("ace/theme/tomorrow_night_eighties");
+    var JavaScriptMode = ace.require("ace/mode/javascript").Mode;
+    editor.session.setMode(new JavaScriptMode());
 
-.debug-Pannel-Right
-.debug-Pannel-Right__section
-button#unsplash Gallery
-input
-input
-.debug-Pannel-Right__section
-.debug-Pannel-Right__section
-.debug-Pannel-Right__section
-.debug
-.hidden
-    include   ../../../../vendor/icons/icons-debug.svg
-section.mediaMap(style="height:50px;")
-    .mediaMap__bounder.dl
-        .mediaMap__container.dl
-    .mediaMap__bounder.d(style="width:"+MEDIA.desktopBreakpoint)
-        span=MEDIA.desktopBreakpoint
-        .mediaMap__container.d(style="width:"+MEDIA.desktopContainer)
-            span=MEDIA.desktopContainer
-    .mediaMap__bounder.tl(style="width:"+MEDIA.tabletLandscapeBreakpoint)
-        span=MEDIA.tabletLandscapeBreakpoint
-        .mediaMap__container.tl(style="width:"+MEDIA.tabletLcontainer)
-            span=MEDIA.tabletLcontainer
-    .mediaMap__bounder.tp(style="width:"+MEDIA.tabletPortraitBreakpoint)
-        span=MEDIA.tabletPortraitBreakpoint
-        .mediaMap__container.tp(style="width:"+MEDIA.tabletPcontainer)
-            span=MEDIA.tabletPcontainer
-    .mediaMap__bounder.m(style="width:"+MEDIA.phoneBreakpoint+"; color:#27ae60;",)
-        span=MEDIA.phoneBreakpoint
-        .mediaMap__container.m(style="width:100%; background:#27ae60;")
+    var staticWordCompleter = {
+        getCompletions: function(editor, session, pos, prefix, callback) {
+            var wordList = ["foo", "bar", "baz"];
+            callback(null, wordList.map(function(word) {
+                return {
+                    caption: word,
+                    value: word,
+                    meta: "static"
+                };
+            }));
+        }
+    }
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
+
+.debug-Pannel-Right.notEdit
+    .debug-Pannel-Right__section
+        button#unsplash Gallery
+.debug.notEdit
+    .hidden
+        include   ../../../../vendor/icons/icons-debug.svg
+    section.mediaMap(style="height:50px;")
+        .mediaMap__bounder.dl
+            .mediaMap__container.dl
+        .mediaMap__bounder.d(style="width:"+MEDIA.desktopBreakpoint)
+            span=MEDIA.desktopBreakpoint
+            .mediaMap__container.d(style="width:"+MEDIA.desktopContainer)
+                span=MEDIA.desktopContainer
+        .mediaMap__bounder.tl(style="width:"+MEDIA.tabletLandscapeBreakpoint)
+            span=MEDIA.tabletLandscapeBreakpoint
+            .mediaMap__container.tl(style="width:"+MEDIA.tabletLcontainer)
+                span=MEDIA.tabletLcontainer
+        .mediaMap__bounder.tp(style="width:"+MEDIA.tabletPortraitBreakpoint)
+            span=MEDIA.tabletPortraitBreakpoint
+            .mediaMap__container.tp(style="width:"+MEDIA.tabletPcontainer)
+                span=MEDIA.tabletPcontainer
+        .mediaMap__bounder.m(style="width:"+MEDIA.phoneBreakpoint+"; color:#27ae60;",)
             span=MEDIA.phoneBreakpoint
-            .mediaInfo.clearfix
-                +I('arrow','icon-breakpoits')
-                #widthOf.f-left
-                #viewpr-list.f-left
-section.pb-section.clearfix#ball.hidden
-    span.lh Line height
-    .spacer.element-i
-        span Element i
-    .spacer.element-o
-        span Element o
-    .spacer.component-i
-        span Component i
-    .spacer.component-o
-        span Component o
-    .spacer.module-i
-        span Module ii
-    .spacer.module-o
-        span Module o
-    .spacer.block-i
-        span block i
-    .spacer.block-o
-        span block o
-section.pb-section.clearfix.grid.grid--debug.hidden#grid
-    .container
-        .row
-            .col-1-m.col-1-tp 1
-            .col-1-m.col-1-tp 2
-            .col-1-m.col-1-tp 3
-            .col-1-m.col-1-tp 4
-            .col-1-m.col-1-tp 5
-            .col-1-m.col-1-tp 6
-            .col-1-m.col-1-tp 7
-            .col-1-m.col-1-tp 8
-            .col-1-m.col-1-tp 9
-            .col-1-m.col-1-tp 10
-            .col-1-m.col-1-tp 11
-            .col-1-m.col-1-tp 12
-.debugPannel__wrapper
-    .debugPannel.clearfix
-        .debugPannel__section.f-left
-            ul.debugPannel__colorSpecific
-                li.headers#addHeader
-                    h6(style={margin: '0',"font-size":'1rem',"font-weight":'400',"text-shadow":"1px 1px 1px black"}) h1-h6
-                li#addP
-                    p(style={"text-shadow":"1px 1px 1px black"})  P
-                li
-                    ul(style={"text-shadow":"1px 1px 1px black"})  ul
-                    li(style={"text-shadow":"1px 1px 1px black"})  li
-                li
-                    .col-(style={"text-shadow":"1px 1px 1px black"})  .Col
-                li
-                    .container(style={width: '100%', padding: '0',"text-shadow":"2px 2px 2px black"}) .Cnt
-                li
-                    .row(style={margin: '0',"text-shadow":"1px 1px 1px black"}) .Row
-                li
-                    a(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) A
-                li
-                    span(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) Span
-                li
-                    input(type='text')#imginpt
-                li#addImg
-                    img(alt='img/svg',style={display: 'inline-flex', "vertical-align": 'middle',"text-shadow":"1px 1px 1px black"})
-                li#addRect
-                    div Div
-        .debugPannel__section.f-left
-            button#spacerSwitcher Spacer
-            button#gridb grid
-            button#debugViewSwitcher.on Debug View
-            button#clone Clone
-            button#getHtml Get View!
-            button#up Up
-            button#down Down
-            button#100p 100%
-            button#del Delete
-            button#lock Lock
-            button#unlock UnLock
-            button#save Save
-            button#load Load
-            button#lockSpacer lock Spacer
-            button#addBkg add Background
-            button#startMediaTest Media
-            button#getScssCode Get scss
-            #editableDiv(contenteditable='true') Paste
-        .debugPannel__section.f-left.colors
-                .pb-element.f-left
-                    .pb-colorBox
-                    .pb-colorBox
-                        span.pb-elementHeader Base
-                    .pb-colorBox
-                        span.pb-elementHeader Darken
-                    .pb-colorBox
-                        span.pb-elementHeader light
-                .pb-element.f-left
-                    span.pb-elementHeader 1
-                    .pb-colorBox.pb-colorBox--primary
-                    .pb-colorBox.pb-colorBox--primary-d
-                    .pb-colorBox.pb-colorBox--primary-l
-                .pb-element.f-left
-                    span.pb-elementHeader 2
-                    .pb-colorBox.pb-colorBox--secondary
-                    .pb-colorBox.pb-colorBox--secondary-d
-                    .pb-colorBox.pb-colorBox--secondary-l
-                .pb-element.f-left
-                    span.pb-elementHeader A
-                    .pb-colorBox.pb-colorBox--accent
-                    .pb-colorBox.pb-colorBox--accent-d
-                    .pb-colorBox.pb-colorBox--accent-l
-                .pb-element.f-left
-                    span.pb-elementHeader Fg
-                    .pb-colorBox.pb-colorBox--fground
-                    .pb-colorBox.pb-colorBox--fground-d
-                    .pb-colorBox.pb-colorBox--fground-l
-                .pb-element.f-left
-                    span.pb-elementHeader Bg
-                    .pb-colorBox.pb-colorBox--bground
-                    .pb-colorBox.pb-colorBox--bground-d
-                    .pb-colorBox.pb-colorBox--bground-l
-                .pb-element.f-left
-                    span.pb-elementHeader F
-                    .pb-colorBox.pb-colorBox--font
-                    .pb-colorBox.pb-colorBox--font-d
-                    .pb-colorBox.pb-colorBox--font-l
-                .pb-element.f-left
-                    span B
-                        input(id='colorPicker',type='color')
-                    span C
-                        input(id='colorPickerFont',type='color')
-        .debugPannel__section.hidden
-            span#phone-upper-boundary= MEDIA.phoneBreakpoint
-            span#tablet-portrait-upper-boundary=MEDIA.tabletPortraitBreakpoint
-            span#tablet-landscape-upper-boundary=MEDIA.tabletLandscapeBreakpoint
-            span#desktop-upper-boundary=MEDIA.desktopBreakpoint
-            span#desktopl-upper-boundary=MEDIA.desktoplBreakpoint
-            span#tablet-p-container=MEDIA.tabletPcontainer
-            span#tablet-l-container=MEDIA.tabletLcontainer
-            span#desktop-container=MEDIA.desktopContainer
+            .mediaMap__container.m(style="width:100%; background:#27ae60;")
+                span=MEDIA.phoneBreakpoint
+                .mediaInfo.clearfix
+                    +I('arrow','icon-breakpoits')
+                    #widthOf.f-left
+                    #viewpr-list.f-left
+    section.pb-section.clearfix#ball.hidden
+        span.lh Line height
+        .spacer.element-i
+            span Element i
+        .spacer.element-o
+            span Element o
+        .spacer.component-i
+            span Component i
+        .spacer.component-o
+            span Component o
+        .spacer.module-i
+            span Module ii
+        .spacer.module-o
+            span Module o
+        .spacer.block-i
+            span block i
+        .spacer.block-o
+            span block o
+    section.pb-section.clearfix.grid.grid--debug.hidden#grid
+        .container
+            .row
+                .col-1-m.col-1-tp 1
+                .col-1-m.col-1-tp 2
+                .col-1-m.col-1-tp 3
+                .col-1-m.col-1-tp 4
+                .col-1-m.col-1-tp 5
+                .col-1-m.col-1-tp 6
+                .col-1-m.col-1-tp 7
+                .col-1-m.col-1-tp 8
+                .col-1-m.col-1-tp 9
+                .col-1-m.col-1-tp 10
+                .col-1-m.col-1-tp 11
+                .col-1-m.col-1-tp 12
+    .debugPannel__wrapper.notEdit
+        .debugPannel.clearfix
+            .debugPannel__section.f-left
+                ul.debugPannel__colorSpecific
+                    li.headers#addHeader
+                        h6(style={margin: '0',"font-size":'1rem',"font-weight":'400',"text-shadow":"1px 1px 1px black"}) h1-h6
+                    li#addP
+                        p(style={"text-shadow":"1px 1px 1px black"})  P
+                    li
+                        ul(style={"text-shadow":"1px 1px 1px black"})  ul
+                        li(style={"text-shadow":"1px 1px 1px black"})  li
+                    li
+                        .col-(style={"text-shadow":"1px 1px 1px black"})  .Col
+                    li
+                        .container(style={width: '100%', padding: '0',"text-shadow":"2px 2px 2px black"}) .Cnt
+                    li
+                        .row(style={margin: '0',"text-shadow":"1px 1px 1px black"}) .Row
+                    li
+                        a(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) A
+                    li
+                        span(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) Span
+                    li
+                        input(type='text')#imginpt
+                    li#addImg
+                        img(alt='img/svg',style={display: 'inline-flex', "vertical-align": 'middle',"text-shadow":"1px 1px 1px black"})
+                    li#addRect
+                        div Div
+            .debugPannel__section.f-left
+                button#spacerSwitcher Spacer
+                button#gridb grid
+                button#debugViewSwitcher.on Debug View
+                button#clone Clone
+                button#getHtml Get View!
+                button#up Up
+                button#down Down
+                button#100p 100%
+                button#del Delete
+                button#lock Lock
+                button#unlock UnLock
+                button#save Save
+                button#load Load
+                button#lockSpacer lock Spacer
+                button#addBkg add Background
+                button#startMediaTest Media
+                button#getScssCode Get scss
+                #editableDiv(contenteditable='true') Paste
+            .debugPannel__section.f-left.colors
+                    .pb-element.f-left
+                        .pb-colorBox
+                        .pb-colorBox
+                            span.pb-elementHeader Base
+                        .pb-colorBox
+                            span.pb-elementHeader Darken
+                        .pb-colorBox
+                            span.pb-elementHeader light
+                    .pb-element.f-left
+                        span.pb-elementHeader 1
+                        .pb-colorBox.pb-colorBox--primary
+                        .pb-colorBox.pb-colorBox--primary-d
+                        .pb-colorBox.pb-colorBox--primary-l
+                    .pb-element.f-left
+                        span.pb-elementHeader 2
+                        .pb-colorBox.pb-colorBox--secondary
+                        .pb-colorBox.pb-colorBox--secondary-d
+                        .pb-colorBox.pb-colorBox--secondary-l
+                    .pb-element.f-left
+                        span.pb-elementHeader A
+                        .pb-colorBox.pb-colorBox--accent
+                        .pb-colorBox.pb-colorBox--accent-d
+                        .pb-colorBox.pb-colorBox--accent-l
+                    .pb-element.f-left
+                        span.pb-elementHeader Fg
+                        .pb-colorBox.pb-colorBox--fground
+                        .pb-colorBox.pb-colorBox--fground-d
+                        .pb-colorBox.pb-colorBox--fground-l
+                    .pb-element.f-left
+                        span.pb-elementHeader Bg
+                        .pb-colorBox.pb-colorBox--bground
+                        .pb-colorBox.pb-colorBox--bground-d
+                        .pb-colorBox.pb-colorBox--bground-l
+                    .pb-element.f-left
+                        span.pb-elementHeader F
+                        .pb-colorBox.pb-colorBox--font
+                        .pb-colorBox.pb-colorBox--font-d
+                        .pb-colorBox.pb-colorBox--font-l
+                    .pb-element.f-left
+                        span B
+                            input(id='colorPicker',type='color')
+                        span C
+                            input(id='colorPickerFont',type='color')
+            .debugPannel__section.hidden
+                span#phone-upper-boundary= MEDIA.phoneBreakpoint
+                span#tablet-portrait-upper-boundary=MEDIA.tabletPortraitBreakpoint
+                span#tablet-landscape-upper-boundary=MEDIA.tabletLandscapeBreakpoint
+                span#desktop-upper-boundary=MEDIA.desktopBreakpoint
+                span#desktopl-upper-boundary=MEDIA.desktoplBreakpoint
+                span#tablet-p-container=MEDIA.tabletPcontainer
+                span#tablet-l-container=MEDIA.tabletLcontainer
+                span#desktop-container=MEDIA.desktopContainer
