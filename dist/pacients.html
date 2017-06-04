@@ -59,28 +59,30 @@
     </main><!-- split footer.html -->
     <footer>This is footer</footer>
     <!--/////////////////////////////////////////////////////////////////-->
-    <script src="scripts/" type="text/javascript"></script>
     <script src="scripts/jquery.min.js" type="text/javascript"></script>
     <script src="scripts/quant-debug-JsonCss.js" type="text/javascript"></script>
+    <script src="scripts/" type="text/javascript"></script>
     <script src="scripts/notify.js" type="text/javascript"></script>
     <script src="scripts/jquery-ui.min.js" type="text/javascript"></script>
     <script src="scripts/viewpr.min.js" type="text/javascript"></script>
     <script src="scripts/viewpr.min.js" type="text/javascript"></script>
     <script src="scripts/quant-lib.js" type="text/javascript"></script>
+    <script src="scripts/xRayView.js" type="text/javascript"></script>
+    <script src="scripts/quant-debug.js" type="text/javascript"></script>
     <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
     <script src="scripts/baseButton.js" type="text/javascript"></script>
-    <script src="scripts/quant-debug.js" type="text/javascript"></script>
-    <script src="scripts/xRayView.js" type="text/javascript"></script>
   </body>
   <!--Debug Panel-->
   <div class="editorsContainer clearfix notEdit">
-    <div class="editor" id="editorPug">some textqqq</div>
-    <div class="editor" id="editorScss">some text</div>
+    <div class="editor" id="editorPug"></div>
+    <div class="editor" id="editorScss"></div>
     <div class="editor" id="editorJs">some text</div>
   </div>
   <script src="node_modules/ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
   <script src="node_modules/ace-builds/src/theme-tomorrow_night_eighties.js" type="text/javascript" charset="utf-8"></script>
   <script src="node_modules/ace-builds/src/mode-scss.js" type="text/javascript" charset="utf-8"></script>
+  <script src="node_modules/ace-builds/src/mode-jade.js" type="text/javascript" charset="utf-8"></script>
+  <script src="node_modules/ace-builds/src/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
   <script src="node_modules/ace-builds/src/ext-language_tools.js"></script>
   <script src="maps/main.css.map"></script>
   <script role="scss">
@@ -88,8 +90,8 @@
     ace.require("ace/ext/language_tools");
     ace.require('ace/multi_select');
     editor.setTheme("ace/theme/tomorrow_night_eighties");
-    var JavaScriptMode = ace.require("ace/mode/scss").Mode;
-    editor.session.setMode(new JavaScriptMode());
+    var scssMode = ace.require("ace/mode/scss").Mode;
+    editor.session.setMode(new scssMode());
     
     var staticWordCompleter = {
         getCompletions: function(editor, session, pos, prefix, callback) {
@@ -103,6 +105,7 @@
             }));
         }
     }
+    editor.resize()
     editor.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true,
@@ -110,15 +113,13 @@
     });
   </script>
   <script role="pug">
-    var editor = ace.edit("editorPug");
-    ace.require("ace/ext/language_tools");
-    ace.require('ace/multi_select');
-    editor.setTheme("ace/theme/tomorrow_night_eighties");
-    var JavaScriptMode = ace.require("ace/mode/jade").Mode;
-    editor.session.setMode(new JavaScriptMode());
+    var editorPug = ace.edit("editorPug");
+    editorPug.setTheme("ace/theme/tomorrow_night_eighties");
+    var PugMode = ace.require("ace/mode/jade").Mode;
+    editorPug.session.setMode(new PugMode());
     
     var staticWordCompleter = {
-        getCompletions: function(editor, session, pos, prefix, callback) {
+        getCompletions: function(editorPug, session, pos, prefix, callback) {
             var wordList = ["foo", "bar", "baz"];
             callback(null, wordList.map(function(word) {
                 return {
@@ -129,22 +130,22 @@
             }));
         }
     }
-    editor.setOptions({
+    editorPug.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true,
         enableLiveAutocompletion: true
     });
   </script>
-  <script role="pug">
-    var editor = ace.edit("editorJs");
+  <script role="js">
+    var editorJs = ace.edit("editorJs");
     ace.require("ace/ext/language_tools");
     ace.require('ace/multi_select');
-    editor.setTheme("ace/theme/tomorrow_night_eighties");
+    editorJs.setTheme("ace/theme/tomorrow_night_eighties");
     var JavaScriptMode = ace.require("ace/mode/javascript").Mode;
-    editor.session.setMode(new JavaScriptMode());
+    editorJs.session.setMode(new JavaScriptMode());
     
     var staticWordCompleter = {
-        getCompletions: function(editor, session, pos, prefix, callback) {
+        getCompletions: function(editorJs, session, pos, prefix, callback) {
             var wordList = ["foo", "bar", "baz"];
             callback(null, wordList.map(function(word) {
                 return {
@@ -155,7 +156,7 @@
             }));
         }
     }
-    editor.setOptions({
+    editorJs.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true,
         enableLiveAutocompletion: true

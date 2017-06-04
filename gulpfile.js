@@ -1389,6 +1389,8 @@ http.createServer(accept).listen(8181);
 
 function getCssSource(line,col){
     var resursPath = '';
+    var pugFileContent = '';
+    var jsFileContent = '';
     var dataMap = JSON.parse(fs.readFileSync('dist/maps/main.css.map', 'utf8'));
     var smc = new sourceMap.SourceMapConsumer(dataMap);
     var orLine='';
@@ -1399,8 +1401,9 @@ function getCssSource(line,col){
             orLine = m.originalLine;
 
         }
-
+    pugFileContent  = fs.readFileSync('dev/templates/PAGESYSTEM/PAGES/index.pug', "utf8");
+    jsFileContent =   fs.readFileSync('dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js', "utf8")
     })
-    return resursPath+'='+orLine
+    return resursPath+'[^]'+orLine+'[^]'+pugFileContent+'[^]'+jsFileContent
 
 }

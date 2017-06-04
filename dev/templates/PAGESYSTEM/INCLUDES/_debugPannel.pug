@@ -1,11 +1,13 @@
 //Debug Panel
 .editorsContainer.clearfix.notEdit
-    #editorPug.editor some textqqq
-    #editorScss.editor some text
+    #editorPug.editor
+    #editorScss.editor
     #editorJs.editor some text
 script(src='node_modules/ace-builds/src/ace.js', type='text/javascript', charset='utf-8')
 script(src='node_modules/ace-builds/src/theme-tomorrow_night_eighties.js', type='text/javascript', charset='utf-8')
 script(src='node_modules/ace-builds/src/mode-scss.js', type='text/javascript', charset='utf-8')
+script(src='node_modules/ace-builds/src/mode-jade.js', type='text/javascript', charset='utf-8')
+script(src='node_modules/ace-builds/src/mode-javascript.js', type='text/javascript', charset='utf-8')
 script(src='node_modules/ace-builds/src/ext-language_tools.js')
 script(src='maps/main.css.map')
 script(role='scss').
@@ -13,8 +15,8 @@ script(role='scss').
     ace.require("ace/ext/language_tools");
     ace.require('ace/multi_select');
     editor.setTheme("ace/theme/tomorrow_night_eighties");
-    var JavaScriptMode = ace.require("ace/mode/scss").Mode;
-    editor.session.setMode(new JavaScriptMode());
+    var scssMode = ace.require("ace/mode/scss").Mode;
+    editor.session.setMode(new scssMode());
 
     var staticWordCompleter = {
         getCompletions: function(editor, session, pos, prefix, callback) {
@@ -28,21 +30,20 @@ script(role='scss').
             }));
         }
     }
+    editor.resize()
     editor.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true,
         enableLiveAutocompletion: true
     });
 script(role='pug').
-    var editor = ace.edit("editorPug");
-    ace.require("ace/ext/language_tools");
-    ace.require('ace/multi_select');
-    editor.setTheme("ace/theme/tomorrow_night_eighties");
-    var JavaScriptMode = ace.require("ace/mode/jade").Mode;
-    editor.session.setMode(new JavaScriptMode());
+    var editorPug = ace.edit("editorPug");
+    editorPug.setTheme("ace/theme/tomorrow_night_eighties");
+    var PugMode = ace.require("ace/mode/jade").Mode;
+    editorPug.session.setMode(new PugMode());
 
     var staticWordCompleter = {
-        getCompletions: function(editor, session, pos, prefix, callback) {
+        getCompletions: function(editorPug, session, pos, prefix, callback) {
             var wordList = ["foo", "bar", "baz"];
             callback(null, wordList.map(function(word) {
                 return {
@@ -53,21 +54,21 @@ script(role='pug').
             }));
         }
     }
-    editor.setOptions({
+    editorPug.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true,
         enableLiveAutocompletion: true
     });
-script(role='pug').
-    var editor = ace.edit("editorJs");
+script(role='js').
+    var editorJs = ace.edit("editorJs");
     ace.require("ace/ext/language_tools");
     ace.require('ace/multi_select');
-    editor.setTheme("ace/theme/tomorrow_night_eighties");
+    editorJs.setTheme("ace/theme/tomorrow_night_eighties");
     var JavaScriptMode = ace.require("ace/mode/javascript").Mode;
-    editor.session.setMode(new JavaScriptMode());
+    editorJs.session.setMode(new JavaScriptMode());
 
     var staticWordCompleter = {
-        getCompletions: function(editor, session, pos, prefix, callback) {
+        getCompletions: function(editorJs, session, pos, prefix, callback) {
             var wordList = ["foo", "bar", "baz"];
             callback(null, wordList.map(function(word) {
                 return {
@@ -78,7 +79,7 @@ script(role='pug').
             }));
         }
     }
-    editor.setOptions({
+    editorJs.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true,
         enableLiveAutocompletion: true

@@ -133,17 +133,18 @@ var addToBufer= function (content) {
     "<span data-notify-text>dsd</span>" +
     "</div>"
             })
-
+///////////////////////////////////////////////////////////////////
     function MakeEditable (elem) {
 
     elem.on('click',function(e){
         if (!$(this).hasClass('debugElement')){
             $('*').removeClass('debugElement');
+            $('#getCode').remove();
            // $('*').removeAttr('contentEditable');
             $(this).addClass('resizeble');
             $(this).addClass('debugElement');
-            $(this).append('<div class=".notEdit" style="position: relative"><span id="getCode" style="position: absolute">Get Code</span></div>')
-
+                var position = $('.debugElement').position();
+                $('body').prepend('<div id="getCode" class=".notEdit" style="position: absolute;top: '+position.top+'px; left: '+position.left+'px; z-index:1000000000000000000000">Get Code</div>')
 
             var _this = $(this);
             //$( ".resizeble" ).resizable( "disable" );
@@ -228,7 +229,8 @@ var addToBufer= function (content) {
 
 
         }
-        e.stopPropagation() })
+        e.stopPropagation()
+        })
 
 
     }
@@ -353,48 +355,8 @@ var addToBufer= function (content) {
 
 
     })
-    var getcode = function () {
-        console.log('hekol')
-        classStr =  $('.debugElement').attr('class').replace(/resizeble/,'')
-            .replace(/debugElement/g,'')
-            .replace(/ui-resizable/g,'')
-            .replace(/ui-draggable-handle/g,'')
-            .replace(/ui-draggable/g,'');
-        var resMap = getObjects(classStr);
-        console.log(resMap)
-        var cssModPanelText ='';
-        var mapLine = resMap.position[1];
-        var mapCol = resMap.position[0];
-        for (var i in resMap.selectors){
-            cssModPanelText+=resMap.selectors[i]+'{';
-            for (var zi in resMap.styles[i]){
-                cssModPanelText+=resMap.styles[i][zi].propery+':'+resMap.styles[i][zi].value+';'
-            }cssModPanelText+='}';
-        }
-
-        $.ajax({
-            url: "http://localhost:8181/?line="+(mapLine)+"&col="+(mapCol-1),
-        })
-            .done(function( data ) {
-                var dataArr = data.split('=')
-                var rsourse = dataArr[0];
-                var line = dataArr[1];
-
-                $.getJSON("maps/main.css.map", function (dataMap) {
 
 
-                    var filetoEditIndex = dataMap.sources.indexOf(rsourse)
-
-                    filetoEdit = dataMap.sourcesContent[filetoEditIndex];
-                    editor.insert(filetoEdit);
-                    editor.$blockScrolling = Infinity
-                    editor.gotoLine(line);
-                });
-
-            });
-
-    }
-    $("body").on('click','#getCode',getcode);
 
 
 
@@ -508,5 +470,93 @@ var addToBufer= function (content) {
         }
     }
     //download('inf.inf', '/Applications/PhpStorm.app/Contents/MacOS/phpstorm /Users/admin/Desktop/QUANT/kit --line 3 /Users/admin/Desktop/QUANT/kit/scss/main.css');
+    var getCode = function () {
+        console.log('hekol')
+        classStr =  $('.debugElement').attr('class').replace(/resizeble/,'')
+            .replace(/debugElement/g,'')
+            .replace(/ui-resizable/g,'')
+            .replace(/ui-draggable-handle/g,'')
+            .replace(/ui-draggable/g,'');
+        var resMap = getObjects(classStr);
+        console.log(resMap)
+        var cssModPanelText ='';
+        var mapLine = resMap.position[1];
+        var mapCol = resMap.position[0];
+        for (var i in resMap.selectors){
+            cssModPanelText+=resMap.selectors[i]+'{';
+            for (var zi in resMap.styles[i]){
+                cssModPanelText+=resMap.styles[i][zi].propery+':'+resMap.styles[i][zi].value+';'
+            }cssModPanelText+='}';
+        }
 
+        $.ajax({
+            url: "http://localhost:8181/?line="+(mapLine)+"&col="+(mapCol-1),
+        })
+            .done(function( data ) {
+                var dataArr = data.split('=')
+                var rsourse = dataArr[0];
+                var line = dataArr[1];
+
+                $.getJSON("maps/main.css.map", function (dataMap) {
+
+
+                    var filetoEditIndex = dataMap.sources.indexOf(rsourse)
+
+                    filetoEdit = dataMap.sourcesContent[filetoEditIndex];
+                    editor.insert(filetoEdit);
+                    editor.$blockScrolling = Infinity
+                    editor.gotoLine(line);
+                });
+
+            });
+
+    }
+    $("body").on('click','#getCode',function () {
+
+        console.log('hekol')
+        classStr =  $('.debugElement').attr('class').replace(/resizeble/,'')
+            .replace(/debugElement/g,'')
+            .replace(/ui-resizable/g,'')
+            .replace(/ui-draggable-handle/g,'')
+            .replace(/ui-draggable/g,'');
+        var resMap = getObjects(classStr);
+        console.log(resMap)
+        var cssModPanelText ='';
+        var mapLine = resMap.position[1];
+        var mapCol = resMap.position[0];
+        for (var i in resMap.selectors){
+            cssModPanelText+=resMap.selectors[i]+'{';
+            for (var zi in resMap.styles[i]){
+                cssModPanelText+=resMap.styles[i][zi].propery+':'+resMap.styles[i][zi].value+';'
+            }cssModPanelText+='}';
+        }
+
+        $.ajax({
+            url: "http://localhost:8181/?line="+(mapLine)+"&col="+(mapCol-1),
+        })
+            .done(function( data ) {
+                var dataArr = data.split('[^]')
+                var rsourse = dataArr[0];
+                var line = dataArr[1];
+                var pugContent = dataArr[2];
+                var jsContent = dataArr[3];
+                $.getJSON("maps/main.css.map", function (dataMap) {
+
+
+                    var filetoEditIndex = dataMap.sources.indexOf(rsourse)
+
+                    filetoEdit = dataMap.sourcesContent[filetoEditIndex];
+                    editor.insert(filetoEdit);
+                    editor.$blockScrolling = Infinity
+                    editor.gotoLine(line);
+                    console.log(pugContent)
+                    editorPug.insert(pugContent);
+                    editorJs.insert(jsContent);
+                });
+
+            });
+
+
+
+    });
 });
