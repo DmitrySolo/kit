@@ -2116,56 +2116,56 @@ header.mainHeader {
 
 .element-i {
   background-image: linear-gradient(#1cff70 1px, transparent 1px), linear-gradient(90deg, #1cff70 1px, transparent 1px) !important;
-  background-size: 0.68em 0.68em;
+  background-size: 0.68em 0.68em !important;
   height: 2.72em; }
   .element-i span {
     background: #1cfd6f !important; }
 
 .element-o {
   background-image: linear-gradient(#19cd63 1px, transparent 1px), linear-gradient(90deg, #19cb62 1px, transparent 1px) !important;
-  background-size: 0.952em 0.952em;
+  background-size: 0.952em 0.952em !important;
   height: 2.856em; }
   .element-o span {
     background: #19cd63 !important; }
 
 .component-i {
   background-image: linear-gradient(#2d377b 1px, transparent 1px), linear-gradient(90deg, #2d377a 1px, transparent 1px) !important;
-  background-size: 1.3328em 1.3328em;
+  background-size: 1.3328em 1.3328em !important;
   height: 3.9984em; }
   .component-i span {
     background: #2d377a !important; }
 
 .component-o {
   background-image: linear-gradient(#282855 1px, transparent 1px), linear-gradient(90deg, #282854 1px, transparent 1px) !important;
-  background-size: 1.86592em 1.86592em;
+  background-size: 1.86592em 1.86592em !important;
   height: 5.59776em; }
   .component-o span {
     background: #2a2a55 !important; }
 
 .module-i {
   background-image: linear-gradient(#fb4f1f 1px, transparent 1px), linear-gradient(90deg, #f94e1f 1px, transparent 1px) !important;
-  background-size: 2.61229em 2.61229em;
+  background-size: 2.61229em 2.61229em !important;
   height: 5.22458em; }
   .module-i span {
     background: #fc4f1f !important; }
 
 .module-o {
   background-image: linear-gradient(#cc431f 1px, transparent 1px), linear-gradient(90deg, #ca421f 1px, transparent 1px) !important;
-  background-size: 3.6572em 3.6572em;
+  background-size: 3.6572em 3.6572em !important;
   height: 7.31441em; }
   .module-o span {
     background: #ce441f !important; }
 
 .block-i {
   background-image: linear-gradient(#c72064 1px, transparent 1px), linear-gradient(90deg, #c62064 1px, transparent 1px) !important;
-  background-size: 5.12008em 5.12008em;
+  background-size: 5.12008em 5.12008em !important;
   height: 5.12008em; }
   .block-i span {
     background: #c82064 !important; }
 
 .block-o {
   background-image: linear-gradient(#99214c 1px, transparent 1px), linear-gradient(90deg, #99214c 1px, transparent 1px) !important;
-  background-size: 7.16812em 7.16812em;
+  background-size: 7.16812em 7.16812em !important;
   height: 7.16812em; }
   .block-o span {
     background: #9a214d !important; }
@@ -2471,7 +2471,7 @@ body.debug {
   left: 0;
   right: 0;
   width: 100%;
-  height: 7.31441em;
+  height: 10.97161em;
   padding-top: 1.3328em;
   padding-bottom: 1.3328em;
   padding-right: 1.3328em;
@@ -2484,31 +2484,29 @@ body.debug {
   background: #3c3f41 !important; }
 
 .debugPannel__section {
-  width: 40%;
   background: #3c3f41 !important; }
   .debugPannel__section:last-child {
     width: 18%; }
   .debugPannel__section button {
     font-size: 10px !important;
     border: none;
-    background: #27ae60;
+    background: #006eb7 !important;
     margin: 0; }
     .debugPannel__section button:hover {
-      background-color: #229955; }
+      background-color: #005f9e !important; }
     .debugPannel__section button:active {
-      background-color: #19703e; }
+      background-color: #00406b !important; }
     .debugPannel__section button.on {
-      background-color: #0b311b;
-      border-bottom: 1px solid #27ae60; }
+      background-color: #00121e !important;
+      border-bottom: 2px solid #006eb7; }
   .debugPannel__section ul.debugPannel__colorSpecific {
     background: #3c3f41 !important; }
 
 .debugPannel__colorSpecific li {
   display: inline-block;
   vert-align: top;
-  width: 10%;
   text-align: center;
-  margin-left: -4px; }
+  background: #fff !important; }
 
 .ui-resizable-handle {
   background: transparent !important; }
@@ -2715,5 +2713,43 @@ body.debug {
   padding: 5px;
   background-color: darkred;
   color: #fff; }
+
+.panellInner, .ui-tabs {
+  background: #2d2d2d !important;
+  border: none !important; }
+
+ul.panellInner {
+  border: none !important; }
+
+.notEdit a, .notEdit li, .notEdit ul, .notEdit div, .notEdit h1, .notEdit h2, .notEdit h3, .notEdit h4, .notEdit h5, .notEdit h6, .notEdit p, .notEdit span, .notEdit button, .notEdit .col-1-tp, .notEdit .row {
+  background: none; }
+
+.notEdit .tabAnchr {
+  border-radius: 0%;
+  background: #3c3f41;
+  padding: .2em !important;
+  font-size: 14px !important; }
+
+.ui-tabs .ui-tabs-panel {
+  padding: 0.3em 0.2em !important; }
+
+li.ui-state-default {
+  border: none !important; }
+
+li.ui-tabs-active {
+  background: #e74c3c !important;
+  color: #fff !important; }
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+  color: #fff !important; }
+
+.ui-state-default a {
+  color: #c3c3c3 !important; }
+
+.tabList.elAdder {
+  font-size: 12px !important; }
+
+.ace-tomorrow-night-eighties {
+  background-color: #2D2D2D !important; }
 
 /*# sourceMappingURL=maps/main.css.map */

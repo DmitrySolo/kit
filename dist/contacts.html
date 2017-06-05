@@ -78,12 +78,12 @@
     <div class="editor" id="editorScss"></div>
     <div class="editor" id="editorJs">some text</div>
   </div>
-  <script src="node_modules/ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
-  <script src="node_modules/ace-builds/src/theme-tomorrow_night_eighties.js" type="text/javascript" charset="utf-8"></script>
-  <script src="node_modules/ace-builds/src/mode-scss.js" type="text/javascript" charset="utf-8"></script>
-  <script src="node_modules/ace-builds/src/mode-jade.js" type="text/javascript" charset="utf-8"></script>
-  <script src="node_modules/ace-builds/src/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
-  <script src="node_modules/ace-builds/src/ext-language_tools.js"></script>
+  <script src="ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace-builds/src/theme-tomorrow_night_eighties.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace-builds/src/mode-scss.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace-builds/src/mode-jade.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace-builds/src/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace-builds/src/ext-language_tools.js"></script>
   <script src="maps/main.css.map"></script>
   <script role="scss">
     var editor = ace.edit("editorScss");
@@ -225,37 +225,39 @@
     </section>
     <div class="debugPannel__wrapper notEdit">
       <div class="debugPannel clearfix">
-        <div class="debugPannel__section f-left">
-          <div class="tabList">
+        <div class="debugPannel__section col-4-tp">
+          <div class="tabList elAdder">
             <div id="tabs-add-elment">
-              <ul>
+              <ul class="panellInner">
                 <li><a class="tabAnchr" href="#tabtags">Tags</a></li>
                 <li><a class="tabAnchr" href="#tabclass">Classes</a></li>
                 <li><a class="tabAnchr" href="#tabcombination">Combination</a></li>
               </ul>
               <div id="tabtags">
                 <ul class="debugPannel__colorSpecific">
-                  <li class="headers" id="addHeader">
-                    <h6 style="margin:0;font-size:1rem;font-weight:400;text-shadow:1px 1px 1px black;">h1-h6</h6>
-                  </li>
-                  <li id="addP">
-                    <p> Pq</p>
-                  </li>
-                  <li>
-                    <ul> ul</ul>
-                  </li>
-                  <li>
-                    <li>li</li>
-                  </li>
-                  <li>
-                    <div class="col-"> .Col</div>
-                  </li>
-                  <li><a style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">A</a></li>
-                  <li><span style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">Span</span></li>
-                  <li id="addImg"><img alt="img/svg" style="display:inline-flex;vertical-align:middle;text-shadow:1px 1px 1px black;"></li>
-                  <li id="addRect">
-                    <div>Div</div>
-                  </li>
+                  <div class="clearfix">
+                    <li class="headers col-1-tp" id="addHeader">
+                      <h1-h6></h1-h6>
+                    </li>
+                    <li class="col-1-tp" id="addP">
+                      <p> P</p>
+                    </li>
+                    <li class="col-1-tp">
+                      <ul> ul</ul>
+                    </li>
+                    <li class="col-1-tp">
+                      <li>li</li>
+                    </li>
+                    <li class="col-1-tp">
+                      <div class="col-"> .Col</div>
+                    </li>
+                    <li class="col-1-tp"><a style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">A</a></li>
+                    <li class="col-1-tp"><span style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">Span</span></li>
+                    <li class="col-1-tp" id="addImg"><img alt="img/svg" style="display:inline-flex;vertical-align:middle;text-shadow:1px 1px 1px black;"></li>
+                    <li class="col-1-tp" id="addRect">
+                      <div>Div</div>
+                    </li>
+                  </div>
                 </ul>
               </div>
               <div id="tabclass">
@@ -315,7 +317,7 @@
             
           </script>
         </div>
-        <div class="debugPannel__section f-left">
+        <div class="debugPannel__section col-4-tp">
           <button id="spacerSwitcher">Spacer</button>
           <button id="gridb">grid</button>
           <button class="on" id="debugViewSwitcher">Debug View</button>
@@ -335,7 +337,7 @@
           <button id="getScssCode">Get scss</button>
           <div id="editableDiv" contenteditable="true">Paste</div>
         </div>
-        <div class="debugPannel__section f-left colors">
+        <div class="debugPannel__section col-4-tp colors">
           <div class="pb-element f-left">
             <div class="pb-colorBox"></div>
             <div class="pb-colorBox"><span class="pb-elementHeader">Base</span></div>

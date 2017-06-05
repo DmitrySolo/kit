@@ -18,7 +18,8 @@
 
 @mixin debug() {
 $panel:#3c3f41;
-  $panel-inner:#2d2d2d;
+$panel-inner:#2d2d2d;
+$active: #e74c3c;
 
   $db-headers-color: #e74c3c;
   $db-block-color: #8e44ad;
@@ -128,7 +129,7 @@ $panel:#3c3f41;
     left: 0;
     right: 0;
     width: 100%;
-    height: size(2, mo);
+    height: size(3, mo);
     @include space-i('component', '-', 'tb', '');
     @include space-i('component', '|', 'rl', '');
     * {
@@ -140,24 +141,23 @@ $panel:#3c3f41;
     background: #3c3f41 !important;
   }
   .debugPannel__section {
-    width: 40%;
     &:last-child {
       width: 18%;
     }
-    button {
+     button {
       font-size: 10px !important;
       border: none;
-      background: #27ae60;
+      background:#006eb7 !important;
       margin: 0;
       &:hover {
-        background-color: darken(#27ae60, 5%);
+        background-color: darken(#006eb7, 5%) !important;
       }
       &:active {
-        background-color: darken(#27ae60, 15%);
+        background-color: darken(#006eb7, 15%) !important;
       }
       &.on {
-        background-color: darken(#27ae60, 30%);
-        border-bottom: 1px solid #27ae60;
+        background-color: darken(#006eb7, 30%) !important;
+        border-bottom: 2px solid #006eb7;
       }
 
     }
@@ -170,10 +170,9 @@ $panel:#3c3f41;
   .debugPannel__colorSpecific li {
     display: inline-block;
     vert-align: top;
-    width: 10%;
     text-align: center;
-    margin-left: -4px;
-    //background: #fff !important;
+    //margin-left: -4px;
+    background: #fff !important;
   }
   .ui-resizable-handle {
     background: transparent !important;
@@ -420,4 +419,44 @@ $panel:#3c3f41;
     background-color: darkred;
     color: #fff;
   }
+  .panellInner,.ui-tabs {
+    background: $panel-inner !important;
+    border:none !important;
+  }
+  ul.panellInner{
+    border:none !important;
+  }
+  .notEdit {
+    a,li,ul,div,h1,h2,h3,h4,h5,h6,p,span,button,.col-1-tp,.row{
+      background: none;
+    }
+    .tabAnchr {
+      border-radius: 0%;
+      background: $panel;
+      padding: .2em !important;
+      font-size: 14px !important;
+    }
+  }
+  .ui-tabs .ui-tabs-panel{
+    padding: 0.3em 0.2em !important;
+  }
+  li.ui-state-default{
+    border:none !important;
+  }
+  li.ui-tabs-active{
+    background:$active !important;
+    color:#fff !important;
+  }
+  .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+    color:#fff !important;
+  }
+  .ui-state-default a{
+    color: #c3c3c3 !important;
+  }
+  .tabList.elAdder{
+    font-size: 12px !important;
+  }
+
+  .ace-tomorrow-night-eighties {
+    background-color: #2D2D2D !important}
 }
