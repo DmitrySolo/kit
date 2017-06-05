@@ -37,7 +37,7 @@ $( document ).ready(function() {
     //Viewport Resizer
 
     //$('body').wrapInner( "<div id='project-debug'></div>");
-    $('a').removeAttr('href');
+    $('a').not($('.tabAnchr')).removeAttr('href');
     $( "#__bs_script__" ).insertAfter( "body" );
 
 
@@ -559,4 +559,5 @@ var addToBufer= function (content) {
 
 
     });
+
 });

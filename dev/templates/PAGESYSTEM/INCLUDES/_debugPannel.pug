@@ -150,30 +150,112 @@ script(role='js').
     .debugPannel__wrapper.notEdit
         .debugPannel.clearfix
             .debugPannel__section.f-left
-                ul.debugPannel__colorSpecific
-                    li.headers#addHeader
-                        h6(style={margin: '0',"font-size":'1rem',"font-weight":'400',"text-shadow":"1px 1px 1px black"}) h1-h6
-                    li#addP
-                        p(style={"text-shadow":"1px 1px 1px black"})  P
-                    li
-                        ul(style={"text-shadow":"1px 1px 1px black"})  ul
-                        li(style={"text-shadow":"1px 1px 1px black"})  li
-                    li
-                        .col-(style={"text-shadow":"1px 1px 1px black"})  .Col
-                    li
-                        .container(style={width: '100%', padding: '0',"text-shadow":"2px 2px 2px black"}) .Cnt
-                    li
-                        .row(style={margin: '0',"text-shadow":"1px 1px 1px black"}) .Row
-                    li
-                        a(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) A
-                    li
-                        span(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) Span
-                    li
-                        input(type='text')#imginpt
-                    li#addImg
-                        img(alt='img/svg',style={display: 'inline-flex', "vertical-align": 'middle',"text-shadow":"1px 1px 1px black"})
-                    li#addRect
-                        div Div
+                .tabList
+                    div#tabs-add-elment
+                        ul
+                            li
+                                a.tabAnchr( href=""+"#tabtags" ) Tags
+                            li
+                                a.tabAnchr( href=""+'#tabclass' ) Classes
+                            li
+                                a.tabAnchr(href=""+'#tabcombination') Combination
+                        div#tabtags
+                            ul.debugPannel__colorSpecific
+                                li.headers#addHeader
+                                    h6(style={margin: '0',"font-size":'1rem',"font-weight":'400',"text-shadow":"1px 1px 1px black"}) h1-h6
+                                li#addP
+                                    p  Pq
+                                li
+                                    ul  ul
+                                li
+                                    li li
+                                li
+                                    .col-  .Col
+                                li
+                                    a(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) A
+                                li
+                                    span(style={display: 'inline-block',width:'100%',"text-shadow":"1px 1px 1px black"}) Span
+                                li#addImg
+                                    img(alt='img/svg',style={display: 'inline-flex', "vertical-align": 'middle',"text-shadow":"1px 1px 1px black"})
+                                li#addRect
+                                    div Div
+                        div#tabclass
+                            ul.debugPannel__colorSpecific
+                                li.headers
+                                    h6(style={
+                                        margin: '0',
+                                        "font-size": '1rem',
+                                        "font-weight": '400',
+                                        "text-shadow": "1px 1px 1px black"
+                                    }) h1-h6
+                                li
+                                    p  Px
+                                li
+                                    ul  ul
+                                li
+                                    li li
+                                li
+                                    .col-  .Col
+                                li
+                                    a(style={
+                                        display: 'inline-block',
+                                        width: '100%',
+                                        "text-shadow": "1px 1px 1px black"
+                                    }) A
+                                li
+                                    span(style={
+                                        display: 'inline-block',
+                                        width: '100%',
+                                        "text-shadow": "1px 1px 1px black"
+                                    }) Span
+                                li
+                                    img(alt='img/svg',style={
+                                        display: 'inline-flex',
+                                        "vertical-align": 'middle',
+                                        "text-shadow": "1px 1px 1px black"
+                                    })
+                                li
+                                    div Div
+                        div#tabcombination
+                            ul.debugPannel__colorSpecific
+                                li.headers
+                                    h6(style={
+                                        margin: '0',
+                                        "font-size": '1rem',
+                                        "font-weight": '400',
+                                        "text-shadow": "1px 1px 1px black"
+                                    }) h1-h6
+                                li
+                                    p  P
+                                li
+                                    ul  ul
+                                li
+                                    li li
+                                li
+                                    .col-  .Col
+                                li
+                                    a(style={
+                                        display: 'inline-block',
+                                        width: '100%',
+                                        "text-shadow": "1px 1px 1px black"
+                                    }) A
+                                li
+                                    span(style={
+                                        display: 'inline-block',
+                                        width: '100%',
+                                        "text-shadow": "1px 1px 1px black"
+                                    }) Span
+                                li
+                                    img(alt='img/svg',style={
+                                        display: 'inline-flex',
+                                        "vertical-align": 'middle',
+                                        "text-shadow": "1px 1px 1px black"
+                                    })
+                                li
+                                    div Div
+                script.
+                    $("#tabs-add-elment").tabs();
+
             .debugPannel__section.f-left
                 button#spacerSwitcher Spacer
                 button#gridb grid

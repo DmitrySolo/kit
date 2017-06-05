@@ -117,8 +117,8 @@
     <script src="scripts/viewpr.min.js" type="text/javascript"></script>
     <script src="scripts/viewpr.min.js" type="text/javascript"></script>
     <script src="scripts/quant-lib.js" type="text/javascript"></script>
-    <script src="scripts/xRayView.js" type="text/javascript"></script>
     <script src="scripts/quant-debug.js" type="text/javascript"></script>
+    <script src="scripts/xRayView.js" type="text/javascript"></script>
     <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
     <script src="scripts/baseButton.js" type="text/javascript"></script>
   </body>
@@ -276,36 +276,94 @@
     <div class="debugPannel__wrapper notEdit">
       <div class="debugPannel clearfix">
         <div class="debugPannel__section f-left">
-          <ul class="debugPannel__colorSpecific">
-            <li class="headers" id="addHeader">
-              <h6 style="margin:0;font-size:1rem;font-weight:400;text-shadow:1px 1px 1px black;">h1-h6</h6>
-            </li>
-            <li id="addP">
-              <p style="text-shadow:1px 1px 1px black;"> P</p>
-            </li>
-            <li>
-              <ul style="text-shadow:1px 1px 1px black;"> ul</ul>
-              <li style="text-shadow:1px 1px 1px black;"> li</li>
-            </li>
-            <li>
-              <div class="col-" style="text-shadow:1px 1px 1px black;"> .Col</div>
-            </li>
-            <li>
-              <div class="container" style="width:100%;padding:0;text-shadow:2px 2px 2px black;">.Cnt</div>
-            </li>
-            <li>
-              <div class="row" style="margin:0;text-shadow:1px 1px 1px black;">.Row</div>
-            </li>
-            <li><a style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">A</a></li>
-            <li><span style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">Span</span></li>
-            <li>
-              <input type="text" id="imginpt">
-            </li>
-            <li id="addImg"><img alt="img/svg" style="display:inline-flex;vertical-align:middle;text-shadow:1px 1px 1px black;"></li>
-            <li id="addRect">
-              <div>Div</div>
-            </li>
-          </ul>
+          <div class="tabList">
+            <div id="tabs-add-elment">
+              <ul>
+                <li><a class="tabAnchr" href="#tabtags">Tags</a></li>
+                <li><a class="tabAnchr" href="#tabclass">Classes</a></li>
+                <li><a class="tabAnchr" href="#tabcombination">Combination</a></li>
+              </ul>
+              <div id="tabtags">
+                <ul class="debugPannel__colorSpecific">
+                  <li class="headers" id="addHeader">
+                    <h6 style="margin:0;font-size:1rem;font-weight:400;text-shadow:1px 1px 1px black;">h1-h6</h6>
+                  </li>
+                  <li id="addP">
+                    <p> Pq</p>
+                  </li>
+                  <li>
+                    <ul> ul</ul>
+                  </li>
+                  <li>
+                    <li>li</li>
+                  </li>
+                  <li>
+                    <div class="col-"> .Col</div>
+                  </li>
+                  <li><a style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">A</a></li>
+                  <li><span style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">Span</span></li>
+                  <li id="addImg"><img alt="img/svg" style="display:inline-flex;vertical-align:middle;text-shadow:1px 1px 1px black;"></li>
+                  <li id="addRect">
+                    <div>Div</div>
+                  </li>
+                </ul>
+              </div>
+              <div id="tabclass">
+                <ul class="debugPannel__colorSpecific">
+                  <li class="headers">
+                    <h6 style="margin:0;font-size:1rem;font-weight:400;text-shadow:1px 1px 1px black;">h1-h6</h6>
+                  </li>
+                  <li>
+                    <p> Px</p>
+                  </li>
+                  <li>
+                    <ul> ul</ul>
+                  </li>
+                  <li>
+                    <li>li</li>
+                  </li>
+                  <li>
+                    <div class="col-"> .Col</div>
+                  </li>
+                  <li><a style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">A</a></li>
+                  <li><span style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">Span</span></li>
+                  <li><img alt="img/svg" style="display:inline-flex;vertical-align:middle;text-shadow:1px 1px 1px black;"></li>
+                  <li>
+                    <div>Div</div>
+                  </li>
+                </ul>
+              </div>
+              <div id="tabcombination">
+                <ul class="debugPannel__colorSpecific">
+                  <li class="headers">
+                    <h6 style="margin:0;font-size:1rem;font-weight:400;text-shadow:1px 1px 1px black;">h1-h6</h6>
+                  </li>
+                  <li>
+                    <p> P</p>
+                  </li>
+                  <li>
+                    <ul> ul</ul>
+                  </li>
+                  <li>
+                    <li>li</li>
+                  </li>
+                  <li>
+                    <div class="col-"> .Col</div>
+                  </li>
+                  <li><a style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">A</a></li>
+                  <li><span style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">Span</span></li>
+                  <li><img alt="img/svg" style="display:inline-flex;vertical-align:middle;text-shadow:1px 1px 1px black;"></li>
+                  <li>
+                    <div>Div</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <script>
+            $("#tabs-add-elment").tabs();
+            
+          </script>
         </div>
         <div class="debugPannel__section f-left">
           <button id="spacerSwitcher">Spacer</button>
