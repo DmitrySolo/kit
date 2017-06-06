@@ -55,9 +55,11 @@ $active: #e74c3c;
   $db-th-color: #3a3a3a;
   $db-td-color: #555555;
   $db-input-color: #1d5548;
-  //////
+  $db-cite-color: #41535a;
+  $db-label-color: #342f2a;
+  $db-select-color: #3e552c;
+  $db-textarea-color: #a78884;
   // cite, label, select, textarea
-  //////
   #ball {
     position: fixed !important;
     top: 0;
@@ -149,6 +151,32 @@ $active: #e74c3c;
   .notEdit .aside {
     background: $db-aside-color !important;
   }
+
+  .debug cite {
+    @include debug-elem($db-cite-color);
+  }
+  .notEdit .cite {
+    background: $db-cite-color !important;
+  }
+  .debug aside {
+    @include debug-elem($db-label-color);
+  }
+  .notEdit .label {
+    background: $db-label-color !important;
+  }
+  .debug select {
+    @include debug-elem($db-select-color);
+  }
+  .notEdit .select {
+    background: $db-select-color !important;
+  }
+  .debug textarea {
+    @include debug-elem($db-textarea-color);
+  }
+  .notEdit .textarea {
+    background: $db-textarea-color !important;
+  }
+
   .debug section {
     @include debug-elem($db-section-color);
   }
@@ -646,4 +674,10 @@ $active: #e74c3c;
 
   .ace-tomorrow-night-eighties {
     background-color: #2D2D2D !important}
+
+  .elAdder {
+    .clearfix {
+      margin-top: 4px;
+    }
+  }
 }

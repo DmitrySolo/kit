@@ -238,7 +238,7 @@ var addToBufer= function (content) {
 
 
 
-    MakeEditable($('*,spacer block-i').not($('.notEdit,body,html,.ace_editor,.ace_editor *')).not('.notEdit *'));
+    MakeEditable($('*,spacer block-i').not($('.notEdit,body,html,.ace_editor,.ace_editor *,.rg-overlay,.rg-overlay *')).not('.notEdit *'));
 
     $('.grid,.grid *').unbind('click');
 

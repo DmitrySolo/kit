@@ -2418,6 +2418,82 @@ body.debug {
 .notEdit .aside {
   background: #c6538c !important; }
 
+.debug cite {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #41535a 0%, #41535a 100%), linear-gradient(to bottom, #566e78 0%, #566e78);
+  background-clip: content-box, padding-box; }
+  .debug cite ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #41535a;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .cite {
+  background: #41535a !important; }
+
+.debug aside {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #342f2a 0%, #342f2a 100%), linear-gradient(to bottom, #504941 0%, #504941);
+  background-clip: content-box, padding-box; }
+  .debug aside ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #342f2a;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .label {
+  background: #342f2a !important; }
+
+.debug select {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #3e552c 0%, #3e552c 100%), linear-gradient(to bottom, #57773d 0%, #57773d);
+  background-clip: content-box, padding-box; }
+  .debug select ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #3e552c;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .select {
+  background: #3e552c !important; }
+
+.debug textarea {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #a78884 0%, #a78884 100%), linear-gradient(to bottom, #bca5a2 0%, #bca5a2);
+  background-clip: content-box, padding-box; }
+  .debug textarea ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #a78884;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .textarea {
+  background: #a78884 !important; }
+
 .debug section {
   outline-style: dashed;
   outline-color: invert;
@@ -3161,5 +3237,8 @@ li.ui-tabs-active {
 
 .ace-tomorrow-night-eighties {
   background-color: #2D2D2D !important; }
+
+.elAdder .clearfix {
+  margin-top: 4px; }
 
 /*# sourceMappingURL=maps/main.css.map */

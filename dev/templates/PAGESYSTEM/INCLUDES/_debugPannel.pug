@@ -1,4 +1,8 @@
 //Debug Panel
+script.
+    var evt         = new Event(),
+    dragdrop    = new Dragdrop(evt),
+    rg          = new RulersGuides(evt, dragdrop);
 .editorsContainer.clearfix.notEdit
     #editorPug.editor
     #editorScss.editor
@@ -160,7 +164,7 @@ script(role='js').
                             li
                                 a.tabAnchr( href=""+'#tabclass' ) Classes
                             li
-                                a.tabAnchr(href=""+'#tabcombination') Combination
+                                a.tabAnchr(href=""+'#tabcombination') Combinations
                         div#tabtags
                             ul.debugPannel__colorSpecific
                                 .clearfix
@@ -186,8 +190,13 @@ script(role='js').
                                     li.col-1-tp.i i
                                     li.col-1-tp.input inpt
                                     li.col-1-tp.button btn
+                                    li.col-1-tp.cite cite
+                                    li.col-1-tp.select select
+                                    li.col-1-tp.label label
+                                    li.col-1-tp.textarea txta
                                     li.col-1-tp.tr tr
                                     li.col-1-tp.td td
+                                    li.col-1-tp
                                     li.col-1-tp.th th
                         div#tabHTML5
                             ul.debugPannel__colorSpecific
