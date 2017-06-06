@@ -2269,6 +2269,9 @@ body.debug {
     line-height: 1.1;
     border-radius: 20%; }
 
+.notEdit .div {
+  background: #401515 !important; }
+
 .debug h1, .debug h2, .debug h3, .debug h4, .debug h5, .debug h6, .headers {
   outline-style: dashed;
   outline-color: invert;
@@ -2284,6 +2287,9 @@ body.debug {
     font-size: 12px;
     line-height: 1.1;
     border-radius: 20%; }
+
+.notEdit .headers {
+  background-color: #e74c3c !important; }
 
 .debug p {
   outline-style: dashed;
@@ -2301,6 +2307,180 @@ body.debug {
     line-height: 1.1;
     border-radius: 20%; }
 
+.debug nav {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #6bdabd 0%, #6bdabd 100%), linear-gradient(to bottom, #94e4cf 0%, #94e4cf);
+  background-clip: content-box, padding-box; }
+  .debug nav ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #6bdabd;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.debug header {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #f79b77 0%, #f79b77 100%), linear-gradient(to bottom, #fabea7 0%, #fabea7);
+  background-clip: content-box, padding-box; }
+  .debug header ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #f79b77;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .header {
+  background: #f79b77 !important; }
+
+.debug footer {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #4b4345 0%, #4b4345 100%), linear-gradient(to bottom, #665b5e 0%, #665b5e);
+  background-clip: content-box, padding-box; }
+  .debug footer ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #4b4345;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .footer {
+  background: #4b4345 !important; }
+
+.debug article {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #ee000a 0%, #ee000a 100%), linear-gradient(to bottom, #ff222b 0%, #ff222b);
+  background-clip: content-box, padding-box; }
+  .debug article ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #ee000a;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .article {
+  background: #ee000a !important; }
+
+.debug blockquote {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #9bb6bd 0%, #9bb6bd 100%), linear-gradient(to bottom, #baccd1 0%, #baccd1);
+  background-clip: content-box, padding-box; }
+  .debug blockquote ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #9bb6bd;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .blockquote {
+  background: #9bb6bd !important; }
+
+.debug aside {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #c6538c 0%, #c6538c 100%), linear-gradient(to bottom, #d379a6 0%, #d379a6);
+  background-clip: content-box, padding-box; }
+  .debug aside ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #c6538c;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .aside {
+  background: #c6538c !important; }
+
+.debug section {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #dceb20 0%, #dceb20 100%), linear-gradient(to bottom, #e3ef4f 0%, #e3ef4f);
+  background-clip: content-box, padding-box; }
+  .debug section ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #dceb20;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .section {
+  background: #dceb20 !important; }
+
+.debug input {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #1d5548 0%, #1d5548 100%), linear-gradient(to bottom, #2a7b68 0%, #2a7b68);
+  background-clip: content-box, padding-box; }
+  .debug input ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #1d5548;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .input {
+  background: #1d5548 !important; }
+
+.debug form {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #fc5c00 0%, #fc5c00 100%), linear-gradient(to bottom, #ff7c30 0%, #ff7c30);
+  background-clip: content-box, padding-box; }
+  .debug form ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #fc5c00;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .form {
+  background: #fc5c00 !important; }
+
+.notEdit .nav {
+  background: #6bdabd !important; }
+
+.notEdit .prgrph {
+  background: #ffc114 !important; }
+
 .debug ul {
   outline-style: dashed;
   outline-color: invert;
@@ -2317,6 +2497,28 @@ body.debug {
     line-height: 1.1;
     border-radius: 20%; }
 
+.notEdit .ul {
+  background: #27ae60 !important; }
+
+.debug table {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #717171 0%, #717171 100%), linear-gradient(to bottom, #8b8b8b 0%, #8b8b8b);
+  background-clip: content-box, padding-box; }
+  .debug table ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #717171;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .tbl {
+  background: #717171 !important; }
+
 .debug li {
   outline-style: dashed;
   outline-color: invert;
@@ -2332,6 +2534,123 @@ body.debug {
     font-size: 12px;
     line-height: 1.1;
     border-radius: 20%; }
+
+.notEdit .li {
+  background: #2980b9 !important; }
+
+.debug main {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #6168c1 0%, #6168c1 100%), linear-gradient(to bottom, #868bcf 0%, #868bcf);
+  background-clip: content-box, padding-box; }
+  .debug main ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #6168c1;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .main {
+  background: #6168c1 !important; }
+
+.debug dl {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #31142b 0%, #31142b 100%), linear-gradient(to bottom, #55234b 0%, #55234b);
+  background-clip: content-box, padding-box; }
+  .debug dl ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #31142b;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .dl {
+  background: #31142b !important; }
+
+.debug dt {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #581a52 0%, #581a52 100%), linear-gradient(to bottom, #7f2677 0%, #7f2677);
+  background-clip: content-box, padding-box; }
+  .debug dt ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #581a52;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .dt {
+  background: #581a52 !important; }
+
+.debug dd {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #7a2273 0%, #7a2273 100%), linear-gradient(to bottom, #a22d99 0%, #a22d99);
+  background-clip: content-box, padding-box; }
+  .debug dd ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #7a2273;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .dd {
+  background: #7a2273 !important; }
+
+.debug figure {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #857506 0%, #857506 100%), linear-gradient(to bottom, #b6a008 0%, #b6a008);
+  background-clip: content-box, padding-box; }
+  .debug figure ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #857506;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .figure {
+  background: #857506 !important; }
+
+.debug figcaption {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #484200 0%, #484200 100%), linear-gradient(to bottom, #7b7100 0%, #7b7100);
+  background-clip: content-box, padding-box; }
+  .debug figcaption ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #484200;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .figcaption {
+  background: #484200 !important; }
 
 .debug *[class^="col-"] {
   outline-style: dashed;
@@ -2413,6 +2732,9 @@ body.debug {
     line-height: 1.1;
     border-radius: 20%; }
 
+.notEdit .link {
+  background: #000786 !important; }
+
 .debug button {
   outline-style: dashed;
   outline-color: invert;
@@ -2429,14 +2751,17 @@ body.debug {
     line-height: 1.1;
     border-radius: 20%; }
 
-.debug span:not([class^="lh"]):not(.colors div) {
+.notEdit .button {
+  background: #5b7686 !important; }
+
+.debug span {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
   background-image: linear-gradient(to bottom, #86432c 0%, #86432c 100%), linear-gradient(to bottom, #ac5639 0%, #ac5639);
   background-clip: content-box, padding-box; }
-  .debug span:not([class^="lh"]):not(.colors div) ~ .debug-margins {
+  .debug span ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
@@ -2444,6 +2769,89 @@ body.debug {
     font-size: 12px;
     line-height: 1.1;
     border-radius: 20%; }
+
+.debug .notEdit span {
+  background: none;
+  outline: none; }
+
+.debug i {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #fc5c00 0%, #fc5c00 100%), linear-gradient(to bottom, #ff7c30 0%, #ff7c30);
+  background-clip: content-box, padding-box; }
+  .debug i ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #fc5c00;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .i {
+  background: #fc5c00 !important; }
+
+.debug tr {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #292929 0%, #292929 100%), linear-gradient(to bottom, #434343 0%, #434343);
+  background-clip: content-box, padding-box; }
+  .debug tr ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #292929;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .tr {
+  background: #292929 !important; }
+
+.debug td {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #555555 0%, #555555 100%), linear-gradient(to bottom, #6f6f6f 0%, #6f6f6f);
+  background-clip: content-box, padding-box; }
+  .debug td ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #555555;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .td {
+  background: #555555 !important; }
+
+.debug th {
+  outline-style: dashed;
+  outline-color: invert;
+  outline-offset: -1px;
+  outline-width: 1px;
+  background-image: linear-gradient(to bottom, #3a3a3a 0%, #3a3a3a 100%), linear-gradient(to bottom, #545454 0%, #545454);
+  background-clip: content-box, padding-box; }
+  .debug th ~ .debug-margins {
+    position: absolute;
+    font-weight: 900;
+    color: #fff;
+    background-color: #3a3a3a;
+    font-size: 12px;
+    line-height: 1.1;
+    border-radius: 20%; }
+
+.notEdit .th {
+  background: #3a3a3a !important; }
+
+.notEdit .span {
+  background: #86432c !important; }
 
 .debug img, .debug svg {
   outline-style: dashed;
@@ -2506,7 +2914,9 @@ body.debug {
   display: inline-block;
   vert-align: top;
   text-align: center;
-  background: #fff !important; }
+  max-height: 1.7em;
+  overflow: hidden;
+  cursor: pointer; }
 
 .ui-resizable-handle {
   background: transparent !important; }

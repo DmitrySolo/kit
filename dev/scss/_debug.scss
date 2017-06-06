@@ -35,6 +35,29 @@ $active: #e74c3c;
   $db-span-color: #86432c;
   $db-img-color: #d8ff00;
   $db-div-color: #401515;
+  $db-main-color: #6168c1;
+  $db-nav-color: #6bdabd;
+  $db-tbl-color: #717171;
+  $db-header-color:#f79b77;
+  $db-footer-color:#4b4345;
+  $db-article-color: #ee000a;
+  $db-dl-color: #31142b;
+  $db-dt-color: #581a52;
+  $db-dd-color: #7a2273;
+  $db-figure-color: #857506;
+  $db-figcaption-color: #484200;
+  $db-blockquote-color: #9bb6bd;
+  $db-aside-color:#c6538c;
+  $db-section-color: #dceb20;
+  $db-form-color: #fc5c00;
+  $db-i-color: #fc5c00;
+  $db-tr-color: #292929;
+  $db-th-color: #3a3a3a;
+  $db-td-color: #555555;
+  $db-input-color: #1d5548;
+  //////
+  // cite, label, select, textarea
+  //////
   #ball {
     position: fixed !important;
     top: 0;
@@ -80,17 +103,135 @@ $active: #e74c3c;
   .debug div:not(.colors div) {
     @include debug-elem($db-div-color);
   }
+
+  .notEdit .div {
+    background: $db-div-color !important;
+  }
   .debug h1, .debug h2, .debug h3, .debug h4, .debug h5, .debug h6, .headers {
     @include debug-elem($db-headers-color);
+  }
+  .notEdit .headers {
+   background-color: $db-headers-color !important;
   }
   .debug p {
     @include debug-elem($db-p-color);
   }
+  .debug nav {
+    @include debug-elem($db-nav-color);
+  }
+  .debug header {
+    @include debug-elem($db-header-color);
+  }
+  .notEdit .header {
+    background: $db-header-color !important;
+  }
+  .debug footer {
+    @include debug-elem($db-footer-color);
+  }
+  .notEdit .footer {
+    background: $db-footer-color !important;
+  }
+  .debug article {
+    @include debug-elem($db-article-color);
+  }
+  .notEdit .article {
+    background: $db-article-color !important;
+  }
+  .debug blockquote {
+    @include debug-elem($db-blockquote-color);
+  }
+  .notEdit .blockquote {
+    background: $db-blockquote-color !important;
+  }
+  .debug aside {
+    @include debug-elem($db-aside-color);
+  }
+  .notEdit .aside {
+    background: $db-aside-color !important;
+  }
+  .debug section {
+    @include debug-elem($db-section-color);
+  }
+  .notEdit .section {
+    background: $db-section-color !important;
+  }
+  .debug input {
+    @include debug-elem($db-input-color);
+  }
+  .notEdit .input {
+    background: $db-input-color !important;
+  }
+  .debug form {
+    @include debug-elem($db-form-color);
+  }
+  .notEdit .form {
+    background: $db-form-color !important;
+  }
+
+
+  .notEdit .nav {
+    background: $db-nav-color !important;
+  }
+  .notEdit .prgrph {
+    background: $db-p-color !important;
+  }
   .debug ul {
-    @include debug-elem($db-ul-color);
+       @include debug-elem($db-ul-color);
+     }
+  .notEdit .ul {
+    background: $db-ul-color !important;
+
+  }
+  .debug table {
+    @include debug-elem($db-tbl-color);
+  }
+  .notEdit .tbl {
+    background: $db-tbl-color !important;
+
   }
   .debug li {
     @include debug-elem($db-li-color);
+  }
+  .notEdit .li {
+    background: $db-li-color !important;
+  }
+  .debug main {
+    @include debug-elem($db-main-color);
+  }
+  .notEdit .main {
+    background: $db-main-color !important;
+  }
+  ///
+  .debug dl {
+    @include debug-elem($db-dl-color);
+  }
+  .notEdit .dl {
+    background: $db-dl-color !important;
+  }
+  .debug dt {
+    @include debug-elem($db-dt-color);
+  }
+  .notEdit .dt {
+    background: $db-dt-color !important;
+  }
+  .debug dd {
+    @include debug-elem($db-dd-color);
+  }
+  .notEdit .dd {
+    background: $db-dd-color !important;
+  }
+  .debug figure {
+    @include debug-elem($db-figure-color);
+  }
+  .notEdit .figure {
+    background: $db-figure-color !important;
+  }
+
+  .debug figcaption {
+    @include debug-elem($db-figcaption-color);
+  }
+  .notEdit .figcaption {
+    background: $db-figcaption-color !important;
   }
   .debug *[class^="col-"] {
     @include debug-elem($db-col-color);
@@ -108,11 +249,54 @@ $active: #e74c3c;
   .debug a {
     @include debug-elem($db-link-color);
   }
+  .notEdit .link {
+   background: $db-link-color !important;
+  }
   .debug button {
     @include debug-elem($db-button-color);
   }
-  .debug span:not([class^="lh"],.colors div) {
+  .notEdit .button {
+    background: $db-button-color !important;
+  }
+  .debug span {
     @include debug-elem($db-span-color);
+  }
+  .debug .notEdit span {
+   background: none;
+    outline: none;
+  }
+  .debug i {
+    @include debug-elem($db-i-color);
+  }
+  .notEdit .i {
+    background: $db-i-color !important;
+
+  }
+  .debug tr {
+    @include debug-elem($db-tr-color);
+  }
+  .notEdit .tr {
+    background: $db-tr-color !important;
+
+  }
+  .debug td {
+    @include debug-elem($db-td-color);
+  }
+  .notEdit .td {
+    background: $db-td-color !important;
+
+  }
+  .debug th {
+    @include debug-elem($db-th-color);
+  }
+  .notEdit .th {
+    background: $db-th-color !important;
+
+  }
+
+
+  .notEdit .span {
+    background: $db-span-color !important;
   }
   .debug img, .debug svg {
     @include debug-elem($db-img-color);
@@ -172,7 +356,10 @@ $active: #e74c3c;
     vert-align: top;
     text-align: center;
     //margin-left: -4px;
-    background: #fff !important;
+    //background: #fff !important;
+    max-height: $line-height-ratio+em;
+    overflow: hidden;
+    cursor: pointer;
   }
   .ui-resizable-handle {
     background: transparent !important;
