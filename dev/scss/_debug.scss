@@ -21,6 +21,13 @@ $panel:#3c3f41;
 $panel-inner:#2d2d2d;
 $active: #e74c3c;
 
+  $zBody: 0;
+$zElement: 10;
+$zInstrument: 100;
+$zOverElement: 102;
+$zGrid: 103px;
+$zNotEdit: 1000;
+
   $db-headers-color: #e74c3c;
   $db-block-color: #8e44ad;
   $db-body-color: #312034;
@@ -59,7 +66,16 @@ $active: #e74c3c;
   $db-label-color: #342f2a;
   $db-select-color: #3e552c;
   $db-textarea-color: #a78884;
-  // cite, label, select, textarea
+  // container, row, clearfix, hide,
+
+  // div-ctn-row-3div
+  //ul-3li
+  //dl-(3dt-dd)
+  //div-span
+  //a-div
+  //form-3input-inputSubmit
+  //div-form-input
+
   #ball {
     position: fixed !important;
     top: 0;
@@ -67,12 +83,11 @@ $active: #e74c3c;
     width: 30%;
   }
   .debug main * {
-    background: none;
+    //background: none;
   }
   .debugElement {
-    text-align: center;
-    z-index: 100000000;
-    opacity: .7;
+    z-index: $zElement;
+    opacity: .8;
     &:before {
       content: '';
       left: -.5em;
@@ -336,7 +351,7 @@ $active: #e74c3c;
     box-shadow: 2px -1px 0px 0px #2f2d2d;
     border-top: solid 1px #b19e9e;
     position: fixed !important;
-    z-index: 100000000;
+    z-index: $zNotEdit;
     bottom: 0;
     left: 0;
     right: 0;
@@ -395,7 +410,7 @@ $active: #e74c3c;
   .notifyjs-tagClassInfo-base {
     background: #ffff00 !important;
     @include space-i('element', '-', 'trbl', '');
-    z-index: 1111111111111111111111;
+    z-index: $zOverElement;
     position: absolute;
     line-height: 1.7rem !important;
     span {
@@ -428,7 +443,7 @@ $active: #e74c3c;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 9999999999999999999999999999999999;
+    z-index: $zGrid;
     opacity: .5;
     .container, .row, div[class^='col-'] {
       height: 100%;
@@ -437,6 +452,9 @@ $active: #e74c3c;
 
     }
 
+  }
+  .editorsContainer,.notEdit{
+    z-index: $zNotEdit;
   }
   .debug .pb-colorBox {
     width: 12px;
@@ -679,5 +697,22 @@ $active: #e74c3c;
     .clearfix {
       margin-top: 4px;
     }
+  }
+  .mChacker{
+
+    line-height: 1;
+    font-size: 50%;
+    color: azure;
+    padding-top: 3%;
+    overflow: hidden;
+
+    background: repeating-linear-gradient(
+                    45deg,
+                    #606dbc,
+                    #606dbc 10px,
+                    #465298 10px,
+                    #465298 20px
+    );
+
   }
 }

@@ -39,7 +39,7 @@ $( document ).ready(function() {
     //$('body').wrapInner( "<div id='project-debug'></div>");
     $('a').not($('.tabAnchr')).removeAttr('href');
     $( "#__bs_script__" ).insertAfter( "body" );
-
+    //rea$('.editorsContainer').resizable();
 
 
 var engP = 'Platy bonito oceanic whitetip shark orangespine unicorn fish loach goby rockweed gunnel turkeyfish Port Jackson shark buffalofish, southern grayling. Arapaima viperfish eeltail catfish pearl danio Black swallower, Atlantic trout sailfin silverside. Tang, marlin tui chub Indian mul flashlight fish, skilfish loosejaw lenok porcupinefish bandfish. Clownfish eeltail catfish: freshwater hatchetfish codlet tenpounder ladyfish scissor-tail rasbora lancetfish tigerperch king of herring. Grideye Mozambique tilapia oceanic whitetip shark clingfish North American darter mail-cheeked fish lamprey bramble shark. Parrotfish loweye catfish squaretail. Lighthousefish yellowhead jawfish shark mola mola sunfish.';
@@ -139,12 +139,15 @@ var addToBufer= function (content) {
     elem.on('click',function(e){
         if (!$(this).hasClass('debugElement')){
             $('*').removeClass('debugElement');
+            $('*').remove('.mChacker');
             $('#getCode').remove();
            // $('*').removeAttr('contentEditable');
             $(this).addClass('resizeble');
             $(this).addClass('debugElement');
                 var position = $('.debugElement').position();
-                $('body').prepend('<div id="getCode" class=".notEdit" style="position: absolute;top: '+position.top+'px; left: '+position.left+'px; z-index:1000000000000000000000">Get Code</div>')
+                $('body').prepend('<div id="getCode" class=".notEdit" style="position: absolute;top: '+position.top+'px; left: '+position.left+'px; z-index:10000">Get Code</div>')
+                if ( parseInt($(this).css('marginBottom'))>0 )
+                    $(this).prepend("<div style='position:absolute;bottom:-"+$(this).css('marginBottom')+"; height:"+$(this).css('marginBottom')+";width:100%;line-height:1' class='mChacker' >&#8681</div> ")
 
             var _this = $(this);
             //$( ".resizeble" ).resizable( "disable" );
@@ -152,22 +155,6 @@ var addToBufer= function (content) {
                 //_this.css("lineHeight",_this.height()+'px');
                 //_this.resizable( "destroy" );
             }}).draggable();
-
-            $('.debugElement').keypress(function (e) {
-                if (e.keyCode === 0 || e.keyCode === 32) {
-                    e.preventDefault()
-                    console.log('ewe')
-                    classStr =  $(this).attr('class').replace(/resizeble/,'')
-                        .replace(/debugElement/g,'')
-                        .replace(/ui-resizable/g,'')
-                        .replace(/ui-draggable-handle/g,'')
-                        .replace(/ui-draggable/g,'');
-                    getObjects(classStr);
-
-                    $('body').prepend('<div id="modPannel">'+$(this).css('color')+'</div>');
-                    e.stopPropagation();
-                }
-            })
 
 
             // $('.debugElement').contextmenu(function(e) {
@@ -279,7 +266,6 @@ var addToBufer= function (content) {
         console.log("url='"+$('#imginpt').val()+"'");
         $(".debugElement").css( "background","url("+$('#imginpt').val()+")");
     })
-
 
 
     $('#clone').on('click',function () {

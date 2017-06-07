@@ -2218,13 +2218,9 @@ body.blueprint {
   left: 0;
   width: 30%; }
 
-.debug main * {
-  background: none; }
-
 .debugElement {
-  text-align: center;
-  z-index: 100000000;
-  opacity: .7; }
+  z-index: 10;
+  opacity: .8; }
   .debugElement:before {
     content: '';
     left: -.5em;
@@ -2950,7 +2946,7 @@ body.debug {
   box-shadow: 2px -1px 0px 0px #2f2d2d;
   border-top: solid 1px #b19e9e;
   position: fixed !important;
-  z-index: 100000000;
+  z-index: 1000;
   bottom: 0;
   left: 0;
   right: 0;
@@ -3003,7 +2999,7 @@ body.debug {
   padding-right: 0.952em;
   padding-bottom: 0.68em;
   padding-left: 0.952em;
-  z-index: 1111111111111111111111;
+  z-index: 102;
   position: absolute;
   line-height: 1.7rem !important; }
   .notifyjs-tagClassInfo-base span {
@@ -3034,10 +3030,13 @@ body.debug {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 9999999999999999999999999999999999;
+  z-index: 103px;
   opacity: .5; }
   .grid--debug .container, .grid--debug .row, .grid--debug div[class^='col-'] {
     height: 100%; }
+
+.editorsContainer, .notEdit {
+  z-index: 1000; }
 
 .debug .pb-colorBox {
   width: 12px;
@@ -3240,5 +3239,13 @@ li.ui-tabs-active {
 
 .elAdder .clearfix {
   margin-top: 4px; }
+
+.mChacker {
+  line-height: 1;
+  font-size: 50%;
+  color: azure;
+  padding-top: 3%;
+  overflow: hidden;
+  background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px); }
 
 /*# sourceMappingURL=maps/main.css.map */
