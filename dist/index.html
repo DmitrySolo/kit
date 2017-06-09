@@ -118,6 +118,7 @@
     <script src="scripts/viewpr.min.js" type="text/javascript"></script>
     <script src="scripts/quant-lib.js" type="text/javascript"></script>
     <script src="scripts/quant-debug.js" type="text/javascript"></script>
+    <script src="scripts/quant-debug-ruller.js" type="text/javascript"></script>
     <script src="scripts/xRayView.js" type="text/javascript"></script>
     <script src="scripts/baseButton.js" type="text/javascript"></script>
     <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
@@ -131,7 +132,7 @@
   <div class="editorsContainer clearfix notEdit">
     <div class="editor" id="editorPug"></div>
     <div class="editor" id="editorScss"></div>
-    <div class="editor" id="editorJs">some text</div>
+    <div class="editor" id="editorJs"></div>
   </div>
   <script src="ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
   <script src="ace-builds/src/theme-tomorrow_night_eighties.js" type="text/javascript" charset="utf-8"></script>
@@ -293,49 +294,49 @@
                 <ul class="debugPannel__colorSpecific">
                   <div class="clearfix">
                     <li class="col-1-tp">Bl:</li>
-                    <li class="headers col-1-tp" id="addHeader">H1+</li>
-                    <li class="col-1-tp prgrph" id="addP">P</li>
-                    <li class="col-1-tp ul">ul</li>
-                    <li class="col-1-tp li">li</li>
-                    <li class="col-1-tp div" id="addRect">div</li>
-                    <li class="col-1-tp main" id="addMain">main</li>
-                    <li class="col-1-tp nav" id="addNav">nav</li>
-                    <li class="col-1-tp tbl" id="addTable">tbl</li>
-                    <li class="col-1-tp dl" id="addDl">dl</li>
-                    <li class="col-1-tp dt" id="addTDt">dt</li>
-                    <li class="col-1-tp dd" id="addTDd">dd</li>
+                    <li class="headers col-1-tp elAdder" id="addHeader" data-el="&lt;h1&gt;&lt;/h1&gt;&lt;h2&gt;&lt;/h2&gt;&lt;h3&gt;&lt;/h3&gt;&lt;h4&gt;&lt;/h4&gt;&lt;h5&gt;&lt;/h5&gt;&lt;h6&gt;&lt;/h6&gt;">H1+</li>
+                    <li class="col-1-tp prgrph elAdder" data-el="p">P</li>
+                    <li class="col-1-tp ul elAdder" data-el="&lt;ul&gt;&lt;/ul&gt;">ul</li>
+                    <li class="col-1-tp li elAdder" data-el="&lt;li&gt; the li element &lt;/li&gt;">li</li>
+                    <li class="col-1-tp div elAdder" data-el="&lt;div&gt;&lt;/div&gt;">div</li>
+                    <li class="col-1-tp main elAdder" data-el="&lt;main&gt;&lt;/main&gt;">main</li>
+                    <li class="col-1-tp nav elAdder" data-el="&lt;nav&gt;&lt;nav&gt;">nav</li>
+                    <li class="col-1-tp tbl elAdder" data-el="&lt;table&gt;&lt;/table&gt;">tbl</li>
+                    <li class="col-1-tp dl elAdder" data-el="&lt;dl&gt;&lt;/dl&gt;">dl</li>
+                    <li class="col-1-tp dt elAdder" data-el="&lt;dt&gt;&lt;/dt&gt;">dt</li>
+                    <li class="col-1-tp dd elAdder" data-el="&lt;dd&gt;&lt;/dd&gt;">dd</li>
                     <li class="col-1-tp"></li>
-                    <li class="col-1-tp blockquote" id="addblockquote">blqt</li>
-                    <li class="col-1-tp form" id="addForm">form</li>
+                    <li class="col-1-tp blockquote elAdder" data-el="&lt;blockquote&gt;&lt;/blockquote&gt;">blqt</li>
+                    <li class="col-1-tp form elAdder" data-el="&lt;form&gt;&lt;/form&gt;">form</li>
                   </div>
                   <div class="clearfix">
                     <li class="col-1-tp">Inl:</li>
-                    <li class="col-1-tp span">span</li>
-                    <li class="col-1-tp link">a</li>
-                    <li class="col-1-tp i">i</li>
-                    <li class="col-1-tp input">inpt</li>
-                    <li class="col-1-tp button">btn</li>
-                    <li class="col-1-tp cite">cite</li>
-                    <li class="col-1-tp select">select</li>
-                    <li class="col-1-tp label">label</li>
-                    <li class="col-1-tp textarea">txta</li>
-                    <li class="col-1-tp tr">tr</li>
-                    <li class="col-1-tp td">td</li>
+                    <li class="col-1-tp span elAdder" data-el="&lt;span&gt; Span Text&lt;/span&gt;">span</li>
+                    <li class="col-1-tp link elAdder" data-el="&lt;a&gt;this is link&lt;/a&gt;">a</li>
+                    <li class="col-1-tp i elAdder" data-el="&lt;i&gt;italic&lt;/i&gt;">i</li>
+                    <li class="col-1-tp input elAdder" data-el="&lt;input&gt;">inpt</li>
+                    <li class="col-1-tp button elAdder" data-el="&lt;button&gt;Button&lt;/button&gt;">btn</li>
+                    <li class="col-1-tp cite elAdder" data-el="&lt;cite&gt;&lt;/cite&gt;">cite</li>
+                    <li class="col-1-tp select elAdder" data-el="&lt;select&gt;&lt;/select&gt;">select</li>
+                    <li class="col-1-tp label elAdder" data-el="&lt;label&gt;&lt;/label&gt;">label</li>
+                    <li class="col-1-tp textarea elAdder" data-el="&lt;textarea&gt;">txta</li>
+                    <li class="col-1-tp tr elAdder" data-el="&lt;tr&gt;&lt;/tr&gt;">tr</li>
+                    <li class="col-1-tp td elAdder" data-el="&lt;td&gt;&lt;/td&gt;">td</li>
                     <li class="col-1-tp"></li>
-                    <li class="col-1-tp th">th</li>
+                    <li class="col-1-tp th elAdder" data-el="&lt;thead&gt;&lt;/thead&gt;">th</li>
                   </div>
                 </ul>
               </div>
               <div id="tabHTML5">
                 <ul class="debugPannel__colorSpecific">
                   <div class="clearfix">
-                    <li class="col-1-tp header">Hdr</li>
-                    <li class="col-1-tp footer">Ftr</li>
-                    <li class="col-1-tp article">arcl</li>
-                    <li class="col-1-tp aside">aside</li>
-                    <li class="col-1-tp section">sectn</li>
-                    <li class="col-1-tp figure">figure</li>
-                    <li class="col-1-tp figcaption">figcpt</li>
+                    <li class="col-1-tp header elAdder" data-el="&lt;header&gt;&lt;/header&gt;">Hdr</li>
+                    <li class="col-1-tp footer elAdder" data-el="&lt;footer&gt;&lt;/footer&gt;">Ftr</li>
+                    <li class="col-1-tp article elAdder" data-el="&lt;article&gt;&lt;/article&gt;">arcl</li>
+                    <li class="col-1-tp aside elAdder" data-el="&lt;aside&gt;&lt;/aside&gt;">aside</li>
+                    <li class="col-1-tp section elAdder" data-el="&lt;section&gt;&lt;/section&gt;">sectn</li>
+                    <li class="col-1-tp figure elAdder" data-el="&lt;figure&gt;&lt;/figure&gt;">figure</li>
+                    <li class="col-1-tp figcaption elAdder" data-el="&lt;figcaption&gt;&lt;/figcaption&gt;">figcpt</li>
                   </div>
                 </ul>
               </div>
@@ -399,6 +400,15 @@
           <button id="addBkg">add Background</button>
           <button id="startMediaTest">Media</button>
           <button id="getScssCode">Get scss</button>
+          <button id="getinnerView">Get Html</button>
+          <script>
+            var qscale = function (v) {
+                $('main').css({
+                    "transform": "scale(" + v + ")"
+                })
+            }
+          </script>
+          <input id="scaller" type="range" min=".3" max="2" step=".1" onchange="qscale(this.value)">
           <div id="editableDiv" contenteditable="true">Paste</div>
         </div>
         <div class="debugPannel__section col-4-tp colors">

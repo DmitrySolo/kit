@@ -6,7 +6,7 @@ script.
 .editorsContainer.clearfix.notEdit
     #editorPug.editor
     #editorScss.editor
-    #editorJs.editor some text
+    #editorJs.editor
 script(src='ace-builds/src/ace.js', type='text/javascript', charset='utf-8')
 script(src='ace-builds/src/theme-tomorrow_night_eighties.js', type='text/javascript', charset='utf-8')
 script(src='ace-builds/src/mode-scss.js', type='text/javascript', charset='utf-8')
@@ -169,45 +169,45 @@ script(role='js').
                             ul.debugPannel__colorSpecific
                                 .clearfix
                                     li.col-1-tp Bl:
-                                    li.headers#addHeader.col-1-tp H1+
-                                    li#addP.col-1-tp.prgrph P
-                                    li.col-1-tp.ul ul
-                                    li.col-1-tp.li li
-                                    li#addRect.col-1-tp.div div
-                                    li#addMain.col-1-tp.main main
-                                    li#addNav.col-1-tp.nav nav
-                                    li#addTable.col-1-tp.tbl tbl
-                                    li#addDl.col-1-tp.dl dl
-                                    li#addTDt.col-1-tp.dt dt
-                                    li#addTDd.col-1-tp.dd dd
+                                    li.headers#addHeader.col-1-tp.elAdder(data-el='<h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6>') H1+
+                                    li.col-1-tp.prgrph.elAdder(data-el='p') P
+                                    li.col-1-tp.ul.elAdder(data-el='<ul></ul>') ul
+                                    li.col-1-tp.li.elAdder(data-el='<li> the li element </li>') li
+                                    li.col-1-tp.div.elAdder(data-el='<div></div>') div
+                                    li.col-1-tp.main.elAdder(data-el='<main></main>') main
+                                    li.col-1-tp.nav.elAdder(data-el='<nav><nav>') nav
+                                    li.col-1-tp.tbl.elAdder(data-el='<table></table>') tbl
+                                    li.col-1-tp.dl.elAdder(data-el='<dl></dl>') dl
+                                    li.col-1-tp.dt.elAdder(data-el='<dt></dt>') dt
+                                    li.col-1-tp.dd.elAdder(data-el='<dd></dd>') dd
                                     li.col-1-tp
-                                    li#addblockquote.col-1-tp.blockquote blqt
-                                    li#addForm.col-1-tp.form form
+                                    li.col-1-tp.blockquote.elAdder(data-el='<blockquote></blockquote>') blqt
+                                    li.col-1-tp.form.elAdder(data-el='<form></form>') form
                                 .clearfix
                                     li.col-1-tp Inl:
-                                    li.col-1-tp.span span
-                                    li.col-1-tp.link a
-                                    li.col-1-tp.i i
-                                    li.col-1-tp.input inpt
-                                    li.col-1-tp.button btn
-                                    li.col-1-tp.cite cite
-                                    li.col-1-tp.select select
-                                    li.col-1-tp.label label
-                                    li.col-1-tp.textarea txta
-                                    li.col-1-tp.tr tr
-                                    li.col-1-tp.td td
+                                    li.col-1-tp.span.elAdder(data-el='<span> Span Text</span>') span
+                                    li.col-1-tp.link.elAdder(data-el='<a>this is link</a>') a
+                                    li.col-1-tp.i.elAdder(data-el='<i>italic</i>') i
+                                    li.col-1-tp.input.elAdder(data-el='<input>') inpt
+                                    li.col-1-tp.button.elAdder(data-el='<button>Button</button>') btn
+                                    li.col-1-tp.cite.elAdder(data-el='<cite></cite>') cite
+                                    li.col-1-tp.select.elAdder(data-el='<select></select>') select
+                                    li.col-1-tp.label.elAdder(data-el='<label></label>') label
+                                    li.col-1-tp.textarea.elAdder(data-el='<textarea>') txta
+                                    li.col-1-tp.tr.elAdder(data-el='<tr></tr>') tr
+                                    li.col-1-tp.td.elAdder(data-el='<td></td>') td
                                     li.col-1-tp
-                                    li.col-1-tp.th th
+                                    li.col-1-tp.th.elAdder(data-el='<thead></thead>') th
                         div#tabHTML5
                             ul.debugPannel__colorSpecific
                                 .clearfix
-                                    li.col-1-tp.header Hdr
-                                    li.col-1-tp.footer Ftr
-                                    li.col-1-tp.article arcl
-                                    li.col-1-tp.aside aside
-                                    li.col-1-tp.section sectn
-                                    li.col-1-tp.figure figure
-                                    li.col-1-tp.figcaption figcpt
+                                    li.col-1-tp.header.elAdder(data-el='<header></header>') Hdr
+                                    li.col-1-tp.footer.elAdder(data-el='<footer></footer>') Ftr
+                                    li.col-1-tp.article.elAdder(data-el='<article></article>') arcl
+                                    li.col-1-tp.aside.elAdder(data-el='<aside></aside>') aside
+                                    li.col-1-tp.section.elAdder(data-el='<section></section>') sectn
+                                    li.col-1-tp.figure.elAdder(data-el='<figure></figure>') figure
+                                    li.col-1-tp.figcaption.elAdder(data-el='<figcaption></figcaption>') figcpt
                         div#tabclass
                             ul.debugPannel__colorSpecific
                                 li span
@@ -284,6 +284,14 @@ script(role='js').
                 button#addBkg add Background
                 button#startMediaTest Media
                 button#getScssCode Get scss
+                button#getinnerView Get Html
+                script.
+                    var qscale = function (v) {
+                        $('main').css({
+                            "transform": "scale(" + v + ")"
+                        })
+                    }
+                input#scaller( type="range" min=".3" max="2" step=".1"  onchange="qscale(this.value)")
                 #editableDiv(contenteditable='true') Paste
             .debugPannel__section.col-4-tp.colors
                     .pb-element.f-left

@@ -54,6 +54,7 @@ var iconfont = require('gulp-iconfont');
 var runTimestamp = Math.round(Date.now()/1000);
 var iconfontCss = require('gulp-iconfont-css');
 var sourceMap = require('source-map');
+var html2jade = require('html2jade');
 
 // QUANT PLUGINS&FUNCTIONS
 
@@ -1336,10 +1337,62 @@ gulp.task('css-scss', () => {
 
 });
 
-gulp.task('browserCMDWATCHER', function () {
-    return watch([downloadPath+'/msg.qnt'], function () {
-        gulp.start('readMap');
-    });
+gulp.task('API-SERVER', function () {
+
+    var http = require('http');
+    var url = require('url');
+    var querystring = require('querystring');
+
+    function accept(req, res) {
+
+        res.writeHead(200, {
+            'Content-Type': 'text/plain',
+            'Cache-Control': 'no-cache',
+            'Access-Control-Allow-Origin': '*'
+        });
+        var srvRes='';
+
+        if(req.method=='GET') {
+            var url_parts = url.parse(req.url,true);
+            console.log(url_parts.query);
+                //GET SOURCE CODE
+
+            if (url_parts.query){
+
+
+                switch (url_parts.query.action) {
+                    case 'getSourceCode' :
+
+                        if (url_parts.query.line && url_parts.query.col){
+                            var line =url_parts.query.line;
+                            var col =url_parts.query.col;
+                             srvRes = getCssSource(line,col);
+
+                        }
+
+                    break;
+                    /////////////////////////////////////
+                    case 'html2jade' :
+                       var html = url_parts.query.html;
+                            console.log(html);
+                        html2jade.convertHtml(html, {'donotencode':true,'bodyless':true}, function (err, jade) {
+                         srvRes = jade;
+                        });
+                    break;
+                }
+
+            }
+
+            res.end(srvRes);
+
+        }
+
+
+
+
+    }
+
+    http.createServer(accept).listen(8181);
 
 });
 
@@ -1353,37 +1406,7 @@ gulp.task('browserCMDWATCHER', function () {
 // ]))
 gulp.task('shorthand', shell.task(['/Applications/PhpStorm.app/Contents/MacOS/phpstorm --line 12 ~/Desktop/QUANT/kit/dev/scss/main.css']));
 
-var http = require('http');
-var url = require('url');
-var querystring = require('querystring');
 
-function accept(req, res) {
-
-    res.writeHead(200, {
-        'Content-Type': 'text/plain',
-        'Cache-Control': 'no-cache',
-        'Access-Control-Allow-Origin': '*'
-    });
-    if(req.method=='GET') {
-        var url_parts = url.parse(req.url,true);
-        console.log(url_parts.query);
-        if (url_parts.query.line && url_parts.query.col){
-            var line =url_parts.query.line;
-            var col =url_parts.query.col;
-            var srvRes = getCssSource(line,col);
-            console.log(srvRes);
-        }
-
-        res.end(srvRes);
-
-    }
-
-
-
-
-}
-
-http.createServer(accept).listen(8181);
 
 //////////////////////// SERVER FUNCTIONS
 

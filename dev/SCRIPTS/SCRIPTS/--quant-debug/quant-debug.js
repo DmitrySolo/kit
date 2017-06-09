@@ -137,6 +137,7 @@ var addToBufer= function (content) {
     function MakeEditable (elem) {
 
     elem.on('click',function(e){
+        if($(this).hasClass('ruler')){ e.stopPropagation()}
         if (!$(this).hasClass('debugElement')){
             $('*').removeClass('debugElement');
             $('*').remove('.mChacker');
@@ -181,28 +182,28 @@ var addToBufer= function (content) {
             // });
             //$(this).attr('contentEditable','true');
 
-            var Classes = $(this).attr('class').replace(/resizeble/,'')
-                .replace(/debugElement/g,'')
-                .replace(/ui-resizable/g,'')
-                .replace(/ui-draggable-handle/g,'')
-                .replace(/ui-draggable/g,'');
+            // var Classes = $(this).attr('class').replace(/resizeble/,'')
+            //     .replace(/debugElement/g,'')
+            //     .replace(/ui-resizable/g,'')
+            //     .replace(/ui-draggable-handle/g,'')
+            //     .replace(/ui-draggable/g,'');
+            //
+            // var tag = $(this).prop("tagName");
 
-            var tag = $(this).prop("tagName");
-
-            newnotifyStr = tag+'>'+Classes;
+            // newnotifyStr = tag+'>'+Classes;
 
             //$(this).append("<span style='position: absolute;top:-20px; left:0;font-size:10px;'>"+newnotifyStr+"</span>")
-            if (newnotifyStr != notifyStr)
-            {$(this).notify(newnotifyStr,{autoHideDelay: 2000,style:'tagClassInfo'});
-                notifyStr =newnotifyStr}
-            buferMsgArr = Classes.split(" ");
-            var buferMsg ='';
-            var clName ='';
-            for (clName in buferMsgArr){
-                if (buferMsgArr[clName] != '')
-                    buferMsg+='.'+buferMsgArr[clName]+' ';
-            }
-            addToBufer(buferMsg);
+            // if (newnotifyStr != notifyStr)
+            // {$(this).notify(newnotifyStr,{autoHideDelay: 2000,style:'tagClassInfo'});
+            //     notifyStr =newnotifyStr}
+            // buferMsgArr = Classes.split(" ");
+            // var buferMsg ='';
+            // var clName ='';
+            // for (clName in buferMsgArr){
+            //     if (buferMsgArr[clName] != '')
+            //         buferMsg+='.'+buferMsgArr[clName]+' ';
+            // }
+            // addToBufer(buferMsg);
 
             // Возвращаем фокус туда, где был
             fontSize = $(this).css('fontSize');
@@ -371,6 +372,33 @@ var addToBufer= function (content) {
 
         console.log(localStorage.getItem('save'))
     })
+    $('#getinnerView').on('click',function (){
+       var clone = $('.debugElement').clone().removeAttr('style');
+       $('*',clone).removeAttr('style');
+       $('.ui-draggable-handle',clone).removeClass('ui-draggable-handle');
+        $('.ui-resizable-e,.ui-resizable-s,.ui-resizable-se',clone).remove();
+        var html = $("<div />").append(clone).html().replace(/resizeble/g,'')
+            .replace(/eventLock/g,'')
+            .replace(/ui-resizable/g,'')
+            .replace(/ui-resizable-handle/g,'')
+            .replace(/class='mod header' contenteditable='true'/g,'')
+            .replace(/ui-draggable/g,'')
+            .replace(/ui-draggable-handle/g,'')
+            .replace(/debugElement/g,'')
+            .replace(/-handle/g,'');
+            console.log(html);
+        $.ajax({
+            url: "http://localhost:8181/?action=html2jade&html=" + (html)})
+
+            .done(function (data) {
+
+                console.log(data)
+                editorPug.insert(data)
+
+
+            })
+
+    })
 
     $('#showAllTags--').on('click',function () {
 
@@ -455,6 +483,7 @@ var addToBufer= function (content) {
             pom.click();
         }
     }
+
     //download('inf.inf', '/Applications/PhpStorm.app/Contents/MacOS/phpstorm /Users/admin/Desktop/QUANT/kit --line 3 /Users/admin/Desktop/QUANT/kit/scss/main.css');
     var getCode = function () {
         console.log('hekol')
@@ -518,7 +547,7 @@ var addToBufer= function (content) {
         }
 
         $.ajax({
-            url: "http://localhost:8181/?line="+(mapLine)+"&col="+(mapCol-1),
+            url: "http://localhost:8181/?action=getSourceCode&line="+(mapLine)+"&col="+(mapCol-1),
         })
             .done(function( data ) {
                 var dataArr = data.split('[^]')
@@ -545,5 +574,12 @@ var addToBufer= function (content) {
 
 
     });
+    $('.elAdder').on('click',function () {
 
+        var elem = qntGetThisData(this,'el')
+         elem = $(elem).css('height','20px');
+        MakeEditable(elem);
+        $('.debugElement').prepend(elem);
+
+    })
 });
