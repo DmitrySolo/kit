@@ -117,7 +117,9 @@ var addToBufer= function (content) {
 
 //qntDragDrop( document.getElementById('ball'));
     $('#ball').draggable();
-    $('.spacer').resizable();
+    $('.spacer').resizable({
+        handles: "n, e, s, w"
+    });
 
     $('button','.fontSelector').on('click',function () {
 
@@ -139,12 +141,15 @@ var addToBufer= function (content) {
     elem.on('click',function(e){
         if($(this).hasClass('ruler')){ e.stopPropagation()}
         if (!$(this).hasClass('debugElement')){
+
             $('*').removeClass('debugElement');
             $('*').remove('.mChacker');
+
             $('#getCode').remove();
            // $('*').removeAttr('contentEditable');
             $(this).addClass('resizeble');
             $(this).addClass('debugElement');
+            GetParents($('.debugElement'));
                 var position = $('.debugElement').position();
                 $('body').prepend('<div id="getCode" class=".notEdit" style="position: absolute;top: '+position.top+'px; left: '+position.left+'px; z-index:10000">Get Code</div>')
                 if ( parseInt($(this).css('marginBottom'))>0 )
@@ -152,10 +157,9 @@ var addToBufer= function (content) {
 
             var _this = $(this);
             //$( ".resizeble" ).resizable( "disable" );
-            $(this).resizable({stop: function( event, ui ) {
-                //_this.css("lineHeight",_this.height()+'px');
-                //_this.resizable( "destroy" );
-            }}).draggable();
+            $(this).resizable({
+                handles: "n, e, s, w"
+            }).draggable();
 
 
             // $('.debugElement').contextmenu(function(e) {
@@ -272,7 +276,9 @@ var addToBufer= function (content) {
     $('#clone').on('click',function () {
         var clone = $( ".debugElement" ).clone().appendTo( "body" ).css({"position":"absolute","top":"0"}).removeClass("debugElement")
             .draggable()
-            .resizable();
+            .resizable({
+                handles: "n, e, s, w"
+            });
         MakeEditable($(clone));
         MakeEditable($('*',clone));
 
@@ -582,4 +588,18 @@ var addToBufer= function (content) {
         $('.debugElement').prepend(elem);
 
     })
+
+
+    function GetParents(el) {
+        $('#currentSelectorWay').html('');
+        var parents = el.parents("*");
+        var selectors = "<div style='background: #2b2b2b;color:#fff'>";
+        for (var i = parents.length-1; i >= 0; i--) {
+            selectors += "<span>"+parents[i].tagName + "<i>"+parents[i].className+ "</i>&rsaquo;</span>";
+        }
+
+        selectors +="<span style='background: #0086b3;'>"+el.prop("tagName")+"</span></div>";
+
+       $('#currentSelectorWay').html(selectors);
+    }
 });

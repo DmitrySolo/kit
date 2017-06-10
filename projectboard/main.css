@@ -2220,7 +2220,8 @@ body.blueprint {
 
 .debugElement {
   z-index: 10;
-  opacity: .8; }
+  opacity: .8;
+  cursor: move; }
   .debugElement:before {
     content: '';
     left: -.5em;
@@ -2247,7 +2248,8 @@ body {
   background-size: 100% 1.7em; }
 
 body.debug {
-  background-color: #312034; }
+  background-color: #312034;
+  cursor: crosshair; }
 
 .debug div:not(.colors div) {
   outline-style: dashed;
@@ -3197,7 +3199,8 @@ body.debug {
   font-size: 12px;
   padding: 5px;
   background-color: darkred;
-  color: #fff; }
+  color: #fff;
+  cursor: pointer; }
 
 .panellInner, .ui-tabs {
   background: #2d2d2d !important;
@@ -3249,7 +3252,8 @@ li.ui-tabs-active {
   background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px); }
 
 .ruler {
-  background: #2d2d2d !important; }
+  background: #2d2d2d !important;
+  cursor: grab; }
   .ruler .h .milestone {
     border-left-color: #fff;
     margin-left: 1rem; }

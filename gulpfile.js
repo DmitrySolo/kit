@@ -1361,6 +1361,8 @@ gulp.task('API-SERVER', function () {
 
 
                 switch (url_parts.query.action) {
+
+                   ///////////////////////////////////////
                     case 'getSourceCode' :
 
                         if (url_parts.query.line && url_parts.query.col){
@@ -1369,8 +1371,8 @@ gulp.task('API-SERVER', function () {
                              srvRes = getCssSource(line,col);
 
                         }
-
                     break;
+
                     /////////////////////////////////////
                     case 'html2jade' :
                        var html = url_parts.query.html;
@@ -1379,6 +1381,7 @@ gulp.task('API-SERVER', function () {
                          srvRes = jade;
                         });
                     break;
+
                 }
 
             }
