@@ -3082,11 +3082,11 @@ body.debug {
 .debug-Pannel-Right {
   position: fixed;
   top: 0;
-  width: 10%;
+  width: 20%;
   right: 0;
   bottom: 0;
   background-color: #fff;
-  display: none; }
+  background: #3c3f41; }
 
 .mediaMap {
   position: fixed !important;
@@ -3221,7 +3221,7 @@ body.debug {
   cursor: pointer; }
 
 .panellInner, .ui-tabs {
-  background: #2d2d2d !important;
+  background: #2b2b2b !important;
   border: none !important; }
 
 ul.panellInner {
@@ -3270,7 +3270,7 @@ li.ui-tabs-active {
   background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px); }
 
 .ruler {
-  background: #2d2d2d !important;
+  background: #2b2b2b !important;
   cursor: grab; }
   .ruler .h .milestone {
     border-left-color: #fff;
@@ -3320,5 +3320,8 @@ li.ui-tabs-active {
   font-size: .8em;
   padding: 0 8px;
   color: #006eb7; }
+
+input[type="range"] {
+  outline: none; }
 
 /*# sourceMappingURL=maps/main.css.map */

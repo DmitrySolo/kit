@@ -651,5 +651,94 @@ var addToBufer= function (content) {
         console.log(this)
     })
 
+    ///////////////////////////////////////////////////Panel Right
+    $('#textAC').on('click',function () {
+        $('.debugElement').css(
+            {'textAlign':'center'}
+        )
+
+    })
+    $('#textAL').on('click',function () {
+        $('.debugElement').css(
+            {'textAlign':'left'}
+        )
+
+    })
+    $('#textAR').on('click',function () {
+        $('.debugElement').css(
+            {'textAlign':'right'}
+        )
+
+    })
+
+//padder
+    window.padder = function (value) {
+
+        $('.debugElement').css(
+            {
+                'padding':value+'em'
+            }
+        )
+
+
+    }
+    window.paddertb = function (value) {
+
+        $('.debugElement').css(
+            {
+                'padding-top':value+'em',
+                'padding-bottom':value+'em',
+            }
+        )
+
+
+    }
+    window.padderrl = function (value) {
+
+        $('.debugElement').css(
+            {
+                'padding-right':value+'em',
+                'padding-left':value+'em',
+            }
+        )
+
+
+    }
+    window.marginer = function (value) {
+
+        $('.debugElement').css(
+            {
+                'margin':value+'em',
+
+            }
+        )
+
+
+    }
+    window.marginertb = function (value) {
+
+        $('.debugElement').css(
+            {
+                'margin-top':value+'em',
+                'margin-bottom':value+'em',
+            }
+        )
+
+
+    }
+    window.marginerrl = function (value) {
+
+        $('.debugElement').css(
+            {
+                'margin-right':value+'em',
+                'margin-left':value+'em',
+            }
+        )
+
+
+    }
+
+
+
 
 });

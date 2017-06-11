@@ -18,9 +18,10 @@
 
 @mixin debug() {
 $panel:#3c3f41;
-$panel-inner:#2d2d2d;
+$panel-inner: rgb(43, 43, 43);
 $active: #e74c3c;
-
+$activeButton:#006eb7;
+  $activeButtonHover: #005f9e;
   $zBody: 0;
 $zElement: 10;
 $zInstrument: 100;
@@ -506,11 +507,12 @@ $zNotEdit: 1000;
   .debug-Pannel-Right {
     position: fixed;
     top: 0;
-    width: 10%;
+    width: 20%;
     right: 0;
     bottom: 0;
     background-color: #fff;
-    display: none;
+    background: $panel;
+   // display: none;
   }
 
   .mediaMap {
@@ -798,4 +800,10 @@ $zNotEdit: 1000;
       color: #006eb7;
     }
   }
+  input[type="range"]{
+    outline: none;
+  }
+
+
+
 }

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1a405dd0-215a-4030-b1ad-1ee92d874110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blueprint/index.html" afterPath="$PROJECT_DIR$/blueprint/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blueprint/main.css" afterPath="$PROJECT_DIR$/blueprint/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blueprint/maps/main.css.map" afterPath="$PROJECT_DIR$/blueprint/maps/main.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.json" afterPath="$PROJECT_DIR$/data.json" />
@@ -10,7 +11,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/SCRIPTS/scriptMap.json" afterPath="$PROJECT_DIR$/dev/SCRIPTS/scriptMap.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/_debug.scss" afterPath="$PROJECT_DIR$/dev/scss/_debug.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/about.html" afterPath="$PROJECT_DIR$/dist/about.html" />
@@ -131,90 +131,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="311">
-      <file leaf-file-name="quant-debug.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="38" />
-              <folding>
-                <marker date="1497196467000" expanded="true" signature="6578:6662" ph="..." />
-                <marker date="1497196467000" expanded="true" signature="6793:6915" ph="..." />
-                <marker date="1497196467000" expanded="true" signature="11181:11208" ph="..." />
-                <marker date="1497196467000" expanded="true" signature="16283:16301" ph="..." />
-                <marker date="1497196467000" expanded="true" signature="16336:16347" ph="..." />
-                <marker date="1497196467000" expanded="true" signature="17437:17470" ph="..." />
-                <marker date="1497196467000" expanded="true" signature="22457:22487" ph="..." />
-                <marker date="1497196467000" expanded="true" signature="23581:23601" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_debug.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/scss/_debug.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="106" column="33" lean-forward="false" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+            <state relative-caret-position="13685">
+              <caret line="805" column="0" lean-forward="false" selection-start-line="805" selection-start-column="0" selection-end-line="805" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/main.css">
+      <file leaf-file-name="quant-debug.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="1451" column="0" lean-forward="false" selection-start-line="1451" selection-start-column="0" selection-end-line="1451" selection-end-column="0" />
+            <state relative-caret-position="551">
+              <caret line="733" column="23" lean-forward="false" selection-start-line="733" selection-start-column="23" selection-end-line="733" selection-end-column="23" />
               <folding>
-                <marker date="1497195930000" expanded="true" signature="45923:46089" ph="{...}" />
-                <marker date="1497195930000" expanded="true" signature="49405:49409" ph="{...}" />
-                <marker date="1497195930000" expanded="true" signature="49405:49436" ph="{...}" />
-                <marker date="1497195930000" expanded="true" signature="76715:76718" ph="{...}" />
-                <marker date="1497195930000" expanded="true" signature="76742:76797" ph="{...}" />
-                <marker date="1497195930000" expanded="true" signature="76823:76979" ph="{...}" />
-                <marker date="1497195930000" expanded="true" signature="77005:77149" ph="{...}" />
-                <marker date="1497195930000" expanded="true" signature="77163:77206" ph="{...}" />
-                <marker date="1497195930000" expanded="true" signature="77226:77262" ph="{...}" />
-                <marker date="1497195930000" expanded="true" signature="77285:77369" ph="{...}" />
-                <marker date="1497195930000" expanded="true" signature="77392:77475" ph="{...}" />
-                <marker date="1497195930000" expanded="true" signature="77500:77671" ph="{...}" />
+                <marker date="1497216143407" expanded="true" signature="6578:6662" ph="..." />
+                <marker date="1497216143407" expanded="true" signature="6793:6915" ph="..." />
+                <marker date="1497216143407" expanded="true" signature="11181:11208" ph="..." />
+                <marker date="1497216143407" expanded="true" signature="16283:16301" ph="..." />
+                <marker date="1497216143407" expanded="true" signature="16336:16347" ph="..." />
+                <marker date="1497216143407" expanded="true" signature="17437:17470" ph="..." />
+                <marker date="1497216143407" expanded="true" signature="22457:22487" ph="..." />
+                <marker date="1497216143407" expanded="true" signature="23581:23601" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_debugPannel.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug">
+      <file leaf-file-name="quant-lib.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="-15">
+              <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/js-stringify/test/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quant-debug-JsonCss.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_draft.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/scss/_draft.scss">
+      <file leaf-file-name="template.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-lib/template.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -223,11 +180,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_draft1.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/scss/_draft1.scss">
+      <file leaf-file-name="template.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/template.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scriptMap.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/scriptMap.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="600" lean-forward="false" selection-start-line="0" selection-start-column="600" selection-end-line="0" selection-end-column="600" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quant-debug-ruller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="319" column="51" lean-forward="false" selection-start-line="319" selection-start-column="42" selection-end-line="319" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -236,157 +213,29 @@
       <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26885">
-              <caret line="1418" column="27" lean-forward="false" selection-start-line="1418" selection-start-column="27" selection-end-line="1418" selection-end-column="27" />
-              <folding>
-                <marker date="1497170110000" expanded="true" signature="40103:41644" ph="{...}" />
-                <marker date="1497170110000" expanded="true" signature="40245:41596" ph="{...}" />
-                <marker date="1497170110000" expanded="true" signature="40473:41586" ph="{...}" />
-                <marker date="1497170110000" expanded="true" signature="40637:41545" ph="{...}" />
-                <marker date="1497170110000" expanded="true" signature="40689:41530" ph="{...}" />
-                <marker date="1497170110000" expanded="true" signature="41835:41953" ph="//..." />
-                <marker date="1497170110000" expanded="true" signature="42506:42619" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_draft2.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/scss/_draft2.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="1364" column="27" lean-forward="false" selection-start-line="1364" selection-start-column="27" selection-end-line="1365" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RESOURCE STORRAGE.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RESOURCE STORRAGE.ts">
+      <file leaf-file-name="html2jade.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/html2jade/lib/html2jade.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_header.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="74" lean-forward="false" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
+            <state relative-caret-position="12036">
+              <caret line="708" column="19" lean-forward="false" selection-start-line="708" selection-start-column="8" selection-end-line="708" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss">
+      <file leaf-file-name="_debugPannel.pug" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="223">
+              <caret line="98" column="10" lean-forward="false" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-              <folding>
-                <marker date="1497196481000" expanded="true" signature="12095:12945" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="12409:12772" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="12484:12766" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="12591:12753" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="12616:12738" ph="{&quot;caption&quot;: word...}" />
-                <marker date="1497196481000" expanded="true" signature="12815:12932" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="12967:13729" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="13207:13573" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="13285:13567" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="13392:13554" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="13417:13539" ph="{&quot;caption&quot;: word...}" />
-                <marker date="1497196481000" expanded="true" signature="13599:13716" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="13750:14611" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="14086:14451" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="14163:14445" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="14270:14432" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="14295:14417" ph="{&quot;caption&quot;: word...}" />
-                <marker date="1497196481000" expanded="true" signature="14476:14593" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="14654:14765" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="14700:14756" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="14795:32903" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="19881:19893" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="19894:21069" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="20047:20060" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="20061:20184" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="20132:20145" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="20233:20245" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="20246:20367" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="20317:20329" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="20416:20428" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="20429:20550" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="20500:20512" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="20598:20625" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="20626:21054" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="20696:20727" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="20789:21026" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="20836:20901" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="21128:21695" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="21771:22449" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="21801:22434" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="21827:22421" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="22496:32894" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="22537:32883" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="22589:28740" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="22629:28631" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="22668:28614" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="22707:23028" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="23061:26061" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="23117:26040" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="23158:24658" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="24699:26018" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="26095:27021" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="26151:27000" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="26192:26978" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="27055:27513" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="27111:27492" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="27181:27243" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="27310:27382" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="27411:27470" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="27553:28595" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="27609:28574" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="27648:27786" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="27681:27751" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="27809:27863" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="27886:27943" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="27966:27987" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="28045:28119" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="28153:28215" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="28263:28325" ph="..." />
-                <marker date="1497196481000" expanded="false" signature="28392:28464" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="28493:28552" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="28650:28725" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="28792:30040" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="29680:29857" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="29720:29838" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="29752:29823" ph="{...}" />
-                <marker date="1497196481000" expanded="true" signature="30099:32440" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="30141:30463" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="30505:30760" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="30802:31063" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="31105:31357" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="31399:31655" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="31697:31953" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="31995:32241" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="32283:32425" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="32289:32349" ph="..." />
-                <marker date="1497196481000" expanded="true" signature="32355:32419" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -407,11 +256,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>#D80027</find>
-      <find>MakeEditable</find>
-      <find>SERVER</find>
-      <find>concat</find>
-      <find>json</find>
       <find>shell</find>
       <find>8080</find>
       <find>81</find>
@@ -423,20 +267,25 @@
       <find>.debugElement</find>
       <find>medi</find>
       <find>GETCODE</find>
-      <find>li</find>
-      <find>foo</find>
-      <find>res</find>
-      <find>z-in</find>
-      <find>debugE</find>
-      <find>makeE</find>
-      <find>main</find>
-      <find>i</find>
-      <find>30px</find>
-      <find>editor</find>
-      <find>arro</find>
-      <find>resiz</find>
-      <find>1%</find>
-      <find>resiza</find>
+      <find>.debugPannel__wrapper</find>
+      <find>button</find>
+      <find>click</find>
+      <find>.debug *[class^=&quot;col-&quot;]</find>
+      <find>draggable</find>
+      <find>span</find>
+      <find>.no</find>
+      <find>view</find>
+      <find>get</find>
+      <find>#A</find>
+      <find>Eleme</find>
+      <find>convertHtml</find>
+      <find>noti</find>
+      <find>resizeble</find>
+      <find>#get</find>
+      <find>resizable</find>
+      <find>.debug-Pannel-Right</find>
+      <find>#006eb7;</find>
+      <find>no</find>
     </findStrings>
     <replaceStrings>
       <replace>mobile</replace>
@@ -451,6 +300,7 @@
       <replace>#ffffff</replace>
       <replace>#debugElemen</replace>
       <replace>#debugElement</replace>
+      <replace>draggable-r</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -468,7 +318,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/ELEMENTS/ICON-TITLE-TEXTS/--infoElement/mixin.pug" />
         <option value="$PROJECT_DIR$/dev/ELEMENTS/ICON-TITLE-TEXTS/--infoElement/style.scss" />
         <option value="$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_starter.scss" />
         <option value="$PROJECT_DIR$/dev/templates/data.json" />
@@ -484,16 +333,14 @@
         <option value="$PROJECT_DIR$/dev/scss/SPACER/_spacer.scss" />
         <option value="$PROJECT_DIR$/dev/templates/projectboard.pug" />
         <option value="$PROJECT_DIR$/projectboard/projectBoard.js" />
-        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js" />
         <option value="$PROJECT_DIR$/dev/MIXES/Logo-img/_style.scss" />
         <option value="$PROJECT_DIR$/dev/scss/CONSTRUCTION/_construction.scss" />
         <option value="$PROJECT_DIR$/dev/ELEMENTS/LINK-BUTTONS/--learnMoreButton/style.scss" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--JQUI/template.json" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug" />
         <option value="$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss" />
         <option value="$PROJECT_DIR$/dev/scss/_project.scss" />
-        <option value="$PROJECT_DIR$/dev/scss/PROJECTBOARD/_projectboard.scss" />
         <option value="$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/options.json" />
-        <option value="$PROJECT_DIR$/dev/SCRIPTS/scriptMap.json" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--jadejs/template.json" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--jadejs/jadejs.js" />
         <option value="$PROJECT_DIR$/dist/contacts.html" />
@@ -513,12 +360,15 @@
         <option value="$PROJECT_DIR$/data.json" />
         <option value="$PROJECT_DIR$/dist/main.css" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_head.pug" />
+        <option value="$PROJECT_DIR$/dev/scss/PROJECTBOARD/_projectboard.scss" />
+        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/template.json" />
+        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js" />
+        <option value="$PROJECT_DIR$/dev/SCRIPTS/scriptMap.json" />
+        <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug" />
-        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug" />
-        <option value="$PROJECT_DIR$/dev/scss/_debug.scss" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js" />
+        <option value="$PROJECT_DIR$/dev/scss/_debug.scss" />
+        <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug" />
       </list>
     </option>
   </component>
@@ -820,18 +670,15 @@
       <scope name="project" />
     </order>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/dist/node_modules" />
-  </component>
   <component name="PhpServers">
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-170" />
-    <option name="y" value="111" />
-    <option name="width" value="1920" />
-    <option name="height" value="884" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -969,8 +816,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="NBKnowledgePane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1011,6 +856,112 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PROJECTBOARD" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SCRIPTS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SCRIPTS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SCRIPTS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SCRIPTS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SCRIPTS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="--quant-lib" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -1027,6 +978,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="NBKnowledgePane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1054,11 +1007,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dist/ace-builds" />
       <recent name="$PROJECT_DIR$/dev/ELEMENTS" />
       <recent name="D:\WEB\HOSPITAL WP THEME\kit\vendor\file_templates\ELEMENTS\Icon-title-text\_templates" />
       <recent name="D:\WEB\hospitalFrontEnd\kit\vendor\file_templates\ELEMENTS\LINK-BUTTON\_templates" />
       <recent name="C:\Users\DSolo\Desktop\Project\kit\vendor\file_templates\MODULES" />
+      <recent name="C:\Users\DSolo\Desktop\Project\kit\vendor" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WEB\HOSPITAL WP THEME\kit\dev\SOURCE_FABRIC\ICONS_COMBINER\icons" />
@@ -1091,6 +1044,7 @@
           <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/SCRIPTS/scriptMap.json</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/scss/_debug.scss</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/about.html</PATH>
@@ -1103,7 +1057,6 @@
           <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/pacients.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/pay.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/scripts/quant-debug.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/gulpfile.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/projectboard/main.css</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/projectboard/maps/main.css.map</PATH>
         </FILE-GROUP>
@@ -1214,6 +1167,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Gulp.js.START QUANT">
+    <configuration default="false" name="SCRIPTS2" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>SCRIPTS2</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="styles" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>styles</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="svgstore-debug" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -1237,33 +1212,11 @@
       <method />
     </configuration>
     <configuration default="false" name="START QUANT" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
-      <tasks>
-        <task>START QUANT</task>
-      </tasks>
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="sync group0:0" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
-        <task>sync group0:0</task>
-      </tasks>
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="SCRIPTS2" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
-      <tasks>
-        <task>SCRIPTS2</task>
+        <task>START QUANT</task>
       </tasks>
       <arguments />
       <envs />
@@ -1313,7 +1266,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -1590,19 +1543,19 @@
       <item index="18" class="java.lang.String" itemvalue="Gulp.js.PAGESYSTEM" />
       <item index="19" class="java.lang.String" itemvalue="Gulp.js.mergeJson" />
       <item index="20" class="java.lang.String" itemvalue="Gulp.js.views" />
-      <item index="21" class="java.lang.String" itemvalue="Gulp.js.svgstore-debug" />
-      <item index="22" class="java.lang.String" itemvalue="Gulp.js.parc" />
-      <item index="23" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
-      <item index="24" class="java.lang.String" itemvalue="Gulp.js.sync group0:0" />
-      <item index="25" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS2" />
+      <item index="21" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS2" />
+      <item index="22" class="java.lang.String" itemvalue="Gulp.js.styles" />
+      <item index="23" class="java.lang.String" itemvalue="Gulp.js.svgstore-debug" />
+      <item index="24" class="java.lang.String" itemvalue="Gulp.js.parc" />
+      <item index="25" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
         <item index="1" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS2" />
-        <item index="2" class="java.lang.String" itemvalue="Gulp.js.sync group0:0" />
-        <item index="3" class="java.lang.String" itemvalue="Gulp.js.parc" />
-        <item index="4" class="java.lang.String" itemvalue="Gulp.js.svgstore-debug" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.parc" />
+        <item index="3" class="java.lang.String" itemvalue="Gulp.js.svgstore-debug" />
+        <item index="4" class="java.lang.String" itemvalue="Gulp.js.styles" />
       </list>
     </recent_temporary>
   </component>
@@ -1820,18 +1773,18 @@
       <workItem from="1496442276743" duration="1193000" />
       <workItem from="1496506000228" duration="76000" />
       <workItem from="1496569455094" duration="11903000" />
-      <workItem from="1496660398887" duration="7610000" />
-      <workItem from="1496736733430" duration="17393000" />
-      <workItem from="1496822193761" duration="8669000" />
-      <workItem from="1497101057378" duration="2024000" />
-      <workItem from="1497170009105" duration="17815000" />
-    </task>
-    <task id="LOCAL-00023" summary="ove menu and sidebar">
-      <created>1488468425137</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1488468425137</updated>
+      <workItem from="1496660398887" duration="7382000" />
+      <workItem from="1496686602735" duration="138000" />
+      <workItem from="1496686757431" duration="616000" />
+      <workItem from="1496687461356" duration="8023000" />
+      <workItem from="1496773106217" duration="4552000" />
+      <workItem from="1496860121794" duration="8818000" />
+      <workItem from="1496904279040" duration="91000" />
+      <workItem from="1496930605696" duration="4070000" />
+      <workItem from="1496939862513" duration="4714000" />
+      <workItem from="1497021605859" duration="14272000" />
+      <workItem from="1497113117652" duration="6682000" />
+      <workItem from="1497207743738" duration="7760000" />
     </task>
     <task id="LOCAL-00024" summary="Pre Alpha 0.0.69 SVG ICONS SYSTEM ADDED">
       <created>1488556967440</created>
@@ -2148,32 +2101,39 @@
       <option name="project" value="LOCAL" />
       <updated>1496589220070</updated>
     </task>
-    <task id="LOCAL-00069" summary="17605n">
-      <created>1496679505149</created>
+    <task id="LOCAL-00069" summary="170606n">
+      <created>1496696604179</created>
       <option name="number" value="00069" />
       <option name="presentableId" value="LOCAL-00069" />
       <option name="project" value="LOCAL" />
-      <updated>1496679505149</updated>
+      <updated>1496696604179</updated>
     </task>
-    <task id="LOCAL-00070" summary="17605n">
-      <created>1496765209375</created>
+    <task id="LOCAL-00070" summary="170607n rules added">
+      <created>1496779984892</created>
       <option name="number" value="00070" />
       <option name="presentableId" value="LOCAL-00070" />
       <option name="project" value="LOCAL" />
-      <updated>1496765209376</updated>
+      <updated>1496779984892</updated>
     </task>
-    <task id="LOCAL-00071" summary="170607e">
-      <created>1496853451100</created>
+    <task id="LOCAL-00071" summary="170607n rules added">
+      <created>1497038731789</created>
       <option name="number" value="00071" />
       <option name="presentableId" value="LOCAL-00071" />
       <option name="project" value="LOCAL" />
-      <updated>1496853451101</updated>
+      <updated>1497038731792</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="170611n rules added">
+      <created>1497129704430</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1497129704431</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1796346000" />
+    <option name="totallyTimeSpent" value="1809953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2185,19 +2145,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-170" y="111" width="1920" height="884" extended-state="0" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2782516" sideWeight="0.39686683" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2782516" sideWeight="0.60313314" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1301956" sideWeight="0.10339506" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1301956" sideWeight="0.89660496" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30597016" sideWeight="0.22237569" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14270613" sideWeight="0.59136885" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0016277808" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3368146" sideWeight="0.49361023" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.3282887" sideWeight="0.42105263" order="4" side_tool="false" content_ui="tabs" x="982" y="266" width="516" height="414" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29787233" sideWeight="0.49361023" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.3282887" sideWeight="0.42105263" order="4" side_tool="false" content_ui="tabs" x="151" y="219" width="1273" height="646" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24786781" sideWeight="0.35224587" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35416666" sideWeight="0.40863115" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2743561" sideWeight="0.40863115" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.28797084" sideWeight="0.35236937" order="3" side_tool="false" content_ui="tabs" x="1562" y="103" width="239" height="217" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2210,7 +2170,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="107" y="100" width="1484" height="826" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32865497" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32760596" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.012614679" sideWeight="0.49754602" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37309942" sideWeight="0.49265605" order="3" side_tool="false" content_ui="tabs" />
@@ -2271,7 +2231,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="Pre Alpha 0.0.531 add installer" />
     <MESSAGE value="Pre Alpha 0.0.591" />
     <MESSAGE value="ove menu and sidebar" />
     <MESSAGE value="Pre Alpha 0.0.69 SVG ICONS SYSTEM ADDED" />
@@ -2294,9 +2253,10 @@
     <MESSAGE value="17527n" />
     <MESSAGE value="17529n" />
     <MESSAGE value="17530n" />
-    <MESSAGE value="17605n" />
-    <MESSAGE value="170607e" />
-    <option name="LAST_COMMIT_MESSAGE" value="170607e" />
+    <MESSAGE value="170606n" />
+    <MESSAGE value="170607n rules added" />
+    <MESSAGE value="170611n rules added" />
+    <option name="LAST_COMMIT_MESSAGE" value="170611n rules added" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>$PROJECT_DIR$/backend/SERVER/wp</wordpressPath>
@@ -2321,8 +2281,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js</url>
+          <line>399</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js</url>
           <line>152</line>
-          <option name="timeStamp" value="27" />
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -2333,7 +2298,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="28" />
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2342,61 +2307,11 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/MASTER_OPTIONS/_options.json" />
-    <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/icons/icons-debug.svg" />
-    <entry file="file://$PROJECT_DIR$/dev/scss/MASTER_OPTIONS/_options.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2641">
-          <caret line="139" column="32" lean-forward="false" selection-start-line="132" selection-start-column="8" selection-end-line="139" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/PROJECTBOARD/_projectboard.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4940">
-          <caret line="260" column="16" lean-forward="false" selection-start-line="260" selection-start-column="16" selection-end-line="260" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projectboard/projectBoard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="47" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/viewport-resizer/demo/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/viewport-resizer/dist/viewpr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/viewport-resizer/dist/viewpr.js" />
     <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_includes.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-266">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2407,34 +2322,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/template.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="66" lean-forward="false" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/css/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/css/lib/parse/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/viewport-resizer/dist/viewpr.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/css/index.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/css/lib/parse/index.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/viewport-resizer/dist/viewpr.min.js" />
     <entry file="file://$PROJECT_DIR$/vendor/gulp plugins/q_functions/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2464,13 +2354,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/style (1).css" />
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/template.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -2521,49 +2404,23 @@
     <entry file="file://$USER_HOME$/Downloads/style.css" />
     <entry file="file://$PROJECT_DIR$/RESOURCE STORRAGE.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="238">
           <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/ace-builds/src/mode-jack.js">
+    <entry file="file://$PROJECT_DIR$/dist/node_modules/ace-builds/src/mode-jack.js" />
+    <entry file="file://$PROJECT_DIR$/dist/node_modules/ace-builds/src/mode-java.js" />
+    <entry file="file://$PROJECT_DIR$/dist/node_modules/ace-builds/src/worker-javascript.js" />
+    <entry file="file://$PROJECT_DIR$/dist/node_modules/ace-builds/src/mode-jade.js" />
+    <entry file="file://$PROJECT_DIR$/dist/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="27569">
+          <caret line="1451" column="0" lean-forward="false" selection-start-line="1451" selection-start-column="0" selection-end-line="1451" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/ace-builds/src/mode-java.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/ace-builds/src/worker-javascript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/ace-builds/src/mode-jade.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="120" lean-forward="false" selection-start-line="0" selection-start-column="91" selection-end-line="0" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/ace-builds/src/mode-javascript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13015">
-          <caret line="685" column="0" lean-forward="false" selection-start-line="685" selection-start-column="0" selection-end-line="782" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/node_modules/ace-builds/src/mode-javascript.js" />
     <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -2571,19 +2428,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+    <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26885">
-          <caret line="1418" column="27" lean-forward="false" selection-start-line="1418" selection-start-column="27" selection-end-line="1418" selection-end-column="27" />
-          <folding>
-            <marker date="1497170110000" expanded="true" signature="40103:41644" ph="{...}" />
-            <marker date="1497170110000" expanded="true" signature="40245:41596" ph="{...}" />
-            <marker date="1497170110000" expanded="true" signature="40473:41586" ph="{...}" />
-            <marker date="1497170110000" expanded="true" signature="40637:41545" ph="{...}" />
-            <marker date="1497170110000" expanded="true" signature="40689:41530" ph="{...}" />
-            <marker date="1497170110000" expanded="true" signature="41835:41953" ph="//..." />
-            <marker date="1497170110000" expanded="true" signature="42506:42619" ph="{...}" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2598,7 +2446,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/js-stringify/test/index.js" />
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -2606,35 +2461,59 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/js-stringify/test/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/scss/_draft1.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
+        <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/MODULES/MENUS/--Light_menu/_mixin.scss">
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/PROJECTBOARD/_projectboard.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2941">
+          <caret line="173" column="113" lean-forward="false" selection-start-line="173" selection-start-column="113" selection-end-line="173" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/template.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gulp/bin/gulp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="115" column="2" lean-forward="false" selection-start-line="115" selection-start-column="2" selection-end-line="115" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/template.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-lib/template.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2642,161 +2521,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/template.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding>
-            <marker date="1497196481000" expanded="true" signature="12095:12945" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="12409:12772" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="12484:12766" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="12591:12753" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="12616:12738" ph="{&quot;caption&quot;: word...}" />
-            <marker date="1497196481000" expanded="true" signature="12815:12932" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="12967:13729" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="13207:13573" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="13285:13567" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="13392:13554" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="13417:13539" ph="{&quot;caption&quot;: word...}" />
-            <marker date="1497196481000" expanded="true" signature="13599:13716" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="13750:14611" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="14086:14451" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="14163:14445" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="14270:14432" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="14295:14417" ph="{&quot;caption&quot;: word...}" />
-            <marker date="1497196481000" expanded="true" signature="14476:14593" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="14654:14765" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="14700:14756" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="14795:32903" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="19881:19893" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="19894:21069" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="20047:20060" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="20061:20184" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="20132:20145" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="20233:20245" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="20246:20367" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="20317:20329" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="20416:20428" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="20429:20550" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="20500:20512" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="20598:20625" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="20626:21054" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="20696:20727" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="20789:21026" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="20836:20901" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="21128:21695" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="21771:22449" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="21801:22434" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="21827:22421" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="22496:32894" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="22537:32883" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="22589:28740" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="22629:28631" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="22668:28614" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="22707:23028" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="23061:26061" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="23117:26040" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="23158:24658" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="24699:26018" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="26095:27021" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="26151:27000" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="26192:26978" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="27055:27513" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="27111:27492" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="27181:27243" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="27310:27382" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="27411:27470" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="27553:28595" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="27609:28574" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="27648:27786" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="27681:27751" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="27809:27863" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="27886:27943" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="27966:27987" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="28045:28119" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="28153:28215" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="28263:28325" ph="..." />
-            <marker date="1497196481000" expanded="false" signature="28392:28464" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="28493:28552" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="28650:28725" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="28792:30040" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="29680:29857" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="29720:29838" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="29752:29823" ph="{...}" />
-            <marker date="1497196481000" expanded="true" signature="30099:32440" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="30141:30463" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="30505:30760" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="30802:31063" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="31105:31357" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="31399:31655" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="31697:31953" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="31995:32241" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="32283:32425" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="32289:32349" ph="..." />
-            <marker date="1497196481000" expanded="true" signature="32355:32419" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/_header.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="74" lean-forward="false" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
+        <state relative-caret-position="102">
+          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/main.css">
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/scriptMap.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="1451" column="0" lean-forward="false" selection-start-line="1451" selection-start-column="0" selection-end-line="1451" selection-end-column="0" />
-          <folding>
-            <marker date="1497195930000" expanded="true" signature="45923:46089" ph="{...}" />
-            <marker date="1497195930000" expanded="true" signature="49405:49409" ph="{...}" />
-            <marker date="1497195930000" expanded="true" signature="49405:49436" ph="{...}" />
-            <marker date="1497195930000" expanded="true" signature="76715:76718" ph="{...}" />
-            <marker date="1497195930000" expanded="true" signature="76742:76797" ph="{...}" />
-            <marker date="1497195930000" expanded="true" signature="76823:76979" ph="{...}" />
-            <marker date="1497195930000" expanded="true" signature="77005:77149" ph="{...}" />
-            <marker date="1497195930000" expanded="true" signature="77163:77206" ph="{...}" />
-            <marker date="1497195930000" expanded="true" signature="77226:77262" ph="{...}" />
-            <marker date="1497195930000" expanded="true" signature="77285:77369" ph="{...}" />
-            <marker date="1497195930000" expanded="true" signature="77392:77475" ph="{...}" />
-            <marker date="1497195930000" expanded="true" signature="77500:77671" ph="{...}" />
-          </folding>
+          <caret line="0" column="600" lean-forward="false" selection-start-line="0" selection-start-column="600" selection-end-line="0" selection-end-column="600" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/html2jade/lib/html2jade.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12036">
+          <caret line="708" column="19" lean-forward="false" selection-start-line="708" selection-start-column="8" selection-end-line="708" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1364" column="27" lean-forward="false" selection-start-line="1364" selection-start-column="27" selection-end-line="1365" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="319" column="51" lean-forward="false" selection-start-line="319" selection-start-column="42" selection-end-line="319" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/scss/_debug.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="106" column="33" lean-forward="false" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+        <state relative-caret-position="13685">
+          <caret line="805" column="0" lean-forward="false" selection-start-line="805" selection-start-column="0" selection-end-line="805" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="38" />
+        <state relative-caret-position="551">
+          <caret line="733" column="23" lean-forward="false" selection-start-line="733" selection-start-column="23" selection-end-line="733" selection-end-column="23" />
           <folding>
-            <marker date="1497196467000" expanded="true" signature="6578:6662" ph="..." />
-            <marker date="1497196467000" expanded="true" signature="6793:6915" ph="..." />
-            <marker date="1497196467000" expanded="true" signature="11181:11208" ph="..." />
-            <marker date="1497196467000" expanded="true" signature="16283:16301" ph="..." />
-            <marker date="1497196467000" expanded="true" signature="16336:16347" ph="..." />
-            <marker date="1497196467000" expanded="true" signature="17437:17470" ph="..." />
-            <marker date="1497196467000" expanded="true" signature="22457:22487" ph="..." />
-            <marker date="1497196467000" expanded="true" signature="23581:23601" ph="..." />
+            <marker date="1497216143407" expanded="true" signature="6578:6662" ph="..." />
+            <marker date="1497216143407" expanded="true" signature="6793:6915" ph="..." />
+            <marker date="1497216143407" expanded="true" signature="11181:11208" ph="..." />
+            <marker date="1497216143407" expanded="true" signature="16283:16301" ph="..." />
+            <marker date="1497216143407" expanded="true" signature="16336:16347" ph="..." />
+            <marker date="1497216143407" expanded="true" signature="17437:17470" ph="..." />
+            <marker date="1497216143407" expanded="true" signature="22457:22487" ph="..." />
+            <marker date="1497216143407" expanded="true" signature="23581:23601" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="98" column="10" lean-forward="false" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
