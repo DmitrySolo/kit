@@ -4,10 +4,13 @@ script.
     dragdrop    = new Dragdrop(evt),
     rg          = new RulersGuides(evt, dragdrop);
 .editorsContainer.clearfix.notEdit
-    #currentSelectorWay.notEdit erer
-    #editorPug.editor
-    #editorScss.editor
-    #editorJs.editor
+    #currentSelectorWay.notEdit.clearfix
+        div(style='background:#2b2b2b;color: #fff')
+            span BODY >
+    .editorWrapper
+        #editorPug.editor
+        #editorScss.editor
+        #editorJs.editor
 script(src='ace-builds/src/ace.js', type='text/javascript', charset='utf-8')
 script(src='ace-builds/src/theme-tomorrow_night_eighties.js', type='text/javascript', charset='utf-8')
 script(src='ace-builds/src/mode-scss.js', type='text/javascript', charset='utf-8')

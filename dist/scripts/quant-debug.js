@@ -1,6 +1,18 @@
 //  quant-debug script
 
 $( document ).ready(function() {
+    window.searchClosestofDebugElement = function (searchableEl) {
+        var arr = ($(searchableEl).html()).split('<i>');
+        var tag = arr[0]
+        var classes = arr[1].replace(/<\/i>/,'').replace(/ /g,'.').replace(/&gt;/g,'');
+        var searchElem = tag+'.'+classes;
+
+        var newDebug =  $('.debugElement').closest($(searchElem));
+        console.log(newDebug)
+        $('.debugElement').removeClass('debugElement');
+        newDebug.trigger('click');
+    }
+
     function getObjects(elemClassStr) {
 
         elemClassStr= elemClassStr.trim();
@@ -120,7 +132,9 @@ var addToBufer= function (content) {
     $('.spacer').resizable({
         handles: "n, e, s, w"
     });
-
+    $('.editorsContainer').resizable({
+        handles: "n,s",minHeight: 257
+    });
     $('button','.fontSelector').on('click',function () {
 
         var  size = $("input[name='size']").val();
@@ -582,24 +596,60 @@ var addToBufer= function (content) {
     });
     $('.elAdder').on('click',function () {
 
-        var elem = qntGetThisData(this,'el')
-         elem = $(elem).css('height','20px');
+        var elem = qntGetThisData(this, 'el')
+        elem = $(elem).css('height', '20px');
         MakeEditable(elem);
         $('.debugElement').prepend(elem);
-
     })
 
 
+
+    var firstInTagsLine ='';
     function GetParents(el) {
+
+
+
+
         $('#currentSelectorWay').html('');
-        var parents = el.parents("*");
+        var parents = el.parents("*").not($('html')).not($('body'));
         var selectors = "<div style='background: #2b2b2b;color:#fff'>";
+        var selectorFirstFinded = false
         for (var i = parents.length-1; i >= 0; i--) {
-            selectors += "<span>"+parents[i].tagName + "<i>"+parents[i].className+ "</i>&rsaquo;</span>";
+
+
+        parents[i].classList.remove("resizeble");
+        parents[i].classList.remove("ui-resizable");
+        parents[i].classList.remove("ui-draggable");
+        parents[i].classList.remove("ui-draggable-handle");
+        // el.removeClass('resizeble')
+        // el.removeClass('ui-resizable')
+        // el.removeClass('ui-draggable')
+        // el.removeClass('ui-draggable-handle')
+
+        if (!selectorFirstFinded){
+            firstInTagsLine = parents[i].tagName+'.'+parents[i].className;
+            selectorFirstFinded = true;
         }
 
-        selectors +="<span style='background: #0086b3;'>"+el.prop("tagName")+"</span></div>";
+            selectors += "<span onclick='searchClosestofDebugElement(this)'>"+parents[i].tagName + "<i>"+parents[i].className+ "</i>></span>";
+        }
+
+        var ElCls =  el.prop("className").replace(/resizeble/g,'')
+            .replace(/resizable/g,'')
+            .replace(/debugElement/g,'')
+            .replace(/draggable/g,'')
+            .replace(/ui-/g,'')
+            .replace(/-handle/g,'')
+
+
+
+        selectors +="<span style='background: #0086b3;'>"+el.prop("tagName")+"<i>"+ElCls+"</i></span></div>";
 
        $('#currentSelectorWay').html(selectors);
     }
+    $('#currentSelectorWay span').on('click',function () {
+        console.log(this)
+    })
+
+
 });

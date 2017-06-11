@@ -32,7 +32,7 @@
           <div class="col-4-tp">
             <div class="row">
               <div class="col-6-tp headerSectionDivider">
-                <div class="headerSection resizeble"><span class="headerPhone">+7 (473) 228-65-07</span><span class="headerAddress">г. Воронеж, ул. Минская, 43</span></div>
+                <div class="headerSection resizeble"><span class="headerPhone">+7 (473) 228-65-07</span><span class="headerAddress">г. Воронеж, ул. Минская, 4q</span></div>
               </div>
               <div class="col-3-tp headerSectionDivider js-trigger">
                 <div class="headerSection">
@@ -59,19 +59,19 @@
     </main><!-- split footer.html -->
     <footer>This is footer</footer>
     <!--/////////////////////////////////////////////////////////////////-->
-    <script src="scripts/" type="text/javascript"></script>
     <script src="scripts/jquery.min.js" type="text/javascript"></script>
     <script src="scripts/quant-debug-JsonCss.js" type="text/javascript"></script>
+    <script src="scripts/" type="text/javascript"></script>
     <script src="scripts/notify.js" type="text/javascript"></script>
     <script src="scripts/jquery-ui.min.js" type="text/javascript"></script>
     <script src="scripts/viewpr.min.js" type="text/javascript"></script>
     <script src="scripts/viewpr.min.js" type="text/javascript"></script>
     <script src="scripts/quant-lib.js" type="text/javascript"></script>
-    <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
-    <script src="scripts/baseButton.js" type="text/javascript"></script>
     <script src="scripts/quant-debug.js" type="text/javascript"></script>
     <script src="scripts/quant-debug-ruller.js" type="text/javascript"></script>
     <script src="scripts/xRayView.js" type="text/javascript"></script>
+    <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
+    <script src="scripts/baseButton.js" type="text/javascript"></script>
   </body>
   <!--Debug Panel-->
   <script>
@@ -80,10 +80,14 @@
     rg          = new RulersGuides(evt, dragdrop);
   </script>
   <div class="editorsContainer clearfix notEdit">
-    <div class="notEdit" id="currentSelectorWay">erer</div>
-    <div class="editor" id="editorPug"></div>
-    <div class="editor" id="editorScss"></div>
-    <div class="editor" id="editorJs"></div>
+    <div class="notEdit clearfix" id="currentSelectorWay">
+      <div style="background:#2b2b2b;color: #fff;"><span>BODY ></span></div>
+    </div>
+    <div class="editorWrapper">
+      <div class="editor" id="editorPug"></div>
+      <div class="editor" id="editorScss"></div>
+      <div class="editor" id="editorJs"></div>
+    </div>
   </div>
   <script src="ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
   <script src="ace-builds/src/theme-tomorrow_night_eighties.js" type="text/javascript" charset="utf-8"></script>
