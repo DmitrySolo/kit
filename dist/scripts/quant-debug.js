@@ -124,7 +124,7 @@ var addToBufer= function (content) {
         alert(pastedData);
     }
 
-    document.getElementById('editableDiv').addEventListener('paste', handlePaste);
+
 
 
 //qntDragDrop( document.getElementById('ball'));
@@ -162,7 +162,9 @@ var addToBufer= function (content) {
             $('#getCode').remove();
            // $('*').removeAttr('contentEditable');
             $(this).addClass('resizeble');
+          //  $(this).attr('oncontextmenu',"console.log('blogged')");
             $(this).addClass('debugElement');
+            $(this).attr('contenteditable','true')
             GetParents($('.debugElement'));
                 var position = $('.debugElement').position();
                 $('body').prepend('<div id="getCode" class=".notEdit" style="position: absolute;top: '+position.top+'px; left: '+position.left+'px; z-index:10000">Get Code</div>')
@@ -597,7 +599,7 @@ var addToBufer= function (content) {
     $('.elAdder').on('click',function () {
 
         var elem = qntGetThisData(this, 'el')
-        elem = $(elem).css('height', '20px');
+        elem = $(elem).css('min-height', '20px');
         MakeEditable(elem);
         $('.debugElement').prepend(elem);
     })
@@ -652,6 +654,11 @@ var addToBufer= function (content) {
     })
 
     ///////////////////////////////////////////////////Panel Right
+    $('.debug-Pannel-Right-content').accordion({
+        active: 0,
+        collapsible: true
+
+    });
     $('#textAC').on('click',function () {
         $('.debugElement').css(
             {'textAlign':'center'}

@@ -177,31 +177,72 @@
   </script>
   <div class="debug-Pannel-Right notEdit">
     <div class="debug-Pannel-Right__section debugPannel__section">
-      <button id="unsplash">Gallery</button>
-      <hr>
-      <button id="100p">100%</button>
-      <hr>
-      <button id="textAC">center</button>
-      <button id="textAL">left</button>
-      <button id="textAR">right</button>
-      <hr>
-      <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padder(this.value)">
-      <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padderrl(this.value)">
-      <input type="range" min=".1" max="2" step=".1" list="tickmarks" onchange="paddertb(this.value)">
-      <hr>
-      <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginer(this.value)">
-      <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginerrl(this.value)">
-      <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginertb(this.value)">
-      <datalist id="tickmarks">
-        <option value=".1" label="e"></option>
-        <option value=".3" label="e+"></option>
-        <option value=".5" label="c"></option>
-        <option value=".7" label="c+"></option>
-        <option value=".9" label="m"></option>
-        <option value="1.1" label="m+"></option>
-        <option value="1.3" label="b"></option>
-        <option value="1.5" label="b+"></option>
-      </datalist>
+      <div class="debug-Pannel-Right-content">
+        <h6>Classes</h6>
+        <div class="clearfix">
+          <div class="col-6-tp">
+            <label>Block
+              <input class="classChoser" type="text">
+            </label>
+            <label>Element
+              <input class="classChoser" type="text">
+            </label>
+            <label>Modifier
+              <input class="classChoser" type="text">
+            </label>
+            <label>Optional
+              <input class="classChoser" type="text">
+            </label>
+          </div>
+          <div class="col-6-tp">
+            <select>
+              <option>Vendor classes</option>
+              <option>1</option>
+              <option>1</option>
+              <option>1</option>
+              <option>1</option>
+              <option>1</option>
+              <option>1</option>
+              <option>1</option>
+              <option>1</option>
+              <option>1</option>
+            </select>
+          </div>
+          <hr>
+        </div>
+        <h6>Size</h6>
+        <div>
+          <button id="100p">100%</button>
+          <hr>
+        </div>
+        <h6>Text & Font</h6>
+        <div>
+          <button id="textAC">center</button>
+          <button id="textAL">left</button>
+          <button id="textAR">right</button>
+          <hr>
+        </div>
+        <h6>Padding & Margins</h6>
+        <div>
+          <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padder(this.value)">
+          <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padderrl(this.value)">
+          <input type="range" min=".1" max="2" step=".1" list="tickmarks" onchange="paddertb(this.value)">
+          <hr>
+          <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginer(this.value)">
+          <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginerrl(this.value)">
+          <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginertb(this.value)">
+          <datalist id="tickmarks">
+            <option value=".1" label="e"></option>
+            <option value=".3" label="e+"></option>
+            <option value=".5" label="c"></option>
+            <option value=".7" label="c+"></option>
+            <option value=".9" label="m"></option>
+            <option value="1.1" label="m+"></option>
+            <option value="1.3" label="b"></option>
+            <option value="1.5" label="b+"></option>
+          </datalist>
+        </div>
+      </div>
     </div>
   </div>
   <div class="debug notEdit">

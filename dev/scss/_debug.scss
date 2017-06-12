@@ -374,12 +374,74 @@ $zNotEdit: 1000;
   }
   .debugPannel {
     background: #3c3f41 !important;
+
+
   }
-  .debugPannel__section {
-    &:last-child {
-      width: 18%;
+  .debugPannel__section,.debug-Pannel-Right-content {
+    *[class^="col-"],row,input,select{
+      background: none;
+      outline: none;
     }
+    label,select{color:#fff;
+    font-size:12px;
+
+    }
+    option{
+      background: #3c3f41;
+      color:#00b3ee;
+    }
+    input[type='text']{
+
+      background: #3c3f41;
+      border: none;
+      border-radius: 4px;
+      color:#00b3ee;
+    }
+
+    h6{
+      outline: none;
+      font-size: .6em !important;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      border-radius: 0% !important;
+      border: none !important;
+      border-bottom: 2px solid $panel !important;
+      &:before{
+        content: '^';
+        width: 12px;
+        /* height: 1.7em; */
+        background-color: #0086b3;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+      }
+    }
+    .ui-accordion-content {
+      padding: .5em .4em}
+    hr{
+      overflow: visible;
+      background: #3c3f41;
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid #2b2b2b;
+      margin: 1em 0;
+      padding: 0;
+    }
+    .ui-accordion-header-active {
+      background-color: #0086b3;
+    }
+    .ui-widget-content{
+    border:none;
+      border-bottom: 2px solid $panel !important;
+    }
+
      button {
+       color:#fff;
+       outline: none !important;
       font-size: 10px !important;
       border: none;
       background:#006eb7 !important;
@@ -803,7 +865,12 @@ $zNotEdit: 1000;
   input[type="range"]{
     outline: none;
   }
-
-
+  .debug-Pannel-Right{
+    padding: 15px;
+  }
+  .debug-Pannel-Right-content{
+    background: $panel-inner !important;
+    width: 100%;
+  }
 
 }

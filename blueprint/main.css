@@ -2971,23 +2971,72 @@ body.debug {
 .debugPannel {
   background: #3c3f41 !important; }
 
-.debugPannel__section {
+.debugPannel__section, .debug-Pannel-Right-content {
   background: #3c3f41 !important; }
-  .debugPannel__section:last-child {
-    width: 18%; }
-  .debugPannel__section button {
+  .debugPannel__section *[class^="col-"], .debugPannel__section row, .debugPannel__section input, .debugPannel__section select, .debug-Pannel-Right-content *[class^="col-"], .debug-Pannel-Right-content row, .debug-Pannel-Right-content input, .debug-Pannel-Right-content select {
+    background: none;
+    outline: none; }
+  .debugPannel__section label, .debugPannel__section select, .debug-Pannel-Right-content label, .debug-Pannel-Right-content select {
+    color: #fff;
+    font-size: 12px; }
+  .debugPannel__section option, .debug-Pannel-Right-content option {
+    background: #3c3f41;
+    color: #00b3ee; }
+  .debugPannel__section input[type='text'], .debug-Pannel-Right-content input[type='text'] {
+    background: #3c3f41;
+    border: none;
+    border-radius: 4px;
+    color: #00b3ee; }
+  .debugPannel__section h6, .debug-Pannel-Right-content h6 {
+    outline: none;
+    font-size: .6em !important;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    border-radius: 0% !important;
+    border: none !important;
+    border-bottom: 2px solid #3c3f41 !important; }
+    .debugPannel__section h6:before, .debug-Pannel-Right-content h6:before {
+      content: '^';
+      width: 12px;
+      /* height: 1.7em; */
+      background-color: #0086b3;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0; }
+  .debugPannel__section .ui-accordion-content, .debug-Pannel-Right-content .ui-accordion-content {
+    padding: .5em .4em; }
+  .debugPannel__section hr, .debug-Pannel-Right-content hr {
+    overflow: visible;
+    background: #3c3f41;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #2b2b2b;
+    margin: 1em 0;
+    padding: 0; }
+  .debugPannel__section .ui-accordion-header-active, .debug-Pannel-Right-content .ui-accordion-header-active {
+    background-color: #0086b3; }
+  .debugPannel__section .ui-widget-content, .debug-Pannel-Right-content .ui-widget-content {
+    border: none;
+    border-bottom: 2px solid #3c3f41 !important; }
+  .debugPannel__section button, .debug-Pannel-Right-content button {
+    color: #fff;
+    outline: none !important;
     font-size: 10px !important;
     border: none;
     background: #006eb7 !important;
     margin: 0; }
-    .debugPannel__section button:hover {
+    .debugPannel__section button:hover, .debug-Pannel-Right-content button:hover {
       background-color: #005f9e !important; }
-    .debugPannel__section button:active {
+    .debugPannel__section button:active, .debug-Pannel-Right-content button:active {
       background-color: #00406b !important; }
-    .debugPannel__section button.on {
+    .debugPannel__section button.on, .debug-Pannel-Right-content button.on {
       background-color: #00121e !important;
       border-bottom: 2px solid #006eb7; }
-  .debugPannel__section ul.debugPannel__colorSpecific {
+  .debugPannel__section ul.debugPannel__colorSpecific, .debug-Pannel-Right-content ul.debugPannel__colorSpecific {
     background: #3c3f41 !important; }
 
 .debugPannel__colorSpecific li {
@@ -3323,5 +3372,12 @@ li.ui-tabs-active {
 
 input[type="range"] {
   outline: none; }
+
+.debug-Pannel-Right {
+  padding: 15px; }
+
+.debug-Pannel-Right-content {
+  background: #2b2b2b !important;
+  width: 100%; }
 
 /*# sourceMappingURL=maps/main.css.map */
