@@ -744,7 +744,13 @@ var addToBufer= function (content) {
 
 
     }
+    window.gridder = function (intName,rangeVal) {
+        console.log(this)
 
+        $('input[name ="'+intName+'"]').val(rangeVal);
+
+
+    }
 
 
 

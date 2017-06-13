@@ -1209,7 +1209,6 @@ gulp.task('svgstore-debug', function () {
         .pipe(gulp.dest('vendor/icons/'));
 });
 
-
 //////////////////////////////////////////////////////
 gulp.task('START QUANT', function(){
     runSequence('WATCHER:NEW', 'SERVER')

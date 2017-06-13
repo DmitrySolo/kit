@@ -2979,6 +2979,14 @@ body.debug {
   .debugPannel__section label, .debugPannel__section select, .debug-Pannel-Right-content label, .debug-Pannel-Right-content select {
     color: #fff;
     font-size: 12px; }
+  .debugPannel__section svg, .debug-Pannel-Right-content svg {
+    background: none;
+    outline: none;
+    height: 1.4em;
+    margin-bottom: 10px; }
+  .debugPannel__section select, .debug-Pannel-Right-content select {
+    border-color: #0086b3;
+    width: 100%; }
   .debugPannel__section option, .debug-Pannel-Right-content option {
     background: #3c3f41;
     color: #00b3ee; }
@@ -2986,7 +2994,8 @@ body.debug {
     background: #3c3f41;
     border: none;
     border-radius: 4px;
-    color: #00b3ee; }
+    color: #00b3ee;
+    padding-left: .3em; }
   .debugPannel__section h6, .debug-Pannel-Right-content h6 {
     outline: none;
     font-size: .6em !important;
@@ -2997,7 +3006,7 @@ body.debug {
     border: none !important;
     border-bottom: 2px solid #3c3f41 !important; }
     .debugPannel__section h6:before, .debug-Pannel-Right-content h6:before {
-      content: '^';
+      content: '';
       width: 12px;
       /* height: 1.7em; */
       background-color: #0086b3;
@@ -3019,6 +3028,9 @@ body.debug {
     padding: 0; }
   .debugPannel__section .ui-accordion-header-active, .debug-Pannel-Right-content .ui-accordion-header-active {
     background-color: #0086b3; }
+    .debugPannel__section .ui-accordion-header-active .icon, .debug-Pannel-Right-content .ui-accordion-header-active .icon {
+      height: 1.8em !important;
+      background: none; }
   .debugPannel__section .ui-widget-content, .debug-Pannel-Right-content .ui-widget-content {
     border: none;
     border-bottom: 2px solid #3c3f41 !important; }

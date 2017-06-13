@@ -96,7 +96,10 @@ script(role='js').
 .debug-Pannel-Right.notEdit
     .debug-Pannel-Right__section.debugPannel__section
         .debug-Pannel-Right-content
-            h6 Classes
+
+            h6
+                +I('target')
+                | Classes
             div.clearfix
                 .col-6-tp
                     label Block
@@ -108,29 +111,75 @@ script(role='js').
                     label Optional
                         input(type='text').classChoser
                 .col-6-tp
-                    select(multiple='multiple',size='6')
-                        option Vendor classes
-                        option hide
-                        option show
-                        option clearfix
-                        option mode
-                        option active
-                        option platform
-                        option selected
-                        option additional
-                        option support
+                    label Vendor classes
+                        select(multiple='multiple',size='5')
+                            option hide
+                            option show
+                            option clearfix
+                            option mode
+                            option active
+                            option platform
+                            option selected
+                            option additional
+                            option support
+                    label Project classes
+                        select(multiple='multiple',size='4')
+                            option hide
+                            option show
+                            option clearfix
+                            option mode
+                            option active
+
                 hr
-            h6 Size
+            h6
+                +I('column4')
+                | Grids
+            div.clearfix
+                .col-2-tp
+                    +I('computer3')
+                    +I('computer2')
+                    +I('computer1')
+                    +I('computer')
+                    +I('arrow')
+                .col-2-tp
+                    input( type="text" value=0 name="mobileGridder")
+                    input( type="text" value=0 name="tpGridder")
+                    input( type="text" value=0 name="tlGridder")
+                    input( type="text" value=0 name="desctopGridder")
+                    input( type="text" value=0 name="bigDesctopGridder")
+                .col-8-tp
+                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('mobileGridder',this.value)" value="0")
+                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tpGridder',this.value)" value="0")
+                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tlGridder',this.value)" value="0")
+                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('desctopGridder',this.value)" value="0")
+                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('bigDesctopGridder',this.value)" value="0")
+                hr
+            h6
+                +I('computer3')
+                +I('computer2')
+                +I('computer1')
+                +I('computer')
+                +I('arrow')
+
+            div.clearfix
+
+            h6
+                +I('ruler')
+                | Size
             div
                 button#100p 100%
                 hr
-            h6 Text & Font
+            h6
+                +I('text')
+                | Text & Font
             div
                 button#textAC center
                 button#textAL left
                 button#textAR right
                 hr
-            h6 Padding & Margins
+            h6
+                +I('mp')
+                | Paddings & Margins
             div
                 input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padder(this.value)")
                 input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padderrl(this.value)")
@@ -148,6 +197,15 @@ script(role='js').
                     option( value="1.1" label="m+")
                     option( value="1.3" label="b")
                     option( value="1.5" label="b+")
+            h6
+                +I('boxborder')
+                | Border & Box
+            div
+            h6
+                +I('image')
+                | Background
+            div
+
 
 .debug.notEdit
     .hidden

@@ -386,6 +386,16 @@ $zNotEdit: 1000;
     font-size:12px;
 
     }
+    svg{
+      background: none;
+      outline: none;
+      height: 1.4em;
+      margin-bottom: 10px;
+    }
+    select{
+      border-color: #0086b3;
+      width: 100%;
+    }
     option{
       background: #3c3f41;
       color: #00b3ee;
@@ -396,6 +406,7 @@ $zNotEdit: 1000;
       border: none;
       border-radius: 4px;
       color:#00b3ee;
+      padding-left: .3em;
     }
 
     h6{
@@ -408,7 +419,7 @@ $zNotEdit: 1000;
       border: none !important;
       border-bottom: 2px solid $panel !important;
       &:before{
-        content: '^';
+        content: '';
         width: 12px;
         /* height: 1.7em; */
         background-color: #0086b3;
@@ -433,6 +444,10 @@ $zNotEdit: 1000;
     }
     .ui-accordion-header-active {
       background-color: #0086b3;
+      .icon {
+        height: 1.8em !important;
+        background: none;
+      }
     }
     .ui-widget-content{
     border:none;
