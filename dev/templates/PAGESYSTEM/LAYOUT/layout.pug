@@ -5,14 +5,14 @@ html(lang=''+head.lang)
     head
         include ../INCLUDES/_head
     body(class=''+bodyClass)
-
-        .hidden
-            include ../../../../dist/icons/icons.svg
-        include _header
-            <!-- split #{page.slug}.html -->
-        main
-            .container
-                block main
-        include _footer
-        include ../SCRIPTS-STYLES/FOOTER/_footerScripts
+        .projectWrapper
+            .hidden
+                include ../../../../dist/icons/icons.svg
+            include _header
+                <!-- split #{page.slug}.html -->
+            main
+                .container
+                    block main
+            include _footer
+            include ../SCRIPTS-STYLES/FOOTER/_footerScripts
     include ../INCLUDES/_debugPannel

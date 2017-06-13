@@ -2245,13 +2245,16 @@ body.blueprint {
     background-color: purple;
     border-radius: 50%; }
 
-body {
-  background: linear-gradient(to top, rgba(8, 0, 243, 0.1) 5%, white 5%);
-  background-size: 100% 1.7em; }
-
 body.debug {
-  background-color: #312034;
-  cursor: crosshair; }
+  cursor: crosshair;
+  margin-left: -19%;
+  background-color: #2b2b2b;
+  background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
+
+.canvas {
+  position: absolute; }
 
 .debug div:not(.colors div) {
   outline-style: dashed;
@@ -2613,22 +2616,6 @@ body.debug {
 
 .notEdit .li {
   background: #2980b9 !important; }
-
-.debug main {
-  outline-style: dashed;
-  outline-color: invert;
-  outline-offset: -1px;
-  outline-width: 1px;
-  background-image: linear-gradient(to bottom, #6168c1 0%, #6168c1 100%), linear-gradient(to bottom, #868bcf 0%, #868bcf);
-  background-clip: content-box, padding-box; }
-  .debug main ~ .debug-margins {
-    position: absolute;
-    font-weight: 900;
-    color: #fff;
-    background-color: #6168c1;
-    font-size: 12px;
-    line-height: 1.1;
-    border-radius: 20%; }
 
 .notEdit .main {
   background: #6168c1 !important; }
@@ -3152,6 +3139,7 @@ body.debug {
 .mediaMap {
   position: fixed !important;
   width: 100%;
+  display: none;
   top: 0px;
   background-color: #d2cfd2; }
   .mediaMap .icon {
@@ -3246,9 +3234,6 @@ body.debug {
   right: 0;
   top: 0; }
 
-body.debug {
-  padding-top: 50px; }
-
 .editorWrapper {
   width: 98%;
   margin: 0px auto;
@@ -3332,7 +3317,8 @@ li.ui-tabs-active {
 
 .ruler {
   background: #2b2b2b !important;
-  cursor: grab; }
+  cursor: grab;
+  position: fixed !important; }
   .ruler .h .milestone {
     border-left-color: #fff;
     margin-left: 1rem; }

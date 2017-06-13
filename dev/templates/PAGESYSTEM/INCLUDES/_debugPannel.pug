@@ -188,15 +188,6 @@ script(role='js').
                 input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginer(this.value)")
                 input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginerrl(this.value)")
                 input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginertb(this.value)")
-                datalist#tickmarks
-                    option( value=".1" label="e")
-                    option( value=".3" label="e+")
-                    option( value=".5" label="c")
-                    option( value=".7" label="c+")
-                    option( value=".9" label="m")
-                    option( value="1.1" label="m+")
-                    option( value="1.3" label="b")
-                    option( value="1.5" label="b+")
             h6
                 +I('boxborder')
                 | Border & Box
@@ -210,7 +201,7 @@ script(role='js').
 .debug.notEdit
     .hidden
         include   ../../../../vendor/icons/icons-debug.svg
-    section.mediaMap(style="height:50px;")
+    section.mediaMap
         .mediaMap__bounder.dl
             .mediaMap__container.dl
         .mediaMap__bounder.d(style="width:"+MEDIA.desktopBreakpoint)
@@ -402,7 +393,7 @@ script(role='js').
                 a.tabAnchr(href="javascript:onclick=maximizeme()") Maximize
                 script.
                     var qscale = function (v) {
-                        $('main').css({
+                        $('.projectWrapper').css({
                             "transform": "scale(" + v + ")"
                         })
                     }
