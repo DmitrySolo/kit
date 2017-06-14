@@ -92,7 +92,38 @@ script(role='js').
         enableSnippets: true,
         enableLiveAutocompletion: true
     });
-
+.debug-Dialog.notEdit.debug
+    .debug-Dialog-content
+        .row
+            .debug-subtitle.col-5-tp
+                .createTitle.active
+                    +I('cube')
+                    |Element
+                .createTitle
+                    +I('cube')
+                    |Component
+                .createTitle
+                    +I('cube')
+                    |Module
+                .createTitle
+                    +I('cube')
+                    |Block/Section
+                .createTitle
+                    +I('cube')
+                    |Animation
+                .createTitle
+                    +I('cube')
+                    |Class
+                .createTitle
+                    +I('cube')
+                    |Script
+            .debug-registrator.col-7-tp
+                label Element Name:
+                    input
+                label Element Type:
+                    input
+                label Element Extends:
+                    input
 .debug-Pannel-Right.notEdit
     .debug-Pannel-Right__section.debugPannel__section
         .debug-Pannel-Right-content

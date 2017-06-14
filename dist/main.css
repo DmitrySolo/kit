@@ -2250,7 +2250,7 @@ body.debug {
   margin-left: -19%;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -2280,32 +2280,32 @@ body.debug {
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
-  background-image: linear-gradient(to bottom, #e74c3c 0%, #e74c3c 100%), linear-gradient(to bottom, #ed7669 0%, #ed7669);
+  background-image: linear-gradient(to bottom, #f1443d 0%, #f1443d 100%), linear-gradient(to bottom, #f4726d 0%, #f4726d);
   background-clip: content-box, padding-box; }
   .debug h1 ~ .debug-margins, .debug h2 ~ .debug-margins, .debug h3 ~ .debug-margins, .debug h4 ~ .debug-margins, .debug h5 ~ .debug-margins, .debug h6 ~ .debug-margins, .headers ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
-    background-color: #e74c3c;
+    background-color: #f1443d;
     font-size: 12px;
     line-height: 1.1;
     border-radius: 20%; }
 
 .notEdit .headers {
-  background-color: #e74c3c !important; }
+  background-color: #f1443d !important; }
 
 .debug p {
   outline-style: dashed;
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
-  background-image: linear-gradient(to bottom, #ffc114 0%, #ffc114 100%), linear-gradient(to bottom, #ffce47 0%, #ffce47);
+  background-image: linear-gradient(to bottom, #e52464 0%, #e52464 100%), linear-gradient(to bottom, #ea5284 0%, #ea5284);
   background-clip: content-box, padding-box; }
   .debug p ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
-    background-color: #ffc114;
+    background-color: #e52464;
     font-size: 12px;
     line-height: 1.1;
     border-radius: 20%; }
@@ -2388,19 +2388,19 @@ body.debug {
   outline-color: invert;
   outline-offset: -1px;
   outline-width: 1px;
-  background-image: linear-gradient(to bottom, #9bb6bd 0%, #9bb6bd 100%), linear-gradient(to bottom, #baccd1 0%, #baccd1);
+  background-image: linear-gradient(to bottom, #fc9627 0%, #fc9627 100%), linear-gradient(to bottom, #fdae59 0%, #fdae59);
   background-clip: content-box, padding-box; }
   .debug blockquote ~ .debug-margins {
     position: absolute;
     font-weight: 900;
     color: #fff;
-    background-color: #9bb6bd;
+    background-color: #fc9627;
     font-size: 12px;
     line-height: 1.1;
     border-radius: 20%; }
 
 .notEdit .blockquote {
-  background: #9bb6bd !important; }
+  background: #fc9627 !important; }
 
 .debug aside {
   outline-style: dashed;
@@ -2558,7 +2558,7 @@ body.debug {
   background: #6bdabd !important; }
 
 .notEdit .prgrph {
-  background: #ffc114 !important; }
+  background: #e52464 !important; }
 
 .debug ul {
   outline-style: dashed;
@@ -3336,6 +3336,14 @@ li.ui-tabs-active {
   margin-bottom: 1.7rem !important;
   outline: none !important; }
 
+.ruler.v {
+  border-right: solid 1px #00e7ff !important;
+  padding-left: 0;
+  width: 34px !important; }
+
+.ruler.h {
+  border-bottom: solid 1px #00e7ff !important; }
+
 .rg-overlay {
   pointer-events: none;
   z-index: 102; }
@@ -3377,5 +3385,87 @@ input[type="range"] {
 .debug-Pannel-Right-content {
   background: #2b2b2b !important;
   width: 100%; }
+
+.createTitle {
+  font-size: .9em !important;
+  color: #fff;
+  width: 100%;
+  border: 1px solid #0086b3;
+  padding: 7px 16px;
+  border-left: 10px solid;
+  border-left-color: #0086b3;
+  margin-bottom: 10px; }
+  .createTitle.active {
+    background: #0086b3 !important; }
+
+.ui-dialog {
+  border: none !important;
+  border-radius: 0 !important; }
+
+.ui-dialog * {
+  outline: none !important; }
+
+.ui-dialog .ui-dialog-titlebar-close {
+  position: absolute;
+  right: -4px !important;
+  top: 6px !important;
+  width: 55px !important;
+  height: 30px !important; }
+
+.ui-button {
+  background: #0086b3 !important;
+  padding: 12px 21px !important;
+  outline: none !important;
+  border: none !important;
+  border-radius: 0 !important; }
+
+.ui-widget-header {
+  background: #3c3f41 !important;
+  border: none !important; }
+  .ui-widget-header span {
+    background: transparent !important; }
+
+.ui-dialog-titlebar {
+  background: #3c3f41 !important; }
+
+.ui-dialog-title {
+  color: #fff;
+  font-size: 1.6em; }
+
+.ui-dialog {
+  background-color: #3c3f41 !important;
+  min-width: 850px !important;
+  top: 20% !important;
+  left: 18% !important;
+  border-top: 4px solid #0086b3 !important; }
+
+.debug-Dialog-content {
+  padding: 20px;
+  background: #2b2b2b !important; }
+
+.createTitle .icon {
+  height: 1.7em;
+  background: none;
+  margin-right: 20px; }
+
+.debug-registrator {
+  font-size: .7em; }
+  .debug-registrator label {
+    display: block;
+    color: #fff;
+    background: transparent;
+    padding-bottom: 10px;
+    padding-left: 15px; }
+    .debug-registrator label input {
+      color: #0086b3;
+      padding-left: .3em;
+      background: #313335;
+      float: right;
+      border: none;
+      border-radius: 4%; }
+    .debug-registrator label .icon {
+      position: absolute;
+      top: -30px;
+      right: 0; }
 
 /*# sourceMappingURL=maps/main.css.map */

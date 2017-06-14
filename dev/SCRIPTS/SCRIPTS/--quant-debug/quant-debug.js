@@ -752,6 +752,10 @@ var addToBufer= function (content) {
 
     }
 
-
+//////////////Modal
+        $( ".debug-Dialog" ).dialog({
+            dialogClass: "no-close",
+            title: "Create New:"
+        });
 
 });
