@@ -110,19 +110,19 @@
       </main><!-- split footer.html -->
       <footer>This is footer</footer>
       <!--/////////////////////////////////////////////////////////////////-->
-      <script src="scripts/" type="text/javascript"></script>
       <script src="scripts/jquery.min.js" type="text/javascript"></script>
       <script src="scripts/quant-debug-JsonCss.js" type="text/javascript"></script>
+      <script src="scripts/" type="text/javascript"></script>
       <script src="scripts/notify.js" type="text/javascript"></script>
       <script src="scripts/jquery-ui.min.js" type="text/javascript"></script>
       <script src="scripts/viewpr.min.js" type="text/javascript"></script>
       <script src="scripts/viewpr.min.js" type="text/javascript"></script>
       <script src="scripts/quant-lib.js" type="text/javascript"></script>
       <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
-      <script src="scripts/baseButton.js" type="text/javascript"></script>
       <script src="scripts/quant-debug.js" type="text/javascript"></script>
       <script src="scripts/quant-debug-ruller.js" type="text/javascript"></script>
       <script src="scripts/xRayView.js" type="text/javascript"></script>
+      <script src="scripts/baseButton.js" type="text/javascript"></script>
     </div>
   </body>
   <!--Debug Panel-->
@@ -270,10 +270,42 @@
             <input>
           </label>
           <label>Element Type:
-            <input>
+            <select>
+              <option>Button</option>
+              <option>Icon</option>
+              <option>Link</option>
+              <option>LinkButton</option>
+              <option>Icon</option>
+              <option>Preloader</option>
+            </select>
           </label>
           <label>Element Extends:
-            <input>
+            <select>
+              <option>No extends</option>
+              <option>Icon</option>
+              <option>Link</option>
+              <option>LinkButton</option>
+              <option>Icon</option>
+              <option>Button</option>
+              <option>Icon</option>
+              <option>Link</option>
+              <option>LinkButton</option>
+              <option>Icon</option>
+            </select>
+          </label>
+          <label>Element Parent:
+            <input placeholder="div">
+          </label>
+          <label>Save to Global library:
+            <label>No
+              <input type="radio" name="saveto">
+            </label>
+            <label>Yes
+              <input type="radio" name="saveto">
+            </label>
+          </label>
+          <label>
+            <button>Create</button>
           </label>
         </div>
       </div>
@@ -609,7 +641,8 @@
           <button id="addBkg">add Background</button>
           <button id="startMediaTest">Media</button>
           <button id="getScssCode">Get scss</button>
-          <button id="getinnerView">Get Html</button><a class="tabAnchr" href="javascript:onclick=maximizeme()">Maximize</a>
+          <button id="getinnerView">Get Html</button>
+          <button id="cn">CREATE NEW...</button><a class="tabAnchr" href="javascript:onclick=maximizeme()">Maximize</a>
           <script>
             var qscale = function (v) {
                 $('.projectWrapper').css({

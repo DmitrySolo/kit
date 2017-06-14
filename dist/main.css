@@ -2250,7 +2250,7 @@ body.debug {
   margin-left: -19%;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -3435,7 +3435,7 @@ input[type="range"] {
 .ui-dialog {
   background-color: #3c3f41 !important;
   min-width: 850px !important;
-  top: 20% !important;
+  top: 5% !important;
   left: 18% !important;
   border-top: 4px solid #0086b3 !important; }
 
@@ -3448,15 +3448,29 @@ input[type="range"] {
   background: none;
   margin-right: 20px; }
 
+.ui-widget-overlay {
+  background-color: #0a0a0a !important;
+  opacity: .8; }
+
 .debug-registrator {
   font-size: .7em; }
+  .debug-registrator label label label {
+    padding: 0; }
+  .debug-registrator button {
+    border: none;
+    color: #fff;
+    background-color: #fc9627;
+    padding: 10px 20px; }
   .debug-registrator label {
     display: block;
     color: #fff;
     background: transparent;
     padding-bottom: 10px;
-    padding-left: 15px; }
-    .debug-registrator label input {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 20px; }
+    .debug-registrator label input, .debug-registrator label select {
+      width: 50%;
       color: #0086b3;
       padding-left: .3em;
       background: #313335;

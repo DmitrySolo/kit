@@ -121,9 +121,34 @@ script(role='js').
                 label Element Name:
                     input
                 label Element Type:
-                    input
+                    select
+                        option Button
+                        option Icon
+                        option Link
+                        option LinkButton
+                        option Icon
+                        option Preloader
                 label Element Extends:
-                    input
+                        select
+                            option No extends
+                            option Icon
+                            option Link
+                            option LinkButton
+                            option Icon
+                            option Button
+                            option Icon
+                            option Link
+                            option LinkButton
+                            option Icon
+                label Element Parent:
+                   input(placeholder='div')
+                label Save to Global library:
+                    label No
+                        input(type='radio' name='saveto')
+                    label Yes
+                        input(type='radio' name='saveto')
+                label
+                    button Create
 .debug-Pannel-Right.notEdit
     .debug-Pannel-Right__section.debugPannel__section
         .debug-Pannel-Right-content
@@ -421,6 +446,7 @@ script(role='js').
                 button#startMediaTest Media
                 button#getScssCode Get scss
                 button#getinnerView Get Html
+                button#cn CREATE NEW...
                 a.tabAnchr(href="javascript:onclick=maximizeme()") Maximize
                 script.
                     var qscale = function (v) {

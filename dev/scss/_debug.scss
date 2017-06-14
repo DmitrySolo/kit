@@ -980,7 +980,7 @@ border: none !important;
    font-size: 1.6em;
   }
 .ui-dialog{ background-color: #3c3f41 !important;min-width:850px !important;
-  top:20% !important;
+  top:5% !important;
   left:18% !important;
   border-top: 4px solid rgb(0, 134, 179) !important;}
 .debog-Dialog-Close {
@@ -1001,14 +1001,31 @@ border: none !important;
     }
 
   }
+  .ui-widget-overlay {
+    background-color: #0a0a0a !important;
+    opacity: .8;
+  }
   .debug-registrator {
+    label label label {
+      padding: 0;
+    }
+
     font-size: .7em;
+    button {
+      border:none;
+      color: #fff;
+      background-color: #fc9627;
+      padding: 10px 20px;
+    }
     label{display:block;
       color: #fff;
       background: transparent;
       padding-bottom: 10px;
-      padding-left: 15px;
-    input{
+      padding-left: 35px;
+      padding-right: 35px;
+      padding-top: 20px;
+    input,select{
+      width: 50%;
       color: #0086b3;
       padding-left:.3em;
       background: #313335;

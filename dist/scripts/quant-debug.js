@@ -754,8 +754,14 @@ var addToBufer= function (content) {
 
 //////////////Modal
         $( ".debug-Dialog" ).dialog({
-            dialogClass: "no-close",
-            title: "Create New:"
+            modal: true,
+            title: "Create New:",
+            autoOpen: false
         });
+
+    $('#cn').on('click',function () {
+        $( ".debug-Dialog" ).dialog( "open" );
+    })
+
 
 });
