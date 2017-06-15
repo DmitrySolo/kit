@@ -61,19 +61,19 @@
       </main><!-- split footer.html -->
       <footer>This is footer</footer>
       <!--/////////////////////////////////////////////////////////////////-->
+      <script src="scripts/" type="text/javascript"></script>
       <script src="scripts/jquery.min.js" type="text/javascript"></script>
       <script src="scripts/quant-debug-JsonCss.js" type="text/javascript"></script>
-      <script src="scripts/" type="text/javascript"></script>
+      <script src="scripts/quant-lib.js" type="text/javascript"></script>
       <script src="scripts/notify.js" type="text/javascript"></script>
       <script src="scripts/jquery-ui.min.js" type="text/javascript"></script>
       <script src="scripts/viewpr.min.js" type="text/javascript"></script>
       <script src="scripts/viewpr.min.js" type="text/javascript"></script>
-      <script src="scripts/quant-lib.js" type="text/javascript"></script>
-      <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
-      <script src="scripts/quant-debug.js" type="text/javascript"></script>
-      <script src="scripts/quant-debug-ruller.js" type="text/javascript"></script>
-      <script src="scripts/xRayView.js" type="text/javascript"></script>
       <script src="scripts/baseButton.js" type="text/javascript"></script>
+      <script src="scripts/quant-debug.js" type="text/javascript"></script>
+      <script src="scripts/xRayView.js" type="text/javascript"></script>
+      <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
+      <script src="scripts/quant-debug-ruller.js" type="text/javascript"></script>
     </div>
   </body>
   <!--Debug Panel-->
@@ -216,24 +216,24 @@
             </svg>Script
           </div>
         </div>
-        <div class="debug-registrator col-7-tp">
+        <div class="debug-registrator col-7-tp debug-registrator-active">
+          <input id="contentType" type="hidden" value="element">
           <label>Element Name:
-            <input>
+            <input id="elname" type="text">
           </label>
           <label>Element Type:
-            <select>
-              <option>Button</option>
-              <option>Icon</option>
-              <option>Link</option>
-              <option>LinkButton</option>
-              <option>Icon</option>
-              <option>Preloader</option>
+            <select id="eltype" name="elemType">
+              <option value="button">button</option>
+              <option value="icon">Icon</option>
+              <option value="link">Link</option>
+              <option value="linkbutton">LinkButton</option>
+              <option value="preloader">Preloader</option>
             </select>
           </label>
           <label>Element Extends:
-            <select>
-              <option>No extends</option>
-              <option>Icon</option>
+            <select id="elementExtends" name="vextends">
+              <option value="false">No extends</option>
+              <option value="button">Icon</option>
               <option>Link</option>
               <option>LinkButton</option>
               <option>Icon</option>
@@ -245,18 +245,18 @@
             </select>
           </label>
           <label>Element Parent:
-            <input placeholder="div">
+            <input id="elementParent" type="text" name="parent" placeholder="div">
           </label>
           <label>Save to Global library:
             <label>No
-              <input type="radio" name="saveto">
+              <input type="radio" name="saveto" checked value="false">
             </label>
             <label>Yes
-              <input type="radio" name="saveto">
+              <input type="radio" name="saveto" value="true">
             </label>
           </label>
           <label>
-            <button>Create</button>
+            <button class="creator">Create</button>
           </label>
         </div>
       </div>

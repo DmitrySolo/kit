@@ -762,6 +762,43 @@ var addToBufer= function (content) {
     $('#cn').on('click',function () {
         $( ".debug-Dialog" ).dialog( "open" );
     })
+        $('.debug-registrator-active .creator').on('click',function () {
+            var creation = $('.debug-registrator-active #contentType').val();
+            switch (creation) {
+                case 'element':{
 
+                    var elementTitle = $('#elname').val(),
+                        elementType =  $('#eltype').val(),
+                        elementExtends = $('#elementExtends').val(),
+                        elementParent = $("#elementParent").val(),
+                        saveToGlobal = $("input[name='saveto']:checked").val();
+
+                    if (elementTitle && elementType &&elementExtends && elementParent && saveToGlobal){
+
+
+                        $.ajax({
+                            url: "http://localhost:8181/?action=creator&element=element&title="+elementTitle+
+                            "&elementType="+elementType+"&extends="+elementExtends+"&parent="+elementParent+
+                            "&saveToGlobal="+saveToGlobal})
+
+                            .done(function (data) {
+
+                                console.log('ok')
+                                editorPug.insert(data)
+
+
+
+                            })
+
+                    }
+
+
+
+
+
+                }
+
+            }
+        })
 
 });

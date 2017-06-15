@@ -1616,25 +1616,6 @@ section.block {
 /**
 * ELEMENTS  STYLES
 */
-.mainButton {
-  background-color: #aaa; }
-  .mainButton:focus {
-    outline: thin dotted; }
-  .mainButton:hover, .mainButton:active {
-    outline: 2; }
-
-.infoElement {
-  line-height: 60px; }
-  .infoElement .iconWrapper, .infoElement h5, .infoElement span {
-    padding-right: 0.952em;
-    padding-left: 0.952em;
-    display: inline-block; }
-  .infoElement .infoElement__icon {
-    width: 60px;
-    height: 60px;
-    fill: #00aab5;
-    vertical-align: top; }
-
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -1705,6 +1686,18 @@ section.block {
 
 .ove-sectionHeader {
   margin-bottom: 0.85em; }
+
+.wewerrtrgdfg {
+  position: relative;
+  background-color: #fff;
+  color: #fff; }
+  .wewerrtrgdfg:hover, .wewerrtrgdfg:focus, .wewerrtrgdfg:active {
+    color: #fff;
+    background-color: #fff; }
+  .wewerrtrgdfg:focus {
+    outline: none; }
+  .wewerrtrgdfg:hover, .wewerrtrgdfg:active {
+    outline: none; }
 
 input[type='text'].ove-cardRegInput {
   outline: none;
@@ -1783,6 +1776,25 @@ a, a.mainLink {
     outline: none; }
   a:hover, a:active, a.mainLink:hover, a.mainLink:active {
     outline: none; }
+
+.mainButton {
+  background-color: #aaa; }
+  .mainButton:focus {
+    outline: thin dotted; }
+  .mainButton:hover, .mainButton:active {
+    outline: 2; }
+
+.infoElement {
+  line-height: 60px; }
+  .infoElement .iconWrapper, .infoElement h5, .infoElement span {
+    padding-right: 0.952em;
+    padding-left: 0.952em;
+    display: inline-block; }
+  .infoElement .infoElement__icon {
+    width: 60px;
+    height: 60px;
+    fill: #00aab5;
+    vertical-align: top; }
 
 /**
 * PROJECT  STYLES
@@ -2250,7 +2262,7 @@ body.debug {
   margin-left: -19%;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {

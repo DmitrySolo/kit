@@ -1,7 +1,3 @@
-mixin B(value,className)
-	-if (!className) className =''
-	button.mainButton(class=''+className)=value
-
 mixin infoElement(icon,title,text,classModifier)
 	-if (!classModifier) classModifier =''
 	li(class='infoElement')
@@ -17,6 +13,15 @@ mixin I(id,classModifier)
 	-if (!classModifier) classModifier =''
 	svg(class='icon '+classModifier)
 		use(xlink:href="#"+id)
+mixin B-wewerrtrgdfg(value,className)
+	-if (!className) className =''
+	button.wewerrtrgdfg(class=''+className)=value
+
+
+mixin B(value,className)
+	-if (!className) className =''
+	button.mainButton(class=''+className)=value
+
 mixin INPUT-oveCard(type,className)
 	-if (!className) className =''
 	input(type=""+type, class='ove-cardRegInput '+className placeholder='Это плейсхолдер')

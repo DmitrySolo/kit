@@ -1380,6 +1380,30 @@ gulp.task('API-SERVER', function () {
                          srvRes = jade;
                         });
                     break;
+///////////////////////////////////////////////////////////////////
+                    case 'creator' :
+                        var contentType =url_parts.query.element
+
+                        switch (contentType){
+                            case 'element': {
+
+                                    var name = url_parts.query.title,
+                                        type = url_parts.query.elementType,
+                                        extnds = url_parts.query.elementExtends,
+                                        prnt = url_parts.query.elementParent,
+                                        save = url_parts.query.saveToGlobal;
+
+                                gulp.task('creator', shell.task([
+                                    'gulp be --name '+name+' --type '+type
+                                ]))
+                                gulp.start('creator')
+
+                                }
+
+                            }
+                        }
+
+
 
                 }
 
@@ -1389,12 +1413,12 @@ gulp.task('API-SERVER', function () {
 
         }
 
-
-
-
-    }
-
     http.createServer(accept).listen(8181);
+
+
+
+
+
 
 });
 

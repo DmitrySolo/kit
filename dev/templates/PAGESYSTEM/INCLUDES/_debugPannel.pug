@@ -117,21 +117,21 @@ script(role='js').
                 .createTitle
                     +I('cube')
                     |Script
-            .debug-registrator.col-7-tp
+            .debug-registrator.col-7-tp.debug-registrator-active
+                input#contentType(type='hidden' value='element')
                 label Element Name:
-                    input
+                    input#elname(type='text')
                 label Element Type:
-                    select
-                        option Button
-                        option Icon
-                        option Link
-                        option LinkButton
-                        option Icon
-                        option Preloader
+                    select#eltype(name='elemType')
+                        option(value='button') button
+                        option(value='icon') Icon
+                        option(value='link') Link
+                        option(value='linkbutton') LinkButton
+                        option(value='preloader') Preloader
                 label Element Extends:
-                        select
-                            option No extends
-                            option Icon
+                        select#elementExtends(name='vextends')
+                            option(value='false') No extends
+                            option(value='button') Icon
                             option Link
                             option LinkButton
                             option Icon
@@ -141,14 +141,14 @@ script(role='js').
                             option LinkButton
                             option Icon
                 label Element Parent:
-                   input(placeholder='div')
+                   input#elementParent(type='text' name='parent' placeholder='div')
                 label Save to Global library:
                     label No
-                        input(type='radio' name='saveto')
+                        input(type='radio' name='saveto' checked value="false")
                     label Yes
-                        input(type='radio' name='saveto')
+                        input(type='radio' name='saveto' value="true")
                 label
-                    button Create
+                    button.creator Create
 .debug-Pannel-Right.notEdit
     .debug-Pannel-Right__section.debugPannel__section
         .debug-Pannel-Right-content
