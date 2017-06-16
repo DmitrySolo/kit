@@ -1,0 +1,20 @@
+$bkgColor__rteeeeeee:#fff;
+$bkgColor__rteeeeeee-hover:#fff;
+$color__rteeeeeee-hover:#fff;
+$color__rteeeeeee:#fff;
+
+.rteeeeeee {
+	position: relative;
+	background-color: $bkgColor__rteeeeeee;
+	color: $color__rteeeeeee;
+		&:hover, &:focus, &:active {
+		color: $color__rteeeeeee-hover;
+		background-color: $bkgColor__rteeeeeee-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}

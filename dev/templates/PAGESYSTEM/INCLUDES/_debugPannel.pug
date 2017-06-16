@@ -1,4 +1,5 @@
 //Debug Panel
+link.tabAnchr(href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet")
 script.
     var evt         = new Event(),
     dragdrop    = new Dragdrop(evt),
@@ -149,6 +150,25 @@ script(role='js').
                         input(type='radio' name='saveto' value="true")
                 label
                     button.creator Create
+        .debug-Dialog-start.notEdit.debug
+            .quant Quant
+                span THEME ENGINE
+                span.ver Version: Pre Alpha 0.0.96
+            .debug-Dialog-content
+                .row
+                    .debug-subtitle.col-4-tp
+                        .createTitle
+                            +I('plus')
+                            | Create Project
+                        .createTitle
+                            +I('export')
+                            | Load Project
+                        .createTitle
+                            +I('plus')
+                            | Create Content
+                        .createTitle
+                            +I('export')
+                            | Load Content
 .debug-Pannel-Right.notEdit
     .debug-Pannel-Right__section.debugPannel__section
         .debug-Pannel-Right-content

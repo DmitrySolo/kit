@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a405dd0-215a-4030-b1ad-1ee92d874110" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug/export.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug/plus.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blueprint/index.html" afterPath="$PROJECT_DIR$/blueprint/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blueprint/main.css" afterPath="$PROJECT_DIR$/blueprint/main.css" />
@@ -11,6 +13,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/ELEMENTS/_elements.scss" afterPath="$PROJECT_DIR$/dev/ELEMENTS/_elements.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js" afterPath="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/SCRIPTS/scriptMap.json" afterPath="$PROJECT_DIR$/dev/SCRIPTS/scriptMap.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/scss/_debug.scss" afterPath="$PROJECT_DIR$/dev/scss/_debug.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs+.pug" afterPath="$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs+.pug" />
@@ -25,9 +28,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/pacients.html" afterPath="$PROJECT_DIR$/dist/pacients.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/pay.html" afterPath="$PROJECT_DIR$/dist/pay.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/quant-debug.js" afterPath="$PROJECT_DIR$/dist/scripts/quant-debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projectboard/main.css" afterPath="$PROJECT_DIR$/projectboard/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projectboard/maps/main.css.map" afterPath="$PROJECT_DIR$/projectboard/maps/main.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/icons/icons-debug.svg" afterPath="$PROJECT_DIR$/vendor/icons/icons-debug.svg" />
     </list>
     <ignored path="kit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -134,87 +137,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="311">
-      <file leaf-file-name="_debug.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/scss/_debug.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="864" column="18" lean-forward="false" selection-start-line="864" selection-start-column="18" selection-end-line="864" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_blueprint.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blueprint/_blueprint.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_helpers.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_helpers.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_master_mixin.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_debugPannel.pug" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_debugPannel.pug" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="125" column="53" lean-forward="false" selection-start-line="125" selection-start-column="53" selection-end-line="125" selection-end-column="53" />
+            <state relative-caret-position="183">
+              <caret line="154" column="33" lean-forward="false" selection-start-line="154" selection-start-column="33" selection-end-line="154" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="icons-debug.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/icons/icons-debug.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="4282" lean-forward="false" selection-start-line="0" selection-start-column="4282" selection-end-line="0" selection-end-column="4282" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quant-debug.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="781" column="59" lean-forward="false" selection-start-line="781" selection-start-column="59" selection-end-line="781" selection-end-column="59" />
-              <folding>
-                <marker date="1497532590000" expanded="true" signature="6617:6701" ph="..." />
-                <marker date="1497532590000" expanded="true" signature="6832:6954" ph="..." />
-                <marker date="1497532590000" expanded="true" signature="11220:11247" ph="..." />
-                <marker date="1497532590000" expanded="true" signature="16322:16340" ph="..." />
-                <marker date="1497532590000" expanded="true" signature="16375:16386" ph="..." />
-                <marker date="1497532590000" expanded="true" signature="17476:17509" ph="..." />
-                <marker date="1497532590000" expanded="true" signature="22500:22530" ph="..." />
-                <marker date="1497532590000" expanded="true" signature="23624:23644" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cube.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug/cube.svg">
+      <file leaf-file-name="plus.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug/plus.svg">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -223,8 +157,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="close.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug/close.svg">
+      <file leaf-file-name="export.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/STORRAGE/themify-icons/SVG/export.svg">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -233,28 +167,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="846" column="32" lean-forward="true" selection-start-line="846" selection-start-column="32" selection-end-line="846" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--wewerrtrgdfg/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="off_libs.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--wewerrtrgdfg/off_libs.json">
+      <file leaf-file-name="export.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug/export.svg">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -264,10 +178,69 @@
         </entry>
       </file>
       <file leaf-file-name="mixin.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--wewerrtrgdfg/mixin.pug">
+        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--skewButton/mixin.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="skewButton.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--skewButton/skewButton.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--skewButton/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quant-debug.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="463">
+              <caret line="763" column="37" lean-forward="false" selection-start-line="763" selection-start-column="37" selection-end-line="763" selection-end-column="37" />
+              <folding>
+                <marker date="1497628136512" expanded="true" signature="6617:6701" ph="..." />
+                <marker date="1497628136512" expanded="true" signature="6832:6954" ph="..." />
+                <marker date="1497628136512" expanded="true" signature="11220:11247" ph="..." />
+                <marker date="1497628136512" expanded="true" signature="16322:16340" ph="..." />
+                <marker date="1497628136512" expanded="true" signature="16375:16386" ph="..." />
+                <marker date="1497628136512" expanded="true" signature="17476:17509" ph="..." />
+                <marker date="1497628136512" expanded="true" signature="22500:22530" ph="..." />
+                <marker date="1497628136512" expanded="true" signature="23624:23644" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gulpfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="14416">
+              <caret line="848" column="40" lean-forward="false" selection-start-line="848" selection-start-column="40" selection-end-line="848" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_debug.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/scss/_debug.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -289,6 +262,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>span</find>
+      <find>.no</find>
+      <find>view</find>
+      <find>get</find>
+      <find>#A</find>
       <find>Eleme</find>
       <find>convertHtml</find>
       <find>noti</find>
@@ -312,13 +290,8 @@
       <find>fill=&quot;#D80027&quot;</find>
       <find>mai</find>
       <find>ruler</find>
-      <find>creat</find>
-      <find>rul</find>
-      <find>onsole</find>
-      <find>shell</find>
-      <find>run</find>
-      <find>aj</find>
-      <find>start</find>
+      <find>bp</find>
+      <find>ver</find>
     </findStrings>
     <replaceStrings>
       <replace>mobile</replace>
@@ -396,11 +369,11 @@
         <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/scriptMap.json" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/LAYOUT/layout.pug" />
         <option value="$PROJECT_DIR$/vendor/icons/icons-debug.svg" />
-        <option value="$PROJECT_DIR$/dev/scss/_debug.scss" />
         <option value="$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/dev/scss/_debug.scss" />
         <option value="$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug" />
       </list>
     </option>
@@ -703,18 +676,15 @@
       <scope name="project" />
     </order>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/dist/node_modules" />
-  </component>
   <component name="PhpServers">
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="24" />
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="893" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -852,8 +822,21 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="kit">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches" />
-      <pane id="NBKnowledgePane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -876,6 +859,256 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PAGESYSTEM" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PAGESYSTEM" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LAYOUT" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PAGESYSTEM" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="INCLUDES" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="STORRAGE" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="STORRAGE" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themify-icons" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="STORRAGE" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themify-icons" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SVG" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ICONS_COMBINER" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ICONS_COMBINER" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icons-debug" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SOURCE_FABRIC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="dev" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -942,26 +1175,105 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="--wewerrtrgdfg" />
+              <option name="myItemId" value="gogog" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ELEMENTS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BUTTONS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="--skewButton" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ELEMENTS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BUTTONS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="--rtrtrt" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ELEMENTS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BUTTONS" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="--rteeeeeee" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blueprint" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="kit">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="NBKnowledgePane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -989,7 +1301,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug" />
+      <recent name="C:\WORK\Quant\prebuildVisual\kit\dev\SOURCE_FABRIC\ICONS_COMBINER\icons-debug" />
       <recent name="D:\WEB\HOSPITAL WP THEME\kit\dev\SOURCE_FABRIC\ICONS_COMBINER\icons" />
       <recent name="D:\WEB\HOSPITAL WP THEME\kit\vendor\file_templates\ELEMENTS\Icon-title-text" />
       <recent name="D:\WEB\HOSPITAL WP THEME\kit\dev\ELEMENTS\LINK-BUTTONS\--learnMoreButton" />
@@ -1002,138 +1314,6 @@
       <recent name="C:\Users\DSolo\Desktop\Project\kit\vendor\file_templates\MODULES" />
       <recent name="C:\Users\DSolo\Desktop\Project\kit\vendor" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/blueprint/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/blueprint/main.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/blueprint/maps/main.css.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/data.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/SCRIPTS/scriptMap.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/scss/_debug.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/about.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/contacts.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/dispanser.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/docs.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/main.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/maps/main.css.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/pacients.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/pay.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/scripts/quant-debug.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/projectboard/main.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/projectboard/maps/main.css.map</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1159,6 +1339,17 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="svgstore-debug" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>svgstore-debug</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="parc" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
       <node-interpreter>/usr/local/bin/node</node-interpreter>
       <node-options />
@@ -1171,7 +1362,7 @@
       <method />
     </configuration>
     <configuration default="false" name="START QUANT" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
@@ -1181,19 +1372,8 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="svgstore-debug" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
-      <tasks>
-        <task>svgstore-debug</task>
-      </tasks>
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="API-SERVER" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
       <tasks>
@@ -1247,7 +1427,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>/usr/local/bin/node</node-interpreter>
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -1525,16 +1705,16 @@
       <item index="19" class="java.lang.String" itemvalue="Gulp.js.mergeJson" />
       <item index="20" class="java.lang.String" itemvalue="Gulp.js.views" />
       <item index="21" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS2" />
-      <item index="22" class="java.lang.String" itemvalue="Gulp.js.parc" />
-      <item index="23" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
-      <item index="24" class="java.lang.String" itemvalue="Gulp.js.svgstore-debug" />
+      <item index="22" class="java.lang.String" itemvalue="Gulp.js.svgstore-debug" />
+      <item index="23" class="java.lang.String" itemvalue="Gulp.js.parc" />
+      <item index="24" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
       <item index="25" class="java.lang.String" itemvalue="Gulp.js.API-SERVER" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gulp.js.API-SERVER" />
-        <item index="1" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
-        <item index="2" class="java.lang.String" itemvalue="Gulp.js.svgstore-debug" />
+        <item index="0" class="java.lang.String" itemvalue="Gulp.js.START QUANT" />
+        <item index="1" class="java.lang.String" itemvalue="Gulp.js.svgstore-debug" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.API-SERVER" />
         <item index="3" class="java.lang.String" itemvalue="Gulp.js.SCRIPTS2" />
         <item index="4" class="java.lang.String" itemvalue="Gulp.js.parc" />
       </list>
@@ -1767,16 +1947,10 @@
       <workItem from="1497113117652" duration="6682000" />
       <workItem from="1497207743738" duration="8041000" />
       <workItem from="1497262982828" duration="10055000" />
-      <workItem from="1497379398969" duration="5432000" />
-      <workItem from="1497430354920" duration="14636000" />
-      <workItem from="1497516793457" duration="13071000" />
-    </task>
-    <task id="LOCAL-00028" summary="Pre Alpha 0.0.698">
-      <created>1488899392537</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1488899392537</updated>
+      <workItem from="1497379398969" duration="6088000" />
+      <workItem from="1497467623514" duration="7309000" />
+      <workItem from="1497550769904" duration="9023000" />
+      <workItem from="1497626020765" duration="6451000" />
     </task>
     <task id="LOCAL-00029" summary="Pre Alpha 0.0.698">
       <created>1489073568325</created>
@@ -2107,18 +2281,25 @@
       <option name="project" value="LOCAL" />
       <updated>1497296430605</updated>
     </task>
-    <task id="LOCAL-00076" summary="170612n">
-      <created>1497459289487</created>
+    <task id="LOCAL-00076" summary="170613n">
+      <created>1497386033273</created>
       <option name="number" value="00076" />
       <option name="presentableId" value="LOCAL-00076" />
       <option name="project" value="LOCAL" />
-      <updated>1497459289488</updated>
+      <updated>1497386033273</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="170613n">
+      <created>1497475007499</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1497475007500</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1853428000" />
+    <option name="totallyTimeSpent" value="1849160000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2130,21 +2311,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="24" y="23" width="1920" height="893" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13166311" sideWeight="0.41548386" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13166311" sideWeight="0.5845161" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Gulp" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1314181" sideWeight="0.54285717" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1314181" sideWeight="0.45714286" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30597016" sideWeight="0.22237569" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14270613" sideWeight="0.59136885" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0016277808" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.3282887" sideWeight="0.42105263" order="4" side_tool="false" content_ui="tabs" x="701" y="127" width="1273" height="609" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3316129" sideWeight="0.49361023" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29451287" sideWeight="0.49361023" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.3282887" sideWeight="0.42105263" order="4" side_tool="false" content_ui="tabs" x="849" y="275" width="684" height="412" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24786781" sideWeight="0.35224587" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2735484" sideWeight="0.40863115" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2743561" sideWeight="0.40863115" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.28797084" sideWeight="0.35236937" order="3" side_tool="false" content_ui="tabs" x="836" y="375" width="559" height="190" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.28797084" sideWeight="0.35236937" order="3" side_tool="false" content_ui="tabs" x="1562" y="103" width="239" height="217" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2216,7 +2396,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="ove menu and sidebar" />
     <MESSAGE value="Pre Alpha 0.0.69 SVG ICONS SYSTEM ADDED" />
     <MESSAGE value="Pre Alpha 0.0.695" />
     <MESSAGE value="Pre Alpha 0.0.698" />
@@ -2241,7 +2420,8 @@
     <MESSAGE value="170607n rules added" />
     <MESSAGE value="170611n rules added" />
     <MESSAGE value="170612n" />
-    <option name="LAST_COMMIT_MESSAGE" value="170612n" />
+    <MESSAGE value="170613n" />
+    <option name="LAST_COMMIT_MESSAGE" value="170613n" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>$PROJECT_DIR$/backend/SERVER/wp</wordpressPath>
@@ -2455,6 +2635,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2469,7 +2650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2484,7 +2664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1275">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2502,6 +2681,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_helpers.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blueprint/_blueprint.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="3" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="23" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/scss/_reset.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2513,7 +2707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2524,55 +2717,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blueprint/_blueprint.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_helpers.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/scss/_debug.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="864" column="18" lean-forward="false" selection-start-line="864" selection-start-column="18" selection-end-line="864" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/scss/TYPOGRAPHY/_master_mixin.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/npm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/icons/icons-debug.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="4282" lean-forward="false" selection-start-line="0" selection-start-column="4282" selection-end-line="0" selection-end-column="4282" />
+          <caret line="0" column="4085" lean-forward="false" selection-start-line="0" selection-start-column="4085" selection-end-line="0" selection-end-column="4085" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--skewButton/mixin.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug/close.svg">
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--skewButton/skewButton.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2580,7 +2747,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug/cube.svg">
+    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--skewButton/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2588,48 +2755,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="125" column="53" lean-forward="false" selection-start-line="125" selection-start-column="53" selection-end-line="125" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="781" column="59" lean-forward="false" selection-start-line="781" selection-start-column="59" selection-end-line="781" selection-end-column="59" />
-          <folding>
-            <marker date="1497532590000" expanded="true" signature="6617:6701" ph="..." />
-            <marker date="1497532590000" expanded="true" signature="6832:6954" ph="..." />
-            <marker date="1497532590000" expanded="true" signature="11220:11247" ph="..." />
-            <marker date="1497532590000" expanded="true" signature="16322:16340" ph="..." />
-            <marker date="1497532590000" expanded="true" signature="16375:16386" ph="..." />
-            <marker date="1497532590000" expanded="true" signature="17476:17509" ph="..." />
-            <marker date="1497532590000" expanded="true" signature="22500:22530" ph="..." />
-            <marker date="1497532590000" expanded="true" signature="23624:23644" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--wewerrtrgdfg/off_libs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--wewerrtrgdfg/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/ELEMENTS/BUTTONS/--wewerrtrgdfg/mixin.pug">
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/STORRAGE/themify-icons/SVG/export.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2639,8 +2765,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="846" column="32" lean-forward="true" selection-start-line="846" selection-start-column="32" selection-end-line="846" selection-end-column="32" />
+        <state relative-caret-position="14416">
+          <caret line="848" column="40" lean-forward="false" selection-start-line="848" selection-start-column="40" selection-end-line="848" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug/export.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SOURCE_FABRIC/ICONS_COMBINER/icons-debug/plus.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="763" column="37" lean-forward="false" selection-start-line="763" selection-start-column="37" selection-end-line="763" selection-end-column="37" />
+          <folding>
+            <marker date="1497628136512" expanded="true" signature="6617:6701" ph="..." />
+            <marker date="1497628136512" expanded="true" signature="6832:6954" ph="..." />
+            <marker date="1497628136512" expanded="true" signature="11220:11247" ph="..." />
+            <marker date="1497628136512" expanded="true" signature="16322:16340" ph="..." />
+            <marker date="1497628136512" expanded="true" signature="16375:16386" ph="..." />
+            <marker date="1497628136512" expanded="true" signature="17476:17509" ph="..." />
+            <marker date="1497628136512" expanded="true" signature="22500:22530" ph="..." />
+            <marker date="1497628136512" expanded="true" signature="23624:23644" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/scss/_debug.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/templates/PAGESYSTEM/INCLUDES/_debugPannel.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="154" column="33" lean-forward="false" selection-start-line="154" selection-start-column="33" selection-end-line="154" selection-end-column="33" />
           <folding />
         </state>
       </provider>

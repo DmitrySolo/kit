@@ -1,3 +1,98 @@
+$color__button:#aaa;
+$color__button-hover:#aaa;
+$color__button-active:#aaa;
+//--Main Button
+.mainButton {
+  background-color: $color__button;
+
+  &:focus {
+    outline: thin dotted;
+  }
+  &:hover,
+  &:active {
+    outline: 2;
+  }
+}
+$bkgColor__rteeeeeee:#fff;
+$bkgColor__rteeeeeee-hover:#fff;
+$color__rteeeeeee-hover:#fff;
+$color__rteeeeeee:#fff;
+
+.rteeeeeee {
+	position: relative;
+	background-color: $bkgColor__rteeeeeee;
+	color: $color__rteeeeeee;
+		&:hover, &:focus, &:active {
+		color: $color__rteeeeeee-hover;
+		background-color: $bkgColor__rteeeeeee-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+$bkgColor__rtrtrt:#fff;
+$bkgColor__rtrtrt-hover:#fff;
+$color__rtrtrt-hover:#fff;
+$color__rtrtrt:#fff;
+
+.rtrtrt {
+	position: relative;
+	background-color: $bkgColor__rtrtrt;
+	color: $color__rtrtrt;
+		&:hover, &:focus, &:active {
+		color: $color__rtrtrt-hover;
+		background-color: $bkgColor__rtrtrt-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+$bkgColor__skewButton:#fff;
+$bkgColor__skewButton-hover:#fff;
+$color__skewButton-hover:#fff;
+$color__skewButton:#fff;
+
+.skewButton {
+	position: relative;
+	background-color: $bkgColor__skewButton;
+	color: $color__skewButton;
+		&:hover, &:focus, &:active {
+		color: $color__skewButton-hover;
+		background-color: $bkgColor__skewButton-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+ul.infoElement__container {
+
+}
+.infoElement{
+  line-height:60px;
+
+  .iconWrapper,h5,span{
+    @include space-i('element','=','rl','');
+    display: inline-block;
+    //vertical-align: top;
+  }
+  .infoElement__icon{
+    width: 60px;
+    height: 60px;
+    fill: cs('accent');
+    vertical-align: top;
+  }
+
+
+}
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -67,26 +162,6 @@
 }
 .ove-sectionHeader {
   @include space('element','','b');
-}
-$bkgColor__wewerrtrgdfg:#fff;
-$bkgColor__wewerrtrgdfg-hover:#fff;
-$color__wewerrtrgdfg-hover:#fff;
-$color__wewerrtrgdfg:#fff;
-
-.wewerrtrgdfg {
-	position: relative;
-	background-color: $bkgColor__wewerrtrgdfg;
-	color: $color__wewerrtrgdfg;
-		&:hover, &:focus, &:active {
-		color: $color__wewerrtrgdfg-hover;
-		background-color: $bkgColor__wewerrtrgdfg-hover;
-		}
-		&:focus {
-			outline: none;
-		}
-		&:hover, &:active {
-			outline: none;
-	}
 }
 input[type='text'].ove-cardRegInput {
   outline: none;
@@ -205,39 +280,4 @@ a, a.mainLink {
   &:active {
     outline: none;
   }
-}
-$color__button:#aaa;
-$color__button-hover:#aaa;
-$color__button-active:#aaa;
-//--Main Button
-.mainButton {
-  background-color: $color__button;
-
-  &:focus {
-    outline: thin dotted;
-  }
-  &:hover,
-  &:active {
-    outline: 2;
-  }
-}
-ul.infoElement__container {
-
-}
-.infoElement{
-  line-height:60px;
-
-  .iconWrapper,h5,span{
-    @include space-i('element','=','rl','');
-    display: inline-block;
-    //vertical-align: top;
-  }
-  .infoElement__icon{
-    width: 60px;
-    height: 60px;
-    fill: cs('accent');
-    vertical-align: top;
-  }
-
-
 }
