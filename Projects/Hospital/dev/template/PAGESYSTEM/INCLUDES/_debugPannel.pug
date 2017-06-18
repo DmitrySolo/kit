@@ -1,0 +1,531 @@
+//Debug Panel
+link.tabAnchr(href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet")
+script.
+    var evt         = new Event(),
+    dragdrop    = new Dragdrop(evt),
+    rg          = new RulersGuides(evt, dragdrop);
+.editorsContainer.clearfix.notEdit
+    #currentSelectorWay.notEdit.clearfix
+        div(style='background:#2b2b2b;color: #fff')
+            span BODY >
+    .editorWrapper
+        #editorPug.editor
+        #editorScss.editor
+        #editorJs.editor
+script(src='ace-builds/src/ace.js', type='text/javascript', charset='utf-8')
+script(src='ace-builds/src/theme-tomorrow_night_eighties.js', type='text/javascript', charset='utf-8')
+script(src='ace-builds/src/mode-scss.js', type='text/javascript', charset='utf-8')
+script(src='ace-builds/src/mode-jade.js', type='text/javascript', charset='utf-8')
+script(src='ace-builds/src/mode-javascript.js', type='text/javascript', charset='utf-8')
+script(src='ace-builds/src/ext-language_tools.js')
+script(src='maps/main.css.map')
+script(role='scss').
+    var editor = ace.edit("editorScss");
+    ace.require("ace/ext/language_tools");
+    ace.require('ace/multi_select');
+    editor.setTheme("ace/theme/tomorrow_night_eighties");
+    var scssMode = ace.require("ace/mode/scss").Mode;
+    editor.session.setMode(new scssMode());
+
+    var staticWordCompleter = {
+        getCompletions: function(editor, session, pos, prefix, callback) {
+            var wordList = ["foo", "bar", "baz"];
+            callback(null, wordList.map(function(word) {
+                return {
+                    caption: word,
+                    value: word,
+                    meta: "static"
+                };
+            }));
+        }
+    }
+    editor.resize()
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
+script(role='pug').
+    var editorPug = ace.edit("editorPug");
+    editorPug.setTheme("ace/theme/tomorrow_night_eighties");
+    var PugMode = ace.require("ace/mode/jade").Mode;
+    editorPug.session.setMode(new PugMode());
+
+    var staticWordCompleter = {
+        getCompletions: function(editorPug, session, pos, prefix, callback) {
+            var wordList = ["foo", "bar", "baz"];
+            callback(null, wordList.map(function(word) {
+                return {
+                    caption: word,
+                    value: word,
+                    meta: "static"
+                };
+            }));
+        }
+    }
+    editorPug.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
+script(role='js').
+    var editorJs = ace.edit("editorJs");
+    ace.require("ace/ext/language_tools");
+    ace.require('ace/multi_select');
+    editorJs.setTheme("ace/theme/tomorrow_night_eighties");
+    var JavaScriptMode = ace.require("ace/mode/javascript").Mode;
+    editorJs.session.setMode(new JavaScriptMode());
+
+    var staticWordCompleter = {
+        getCompletions: function(editorJs, session, pos, prefix, callback) {
+            var wordList = ["foo", "bar", "baz"];
+            callback(null, wordList.map(function(word) {
+                return {
+                    caption: word,
+                    value: word,
+                    meta: "static"
+                };
+            }));
+        }
+    }
+    editorJs.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
+.debug-Dialog.notEdit.debug
+    .debug-Dialog-content
+        .row
+            .debug-subtitle.col-5-tp
+                .createTitle.active
+                    +I('cube')
+                    |Element
+                .createTitle
+                    +I('cube')
+                    |Component
+                .createTitle
+                    +I('cube')
+                    |Module
+                .createTitle
+                    +I('cube')
+                    |Block/Section
+                .createTitle
+                    +I('cube')
+                    |Animation
+                .createTitle
+                    +I('cube')
+                    |Class
+                .createTitle
+                    +I('cube')
+                    |Script
+            .debug-registrator.col-7-tp.debug-registrator-active
+                input#contentType(type='hidden' value='element')
+                label Element Name:
+                    input#elname(type='text')
+                label Element Type:
+                    select#eltype(name='elemType')
+                        option(value='button') button
+                        option(value='icon') Icon
+                        option(value='link') Link
+                        option(value='linkbutton') LinkButton
+                        option(value='preloader') Preloader
+                label Element Extends:
+                        select#elementExtends(name='vextends')
+                            option(value='false') No extends
+                            option(value='button') Icon
+                            option Link
+                            option LinkButton
+                            option Icon
+                            option Button
+                            option Icon
+                            option Link
+                            option LinkButton
+                            option Icon
+                label Element Parent:
+                   input#elementParent(type='text' name='parent' placeholder='div')
+                label Save to Global library:
+                    label No
+                        input(type='radio' name='saveto' checked value="false")
+                    label Yes
+                        input(type='radio' name='saveto' value="true")
+                label
+                    button.creator Create
+        .debug-Dialog-start.notEdit.debug
+            .quant Quant
+                span THEME ENGINE
+                span.ver Version: Pre Alpha 0.0.96
+            .debug-Dialog-content
+                .row
+                    .debug-subtitle.col-4-tp
+                        .createTitle.active
+                            +I('export')
+                            | Load Project
+                        .createTitle
+                            +I('plus')
+                            | Create Project
+                        .createTitle
+                            +I('export')
+                            | Load Content
+                        .createTitle
+                            +I('plus')
+                            | Create Content
+.debug-Pannel-Right.notEdit
+    .debug-Pannel-Right__section.debugPannel__section
+        .debug-Pannel-Right-content
+
+            h6
+                +I('target')
+                | Classes
+            div.clearfix
+                .col-6-tp
+                    label Block
+                        input(type='text').classChoser
+                    label Element
+                        input(type='text').classChoser
+                    label Modifier
+                        input(type='text').classChoser
+                    label Optional
+                        input(type='text').classChoser
+                .col-6-tp
+                    label Vendor classes
+                        select(multiple='multiple',size='5')
+                            option hide
+                            option show
+                            option clearfix
+                            option mode
+                            option active
+                            option platform
+                            option selected
+                            option additional
+                            option support
+                    label Project classes
+                        select(multiple='multiple',size='4')
+                            option hide
+                            option show
+                            option clearfix
+                            option mode
+                            option active
+
+                hr
+            h6
+                +I('column4')
+                | Grids
+            div.clearfix
+                .col-2-tp
+                    +I('computer3')
+                    +I('computer2')
+                    +I('computer1')
+                    +I('computer')
+                    +I('arrow')
+                .col-2-tp
+                    input( type="text" value=0 name="mobileGridder")
+                    input( type="text" value=0 name="tpGridder")
+                    input( type="text" value=0 name="tlGridder")
+                    input( type="text" value=0 name="desctopGridder")
+                    input( type="text" value=0 name="bigDesctopGridder")
+                .col-8-tp
+                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('mobileGridder',this.value)" value="0")
+                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tpGridder',this.value)" value="0")
+                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tlGridder',this.value)" value="0")
+                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('desctopGridder',this.value)" value="0")
+                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('bigDesctopGridder',this.value)" value="0")
+                hr
+            h6
+                +I('computer3')
+                +I('computer2')
+                +I('computer1')
+                +I('computer')
+                +I('arrow')
+
+            div.clearfix
+
+            h6
+                +I('ruler')
+                | Size
+            div
+                button#100p 100%
+                hr
+            h6
+                +I('text')
+                | Text & Font
+            div
+                button#textAC cente
+                button#textAL left
+                button#textAR right
+                hr
+            h6
+                +I('mp')
+                | Paddings & Margins
+            div
+                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padder(this.value)")
+                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padderrl(this.value)")
+                input( type="range" min=".1" max="2" step=".1" list="tickmarks" onchange="paddertb(this.value)")
+                hr
+                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginer(this.value)")
+                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginerrl(this.value)")
+                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginertb(this.value)")
+            h6
+                +I('boxborder')
+                | Border & Box
+            div
+            h6
+                +I('image')
+                | Background
+            div
+
+
+.debug.notEdit
+    .hidden
+        include   ../../../../../../vendor/icons/icons-debug.svg
+    section.mediaMap
+        .mediaMap__bounder.dl
+            .mediaMap__container.dl
+        .mediaMap__bounder.d(style="width:"+MEDIA.desktopBreakpoint)
+            span=MEDIA.desktopBreakpoint
+            .mediaMap__container.d(style="width:"+MEDIA.desktopContainer)
+                span=MEDIA.desktopContainer
+        .mediaMap__bounder.tl(style="width:"+MEDIA.tabletLandscapeBreakpoint)
+            span=MEDIA.tabletLandscapeBreakpoint
+            .mediaMap__container.tl(style="width:"+MEDIA.tabletLcontainer)
+                span=MEDIA.tabletLcontainer
+        .mediaMap__bounder.tp(style="width:"+MEDIA.tabletPortraitBreakpoint)
+            span=MEDIA.tabletPortraitBreakpoint
+            .mediaMap__container.tp(style="width:"+MEDIA.tabletPcontainer)
+                span=MEDIA.tabletPcontainer
+        .mediaMap__bounder.m(style="width:"+MEDIA.phoneBreakpoint+"; color:#27ae60;",)
+            span=MEDIA.phoneBreakpoint
+            .mediaMap__container.m(style="width:100%; background:#27ae60;")
+                span=MEDIA.phoneBreakpoint
+                .mediaInfo.clearfix
+                    +I('arrow','icon-breakpoits')
+                    #widthOf.f-left
+                    #viewpr-list.f-left
+    section.pb-section.clearfix#ball.hidden
+        span.lh Line height
+        .spacer.element-i
+            span Element i
+        .spacer.element-o
+            span Element o
+        .spacer.component-i
+            span Component i
+        .spacer.component-o
+            span Component o
+        .spacer.module-i
+            span Module ii
+        .spacer.module-o
+            span Module o
+        .spacer.block-i
+            span block i
+        .spacer.block-o
+            span block o
+    section.pb-section.clearfix.grid.grid--debug.hidden#grid
+        .container
+            .row
+                .col-1-m.col-1-tp 1
+                .col-1-m.col-1-tp 2
+                .col-1-m.col-1-tp 3
+                .col-1-m.col-1-tp 4
+                .col-1-m.col-1-tp 5
+                .col-1-m.col-1-tp 6
+                .col-1-m.col-1-tp 7
+                .col-1-m.col-1-tp 8
+                .col-1-m.col-1-tp 9
+                .col-1-m.col-1-tp 10
+                .col-1-m.col-1-tp 11
+                .col-1-m.col-1-tp 12
+    .debugPannel__wrapper.notEdit
+        .debugPannel.clearfix
+            .debugPannel__section.col-4-tp
+                .tabList.elAdder
+                    div#tabs-add-elment
+                        ul.panellInner
+                            li
+                                a.tabAnchr( href=""+"#tabtags" ) Tags
+                            li
+                                a.tabAnchr( href="" + '#tabHTML5' ) HTML5
+                            li
+                                a.tabAnchr( href=""+'#tabclass' ) Classes
+                            li
+                                a.tabAnchr(href=""+'#tabcombination') Combinations
+                        div#tabtags
+                            ul.debugPannel__colorSpecific
+                                .clearfix
+                                    li.col-1-tp Bl:
+                                    li.headers#addHeader.col-1-tp.elAdder(data-el='<h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6>') H1+
+                                    li.col-1-tp.prgrph.elAdder(data-el='p') P
+                                    li.col-1-tp.ul.elAdder(data-el='<ul></ul>') ul
+                                    li.col-1-tp.li.elAdder(data-el='<li> the li element </li>') li
+                                    li.col-1-tp.div.elAdder(data-el='<div></div>') div
+                                    li.col-1-tp.main.elAdder(data-el='<main></main>') main
+                                    li.col-1-tp.nav.elAdder(data-el='<nav><nav>') nav
+                                    li.col-1-tp.tbl.elAdder(data-el='<table></table>') tbl
+                                    li.col-1-tp.dl.elAdder(data-el='<dl></dl>') dl
+                                    li.col-1-tp.dt.elAdder(data-el='<dt></dt>') dt
+                                    li.col-1-tp.dd.elAdder(data-el='<dd></dd>') dd
+                                    li.col-1-tp
+                                    li.col-1-tp.blockquote.elAdder(data-el='<blockquote></blockquote>') blqt
+                                    li.col-1-tp.form.elAdder(data-el='<form></form>') form
+                                .clearfix
+                                    li.col-1-tp Inl:
+                                    li.col-1-tp.span.elAdder(data-el='<span> Span Text</span>') span
+                                    li.col-1-tp.link.elAdder(data-el='<a>this is link</a>') a
+                                    li.col-1-tp.i.elAdder(data-el='<i>italic</i>') i
+                                    li.col-1-tp.input.elAdder(data-el='<input>') inpt
+                                    li.col-1-tp.button.elAdder(data-el='<button>Button</button>') btn
+                                    li.col-1-tp.cite.elAdder(data-el='<cite></cite>') cite
+                                    li.col-1-tp.select.elAdder(data-el='<select></select>') select
+                                    li.col-1-tp.label.elAdder(data-el='<label></label>') label
+                                    li.col-1-tp.textarea.elAdder(data-el='<textarea>') txta
+                                    li.col-1-tp.tr.elAdder(data-el='<tr></tr>') tr
+                                    li.col-1-tp.td.elAdder(data-el='<td></td>') td
+                                    li.col-1-tp
+                                    li.col-1-tp.th.elAdder(data-el='<thead></thead>') th
+                        div#tabHTML5
+                            ul.debugPannel__colorSpecific
+                                .clearfix
+                                    li.col-1-tp.header.elAdder(data-el='<header></header>') Hdr
+                                    li.col-1-tp.footer.elAdder(data-el='<footer></footer>') Ftr
+                                    li.col-1-tp.article.elAdder(data-el='<article></article>') arcl
+                                    li.col-1-tp.aside.elAdder(data-el='<aside></aside>') aside
+                                    li.col-1-tp.section.elAdder(data-el='<section></section>') sectn
+                                    li.col-1-tp.figure.elAdder(data-el='<figure></figure>') figure
+                                    li.col-1-tp.figcaption.elAdder(data-el='<figcaption></figcaption>') figcpt
+                        div#tabclass
+                            ul.debugPannel__colorSpecific
+                                li span
+
+                                li a
+                                    span(style={
+                                        display: 'inline-block',
+                                        width: '100%',
+                                        "text-shadow": "1px 1px 1px black"
+                                    }) Span
+                                li
+                                    img(alt='img/svg',style={
+                                        display: 'inline-flex',
+                                        "vertical-align": 'middle',
+                                        "text-shadow": "1px 1px 1px black"
+                                    })
+                                li
+                                    div Div
+                        div#tabcombination
+                            ul.debugPannel__colorSpecific
+                                li.headers
+                                    h6(style={
+                                        margin: '0',
+                                        "font-size": '1rem',
+                                        "font-weight": '400',
+                                        "text-shadow": "1px 1px 1px black"
+                                    }) h1-h6
+                                li
+                                    p  P
+                                li
+                                    ul  ul
+                                li
+                                    li li
+                                li
+                                    .col-  .Col
+                                li
+                                    a(style={
+                                        display: 'inline-block',
+                                        width: '100%',
+                                        "text-shadow": "1px 1px 1px black"
+                                    }) A
+                                li
+                                    span(style={
+                                        display: 'inline-block',
+                                        width: '100%',
+                                        "text-shadow": "1px 1px 1px black"
+                                    }) Span
+                                li
+                                    img(alt='img/svg',style={
+                                        display: 'inline-flex',
+                                        "vertical-align": 'middle',
+                                        "text-shadow": "1px 1px 1px black"
+                                    })
+                                li
+                                    div Div
+                script.
+                    $("#tabs-add-elment").tabs();
+
+            .debugPannel__section.col-4-tp
+                button#spacerSwitcher Spacer
+                button#gridb grid
+                button#debugViewSwitcher.on Debug View
+                button#clone Clone
+                button#getHtml Get View!
+                button#up Up
+                button#down Down
+                button#del Delete
+                button#lock Lock
+                button#unlock UnLock
+                button#save Save
+                button#load Load
+                button#lockSpacer lock Spacer
+                button#addBkg add Background
+                button#startMediaTest Media
+                button#getScssCode Get scss
+                button#getinnerView Get Html
+                button#cn CREATE NEW...
+                a.tabAnchr(href="javascript:onclick=maximizeme()") Maximize
+                script.
+                    var qscale = function (v) {
+                        $('.projectWrapper').css({
+                            "transform": "scale(" + v + ")"
+                        })
+                    }
+                input#scaller( type="range" min=".3" max="2" step=".1"  onchange="qscale(this.value)")
+                #editableDiv(contenteditable='true') Paste
+            .debugPannel__section.col-4-tp.colors
+                    .pb-element.f-left
+                        .pb-colorBox
+                        .pb-colorBox
+                            span.pb-elementHeader Base
+                        .pb-colorBox
+                            span.pb-elementHeader Darken
+                        .pb-colorBox
+                            span.pb-elementHeader light
+                    .pb-element.f-left
+                        span.pb-elementHeader 1
+                        .pb-colorBox.pb-colorBox--primary
+                        .pb-colorBox.pb-colorBox--primary-d
+                        .pb-colorBox.pb-colorBox--primary-l
+                    .pb-element.f-left
+                        span.pb-elementHeader 2
+                        .pb-colorBox.pb-colorBox--secondary
+                        .pb-colorBox.pb-colorBox--secondary-d
+                        .pb-colorBox.pb-colorBox--secondary-l
+                    .pb-element.f-left
+                        span.pb-elementHeader A
+                        .pb-colorBox.pb-colorBox--accent
+                        .pb-colorBox.pb-colorBox--accent-d
+                        .pb-colorBox.pb-colorBox--accent-l
+                    .pb-element.f-left
+                        span.pb-elementHeader Fg
+                        .pb-colorBox.pb-colorBox--fground
+                        .pb-colorBox.pb-colorBox--fground-d
+                        .pb-colorBox.pb-colorBox--fground-l
+                    .pb-element.f-left
+                        span.pb-elementHeader Bg
+                        .pb-colorBox.pb-colorBox--bground
+                        .pb-colorBox.pb-colorBox--bground-d
+                        .pb-colorBox.pb-colorBox--bground-l
+                    .pb-element.f-left
+                        span.pb-elementHeader F
+                        .pb-colorBox.pb-colorBox--font
+                        .pb-colorBox.pb-colorBox--font-d
+                        .pb-colorBox.pb-colorBox--font-l
+                    .pb-element.f-left
+                        span B
+                            input(id='colorPicker',type='color')
+                        span C
+                            input(id='colorPickerFont',type='color')
+            .debugPannel__section.hidden
+                span#phone-upper-boundary= MEDIA.phoneBreakpoint
+                span#tablet-portrait-upper-boundary=MEDIA.tabletPortraitBreakpoint
+                span#tablet-landscape-upper-boundary=MEDIA.tabletLandscapeBreakpoint
+                span#desktop-upper-boundary=MEDIA.desktopBreakpoint
+                span#desktopl-upper-boundary=MEDIA.desktoplBreakpoint
+                span#tablet-p-container=MEDIA.tabletPcontainer
+                span#tablet-l-container=MEDIA.tabletLcontainer
+                span#desktop-container=MEDIA.desktopContainer

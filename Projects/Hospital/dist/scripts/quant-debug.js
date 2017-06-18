@@ -548,6 +548,7 @@ var addToBufer= function (content) {
             });
 
     }
+    //
     $("body").on('click','#getCode',function () {
 
         console.log('hekol')

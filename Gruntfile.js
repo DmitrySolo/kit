@@ -8,8 +8,8 @@ module.exports = function(grunt) {
       pretty: true,
     },
     files: {
-      'dist/index.html': ['dev/templates/index.php.pug'],
-      'projectboard/index.html': ['dev/templates/projectboard.pug'],
+      'dist/index.html': ['dev/template/index.php.pug'],
+      'projectboard/index.html': ['dev/template/projectboard.pug'],
         }
       }
     },// pug ended
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
     "merge-json": {
       "i18n": {
         files: {
-          "data.json": [ "dev/templates/**/*.json",'dev/MODULES/MENUS/--*/*.json','dev/MODULES/PROJECT MODULES/--*/*.json'],
+          "data.json": [ "dev/template/**/*.json",'dev/MODULES/MENUS/--*/*.json','dev/MODULES/PROJECT MODULES/--*/*.json'],
         }
       }
     },

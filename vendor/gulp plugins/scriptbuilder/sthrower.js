@@ -36,18 +36,18 @@ module.exports = (options) => {
         var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
         //fs.unlink('./dev/SCRIPTS/scriptMap.json');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs+.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init+.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_top.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs+.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init+.pug');
-        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs+.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init+.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_top.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs+.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init+.pug');
+        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug');
         rimraf('dist/scripts',callback);
 
             var scriptsMap = {};
@@ -95,7 +95,7 @@ module.exports = (options) => {
 
                     //Add to Pug
                     var strCtn ="\nscript(src='scripts/"+file+".js' type='text/javascript')";
-                    fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+path1+'/_'+path2+'.pug',strCtn);
+                    fs.appendFileSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/'+path1+'/_'+path2+'.pug',strCtn);
 
                     vfs.src(srcArr)
                         .pipe(concat(file+'.js')).pipe(vfs.dest('dist/scripts'));
@@ -108,7 +108,7 @@ module.exports = (options) => {
                             var file = filePathArr[filePathArr.length -1];
 
                         var strCtn ="\nscript(src='scripts/"+file+"' type='text/javascript')";
-                        fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+path1+'/_'+path2+'.pug',strCtn);
+                        fs.appendFileSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/'+path1+'/_'+path2+'.pug',strCtn);
 
                         vfs.src(srcArr[index])
                             .pipe(vfs.dest('dist/scripts'));

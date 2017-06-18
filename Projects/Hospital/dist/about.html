@@ -1,0 +1,682 @@
+<!-- split header.html --><!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <title>About</title>
+    <meta name="description" content="This is test framework application">
+    <meta name="keywords" content="application, test , hurray!!!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Slab:700" rel="stylesheet" type="text/css">
+    <link href="main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body class="debug">
+    <div class="projectWrapper">
+      <div class="hidden"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="book" viewBox="0 0 76.00 76.00"><path d="M22 47c4.424 1.303 12.483 1.805 15.208 5.215V33C34.483 29.59 26.424 29.087 22 27.784V47zm0-22.692v-.28c4.424 1.303 12.483 1.806 15.208 5.216l.792.228.792-.256C41.517 25.806 49.577 25.303 54 24v.28c1.229.37 2 .692 2 .692v3l3-1.146v24.146s-17.833 1.25-21 6.791v.028C34.833 52.25 17 51 17 51V26.854L20 28v-3s.771-.322 2-.692zm1.5 20.198v-3.122c3.769.859 8.96 1.435 12 3.366v3.121c-3.04-1.93-8.231-2.506-12-3.365zm0-5.385V36c3.769.858 8.96 1.434 12 3.365v3.121c-3.04-1.93-8.231-2.506-12-3.365zm0-5.487v-3.121c3.769.858 8.96 1.434 12 3.365V37c-3.04-1.931-8.231-2.507-12-3.366zM54 46.972V27.756c-4.423 1.303-12.483 1.806-15.208 5.216v19.215c2.725-3.41 10.785-3.912 15.208-5.215zm-1.5-2.494c-3.769.859-8.96 1.434-12 3.365v-3.121c3.04-1.931 8.231-2.507 12-3.366v3.122zm0-5.385c-3.769.859-8.96 1.434-12 3.365v-3.121c3.04-1.931 8.231-2.507 12-3.365v3.121zm0-5.487c-3.769.859-8.96 1.435-12 3.366V33.85c3.04-1.931 8.231-2.507 12-3.365v3.121z"/></symbol><symbol id="bus" viewBox="0 0 76.00 76.00"><path d="M47.5 57a1.583 1.583 0 0 1-1.583-1.583V52.25H30.083v3.167c0 .874-.709 1.583-1.583 1.583h-1.583a1.583 1.583 0 0 1-1.584-1.583V52.25h-3.166l1.583-26.125C23.75 22.19 30.13 19 38 19s14.25 3.19 14.25 7.125l1.583 26.125h-3.166v3.167c0 .874-.71 1.583-1.584 1.583H47.5zM27.708 42.75a2.375 2.375 0 1 0 0 4.75 2.375 2.375 0 0 0 0-4.75zm20.584 0a2.375 2.375 0 1 0 0 4.75 2.375 2.375 0 0 0 0-4.75zM31.667 22.167a.792.792 0 1 0 0 1.583h12.666a.792.792 0 1 0 0-1.583H31.667zm-5.938 15.437h24.542l-1.188-10.291c0-.875-.709-1.584-1.583-1.584h-19c-.875 0-1.583.71-1.583 1.584l-1.188 10.291z"/></symbol><symbol id="eye.hide" viewBox="0 0 76.00 76.00"><path d="M38 33.154a4.846 4.846 0 1 1 0 9.692 4.846 4.846 0 0 1 0-9.692zm0-8.077c11.308 0 21 8.077 21 12.923s-9.692 12.923-21 12.923S17 42.846 17 38s9.692-12.923 21-12.923zm0 4.038a8.885 8.885 0 1 0 0 17.77 8.885 8.885 0 0 0 0-17.77zm-13.753 19.81a30.71 30.71 0 0 0 3.909 1.748l-13.45 13.45a35.21 35.21 0 0 1-2.829-2.829l12.37-12.369zm27.506-21.85a30.71 30.71 0 0 0-3.909-1.748l13.45-13.45c.996.889 1.94 1.833 2.829 2.829l-12.37 12.37z"/></symbol><symbol id="eye" viewBox="0 0 76.00 76.00"><path d="M38 33.154a4.846 4.846 0 1 1 0 9.692 4.846 4.846 0 0 1 0-9.692zm0-8.077c11.308 0 21 8.077 21 12.923s-9.692 12.923-21 12.923S17 42.846 17 38s9.692-12.923 21-12.923zm0 4.038a8.885 8.885 0 1 0 0 17.77 8.885 8.885 0 0 0 0-17.77z"/></symbol><symbol id="heart" viewBox="0 0 17 17"><path d="M12.5.658a4.506 4.506 0 0 0-4 2.439 4.506 4.506 0 0 0-4-2.439 4.505 4.505 0 0 0-4.5 4.5c0 .343.048.699.154 1.118l.109.351c1.432 4.354 7.659 9.393 7.924 9.604l.313.252.313-.252c.282-.227 6.926-5.598 7.927-9.614l.112-.368c.101-.402.148-.749.148-1.091 0-2.481-2.019-4.5-4.5-4.5zm3.389 5.322l-.113.37c-.809 3.246-5.946 7.727-7.276 8.843-1.282-1.083-6.122-5.337-7.285-8.872l-.1-.316A3.517 3.517 0 0 1 1 5.158c0-1.93 1.57-3.5 3.5-3.5S8 3.229 8 5.158v.252h1v-.252c0-1.93 1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5c0 .258-.038.527-.111.822z"/></symbol><symbol id="magnify" viewBox="0 0 76.00 76.00"><path d="M42.5 22C49.404 22 55 27.596 55 34.5S49.404 47 42.5 47c-2.364 0-4.575-.657-6.5-1.757l-9.025 9.025a3 3 0 0 1-4.243-4.243l9.065-9.064A12.442 12.442 0 0 1 30 34.5C30 27.596 35.596 22 42.5 22zm0 4a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17z"/></symbol><symbol id="mail" viewBox="0 0 76.00 76.00"><path d="M21.5 23h33c1.749 0 3.5 1.751 3.5 3.5v23c0 1.749-1.751 3.5-3.5 3.5h-33c-1.749 0-3.5-1.751-3.5-3.5v-23c0-1.749 1.751-3.5 3.5-3.5zm.5 24c0 1.312.688 2 2 2h28c1.312 0 2-.688 2-2V29L40.656 42.657a3.167 3.167 0 0 1-4.478 0L22 29v18zm3-20l11.738 11.738a2.375 2.375 0 0 0 3.358 0L52 27H25z"/></symbol><symbol id="phone" viewBox="0 0 76.00 76.00"><path d="M50.922 54.233c.115.27.172.544.172.822 0 .385-.102.744-.306 1.077-.205.333-.491.588-.86.764l-1.73.81a9.534 9.534 0 0 1-2.028.669 10.16 10.16 0 0 1-5.35-.347c-1.087-.37-2.126-.9-3.118-1.59a15.834 15.834 0 0 1-2.791-2.5 19.351 19.351 0 0 1-2.335-3.27 40.144 40.144 0 0 1-1.38-2.283c-.41-.728-.877-1.6-1.403-2.617a54.259 54.259 0 0 1-1.592-3.384 43.162 43.162 0 0 1-1.304-3.249 46.187 46.187 0 0 1-.746-2.31 15.21 15.21 0 0 1-.423-1.84 19.548 19.548 0 0 1-.822-5.622c0-1.202.12-2.36.362-3.473a12.344 12.344 0 0 1 1.11-3.104c.5-.958 1.132-1.814 1.9-2.568a9.324 9.324 0 0 1 2.72-1.844l1.707-.785c.27-.115.54-.172.81-.172.38 0 .734.105 1.061.316.327.21.573.502.736.874l3.283 7.455c.115.27.172.54.172.81 0 .397-.102.764-.307 1.102-.204.337-.493.59-.865.758l-3.375 1.552a2.254 2.254 0 0 0-1.024.902 2.455 2.455 0 0 0-.356 1.282c0 .348.065.675.196.982l5.54 12.653c.218.486.517.844.9 1.073a2.339 2.339 0 0 0 2.188.135l3.374-1.552a1.934 1.934 0 0 1 1.86.144c.33.21.58.5.748.868l3.276 7.462z"/></symbol></svg></div><!-- split header.html -->
+      <header class="mainHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-3-m col-2-tp col-1-d logo">
+              <h1><a class="logo__link" href="/"><img src="images/logo.png" title="PROJECT TITLE" alt="This is theme title"/></a></h1>
+            </div>
+            <div class="col-7-tp headerSectionDivider">
+              <nav class="lightMenu" role="navigation">
+                <ul class="lightMenu__list">
+                  <li class="lightMenu__item "><a href="dispanser.html">Диспанцеризация</a></li>
+                  <li class="lightMenu__item "><a href="pay.html">Платные услуги</a></li>
+                  <li class="lightMenu__item "><a href="docs.html">Документы</a></li>
+                  <li class="lightMenu__item "><a href="docs.html">Мед работникам</a></li>
+                  <li class="lightMenu__item "><a href="pacients.html">Пациентам</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-4-tp">
+              <div class="row">
+                <div class="col-6-tp headerSectionDivider">
+                  <div class="headerSection resizeble"><span class="headerPhone">+7(321)123123</span><span class="headerAddress">г. Воронеж, ул. Минская, 4q</span></div>
+                </div>
+                <div class="col-3-tp headerSectionDivider js-trigger">
+                  <div class="headerSection">
+                    <svg class="icon headerIcon">
+                      <use xlink:href="#magnify"></use>
+                    </svg>
+                  </div>
+                </div>
+                <div class="col-3-tp headerSectionDivider js-trigger" data-action="xRayView">
+                  <div class="headerSection">
+                    <svg class="icon headerIcon">
+                      <use xlink:href="#eye"></use>
+                    </svg><!-- split about.html -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <p>this is about page</p>
+        </div>
+      </main><!-- split footer.html -->
+      <footer>This is footer</footer>
+      <!--/////////////////////////////////////////////////////////////////-->
+      <script src="scripts/" type="text/javascript"></script>
+      <script src="scripts/jquery.min.js" type="text/javascript"></script>
+      <script src="scripts/quant-debug-JsonCss.js" type="text/javascript"></script>
+      <script src="scripts/notify.js" type="text/javascript"></script>
+      <script src="scripts/jquery-ui.min.js" type="text/javascript"></script>
+      <script src="scripts/viewpr.min.js" type="text/javascript"></script>
+      <script src="scripts/viewpr.min.js" type="text/javascript"></script>
+      <script src="scripts/quant-lib.js" type="text/javascript"></script>
+      <script src="scripts/baseButton.js" type="text/javascript"></script>
+      <script src="scripts/_hero_video-script.js" type="text/javascript"></script>
+      <script src="scripts/quant-debug.js" type="text/javascript"></script>
+      <script src="scripts/quant-debug-ruller.js" type="text/javascript"></script>
+      <script src="scripts/xRayView.js" type="text/javascript"></script>
+    </div>
+  </body>
+  <!--Debug Panel-->
+  <link class="tabAnchr" href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet">
+  <script>
+    var evt         = new Event(),
+    dragdrop    = new Dragdrop(evt),
+    rg          = new RulersGuides(evt, dragdrop);
+  </script>
+  <div class="editorsContainer clearfix notEdit">
+    <div class="notEdit clearfix" id="currentSelectorWay">
+      <div style="background:#2b2b2b;color: #fff;"><span>BODY ></span></div>
+    </div>
+    <div class="editorWrapper">
+      <div class="editor" id="editorPug"></div>
+      <div class="editor" id="editorScss"></div>
+      <div class="editor" id="editorJs"></div>
+    </div>
+  </div>
+  <script src="ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace-builds/src/theme-tomorrow_night_eighties.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace-builds/src/mode-scss.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace-builds/src/mode-jade.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace-builds/src/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace-builds/src/ext-language_tools.js"></script>
+  <script src="maps/main.css.map"></script>
+  <script role="scss">
+    var editor = ace.edit("editorScss");
+    ace.require("ace/ext/language_tools");
+    ace.require('ace/multi_select');
+    editor.setTheme("ace/theme/tomorrow_night_eighties");
+    var scssMode = ace.require("ace/mode/scss").Mode;
+    editor.session.setMode(new scssMode());
+    
+    var staticWordCompleter = {
+        getCompletions: function(editor, session, pos, prefix, callback) {
+            var wordList = ["foo", "bar", "baz"];
+            callback(null, wordList.map(function(word) {
+                return {
+                    caption: word,
+                    value: word,
+                    meta: "static"
+                };
+            }));
+        }
+    }
+    editor.resize()
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
+  </script>
+  <script role="pug">
+    var editorPug = ace.edit("editorPug");
+    editorPug.setTheme("ace/theme/tomorrow_night_eighties");
+    var PugMode = ace.require("ace/mode/jade").Mode;
+    editorPug.session.setMode(new PugMode());
+    
+    var staticWordCompleter = {
+        getCompletions: function(editorPug, session, pos, prefix, callback) {
+            var wordList = ["foo", "bar", "baz"];
+            callback(null, wordList.map(function(word) {
+                return {
+                    caption: word,
+                    value: word,
+                    meta: "static"
+                };
+            }));
+        }
+    }
+    editorPug.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
+  </script>
+  <script role="js">
+    var editorJs = ace.edit("editorJs");
+    ace.require("ace/ext/language_tools");
+    ace.require('ace/multi_select');
+    editorJs.setTheme("ace/theme/tomorrow_night_eighties");
+    var JavaScriptMode = ace.require("ace/mode/javascript").Mode;
+    editorJs.session.setMode(new JavaScriptMode());
+    
+    var staticWordCompleter = {
+        getCompletions: function(editorJs, session, pos, prefix, callback) {
+            var wordList = ["foo", "bar", "baz"];
+            callback(null, wordList.map(function(word) {
+                return {
+                    caption: word,
+                    value: word,
+                    meta: "static"
+                };
+            }));
+        }
+    }
+    editorJs.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
+  </script>
+  <div class="debug-Dialog notEdit debug">
+    <div class="debug-Dialog-content">
+      <div class="row">
+        <div class="debug-subtitle col-5-tp">
+          <div class="createTitle active">
+            <svg class="icon ">
+              <use xlink:href="#cube"></use>
+            </svg>Element
+          </div>
+          <div class="createTitle">
+            <svg class="icon ">
+              <use xlink:href="#cube"></use>
+            </svg>Component
+          </div>
+          <div class="createTitle">
+            <svg class="icon ">
+              <use xlink:href="#cube"></use>
+            </svg>Module
+          </div>
+          <div class="createTitle">
+            <svg class="icon ">
+              <use xlink:href="#cube"></use>
+            </svg>Block/Section
+          </div>
+          <div class="createTitle">
+            <svg class="icon ">
+              <use xlink:href="#cube"></use>
+            </svg>Animation
+          </div>
+          <div class="createTitle">
+            <svg class="icon ">
+              <use xlink:href="#cube"></use>
+            </svg>Class
+          </div>
+          <div class="createTitle">
+            <svg class="icon ">
+              <use xlink:href="#cube"></use>
+            </svg>Script
+          </div>
+        </div>
+        <div class="debug-registrator col-7-tp debug-registrator-active">
+          <input id="contentType" type="hidden" value="element">
+          <label>Element Name:
+            <input id="elname" type="text">
+          </label>
+          <label>Element Type:
+            <select id="eltype" name="elemType">
+              <option value="button">button</option>
+              <option value="icon">Icon</option>
+              <option value="link">Link</option>
+              <option value="linkbutton">LinkButton</option>
+              <option value="preloader">Preloader</option>
+            </select>
+          </label>
+          <label>Element Extends:
+            <select id="elementExtends" name="vextends">
+              <option value="false">No extends</option>
+              <option value="button">Icon</option>
+              <option>Link</option>
+              <option>LinkButton</option>
+              <option>Icon</option>
+              <option>Button</option>
+              <option>Icon</option>
+              <option>Link</option>
+              <option>LinkButton</option>
+              <option>Icon</option>
+            </select>
+          </label>
+          <label>Element Parent:
+            <input id="elementParent" type="text" name="parent" placeholder="div">
+          </label>
+          <label>Save to Global library:
+            <label>No
+              <input type="radio" name="saveto" checked value="false">
+            </label>
+            <label>Yes
+              <input type="radio" name="saveto" value="true">
+            </label>
+          </label>
+          <label>
+            <button class="creator">Create</button>
+          </label>
+        </div>
+      </div>
+      <div class="debug-Dialog-start notEdit debug">
+        <div class="quant">Quant<span>THEME ENGINE</span><span class="ver">Version: Pre Alpha 0.0.96</span></div>
+        <div class="debug-Dialog-content">
+          <div class="row">
+            <div class="debug-subtitle col-4-tp">
+              <div class="createTitle active">
+                <svg class="icon ">
+                  <use xlink:href="#export"></use>
+                </svg>Load Project
+              </div>
+              <div class="createTitle">
+                <svg class="icon ">
+                  <use xlink:href="#plus"></use>
+                </svg>Create Project
+              </div>
+              <div class="createTitle">
+                <svg class="icon ">
+                  <use xlink:href="#export"></use>
+                </svg>Load Content
+              </div>
+              <div class="createTitle">
+                <svg class="icon ">
+                  <use xlink:href="#plus"></use>
+                </svg>Create Content
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="debug-Pannel-Right notEdit">
+    <div class="debug-Pannel-Right__section debugPannel__section">
+      <div class="debug-Pannel-Right-content">
+        <h6>
+          <svg class="icon ">
+            <use xlink:href="#target"></use>
+          </svg>Classes
+        </h6>
+        <div class="clearfix">
+          <div class="col-6-tp">
+            <label>Block
+              <input class="classChoser" type="text">
+            </label>
+            <label>Element
+              <input class="classChoser" type="text">
+            </label>
+            <label>Modifier
+              <input class="classChoser" type="text">
+            </label>
+            <label>Optional
+              <input class="classChoser" type="text">
+            </label>
+          </div>
+          <div class="col-6-tp">
+            <label>Vendor classes
+              <select multiple="multiple" size="5">
+                <option>hide</option>
+                <option>show</option>
+                <option>clearfix</option>
+                <option>mode</option>
+                <option>active</option>
+                <option>platform</option>
+                <option>selected</option>
+                <option>additional</option>
+                <option>support</option>
+              </select>
+            </label>
+            <label>Project classes
+              <select multiple="multiple" size="4">
+                <option>hide</option>
+                <option>show</option>
+                <option>clearfix</option>
+                <option>mode</option>
+                <option>active</option>
+              </select>
+            </label>
+          </div>
+          <hr>
+        </div>
+        <h6>
+          <svg class="icon ">
+            <use xlink:href="#column4"></use>
+          </svg>Grids
+        </h6>
+        <div class="clearfix">
+          <div class="col-2-tp">
+            <svg class="icon ">
+              <use xlink:href="#computer3"></use>
+            </svg>
+            <svg class="icon ">
+              <use xlink:href="#computer2"></use>
+            </svg>
+            <svg class="icon ">
+              <use xlink:href="#computer1"></use>
+            </svg>
+            <svg class="icon ">
+              <use xlink:href="#computer"></use>
+            </svg>
+            <svg class="icon ">
+              <use xlink:href="#arrow"></use>
+            </svg>
+          </div>
+          <div class="col-2-tp">
+            <input type="text" value="0" name="mobileGridder">
+            <input type="text" value="0" name="tpGridder">
+            <input type="text" value="0" name="tlGridder">
+            <input type="text" value="0" name="desctopGridder">
+            <input type="text" value="0" name="bigDesctopGridder">
+          </div>
+          <div class="col-8-tp">
+            <input type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('mobileGridder',this.value)" value="0">
+            <input type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tpGridder',this.value)" value="0">
+            <input type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tlGridder',this.value)" value="0">
+            <input type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('desctopGridder',this.value)" value="0">
+            <input type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('bigDesctopGridder',this.value)" value="0">
+          </div>
+          <hr>
+        </div>
+        <h6>
+          <svg class="icon ">
+            <use xlink:href="#computer3"></use>
+          </svg>
+          <svg class="icon ">
+            <use xlink:href="#computer2"></use>
+          </svg>
+          <svg class="icon ">
+            <use xlink:href="#computer1"></use>
+          </svg>
+          <svg class="icon ">
+            <use xlink:href="#computer"></use>
+          </svg>
+          <svg class="icon ">
+            <use xlink:href="#arrow"></use>
+          </svg>
+        </h6>
+        <div class="clearfix"></div>
+        <h6>
+          <svg class="icon ">
+            <use xlink:href="#ruler"></use>
+          </svg>Size
+        </h6>
+        <div>
+          <button id="100p">100%</button>
+          <hr>
+        </div>
+        <h6>
+          <svg class="icon ">
+            <use xlink:href="#text"></use>
+          </svg>Text & Font
+        </h6>
+        <div>
+          <button id="textAC">cente</button>
+          <button id="textAL">left</button>
+          <button id="textAR">right</button>
+          <hr>
+        </div>
+        <h6>
+          <svg class="icon ">
+            <use xlink:href="#mp"></use>
+          </svg>Paddings & Margins
+        </h6>
+        <div>
+          <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padder(this.value)">
+          <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padderrl(this.value)">
+          <input type="range" min=".1" max="2" step=".1" list="tickmarks" onchange="paddertb(this.value)">
+          <hr>
+          <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginer(this.value)">
+          <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginerrl(this.value)">
+          <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginertb(this.value)">
+        </div>
+        <h6>
+          <svg class="icon ">
+            <use xlink:href="#boxborder"></use>
+          </svg>Border & Box
+        </h6>
+        <div></div>
+        <h6>
+          <svg class="icon ">
+            <use xlink:href="#image"></use>
+          </svg>Background
+        </h6>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <div class="debug notEdit">
+    <div class="hidden"><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="arrow" viewBox="0 0 47.168 47.168"><g fill="#D80027"><path d="M47.168 36.918V6.699H0v30.219h19.252v1.945H9.188v1.605h28.179v-1.605h-9.846v-1.945h19.647zM3.45 32.469v-22.32h40.267v22.317H3.45v.003z"/><path d="M39.257 24.495l-5.838-2.491 1.498 6.041 1.621-1.326 1.939 2.371 1.095-.899-1.935-2.371z"/></g></symbol><symbol id="boxborder" viewBox="0 0 17 17"><path d="M11 1H0v9h11V1zm-1 8H1V2h9v7zm4 4H3v-1.981h1V12h9V5h-.994V4H14v9zm3-6v9H6v-1.981h1V15h9V8h-.994V7H17z"/></symbol><symbol id="close" viewBox="0 0 17 17"><path d="M9.207 8.5l6.646 6.646-.707.707L8.5 9.207l-6.646 6.646-.707-.707L7.793 8.5 1.146 1.854l.707-.707L8.5 7.793l6.646-6.646.707.707L9.207 8.5z"/></symbol><symbol id="column4" viewBox="0 0 17 17"><path d="M1 17h3V0H1v17zM2 1h1v15H2V1zm3 16h3V0H5v17zM6 1h1v15H6V1zm3 16h3V0H9v17zm1-16h1v15h-1V1zm3-1v17h3V0h-3zm2 16h-1V1h1v15z"/></symbol><symbol id="computer" viewBox="0 0 253.218 253.218"><path d="M224.913 175.79h-.086V46.128H28.188V175.79h.117L0 198.01v9.079h253.218v-9.079l-28.305-22.22zM46.144 59.186l163.231.244-1.3 103.456-162.28.649.349-104.349zm65.83 138.886l3.968-5.724h25.732l4.743 5.724h-34.443zm-84.815-10.913l9.338-6.5H218.25l12.97 7.227-204.061-.727z" fill="#D80027"/></symbol><symbol id="computer1" viewBox="0 0 39.152 39.152"><path d="M0 3.715v26.096h17.054l3.065 5.605 7.644.021 1.023-5.627H39.15V3.715H0zM3.223 18.57a1.259 1.259 0 1 1 0-2.517 1.259 1.259 0 0 1 0 2.517zm23.704 15.864l-6.215-.018-3.266-5.971-2.475-4.119.917-1.072 2.352 2.514a1.004 1.004 0 0 0 1.1.244.996.996 0 0 0 .63-.934l-.067-10.965 1.293-.051.504 7.893c.033.5.43.898.93.934l2.416.164 2.494.854 1.16.779-1.773 9.748zm-4.689-19.758c.209-.312.338-.68.338-1.082a1.97 1.97 0 0 0-1.967-1.966 1.969 1.969 0 0 0-1.966 1.966c0 .352.1.676.263.959l.007 1.208c-.661-.513-1.104-1.29-1.104-2.19 0-1.543 1.256-2.8 2.8-2.8a2.804 2.804 0 0 1 2.801 2.8c0 .899-.443 1.678-1.104 2.189l-.068-1.084zm13.138 11.363h-.711v-.002h-5.194l.33-1.814-1.812-1.221-2.742-.938-2.547-.174-.34-5.305a3.49 3.49 0 0 0 1.752-3.018 3.506 3.506 0 0 0-3.502-3.504 3.508 3.508 0 0 0-3.505 3.504c0 1.316.737 2.451 1.813 3.049l.052 8.467-3.115-3.328-2.112 2.467 1.089 1.814H6.494V7.486h28.884v18.553h-.002z" fill="#D80027"/></symbol><symbol id="computer2" viewBox="0 0 46.096 46.096"><path d="M43.111 30.278l-7.385-4.77.002-22.422h-26.1v22.898l-6.645 4.293L0 32.093l.875 10.916 8.754-1.41v.639h26.098v-.756l9.494 1.527.875-10.916-2.985-1.815zm-31.943.889L8.282 35.14l.809.588.537-.738v5.6l-7.844 1.264-.739-9.225 2.055-1.25.007.012.415-.268 7.856-4.779 8.019 2.082-.034 1.604-7.85.938a.497.497 0 0 0-.345.199zm12.06 9.105a1.259 1.259 0 0 1 0-2.516 1.258 1.258 0 1 1 0 2.516zm8.726-4.527H13.401v-3.998l6.511-.779a.495.495 0 0 0 .44-.484l.053-2.434a.503.503 0 0 0-.374-.496l-6.63-1.721V6.86h18.553v19.166l-5.892 1.527a.506.506 0 0 0-.375.496l.053 2.434c.007.25.193.457.44.484l5.772.691.002 4.087zm12.357 6.106l-8.584-1.383V33.97l1.276 1.758.81-.588-2.887-3.973a.499.499 0 0 0-.345-.201l-7.851-.938-.033-1.605 8.019-2.08 7.856 4.777.414.27.008-.012 2.055 1.25-.738 9.223z" fill="#D80027"/></symbol><symbol id="computer3" viewBox="0 0 31.098 31.098"><path d="M27.353 15.812l-7.34-4.741V0H1.527v6.779l-.729-.064v.681l-.02 3.88-.012-.001v2.213L.71 24.172l.817.127v6.799h18.486v-3.912l9.489 1.529.886-11.057-3.035-1.846zM11.181 1.287a.446.446 0 1 1 0 .893.446.446 0 0 1 0-.893zM8.522 2.779h5.317v.429H8.522v-.429zM1.811 7.821l3.19.282.04 1.569h-3.23V7.821zm-.033 5.681l.006-1.158 3.249.179.04 1.571-3.295.105v-.697zm.034 3.641l3.192-.205.039 1.521-3.23.33-.001-1.646zm1.745 6.447l.394-.074-.394.074zm-1.761-.697V21.44l2.557-.236.028 1.199-2.585.49zm9.21 6.861a1.065 1.065 0 1 1 0 0zm6.041-3.662c-4.802.025-10.173.045-12.555.023v-2.703l.922-.174-.075-3.145-3.598.332 2.75-.254v-.641l1.586-.16-.09-3.513-1.497.097v-.83l1.619-.052-.09-3.512-1.529-.082v-.792l-2.032-.002 3.62.002-.09-3.512-1.498-.133V4.734l12.555-.004v6.528l-6.943 1.802a.506.506 0 0 0-.379.5l.053 2.465a.504.504 0 0 0 .446.491l6.823.815v8.76h.002zm11.534 1.447l-8.568-1.381v-6.43l1.169 1.609.818-.597-2.923-4.02a.502.502 0 0 0-.35-.206l-7.948-.948-.035-1.625 8.452-2.192 8.043 5.196.008-.012 2.08 1.266-.746 9.34z" fill="#D80027"/></symbol><symbol id="cube" viewBox="0 0 496 496"><path d="M472 369.136V126.864c13.768-3.576 24-15.992 24-30.864 0-17.648-14.352-32-32-32-11.616 0-21.704 6.28-27.312 15.56l-156.8-46.456c.016-.376.112-.728.112-1.104 0-17.648-14.352-32-32-32s-32 14.352-32 32c0 .376.096.728.112 1.104L59.312 79.56C53.704 70.28 43.616 64 32 64 14.352 64 0 78.352 0 96c0 14.872 10.232 27.288 24 30.864v242.272C10.232 372.712 0 385.128 0 400c0 17.648 14.352 32 32 32 11.616 0 21.704-6.28 27.312-15.56l156.8 46.456c-.016.376-.112.728-.112 1.104 0 17.648 14.352 32 32 32s32-14.352 32-32c0-.376-.096-.728-.112-1.104l156.8-46.456C442.296 425.72 452.384 432 464 432c17.648 0 32-14.352 32-32 0-14.872-10.232-27.288-24-30.864zM464 80c8.824 0 16 7.176 16 16s-7.176 16-16 16-16-7.176-16-16 7.176-16 16-16zM248 16c8.824 0 16 7.176 16 16s-7.176 16-16 16-16-7.176-16-16 7.176-16 16-16zM63.888 94.896l156.8-46.456C226.296 57.72 236.384 64 248 64c11.616 0 21.704-6.28 27.312-15.56l156.8 46.456c-.016.376-.112.728-.112 1.104s.096.728.112 1.104l-156.8 46.456C269.704 134.28 259.616 128 248 128c-11.616 0-21.704 6.28-27.312 15.56l-156.8-46.456c.016-.376.112-.728.112-1.104s-.096-.728-.112-1.104zM248 176c-8.824 0-16-7.176-16-16s7.176-16 16-16 16 7.176 16 16-7.176 16-16 16zm8 146.224c4.76 2.776 8 7.88 8 13.776s-3.24 11-8 13.776v-27.552zM16 96c0-8.824 7.176-16 16-16s16 7.176 16 16-7.176 16-16 16-16-7.176-16-16zm16 320c-8.824 0-16-7.176-16-16s7.176-16 16-16 16 7.176 16 16-7.176 16-16 16zm8-46.864V126.864a31.942 31.942 0 0 0 19.312-14.424l156.8 46.456c-.016.376-.112.728-.112 1.104 0 14.872 10.232 27.288 24 30.864v114.272c-13.768 3.576-24 15.992-24 30.864 0 .376.096.728.112 1.104l-156.8 46.456A31.942 31.942 0 0 0 40 369.136zm200-46.912v27.544c-4.76-2.776-8-7.88-8-13.776s3.24-10.992 8-13.768zM220.688 447.56l-156.8-46.456c.016-.376.112-.728.112-1.104 0-.376-.096-.728-.112-1.104l156.8-46.456A31.92 31.92 0 0 0 240 366.864v66.272a31.942 31.942 0 0 0-19.312 14.424zM248 480c-8.824 0-16-7.176-16-16s7.176-16 16-16 16 7.176 16 16-7.176 16-16 16zm184.112-78.896l-156.8 46.456A31.92 31.92 0 0 0 256 433.136v-66.272a31.942 31.942 0 0 0 19.312-14.424l156.8 46.456c-.016.376-.112.728-.112 1.104 0 .376.096.728.112 1.104zm4.576-17.544l-156.8-46.456c.016-.376.112-.728.112-1.104 0-14.872-10.232-27.288-24-30.864V190.864c13.768-3.576 24-15.992 24-30.864 0-.376-.096-.728-.112-1.104l156.8-46.456A31.92 31.92 0 0 0 456 126.864v242.272a31.942 31.942 0 0 0-19.312 14.424zM464 416c-8.824 0-16-7.176-16-16s7.176-16 16-16 16 7.176 16 16-7.176 16-16 16z" fill="#FFF"/></symbol><symbol id="export" viewBox="0 0 17 17"><path d="M4.359 5.956l-.718-.697L8.5.254l4.859 5.005-.718.696L9 2.205v10.767H8V2.205L4.359 5.956zM16 9.03v6.47a.5.5 0 0 1-.5.5h-14a.5.5 0 0 1-.5-.5V9.025H0V15.5c0 .827.673 1.5 1.5 1.5h14c.827 0 1.5-.673 1.5-1.5V9.03h-1z"/></symbol><symbol id="image" viewBox="0 0 17 17"><path d="M1 1v15h15V1H1zm14 14H2v-2h13v2zM2 12V2h13v10H2zm12.203-1.835l-.697.717-2.417-2.349-1.554 1.676-2.486-4.415-3.401 4.975-.826-.564 4.31-6.303 2.604 4.622 1.317-1.422 3.15 3.063z"/></symbol><symbol id="mp" viewBox="0 0 17 17"><path d="M0 0v17h17V0H0zm16 16H1V1h15v15zM3 8h1v1H3V8zm0-4h1v1H3V4zm0 6h1v1H3v-1zm0-4h1v1H3V6zm0-4h1v1H3V2zm0 12h1v1H3v-1zm0-2h1v1H3v-1zM13 2h1v1h-1V2zm0 4h1v1h-1V6zm0-2h1v1h-1V4zm0 4h1v1h-1V8zm0 2h1v1h-1v-1zm0 2h1v1h-1v-1zm0 2h1v1h-1v-1z"/></symbol><symbol id="plus" viewBox="0 0 17 17"><path d="M16 9H9v7H8V9H1V8h7V1h1v7h7v1z"/></symbol><symbol id="ruler" viewBox="0 0 17 17"><path d="M12.036.015L.015 12.036l4.95 4.949 12.02-12.02-4.949-4.95zM1.429 12.036l.696-.696 1.414 1.414.707-.707-1.414-1.414.719-.719.707.707.707-.707-.707-.707.707-.707 1.414 1.414.707-.707-1.414-1.414.696-.696.707.707.707-.707-.707-.707.707-.707 1.414 1.414.707-.707-1.414-1.414.718-.718.707.707.707-.707-.707-.707.707-.707 1.415 1.414.707-.707-1.415-1.414.708-.708 3.535 3.536L4.965 15.571l-3.536-3.535z"/></symbol><symbol id="target" viewBox="0 0 17 17"><path d="M17.02 8h-2.045a6.504 6.504 0 0 0-6.004-5.977V-.039h-1v2.065A6.505 6.505 0 0 0 2.025 8H-.02v1h2.045a6.505 6.505 0 0 0 5.945 5.974V17h1v-2.023A6.503 6.503 0 0 0 14.974 9h2.045V8zm-8.049 5.977V12h-1v1.974A5.508 5.508 0 0 1 3.025 9H4.98V8H3.025a5.508 5.508 0 0 1 4.946-4.974v1.935h1V3.023A5.507 5.507 0 0 1 13.975 8H12.02v1h1.955a5.507 5.507 0 0 1-5.004 4.977z"/></symbol><symbol id="text" viewBox="0 0 17 17"><path d="M14 2v3h-1V3H9v12h1.643v1H6.357v-1H8V3H4v2H3V2h11z"/></symbol><symbol id="tool" viewBox="0 0 40.723 40.723"><path d="M8.283 5.084v8.204L0 18.637l.772 9.199 7.511-1.098h16.114l-1.391-2.311 2.848 4.736 3.529 6.453 7.645.021 1.617-8.9h2.078V5.084H8.283zm1.031 12.683L6.92 21.062l.671.486.694-.955.02 5.344-6.78.938-.656-7.812 1.748-1.128.009.015 6.593-4.257 6.925 1.797-.028 1.332-6.513.776a.422.422 0 0 0-.289.169zm7.944 5.84H13.67v-5.659l2.9-.347a.414.414 0 0 0 .366-.403l.043-2.02a.414.414 0 0 0-.311-.41l-2.999-.778V8.215h23.968v15.25l-.385-.26-2.742-.938-2.547-.172-.342-5.311a3.479 3.479 0 0 0 1.756-3.013c0-1.933-1.572-3.504-3.504-3.504s-3.504 1.571-3.504 3.504c0 1.315.736 2.45 1.812 3.047l.053 8.468-.012-1.682h-1.561l-1.543-1.646-1.408 1.646h-6.454v.003zm12.617-11.776a1.97 1.97 0 0 0-1.967 1.967c0 .353.098.679.262.964l.008 1.227a2.782 2.782 0 0 1-1.104-2.214c0-1.544 1.256-2.8 2.801-2.8a2.803 2.803 0 0 1 2.799 2.8 2.78 2.78 0 0 1-1.102 2.21l-.07-1.114c.207-.309.338-.672.338-1.071a1.968 1.968 0 0 0-1.965-1.969zm6.319 22.806l-6.215-.018-3.27-5.971-2.475-4.119.916-1.072 2.352 2.514a1.004 1.004 0 0 0 1.101.244.991.991 0 0 0 .629-.934l-.066-10.965 1.293-.05.506 7.892c.031.502.432.9.932.936l2.416.162 2.49.854 1.16.779-1.769 9.748z" fill="#D80027"/></symbol></svg></div>
+    <section class="mediaMap">
+      <div class="mediaMap__bounder dl">
+        <div class="mediaMap__container dl"></div>
+      </div>
+      <div class="mediaMap__bounder d" style="width:1200px;"><span>1200px</span>
+        <div class="mediaMap__container d" style="width:1120px;"><span>1120px</span></div>
+      </div>
+      <div class="mediaMap__bounder tl" style="width:994px;"><span>994px</span>
+        <div class="mediaMap__container tl" style="width:900px;"><span>900px</span></div>
+      </div>
+      <div class="mediaMap__bounder tp" style="width:768px;"><span>768px</span>
+        <div class="mediaMap__container tp" style="width:690px;"><span>690px</span></div>
+      </div>
+      <div class="mediaMap__bounder m" style="width:600px; color:#27ae60;"><span>600px</span>
+        <div class="mediaMap__container m" style="width:100%; background:#27ae60;"><span>600px</span>
+          <div class="mediaInfo clearfix">
+            <svg class="icon icon-breakpoits">
+              <use xlink:href="#arrow"></use>
+            </svg>
+            <div class="f-left" id="widthOf"></div>
+            <div class="f-left" id="viewpr-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pb-section clearfix hidden" id="ball"><span class="lh">Line height</span>
+      <div class="spacer element-i"><span>Element i</span></div>
+      <div class="spacer element-o"><span>Element o</span></div>
+      <div class="spacer component-i"><span>Component i</span></div>
+      <div class="spacer component-o"><span>Component o</span></div>
+      <div class="spacer module-i"><span>Module ii</span></div>
+      <div class="spacer module-o"><span>Module o</span></div>
+      <div class="spacer block-i"><span>block i</span></div>
+      <div class="spacer block-o"><span>block o</span></div>
+    </section>
+    <section class="pb-section clearfix grid grid--debug hidden" id="grid">
+      <div class="container">
+        <div class="row">
+          <div class="col-1-m col-1-tp">1</div>
+          <div class="col-1-m col-1-tp">2</div>
+          <div class="col-1-m col-1-tp">3</div>
+          <div class="col-1-m col-1-tp">4</div>
+          <div class="col-1-m col-1-tp">5</div>
+          <div class="col-1-m col-1-tp">6</div>
+          <div class="col-1-m col-1-tp">7</div>
+          <div class="col-1-m col-1-tp">8</div>
+          <div class="col-1-m col-1-tp">9</div>
+          <div class="col-1-m col-1-tp">10</div>
+          <div class="col-1-m col-1-tp">11</div>
+          <div class="col-1-m col-1-tp">12</div>
+        </div>
+      </div>
+    </section>
+    <div class="debugPannel__wrapper notEdit">
+      <div class="debugPannel clearfix">
+        <div class="debugPannel__section col-4-tp">
+          <div class="tabList elAdder">
+            <div id="tabs-add-elment">
+              <ul class="panellInner">
+                <li><a class="tabAnchr" href="#tabtags">Tags</a></li>
+                <li><a class="tabAnchr" href="#tabHTML5">HTML5</a></li>
+                <li><a class="tabAnchr" href="#tabclass">Classes</a></li>
+                <li><a class="tabAnchr" href="#tabcombination">Combinations</a></li>
+              </ul>
+              <div id="tabtags">
+                <ul class="debugPannel__colorSpecific">
+                  <div class="clearfix">
+                    <li class="col-1-tp">Bl:</li>
+                    <li class="headers col-1-tp elAdder" id="addHeader" data-el="&lt;h1&gt;&lt;/h1&gt;&lt;h2&gt;&lt;/h2&gt;&lt;h3&gt;&lt;/h3&gt;&lt;h4&gt;&lt;/h4&gt;&lt;h5&gt;&lt;/h5&gt;&lt;h6&gt;&lt;/h6&gt;">H1+</li>
+                    <li class="col-1-tp prgrph elAdder" data-el="p">P</li>
+                    <li class="col-1-tp ul elAdder" data-el="&lt;ul&gt;&lt;/ul&gt;">ul</li>
+                    <li class="col-1-tp li elAdder" data-el="&lt;li&gt; the li element &lt;/li&gt;">li</li>
+                    <li class="col-1-tp div elAdder" data-el="&lt;div&gt;&lt;/div&gt;">div</li>
+                    <li class="col-1-tp main elAdder" data-el="&lt;main&gt;&lt;/main&gt;">main</li>
+                    <li class="col-1-tp nav elAdder" data-el="&lt;nav&gt;&lt;nav&gt;">nav</li>
+                    <li class="col-1-tp tbl elAdder" data-el="&lt;table&gt;&lt;/table&gt;">tbl</li>
+                    <li class="col-1-tp dl elAdder" data-el="&lt;dl&gt;&lt;/dl&gt;">dl</li>
+                    <li class="col-1-tp dt elAdder" data-el="&lt;dt&gt;&lt;/dt&gt;">dt</li>
+                    <li class="col-1-tp dd elAdder" data-el="&lt;dd&gt;&lt;/dd&gt;">dd</li>
+                    <li class="col-1-tp"></li>
+                    <li class="col-1-tp blockquote elAdder" data-el="&lt;blockquote&gt;&lt;/blockquote&gt;">blqt</li>
+                    <li class="col-1-tp form elAdder" data-el="&lt;form&gt;&lt;/form&gt;">form</li>
+                  </div>
+                  <div class="clearfix">
+                    <li class="col-1-tp">Inl:</li>
+                    <li class="col-1-tp span elAdder" data-el="&lt;span&gt; Span Text&lt;/span&gt;">span</li>
+                    <li class="col-1-tp link elAdder" data-el="&lt;a&gt;this is link&lt;/a&gt;">a</li>
+                    <li class="col-1-tp i elAdder" data-el="&lt;i&gt;italic&lt;/i&gt;">i</li>
+                    <li class="col-1-tp input elAdder" data-el="&lt;input&gt;">inpt</li>
+                    <li class="col-1-tp button elAdder" data-el="&lt;button&gt;Button&lt;/button&gt;">btn</li>
+                    <li class="col-1-tp cite elAdder" data-el="&lt;cite&gt;&lt;/cite&gt;">cite</li>
+                    <li class="col-1-tp select elAdder" data-el="&lt;select&gt;&lt;/select&gt;">select</li>
+                    <li class="col-1-tp label elAdder" data-el="&lt;label&gt;&lt;/label&gt;">label</li>
+                    <li class="col-1-tp textarea elAdder" data-el="&lt;textarea&gt;">txta</li>
+                    <li class="col-1-tp tr elAdder" data-el="&lt;tr&gt;&lt;/tr&gt;">tr</li>
+                    <li class="col-1-tp td elAdder" data-el="&lt;td&gt;&lt;/td&gt;">td</li>
+                    <li class="col-1-tp"></li>
+                    <li class="col-1-tp th elAdder" data-el="&lt;thead&gt;&lt;/thead&gt;">th</li>
+                  </div>
+                </ul>
+              </div>
+              <div id="tabHTML5">
+                <ul class="debugPannel__colorSpecific">
+                  <div class="clearfix">
+                    <li class="col-1-tp header elAdder" data-el="&lt;header&gt;&lt;/header&gt;">Hdr</li>
+                    <li class="col-1-tp footer elAdder" data-el="&lt;footer&gt;&lt;/footer&gt;">Ftr</li>
+                    <li class="col-1-tp article elAdder" data-el="&lt;article&gt;&lt;/article&gt;">arcl</li>
+                    <li class="col-1-tp aside elAdder" data-el="&lt;aside&gt;&lt;/aside&gt;">aside</li>
+                    <li class="col-1-tp section elAdder" data-el="&lt;section&gt;&lt;/section&gt;">sectn</li>
+                    <li class="col-1-tp figure elAdder" data-el="&lt;figure&gt;&lt;/figure&gt;">figure</li>
+                    <li class="col-1-tp figcaption elAdder" data-el="&lt;figcaption&gt;&lt;/figcaption&gt;">figcpt</li>
+                  </div>
+                </ul>
+              </div>
+              <div id="tabclass">
+                <ul class="debugPannel__colorSpecific">
+                  <li>span</li>
+                  <li>a<span style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">Span</span></li>
+                  <li><img alt="img/svg" style="display:inline-flex;vertical-align:middle;text-shadow:1px 1px 1px black;"></li>
+                  <li>
+                    <div>Div</div>
+                  </li>
+                </ul>
+              </div>
+              <div id="tabcombination">
+                <ul class="debugPannel__colorSpecific">
+                  <li class="headers">
+                    <h6 style="margin:0;font-size:1rem;font-weight:400;text-shadow:1px 1px 1px black;">h1-h6</h6>
+                  </li>
+                  <li>
+                    <p> P</p>
+                  </li>
+                  <li>
+                    <ul> ul</ul>
+                  </li>
+                  <li>
+                    <li>li</li>
+                  </li>
+                  <li>
+                    <div class="col-"> .Col</div>
+                  </li>
+                  <li><a style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">A</a></li>
+                  <li><span style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">Span</span></li>
+                  <li><img alt="img/svg" style="display:inline-flex;vertical-align:middle;text-shadow:1px 1px 1px black;"></li>
+                  <li>
+                    <div>Div</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <script>
+            $("#tabs-add-elment").tabs();
+            
+          </script>
+        </div>
+        <div class="debugPannel__section col-4-tp">
+          <button id="spacerSwitcher">Spacer</button>
+          <button id="gridb">grid</button>
+          <button class="on" id="debugViewSwitcher">Debug View</button>
+          <button id="clone">Clone</button>
+          <button id="getHtml">Get View!</button>
+          <button id="up">Up</button>
+          <button id="down">Down</button>
+          <button id="del">Delete</button>
+          <button id="lock">Lock</button>
+          <button id="unlock">UnLock</button>
+          <button id="save">Save</button>
+          <button id="load">Load</button>
+          <button id="lockSpacer">lock Spacer</button>
+          <button id="addBkg">add Background</button>
+          <button id="startMediaTest">Media</button>
+          <button id="getScssCode">Get scss</button>
+          <button id="getinnerView">Get Html</button>
+          <button id="cn">CREATE NEW...</button><a class="tabAnchr" href="javascript:onclick=maximizeme()">Maximize</a>
+          <script>
+            var qscale = function (v) {
+                $('.projectWrapper').css({
+                    "transform": "scale(" + v + ")"
+                })
+            }
+          </script>
+          <input id="scaller" type="range" min=".3" max="2" step=".1" onchange="qscale(this.value)">
+          <div id="editableDiv" contenteditable="true">Paste</div>
+        </div>
+        <div class="debugPannel__section col-4-tp colors">
+          <div class="pb-element f-left">
+            <div class="pb-colorBox"></div>
+            <div class="pb-colorBox"><span class="pb-elementHeader">Base</span></div>
+            <div class="pb-colorBox"><span class="pb-elementHeader">Darken</span></div>
+            <div class="pb-colorBox"><span class="pb-elementHeader">light</span></div>
+          </div>
+          <div class="pb-element f-left"><span class="pb-elementHeader">1</span>
+            <div class="pb-colorBox pb-colorBox--primary"></div>
+            <div class="pb-colorBox pb-colorBox--primary-d"></div>
+            <div class="pb-colorBox pb-colorBox--primary-l"></div>
+          </div>
+          <div class="pb-element f-left"><span class="pb-elementHeader">2</span>
+            <div class="pb-colorBox pb-colorBox--secondary"></div>
+            <div class="pb-colorBox pb-colorBox--secondary-d"></div>
+            <div class="pb-colorBox pb-colorBox--secondary-l"></div>
+          </div>
+          <div class="pb-element f-left"><span class="pb-elementHeader">A</span>
+            <div class="pb-colorBox pb-colorBox--accent"></div>
+            <div class="pb-colorBox pb-colorBox--accent-d"></div>
+            <div class="pb-colorBox pb-colorBox--accent-l"></div>
+          </div>
+          <div class="pb-element f-left"><span class="pb-elementHeader">Fg</span>
+            <div class="pb-colorBox pb-colorBox--fground"></div>
+            <div class="pb-colorBox pb-colorBox--fground-d"></div>
+            <div class="pb-colorBox pb-colorBox--fground-l"></div>
+          </div>
+          <div class="pb-element f-left"><span class="pb-elementHeader">Bg</span>
+            <div class="pb-colorBox pb-colorBox--bground"></div>
+            <div class="pb-colorBox pb-colorBox--bground-d"></div>
+            <div class="pb-colorBox pb-colorBox--bground-l"></div>
+          </div>
+          <div class="pb-element f-left"><span class="pb-elementHeader">F</span>
+            <div class="pb-colorBox pb-colorBox--font"></div>
+            <div class="pb-colorBox pb-colorBox--font-d"></div>
+            <div class="pb-colorBox pb-colorBox--font-l"></div>
+          </div>
+          <div class="pb-element f-left"><span>B
+              <input id="colorPicker" type="color"></span><span>C
+              <input id="colorPickerFont" type="color"></span></div>
+        </div>
+        <div class="debugPannel__section hidden"><span id="phone-upper-boundary">600px</span><span id="tablet-portrait-upper-boundary">768px</span><span id="tablet-landscape-upper-boundary">994px</span><span id="desktop-upper-boundary">1200px</span><span id="desktopl-upper-boundary">1400px</span><span id="tablet-p-container">690px</span><span id="tablet-l-container">900px</span><span id="desktop-container">1120px</span></div>
+      </div>
+    </div>
+  </div>
+</html>
