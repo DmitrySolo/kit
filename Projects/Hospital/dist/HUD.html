@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head></head>
+  <body>
+    <div class="hidden"></div>
+    <script>
+      var evt         = new Event(),
+          dragdrop    = new Dragdrop(evt),
+          rg          = new RulersGuides(evt, dragdrop);
+    </script>
+    <script src="ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ace-builds/src/theme-tomorrow_night_eighties.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ace-builds/src/mode-scss.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ace-builds/src/mode-jade.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ace-builds/src/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ace-builds/src/ext-language_tools.js"></script>
+    <script src="maps/main.css.map"></script>
+    <script role="scss">
+      var editor = ace.edit("editorScss");
+      ace.require("ace/ext/language_tools");
+      ace.require('ace/multi_select');
+      editor.setTheme("ace/theme/tomorrow_night_eighties");
+      var scssMode = ace.require("ace/mode/scss").Mode;
+      editor.session.setMode(new scssMode());
+      
+      var staticWordCompleter = {
+          getCompletions: function(editor, session, pos, prefix, callback) {
+              var wordList = ["foo", "bar", "baz"];
+              callback(null, wordList.map(function(word) {
+                  return {
+                      caption: word,
+                      value: word,
+                      meta: "static"
+                  };
+              }));
+          }
+      }
+      editor.resize()
+      editor.setOptions({
+          enableBasicAutocompletion: true,
+          enableSnippets: true,
+          enableLiveAutocompletion: true
+      });
+    </script>
+    <script role="pug">
+      var editorPug = ace.edit("editorPug");
+      editorPug.setTheme("ace/theme/tomorrow_night_eighties");
+      var PugMode = ace.require("ace/mode/jade").Mode;
+      editorPug.session.setMode(new PugMode());
+      
+      var staticWordCompleter = {
+          getCompletions: function(editorPug, session, pos, prefix, callback) {
+              var wordList = ["foo", "bar", "baz"];
+              callback(null, wordList.map(function(word) {
+                  return {
+                      caption: word,
+                      value: word,
+                      meta: "static"
+                  };
+              }));
+          }
+      }
+      editorPug.setOptions({
+          enableBasicAutocompletion: true,
+          enableSnippets: true,
+          enableLiveAutocompletion: true
+      });
+    </script>
+    <script role="js">
+      var editorJs = ace.edit("editorJs");
+      ace.require("ace/ext/language_tools");
+      ace.require('ace/multi_select');
+      editorJs.setTheme("ace/theme/tomorrow_night_eighties");
+      var JavaScriptMode = ace.require("ace/mode/javascript").Mode;
+      editorJs.session.setMode(new JavaScriptMode());
+      
+      var staticWordCompleter = {
+          getCompletions: function(editorJs, session, pos, prefix, callback) {
+              var wordList = ["foo", "bar", "baz"];
+              callback(null, wordList.map(function(word) {
+                  return {
+                      caption: word,
+                      value: word,
+                      meta: "static"
+                  };
+              }));
+          }
+      }
+      editorJs.setOptions({
+          enableBasicAutocompletion: true,
+          enableSnippets: true,
+          enableLiveAutocompletion: true
+      });
+    </script>
+    <div class="hud-wrapper">
+      <div class="hud-topPanel">
+        <link href="main.css" rel="stylesheet" type="text/css">
+        <div class="top-panel-content"><span>TEST APPLICATION</span></div>
+      </div>
+      <div class="hud-leftPanel">
+        <!--Created by Dmitry Soloshenko on 20.06.2017.
+        -->
+      </div>
+      <div class="hud-rightPanel">
+        <div class="debug-Pannel-Right notEdit">
+          <div class="debug-Pannel-Right__section debugPannel__section">
+            <div class="debug-Pannel-Right-content">
+              <h6>
+                        <svg class="icon ">
+                          <use xlink:href="#target"></use>
+                        </svg>Classes
+              </h6>
+              <div class="clearfix">
+                <div class="col-6-tp">
+                  <label>Block
+                    <input class="classChoser" type="text">
+                  </label>
+                  <label>Element
+                    <input class="classChoser" type="text">
+                  </label>
+                  <label>Modifier
+                    <input class="classChoser" type="text">
+                  </label>
+                  <label>Optional
+                    <input class="classChoser" type="text">
+                  </label>
+                </div>
+                <div class="col-6-tp">
+                  <label>Vendor classes
+                    <select multiple="multiple" size="5">
+                      <option>hide</option>
+                      <option>show</option>
+                      <option>clearfix</option>
+                      <option>mode</option>
+                      <option>active</option>
+                      <option>platform</option>
+                      <option>selected</option>
+                      <option>additional</option>
+                      <option>support</option>
+                    </select>
+                  </label>
+                  <label>Project classes
+                    <select multiple="multiple" size="4">
+                      <option>hide</option>
+                      <option>show</option>
+                      <option>clearfix</option>
+                      <option>mode</option>
+                      <option>active</option>
+                    </select>
+                  </label>
+                </div>
+                <hr>
+              </div>
+              <h6>
+                        <svg class="icon ">
+                          <use xlink:href="#column4"></use>
+                        </svg>Grids
+              </h6>
+              <div class="clearfix">
+                <div class="col-2-tp">
+                          <svg class="icon ">
+                            <use xlink:href="#computer3"></use>
+                          </svg>
+                          <svg class="icon ">
+                            <use xlink:href="#computer2"></use>
+                          </svg>
+                          <svg class="icon ">
+                            <use xlink:href="#computer1"></use>
+                          </svg>
+                          <svg class="icon ">
+                            <use xlink:href="#computer"></use>
+                          </svg>
+                          <svg class="icon ">
+                            <use xlink:href="#arrow"></use>
+                          </svg>
+                </div>
+                <div class="col-2-tp">
+                  <input type="text" value="0" name="mobileGridder">
+                  <input type="text" value="0" name="tpGridder">
+                  <input type="text" value="0" name="tlGridder">
+                  <input type="text" value="0" name="desctopGridder">
+                  <input type="text" value="0" name="bigDesctopGridder">
+                </div>
+                <div class="col-8-tp">
+                  <input type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('mobileGridder',this.value)" value="0">
+                  <input type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tpGridder',this.value)" value="0">
+                  <input type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tlGridder',this.value)" value="0">
+                  <input type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('desctopGridder',this.value)" value="0">
+                  <input type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('bigDesctopGridder',this.value)" value="0">
+                </div>
+                <hr>
+              </div>
+              <h6>
+                        <svg class="icon ">
+                          <use xlink:href="#computer3"></use>
+                        </svg>
+                        <svg class="icon ">
+                          <use xlink:href="#computer2"></use>
+                        </svg>
+                        <svg class="icon ">
+                          <use xlink:href="#computer1"></use>
+                        </svg>
+                        <svg class="icon ">
+                          <use xlink:href="#computer"></use>
+                        </svg>
+                        <svg class="icon ">
+                          <use xlink:href="#arrow"></use>
+                        </svg>
+              </h6>
+              <div class="clearfix"></div>
+              <h6>
+                        <svg class="icon ">
+                          <use xlink:href="#ruler"></use>
+                        </svg>Size
+              </h6>
+              <div>
+                <button id="100p">100%</button>
+                <hr>
+              </div>
+              <h6>
+                        <svg class="icon ">
+                          <use xlink:href="#text"></use>
+                        </svg>Text & Font
+              </h6>
+              <div>
+                <button id="textAC">center</button>
+                <button id="textAL">left</button>
+                <button id="textAR">right</button>
+                <hr>
+              </div>
+              <h6>
+                        <svg class="icon ">
+                          <use xlink:href="#mp"></use>
+                        </svg>Paddings & Margins
+              </h6>
+              <div>
+                <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padder(this.value)">
+                <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padderrl(this.value)">
+                <input type="range" min=".1" max="2" step=".1" list="tickmarks" onchange="paddertb(this.value)">
+                <hr>
+                <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginer(this.value)">
+                <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginerrl(this.value)">
+                <input type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginertb(this.value)">
+              </div>
+              <h6>
+                        <svg class="icon ">
+                          <use xlink:href="#boxborder"></use>
+                        </svg>Border & Box
+              </h6>
+              <div></div>
+              <h6>
+                        <svg class="icon ">
+                          <use xlink:href="#image"></use>
+                        </svg>Background
+              </h6>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hud-bottomPanel">
+        <div class="editorsContainer clearfix notEdit">
+          <div class="notEdit clearfix" id="currentSelectorWay">
+            <div style="background:#2b2b2b;color: #fff;"><span>BODY ></span></div>
+          </div>
+          <div class="editorWrapper">
+            <div class="editor" id="editorPug"></div>
+            <div class="editor" id="editorScss"></div>
+            <div class="editor" id="editorJs"></div>
+          </div>
+        </div>
+        <div class="debugPannel__wrapper notEdit">
+          <div class="debugPannel clearfix">
+            <div class="debugPannel__section col-4-tp">
+              <div class="tabList elAdder">
+                <div id="tabs-add-elment">
+                  <ul class="panellInner">
+                    <li><a class="tabAnchr" href="#tabtags">Tags</a></li>
+                    <li><a class="tabAnchr" href="#tabHTML5">HTML5</a></li>
+                    <li><a class="tabAnchr" href="#tabclass">Classes</a></li>
+                    <li><a class="tabAnchr" href="#tabcombination">Combinations</a></li>
+                  </ul>
+                  <div id="tabtags">
+                    <ul class="debugPannel__colorSpecific">
+                      <div class="clearfix">
+                        <li class="col-1-tp">Bl:</li>
+                        <li class="headers col-1-tp elAdder" id="addHeader" data-el="&lt;h1&gt;&lt;/h1&gt;&lt;h2&gt;&lt;/h2&gt;&lt;h3&gt;&lt;/h3&gt;&lt;h4&gt;&lt;/h4&gt;&lt;h5&gt;&lt;/h5&gt;&lt;h6&gt;&lt;/h6&gt;">H1+</li>
+                        <li class="col-1-tp prgrph elAdder" data-el="p">P</li>
+                        <li class="col-1-tp ul elAdder" data-el="&lt;ul&gt;&lt;/ul&gt;">ul</li>
+                        <li class="col-1-tp li elAdder" data-el="&lt;li&gt; the li element &lt;/li&gt;">li</li>
+                        <li class="col-1-tp div elAdder" data-el="&lt;div&gt;&lt;/div&gt;">div</li>
+                        <li class="col-1-tp main elAdder" data-el="&lt;main&gt;&lt;/main&gt;">main</li>
+                        <li class="col-1-tp nav elAdder" data-el="&lt;nav&gt;&lt;nav&gt;">nav</li>
+                        <li class="col-1-tp tbl elAdder" data-el="&lt;table&gt;&lt;/table&gt;">tbl</li>
+                        <li class="col-1-tp dl elAdder" data-el="&lt;dl&gt;&lt;/dl&gt;">dl</li>
+                        <li class="col-1-tp dt elAdder" data-el="&lt;dt&gt;&lt;/dt&gt;">dt</li>
+                        <li class="col-1-tp dd elAdder" data-el="&lt;dd&gt;&lt;/dd&gt;">dd</li>
+                        <li class="col-1-tp"></li>
+                        <li class="col-1-tp blockquote elAdder" data-el="&lt;blockquote&gt;&lt;/blockquote&gt;">blqt</li>
+                        <li class="col-1-tp form elAdder" data-el="&lt;form&gt;&lt;/form&gt;">form</li>
+                      </div>
+                      <div class="clearfix">
+                        <li class="col-1-tp">Inl:</li>
+                        <li class="col-1-tp span elAdder" data-el="&lt;span&gt; Span Text&lt;/span&gt;">span</li>
+                        <li class="col-1-tp link elAdder" data-el="&lt;a&gt;this is link&lt;/a&gt;">a</li>
+                        <li class="col-1-tp i elAdder" data-el="&lt;i&gt;italic&lt;/i&gt;">i</li>
+                        <li class="col-1-tp input elAdder" data-el="&lt;input&gt;">inpt</li>
+                        <li class="col-1-tp button elAdder" data-el="&lt;button&gt;Button&lt;/button&gt;">btn</li>
+                        <li class="col-1-tp cite elAdder" data-el="&lt;cite&gt;&lt;/cite&gt;">cite</li>
+                        <li class="col-1-tp select elAdder" data-el="&lt;select&gt;&lt;/select&gt;">select</li>
+                        <li class="col-1-tp label elAdder" data-el="&lt;label&gt;&lt;/label&gt;">label</li>
+                        <li class="col-1-tp textarea elAdder" data-el="&lt;textarea&gt;">txta</li>
+                        <li class="col-1-tp tr elAdder" data-el="&lt;tr&gt;&lt;/tr&gt;">tr</li>
+                        <li class="col-1-tp td elAdder" data-el="&lt;td&gt;&lt;/td&gt;">td</li>
+                        <li class="col-1-tp"></li>
+                        <li class="col-1-tp th elAdder" data-el="&lt;thead&gt;&lt;/thead&gt;">th</li>
+                      </div>
+                    </ul>
+                  </div>
+                  <div id="tabHTML5">
+                    <ul class="debugPannel__colorSpecific">
+                      <div class="clearfix">
+                        <li class="col-1-tp header elAdder" data-el="&lt;header&gt;&lt;/header&gt;">Hdr</li>
+                        <li class="col-1-tp footer elAdder" data-el="&lt;footer&gt;&lt;/footer&gt;">Ftr</li>
+                        <li class="col-1-tp article elAdder" data-el="&lt;article&gt;&lt;/article&gt;">arcl</li>
+                        <li class="col-1-tp aside elAdder" data-el="&lt;aside&gt;&lt;/aside&gt;">aside</li>
+                        <li class="col-1-tp section elAdder" data-el="&lt;section&gt;&lt;/section&gt;">sectn</li>
+                        <li class="col-1-tp figure elAdder" data-el="&lt;figure&gt;&lt;/figure&gt;">figure</li>
+                        <li class="col-1-tp figcaption elAdder" data-el="&lt;figcaption&gt;&lt;/figcaption&gt;">figcpt</li>
+                      </div>
+                    </ul>
+                  </div>
+                  <div id="tabclass">
+                    <ul class="debugPannel__colorSpecific">
+                      <li>span</li>
+                      <li>a<span style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">Span</span></li>
+                      <li><img alt="img/svg" style="display:inline-flex;vertical-align:middle;text-shadow:1px 1px 1px black;"></li>
+                      <li>
+                        <div>Div</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div id="tabcombination">
+                    <ul class="debugPannel__colorSpecific">
+                      <li class="headers">
+                        <h6 style="margin:0;font-size:1rem;font-weight:400;text-shadow:1px 1px 1px black;">h1-h6</h6>
+                      </li>
+                      <li>
+                        <p> P</p>
+                      </li>
+                      <li>
+                        <ul> ul</ul>
+                      </li>
+                      <li>
+                        <li>li</li>
+                      </li>
+                      <li>
+                        <div class="col-"> .Col</div>
+                      </li>
+                      <li><a style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">A</a></li>
+                      <li><span style="display:inline-block;width:100%;text-shadow:1px 1px 1px black;">Span</span></li>
+                      <li><img alt="img/svg" style="display:inline-flex;vertical-align:middle;text-shadow:1px 1px 1px black;"></li>
+                      <li>
+                        <div>Div</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <script>
+                $("#tabs-add-elment").tabs();
+                
+              </script>
+            </div>
+            <div class="debugPannel__section col-4-tp">
+              <button id="spacerSwitcher">Spacer</button>
+              <button id="gridb">grid</button>
+              <button class="on" id="debugViewSwitcher">Debug View</button>
+              <button id="clone">Clone</button>
+              <button id="getHtml">Get View!</button>
+              <button id="up">Up</button>
+              <button id="down">Down</button>
+              <button id="del">Delete</button>
+              <button id="lock">Lock</button>
+              <button id="unlock">UnLock</button>
+              <button id="save">Save</button>
+              <button id="load">Load</button>
+              <button id="lockSpacer">lock Spacer</button>
+              <button id="addBkg">add Background</button>
+              <button id="startMediaTest">Media</button>
+              <button id="getScssCode">Get scss</button>
+              <button id="getinnerView">Get Html</button>
+              <button id="cn">CREATE NEW...</button><a class="tabAnchr" href="javascript:onclick=maximizeme()">Maximize</a>
+              <script>
+                var qscale = function (v) {
+                    $('.projectWrapper').css({
+                        "transform": "scale(" + v + ")"
+                    })
+                }
+              </script>
+              <input id="scaller" type="range" min=".3" max="2" step=".1" onchange="qscale(this.value)">
+              <div id="editableDiv" contenteditable="true">Paste</div>
+            </div>
+            <div class="debugPannel__section col-4-tp colors">
+              <div class="pb-element f-left">
+                <div class="pb-colorBox"></div>
+                <div class="pb-colorBox"><span class="pb-elementHeader">Base</span></div>
+                <div class="pb-colorBox"><span class="pb-elementHeader">Darken</span></div>
+                <div class="pb-colorBox"><span class="pb-elementHeader">light</span></div>
+              </div>
+              <div class="pb-element f-left"><span class="pb-elementHeader">1</span>
+                <div class="pb-colorBox pb-colorBox--primary"></div>
+                <div class="pb-colorBox pb-colorBox--primary-d"></div>
+                <div class="pb-colorBox pb-colorBox--primary-l"></div>
+              </div>
+              <div class="pb-element f-left"><span class="pb-elementHeader">2</span>
+                <div class="pb-colorBox pb-colorBox--secondary"></div>
+                <div class="pb-colorBox pb-colorBox--secondary-d"></div>
+                <div class="pb-colorBox pb-colorBox--secondary-l"></div>
+              </div>
+              <div class="pb-element f-left"><span class="pb-elementHeader">A</span>
+                <div class="pb-colorBox pb-colorBox--accent"></div>
+                <div class="pb-colorBox pb-colorBox--accent-d"></div>
+                <div class="pb-colorBox pb-colorBox--accent-l"></div>
+              </div>
+              <div class="pb-element f-left"><span class="pb-elementHeader">Fg</span>
+                <div class="pb-colorBox pb-colorBox--fground"></div>
+                <div class="pb-colorBox pb-colorBox--fground-d"></div>
+                <div class="pb-colorBox pb-colorBox--fground-l"></div>
+              </div>
+              <div class="pb-element f-left"><span class="pb-elementHeader">Bg</span>
+                <div class="pb-colorBox pb-colorBox--bground"></div>
+                <div class="pb-colorBox pb-colorBox--bground-d"></div>
+                <div class="pb-colorBox pb-colorBox--bground-l"></div>
+              </div>
+              <div class="pb-element f-left"><span class="pb-elementHeader">F</span>
+                <div class="pb-colorBox pb-colorBox--font"></div>
+                <div class="pb-colorBox pb-colorBox--font-d"></div>
+                <div class="pb-colorBox pb-colorBox--font-l"></div>
+              </div>
+              <div class="pb-element f-left"><span>B
+                  <input id="colorPicker" type="color"></span><span>C
+                  <input id="colorPickerFont" type="color"></span></div>
+            </div>
+            <div class="debugPannel__section hidden"><span id="phone-upper-boundary">600px</span><span id="tablet-portrait-upper-boundary">768px</span><span id="tablet-landscape-upper-boundary">994px</span><span id="desktop-upper-boundary">1200px</span><span id="desktopl-upper-boundary">1400px</span><span id="tablet-p-container">690px</span><span id="tablet-l-container">900px</span><span id="desktop-container">1120px</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

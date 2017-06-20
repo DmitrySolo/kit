@@ -1,0 +1,77 @@
+.debug-Dialog.notEdit.debug
+    .debug-Dialog-content
+        .row
+            .debug-subtitle.col-5-tp
+                .createTitle.active
+                    +I('cube')
+                    |Element
+                .createTitle
+                    +I('cube')
+                    |Component
+                .createTitle
+                    +I('cube')
+                    |Module
+                .createTitle
+                    +I('cube')
+                    |Block/Section
+                .createTitle
+                    +I('cube')
+                    |Animation
+                .createTitle
+                    +I('cube')
+                    |Class
+                .createTitle
+                    +I('cube')
+                    |Script
+            .debug-registrator.col-7-tp.debug-registrator-active
+                input#contentType(type='hidden' value='element')
+                label Element Name:
+                    input#elname(type='text')
+                label Element Type:
+                    select#eltype(name='elemType')
+                        option(value='button') button
+                        option(value='icon') Icon
+                        option(value='link') Link
+                        option(value='linkbutton') LinkButton
+                        option(value='preloader') Preloader
+                label Element Extends:
+                    select#elementExtends(name='vextends')
+                        option(value='false') No extends
+                        option(value='button') Icon
+                        option Link
+                        option LinkButton
+                        option Icon
+                        option Button
+                        option Icon
+                        option Link
+                        option LinkButton
+                        option Icon
+                label Element Parent:
+                    input#elementParent(type='text' name='parent' placeholder='div')
+                label Save to Global library:
+                    label No
+                        input(type='radio' name='saveto' checked value="false")
+                    label Yes
+                        input(type='radio' name='saveto' value="true")
+                label
+                    button.creator Create
+//STARTER
+.debug-Dialog-start.notEdit.debug
+    .quant Quant
+        span THEME ENGINE
+        span.ver Version: Pre Alpha 0.0.96
+    .debug-Dialog-content
+        .row
+            .debug-subtitle.col-4-tp
+                .createTitle
+                    +I('plus')
+                    | Create Project
+                .createTitle
+                    +I('export')
+                    | Load Project
+                .createTitle
+                    +I('plus')
+                    | Create Content
+                .createTitle
+                    +I('export')
+                    | Load Content

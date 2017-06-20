@@ -90,7 +90,7 @@ gulp.task('SCRIPTS ALL', gulpsync.sync(['SCRIPTS2'])
 
 gulp.task('views', function buildHTML() {
     var data = JSON.parse(fs.readFileSync(projectDevDir+'data.json', 'utf8'));
-    gulp.src(projectDevDir+'template/PAGESYSTEM/PAGES/*.pug')
+    gulp.src([projectDevDir+'template/PAGESYSTEM/PAGES/*.pug','HUD/HUD.pug'])
         .pipe(pug({
             data: data,
             pretty: true,
