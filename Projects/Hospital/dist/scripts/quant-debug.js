@@ -143,12 +143,7 @@ var addToBufer= function (content) {
         $('body').css('fontSize',size+del);
 
     })
-    var notifyStr = '';
-            $.notify.addStyle('tagClassInfo',{html:
-    "<div class='tagClassInfo'>" +
-    "<span data-notify-text>dsd</span>" +
-    "</div>"
-            })
+
 ///////////////////////////////////////////////////////////////////
     function MakeEditable (elem) {
 

@@ -1,3 +1,7 @@
+script(src='scripts/quant-debug.js')
+script(src='scripts/quant-debug-JsonCss.js')
+script(src='scripts/quant-debug-ruller.js')
+script(src='scripts/viewpr.min.js')
 script.
     var evt         = new Event(),
         dragdrop    = new Dragdrop(evt),
@@ -5,12 +9,18 @@ script.
 
 script
     include ../node_modules/ace-builds/src-min/ace.js
+script
     include ../node_modules/ace-builds/src-min/theme-tomorrow_night_eighties.js
+script
     include ../node_modules/ace-builds/src-min/mode-scss.js
+script
     include ../node_modules/ace-builds/src-min/mode-jade.js
+script
     include ../node_modules/ace-builds/src-min/mode-javascript.js
+script
     include ../node_modules/ace-builds/src-min/ext-language_tools.js
-script(src='maps/main.css.map')
+script
+script(src='maps/main.css.map' type='text')
 script(role='scss').
     var editor = ace.edit("editorScss");
     ace.require("ace/ext/language_tools");
