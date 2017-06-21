@@ -145,7 +145,7 @@ module.exports = (options) => {
         var str = JSON.stringify(scriptsMap);
         fs.writeFileSync('./dev/SCRIPTS/scriptMap.json', str , { encoding: "utf8",
             flag: "w+"},function () {
-            qM.ok('Scripts Builded');
+            qM.ok('Scripts was Builded');
         });
 
 

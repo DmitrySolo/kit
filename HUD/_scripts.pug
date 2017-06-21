@@ -2,12 +2,14 @@ script.
     var evt         = new Event(),
         dragdrop    = new Dragdrop(evt),
         rg          = new RulersGuides(evt, dragdrop);
-script(src='ace-builds/src/ace.js', type='text/javascript', charset='utf-8')
-script(src='ace-builds/src/theme-tomorrow_night_eighties.js', type='text/javascript', charset='utf-8')
-script(src='ace-builds/src/mode-scss.js', type='text/javascript', charset='utf-8')
-script(src='ace-builds/src/mode-jade.js', type='text/javascript', charset='utf-8')
-script(src='ace-builds/src/mode-javascript.js', type='text/javascript', charset='utf-8')
-script(src='ace-builds/src/ext-language_tools.js')
+
+script
+    include ../node_modules/ace-builds/src-min/ace.js
+    include ../node_modules/ace-builds/src-min/theme-tomorrow_night_eighties.js
+    include ../node_modules/ace-builds/src-min/mode-scss.js
+    include ../node_modules/ace-builds/src-min/mode-jade.js
+    include ../node_modules/ace-builds/src-min/mode-javascript.js
+    include ../node_modules/ace-builds/src-min/ext-language_tools.js
 script(src='maps/main.css.map')
 script(role='scss').
     var editor = ace.edit("editorScss");
