@@ -139,9 +139,11 @@ gulp.task('SERVER', [], function() {
 
     browserSync.init({
         server: dist,
+        index: "HUD.html"
     });
 
     gulp.watch([dist+"index.html",dist+"/*.css"]).on('change', browserSync.reload);
+
 
 
 
@@ -155,7 +157,7 @@ gulp.task('SERVER', [], function() {
 gulp.task('VIEW-FINAL', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
     return watch([
-
+        'HUD/HUD.pug',
         'dev/ELEMENTS/_elements.pug',
         'dev/MIXES/_mixes.pug',
         'dev/MODULES/_modules.pug',

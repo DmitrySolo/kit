@@ -143,7 +143,6 @@ var addToBufer= function (content) {
         $('body').css('fontSize',size+del);
 
     })
-
 ///////////////////////////////////////////////////////////////////
     function MakeEditable (elem) {
 

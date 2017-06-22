@@ -151,8 +151,6 @@ $zNotEdit: 1000;
   body.debug {
    // background-color: $db-body-color;
     cursor: crosshair;
-   // width: 120%;
-    margin-left: -19%;
     background-color: #2b2b2b;
     background-image: //linear-gradient(white 2px, transparent 2px),
             //linear-gradient(90deg, white 2px, transparent 2px);
@@ -638,11 +636,9 @@ $zNotEdit: 1000;
     }
   }
   .debug-Pannel-Right {
-    position: fixed;
-    top: 0;
-    width: 20%;
-    right: 0;
-    bottom: 0;
+
+
+    width: 100%;
     background-color: #fff;
     background: $panel;
    // display: none;
@@ -1112,4 +1108,36 @@ border: none !important;
     font-size: 1.2em !important;
     padding: 12px 19px;
   }
+
+  ////////// HUD
+  .top-panel-content{
+    width: 100%;
+    height: 40px;
+    background: $panel-inner;
+  }
+  .hud-content {
+      float:left;
+    width: 75%;
+    iframe {
+      border-color: dodgerblue;
+
+    }
+  }
+  .hud-rightPanel{
+       width:15%;
+    min-height: 1px;
+    float: left;
+    float: left;
+     }
+  .hud-leftPanel{
+       width:10%;
+    float:left;
+    min-height: 1px;
+     }
+  div[class*='Panel']{
+    background-color: $panel;
+  }
+
+
 }
+

@@ -1,15 +1,22 @@
 doctype html
 html(lang=''+head.lang)
     head
+        link(href='main.css',rel='stylesheet',type='text/css')
+        script(src='scripts/jquery.min.js')
+        script(src='scripts/jquery-ui.min.js')
+        script(src='scripts/quant-lib.js')
     body
         .hidden
         .hud-wrapper
             .hud-topPanel
                 include _top_panel
-            .hud-leftPanel
-                include _left_panel
-            .hud-rightPanel
-                include _right_panel
+            .hud-center.clearfix
+                .hud-leftPanel
+                    include _left_panel
+                .hud-content
+                    iframe(src="index.html" width="100%" height="1200px" align="center")
+                .hud-rightPanel
+                    include _right_panel
             .hud-bottomPanel
                 include _bottom_panel
         include _scripts

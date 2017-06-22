@@ -53,18 +53,18 @@ module.exports = (options) => {
 
         //fs.unlink('./dev/SCRIPTS/scriptMap.json');
         deleteFolderRecursive('dist/scripts');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs+.pug');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init+.pug');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_top.pug');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs.pug');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs+.pug');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init+.pug');
-        fs.truncateSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs+.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_init+.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_bottom.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_top.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_libs+.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_init+.pug');
+        fs.truncateSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/HEAD/_bottom.pug');
 
 
             var scriptsMap = {};
@@ -125,7 +125,7 @@ module.exports = (options) => {
                             var file = filePathArr[filePathArr.length -1];
 
                         var strCtn ="\nscript(src='scripts/"+file+"' type='text/javascript')";
-                        fs.appendFileSync('dev/template/PAGESYSTEM/SCRIPTS-STYLES/'+path1+'/_'+path2+'.pug',strCtn);
+                        fs.appendFileSync('dev/templates/PAGESYSTEM/SCRIPTS-STYLES/'+path1+'/_'+path2+'.pug',strCtn);
 
                         vfs.src(srcArr[index])
                             .pipe(vfs.dest(dist+'/scripts'));
