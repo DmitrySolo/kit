@@ -81,7 +81,7 @@ gulp.task('phplint', function phplint() {
 
 gulp.task('SCRIPTS2', function () {
     gulp.src('data.json')
-        .pipe(scriptThrower({dist:dist}));
+        .pipe(scriptThrower({dist:dist,dev:projectDevDir}));
 })
 
 gulp.task('SCRIPTS ALL', gulpsync.sync(['SCRIPTS2'])
@@ -1225,7 +1225,7 @@ gulp.task('[D] DIST FRONT-END', function (done) {
 gulp.task('parc', function () {
     var css = require('css');
     var ast=css.parse(file = fs.readFileSync(dist+'/main.css', "utf8"));
-    fs.writeFile("dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js", JSON.stringify(ast));
+    fs.writeFile("dev/SCRIPTS/SCRIPTS/quant-debug-JsonCss/quant-debug-JsonCss.js", JSON.stringify(ast));
 
 });
 gulp.task('cocs', function () {
@@ -1411,7 +1411,7 @@ function getCssSource(line,col){
             orLine = m.originalLine;
 
         }
-    pugFileContent  = fs.readFileSync('dev/template/PAGESYSTEM/PAGES/index.pug', "utf8");
+    pugFileContent  = fs.readFileSync(projectDevDir+'template/PAGESYSTEM/PAGES/index.pug', "utf8");
     jsFileContent =   fs.readFileSync('dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js', "utf8")
     })
     return resursPath+'[^]'+orLine+'[^]'+pugFileContent+'[^]'+jsFileContent

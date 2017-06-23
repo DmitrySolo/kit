@@ -240,7 +240,7 @@ var addToBufer= function (content) {
 
 
 
-    MakeEditable($('*,spacer block-i').not($('.notEdit,body,html,.ace_editor,.ace_editor *,.rg-overlay,.rg-overlay *')).not('.notEdit *'));
+    MakeEditable(frameEl('*,spacer block-i').not($('.notEdit,body,html,.ace_editor,.ace_editor *,.rg-overlay,.rg-overlay *')).not('.notEdit *'));
 
     $('.grid,.grid *').unbind('click');
 
@@ -250,11 +250,11 @@ var addToBufer= function (content) {
         $(this).toggleClass('on')
     })
     $('#gridb').on('click',function () {
-        $('#grid').toggleClass('hidden')
+        frameEl('#grid').toggleClass('hidden')
         $(this).toggleClass('on')
     })
     $('#debugViewSwitcher').on('click',function () {
-        $('body').toggleClass('debug');
+        frameEl('body').toggleClass('debug');
         $(this).toggleClass('on');
 
     })
@@ -348,12 +348,12 @@ var addToBufer= function (content) {
 
     })
     $('.pb-colorBox').on('click',function () {
-        $( ".debugElement" ).css('backgroundColor',$(this).css('backgroundColor'));
+        frameEl( ".debugElement" ).css('backgroundColor',$(this).css('backgroundColor'));
 
 
     })
     $('#lock').on('click',function () {
-        $( ".debugElement" ).toggleClass('eventLock');
+        frameEl( ".debugElement" ).toggleClass('eventLock');
         $(this).toggleClass('on')
 
 
@@ -364,7 +364,7 @@ var addToBufer= function (content) {
 
 
     $('#unlock').on('click',function () {
-        $( ".eventLock" ).not('#ball').removeClass("eventLock");
+        $( frameEl(".eventLock") ).not('#ball').removeClass("eventLock");
             $('#lock').removeClass('on');
 
     })
@@ -389,7 +389,7 @@ var addToBufer= function (content) {
         console.log(localStorage.getItem('save'))
     })
     $('#getinnerView').on('click',function (){
-       var clone = $('.debugElement').clone().removeAttr('style');
+       var clone = frameEl('.debugElement').clone().removeAttr('style');
        $('*',clone).removeAttr('style');
        $('.ui-draggable-handle',clone).removeClass('ui-draggable-handle');
         $('.ui-resizable-e,.ui-resizable-s,.ui-resizable-se',clone).remove();
@@ -655,19 +655,19 @@ var addToBufer= function (content) {
 
     });
     $('#textAC').on('click',function () {
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {'textAlign':'center'}
         )
 
     })
     $('#textAL').on('click',function () {
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {'textAlign':'left'}
         )
 
     })
     $('#textAR').on('click',function () {
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {'textAlign':'right'}
         )
 
@@ -676,7 +676,7 @@ var addToBufer= function (content) {
 //padder
     window.padder = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'padding':value+'em'
             }
@@ -686,7 +686,7 @@ var addToBufer= function (content) {
     }
     window.paddertb = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'padding-top':value+'em',
                 'padding-bottom':value+'em',
@@ -697,7 +697,7 @@ var addToBufer= function (content) {
     }
     window.padderrl = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'padding-right':value+'em',
                 'padding-left':value+'em',
@@ -708,7 +708,7 @@ var addToBufer= function (content) {
     }
     window.marginer = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'margin':value+'em',
 
@@ -719,7 +719,7 @@ var addToBufer= function (content) {
     }
     window.marginertb = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'margin-top':value+'em',
                 'margin-bottom':value+'em',
@@ -730,7 +730,7 @@ var addToBufer= function (content) {
     }
     window.marginerrl = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'margin-right':value+'em',
                 'margin-left':value+'em',

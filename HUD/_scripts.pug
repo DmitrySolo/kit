@@ -1,7 +1,10 @@
-script(src='scripts/quant-debug.js')
 script(src='scripts/quant-debug-JsonCss.js')
-script(src='scripts/quant-debug-ruller.js')
-script(src='scripts/viewpr.min.js')
+script.
+    var frameEl = function (el) {
+       return $('iframe#index').contents().find(el)
+    },
+    frameContent = $('iframe#index').contents().find('body')
+
 script
     include ../node_modules/ace-builds/src-min/ace.js
 script
@@ -14,6 +17,10 @@ script
     include ../node_modules/ace-builds/src-min/mode-javascript.js
 script
     include ../node_modules/ace-builds/src-min/ext-language_tools.js
+script
+    include quant-debug.js
+script
+    include viewpr.min.js
 script(src='maps/main.css.map' type='text')
 script(role='scss').
     var editor = ace.edit("editorScss");

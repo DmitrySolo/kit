@@ -7,7 +7,7 @@ $( document ).ready(function() {
         var classes = arr[1].replace(/<\/i>/,'').replace(/ /g,'.').replace(/&gt;/g,'');
         var searchElem = tag+'.'+classes;
 
-        var newDebug =  $('.debugElement').closest($(searchElem));
+        var newDebug = frameEl('.debugElement').closest(frameEl(searchElem));
         console.log(newDebug)
         $('.debugElement').removeClass('debugElement');
         newDebug.trigger('click');
@@ -144,103 +144,7 @@ var addToBufer= function (content) {
 
     })
 ///////////////////////////////////////////////////////////////////
-    function MakeEditable (elem) {
 
-    elem.on('click',function(e){
-        if($(this).hasClass('ruler')){ e.stopPropagation()}
-        if (!$(this).hasClass('debugElement')){
-
-            $('*').removeClass('debugElement');
-            $('*').remove('.mChacker');
-
-            $('#getCode').remove();
-           // $('*').removeAttr('contentEditable');
-            $(this).addClass('resizeble');
-          //  $(this).attr('oncontextmenu',"console.log('blogged')");
-            $(this).addClass('debugElement');
-            $(this).attr('contenteditable','true')
-            GetParents($('.debugElement'));
-                var position = $('.debugElement').position();
-                $('body').prepend('<div id="getCode" class=".notEdit" style="position: absolute;top: '+position.top+'px; left: '+position.left+'px; z-index:10000">Get Code</div>')
-                if ( parseInt($(this).css('marginBottom'))>0 )
-                    $(this).prepend("<div style='position:absolute;bottom:-"+$(this).css('marginBottom')+"; height:"+$(this).css('marginBottom')+";width:100%;line-height:1' class='mChacker' >&#8681</div> ")
-
-            var _this = $(this);
-            //$( ".resizeble" ).resizable( "disable" );
-            $(this).resizable({
-                handles: "n, e, s, w"
-            }).draggable();
-
-
-            // $('.debugElement').contextmenu(function(e) {
-            //     classStr =  $(this).attr('class').replace(/resizeble/,'')
-            //         .replace(/debugElement/g,'')
-            //         .replace(/ui-resizable/g,'')
-            //         .replace(/ui-draggable-handle/g,'')
-            //         .replace(/ui-draggable/g,'');
-            //    var resMap = getObjects(classStr);
-            //    console.log(resMap)
-            //         var cssModPanelText ='';
-            //         var mapLine = resMap.position[1];
-            //         var mapCol = resMap.position[0];
-            //         for (var i in resMap.selectors){
-            //             cssModPanelText+=resMap.selectors[i]+'{';
-            //             for (var zi in resMap.styles[i]){
-            //                 cssModPanelText+=resMap.styles[i][zi].propery+':'+resMap.styles[i][zi].value+';'
-            //             }cssModPanelText+='}';
-            //         }
-            //
-            //     $('body').prepend('<div id="modPannel">'+cssModPanelText+'</div>');
-            //     e.stopPropagation();
-            //     download('msg.qnt',mapLine+'-'+mapCol)
-            // });
-            //$(this).attr('contentEditable','true');
-
-            // var Classes = $(this).attr('class').replace(/resizeble/,'')
-            //     .replace(/debugElement/g,'')
-            //     .replace(/ui-resizable/g,'')
-            //     .replace(/ui-draggable-handle/g,'')
-            //     .replace(/ui-draggable/g,'');
-            //
-            // var tag = $(this).prop("tagName");
-
-            // newnotifyStr = tag+'>'+Classes;
-
-            //$(this).append("<span style='position: absolute;top:-20px; left:0;font-size:10px;'>"+newnotifyStr+"</span>")
-            // if (newnotifyStr != notifyStr)
-            // {$(this).notify(newnotifyStr,{autoHideDelay: 2000,style:'tagClassInfo'});
-            //     notifyStr =newnotifyStr}
-            // buferMsgArr = Classes.split(" ");
-            // var buferMsg ='';
-            // var clName ='';
-            // for (clName in buferMsgArr){
-            //     if (buferMsgArr[clName] != '')
-            //         buferMsg+='.'+buferMsgArr[clName]+' ';
-            // }
-            // addToBufer(buferMsg);
-
-            // Возвращаем фокус туда, где был
-            fontSize = $(this).css('fontSize');
-            if (! $('#ball').hasClass('eventLock')){
-                $('#ball').css('fontSize',fontSize);
-                $('.lh').text('Line height of font-size ='+ fontSize);
-            }
-
-
-
-
-
-        }
-        e.stopPropagation()
-        })
-
-
-    }
-
-
-
-
-    MakeEditable($('*,spacer block-i').not($('.notEdit,body,html,.ace_editor,.ace_editor *,.rg-overlay,.rg-overlay *')).not('.notEdit *'));
 
     $('.grid,.grid *').unbind('click');
 
@@ -250,11 +154,11 @@ var addToBufer= function (content) {
         $(this).toggleClass('on')
     })
     $('#gridb').on('click',function () {
-        $('#grid').toggleClass('hidden')
+        frameEl('#grid').toggleClass('hidden')
         $(this).toggleClass('on')
     })
     $('#debugViewSwitcher').on('click',function () {
-        $('body').toggleClass('debug');
+        frameEl('body').toggleClass('debug');
         $(this).toggleClass('on');
 
     })
@@ -348,12 +252,12 @@ var addToBufer= function (content) {
 
     })
     $('.pb-colorBox').on('click',function () {
-        $( ".debugElement" ).css('backgroundColor',$(this).css('backgroundColor'));
+        frameEl( ".debugElement" ).css('backgroundColor',$(this).css('backgroundColor'));
 
 
     })
     $('#lock').on('click',function () {
-        $( ".debugElement" ).toggleClass('eventLock');
+        frameEl( ".debugElement" ).toggleClass('eventLock');
         $(this).toggleClass('on')
 
 
@@ -364,7 +268,7 @@ var addToBufer= function (content) {
 
 
     $('#unlock').on('click',function () {
-        $( ".eventLock" ).not('#ball').removeClass("eventLock");
+        $( frameEl(".eventLock") ).not('#ball').removeClass("eventLock");
             $('#lock').removeClass('on');
 
     })
@@ -389,7 +293,7 @@ var addToBufer= function (content) {
         console.log(localStorage.getItem('save'))
     })
     $('#getinnerView').on('click',function (){
-       var clone = $('.debugElement').clone().removeAttr('style');
+       var clone = frameEl('.debugElement').clone().removeAttr('style');
        $('*',clone).removeAttr('style');
        $('.ui-draggable-handle',clone).removeClass('ui-draggable-handle');
         $('.ui-resizable-e,.ui-resizable-s,.ui-resizable-se',clone).remove();
@@ -453,9 +357,6 @@ var addToBufer= function (content) {
 
     })
     $('#startMediaTest').on('click',function () {
-        $('*').not($('.debug')).not($('.mediaMap')).not($('.mediaMap *')).not($('.debugPannel__wrapper')).not($('html')).not($('body')).not($('.debugPannel__wrapper *')).css('display','none')
-        $('body').css('background','#3c3f41').prepend(
-            "<div class='iframeWrapper'> <iframe id='project-debug' name='content' frameborder='0' src='http://localhost:3000/' scrolling='no' style='background-color: rgb(49, 32, 52)' width='100%'height='1000px'></iframe>")
 
         var v_options = {
             viewports : [
@@ -479,11 +380,47 @@ var addToBufer= function (content) {
             showName: true,
             reset: 'Original',
             animation: '',
-            wrapper:'project-debug'
         };
         viewpr(v_options);
 
     })
+
+   var auto_media =  function () {
+
+        var v_options = {
+            viewports : [
+                {
+                    size: '520',
+                    name:  'Mobile'
+                },
+                {
+                    size: '768',
+                    name:  'Tablet'
+                },
+                {
+                    size: '1024',
+                    name: 'Horizontal Tablet'
+                },
+                {
+                    size: '1280',
+                    name: 'Desktop'
+                }
+            ],
+            showName: true,
+            reset: 'Original',
+            animation: '',
+        };
+        viewpr(v_options);
+
+    }
+    auto_media()
+
+
+
+
+
+
+
 
     function download(filename, text) {
         var pom = document.createElement('a');
@@ -503,7 +440,7 @@ var addToBufer= function (content) {
     //download('inf.inf', '/Applications/PhpStorm.app/Contents/MacOS/phpstorm /Users/admin/Desktop/QUANT/kit --line 3 /Users/admin/Desktop/QUANT/kit/scss/main.css');
     var getCode = function () {
         console.log('hekol')
-        classStr =  $('.debugElement').attr('class').replace(/resizeble/,'')
+        classStr =  frameEl('.debugElement').attr('class').replace(/resizeble/,'')
             .replace(/debugElement/g,'')
             .replace(/ui-resizable/g,'')
             .replace(/ui-draggable-handle/g,'')
@@ -543,10 +480,10 @@ var addToBufer= function (content) {
 
     }
     //
-    $("body").on('click','#getCode',function () {
+    $(window.frames[0]).on('click',$('#getCode'),function () {
 
         console.log('hekol')
-        classStr =  $('.debugElement').attr('class').replace(/resizeble/,'')
+        classStr =   frameEl('.debugElement').attr('class').replace(/resizeble/,'')
             .replace(/debugElement/g,'')
             .replace(/ui-resizable/g,'')
             .replace(/ui-draggable-handle/g,'')
@@ -567,6 +504,7 @@ var addToBufer= function (content) {
             url: "http://localhost:8181/?action=getSourceCode&line="+(mapLine)+"&col="+(mapCol-1),
         })
             .done(function( data ) {
+                console.log(data)
                 var dataArr = data.split('[^]')
                 var rsourse = dataArr[0];
                 var line = dataArr[1];
@@ -595,55 +533,13 @@ var addToBufer= function (content) {
 
         var elem = qntGetThisData(this, 'el')
         elem = $(elem).css('min-height', '20px');
-        MakeEditable(elem);
-        $('.debugElement').prepend(elem);
+       // MakeEditable(elem);
+        frameEl('.debugElement').prepend(elem);
     })
 
 
 
-    var firstInTagsLine ='';
-    function GetParents(el) {
 
-
-
-
-        $('#currentSelectorWay').html('');
-        var parents = el.parents("*").not($('html')).not($('body'));
-        var selectors = "<div style='background: #2b2b2b;color:#fff'>";
-        var selectorFirstFinded = false
-        for (var i = parents.length-1; i >= 0; i--) {
-
-
-        parents[i].classList.remove("resizeble");
-        parents[i].classList.remove("ui-resizable");
-        parents[i].classList.remove("ui-draggable");
-        parents[i].classList.remove("ui-draggable-handle");
-        // el.removeClass('resizeble')
-        // el.removeClass('ui-resizable')
-        // el.removeClass('ui-draggable')
-        // el.removeClass('ui-draggable-handle')
-
-        if (!selectorFirstFinded){
-            firstInTagsLine = parents[i].tagName+'.'+parents[i].className;
-            selectorFirstFinded = true;
-        }
-
-            selectors += "<span onclick='searchClosestofDebugElement(this)'>"+parents[i].tagName + "<i>"+parents[i].className+ "</i>></span>";
-        }
-
-        var ElCls =  el.prop("className").replace(/resizeble/g,'')
-            .replace(/resizable/g,'')
-            .replace(/debugElement/g,'')
-            .replace(/draggable/g,'')
-            .replace(/ui-/g,'')
-            .replace(/-handle/g,'')
-
-
-
-        selectors +="<span style='background: #0086b3;'>"+el.prop("tagName")+"<i>"+ElCls+"</i></span></div>";
-
-       $('#currentSelectorWay').html(selectors);
-    }
     $('#currentSelectorWay span').on('click',function () {
         console.log(this)
     })
@@ -655,19 +551,19 @@ var addToBufer= function (content) {
 
     });
     $('#textAC').on('click',function () {
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {'textAlign':'center'}
         )
 
     })
     $('#textAL').on('click',function () {
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {'textAlign':'left'}
         )
 
     })
     $('#textAR').on('click',function () {
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {'textAlign':'right'}
         )
 
@@ -676,7 +572,7 @@ var addToBufer= function (content) {
 //padder
     window.padder = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'padding':value+'em'
             }
@@ -686,7 +582,7 @@ var addToBufer= function (content) {
     }
     window.paddertb = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'padding-top':value+'em',
                 'padding-bottom':value+'em',
@@ -697,7 +593,7 @@ var addToBufer= function (content) {
     }
     window.padderrl = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'padding-right':value+'em',
                 'padding-left':value+'em',
@@ -708,7 +604,7 @@ var addToBufer= function (content) {
     }
     window.marginer = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'margin':value+'em',
 
@@ -719,7 +615,7 @@ var addToBufer= function (content) {
     }
     window.marginertb = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'margin-top':value+'em',
                 'margin-bottom':value+'em',
@@ -730,7 +626,7 @@ var addToBufer= function (content) {
     }
     window.marginerrl = function (value) {
 
-        $('.debugElement').css(
+        frameEl('.debugElement').css(
             {
                 'margin-right':value+'em',
                 'margin-left':value+'em',

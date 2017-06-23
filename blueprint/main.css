@@ -2306,9 +2306,10 @@ body.blueprint {
 
 body.debug {
   cursor: crosshair;
+  margin-top: 40px;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -2998,11 +2999,7 @@ body.debug {
   background: #3c3f41 !important;
   box-shadow: 2px -1px 0px 0px #2f2d2d;
   border-top: solid 1px #b19e9e;
-  position: fixed !important;
   z-index: 1000;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
   height: 10.97161em;
   padding-top: 1.3328em;
@@ -3050,16 +3047,6 @@ body.debug {
     border-radius: 0% !important;
     border: none !important;
     border-bottom: 2px solid #3c3f41 !important; }
-    .debugPannel__section h6:before, .debug-Pannel-Right-content h6:before {
-      content: '';
-      width: 12px;
-      /* height: 1.7em; */
-      background-color: #0086b3;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0; }
   .debugPannel__section .ui-accordion-content, .debug-Pannel-Right-content .ui-accordion-content {
     padding: .5em .4em; }
   .debugPannel__section hr, .debug-Pannel-Right-content hr {
@@ -3191,10 +3178,8 @@ body.debug {
   background: #3c3f41; }
 
 .mediaMap {
-  position: fixed !important;
   width: 100%;
   display: none;
-  top: 0px;
   background-color: #d2cfd2; }
   .mediaMap .icon {
     width: 2em;
@@ -3274,10 +3259,6 @@ body.debug {
 .editorsContainer {
   background: #3c3f41;
   padding-top: 5px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   height: 257px;
   background: #3c3f41 !important;
   box-shadow: 2px -1px 0px 0px #2f2d2d;
@@ -3561,16 +3542,56 @@ input[type="range"] {
   font-size: 1.2em !important;
   padding: 12px 19px; }
 
+body.hud {
+  background-color: #2b2b2b; }
+
+.hud-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
 .top-panel-content {
   width: 100%;
   height: 40px;
   background: #2b2b2b; }
 
 .hud-content {
+  margin-top: 20px;
   float: left;
   width: 75%; }
   .hud-content iframe {
-    border-color: dodgerblue; }
+    border-width: 3px;
+    border-color: dodgerblue;
+    display: block;
+    margin: 0 auto; }
+
+.wrapperid {
+  margin: 0 auto; }
+
+.quant.hud {
+  font-size: 27px !important;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #181818 !important; }
+  .quant.hud span {
+    font-size: 18px; }
+
+.hud-content {
+  position: relative; }
+
+.window:before {
+  position: absolute;
+  top: -26px;
+  left: 0;
+  content: attr(window);
+  color: #fff;
+  padding: 0px 10px 0px;
+  background-color: #006eb7;
+  border-top-left-radius: 3px;
+  font-size: 16px;
+  text-shadow: 1px 1px 1px #2b2b2b; }
 
 .hud-rightPanel {
   width: 15%;
@@ -3585,5 +3606,23 @@ input[type="range"] {
 
 div[class*='Panel'] {
   background-color: #3c3f41; }
+
+.hud-bottom {
+  position: absolute;
+  bottom: 0; }
+
+.rg-menu {
+  background: #3c3f41;
+  outline: none; }
+  .rg-menu span, .rg-menu a, .rg-menu li {
+    background: #3c3f41;
+    outline: none; }
+
+.pb-colorBox {
+  width: 20px;
+  height: 20px; }
+
+.editorsContainer {
+  display: none; }
 
 /*# sourceMappingURL=maps/main.css.map */
