@@ -10,7 +10,7 @@ html(lang=''+head.lang)
         .hidden
             include ../vendor/icons/icons-debug.svg
         .hud-wrapper
-            .hud-topPanel
+            .hud-topPanel.clearfix
                 include _top_panel
             .hud-center.clearfix
                 #viewpr-list
@@ -24,5 +24,6 @@ html(lang=''+head.lang)
                     include _right_panel
             .hud-bottomPanel
                 include _bottom_panel
+                include _instruments
                 include _modals
         include _scripts

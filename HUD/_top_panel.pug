@@ -4,4 +4,23 @@ script
     include jquery-ui.min.js
 .top-panel-content
     .quant.hud Q
-        span=head.title
+    span.projectTitle=head.title
+    .buttonsSection.f-left.clearfix
+        .hud-Button.f-left.on#debugViewSwitcher
+            +I('html')
+        .hud-Button.f-left
+            +I('pantone')
+        .hud-Button.f-left
+            +I('grid')
+        .hud-Button.f-left
+            +I('allocation')
+        .hud-Button.f-left
+            +I('settings')
+        .hud-Button.f-left#spacerSwitcher
+            +I('compass')
+        .hud-Button.f-left
+            +I('timeline')
+        .hud-Button.f-left
+            +I('four-layers')
+        .hud-Button.f-left
+            +I('testing')

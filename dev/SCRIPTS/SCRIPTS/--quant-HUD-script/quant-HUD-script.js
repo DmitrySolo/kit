@@ -90,7 +90,14 @@ function MakeEditable (elem) {
 
 
 }
+$(document).ready(function () {
 
+    $('#ball').draggable();
+    $('.spacer').resizable({
+        handles: "e, s, w"
+    });
+
+})
 
 
 

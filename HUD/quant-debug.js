@@ -128,10 +128,7 @@ var addToBufer= function (content) {
 
 
 //qntDragDrop( document.getElementById('ball'));
-    $('#ball').draggable();
-    $('.spacer').resizable({
-        handles: "n, e, s, w"
-    });
+
     $('.editorsContainer').resizable({
         handles: "n,s",minHeight: 257
     });
@@ -150,7 +147,7 @@ var addToBufer= function (content) {
 
 ///////////////
     $('#spacerSwitcher').on('click',function () {
-        $('#ball').toggleClass('hidden');
+        frameEl('#ball').toggleClass('hidden');
         $(this).toggleClass('on')
     })
     $('#gridb').on('click',function () {
@@ -413,7 +410,7 @@ var addToBufer= function (content) {
         viewpr(v_options);
 
     }
-    auto_media()
+    //auto_media()
 
 
 
