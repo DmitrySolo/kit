@@ -485,6 +485,8 @@ var addToBufer= function (content) {
             .replace(/ui-resizable/g,'')
             .replace(/ui-draggable-handle/g,'')
             .replace(/ui-draggable/g,'');
+        var tagStr = frameEl('.debugElement')[0].tagName;
+        console.log(tagStr);
         var resMap = getObjects(classStr);
         console.log(resMap)
         var cssModPanelText ='';

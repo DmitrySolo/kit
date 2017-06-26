@@ -407,7 +407,10 @@ $zNotEdit: 1000;
   .debug img, .debug svg {
     @include debug-elem($db-img-color);
   }
-
+  section#ball{
+    background: transparent;
+    cursor: grab !important;
+  }
   .debugPannel__wrapper {
 
     background: #3c3f41 !important;

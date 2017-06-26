@@ -38,7 +38,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
                         <use xlink:href="#pantone"></use>
                       </svg>
             </div>
-            <div class="hud-Button f-left">
+            <div class="hud-Button f-left" id="gridb">
                       <svg class="icon ">
                         <use xlink:href="#grid"></use>
                       </svg>
@@ -1098,6 +1098,8 @@ var addToBufer= function (content) {
             .replace(/ui-resizable/g,'')
             .replace(/ui-draggable-handle/g,'')
             .replace(/ui-draggable/g,'');
+        var tagStr = frameEl('.debugElement')[0].tagName;
+        console.log(tagStr);
         var resMap = getObjects(classStr);
         console.log(resMap)
         var cssModPanelText ='';
