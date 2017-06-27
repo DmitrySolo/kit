@@ -1,6 +1,43 @@
 function MakeEditable (elem) {
 
     elem.on('click',function(e){
+
+
+        $('.classChoser',window.parent.document).val('');console.log( $(this).attr('class'));
+        var classString = $(this).attr('class');
+        if(classString){
+
+            var classStringArr = classString.split(' ');
+            var block = '';
+            var element = '';
+            var modifier = '';
+
+            $.each(classStringArr,function (index,value) {
+                if (value.indexOf('ta-')!=-1){
+                    if (value.indexOf('__')!=-1){
+                        var valueArr = value.split('__')
+                        block = (valueArr[0].split('-'))[1]
+                        if (valueArr[1].indexOf('--')!=-1){
+                            element = (valueArr[1].split('--')[0])
+                            modifier = (valueArr[1].split('--')[1])
+                        }else{
+                            element = valueArr[1]
+                        }
+                    }else{
+                        block = (value.split('-'))[1]
+                    }
+                }
+            })
+            console.log(block+'000'+element+'000'+modifier)
+            $('.classChoser[name="block"]',window.parent.document).val(block)
+            $('.classChoser[name="element"]',window.parent.document).val(element)
+            $('.classChoser[name="modifier"]',window.parent.document).val(modifier)
+        }
+
+
+
+
+
         if($(this).hasClass('ruler')){ e.stopPropagation()}
         if (!$(this).hasClass('debugElement')){
 
@@ -94,7 +131,7 @@ $(document).ready(function () {
 
     $('#ball').draggable();
     $('.spacer').resizable({
-        handles: "e, s, w"
+        handles: "§se, s, w"
     });
 
 })

@@ -1,3 +1,53 @@
+.classMaker
+    section.row
+        h6
+            +I('target')
+            | Classes
+        div.clearfix
+            .col-6-tp
+                label Block
+                    input(type='text' name='block').classChoser
+                label Element
+                    input(type='text' name="element").classChoser
+                label Modifier
+                    input(type='text' name="modifier").classChoser
+                label Optional
+                    input(type='text' mame="optionalClass").classChoser
+            .col-6-tp
+                label Vendor classes
+                    select(multiple='multiple',size='5' name="vendorName")
+                        option hide
+                        option show
+                        option clearfix
+                        option mode
+                        option active
+                        option platform
+                        option selected
+                        option additional
+                        option support
+                label Project classes
+                    select(multiple='multiple',size='4')
+                        option hide
+                        option show
+                        option clearfix
+                        option mode
+                        option active
+    section.row
+        div.clearfix
+            .mediaChoser.col-2-tp
+                +I('computer3')
+            .mediaChoser.col-2-tp
+                +I('computer2')
+            .mediaChoser.col-2-tp
+                +I('computer1')
+            .mediaChoser.col-2-tp
+                +I('computer')
+            .mediaChoser.col-2-tp
+                +I('arrow')
+    section
+        button#saveClass save
+
+
 .debug-Pannel-Right.notEdit
     .debug-Pannel-Right__section.debugPannel__section
         .debug-Pannel-Right-content
@@ -8,16 +58,16 @@
             div.clearfix
                 .col-6-tp
                     label Block
-                        input(type='text').classChoser
+                        input(type='text' name='block').classChoser
                     label Element
-                        input(type='text').classChoser
+                        input(type='text' name="element").classChoser
                     label Modifier
-                        input(type='text').classChoser
+                        input(type='text' name="modifier").classChoser
                     label Optional
-                        input(type='text').classChoser
+                        input(type='text' mame="optionalClass").classChoser
                 .col-6-tp
                     label Vendor classes
-                        select(multiple='multiple',size='5')
+                        select(multiple='multiple',size='5' name="vendorName")
                             option hide
                             option show
                             option clearfix
@@ -59,15 +109,18 @@
                     input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('desctopGridder',this.value)" value="0")
                     input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('bigDesctopGridder',this.value)" value="0")
                 hr
-            h6
-                a.tabAnchr(data-portsize="1024" href="#")
-                    +I('computer3')
-                +I('computer2')
-                +I('computer1')
-                +I('computer')
-                +I('arrow')
-
+            h6 MediaChoser
             div.clearfix
+                .mediaChoser
+                    +I('computer3')
+                .mediaChoser
+                    +I('computer2')
+                .mediaChoser
+                    +I('computer1')
+                .mediaChoser
+                    +I('computer')
+                .mediaChoser
+                    +I('arrow')
 
             h6
                 +I('ruler')

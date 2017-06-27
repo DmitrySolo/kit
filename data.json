@@ -107,22 +107,22 @@
 				"": ""
 			}
 		},
-		"quant-lib": {
+		"xRayView": {
 			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
+				"xRayView-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
+					"container": "footer/init"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"xRayView": {
+		"quant-lib": {
 			"js": {
-				"xRayView-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -137,7 +137,8 @@
 		"assetsFonts": "false",
 		"debug": "false",
 		"production": "false",
-		"icon-font": "false"
+		"icon-font": "false",
+		"projectPrefix": "'ta'"
 	},
 	"response": "true",
 	"vertical-rhythm": "true",

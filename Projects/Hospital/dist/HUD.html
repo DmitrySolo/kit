@@ -87,6 +87,87 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
           </div>
         </div>
         <div class="hud-rightPanel">
+          <div class="classMaker">
+            <section class="row">
+              <h6>
+                        <svg class="icon ">
+                          <use xlink:href="#target"></use>
+                        </svg>Classes
+              </h6>
+              <div class="clearfix">
+                <div class="col-6-tp">
+                  <label>Block
+                    <input class="classChoser" type="text" name="block">
+                  </label>
+                  <label>Element
+                    <input class="classChoser" type="text" name="element">
+                  </label>
+                  <label>Modifier
+                    <input class="classChoser" type="text" name="modifier">
+                  </label>
+                  <label>Optional
+                    <input class="classChoser" type="text" mame="optionalClass">
+                  </label>
+                </div>
+                <div class="col-6-tp">
+                  <label>Vendor classes
+                    <select multiple="multiple" size="5" name="vendorName">
+                      <option>hide</option>
+                      <option>show</option>
+                      <option>clearfix</option>
+                      <option>mode</option>
+                      <option>active</option>
+                      <option>platform</option>
+                      <option>selected</option>
+                      <option>additional</option>
+                      <option>support</option>
+                    </select>
+                  </label>
+                  <label>Project classes
+                    <select multiple="multiple" size="4">
+                      <option>hide</option>
+                      <option>show</option>
+                      <option>clearfix</option>
+                      <option>mode</option>
+                      <option>active</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+            </section>
+            <section class="row">
+              <div class="clearfix">
+                <div class="mediaChoser col-2-tp">
+                          <svg class="icon ">
+                            <use xlink:href="#computer3"></use>
+                          </svg>
+                </div>
+                <div class="mediaChoser col-2-tp">
+                          <svg class="icon ">
+                            <use xlink:href="#computer2"></use>
+                          </svg>
+                </div>
+                <div class="mediaChoser col-2-tp">
+                          <svg class="icon ">
+                            <use xlink:href="#computer1"></use>
+                          </svg>
+                </div>
+                <div class="mediaChoser col-2-tp">
+                          <svg class="icon ">
+                            <use xlink:href="#computer"></use>
+                          </svg>
+                </div>
+                <div class="mediaChoser col-2-tp">
+                          <svg class="icon ">
+                            <use xlink:href="#arrow"></use>
+                          </svg>
+                </div>
+              </div>
+            </section>
+            <section>
+              <button id="saveClass">save</button>
+            </section>
+          </div>
           <div class="debug-Pannel-Right notEdit">
             <div class="debug-Pannel-Right__section debugPannel__section">
               <div class="debug-Pannel-Right-content">
@@ -98,21 +179,21 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
                 <div class="clearfix">
                   <div class="col-6-tp">
                     <label>Block
-                      <input class="classChoser" type="text">
+                      <input class="classChoser" type="text" name="block">
                     </label>
                     <label>Element
-                      <input class="classChoser" type="text">
+                      <input class="classChoser" type="text" name="element">
                     </label>
                     <label>Modifier
-                      <input class="classChoser" type="text">
+                      <input class="classChoser" type="text" name="modifier">
                     </label>
                     <label>Optional
-                      <input class="classChoser" type="text">
+                      <input class="classChoser" type="text" mame="optionalClass">
                     </label>
                   </div>
                   <div class="col-6-tp">
                     <label>Vendor classes
-                      <select multiple="multiple" size="5">
+                      <select multiple="multiple" size="5" name="vendorName">
                         <option>hide</option>
                         <option>show</option>
                         <option>clearfix</option>
@@ -175,24 +256,34 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
                   </div>
                   <hr>
                 </div>
-                <h6><a class="tabAnchr" data-portsize="1024" href="#">
+                <h6>MediaChoser</h6>
+                <div class="clearfix">
+                  <div class="mediaChoser">
                             <svg class="icon ">
                               <use xlink:href="#computer3"></use>
-                            </svg></a>
-                          <svg class="icon ">
-                            <use xlink:href="#computer2"></use>
-                          </svg>
-                          <svg class="icon ">
-                            <use xlink:href="#computer1"></use>
-                          </svg>
-                          <svg class="icon ">
-                            <use xlink:href="#computer"></use>
-                          </svg>
-                          <svg class="icon ">
-                            <use xlink:href="#arrow"></use>
-                          </svg>
-                </h6>
-                <div class="clearfix"></div>
+                            </svg>
+                  </div>
+                  <div class="mediaChoser">
+                            <svg class="icon ">
+                              <use xlink:href="#computer2"></use>
+                            </svg>
+                  </div>
+                  <div class="mediaChoser">
+                            <svg class="icon ">
+                              <use xlink:href="#computer1"></use>
+                            </svg>
+                  </div>
+                  <div class="mediaChoser">
+                            <svg class="icon ">
+                              <use xlink:href="#computer"></use>
+                            </svg>
+                  </div>
+                  <div class="mediaChoser">
+                            <svg class="icon ">
+                              <use xlink:href="#arrow"></use>
+                            </svg>
+                  </div>
+                </div>
                 <h6>
                           <svg class="icon ">
                             <use xlink:href="#ruler"></use>
@@ -1315,6 +1406,30 @@ var addToBufer= function (content) {
 });
     </script>
     <script>"use strict";function viewpr(params){var defaultParams={viewports:[{size:"320",name:"Mobile"},{size:"768",name:"Tablet"},{size:"1024",name:"Desktop"}],showName:true,svg:false,reset:"reset",wrapper:"viewpr-content",links:"viewpr-list",animation:"-webkit-transition:width .3s ease-in-out; -moz-transition: width .3s ease-in-out; -ms-transition: width .3s ease-in-out; -o-transition: width .3s ease-in-out; transition: width .3s ease-in-out;"};if(params){if(params.showName===false){defaultParams.showName=params.showName}if(params.svg===true){defaultParams.svg=params.svg}if(params.viewports){defaultParams.viewports=params.viewports}if(params.reset&&typeof params.reset==="string"){defaultParams.reset=params.reset}if(params.wrapper&&typeof params.reset==="string"){defaultParams.wrapper=params.wrapper}if(params.links&&typeof params.reset==="string"){defaultParams.links=params.links}if(params.animation&&typeof params.reset==="string"){defaultParams.animation=params.animation}}var viewports=defaultParams.viewports,links=document.getElementById(defaultParams.links),linklist=links.children,content=document.getElementById(defaultParams.wrapper),activeNav=document.getElementsByClassName("fr-active"),initWidth=content.style.width,title,styles;styles=content.getAttribute("style")+defaultParams.animation;content.setAttribute("style",styles);for(var i=0;i<viewports.length;i++){if(defaultParams.showName===true){title=viewports[i].name}else{title=viewports[i].size}if(defaultParams.svg===true){links.innerHTML=links.innerHTML+"<li><a data-portsize="+viewports[i].size+' href="#">'+title+'<svg><use xlink:href="#'+viewports[i].size+'"></use></svg></a></li>'}else{links.innerHTML=links.innerHTML+"<li><a data-portsize="+viewports[i].size+' href="#">'+title+"</a></li>"}}links.innerHTML+='<li><a class="fr-active" data-portsize="reset" href="#">'+defaultParams.reset+'<svg><use xlink:href="#'+defaultParams.reset+'"></use></svg></a></li>';for(var i=0;i<linklist.length;i++){linklist[i].children[0].onclick=function(e){e.preventDefault();for(var i=0;i<activeNav.length;i++){activeNav[i].classList.remove("fr-active")}if(this.getAttribute("data-portsize")=="reset"){this.classList.add("fr-active");content.style.width=initWidth;content.removeAttribute("fr-data")}else{this.classList.add("fr-active");content.style.width=this.getAttribute("data-portsize")+"px";content.setAttribute("fr-data","size-"+this.getAttribute("data-portsize"))}}}}</script>
+    <script>$('.classMaker').draggable()
+$('#saveClass').on('click',function () {
+    var elCName = '';
+    var block = $('input[name="block"]').val(),
+        element = $('input[name="element"]').val(),
+        modifier = $('input[name="modifier"]').val(),
+        optional = $('input[name="optionalClass"]').val();
+        prefix = 'ta';
+    if (block.length > 1){
+        elCName +=  prefix+'-'+block;
+    }
+    if (element.length > 1){
+        elCName +='__'+element;
+    }
+    if (modifier.length > 1) {
+        elCName +='--'+modifier;
+    }
+    console.log(elCName)
+    frameEl('.debugElement').addClass(elCName);
+
+
+
+})
+    </script>
     <script src="maps/main.css.map" type="text"></script>
     <script role="scss">
       var editor = ace.edit("editorScss");
