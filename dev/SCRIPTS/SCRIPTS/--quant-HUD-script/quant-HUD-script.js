@@ -1,16 +1,21 @@
+var vendorsClasses = ['debugElement','ui-draggable-handle','ui-draggable','ui-resizable','resizeble'];
+
 function MakeEditable (elem) {
 
     elem.on('click',function(e){
 
-
+        $('#classSelector',window.parent.document).html('');
         $('.classChoser',window.parent.document).val('');console.log( $(this).attr('class'));
         var classString = $(this).attr('class');
         if(classString){
 
-            var classStringArr = classString.split(' ');
-            var block = '';
-            var element = '';
-            var modifier = '';
+            //classString = classString.replace
+
+            var classStringArr = classString.split(' '),
+             block = '',
+             element = '',
+             modifier = '',
+             result =[];
 
             $.each(classStringArr,function (index,value) {
                 if (value.indexOf('ta-')!=-1){
@@ -26,12 +31,27 @@ function MakeEditable (elem) {
                     }else{
                         block = (value.split('-'))[1]
                     }
+                    var predRes = [block,element,+modifier];
+                    result.push(predRes);
+                }else{
+                    if (vendorsClasses.indexOf(value) == -1)
+                    $('#classSelector',window.parent.document).prepend('<div class=" cselector"><span class="classtype extClass">c</span>'+value+'</div>')
                 }
+
             })
-            console.log(block+'000'+element+'000'+modifier)
+
+
+            console.log(result)
+            if (result.length >1){
+                $.each(result,function (index,value) {
+                    $('#classSelector',window.parent.document).prepend('<div class=" cselector"><span class="classtype bem">b</span>'+value[0]+' '+value[1]+' '+value[2]+'</div>')
+                })
+            }
             $('.classChoser[name="block"]',window.parent.document).val(block)
             $('.classChoser[name="element"]',window.parent.document).val(element)
             $('.classChoser[name="modifier"]',window.parent.document).val(modifier)
+        }else{
+            $('#classSelector',window.parent.document).prepend('<div class=" cselector"><span class="classtype elemS">e</span>'+$(this).prop('tagName')+'</div>')
         }
 
 

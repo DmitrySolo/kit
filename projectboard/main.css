@@ -3662,4 +3662,33 @@ div[class*='Panel'] {
     height: 1.4em;
     line-height: 44px; }
 
+.cselector {
+  background: #2b2b2b;
+  color: #fff;
+  padding: 2px 10px;
+  border-bottom: 2px solid #3c3f41; }
+  .cselector.active {
+    border: solid 1px #FF9801;
+    opacity: 1 !important; }
+
+.classtype {
+  display: inline-block;
+  padding: 0px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 25px;
+  margin-right: 10px; }
+
+.bem {
+  background: #3bd43b; }
+
+.extClass {
+  background: orange; }
+
+.elemS {
+  background: #00498f; }
+
 /*# sourceMappingURL=maps/main.css.map */

@@ -88,6 +88,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </div>
         <div class="hud-rightPanel">
           <div class="classMaker">
+            <section id="classSelector"></section>
             <section class="row">
               <h6>
                         <svg class="icon ">
@@ -1345,6 +1346,13 @@ var addToBufer= function (content) {
 
 
     }
+    $(document.body).on('click','.cselector',function () {
+            $('.cselector').removeClass('active')
+            $('.cselector').css('opacity','.2');
+            $(this).toggleClass('active');
+
+    })
+
 
 //////////////Modal
         $( ".debug-Dialog" ).dialog({

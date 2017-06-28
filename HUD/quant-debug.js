@@ -641,6 +641,13 @@ var addToBufer= function (content) {
 
 
     }
+    $(document.body).on('click','.cselector',function () {
+            $('.cselector').removeClass('active')
+            $('.cselector').css('opacity','.2');
+            $(this).toggleClass('active');
+
+    })
+
 
 //////////////Modal
         $( ".debug-Dialog" ).dialog({
