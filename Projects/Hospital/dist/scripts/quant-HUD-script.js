@@ -1,11 +1,69 @@
 var vendorsClasses = ['debugElement','ui-draggable-handle','ui-draggable','ui-resizable','resizeble'];
+var changerWatcher = {}
+    changerWatcher.targets = {}
+    var target ={};
+         target.save = {
+        type:'element',
+        name:'visTest',
+        classNme:'mainButton',
+        properties:{
+            'display':'block',
+            'width':'100%',
+            'color':'darkcyan'
+        }
+    }
+
+    $('#saveToServer',window.parent.document).on('mousedown',function () {
+            console.log('sfg');
+
+        $.ajax({
+            url:"http://localhost:8181"
+            , type:'POST'
+            , data:'jsonData=' + JSON.stringify(target)
+            , success: function(res) {
+                alert(res);
+            }
+        });
+
+    })
+
+
+
+
+
+
+
+
+
+
+
 
 function MakeEditable (elem) {
 
     elem.on('click',function(e){
-
+        $('#context',window.parent.document).html('');
         $('#classSelector',window.parent.document).html('');
         $('.classChoser',window.parent.document).val('');console.log( $(this).attr('class'));
+        if($('*').is($(this).closest('*[data-qcontent=true]'))){
+            var parentEl = $(this).closest('*[data-qcontent=true]');
+
+            var context = parentEl[0].dataset.qcname;
+
+            var context = context.split('_');
+
+            var type = context[0];
+            var name = context[1];
+
+            $('#context',window.parent.document).prepend('<div class="qcnt type'+type+'">'+type+' : '+name+'</div>');
+
+        }else{
+            console.log('no')
+        }
+
+      //  var qecm = $(this).closest('*[data-qcontent=true]');
+
+
+
         var classString = $(this).attr('class');
         if(classString){
 

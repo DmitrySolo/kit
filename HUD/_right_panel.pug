@@ -1,9 +1,7 @@
 .classMaker
+    section#context
     section#classSelector
     section.row
-        h6
-            +I('target')
-            | Classes
         div.clearfix
             .col-6-tp
                 label Block
@@ -34,25 +32,17 @@
                         option mode
                         option active
     section.row
-        div.clearfix
-            .mediaChoser.col-2-tp
-                +I('computer3')
-            .mediaChoser.col-2-tp
-                +I('computer2')
-            .mediaChoser.col-2-tp
-                +I('computer1')
-            .mediaChoser.col-2-tp
-                +I('computer')
-            .mediaChoser.col-2-tp
-                +I('arrow')
-    section
         button#saveClass save
 
 
+
 .debug-Pannel-Right.notEdit
+    .saveToServer
+        button#saveToServer
+            +I('save')
+            | save as code
     .debug-Pannel-Right__section.debugPannel__section
         .debug-Pannel-Right-content
-
             h6
                 +I('target')
                 | Classes

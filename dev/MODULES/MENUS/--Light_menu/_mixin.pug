@@ -3,7 +3,7 @@ mixin MODULE-lightMenu(dataMenu)
 		-var menuData = pages
 	else
 		-var menuData = menuData1
-	nav.lightMenu(role='navigation')
+	nav.lightMenu(role='navigation' data-qcontent='true' data-qcname='module_Light_menu')
 		ul.lightMenu__list
 			each menuItem in menuData
 				if dataMenu=='MainMenu'

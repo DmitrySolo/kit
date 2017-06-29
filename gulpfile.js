@@ -1368,7 +1368,14 @@ gulp.task('API-SERVER', function () {
 
                 }
 
-            }
+            }else if (req.method=='POST'){
+
+            var body = '';
+            req.on('data', function (data) {
+                body += data;
+                console.log("Partial body: " + body);
+            });
+        }
 
             res.end(srvRes);
 
