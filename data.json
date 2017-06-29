@@ -1,4 +1,103 @@
 {
+	"LIBS": {
+		"JQ": {
+			"js": {
+				"jquery": {
+					"src": "bower_components/jquery/dist/jquery.min.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-debug-ruller": {
+			"js": {
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-HUD-script": {
+			"js": {
+				"quant-HUD-script-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "bower_components/jquery-ui/jquery-ui.min.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-lib": {
+			"js": {
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"xRayView": {
+			"js": {
+				"xRayView-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"baseButton": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"hero_video": {
+			"js": {
+				"hero_video-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
+					"container": "footer/init",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		}
+	},
 	"menuData1": {
 		"Home": {
 			"title": "Продукция",
@@ -31,114 +130,15 @@
 	"hero_video": {
 		"hero_video": "1"
 	},
-	"LIBS": {
-		"hero_video": {
-			"js": {
-				"hero_video-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
-					"container": "footer/init",
-					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"baseButton": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"JQ": {
-			"js": {
-				"jquery": {
-					"src": "bower_components/jquery/dist/jquery.min.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-HUD-script": {
-			"js": {
-				"quant-HUD-script-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "bower_components/jquery-ui/jquery-ui.min.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-debug-JsonCss": {
-			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-debug-ruller": {
-			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-lib": {
-			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"xRayView": {
-			"js": {
-				"xRayView-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		}
-	},
 	"switchers": {
+		"projectPrefix": "'ta'",
 		"response": "true",
 		"vertical-rhythm": "true",
 		"linkFonts": "true",
 		"assetsFonts": "false",
 		"debug": "false",
 		"production": "false",
-		"icon-font": "false",
-		"projectPrefix": "'ta'"
+		"icon-font": "false"
 	},
 	"response": "true",
 	"vertical-rhythm": "true",
@@ -152,7 +152,7 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\n)"
+		"'HEADER'": "('Roboto Slab')\r\n)"
 	},
 	"space": "em",
 	"element_space": ".5",
@@ -180,11 +180,11 @@
 	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\n\n)",
+	"container-styles": "(\r\n\r\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\n)"
+		"min-height": "1px\r\n)"
 	},
 	"phone-upper-boundary": "600px",
 	"tablet-portrait-upper-boundary": "768px",

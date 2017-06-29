@@ -3,14 +3,16 @@ var changerWatcher = {}
     changerWatcher.targets = {}
     var target ={};
          target.save = {
-        type:'element',
-        name:'visTest',
-        classNme:'mainButton',
-        properties:{
-            'display':'block',
-            'width':'100%',
-            'color':'darkcyan'
-        }
+             "elementvistest":
+                {   type:'element',
+                    name:'visTest',
+                    className:'mainButton',
+                    properties:{
+                        'display':'block',
+                        'width':'100%',
+                        'color':'darkcyan'
+            }
+                }
     }
 
     $('#saveToServer',window.parent.document).on('mousedown',function () {
@@ -19,9 +21,9 @@ var changerWatcher = {}
         $.ajax({
             url:"http://localhost:8181"
             , type:'POST'
-            , data:'jsonData=' + JSON.stringify(target)
+            , data:JSON.stringify(target)
             , success: function(res) {
-                alert(res);
+
             }
         });
 

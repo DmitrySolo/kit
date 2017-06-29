@@ -1373,7 +1373,19 @@ gulp.task('API-SERVER', function () {
             var body = '';
             req.on('data', function (data) {
                 body += data;
-                console.log("Partial body: " + body);
+                body = JSON.parse(body);
+                for(var key in body.save){
+
+                    var type = body.save[key].type
+                    var name = body.save[key].name
+                    var className = body.save[key].className
+                    var properties = body.save[key].properties
+                    console.log(type+'/'+name+'/'+className)
+                    ////////////////////////////////////////////
+
+
+
+                }
             });
         }
 
