@@ -3,15 +3,30 @@ var changerWatcher = {}
     changerWatcher.targets = {}
     var target ={};
          target.save = {
-             "elementvistest":
+             "element-vistest-mainbutton":
                 {   type:'element',
+                    subType:'buttons',
                     name:'visTest',
                     className:'mainButton',
                     properties:{
                         'display':'block',
                         'width':'100%',
                         'color':'darkcyan'
-            }
+                    },
+                    mediaProperties:{
+                        mobile:{
+                            properties:{},
+                            pElProperties:{}
+                        }
+                    },
+                    pElProperties: {
+                        hover:{
+                            color:'red'
+                        },
+                        last_child:{
+                            margin:0
+                        }
+                    }
                 }
     }
 
@@ -53,10 +68,12 @@ function MakeEditable (elem) {
 
             var context = context.split('_');
 
-            var type = context[0];
+            var type = context[0].split('[>]');
+            if (type[1]) var subtype = ' > '+type[1];
+            type =type[0]
             var name = context[1];
 
-            $('#context',window.parent.document).prepend('<div class="qcnt type'+type+'">'+type+' : '+name+'</div>');
+            $('#context',window.parent.document).prepend('<div class="qcnt type'+type+'">'+type+subtype+' : '+name+'</div>');
 
         }else{
             console.log('no')

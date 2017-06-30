@@ -1,10 +1,40 @@
 {
 	"LIBS": {
+		"baseButton": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"JQ": {
 			"js": {
 				"jquery": {
 					"src": "bower_components/jquery/dist/jquery.min.js",
 					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-HUD-script": {
+			"js": {
+				"quant-HUD-script-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "bower_components/jquery-ui/jquery-ui.min.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -33,21 +63,6 @@
 				"": ""
 			}
 		},
-		"quant-HUD-script": {
-			"js": {
-				"quant-HUD-script-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "bower_components/jquery-ui/jquery-ui.min.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"quant-lib": {
 			"js": {
 				"quant-lib-script": {
@@ -63,21 +78,6 @@
 			"js": {
 				"xRayView-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"baseButton": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
 					"container": "footer/init"
 				}
 			},
@@ -152,7 +152,7 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\r\n)"
+		"'HEADER'": "('Roboto Slab')\n)"
 	},
 	"space": "em",
 	"element_space": ".5",
@@ -180,11 +180,11 @@
 	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\r\n)"
+		"min-height": "1px\n)"
 	},
 	"phone-upper-boundary": "600px",
 	"tablet-portrait-upper-boundary": "768px",

@@ -157,7 +157,6 @@ gulp.task('SERVER', [], function() {
 gulp.task('VIEW-FINAL', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
     return watch([
-        'HUD/HUD.pug',
         'dev/ELEMENTS/_elements.pug',
         'dev/MIXES/_mixes.pug',
         'dev/MODULES/_modules.pug',
@@ -1377,10 +1376,30 @@ gulp.task('API-SERVER', function () {
                 for(var key in body.save){
 
                     var type = body.save[key].type
+                    var subType = body.save[key].subType
                     var name = body.save[key].name
                     var className = body.save[key].className
                     var properties = body.save[key].properties
-                    console.log(type+'/'+name+'/'+className)
+                    console.log(projectDevDir+type+'s/'+subType+'s/--'+name+'/'+className+'.scss')
+
+
+                    var string = '.'+className+'{';
+
+                    for (key in properties){
+                        string+='\n\t'+key+':'+properties[key]+';';
+                    }
+                    string+='\n}';
+
+                        fs.writeFileSync(projectDevDir+type+'s/'+subType+'/--'+name+'/classes/'+className+'.scss', string);
+                        var clFiles = fs.readdirSync(projectDevDir+type+'s/'+subType+'/--'+name+'/classes/');
+
+                        string =''
+
+                    for (key in clFiles){
+
+                            string+='@import "classes/'+clFiles[key]+'";\n'
+                        }
+                        fs.writeFileSync(projectDevDir+type+'s/'+subType+'/--'+name+'/style.scss', string);
                     ////////////////////////////////////////////
 
 
