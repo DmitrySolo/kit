@@ -1380,17 +1380,65 @@ gulp.task('API-SERVER', function () {
                     var name = body.save[key].name
                     var className = body.save[key].className
                     var properties = body.save[key].properties
+                    var pElProps = body.save[key].pElProperties
+                    var media = body.save[key].mediaProperties
                     console.log(projectDevDir+type+'s/'+subType+'s/--'+name+'/'+className+'.scss')
 
 
                     var string = '.'+className+'{';
 
+                    // PROPERTIES
                     for (key in properties){
-                        string+='\n\t'+key+':'+properties[key]+';';
+
+                        string+='\n\t'+key.replace('_','-')+':'+properties[key]+';';
                     }
+
+                    // PSEUDO ELEMENTS
+                    for (pseudoSel in pElProps){
+
+                        string +='\n\t&:'+pseudoSel.replace('_','-')+'{';
+                        for(key in pElProps[pseudoSel]){
+                            string+='\n\t\t'+key.replace('_','-')+':'+pElProps[pseudoSel][key]+';';
+                        }
+                        string+='\n\t}';
+
+
+                    }
+
+                    // MEDIA
+
+                    for (mediaPoint in media){
+
+                        string +='\n\t@include for-size('+mediaPoint.replace('_','-')+'){';
+
+                        for(key in media[mediaPoint].properties){
+                            string+='\n\t\t'+key.replace('_','-')+':'+media[mediaPoint].properties[key]+';';
+                        }
+
+                        for (pseudoSel in media[mediaPoint].pElProperties){
+
+                            string +='\n\t\t&:'+pseudoSel.replace('_','-')+'{';
+                            for(key in media[mediaPoint].pElProperties[pseudoSel]){
+                                string+='\n\t\t\t'+key.replace('_','-')+':'+media[mediaPoint].pElProperties[pseudoSel][key]+';';
+                            }
+                            string+='\n\t\t}';
+
+
+                        }
+                        string+='\n\t}';
+                    }
+
+
+                    //END FILE
                     string+='\n}';
 
-                        fs.writeFileSync(projectDevDir+type+'s/'+subType+'/--'+name+'/classes/'+className+'.scss', string);
+                    // WRITE FILE
+                    fs.writeFileSync(projectDevDir+type+'s/'+subType+'/--'+name+'/classes/'+className+'.scss', string);
+
+
+
+
+                    // INCLUDE FILES
                         var clFiles = fs.readdirSync(projectDevDir+type+'s/'+subType+'/--'+name+'/classes/');
 
                         string =''

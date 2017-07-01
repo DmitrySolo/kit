@@ -11,12 +11,25 @@ var changerWatcher = {}
                     properties:{
                         'display':'block',
                         'width':'100%',
-                        'color':'darkcyan'
+                        'color':'darkcyan',
+                        'background_image':'url("http://home/image.jpg")'
                     },
                     mediaProperties:{
-                        mobile:{
-                            properties:{},
-                            pElProperties:{}
+                        phone_only:{
+                            properties:{
+                                width:'30%'
+                            },
+                            pElProperties:{
+                                hover:{
+                                    background_color:'yellow'
+                                }
+                            }
+                        },
+                        desktop_up:{
+                           properties:{
+                               width:'70%',
+                               color:'violet'
+                           }
                         }
                     },
                     pElProperties: {
@@ -112,7 +125,7 @@ function MakeEditable (elem) {
                     result.push(predRes);
                 }else{
                     if (vendorsClasses.indexOf(value) == -1)
-                    $('#classSelector',window.parent.document).prepend('<div class=" cselector"><span class="classtype extClass">c</span>'+value+'</div>')
+                    $('#classSelector',window.parent.document).prepend('<div class=" cselector"><span class="classtype extClass">c</span><span class="classtype__name">'+value+'</span></div>')
                 }
 
             })

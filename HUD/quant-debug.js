@@ -39,10 +39,50 @@ $( document ).ready(function() {
                     stylesArr.push(propVal)
                 }
                 result.styles.push(stylesArr)
+
+            }
+        }
+        console.log(result)
+        return result;
+    }
+
+    $('body').on('mousedown','.classtype__name',function () {
+        console.log($(this).text())
+        getObjects($(this).text())
+    })
+
+    function getObjectStyles(className) {
+
+        elemClassStr= elemClassStr.trim();
+        var result={};
+        result.selectors=[];
+        result.styles=[];
+        result.position = []
+        for (var i in jsonCss.stylesheet.rules){
+            selObj = jsonCss.stylesheet.rules[i];
+            //console.log(selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr))
+            if(selObj.hasOwnProperty('selectors') && selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr) != -1){
+                console.log(selObj)
+                result.position.push(selObj.position.start.column)
+                result.position.push(selObj.position.start.line)
+                result.selectors.push(selObj.selectors.toString());
+                var stylesArr=[];
+                for(var zi in selObj.declarations){
+
+                    var dec = selObj.declarations[zi];
+                    var propVal ={
+                        propery:dec.property,
+                        value : dec.value
+                    }
+                    stylesArr.push(propVal)
+                }
+                result.styles.push(stylesArr)
             }
         }
         return result;
     }
+
+
     //console.log(jsonCss.stylesheet.rules);
 
 
