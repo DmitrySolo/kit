@@ -1492,7 +1492,7 @@ function getCssSource(line,col){
     var orLine='';
     smc.eachMapping(function (m) {
         if (m.generatedLine==line && m.generatedColumn==col){
-            console.log(m);
+            console.log((smc.sourceContentFor(m.source)));
             resursPath  = m.source;
             orLine = m.originalLine;
 
