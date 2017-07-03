@@ -1503,3 +1503,71 @@ function getCssSource(line,col){
     return resursPath+'[^]'+orLine+'[^]'+pugFileContent+'[^]'+jsFileContent
 
 }
+function convertExtScss () {
+
+    }
+
+
+    gulp.task('convertExtScss', function () {
+
+
+    // gulp.src('utilities/convertExtScss/*.scss')
+    //     .pipe(rename('external.scss'))
+    //     .pipe(sass.sync().on('error', sass.logError))
+    //     .pipe(gulp.dest('utilities/convertExtScss/css/'));
+    //
+    //
+    //     var ast=css.parse(file = fs.readFileSync('utilities/convertExtScss/css/external.css', "utf8"));
+    //
+    //     for (var ruleIndex in ast.stylesheet.rules){
+    //
+    //        var rule =ast.stylesheet.rules[ruleIndex];
+    //
+    //        var selector = rule.selectors;
+    //
+    //        if (selector.length >1){
+    //            for (var i in rule.selectors){
+    //
+    //            }
+    //        }else {
+    //            var selectorArr = selector.split(' ');
+    //        }
+    //
+    //
+    //
+    //
+    //     }
+
+        //
+        // var sassAST = require('sass-ast');
+        //
+        // sassAST.parse({
+        //         file: 'utilities/convertExtScss/ext',
+        //     },
+        //     function(err, ast) {
+        //         if (err) throw err;
+        //         for ( var i in ast.content){
+        //             if (ast.content[i].type == 'ruleset' && ast.content[i].start.line ==17 && ast.content[i].start.column ==1){
+        //                 //console.log(ast.content[i].end.line);
+        //             }
+        //         }
+        //         console.log(ast.toCSS('scss'))
+        // });
+
+       var file = fs.readFileSync('utilities/convertExtScss/ext.scss','utf8');
+       var fileArr = file.split('\n');
+       console.log(fileArr[13]+'->'+fileArr[16]);
+
+       var cnt = 41-37+1;
+        fileArr.splice(37,cnt);
+        var cnt = 16 -13+1;
+        fileArr.splice(13,cnt);
+       var strg = ''
+        for (var str in fileArr){
+            strg+=fileArr[str]+'\n'
+        }
+        strg+='.helloDude{\n\tcolor:red;\n}';
+        fs.writeFileSync('utilities/convertExtScss/ext.scss', strg);
+    });
+
+
