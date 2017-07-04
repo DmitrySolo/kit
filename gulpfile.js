@@ -1224,7 +1224,7 @@ gulp.task('[D] DIST FRONT-END', function (done) {
 gulp.task('parc', function () {
     var css = require('css');
     var ast=css.parse(file = fs.readFileSync(dist+'/main.css', "utf8"));
-    fs.writeFile("dev/SCRIPTS/SCRIPTS/quant-debug-JsonCss/quant-debug-JsonCss.js", JSON.stringify(ast));
+    fs.writeFileSync("dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js", 'var jsonCss = '+JSON.stringify(ast));
 
 });
 gulp.task('cocs', function () {
@@ -1483,7 +1483,7 @@ gulp.task('shorthand', shell.task(['/Applications/PhpStorm.app/Contents/MacOS/ph
 
 //////////////////////// SERVER FUNCTIONS
 
-function getCssSource(line,col){
+function getCssSource(line,col, noContent ){
     var resursPath = '';
     var pugFileContent = '';
     var jsFileContent = '';
@@ -1495,12 +1495,17 @@ function getCssSource(line,col){
             console.log((smc.sourceContentFor(m.source)));
             resursPath  = m.source;
             orLine = m.originalLine;
-
         }
-    pugFileContent  = fs.readFileSync(projectDevDir+'template/PAGESYSTEM/PAGES/index.pug', "utf8");
-    jsFileContent =   fs.readFileSync('dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js', "utf8")
     })
-    return resursPath+'[^]'+orLine+'[^]'+pugFileContent+'[^]'+jsFileContent
+    if (noContent){
+        return resursPath+'[^]'+orLine+'[^]';
+    }else {
+        pugFileContent  = fs.readFileSync(projectDevDir+'template/PAGESYSTEM/PAGES/index.pug', "utf8");
+        jsFileContent =   fs.readFileSync('dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js', "utf8")
+        return resursPath+'[^]'+orLine+'[^]'+pugFileContent+'[^]'+jsFileContent
+
+    }
+
 
 }
 function convertExtScss () {
@@ -1538,36 +1543,124 @@ function convertExtScss () {
     //
     //     }
 
-        //
-        // var sassAST = require('sass-ast');
-        //
-        // sassAST.parse({
-        //         file: 'utilities/convertExtScss/ext',
-        //     },
-        //     function(err, ast) {
-        //         if (err) throw err;
-        //         for ( var i in ast.content){
-        //             if (ast.content[i].type == 'ruleset' && ast.content[i].start.line ==17 && ast.content[i].start.column ==1){
-        //                 //console.log(ast.content[i].end.line);
-        //             }
-        //         }
-        //         console.log(ast.toCSS('scss'))
-        // });
 
-       var file = fs.readFileSync('utilities/convertExtScss/ext.scss','utf8');
+        // Get start position of original
+        var originalFileArr = getCssSource(1845,2,true).split('[^]');
+        var originalFileLine = originalFileArr[1];
+        var originalFilePath = originalFileArr[0];
+        console.log(originalFilePath+'-o-o-o-'+originalFileLine)
+
+
+
+
+        var sassAST = require('sass-ast');
+
+       var codeend = sassAST.parse({
+                file: 'dev/scss/'+originalFilePath,
+            },
+            function(err, ast) {
+
+
+                //return an array of objects according to key, value, or key and value matching
+                function getObjects(obj, key, val) {
+                    var objects = [];
+                    for (var i in obj) {
+                        if (!obj.hasOwnProperty(i)) continue;
+                        if (typeof obj[i] == 'object') {
+                            objects = objects.concat(getObjects(obj[i], key, val));
+                        } else
+                        //if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
+                        if (i == key && obj[i] == val || i == key && val == '') { //
+                            objects.push(obj);
+                        } else if (obj[i] == val && key == ''){
+                            //only add if the object is not already in the array
+                            if (objects.lastIndexOf(obj) == -1){
+                                objects.push(obj);
+                            }
+                        }
+                    }
+                    return objects;
+                }
+
+//return an array of values that match on a certain key
+                function getValues(obj, key) {
+                    var objects = [];
+                    for (var i in obj) {
+                        if (!obj.hasOwnProperty(i)) continue;
+                        if (typeof obj[i] == 'object') {
+                            objects = objects.concat(getValues(obj[i], key));
+                        } else if (i == key) {
+                            objects.push(obj[i]);
+                        }
+                    }
+                    return objects;
+                }
+
+//return an array of keys that match on a certain value
+                function getKeys(obj, val) {
+                    var objects = [];
+                    for (var i in obj) {
+                        if (!obj.hasOwnProperty(i)) continue;
+                        if (typeof obj[i] == 'object') {
+                            objects = objects.concat(getKeys(obj[i], val));
+                        } else if (obj[i] == val) {
+                            objects.push(i);
+                        }
+                    }
+                    return objects;
+                }
+
+
+              var codeBlocks =  getObjects(ast,'type','block');
+
+                for (var index in codeBlocks){
+
+                    if (codeBlocks[index].start.line ==(originalFileLine) ){
+
+                        var codeend = codeBlocks[index].end.line
+                        console.log('!!!'+codeend+'!!!');
+                        return codeend
+                    }
+                }
+
+
+
+
+
+
+                if (err) throw err;
+                // for ( var i in ast.content){
+                //
+                //     console.log(ast.content[i].start.line);
+                //     if (ast.content[i].type == 'ruleset' && ast.content[i].start.line ==(originalFileLine) ){
+                //         console.log(ast.content[i].end.line);
+                //     }else{
+                //         if(Array.isArray(ast.content[i].content)){
+                //             var scndLvl = ast.content[i].content;
+                //             for (var scndIndex in scndLvl){
+                //                 console.log(scndLvl[scndIndex].end.line)
+                //                 if (scndLvl[scndIndex].type == 'block' && scndLvl[scndIndex].start.line ==(originalFileLine) ){
+                //                     console.log('!!!!!!!!'+scndLvl[scndIndex].end.line+'!!!!!!!!');
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }
+
+        });
+       //
+       var file = fs.readFileSync('dev/scss/'+originalFilePath,'utf8');
        var fileArr = file.split('\n');
-       console.log(fileArr[13]+'->'+fileArr[16]);
 
-       var cnt = 41-37+1;
-        fileArr.splice(37,cnt);
-        var cnt = 16 -13+1;
-        fileArr.splice(13,cnt);
+       var cnt = codeend-originalFileLine+1;
+        fileArr.splice(originalFileLine,cnt);
+
        var strg = ''
         for (var str in fileArr){
             strg+=fileArr[str]+'\n'
         }
         strg+='.helloDude{\n\tcolor:red;\n}';
-        fs.writeFileSync('utilities/convertExtScss/ext.scss', strg);
+        fs.writeFileSync('dev/scss/'+originalFilePath, strg);
     });
 
 

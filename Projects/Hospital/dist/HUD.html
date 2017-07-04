@@ -700,13 +700,10 @@ $( document ).ready(function() {
         result.styles=[];
         result.position = []
         for (var i in jsonCss.stylesheet.rules){
-            var iz = i-1;
             selObj = jsonCss.stylesheet.rules[i];
-            var selObjend = jsonCss.stylesheet.rules[iz];
             //console.log(selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr))
             if(selObj.hasOwnProperty('selectors') && selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr) != -1){
                 console.log(selObj);
-                console.log(selObjend);
                 result.position.push(selObj.position.start.column)
                 result.position.push(selObj.position.start.line)
                 result.selectors.push(selObj.selectors.toString());
