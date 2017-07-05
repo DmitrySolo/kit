@@ -1,11 +1,11 @@
 var gulp = require('gulp');
-var downloadPath= '../../../Downloads/';
+var downloadPath = '../../../Downloads/';
 var foreach = require('gulp-foreach');
 var wait = require('gulp-wait');
 var frep = require('gulp-frep');
 var path = require('path');
 var cache = require('gulp-cache');
-var runSequence  = require('run-sequence');
+var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
 const template = require('gulp-template');
 var convert = require('convert-source-map');
@@ -51,7 +51,7 @@ const html2pug = require('gulp-html2pug');
 var sftp = require('gulp-sftp');
 var colors = require('colors');
 var iconfont = require('gulp-iconfont');
-var runTimestamp = Math.round(Date.now()/1000);
+var runTimestamp = Math.round(Date.now() / 1000);
 var iconfontCss = require('gulp-iconfont-css');
 var sourceMap = require('source-map');
 var html2jade = require('html2jade');
@@ -60,28 +60,27 @@ var html2jade = require('html2jade');
 
 
 var qp_path = "./gulp plugins/";
-const scriptCleaner = require(qp_path+'scriptbuilder/scleaner');
-const scriptThrower = require(qp_path+'scriptbuilder/sthrower');
-var qM = require(qp_path+'q_functions');
+const scriptCleaner = require(qp_path + 'scriptbuilder/scleaner');
+const scriptThrower = require(qp_path + 'scriptbuilder/sthrower');
+var qM = require(qp_path + 'q_functions');
 
 
 var projectName = 'Hospital';
-var projectDevDir = 'Projects/'+projectName+'/dev/';
-var dist ='Projects/'+projectName+'/dist';
+var projectDevDir = 'Projects/' + projectName + '/dev/';
+var dist = 'Projects/' + projectName + '/dist';
 
 //**********************************************************************************************************************
 
 
 gulp.task('phplint', function phplint() {
-    gulp.src(dist+'/category.php')
+    gulp.src(dist + '/category.php')
         .pipe(phplint());
 })
 
 
-
 gulp.task('SCRIPTS2', function () {
     gulp.src('data.json')
-        .pipe(scriptThrower({dist:dist,dev:projectDevDir}));
+        .pipe(scriptThrower({dist: dist, dev: projectDevDir}));
 })
 
 gulp.task('SCRIPTS ALL', gulpsync.sync(['SCRIPTS2'])
@@ -89,8 +88,8 @@ gulp.task('SCRIPTS ALL', gulpsync.sync(['SCRIPTS2'])
 
 
 gulp.task('views', function buildHTML() {
-    var data = JSON.parse(fs.readFileSync(projectDevDir+'data.json', 'utf8'));
-    gulp.src([projectDevDir+'template/PAGESYSTEM/PAGES/*.pug','HUD/HUD.pug'])
+    var data = JSON.parse(fs.readFileSync(projectDevDir + 'data.json', 'utf8'));
+    gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/*.pug', 'HUD/HUD.pug'])
         .pipe(pug({
             data: data,
             pretty: true,
@@ -98,10 +97,10 @@ gulp.task('views', function buildHTML() {
                 php: pugPHPFilter
             }
         })).pipe(gulp.dest(dist));
-    var str ="include ../template/PAGESYSTEM/INCLUDES/_includes\n";
-    gulp.src(projectDevDir+'template/projectboard.pug').pipe(insert.prepend(str)).pipe(rename(function (path) {
-        path.basename='index';
-        }))
+    var str = "include ../template/PAGESYSTEM/INCLUDES/_includes\n";
+    gulp.src(projectDevDir + 'template/projectboard.pug').pipe(insert.prepend(str)).pipe(rename(function (path) {
+        path.basename = 'index';
+    }))
         .pipe(pug({
             data: data,
             pretty: true,
@@ -110,21 +109,21 @@ gulp.task('views', function buildHTML() {
 
 
 ///////////////////////////////////////////////////////// CHANGE DIST //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-gulp.task('PAGESYSTEM', function() {
-    for(var index in data.pages) {
+gulp.task('PAGESYSTEM', function () {
+    for (var index in data.pages) {
         var attr = data.pages[index];
-        if(attr.layout == 'default')
-            var str = "//- "+attr.slug+".pug\nextends ../LAYOUT/layout.pug\nblock title\n\t-var page={slug:'"+attr.slug+"',title:'"+attr.title+"'};\n\ttitle "+attr.title;
+        if (attr.layout == 'default')
+            var str = "//- " + attr.slug + ".pug\nextends ../LAYOUT/layout.pug\nblock title\n\t-var page={slug:'" + attr.slug + "',title:'" + attr.title + "'};\n\ttitle " + attr.title;
         else
-            var str = "//- "+attr.slug+".pug\nextends ../LAYOUT/"+attr.layout+"/layout.pug\nblock title\n\t-var page={slug:'"+attr.slug+"',title:'"+attr.title+"'};\n\ttitle "+attr.title;
-        if (!fs.existsSync('dev/template/PAGESYSTEM/PAGES/'+attr.slug+'.pug') && !fs.existsSync('dev/scss/PAGES/_'+attr.slug+'.scss')) {
-            file(attr.slug+'.pug', str)
+            var str = "//- " + attr.slug + ".pug\nextends ../LAYOUT/" + attr.layout + "/layout.pug\nblock title\n\t-var page={slug:'" + attr.slug + "',title:'" + attr.title + "'};\n\ttitle " + attr.title;
+        if (!fs.existsSync('dev/template/PAGESYSTEM/PAGES/' + attr.slug + '.pug') && !fs.existsSync('dev/scss/PAGES/_' + attr.slug + '.scss')) {
+            file(attr.slug + '.pug', str)
                 .pipe(gulp.dest('dev/template/PAGESYSTEM/PAGES'));
 
-                var pageName = attr.slug.toUpperCase();
+            var pageName = attr.slug.toUpperCase();
             gulp.src('vendor/file_templates/PAGES/Styles/_page.scss.tpl')
-                .pipe(rename('off_'+attr.slug+'-page.scss'))
-                .pipe(template({name:pageName}))
+                .pipe(rename('off_' + attr.slug + '-page.scss'))
+                .pipe(template({name: pageName}))
                 .pipe(gulp.dest('dev/scss/PAGES/'))
 
         }
@@ -135,23 +134,17 @@ gulp.task('PAGESYSTEM', function() {
 
 
 /////////////////////////////////////
-gulp.task('SERVER', [], function() {
+gulp.task('SERVER', [], function () {
 
     browserSync.init({
         server: dist,
         index: "HUD.html"
     });
 
-    gulp.watch([dist+"index.html",dist+"/*.css"]).on('change', browserSync.reload);
-
-
+    gulp.watch([dist + "index.html", dist + "/*.css"]).on('change', browserSync.reload);
 
 
 });
-
-
-
-
 
 
 gulp.task('VIEW-FINAL', function () {
@@ -161,7 +154,7 @@ gulp.task('VIEW-FINAL', function () {
         'dev/MIXES/_mixes.pug',
         'dev/MODULES/_modules.pug',
         'data.json',
-         projectDevDir+'template/**/*.pug',
+        projectDevDir + 'template/**/*.pug',
         'blueprint/*.pug',
         '!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
     ], function () {
@@ -188,6 +181,14 @@ gulp.task('VIEW-1-MIXES', function () {
         '!dev/MIXES/_mixes.pug'
     ], function () {
         gulp.start('concat-mixes-pug');
+    });
+});
+gulp.task('WATCHCSSTOPARSEIT', function () {
+    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+    return watch([
+        dist+'/main.css',
+    ], function () {
+        gulp.start('parc');
     });
 });
 gulp.task('VIEW-1-MODULES', function () {
@@ -218,7 +219,7 @@ gulp.task('VIEW-1-DATA', function () {
 // SERVER WATCHER
 gulp.task('SERVER WATCHER', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-    return watch([dist+"/index.html",dist+"/*.css",projectDevDir+"SCRIPTS/scriptMap.js"], function () {
+    return watch([dist + "/index.html", dist + "/*.css", projectDevDir + "SCRIPTS/scriptMap.js"], function () {
         browserSync.reload();
 
     });
@@ -239,9 +240,8 @@ gulp.task('WATCH-MODULE-FOLDERS', function () {
         '!dev/MODULES/**/libs.json',
 
 
-
     ], function () {
-        runSequence('concat-modules-pug','concat-modules-scss');
+        runSequence('concat-modules-pug', 'concat-modules-scss');
 
     });
 });
@@ -270,7 +270,7 @@ gulp.task('STYLES-1-ELEMENTS', function () {
     return watch([
         'dev/ELEMENTS/**/--*/*.scss',
         '!dev/ELEMENTS/_elements.scss'
-        ], function () {
+    ], function () {
         gulp.start('concat-elements-scss');
     });
 });
@@ -302,25 +302,25 @@ gulp.task('STYLES-1-MODULES', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
     return watch([
 
-        'dev/MODULES/**/--*/*.scss',
-        '!dev/MODULES/_modules.scss']
+            'dev/MODULES/**/--*/*.scss',
+            '!dev/MODULES/_modules.scss']
         , function () {
-        gulp.start('concat-modules-scss');
-    });
+            gulp.start('concat-modules-scss');
+        });
 });
 //SCRIPTS
 gulp.task('SCRIPTS-FINAL', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-    return watch(['dev/**/*.js']
+    return watch(['dev/**/*.js','!dev/**/quant-debug-JsonCss.js']
         , function () {
             gulp.start('SCRIPTS ALL');
         });
 });
-gulp.task('WATCHER:NEW' ,function(){
+gulp.task('WATCHER:NEW', function () {
     runSequence([
 
-        'VIEW-FINAL','VIEW-1-MIXES','VIEW-1-MODULES','VIEW-1-ELEMENTS','VIEW-1-DATA',
-        'STYLES-FINAL','STYLES-1-MIXES','STYLES-1-ELEMENTS','STYLES-1-MODULES','STYLES-1-PAGES',
+        'VIEW-FINAL', 'VIEW-1-MIXES', 'VIEW-1-MODULES', 'VIEW-1-ELEMENTS', 'VIEW-1-DATA',
+        'STYLES-FINAL', 'STYLES-1-MIXES', 'STYLES-1-ELEMENTS', 'STYLES-1-MODULES', 'STYLES-1-PAGES',
         'SCRIPTS-FINAL',
         'SERVER WATCHER',
         'readyWatcher'
@@ -329,55 +329,51 @@ gulp.task('WATCHER:NEW' ,function(){
 
 gulp.task('BUILDUP'
 
-,function(callback){
+    , function (callback) {
 
-runSequence(
-        'mergeJson',
-        'concat-elements-pug',
-        'concat-mixes-pug',
-        'concat-modules-pug',
+        runSequence(
+            'mergeJson',
+            'concat-elements-pug',
+            'concat-mixes-pug',
+            'concat-modules-pug',
 
-        'views',
-        'concat-mixes-scss',
-        'concat-elements-scss',
-        'concat-modules-scss',
-        'styles',
-        'SCRIPTS ALL')
-callback();
-}
-
+            'views',
+            'concat-mixes-scss',
+            'concat-elements-scss',
+            'concat-modules-scss',
+            'styles',
+            'SCRIPTS ALL')
+        callback();
+    }
 )
 
 
-
-gulp.task('readyWatcher',function(){
+gulp.task('readyWatcher', function () {
     qM.ok('WATCHER READY');
 })
 
 
-
-
-gulp.task('optimage', [], function() {
-    gulp.src(dist+'/not_opt_images/*')
+gulp.task('optimage', [], function () {
+    gulp.src(dist + '/not_opt_images/*')
         .pipe(imagemin())
-        .pipe(gulp.dest(dist+'/images'))
+        .pipe(gulp.dest(dist + '/images'))
 });
-gulp.task('image_resize', [], function() {
-    gulp.src(dist+'/images/*')
+gulp.task('image_resize', [], function () {
+    gulp.src(dist + '/images/*')
         .pipe(imageResize({
-            width : 1200,
-            height : 567,
-            crop : true,
-            upscale : true
+            width: 1200,
+            height: 567,
+            crop: true,
+            upscale: true
         }))
-        .pipe(gulp.dest(dist+'/images-rs'));
+        .pipe(gulp.dest(dist + '/images-rs'));
 });
 
 
 ///////////////// CONCATS
 
-gulp.task('concat-modules-and-mixes', function() {
-    gulp.src(['dev/MODULES/MENUS/--*/*.scss','dev/MODULES/PROJECT MODULES/--*/*.scss'])
+gulp.task('concat-modules-and-mixes', function () {
+    gulp.src(['dev/MODULES/MENUS/--*/*.scss', 'dev/MODULES/PROJECT MODULES/--*/*.scss'])
         .pipe(concat('_modules.scss'))
         .pipe(gulp.dest('dev/MODULES/'));
     gulp.src(['dev/MIXES/**/_style.scss'])
@@ -390,9 +386,7 @@ gulp.task('concat-modules-and-mixes', function() {
 });
 
 
-
-
-gulp.task('concat-elements', function() {
+gulp.task('concat-elements', function () {
 
     gulp.src('dev/ELEMENTS/*/--*/*.scss')
         .pipe(concat('_elements.scss'))
@@ -402,7 +396,7 @@ gulp.task('concat-elements', function() {
         .pipe(gulp.dest('dev/ELEMENTS/'));
 });
 
-gulp.task('concat-elements-pug', function() {
+gulp.task('concat-elements-pug', function () {
 
 
     gulp.src('dev/ELEMENTS/*/--*/*.pug')
@@ -410,7 +404,7 @@ gulp.task('concat-elements-pug', function() {
         .pipe(gulp.dest('dev/ELEMENTS/'));
 });
 
-gulp.task('concat-elements-scss', function() {
+gulp.task('concat-elements-scss', function () {
 
 
     gulp.src('dev/ELEMENTS/*/--*/*.scss')
@@ -418,22 +412,22 @@ gulp.task('concat-elements-scss', function() {
         .pipe(gulp.dest('dev/ELEMENTS/'));
 });
 
-gulp.task('concat-pages-scss', function() {
+gulp.task('concat-pages-scss', function () {
 
 
-    gulp.src(['dev/scss/PAGES/*.scss','!dev/scss/PAGES/off_*.scss','!dev/scss/PAGES/_pages.scss'])
+    gulp.src(['dev/scss/PAGES/*.scss', '!dev/scss/PAGES/off_*.scss', '!dev/scss/PAGES/_pages.scss'])
         .pipe(concat('_pages.scss'))
         .pipe(gulp.dest('dev/scss/PAGES/'));
 });
 
-gulp.task('concat-mixes-pug', function() {
+gulp.task('concat-mixes-pug', function () {
 
     gulp.src(['dev/MIXES/**/_mixin.pug'])
         .pipe(concat('_mixes.pug'))
         .pipe(gulp.dest('dev/MIXES/'));
 });
 
-gulp.task('concat-mixes-scss', function() {
+gulp.task('concat-mixes-scss', function () {
 
 
     gulp.src('dev/MIXES/**/_style.scss')
@@ -442,7 +436,7 @@ gulp.task('concat-mixes-scss', function() {
 });
 
 
-gulp.task('concat-modules-scss', function() {
+gulp.task('concat-modules-scss', function () {
 
 
     gulp.src('dev/MODULES/*/--*/*.scss')
@@ -451,21 +445,15 @@ gulp.task('concat-modules-scss', function() {
 
 });
 
-gulp.task('concat-modules-pug', function(done) {
+gulp.task('concat-modules-pug', function (done) {
 
 
     gulp.src('dev/MODULES/*/--*/_mixin.pug')
         .pipe(concat('_modules.pug'))
         .pipe(gulp.dest('dev/MODULES/'));
-        done();
+    done();
 
 });
-
-
-
-
-
-
 
 
 var buildmodulesData = {
@@ -488,97 +476,95 @@ var elemType = minimist(process.argv.slice(2), type);
 var elementName = minimist(process.argv.slice(2), buildmodulesData);
 var elemExtend = minimist(process.argv.slice(2), extend);
 
-gulp.task('be', function() {
+gulp.task('be', function () {
 
 
-    var dir = elemType.type.toUpperCase()+'S';
+    var dir = elemType.type.toUpperCase() + 'S';
     var elemName = elementName.name;
     var elemData = {
-            elementName: elemName,
-            dir : dir
+        elementName: elemName,
+        dir: dir
+    }
+
+    if (!fs.existsSync('dev/ELEMENTS/' + dir + '/--' + elemName)) {
+
+
+        var elemTemplates = fs.readdirSync('vendor/file_templates/ELEMENTS/' + dir + '/_templates/');
+
+        if (elemExtend.extend) {
+
+            elemData.extend = elemExtend.extend;
+            elemName += '( ' + elemExtend.extend + ' )';
+
+
         }
 
-        if (!fs.existsSync('dev/ELEMENTS/'+dir+'/--'+elemName )) {
+        for (var key in elemTemplates) {
 
+            var file = elemTemplates[key].slice(1, -4);
 
-            var elemTemplates = fs.readdirSync('vendor/file_templates/ELEMENTS/'+dir+'/_templates/');
+            if (elemExtend.extend && file == 'extend.scss') {
 
-            if (elemExtend.extend){
-
-                elemData.extend = elemExtend.extend;
-                elemName +='( '+elemExtend.extend+' )';
-
-
+                file = 'style.scss'
             }
 
-            for (var key in elemTemplates) {
-
-                var file =  elemTemplates[key].slice(1,-4);
-
-                if (elemExtend.extend && file =='extend.scss'){
-
-                    file = 'style.scss'
-                }
-
-                else if (elemExtend.extend && file =='style.scss'){
-                    continue;
-                }else if (!elemExtend.extend && file =='extend.scss'){
-                    continue;
-                }
-                if (file == 'elementScript.js') file = elemName+'.js';
-
-                    gulp.src('vendor/file_templates/ELEMENTS/'+dir+'/_templates/'+elemTemplates[key])
-                        .pipe(rename(file))
-                        .pipe(template(elemData))
-                        .pipe(gulp.dest('dev/ELEMENTS/'+dir+'/--'+elemName+'/'))
-
-
-
+            else if (elemExtend.extend && file == 'style.scss') {
+                continue;
+            } else if (!elemExtend.extend && file == 'extend.scss') {
+                continue;
             }
+            if (file == 'elementScript.js') file = elemName + '.js';
 
-            qM.ok('Element added!');
-        }else qM.err('THIS ELEMENT ALREADY EXIST!');
-
-    });
-
-gulp.task('bm', function() {
-
-    if (!fs.existsSync('dev/MODULES/PROJECT MODULES/--'+options.name)) {
+            gulp.src('vendor/file_templates/ELEMENTS/' + dir + '/_templates/' + elemTemplates[key])
+                .pipe(rename(file))
+                .pipe(template(elemData))
+                .pipe(gulp.dest('dev/ELEMENTS/' + dir + '/--' + elemName + '/'))
 
 
-        var moduleName = options.name,
-         elemData = {
-            moduleName: moduleName
-        },
+        }
 
-            moduleTemplates = fs.readdirSync('vendor/file_templates/MODULES/_templates/');
-        try{
-            for (var key in moduleTemplates) {
-
-                var file =  moduleTemplates[key].slice(1,-4);
-                if( file == 'moduleScript.js' ) file = moduleName+'.js';
-
-                gulp.src('vendor/file_templates/MODULES/_templates/'+moduleTemplates[key])
-                    .pipe(rename(file))
-                    .pipe(template(elemData))
-                    .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+moduleName+'/'))
-            }
-        }catch(e){
-
-            qM.err(e.name+' '+e.message);
-
-        }qM.ok('Module added!');
-
-
-
-
-    }else qM.err('THIS MODULE ALREADY EXIST!');
+        qM.ok('Element added!');
+    } else qM.err('THIS ELEMENT ALREADY EXIST!');
 
 });
 
-gulp.task('bs', function() {
+gulp.task('bm', function () {
 
-    if (!fs.existsSync('dev/SCRIPTS/SCRIPTS/--'+options.name)) {
+    if (!fs.existsSync('dev/MODULES/PROJECT MODULES/--' + options.name)) {
+
+
+        var moduleName = options.name,
+            elemData = {
+                moduleName: moduleName
+            },
+
+            moduleTemplates = fs.readdirSync('vendor/file_templates/MODULES/_templates/');
+        try {
+            for (var key in moduleTemplates) {
+
+                var file = moduleTemplates[key].slice(1, -4);
+                if (file == 'moduleScript.js') file = moduleName + '.js';
+
+                gulp.src('vendor/file_templates/MODULES/_templates/' + moduleTemplates[key])
+                    .pipe(rename(file))
+                    .pipe(template(elemData))
+                    .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--' + moduleName + '/'))
+            }
+        } catch (e) {
+
+            qM.err(e.name + ' ' + e.message);
+
+        }
+        qM.ok('Module added!');
+
+
+    } else qM.err('THIS MODULE ALREADY EXIST!');
+
+});
+
+gulp.task('bs', function () {
+
+    if (!fs.existsSync('dev/SCRIPTS/SCRIPTS/--' + options.name)) {
 
 
         var scrName = options.name,
@@ -587,34 +573,33 @@ gulp.task('bs', function() {
             },
 
             templates = fs.readdirSync('vendor/file_templates/SCRIPTS/_templates/');
-        try{
+        try {
             for (var key in templates) {
 
-                var file =  templates[key].slice(1,-4);
+                var file = templates[key].slice(1, -4);
 
-                if( file == 'template.js' ) file = scrName+'.js';
+                if (file == 'template.js') file = scrName + '.js';
 
-                gulp.src('vendor/file_templates/SCRIPTS/_templates/'+templates[key])
+                gulp.src('vendor/file_templates/SCRIPTS/_templates/' + templates[key])
                     .pipe(rename(file))
                     .pipe(template(elemData))
-                    .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/--'+scrName+'/'))
+                    .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/--' + scrName + '/'))
             }
-        }catch(e){
+        } catch (e) {
 
-            qM.err(e.name+' '+e.message);
+            qM.err(e.name + ' ' + e.message);
 
-        }qM.ok('Script added!');
+        }
+        qM.ok('Script added!');
 
 
-
-
-    }else qM.err('THIS SCRIPT ALREADY EXIST!');
+    } else qM.err('THIS SCRIPT ALREADY EXIST!');
 
 });
 
-gulp.task('bmx', function() {
+gulp.task('bmx', function () {
 
-    if (!fs.existsSync('dev/MIXES/'+options.name)) {
+    if (!fs.existsSync('dev/MIXES/' + options.name)) {
 
 
         var scrName = options.name,
@@ -623,32 +608,28 @@ gulp.task('bmx', function() {
             },
 
             templates = fs.readdirSync('dev/MIXES/_templates/');
-        try{
+        try {
             for (var key in templates) {
 
-                var file =  templates[key].slice(1,-4);
+                var file = templates[key].slice(1, -4);
 
 
-
-                gulp.src('dev/MIXES/_templates/'+templates[key])
+                gulp.src('dev/MIXES/_templates/' + templates[key])
                     .pipe(rename(file))
                     .pipe(template(elemData))
-                    .pipe(gulp.dest('dev/MIXES/'+scrName+'/'))
+                    .pipe(gulp.dest('dev/MIXES/' + scrName + '/'))
             }
-        }catch(e){
+        } catch (e) {
 
-            qM.err(e.name+' '+e.message);
+            qM.err(e.name + ' ' + e.message);
 
-        }qM.ok('MIX added!');
+        }
+        qM.ok('MIX added!');
 
 
-
-
-    }else qM.err('THIS MIX ALREADY EXIST!');
+    } else qM.err('THIS MIX ALREADY EXIST!');
 
 });
-
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -656,109 +637,111 @@ gulp.task('bmx', function() {
 
 var alredyCompile = false;
 gulp.task('styles', function () {
-    if (!alredyCompile){
+    if (!alredyCompile) {
         alredyCompile = true;
         gulp.src('dev/scss/main.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass.sync().on('error', sass.logError))
-        .pipe(sourcemaps.write('maps/'))
-        .pipe(gulp.dest(dist))
-        .pipe(gulp.dest('blueprint'))
-        .pipe(gulp.dest('projectboard'));
+            .pipe(sourcemaps.init())
+            .pipe(sass.sync().on('error', sass.logError))
+            .pipe(sourcemaps.write('maps/'))
+            .pipe(gulp.dest(dist))
+            .pipe(gulp.dest('blueprint'))
+            .pipe(gulp.dest('projectboard'));
 
         gulp.src('dev/scss/MASTER_OPTIONS/*.scss')
-        .pipe(sassJson())
-        .pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
+            .pipe(sassJson())
+            .pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
         alredyCompile = false;
+
 
     }
 
 });
 gulp.task('throw-main-css', function () {
-    gulp.src(dist+'/main.css')
+    gulp.src(dist + '/main.css')
         .pipe(gulp.dest('blueprint'));
 });
-gulp.task('browser-reload',  function() {
+gulp.task('browser-reload', function () {
     browserSync.reload
 
 });
 var htmlhint = require("gulp-htmlhint");
 gulp.task('validw3c', function () {
-    gulp.src(dist+'/index.php.html')
+    gulp.src(dist + '/index.php.html')
         .pipe(htmlv({format: 'html'}))
-        .pipe(gulp.dest(dist+'/1/'));
+        .pipe(gulp.dest(dist + '/1/'));
 });
 //////////////////// WORDPRESS
-gulp.task('makeWP_DRAFT', function() {
-         gulp.src(['integrator/WordPress/style.css',dist+'/main.css'])
+gulp.task('makeWP_DRAFT', function () {
+    gulp.src(['integrator/WordPress/style.css', dist + '/main.css'])
         .pipe(concat('style.css'))
         .pipe(gulp.dest('integrator/WordPress/DRAFT/'));
-         gulp.src(['integrator/WordPress/header.php',dist+'/splits/header.html'])
+    gulp.src(['integrator/WordPress/header.php', dist + '/splits/header.html'])
         .pipe(concat('header.php'))
         .pipe(gulp.dest('integrator/WordPress/DRAFT'));
-         gulp.src(['integrator/WordPress/footer.php',dist+'/splits/footer.html'])
+    gulp.src(['integrator/WordPress/footer.php', dist + '/splits/footer.html'])
         .pipe(concat('footer.php'))
         .pipe(gulp.dest('integrator/WordPress/DRAFT'));
-         gulp.src(['integrator/WordPress/index.php',dist+'/splits/index.html'])
+    gulp.src(['integrator/WordPress/index.php', dist + '/splits/index.html'])
         .pipe(concat('index.php'))
         .pipe(gulp.dest('integrator/WordPress/DRAFT'));
-         gulp.src([dist+'/images/*',dist+'/images_rs/*'])
+    gulp.src([dist + '/images/*', dist + '/images_rs/*'])
         .pipe(gulp.dest('integrator/WordPress/DRAFT/images/'));
 ////////////////////////
-    for(var index in data.pages) {
+    for (var index in data.pages) {
         var attr = data.pages[index];
-        if (attr.slug !=='index' && !attr.shop==true)
-             gulp.src(['integrator/WordPress/page.php',dist+'/splits/'+attr.slug+'.html'])
-            .pipe(concat('page-'+attr.slug+'.php'))
-            .pipe(gulp.dest('integrator/WordPress/DRAFT'));
-        else if(attr.shop==true){
-            gulp.src(['integrator/WordPress/wc shop/LOOP/archive-product.php',dist+'/splits/production.html'])
-            .pipe(concat('archive-product.php'))
-            .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
+        if (attr.slug !== 'index' && !attr.shop == true)
+            gulp.src(['integrator/WordPress/page.php', dist + '/splits/' + attr.slug + '.html'])
+                .pipe(concat('page-' + attr.slug + '.php'))
+                .pipe(gulp.dest('integrator/WordPress/DRAFT'));
+        else if (attr.shop == true) {
+            gulp.src(['integrator/WordPress/wc shop/LOOP/archive-product.php', dist + '/splits/production.html'])
+                .pipe(concat('archive-product.php'))
+                .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
 
-            gulp.src(['integrator/WordPress/wc shop/LOOP/single-product.php',dist+'/splits/product.html'])
-            .pipe(concat('single-product.php'))
-            .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
+            gulp.src(['integrator/WordPress/wc shop/LOOP/single-product.php', dist + '/splits/product.html'])
+                .pipe(concat('single-product.php'))
+                .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
 
-            gulp.src(['integrator/WordPress/wc shop/CONTENT/content-single-product.php',dist+'/splits/product.html'])
-            .pipe(concat('content-single-product.php'))
-            .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
+            gulp.src(['integrator/WordPress/wc shop/CONTENT/content-single-product.php', dist + '/splits/product.html'])
+                .pipe(concat('content-single-product.php'))
+                .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
 
-            gulp.src(['integrator/WordPress/wc shop/CONTENT/content-product.php',dist+'/splits/category.html'])
-            .pipe(concat('content-product.php'))
-            .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
+            gulp.src(['integrator/WordPress/wc shop/CONTENT/content-product.php', dist + '/splits/category.html'])
+                .pipe(concat('content-product.php'))
+                .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
 
-            gulp.src(['integrator/WordPress/wc shop/CONTENT/content-product_cat.php',dist+'/splits/production.html'])
-            .pipe(concat('content-product_cat.php'))
-            .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));}
+            gulp.src(['integrator/WordPress/wc shop/CONTENT/content-product_cat.php', dist + '/splits/production.html'])
+                .pipe(concat('content-product_cat.php'))
+                .pipe(gulp.dest('integrator/WordPress/DRAFT/woocommerce/'));
+        }
 
     }
     //////////////////////////////
 
 });
-gulp.task('splitter', function() {
-    gulp.src(dist+'/*.html')
+gulp.task('splitter', function () {
+    gulp.src(dist + '/*.html')
         .pipe(htmlsplit())
-        .pipe(gulp.dest(dist+'/splits/'));
+        .pipe(gulp.dest(dist + '/splits/'));
 })
 
 /////////////////////////COMPONENTS BLUEPRINT
-gulp.task('blueprint-wright-json', [], function() {
-    if(distoptions.izolate){
+gulp.task('blueprint-wright-json', [], function () {
+    if (distoptions.izolate) {
         var izolate = ',\n"izolate":"true"';
 
-    } else var izolate =',\n"izolate":"false"';
-    var str = '{"blueprint" : "'+options.name+'"'+izolate+'}';
+    } else var izolate = ',\n"izolate":"false"';
+    var str = '{"blueprint" : "' + options.name + '"' + izolate + '}';
     file('blueprint.json', str)
         .pipe(gulp.dest('blueprint/'));
 });
 
-gulp.task('merge-json', [], function() {
-    gulp.src(['dev/**/*.json','blueprint/*.json'])
+gulp.task('merge-json', [], function () {
+    gulp.src(['dev/**/*.json', 'blueprint/*.json'])
         .pipe(merge('data.json'))
         .pipe(gulp.dest('./'));
 });
-gulp.task('compile-blueprint-view-start',[],function () {
+gulp.task('compile-blueprint-view-start', [], function () {
     data.blueprint = options.name;
     gulp.src('blueprint/*.pug')
         .pipe(pug({
@@ -766,7 +749,7 @@ gulp.task('compile-blueprint-view-start',[],function () {
             pretty: true,
         })).pipe(gulp.dest('blueprint/'));
 })
-gulp.task('compile-blueprint-view',[],function () {
+gulp.task('compile-blueprint-view', [], function () {
     var obj = JSON.parse(fs.readFileSync('data.json', 'utf8'));
     gulp.src('blueprint/*.pug')
         .pipe(pug({
@@ -774,22 +757,21 @@ gulp.task('compile-blueprint-view',[],function () {
             pretty: true,
         })).pipe(gulp.dest('blueprint/'));
 })
-gulp.task('compile-blueprint-sass',[],function () {
-        gulp.src('blueprint/_blueprint.scss')
+gulp.task('compile-blueprint-sass', [], function () {
+    gulp.src('blueprint/_blueprint.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('blueprint/'));
-    if(distoptions.izolate){
-        gulp.src('dev/MODULES/PROJECT MODULES/--'+data.blueprint+'/_starter.scss')
+    if (distoptions.izolate) {
+        gulp.src('dev/MODULES/PROJECT MODULES/--' + data.blueprint + '/_starter.scss')
             .pipe(sass.sync().on('error', sass.logError))
             .pipe(gulp.dest('blueprint/'));
 
     }
 
 
-
 })
 
-gulp.task('start-blueprint-server',[],function () {
+gulp.task('start-blueprint-server', [], function () {
     var browserSyncComponent = require('browser-sync').create();
 
     browserSyncComponent.init({
@@ -802,12 +784,10 @@ gulp.task('start-blueprint-server',[],function () {
 })
 
 
-
-
-gulp.task('bp', [], function() {
+gulp.task('bp', [], function () {
 
     runSequence('blueprint-wright-json',
-        ['merge-json', 'compile-blueprint-view-start','compile-blueprint-sass'],
+        ['merge-json', 'compile-blueprint-view-start', 'compile-blueprint-sass'],
         'start-blueprint-server');
 
 });
@@ -821,7 +801,7 @@ gulp.task('buildblueprint', function buildHTML() {
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('blueprint/'));
 });
-gulp.task('mergeJson',function () {
+gulp.task('mergeJson', function () {
     return gulp.src([
         'dev/{MODULES,ELEMENTS,SCRIPTS}/**/--*/*.json',
         'dev/template/**/*.json',
@@ -835,16 +815,16 @@ gulp.task('mergeJson',function () {
 
 })
 gulp.task('cleanMainCss', function () {
-    return gulp.src(dist+'/main.css', {read: false})
+    return gulp.src(dist + '/main.css', {read: false})
         .pipe(clean());
 });
 
 gulp.task('split-css', function () {
-    return gulp.src(dist+'/main.css')
+    return gulp.src(dist + '/main.css')
         .pipe(uncss({
-            html: [dist+'/**/*.html']
+            html: [dist + '/**/*.html']
         }))
-        .pipe(gulp.dest(dist+'/'));
+        .pipe(gulp.dest(dist + '/'));
 });
 var distData = {
     boolean: 'izolate',
@@ -852,29 +832,31 @@ var distData = {
 };
 var distoptions = minimist(process.argv.slice(2), distData);
 
-gulp.task('tests',[], function () {
-    if(distoptions.izolate){
+gulp.task('tests', [], function () {
+        if (distoptions.izolate) {
             console.log('hello')
-        }else{console.log('by by')}
+        } else {
+            console.log('by by')
+        }
     }
 )
 
-gulp.task(dist+'-module',[], function () {
-    var str ="include ../../../template/PAGESYSTEM/INCLUDES/_includes\n";
-        gulp.src('dev/MODULES/PROJECT MODULES/--'+options.name+'/_include.pug').pipe(insert.prepend(str))
+gulp.task(dist + '-module', [], function () {
+    var str = "include ../../../template/PAGESYSTEM/INCLUDES/_includes\n";
+    gulp.src('dev/MODULES/PROJECT MODULES/--' + options.name + '/_include.pug').pipe(insert.prepend(str))
         .pipe(pug({
             data: data,
             pretty: true,
-        })).pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/DIST/'));
-        var dest = 'dev/MODULES/PROJECT MODULES/--'+options.name+'/DIST/_include.html'
-        gulp.src(dist+'/main.css')
+        })).pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--' + options.name + '/DIST/'));
+    var dest = 'dev/MODULES/PROJECT MODULES/--' + options.name + '/DIST/_include.html'
+    gulp.src(dist + '/main.css')
         .pipe(uncss({
             html: [dest]
         }))
-        .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--'+options.name+'/DIST/'));
+        .pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--' + options.name + '/DIST/'));
 
 });
-gulp.task('testizmodul',[], function () {
+gulp.task('testizmodul', [], function () {
     gulp.src('dev/MODULES/PROJECT MODULES/--pagination/_starter.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('blueprint/starter.css'));
@@ -902,100 +884,129 @@ var resOptionH = minimist(process.argv.slice(2), resH);
 var resOptionTo = minimist(process.argv.slice(2), cropTo);
 var resOptionPref = minimist(process.argv.slice(2), imgPref);
 var imageQ = 0;
-gulp.task('crop', [], function() {
-    var gravity='';
-    switch (resOptionTo.to){
-        case 'N': gravity = 'North';
+gulp.task('crop', [], function () {
+    var gravity = '';
+    switch (resOptionTo.to) {
+        case 'N':
+            gravity = 'North';
             break;
-        case 'NE': gravity = 'NorthEast';
+        case 'NE':
+            gravity = 'NorthEast';
             break;
-        case 'E': gravity = 'East';
+        case 'E':
+            gravity = 'East';
             break;
-        case 'SE': gravity = 'SouthEast';
+        case 'SE':
+            gravity = 'SouthEast';
             break;
-        case 'S': gravity = 'South';
+        case 'S':
+            gravity = 'South';
             break;
-        case 'SW': gravity = 'SouthWest';
+        case 'SW':
+            gravity = 'SouthWest';
             break;
-        case 'W': gravity = 'West';
+        case 'W':
+            gravity = 'West';
             break;
-        case 'NW': gravity = 'NorthWest';
+        case 'NW':
+            gravity = 'NorthWest';
             break;
-        default: gravity = 'Centr';
+        default:
+            gravity = 'Centr';
     }
     console.log(gravity)
-    if(!resOptionW.w){
-        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function(stream, file){
+    if (!resOptionW.w) {
+        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function (stream, file) {
             imageQ++;
             return stream
                 .pipe(rename(function (path) {
-                    if (resOptionPref.prefix){path.basename =resOptionPref.prefix+'-'+imageQ;}
-                    else{path.basename +='-auto_X_'+resOptionH.hi; }}))
+                    if (resOptionPref.prefix) {
+                        path.basename = resOptionPref.prefix + '-' + imageQ;
+                    }
+                    else {
+                        path.basename += '-auto_X_' + resOptionH.hi;
+                    }
+                }))
         }))
             .pipe(imageResize({
-                gravity : gravity,
-                height : resOptionH.hi,
-                crop : true,
-                upscale : false
-            })).pipe(gulp.dest(dist+'/irs'));
-    }else{
-        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function(stream, file){
+                gravity: gravity,
+                height: resOptionH.hi,
+                crop: true,
+                upscale: false
+            })).pipe(gulp.dest(dist + '/irs'));
+    } else {
+        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function (stream, file) {
             imageQ++;
             return stream
                 .pipe(rename(function (path) {
-                    if (resOptionPref.prefix){path.basename =resOptionPref.prefix+'-'+imageQ;}
-                    else{path.basename +=resOptionW.w+'_X_'+resOptionH.hi; }}))
+                    if (resOptionPref.prefix) {
+                        path.basename = resOptionPref.prefix + '-' + imageQ;
+                    }
+                    else {
+                        path.basename += resOptionW.w + '_X_' + resOptionH.hi;
+                    }
+                }))
 
         }))
             .pipe(imageResize({
-                gravity : gravity,
-                width : resOptionW.w,
-                height : resOptionH.hi,
-                crop : true,
-                upscale : false
-            })).pipe(gulp.dest(dist+'/irs'));
+                gravity: gravity,
+                width: resOptionW.w,
+                height: resOptionH.hi,
+                crop: true,
+                upscale: false
+            })).pipe(gulp.dest(dist + '/irs'));
     }
 
 
 });
 
-gulp.task('scale', [], function() {
+gulp.task('scale', [], function () {
 
-    if(!resOptionW.w){
-        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function(stream, file){
+    if (!resOptionW.w) {
+        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function (stream, file) {
             imageQ++;
             return stream
                 .pipe(rename(function (path) {
-                    if (resOptionPref.prefix){path.basename =resOptionPref.prefix+= '-'+imageQ;}
-                    else{path.basename +='-autoX_'+resOptionH.hi; }}))
+                    if (resOptionPref.prefix) {
+                        path.basename = resOptionPref.prefix += '-' + imageQ;
+                    }
+                    else {
+                        path.basename += '-autoX_' + resOptionH.hi;
+                    }
+                }))
 
         }))
             .pipe(imageResize({
-                height : resOptionH.hi,
-                crop : false,
-                upscale : true
-            })).pipe(gulp.dest(dist+'/irs'));
-    }else{
-        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function(stream, file){
+                height: resOptionH.hi,
+                crop: false,
+                upscale: true
+            })).pipe(gulp.dest(dist + '/irs'));
+    } else {
+        gulp.src('dev/SOURCE FABRIC/HALL/*').pipe(foreach(function (stream, file) {
             imageQ++;
 
             return stream
                 .pipe(rename(function (path) {
-                    if (resOptionPref.prefix){path.basename =resOptionPref.prefix+= '-'+imageQ;}
-                    else{path.basename+='-'+resOptionW.w+'_X_auto' }}))
+                    if (resOptionPref.prefix) {
+                        path.basename = resOptionPref.prefix += '-' + imageQ;
+                    }
+                    else {
+                        path.basename += '-' + resOptionW.w + '_X_auto'
+                    }
+                }))
 
         }))
             .pipe(imageResize({
-                width : resOptionW.w,
-                height : resOptionH.hi,
-                crop : false,
-                upscale : true
-            })).pipe(gulp.dest(dist+'/irs'));
+                width: resOptionW.w,
+                height: resOptionH.hi,
+                crop: false,
+                upscale: true
+            })).pipe(gulp.dest(dist + '/irs'));
     }
 
 
 });
-gulp.task('pb',[],function () {
+gulp.task('pb', [], function () {
     var browserSyncPb = require('browser-sync').create();
 
     browserSyncPb.init({
@@ -1010,45 +1021,47 @@ gulp.task('pb',[],function () {
 
 
 gulp.task('convertfonts', function () {
-        gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/**/*.{ttf,otf}', {read: false})
+    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/**/*.{ttf,otf}', {read: false})
         .pipe(shell([
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.svg',
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.woff',
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.woff2',
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.eot',
-            'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.ttf'
+                'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.svg',
+                'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.woff',
+                'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.woff2',
+                'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.eot',
+                'fontforge -script dev/SOURCE_FABRIC/FONT_LAB/SOURCE/script.pe <%= file.path %> dist/fonts/<%= f(file.path) %>.ttf'
 
 
             ],
             {
-            templateData: {
-                f: function (s) {
-                    var name = path.basename(s, path.extname(s));
+                templateData: {
+                    f: function (s) {
+                        var name = path.basename(s, path.extname(s));
 
 
-                    return name
+                        return name
+                    }
                 }
-            }
-        })
+            })
         )
 })
 gulp.task('fontvars', function () {
     gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/*.scss', {read: false})
         .pipe(clean());
 
-    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/**/*.{ttf,otf}').pipe(foreach(function(stream, file){
+    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/**/*.{ttf,otf}').pipe(foreach(function (stream, file) {
 
         var name = path.basename(file.path, path.extname(file.path));
         var dirs = file.path.split('\\')
         var i = dirs.length;
-        var stl = dirs[i-2];
-        var weight = dirs[i-3];
-        var family = dirs[i-4];
-        var role  = dirs[i-5];
-        console.log(!fs.existsSync('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_'+role+'.scss'));
-        if(!fs.existsSync('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_'+role+'.scss')){fs.closeSync(fs.openSync('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_'+role+'.scss', 'w'));}
-        var str ="'"+name+"':('"+role+"','"+family+"','"+name+"',"+stl+","+weight+"),\n\t";
-        gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_'+role+'.scss').pipe(insert.append(str)).pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/'));
+        var stl = dirs[i - 2];
+        var weight = dirs[i - 3];
+        var family = dirs[i - 4];
+        var role = dirs[i - 5];
+        console.log(!fs.existsSync('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_' + role + '.scss'));
+        if (!fs.existsSync('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_' + role + '.scss')) {
+            fs.closeSync(fs.openSync('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_' + role + '.scss', 'w'));
+        }
+        var str = "'" + name + "':('" + role + "','" + family + "','" + name + "'," + stl + "," + weight + "),\n\t";
+        gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_' + role + '.scss').pipe(insert.append(str)).pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/'));
         return stream
     }))
 })
@@ -1061,45 +1074,44 @@ var fr = {
 var fontrole = minimist(process.argv.slice(2), fr);
 
 gulp.task('regfont', function () {
-    if (!fs.existsSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role)) fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role);
-    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name);
-        fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Bold');
-            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Bold/italic');
-            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Bold/normal');
-        fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Light');
-            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Light/italic');
-            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Light/normal');
-        fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Normal');
-            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Normal/italic');
-            fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/'+fontrole.role+'/'+options.name+'/Normal/normal');
+    if (!fs.existsSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role)) fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role);
+    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role + '/' + options.name);
+    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role + '/' + options.name + '/Bold');
+    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role + '/' + options.name + '/Bold/italic');
+    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role + '/' + options.name + '/Bold/normal');
+    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role + '/' + options.name + '/Light');
+    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role + '/' + options.name + '/Light/italic');
+    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role + '/' + options.name + '/Light/normal');
+    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role + '/' + options.name + '/Normal');
+    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role + '/' + options.name + '/Normal/italic');
+    fs.mkdirSync('dev/SOURCE_FABRIC/FONT_LAB/SOURCE/' + fontrole.role + '/' + options.name + '/Normal/normal');
 })
 gulp.task('wrapfontVars', function () {
-    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/*.scss').pipe(foreach(function(stream, file){
-        var name = (path.basename(file.path, path.extname(file.path))).slice(1,(path.basename(file.path, path.extname(file.path))).length);
+    gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/*.scss').pipe(foreach(function (stream, file) {
+        var name = (path.basename(file.path, path.extname(file.path))).slice(1, (path.basename(file.path, path.extname(file.path))).length);
         console.log(name);
-        gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_'+name+'.scss').pipe(insert.wrap("'"+name+"':(", "),")).pipe(gulp.dest("dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/"));
+        gulp.src('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/_' + name + '.scss').pipe(insert.wrap("'" + name + "':(", "),")).pipe(gulp.dest("dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/"));
         return stream;
     }))
 
 });
 
 
-
 gulp.task('concatVars', function () {
     gulp.src(['dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/*.scss'])
-        .pipe(concat({ path: 'variables.scss', stat: { mode: 0666 }}))
+        .pipe(concat({path: 'variables.scss', stat: {mode: 0666}}))
         .pipe(insert.wrap('$FONTS:(', ');')).pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/'))
         .pipe(gulp.dest('dev/SOURCE_FABRIC/FONT_LAB/FONT_FACE/VARIABLES/'));
 });
-gulp.task('buildfonts', function() {
+gulp.task('buildfonts', function () {
 
 
     runSequence(
-        'convertfonts','fontvars'
-                );
+        'convertfonts', 'fontvars'
+    );
 
 });
-gulp.task('buildfonts2', function() {
+gulp.task('buildfonts2', function () {
 
 
     runSequence(
@@ -1110,28 +1122,27 @@ gulp.task('buildfonts2', function() {
 
 //SASS VARIABLES TO JSON
 gulp.task('sass-json', function () {
-return gulp
-    .src('dev/scss/MASTER_OPTIONS/*.scss')
-    .pipe(sassJson())
-    .pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
+    return gulp
+        .src('dev/scss/MASTER_OPTIONS/*.scss')
+        .pipe(sassJson())
+        .pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
 });
 
 
-
 ////////////////////////////////////////////////////
-gulp.task('bsold',[], function () {
+gulp.task('bsold', [], function () {
     var elemData = {
         name: options.name
     }
     gulp.src('dev/SCRIPTS/SCRIPTS/_template.json.tpl')
         .pipe(rename('libs.json'))
         .pipe(template(elemData))
-        .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/'+options.name+'/'));
+        .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/' + options.name + '/'));
 
     gulp.src('dev/SCRIPTS/SCRIPTS/_template.js.tpl')
-        .pipe(rename(options.name+'.js'))
+        .pipe(rename(options.name + '.js'))
         .pipe(template(elemData))
-        .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/'+options.name+'/'));
+        .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/' + options.name + '/'));
 });
 
 gulp.task('svgstore', function () {
@@ -1149,7 +1160,7 @@ gulp.task('svgstore', function () {
             }
         }))
         .pipe(svgstore())
-        .pipe(gulp.dest(dist+'/icons/'));
+        .pipe(gulp.dest(dist + '/icons/'));
 });
 gulp.task('svgstore-debug', function () {
     return gulp
@@ -1170,26 +1181,26 @@ gulp.task('svgstore-debug', function () {
 });
 
 //////////////////////////////////////////////////////
-gulp.task('START QUANT', function(){
-    runSequence('WATCHER:NEW', 'SERVER')
+gulp.task('START QUANT', function () {
+    runSequence('WATCHER:NEW', 'SERVER','WATCHCSSTOPARSEIT')
 });
 
 
 /////UTILITIES
-gulp.task('u-h2p', function() {
+gulp.task('u-h2p', function () {
     // Backend locales
     return gulp.src('utilities/htmlToPug/inderx.html')
         .pipe(html2pug())
         .pipe(gulp.dest('utilities/htmlToPug/pr'));
 });
 gulp.task('deploycss', function () {
-    return gulp.src(dist+'/main.css')
+    return gulp.src(dist + '/main.css')
         .pipe(rename('template_styles.css'))
         .pipe(sftp({
             host: 'ove-cfo.ru',
             user: 'podpolkovnyk',
             pass: 'xM9KsjsJ',
-            remotePath:'/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/template/mobile'
+            remotePath: '/var/www/podpolkovnyk/data/www/ove-cfo.ru/bitrix/template/mobile'
         }));
 });
 
@@ -1197,18 +1208,18 @@ gulp.task('deploycss', function () {
 
 var fontName = 'Icons';
 
-gulp.task('iconfont', function(){
+gulp.task('iconfont', function () {
     gulp.src(['dev/SOURCE_FABRIC/ICONFONT/*.svg'])
         .pipe(iconfontCss({
             fontName: fontName,
-            path:'dev/scss/_iconFont.tmp',
+            path: 'dev/scss/_iconFont.tmp',
             targetPath: '../scss/_iconFont.scss',
             fontPath: 'fonts/icons/'
         }))
         .pipe(iconfont({
             fontName: fontName
         }))
-        .pipe(gulp.dest(dist+'/fonts/icons/'));
+        .pipe(gulp.dest(dist + '/fonts/icons/'));
 });
 gulp.task('cache', function (done) {
     return cache.clearAll(done);
@@ -1216,42 +1227,42 @@ gulp.task('cache', function (done) {
 
 gulp.task('[D] DIST FRONT-END', function (done) {
     var dateTime = new Date().toString();
-    gulp.src(dist+'/**/*')
-        .pipe(zip(dist+'_'+dateTime+'.zip'))
+    gulp.src(dist + '/**/*')
+        .pipe(zip(dist + '_' + dateTime + '.zip'))
         .pipe(gulp.dest('../'))
 });
 
 gulp.task('parc', function () {
     var css = require('css');
-    var ast=css.parse(file = fs.readFileSync(dist+'/main.css', "utf8"));
-    fs.writeFileSync("dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js", 'var jsonCss = '+JSON.stringify(ast));
+    var ast = css.parse(file = fs.readFileSync(dist + '/main.css', "utf8"));
+    fs.writeFileSync(dist+"/scripts/quant-debug-JsonCss.js", 'var jsonCss = ' + JSON.stringify(ast));
 
 });
 gulp.task('cocs', function () {
-    gulp.src([ downloadPath+'/*.scss','dev/scss/_draft.scss'])
+    gulp.src([downloadPath + '/*.scss', 'dev/scss/_draft.scss'])
         .pipe(concat('_draft3.scss'))
         .pipe(gulp.dest('dev/scss/'));
 
 });
 gulp.task('cocsWatch', function () {
-    return watch([downloadPath+'/*.inf'], function () {
+    return watch([downloadPath + '/*.inf'], function () {
         gulp.start('shorthand');
     });
 
 });
-gulp.task('scss-lint', function() {
+gulp.task('scss-lint', function () {
     return gulp.src('dev/scss/_draft3.scss')
         .pipe(scsslint({
             'config': 'slint.yml',
         }))
         .pipe(gulp.dest('dev/scss/_draft3e.scss'));
 });
-gulp.task('frep', function() {
-    var patterns= [
+gulp.task('frep', function () {
+    var patterns = [
         {
 
-            pattern:/header\.mainHeader/ig,
-            replacement:'header.mainHeaderoooo'
+            pattern: /header\.mainHeader/ig,
+            replacement: 'header.mainHeaderoooo'
         }
     ];
     gulp.src('dev/scss/_draft3.scss')
@@ -1265,10 +1276,7 @@ gulp.task('css-scss', () => {
 });
 
 
-
-
-
-    gulp.task('readMap', () => {
+gulp.task('readMap', () => {
     var resursPath = '';
     // var dataMap = JSON.parse(fs.readFileSync(dist+'/maps/main.css.map', 'utf8'));//
     // var file = fs.readFileSync(downloadPath+'msg.qnt', "utf8")//
@@ -1279,20 +1287,20 @@ gulp.task('css-scss', () => {
     var line = fileArr[0];
 
     var smc = new sourceMap.SourceMapConsumer(dataMap);
-    var orLine='';
+    var orLine = '';
     smc.eachMapping(function (m) {
 
-        if (m.generatedLine==line && m.generatedColumn==col){
+        if (m.generatedLine == line && m.generatedColumn == col) {
 
-            resursPath  = m.source;
+            resursPath = m.source;
             orLine = m.originalLine;
             console.log(orLine);
-            gulp.src(dist+'/maps/main.css.map', {read: false}).pipe(shell(['/Applications/PhpStorm.app/Contents/MacOS/phpstorm --line '+orLine+' ~/Desktop/QUANT/kit/dev/scss/'+resursPath]))
-            fs.unlinkSync(downloadPath+'msg.qnt', "utf8")
+            gulp.src(dist + '/maps/main.css.map', {read: false}).pipe(shell(['/Applications/PhpStorm.app/Contents/MacOS/phpstorm --line ' + orLine + ' ~/Desktop/QUANT/kit/dev/scss/' + resursPath]))
+            fs.unlinkSync(downloadPath + 'msg.qnt', "utf8")
         }
 
     })
-            return resursPath
+    return resursPath
 
 });
 
@@ -1309,71 +1317,70 @@ gulp.task('API-SERVER', function () {
             'Cache-Control': 'no-cache',
             'Access-Control-Allow-Origin': '*'
         });
-        var srvRes='';
+        var srvRes = '';
 
-        if(req.method=='GET') {
-            var url_parts = url.parse(req.url,true);
+        if (req.method == 'GET') {
+            var url_parts = url.parse(req.url, true);
             console.log(url_parts.query);
-                //GET SOURCE CODE
+            //GET SOURCE CODE
 
-            if (url_parts.query){
+            if (url_parts.query) {
 
 
                 switch (url_parts.query.action) {
 
-                   ///////////////////////////////////////
+                    ///////////////////////////////////////
                     case 'getSourceCode' :
 
-                        if (url_parts.query.line && url_parts.query.col){
-                            var line =url_parts.query.line;
-                            var col =url_parts.query.col;
-                             srvRes = getCssSource(line,col);
+                        if (url_parts.query.line && url_parts.query.col) {
+                            var line = url_parts.query.line;
+                            var col = url_parts.query.col;
+                            srvRes = getCssSource(line, col);
 
                         }
-                    break;
+                        break;
 
                     /////////////////////////////////////
                     case 'html2jade' :
-                       var html = url_parts.query.html;
-                            console.log(html);
-                        html2jade.convertHtml(html, {'donotencode':true,'bodyless':true}, function (err, jade) {
-                         srvRes = jade;
+                        var html = url_parts.query.html;
+                        console.log(html);
+                        html2jade.convertHtml(html, {'donotencode': true, 'bodyless': true}, function (err, jade) {
+                            srvRes = jade;
                         });
-                    break;
+                        break;
 ///////////////////////////////////////////////////////////////////
                     case 'creator' :
-                        var contentType =url_parts.query.element
+                        var contentType = url_parts.query.element
 
-                        switch (contentType){
+                        switch (contentType) {
                             case 'element': {
 
-                                    var name = url_parts.query.title,
-                                        type = url_parts.query.elementType,
-                                        extnds = url_parts.query.elementExtends,
-                                        prnt = url_parts.query.elementParent,
-                                        save = url_parts.query.saveToGlobal;
+                                var name = url_parts.query.title,
+                                    type = url_parts.query.elementType,
+                                    extnds = url_parts.query.elementExtends,
+                                    prnt = url_parts.query.elementParent,
+                                    save = url_parts.query.saveToGlobal;
 
                                 gulp.task('creator', shell.task([
-                                    'gulp be --name '+name+' --type '+type
+                                    'gulp be --name ' + name + ' --type ' + type
                                 ]))
                                 gulp.start('creator')
 
-                                }
-
                             }
+
                         }
-
-
-
                 }
 
-            }else if (req.method=='POST'){
+
+            }
+
+        } else if (req.method == 'POST') {
 
             var body = '';
             req.on('data', function (data) {
                 body += data;
                 body = JSON.parse(body);
-                for(var key in body.save){
+                for (var key in body.save) {
 
                     var type = body.save[key].type
                     var subType = body.save[key].subType
@@ -1382,89 +1389,82 @@ gulp.task('API-SERVER', function () {
                     var properties = body.save[key].properties
                     var pElProps = body.save[key].pElProperties
                     var media = body.save[key].mediaProperties
-                    console.log(projectDevDir+type+'s/'+subType+'s/--'+name+'/'+className+'.scss')
+                    console.log(projectDevDir + type + 's/' + subType + 's/--' + name + '/' + className + '.scss')
 
 
-                    var string = '.'+className+'{';
+                    var string = '.' + className + '{';
 
                     // PROPERTIES
-                    for (key in properties){
+                    for (key in properties) {
 
-                        string+='\n\t'+key.replace('_','-')+':'+properties[key]+';';
+                        string += '\n\t' + key.replace('_', '-') + ':' + properties[key] + ';';
                     }
 
                     // PSEUDO ELEMENTS
-                    for (pseudoSel in pElProps){
+                    for (pseudoSel in pElProps) {
 
-                        string +='\n\t&:'+pseudoSel.replace('_','-')+'{';
-                        for(key in pElProps[pseudoSel]){
-                            string+='\n\t\t'+key.replace('_','-')+':'+pElProps[pseudoSel][key]+';';
+                        string += '\n\t&:' + pseudoSel.replace('_', '-') + '{';
+                        for (key in pElProps[pseudoSel]) {
+                            string += '\n\t\t' + key.replace('_', '-') + ':' + pElProps[pseudoSel][key] + ';';
                         }
-                        string+='\n\t}';
+                        string += '\n\t}';
 
 
                     }
 
                     // MEDIA
 
-                    for (mediaPoint in media){
+                    for (mediaPoint in media) {
 
-                        string +='\n\t@include for-size('+mediaPoint.replace('_','-')+'){';
+                        string += '\n\t@include for-size(' + mediaPoint.replace('_', '-') + '){';
 
-                        for(key in media[mediaPoint].properties){
-                            string+='\n\t\t'+key.replace('_','-')+':'+media[mediaPoint].properties[key]+';';
+                        for (key in media[mediaPoint].properties) {
+                            string += '\n\t\t' + key.replace('_', '-') + ':' + media[mediaPoint].properties[key] + ';';
                         }
 
-                        for (pseudoSel in media[mediaPoint].pElProperties){
+                        for (pseudoSel in media[mediaPoint].pElProperties) {
 
-                            string +='\n\t\t&:'+pseudoSel.replace('_','-')+'{';
-                            for(key in media[mediaPoint].pElProperties[pseudoSel]){
-                                string+='\n\t\t\t'+key.replace('_','-')+':'+media[mediaPoint].pElProperties[pseudoSel][key]+';';
+                            string += '\n\t\t&:' + pseudoSel.replace('_', '-') + '{';
+                            for (key in media[mediaPoint].pElProperties[pseudoSel]) {
+                                string += '\n\t\t\t' + key.replace('_', '-') + ':' + media[mediaPoint].pElProperties[pseudoSel][key] + ';';
                             }
-                            string+='\n\t\t}';
+                            string += '\n\t\t}';
 
 
                         }
-                        string+='\n\t}';
+                        string += '\n\t}';
                     }
 
 
                     //END FILE
-                    string+='\n}';
+                    string += '\n}';
 
                     // WRITE FILE
-                    fs.writeFileSync(projectDevDir+type+'s/'+subType+'/--'+name+'/classes/'+className+'.scss', string);
-
-
+                    fs.writeFileSync(projectDevDir + type + 's/' + subType + '/--' + name + '/classes/' + className + '.scss', string);
 
 
                     // INCLUDE FILES
-                        var clFiles = fs.readdirSync(projectDevDir+type+'s/'+subType+'/--'+name+'/classes/');
+                    var clFiles = fs.readdirSync(projectDevDir + type + 's/' + subType + '/--' + name + '/classes/');
 
-                        string =''
+                    string = ''
 
-                    for (key in clFiles){
+                    for (key in clFiles) {
 
-                            string+='@import "classes/'+clFiles[key]+'";\n'
-                        }
-                        fs.writeFileSync(projectDevDir+type+'s/'+subType+'/--'+name+'/style.scss', string);
+                        string += '@import "classes/' + clFiles[key] + '";\n'
+                    }
+                    fs.writeFileSync(projectDevDir + type + 's/' + subType + '/--' + name + '/style.scss', string);
                     ////////////////////////////////////////////
-
 
 
                 }
             });
         }
 
-            res.end(srvRes);
+        res.end(srvRes);
 
-        }
+    }
 
     http.createServer(accept).listen(8181);
-
-
-
-
 
 
 });
@@ -1480,187 +1480,161 @@ gulp.task('API-SERVER', function () {
 gulp.task('shorthand', shell.task(['/Applications/PhpStorm.app/Contents/MacOS/phpstorm --line 12 ~/Desktop/QUANT/kit/dev/scss/main.css']));
 
 
-
 //////////////////////// SERVER FUNCTIONS
 
-function getCssSource(line,col, noContent ){
+function getCssSource(line, col, noContent) {
     var resursPath = '';
     var pugFileContent = '';
     var jsFileContent = '';
-    var dataMap = JSON.parse(fs.readFileSync(dist+'/maps/main.css.map', 'utf8'));
+    var dataMap = JSON.parse(fs.readFileSync(dist + '/maps/main.css.map', 'utf8'));
     var smc = new sourceMap.SourceMapConsumer(dataMap);
-    var orLine='';
+    var orLine = '';
     smc.eachMapping(function (m) {
-        if (m.generatedLine==line && m.generatedColumn==col){
+        if (m.generatedLine == line && m.generatedColumn == col) {
             console.log((smc.sourceContentFor(m.source)));
-            resursPath  = m.source;
+            resursPath = m.source;
             orLine = m.originalLine;
         }
     })
-    if (noContent){
-        return resursPath+'[^]'+orLine+'[^]';
-    }else {
-        pugFileContent  = fs.readFileSync(projectDevDir+'template/PAGESYSTEM/PAGES/index.pug', "utf8");
-        jsFileContent =   fs.readFileSync('dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js', "utf8")
-        return resursPath+'[^]'+orLine+'[^]'+pugFileContent+'[^]'+jsFileContent
+    if (noContent) {
+        return resursPath + '[^]' + orLine + '[^]';
+    } else {
+        pugFileContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/PAGES/index.pug', "utf8");
+        jsFileContent = fs.readFileSync('dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js', "utf8")
+        return resursPath + '[^]' + orLine + '[^]' + pugFileContent + '[^]' + jsFileContent
 
     }
 
 
 }
-function convertExtScss () {
+function convertExtScss() {
 
-    }
-
-
-    gulp.task('convertExtScss', function () {
+}
 
 
-    // gulp.src('utilities/convertExtScss/*.scss')
-    //     .pipe(rename('external.scss'))
-    //     .pipe(sass.sync().on('error', sass.logError))
-    //     .pipe(gulp.dest('utilities/convertExtScss/css/'));
-    //
-    //
-    //     var ast=css.parse(file = fs.readFileSync('utilities/convertExtScss/css/external.css', "utf8"));
-    //
-    //     for (var ruleIndex in ast.stylesheet.rules){
-    //
-    //        var rule =ast.stylesheet.rules[ruleIndex];
-    //
-    //        var selector = rule.selectors;
-    //
-    //        if (selector.length >1){
-    //            for (var i in rule.selectors){
-    //
-    //            }
-    //        }else {
-    //            var selectorArr = selector.split(' ');
-    //        }
-    //
-    //
-    //
-    //
-    //     }
+gulp.task('convertExtScss', function () {
 
 
-        // Get start position of original
-        var originalFileArr = getCssSource(1845,2,true).split('[^]');
-        var originalFileLine = originalFileArr[1];
-        var originalFilePath = originalFileArr[0];
-        console.log(originalFilePath+'-o-o-o-'+originalFileLine)
+    // Get start position of original and path of file
+    var originalFileArr = getCssSource(1848, 0, true).split('[^]');
+    var originalFileLine = originalFileArr[1];
+    var originalFilePath = originalFileArr[0];
+    console.log(originalFilePath + '-o-o-o-' + originalFileLine)
 
-
-
-
-        var sassAST = require('sass-ast');
-
-       var codeend = sassAST.parse({
-                file: 'dev/scss/'+originalFilePath,
-            },
-            function(err, ast) {
-
-
-                //return an array of objects according to key, value, or key and value matching
-                function getObjects(obj, key, val) {
-                    var objects = [];
-                    for (var i in obj) {
-                        if (!obj.hasOwnProperty(i)) continue;
-                        if (typeof obj[i] == 'object') {
-                            objects = objects.concat(getObjects(obj[i], key, val));
-                        } else
-                        //if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
-                        if (i == key && obj[i] == val || i == key && val == '') { //
+    // Get end of code block
+    var sassAST = require('sass-ast');
+     sassAST.parse({
+            file: 'dev/scss/' + originalFilePath,
+        },
+        function (err, ast) {
+            if (err) throw err;
+            //return an array of objects according to key, value, or key and value matching
+            function getObjects(obj, key, val) {
+                var objects = [];
+                for (var i in obj) {
+                    if (!obj.hasOwnProperty(i)) continue;
+                    if (typeof obj[i] == 'object') {
+                        objects = objects.concat(getObjects(obj[i], key, val));
+                    } else
+                    //if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
+                    if (i == key && obj[i] == val || i == key && val == '') { //
+                        objects.push(obj);
+                    } else if (obj[i] == val && key == '') {
+                        //only add if the object is not already in the array
+                        if (objects.lastIndexOf(obj) == -1) {
                             objects.push(obj);
-                        } else if (obj[i] == val && key == ''){
-                            //only add if the object is not already in the array
-                            if (objects.lastIndexOf(obj) == -1){
-                                objects.push(obj);
+                        }
+                    }
+                }
+                return objects;
+            }
+
+
+            var codeBlocks = getObjects(ast, 'type', 'block');
+            var codeend ='';
+            var codeBlocksCount = 0;
+            for (var index in codeBlocks) {
+                codeBlocksCount++;
+                console.log(codeBlocks[index].start.line + '***' + codeBlocks[index].end.line)
+                if (codeBlocks[index].start.line == (originalFileLine)) {
+
+                    codeend = codeBlocks[index].end.line
+                    console.log('!!!' + codeend + '!!!');
+                    var file = fs.readFileSync('dev/scss/' + originalFilePath, 'utf8');
+                    var fileArr = file.split('\n');
+                    console.log(codeend + 'codEnd')
+                    var cnt = codeend - originalFileLine + 1;
+                    fileArr.splice(originalFileLine - 1, cnt, '.sergClass{v_glaz:true;}');
+
+                    var strg = ''
+                    for (var str in fileArr) {
+                        strg += fileArr[str] + '\n'
+                    }
+                    fs.writeFileSync('dev/scss/' + originalFilePath, strg);
+
+
+                }
+            }
+            if (!codeend){
+
+                var codeSelectors = getObjects(ast, 'type', 'selector');
+                for (var index in codeSelectors) {
+
+                    if (codeSelectors[index].start.line == (originalFileLine)) {
+
+                        var selectEnd = codeSelectors[index].start.line;
+
+                        for (var i = 1;codeBlocksCount>=i;i++){
+                            var line = selectEnd + i;
+
+                            for (var index in codeBlocks) {
+                                if (codeBlocks[index].start.line == line) {
+
+                                    console.log('We GOT A FINAL LINE!!! '+codeBlocks[index].start.line);
+                                    var originalFileLine1 = codeBlocks[index].start.line;
+
+                                    for (var index1 in codeBlocks) {
+                                        codeBlocksCount++;
+                                        console.log(codeBlocks[index1].start.line + '***' + codeBlocks[index1].end.line)
+                                        if (codeBlocks[index1].start.line == (originalFileLine1)) {
+
+                                            codeend = codeBlocks[index1].end.line
+                                            console.log('!!!' + codeend + '!!!');
+                                            var file = fs.readFileSync('dev/scss/' + originalFilePath, 'utf8');
+                                            var fileArr = file.split('\n');
+                                            console.log(codeend + 'codEnd')
+                                            var cnt = codeend - originalFileLine + 1;
+                                            fileArr.splice(originalFileLine - 1, cnt, '.sergClass{v_glaz:true;}');
+
+                                            var strg = ''
+                                            for (var str in fileArr) {
+                                                strg += fileArr[str] + '\n'
+                                            }
+                                            fs.writeFileSync('dev/scss/' + originalFilePath, strg);
+
+                                            return
+
+                                        }
+                                    }
+
+
+
+
+                                }
                             }
                         }
+
+
+
                     }
-                    return objects;
+
                 }
+            }
 
-//return an array of values that match on a certain key
-                function getValues(obj, key) {
-                    var objects = [];
-                    for (var i in obj) {
-                        if (!obj.hasOwnProperty(i)) continue;
-                        if (typeof obj[i] == 'object') {
-                            objects = objects.concat(getValues(obj[i], key));
-                        } else if (i == key) {
-                            objects.push(obj[i]);
-                        }
-                    }
-                    return objects;
-                }
-
-//return an array of keys that match on a certain value
-                function getKeys(obj, val) {
-                    var objects = [];
-                    for (var i in obj) {
-                        if (!obj.hasOwnProperty(i)) continue;
-                        if (typeof obj[i] == 'object') {
-                            objects = objects.concat(getKeys(obj[i], val));
-                        } else if (obj[i] == val) {
-                            objects.push(i);
-                        }
-                    }
-                    return objects;
-                }
-
-
-              var codeBlocks =  getObjects(ast,'type','block');
-
-                for (var index in codeBlocks){
-
-                    if (codeBlocks[index].start.line ==(originalFileLine) ){
-
-                        var codeend = codeBlocks[index].end.line
-                        console.log('!!!'+codeend+'!!!');
-                        return codeend
-                    }
-                }
-
-
-
-
-
-
-                if (err) throw err;
-                // for ( var i in ast.content){
-                //
-                //     console.log(ast.content[i].start.line);
-                //     if (ast.content[i].type == 'ruleset' && ast.content[i].start.line ==(originalFileLine) ){
-                //         console.log(ast.content[i].end.line);
-                //     }else{
-                //         if(Array.isArray(ast.content[i].content)){
-                //             var scndLvl = ast.content[i].content;
-                //             for (var scndIndex in scndLvl){
-                //                 console.log(scndLvl[scndIndex].end.line)
-                //                 if (scndLvl[scndIndex].type == 'block' && scndLvl[scndIndex].start.line ==(originalFileLine) ){
-                //                     console.log('!!!!!!!!'+scndLvl[scndIndex].end.line+'!!!!!!!!');
-                //                 }
-                //             }
-                //         }
-                //     }
-                // }
 
         });
-       //
-       var file = fs.readFileSync('dev/scss/'+originalFilePath,'utf8');
-       var fileArr = file.split('\n');
 
-       var cnt = codeend-originalFileLine+1;
-        fileArr.splice(originalFileLine,cnt);
 
-       var strg = ''
-        for (var str in fileArr){
-            strg+=fileArr[str]+'\n'
-        }
-        strg+='.helloDude{\n\tcolor:red;\n}';
-        fs.writeFileSync('dev/scss/'+originalFilePath, strg);
-    });
+});
 
 

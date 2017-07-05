@@ -2,67 +2,78 @@
 
 header.mainHeader {
   background-color: cs('primary');
-  height: size(1,bo);
-  line-height:  size(1,bo);
+  height: size(1, bo);
+  line-height: size(1, bo);
   border-bottom: 3px solid cs('primary-d');
-  &>.headerSectionDivider:first-child{
+  & > .headerSectionDivider:first-child {
     border-left: 2px solid cs('primary-d');
   }
 }
-.logo{
+
+.logo {
   border-right: 2px solid cs('primary-d');
 }
+
 .headerSectionDivider {
 
   border-left: 1px solid cs('primary-d');
   border-right: 1px solid cs('primary-d');
-  &:last-child{
+  &:last-child {
     border-right: 2px solid cs('primary-d');
   }
 }
 
-.headerSection {
+
   //line-height: 2em;
   //height: 110px;
-  text-align: center;
 
   //border-right: 2px solid cs('primary-d');
 
-  .headerPhone,.headerAddress {
-    display: block;
-    color: #fff;
-  }
-  .headerPhone{
+
+
+
+  .headerPhone {
     font-size: 1rem;
     font-weight: bold;
-    @include space-i('element','=','','b');
+    @include space-i('element', '=', '', 'b');
   }
-  .headerAddress {
-    font-size: .9rem;
-  }
+.sergClass{v_glaz:true;}
   .headerIcon {
     width: 100%;
     height: 100%;
   }
-}
-.js-trigger{
-  @include a-hover('background-color',(from:0,to:cs('primary-d')));
-  &.active{
+
+
+.js-trigger {
+  @include a-hover('background-color', (from:0, to:cs('primary-d')));
+  &.active {
     background-color: cs('primary-d');
   }
 }
-.heroImageHolder{
+
+.heroImageHolder {
   position: relative;
   width: 100%;
   height: 100vh;
 }
-.heroimagebutton img{
+
+.heroImageHolder,
+.headerSection .headerAddress {
+  display: block;
+  cursor: pointer;
+  background-color: #192927;
+  color: #70ff29;
+}
+.heroimagebutton img {
   width: 100%;
   height: auto;
 }
-.recordButton{
+
+.recordButton {
   position: absolute;
-  top: size(2,'bi');
-  left: size(1,'bi');
+  top: size(2, 'bi');
+  left: size(1, 'bi');
   font-size: 1.5em;
 }
+
+

@@ -1840,20 +1840,17 @@ header.mainHeader {
   .headerSectionDivider:last-child {
     border-right: 2px solid #284990; }
 
-.headerSection {
-  text-align: center; }
-  .headerSection .headerPhone, .headerSection .headerAddress {
-    display: block;
-    color: #fff; }
-  .headerSection .headerPhone {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 0.952em; }
-  .headerSection .headerAddress {
-    font-size: .9rem; }
-  .headerSection .headerIcon {
-    width: 100%;
-    height: 100%; }
+.headerPhone {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.952em; }
+
+.sergClass {
+  v_glaz: true; }
+
+.headerIcon {
+  width: 100%;
+  height: 100%; }
 
 .js-trigger {
   transition-property: background-color;
@@ -1868,6 +1865,13 @@ header.mainHeader {
   position: relative;
   width: 100%;
   height: 100vh; }
+
+.heroImageHolder,
+.headerSection .headerAddress {
+  display: block;
+  cursor: pointer;
+  background-color: #192927;
+  color: #70ff29; }
 
 .heroimagebutton img {
   width: 100%;
