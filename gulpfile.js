@@ -55,6 +55,7 @@ var runTimestamp = Math.round(Date.now() / 1000);
 var iconfontCss = require('gulp-iconfont-css');
 var sourceMap = require('source-map');
 var html2jade = require('html2jade');
+var css = require('css');
 
 // QUANT PLUGINS&FUNCTIONS
 
@@ -1233,7 +1234,6 @@ gulp.task('[D] DIST FRONT-END', function (done) {
 });
 
 gulp.task('parc', function () {
-    var css = require('css');
     var ast = css.parse(file = fs.readFileSync(dist + '/main.css', "utf8"));
     fs.writeFileSync(dist+"/scripts/quant-debug-JsonCss.js", 'var jsonCss = ' + JSON.stringify(ast));
 
@@ -1516,7 +1516,7 @@ gulp.task('convertExtScss', function () {
 
 
     // Get start position of original and path of file
-    var originalFileArr = getCssSource(1848, 0, true).split('[^]');
+    var originalFileArr = getCssSource(1843, 0, true).split('[^]');
     var originalFileLine = originalFileArr[1];
     var originalFilePath = originalFileArr[0];
     console.log(originalFilePath + '-o-o-o-' + originalFileLine)
@@ -1564,7 +1564,7 @@ gulp.task('convertExtScss', function () {
                     var fileArr = file.split('\n');
                     console.log(codeend + 'codEnd')
                     var cnt = codeend - originalFileLine + 1;
-                    fileArr.splice(originalFileLine - 1, cnt, '.sergClass{v_glaz:true;}');
+                    fileArr.splice(originalFileLine - 1, cnt, ' .headerPhone {\n\tfont-size:2rem;\n\tcolor:#fff;\n\tdisplay:inline-block;\n\ttext-align:center\n}');
 
                     var strg = ''
                     for (var str in fileArr) {

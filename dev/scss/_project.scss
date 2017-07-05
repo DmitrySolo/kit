@@ -32,12 +32,13 @@ header.mainHeader {
 
 
 
-  .headerPhone {
-    font-size: 1rem;
-    font-weight: bold;
-    @include space-i('element', '=', '', 'b');
-  }
-.sergClass{v_glaz:true;}
+ .headerPhone {
+	font-size:2rem;
+	color:#fff;
+	display:inline-block;
+	text-align:center
+}
+
   .headerIcon {
     width: 100%;
     height: 100%;
@@ -75,5 +76,10 @@ header.mainHeader {
   left: size(1, 'bi');
   font-size: 1.5em;
 }
+
+
+
+
+
 
 
