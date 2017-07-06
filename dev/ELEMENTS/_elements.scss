@@ -4,7 +4,9 @@ $color__button-active:#aaa;
 //--Main Button
 .mainButton {
   background-color: $color__button;
-
+	.dog{
+		color:violet;
+	}
   &:focus {
     outline: thin dotted;
   }

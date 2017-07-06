@@ -1516,7 +1516,7 @@ gulp.task('convertExtScss', function () {
 
 
     // Get start position of original and path of file
-    var originalFileArr = getCssSource(1843, 0, true).split('[^]');
+    var originalFileArr = getCssSource(1621, 2, true).split('[^]');
     var originalFileLine = originalFileArr[1];
     var originalFilePath = originalFileArr[0];
     console.log(originalFilePath + '-o-o-o-' + originalFileLine)

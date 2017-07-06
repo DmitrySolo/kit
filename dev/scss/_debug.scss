@@ -1297,5 +1297,48 @@ border: none !important;
     text-align: center;
     margin-right:15px;
   }
+  .selectorHeader {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 14px;
+    padding: 7px;
+    margin-bottom: 25px;
+  }
+  .selectorGroup{
+    position: relative;
+    background-color: #4c606d;
+    &:before{
+      position: absolute;
+      top:-20px;
+      left:0;
+      content:'Group';
+      background-color: #4c606d;
+      padding: 0px 5px;
+
+    }
+
+  }
+  .selectorExt{
+    position: relative;
+    background-color: #783020;
+    &:before{
+      position: absolute;
+      top:-20px;
+      left:0;
+      content:'Extend';
+      background-color: #783020;
+      padding: 0px 5px;
+
+    }
+
+  }
+  .propertyGroup,ownProperties{
+    background-color: $panel-inner;
+    padding: 5px;
+  }
+  .ownProperties {
+    border: 1px solid green;
+    font-size: 14px;
+  }
 }
 
