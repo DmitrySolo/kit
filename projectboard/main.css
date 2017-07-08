@@ -1493,6 +1493,9 @@ section.block {
       display: block;
       width: 100%;
       text-align: center; } }
+  @media (min-width: 900px) {
+    .lightMenu__item {
+      color: #000; } }
 
 .lightMenu__item a {
   display: inline-block;
@@ -2313,7 +2316,7 @@ body.debug {
   margin-top: 40px;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -3774,7 +3777,14 @@ div[class*='Panel'] {
   padding: 5px; }
 
 .ownProperties {
-  border: 1px solid green;
-  font-size: 14px; }
+  font-size: 14px;
+  padding: 5px;
+  color: #fff;
+  background-color: #ffa500; }
+
+.chosenSelector {
+  padding: 0 5px;
+  background-color: #ffa500;
+  border-radius: 5px; }
 
 /*# sourceMappingURL=maps/main.css.map */

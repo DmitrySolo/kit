@@ -71,8 +71,8 @@ var changerWatcher = {}
 function MakeEditable (elem) {
 
     elem.on('click',function(e){
-        $('#context',window.parent.document).html('');
-        $('#classSelector',window.parent.document).html('');
+
+        $('#selfProperties,#extendsSelectors,#context,#classSelector',window.parent.document).html('');
         $('.classChoser',window.parent.document).val('');console.log( $(this).attr('class'));
         if($('*').is($(this).closest('*[data-qcontent=true]'))){
             var parentEl = $(this).closest('*[data-qcontent=true]');

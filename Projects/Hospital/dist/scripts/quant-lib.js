@@ -78,3 +78,24 @@ var qntSwitchSVGIcon = function (el,icon1,icon2){
         el.removeClass('active')
     }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Get ojects from main objects by key value
+function qntGetObjects(obj, key, val) {
+    var objects = [];
+    for (var i in obj) {
+        if (!obj.hasOwnProperty(i)) continue;
+        if (typeof obj[i] == 'object') {
+            objects = objects.concat(qntGetObjects(obj[i], key, val));
+        } else
+        //if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
+        if (i == key && obj[i] == val || i == key && val == '') { //
+            objects.push(obj);
+        } else if (obj[i] == val && key == '') {
+            //only add if the object is not already in the array
+            if (objects.lastIndexOf(obj) == -1) {
+                objects.push(obj);
+            }
+        }
+    }
+    return objects;
+}

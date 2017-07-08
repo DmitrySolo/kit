@@ -12,14 +12,32 @@ $( document ).ready(function() {
         $('.debugElement').removeClass('debugElement');
         newDebug.trigger('click');
     }
-
+    var mediaRules = qntGetObjects(jsonCss,'type','media');
+    var curentEditable;
     function getObjects(elemClassStr) {
 
         elemClassStr= elemClassStr.trim();
         var result={};
         result.selectors=[];
         result.styles=[];
-        result.position = []
+        result.position = [];
+        result.media =[];
+        console.log(mediaRules);
+        
+        $.each(mediaRules,function (i, mediaObj) {
+
+            $.each(mediaObj.rules,function (i1,rule1) {
+                if(rule1.hasOwnProperty('selectors') && rule1.selectors.toString().replace(/\./g,'').indexOf(elemClassStr) != -1){
+                    var mediaPoint = mediaRules[i].media;
+                    console.log(rule1,'qqqq',mediaRules[i].media)
+                    result.media.push([mediaPoint,rule1])
+                }
+            })
+
+        })
+        
+        
+        
         for (var i in jsonCss.stylesheet.rules){
             selObj = jsonCss.stylesheet.rules[i];
             //console.log(selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr))
@@ -48,6 +66,7 @@ $( document ).ready(function() {
 //READ SELECTORS
     $('body').on('mousedown','.classtype__name',function () {
         var searchableSelector = $(this).text();
+        var regExpss =new RegExp(searchableSelector, 'g');
         console.log(searchableSelector);
         var selectorType = 'a';
         function parseStandAloneSelctorGroup (selector){
@@ -67,13 +86,13 @@ $( document ).ready(function() {
         var elOject = getObjects(searchableSelector)
         var selectorType = 'a';
         var selectorsInfo ={}
+        var properties = '';
         var getProps = function () {
             for (var i in elOject.styles[index]){
-                var properties = ''
-                var rule = elOject.styles[index][i]
-             return properties += rule.propery+':'+rule.value+'\n';
-
+                var rule = elOject.styles[index][i];
+                properties += rule.propery+':'+rule.value+'<br>';
             }
+            return properties
         }
             for (var index in elOject.selectors){
 
@@ -87,13 +106,13 @@ $( document ).ready(function() {
                     var selectorType = 'group';
                     console.log(selectorType)
                     var props = getProps();
-                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorGroup">'+elOject.selectors[index]+'<div class="propertyGroup">'+props+'</div></div>')
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorGroup">'+elOject.selectors[index].replace(regExpss,'<span class="chosenSelector">'+'.'+searchableSelector+'</span>')+'<div class="propertyGroup">'+props+'</div></div>')
 
                 }else if (elOject.selectors[index].split(' ').length>1){
                     var selectorType = 'ParentChild';
                     console.log(selectorType)
                     var props = getProps()
-                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt">'+elOject.selectors[index]+'<div class="propertyGroup">'+props+'</div></div>')
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt">'+elOject.selectors[index].replace(regExpss,'<span class="chosenSelector">'+'.'+searchableSelector+'</span>')+'<div class="propertyGroup">'+props+'</div></div>')
 
                 }else if (elOject.selectors[index].replace('.'+searchableSelector,'').split('.').length>1){
                     var selectorType = 'Extends';

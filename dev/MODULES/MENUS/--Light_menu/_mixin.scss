@@ -32,9 +32,12 @@
             display: block;
             width:100%;
             text-align: center;
-
-
           }
+    @include for-size(tablet-l-up){
+      color: #000;
+    }
+
+
   }
   .lightMenu__item a{
     display: inline-block;

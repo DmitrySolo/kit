@@ -18,28 +18,23 @@
 
 @mixin debug() {
 
-
-
-
-
-
-$panel:#3c3f41;
-$panel-inner: rgb(43, 43, 43);
-$active: #e74c3c;
-$activeButton: #00b3ee;
+  $panel: #3c3f41;
+  $panel-inner: rgb(43, 43, 43);
+  $active: #e74c3c;
+  $activeButton: #00b3ee;
   $activeButtonHover: #005f9e;
   $zBody: 0;
-$zElement: 10;
-$zInstrument: 100;
-$zOverElement: 102;
-$zGrid: 103px;
-$zNotEdit: 1000;
-.starter {
-  width: 100%;
-  height: 100%;
-  background-color: #2a2a55;
-  z-index: $zGrid;
-}
+  $zElement: 10;
+  $zInstrument: 100;
+  $zOverElement: 102;
+  $zGrid: 103px;
+  $zNotEdit: 1000;
+  .starter {
+    width: 100%;
+    height: 100%;
+    background-color: #2a2a55;
+    z-index: $zGrid;
+  }
   .quant {
     background: #2b2b2b !important;
     color: $activeButton;
@@ -76,8 +71,8 @@ $zNotEdit: 1000;
   $db-main-color: #6168c1;
   $db-nav-color: #6bdabd;
   $db-tbl-color: #717171;
-  $db-header-color:#f79b77;
-  $db-footer-color:#4b4345;
+  $db-header-color: #f79b77;
+  $db-footer-color: #4b4345;
   $db-article-color: #ee000a;
   $db-dl-color: #31142b;
   $db-dt-color: #581a52;
@@ -85,7 +80,7 @@ $zNotEdit: 1000;
   $db-figure-color: #857506;
   $db-figcaption-color: #484200;
   $db-blockquote-color: #fc9627;
-  $db-aside-color:#c6538c;
+  $db-aside-color: #c6538c;
   $db-section-color: #dceb20;
   $db-form-color: #fc5c00;
   $db-i-color: #fc5c00;
@@ -146,10 +141,10 @@ $zNotEdit: 1000;
     }
   }
 
-//  @include grid-overlay(#0800f3);
+  //  @include grid-overlay(#0800f3);
 
   body.debug {
-   // background-color: $db-body-color;
+    // background-color: $db-body-color;
     cursor: crosshair;
     margin-top: 40px;
     background-color: #2b2b2b;
@@ -161,21 +156,16 @@ $zNotEdit: 1000;
             linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
     background-size: 1rem 1rem, 1rem 1rem,
     5rem 5rem, 5rem 5rem;
-    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -7px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px;
   }
-  .canvas__border{
+  .canvas__border {
   }
-  .canvas__blueprint{
+  .canvas__blueprint {
 
   }
-  .canvas{
+  .canvas {
     position: absolute;
   }
-
-
-
-
-
 
   .debug div:not(.colors div) {
     @include debug-elem($db-div-color);
@@ -188,7 +178,7 @@ $zNotEdit: 1000;
     @include debug-elem($db-headers-color);
   }
   .notEdit .headers {
-   background-color: $db-headers-color !important;
+    background-color: $db-headers-color !important;
   }
   .debug p {
     @include debug-elem($db-p-color);
@@ -271,7 +261,6 @@ $zNotEdit: 1000;
     background: $db-form-color !important;
   }
 
-
   .notEdit .nav {
     background: $db-nav-color !important;
   }
@@ -279,8 +268,8 @@ $zNotEdit: 1000;
     background: $db-p-color !important;
   }
   .debug ul {
-       @include debug-elem($db-ul-color);
-     }
+    @include debug-elem($db-ul-color);
+  }
   .notEdit .ul {
     background: $db-ul-color !important;
 
@@ -353,7 +342,7 @@ $zNotEdit: 1000;
     @include debug-elem($db-link-color);
   }
   .notEdit .link {
-   background: $db-link-color !important;
+    background: $db-link-color !important;
   }
   .debug button {
     @include debug-elem($db-button-color);
@@ -365,15 +354,17 @@ $zNotEdit: 1000;
     @include debug-elem($db-span-color);
   }
   .debug .notEdit span {
-   background: none;
+    background: none;
     outline: none;
   }
   .debug i {
     @include debug-elem($db-i-color);
   }
   .notEdit {
-    .i {background: $db-i-color !important;}
-    i{
+    .i {
+      background: $db-i-color !important;
+    }
+    i {
       background: none !important;
       outline: none;
     }
@@ -400,14 +391,13 @@ $zNotEdit: 1000;
 
   }
 
-
   .notEdit .span {
     background: $db-span-color !important;
   }
   .debug img, .debug svg {
     @include debug-elem($db-img-color);
   }
-  section#ball{
+  section#ball {
     background: transparent;
     cursor: grab !important;
   }
@@ -429,41 +419,41 @@ $zNotEdit: 1000;
   .debugPannel {
     background: #3c3f41 !important;
 
-
   }
-  .debugPannel__section,.debug-Pannel-Right-content {
-    *[class^="col-"],row,input,select{
+  .debugPannel__section, .debug-Pannel-Right-content {
+    *[class^="col-"], row, input, select {
       background: none;
       outline: none;
     }
-    label,select{color:#fff;
-    font-size:12px;
+    label, select {
+      color: #fff;
+      font-size: 12px;
 
     }
-    svg{
+    svg {
       background: none;
       outline: none;
       height: 1.4em;
       margin-bottom: 10px;
     }
-    select{
+    select {
       border-color: #0086b3;
       width: 100%;
     }
-    option{
+    option {
       background: #3c3f41;
       color: #00b3ee;
     }
-    input[type='text']{
+    input[type='text'] {
 
       background: #3c3f41;
       border: none;
       border-radius: 4px;
-      color:#00b3ee;
+      color: #00b3ee;
       padding-left: .3em;
     }
 
-    h6{
+    h6 {
       outline: none;
       font-size: .6em !important;
       color: #fff;
@@ -475,8 +465,9 @@ $zNotEdit: 1000;
 
     }
     .ui-accordion-content {
-      padding: .5em .4em}
-    hr{
+      padding: .5em .4em
+    }
+    hr {
       overflow: visible;
       background: #3c3f41;
       display: block;
@@ -493,17 +484,17 @@ $zNotEdit: 1000;
         background: none;
       }
     }
-    .ui-widget-content{
-    border:none;
+    .ui-widget-content {
+      border: none;
       border-bottom: 2px solid $panel !important;
     }
 
-     button {
-       color:#fff;
-       outline: none !important;
+    button {
+      color: #fff;
+      outline: none !important;
       font-size: 10px !important;
       border: none;
-      background:#006eb7 !important;
+      background: #006eb7 !important;
       margin: 0;
       &:hover {
         background-color: darken(#006eb7, 5%) !important;
@@ -582,7 +573,7 @@ $zNotEdit: 1000;
     }
 
   }
-  .editorsContainer,.notEdit{
+  .editorsContainer, .notEdit {
     z-index: $zNotEdit;
   }
   .debug .pb-colorBox {
@@ -627,11 +618,10 @@ $zNotEdit: 1000;
   }
   .debug-Pannel-Right {
 
-
     width: 100%;
     background-color: #fff;
     background: $panel;
-   // display: none;
+    // display: none;
   }
 
   .mediaMap {
@@ -734,7 +724,7 @@ $zNotEdit: 1000;
     box-shadow: 3px 3px 2px silver;
   }
   .editorsContainer {
-    background:$panel;
+    background: $panel;
     padding-top: 5px;
     height: 257px;
     background: #3c3f41 !important;
@@ -743,12 +733,12 @@ $zNotEdit: 1000;
   }
   .resizable-helper {
     position: absolute;
-    right:0;
+    right: 0;
     top: 0;
 
   }
   body.debug {
-   // padding-top: 50px;
+    // padding-top: 50px;
   }
   .editorWrapper {
     width: 98%;
@@ -780,7 +770,7 @@ $zNotEdit: 1000;
       background: #E1AF25;
     }
   }
-  #getCode{
+  #getCode {
     line-height: 1;
     font-size: 12px;
     padding: 5px;
@@ -788,15 +778,15 @@ $zNotEdit: 1000;
     color: #fff;
     cursor: pointer;
   }
-  .panellInner,.ui-tabs {
+  .panellInner, .ui-tabs {
     background: $panel-inner !important;
-    border:none !important;
+    border: none !important;
   }
-  ul.panellInner{
-    border:none !important;
+  ul.panellInner {
+    border: none !important;
   }
   .notEdit {
-    a,li,ul,div,h1,h2,h3,h4,h5,h6,p,span,button,.col-1-tp,.row{
+    a, li, ul, div, h1, h2, h3, h4, h5, h6, p, span, button, .col-1-tp, .row {
       background: none;
     }
     .tabAnchr {
@@ -806,35 +796,36 @@ $zNotEdit: 1000;
       font-size: 14px !important;
     }
   }
-  .ui-tabs .ui-tabs-panel{
+  .ui-tabs .ui-tabs-panel {
     padding: 0.3em 0.2em !important;
   }
-  li.ui-state-default{
-    border:none !important;
+  li.ui-state-default {
+    border: none !important;
   }
-  li.ui-tabs-active{
-    background:$active !important;
-    color:#fff !important;
+  li.ui-tabs-active {
+    background: $active !important;
+    color: #fff !important;
   }
   .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
-    color:#fff !important;
+    color: #fff !important;
   }
-  .ui-state-default a{
+  .ui-state-default a {
     color: #c3c3c3 !important;
   }
-  .tabList.elAdder{
+  .tabList.elAdder {
     font-size: 12px !important;
   }
 
   .ace-tomorrow-night-eighties {
-    background-color: #2D2D2D !important}
+    background-color: #2D2D2D !important
+  }
 
   .elAdder {
     .clearfix {
       margin-top: 4px;
     }
   }
-  .mChacker{
+  .mChacker {
 
     line-height: 1;
     font-size: 50%;
@@ -855,11 +846,11 @@ $zNotEdit: 1000;
     background: $panel !important;
     cursor: grab;
     position: fixed !important;
-     .h .milestone {
-       border-left-color: #fff;
-       margin-left: 1rem;
+    .h .milestone {
+      border-left-color: #fff;
+      margin-left: 1rem;
 
-     }
+    }
   }
   .ruler.h span.milestone {
     position: relative !important;
@@ -872,7 +863,7 @@ $zNotEdit: 1000;
   .ruler.v span.milestone {
     position: relative !important;
     border-bottom: solid 1px #fff !important;
-  //  height: 17px;
+    //  height: 17px;
     margin-bottom: $line-height-ratio+rem !important;
     outline: none !important;
 
@@ -886,17 +877,14 @@ $zNotEdit: 1000;
     border-bottom: solid 1px #00e7ff !important;
   }
 
-
-
-
   .rg-overlay {
     pointer-events: none;
     z-index: $zOverElement;
-    span{
+    span {
       background: none !important;
     }
   }
- .guide.h.draggable-r {
+  .guide.h.draggable-r {
     border-bottom: solid 1px #00e7ff !important;
     pointer-events: all !important;
   }
@@ -904,39 +892,39 @@ $zNotEdit: 1000;
     border-right: solid 1px #00e7ff !important;
     pointer-events: all !important;
   }
-.grid *[class^="col-"]{
-  background-image: linear-gradient(to bottom, #9e9b95 0%, #9e9b95 100%), linear-gradient(to bottom, #b6b4b0 0%, #b6b4b0);
-  background-clip: content-box, padding-box;
-}
+  .grid *[class^="col-"] {
+    background-image: linear-gradient(to bottom, #9e9b95 0%, #9e9b95 100%), linear-gradient(to bottom, #b6b4b0 0%, #b6b4b0);
+    background-clip: content-box, padding-box;
+  }
   #currentSelectorWay {
-    &>div{
+    & > div {
       padding: 12px;
     }
-    span{
+    span {
       font-size: .8em;
       background-color: #3c3f41;
-      margin-right:12px;
+      margin-right: 12px;
       padding: 8px;
     }
-    i{
+    i {
       font-size: .8em;
       padding: 0 8px;
       color: #006eb7;
     }
   }
-  input[type="range"]{
+  input[type="range"] {
     outline: none;
   }
-  .debug-Pannel-Right{
+  .debug-Pannel-Right {
     padding: 15px;
   }
-  .debug-Pannel-Right-content{
+  .debug-Pannel-Right-content {
     background: $panel-inner !important;
     width: 100%;
   }
   .createTitle {
     cursor: pointer;
-    &.active{
+    &.active {
       background: #0086b3 !important;
     }
     font-size: .9em !important;
@@ -949,17 +937,16 @@ $zNotEdit: 1000;
     margin-bottom: 10px;
   }
 
-
-  .createTitle:hover{
+  .createTitle:hover {
 
     background-color: #0086b3;
-    
+
   }
   .ui-dialog {
-    border:none !important;
+    border: none !important;
     border-radius: 0 !important;
   }
-  .ui-dialog *{
+  .ui-dialog * {
     outline: none !important;
 
   }
@@ -980,33 +967,38 @@ $zNotEdit: 1000;
 
   .ui-widget-header {
     background: #3c3f41 !important;
-border: none !important;
-    span{
+    border: none !important;
+    span {
       background: transparent !important;
     }
   }
 
-.ui-dialog-titlebar{background: #3c3f41 !important;}
-  .ui-dialog-title {
-  color:#fff;
-   font-size: 1.6em;
+  .ui-dialog-titlebar {
+    background: #3c3f41 !important;
   }
-.ui-dialog{ background-color: #3c3f41 !important;min-width:850px !important;
-  top:5% !important;
-  left:18% !important;
-  border-top: 4px solid rgb(0, 134, 179) !important;}
-.debog-Dialog-Close {
+  .ui-dialog-title {
+    color: #fff;
+    font-size: 1.6em;
+  }
+  .ui-dialog {
+    background-color: #3c3f41 !important;
+    min-width: 850px !important;
+    top: 5% !important;
+    left: 18% !important;
+    border-top: 4px solid rgb(0, 134, 179) !important;
+  }
+  .debog-Dialog-Close {
 
-}
-.debug-Dialog-content {
+  }
+  .debug-Dialog-content {
 
-  padding: 20px;
-  background: #2b2b2b !important;
+    padding: 20px;
+    background: #2b2b2b !important;
 
-}
+  }
   .createTitle {
 
-    .icon{
+    .icon {
       height: 1.7em;
       background: none;
       margin-right: 20px;
@@ -1024,47 +1016,44 @@ border: none !important;
 
     font-size: .7em;
     button {
-      border:none;
+      border: none;
       color: #fff;
       background-color: #fc9627;
       padding: 10px 20px;
     }
-    label{display:block;
+    label {
+      display: block;
       color: #fff;
       background: transparent;
       padding-bottom: 10px;
       padding-left: 35px;
       padding-right: 35px;
       padding-top: 20px;
-    input,select{
-      width: 50%;
-      color: #0086b3;
-      padding-left:.3em;
-      background: #313335;
-      float: right;
-      border:none;
-      border-radius: 4%;
-
+      input, select {
+        width: 50%;
+        color: #0086b3;
+        padding-left: .3em;
+        background: #313335;
+        float: right;
+        border: none;
+        border-radius: 4%;
 
       }
-    .icon {
-      position: absolute;
-      top: -30px;
-      right:0;
-    }
+      .icon {
+        position: absolute;
+        top: -30px;
+        right: 0;
+      }
     }
   }
   .debug-Dialog-start {
 
-
-
-    .ui-dialog  {
-
+    .ui-dialog {
 
     }
   }
 
-  .starter_dialog{
+  .starter_dialog {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -1078,7 +1067,7 @@ border: none !important;
     }
     .debug-Dialog-content {
       padding: 40px;
-      &+ .ui-widget-overlay{
+      & + .ui-widget-overlay {
         background-color: #00A000 !important;
         opacity: 1 !important;
       }
@@ -1087,19 +1076,17 @@ border: none !important;
 
   .debug-Dialog-start .createTitle {
 
-
-
     font-size: 1.2em !important;
     padding: 12px 19px;
   }
 
   ////////// HUD
-  body.hud{
+  body.hud {
     background-color: #2b2b2b;
   }
-  .hud-wrapper{
+  .hud-wrapper {
     position: fixed;
-    left:0;
+    left: 0;
     right: 0;
     top: 0;
     bottom: 0;
@@ -1107,21 +1094,20 @@ border: none !important;
   .hud-topPanel {
     margin-bottom: 12px;
   }
-  .top-panel-content{
+  .top-panel-content {
     width: 100%;
     height: 40px;
     background: #3c3f41 !important;
   }
   .hud-content {
-    margin-top:20px;
-      float:left;
+    margin-top: 20px;
+    float: left;
     width: 75%;
     iframe {
       border-width: 3px;
       border-color: dodgerblue;
       display: block;
       margin: 0 auto;
-
 
     }
   }
@@ -1133,13 +1119,13 @@ border: none !important;
     padding-left: 10px;
     padding-right: 10px;
     background: #242729 !important;
-    margin-right:20px;
+    margin-right: 20px;
     float: left;
     margin-bottom: 0;
     line-height: 44px;
 
   }
-  span.projectTitle{
+  span.projectTitle {
     min-width: 400px;
     text-transform: uppercase;
     float: left;
@@ -1149,12 +1135,12 @@ border: none !important;
     font-family: poppins;
     color: #fff;
     line-height: 40px;
-    padding-top:4px;
+    padding-top: 4px;
   }
-  .hud-content{
+  .hud-content {
     position: relative;
   }
-  .window:before{
+  .window:before {
     position: absolute;
     top: -26px;
     left: 0;
@@ -1166,72 +1152,72 @@ border: none !important;
     font-size: 16px;
     text-shadow: 1px 1px 1px #2b2b2b;
   }
-  .hud-rightPanel{
-       width:15%;
+  .hud-rightPanel {
+    width: 15%;
     min-height: 1px;
     float: left;
     float: left;
-     }
-  .hud-leftPanel{
-       width:10%;
-    float:left;
+  }
+  .hud-leftPanel {
+    width: 10%;
+    float: left;
     min-height: 1px;
-     }
-  div[class*='Panel']{
+  }
+  div[class*='Panel'] {
     background-color: $panel;
   }
 
-  .hud-bottom{
+  .hud-bottom {
     position: absolute;
     bottom: 0;
   }
-  .rg-menu{
+  .rg-menu {
     background: $panel;
     outline: none;
-    span,a,li {
+    span, a, li {
       background: $panel;
       outline: none;
     }
   }
   .pb-colorBox {
-    width:20px;
+    width: 20px;
     height: 20px;
   }
-.editorsContainer{
-  display: none;
-}
-  .hud-Button{
+  .editorsContainer {
+    display: none;
+  }
+  .hud-Button {
     padding: 4px;
     margin-top: 2px;
     margin-right: 2px;
-    border:1px solid darken($panel,10%);
-    &:hover{
-      background-color: lighten($panel-inner,5%);
+    border: 1px solid darken($panel, 10%);
+    &:hover {
+      background-color: lighten($panel-inner, 5%);
       cursor: pointer;
     }
-    &.active ,&.on{
+    &.active, &.on {
       background-color: $panel-inner;
       border-bottom-color: #00bfff;
     }
     .icon {
-      fill:#00bfff;
+      fill: #00bfff;
       height: 1.4em;
-      line-height:44px;
+      line-height: 44px;
     }
   }
-  .cselector{
+  .cselector {
     background: #2b2b2b;
     color: #fff;
     padding: 2px 10px;
     border-bottom: 2px solid #3c3f41;
     font-size: 14px;
     cursor: pointer;
-    &.active{
+    &.active {
       border: solid 1px #FF9801;
       opacity: 1 !important;
     }
   }
-  .classtype{
+  .classtype {
     display: inline-block;
     padding: 0px;
     width: 15px;
@@ -1242,7 +1228,7 @@ border: none !important;
     line-height: 15px;
     margin-right: 10px;
   }
-  .bem{
+  .bem {
     background: #3bd43b;
   }
   .extClass {
@@ -1251,10 +1237,10 @@ border: none !important;
   .elemS {
     background: #00498f;
   }
-  .saveToServer{
-    button{
+  .saveToServer {
+    button {
       width: 100%;
-      border:solid 2px darken(#fc9627,5%);
+      border: solid 2px darken(#fc9627, 5%);
       background: #fc9627;
       color: #fff;
       font-size: 20px;
@@ -1262,7 +1248,7 @@ border: none !important;
       border-radius: 5px;
       text-align: center;
     }
-    .icon{
+    .icon {
       height: 1rem;
       float: left;
     }
@@ -1275,27 +1261,27 @@ border: none !important;
     background: $panel-inner;
     padding: 4px 4px 4px 4px;
     border-bottom: solid 2px silver;
-    color:#fff;
+    color: #fff;
   }
-  .typeelement:before{
-    content:'E';
+  .typeelement:before {
+    content: 'E';
     display: inline-block;
     width: 30px;
     height: 30px;
-    line-height:30px;
+    line-height: 30px;
     background-color: darkcyan;
     text-align: center;
-    margin-right:15px;
+    margin-right: 15px;
   }
-  .typemodule:before{
-    content:'M';
+  .typemodule:before {
+    content: 'M';
     display: inline-block;
     width: 30px;
     height: 30px;
-    line-height:30px;
+    line-height: 30px;
     background-color: #f1443d;
     text-align: center;
-    margin-right:15px;
+    margin-right: 15px;
   }
   .selectorHeader {
     margin-top: 20px;
@@ -1304,41 +1290,49 @@ border: none !important;
     padding: 7px;
     margin-bottom: 25px;
   }
-  .selectorGroup{
+  .selectorGroup {
     position: relative;
     background-color: #4c606d;
-    &:before{
+    &:before {
       position: absolute;
-      top:-20px;
-      left:0;
-      content:'Group';
+      top: -20px;
+      left: 0;
+      content: 'Group';
       background-color: #4c606d;
       padding: 0px 5px;
 
     }
 
   }
-  .selectorExt{
+  .selectorExt {
     position: relative;
     background-color: #783020;
-    &:before{
+    &:before {
       position: absolute;
-      top:-20px;
-      left:0;
-      content:'Extend';
+      top: -20px;
+      left: 0;
+      content: 'Extend';
       background-color: #783020;
       padding: 0px 5px;
 
     }
 
   }
-  .propertyGroup,ownProperties{
+  .propertyGroup, ownProperties {
     background-color: $panel-inner;
     padding: 5px;
   }
   .ownProperties {
-    border: 1px solid green;
     font-size: 14px;
+    padding: 5px;
+    color: #fff;
+    background-color: #ffa500;
+
+  }
+  .chosenSelector {
+    padding: 0 5px;
+    background-color: #ffa500;
+    border-radius: 5px;
   }
 }
 
