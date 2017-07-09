@@ -86,7 +86,14 @@ $( document ).ready(function() {
         var elOject = getObjects(searchableSelector)
         var selectorType = 'a';
         var selectorsInfo ={}
-        var properties = '';
+       var ownStylesProperties={
+            ownStyles:[],
+            pseudoSelectors:{
+                hover:[],
+                active:[],
+            }
+        }
+        var properties = ''
         var getProps = function () {
             for (var i in elOject.styles[index]){
                 var rule = elOject.styles[index][i];
@@ -100,12 +107,32 @@ $( document ).ready(function() {
                     var selectorType = 'self';
                     console.log(selectorType)
                     var props = getProps();
+                    ownStylesProperties.ownStyles.push(props)
                     $('#selfProperties').prepend('<div class="ownProperties">'+props+'</div>')
                 }
                 else if (elOject.selectors[index].split(',').length > 1){
-                    var selectorType = 'group';
-                    console.log(selectorType)
                     var props = getProps();
+                    var groupPart = elOject.selectors[index].split(',');
+                    var selectorType = 'group';
+                    console.log(elOject.selectors[index]);
+                    console.log(elOject.styles[index])
+                    for (var i in groupPart){
+                            console.log(groupPart[i].split(':')[0]);
+                        if (groupPart[i].split(':').length > 1 && groupPart[i].split(':')[0] =='.'+searchableSelector ){
+
+
+
+
+                         switch (groupPart[i].split(':')[1]){
+                             case 'hover': ownStylesProperties.pseudoSelectors.hover.push(props);
+                             break;
+                             case 'active': ownStylesProperties.pseudoSelectors.active.push(props);
+                             break;
+                         }
+                        }
+
+                    }
+
                     $('#extendsSelectors').prepend('<div class="selectorHeader selectorGroup">'+elOject.selectors[index].replace(regExpss,'<span class="chosenSelector">'+'.'+searchableSelector+'</span>')+'<div class="propertyGroup">'+props+'</div></div>')
 
                 }else if (elOject.selectors[index].split(' ').length>1){
@@ -128,7 +155,7 @@ $( document ).ready(function() {
 
             }
 
-
+            console.log('+',ownStylesProperties,'+')
     })
 
     function getObjectStyles(className) {
