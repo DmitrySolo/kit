@@ -68,33 +68,21 @@ $( document ).ready(function() {
         var searchableSelector = $(this).text();
         var regExpss =new RegExp(searchableSelector, 'g');
         console.log(searchableSelector);
-        var selectorType = 'a';
-        function parseStandAloneSelctorGroup (selector){
-            console.log('parse1')
-           if (selector.indexOf(searchableSelector)){
-            var saSelArr = selector.split[' '];
-            if (saSelArr.length > 1){
-                var sindex = saSelArr.indexOf('.'+searchableSelector);
-                if (sindex == 0) {selectorType = 'parent'} else
-                if (sindex == saSelArr.length-1) {selectorType = 'child'}
-                else {selectorType ='childParent'}
-                console.log(selectorType);
-            }
-           }
-        }
+        var selectorType = '';
 
         var elOject = getObjects(searchableSelector)
-        var selectorType = 'a';
-        var selectorsInfo ={}
-       var ownStylesProperties={
-            ownStyles:[],
-            pseudoSelectors:{
-                hover:[],
-                active:[],
+
+           var ownStylesProperties={
+                ownStyles:[],
+                pseudoSelectors:{
+                    hover:[],
+                    active:[],
+                    focus:[]
+                }
             }
-        }
-        var properties = ''
+
         var getProps = function () {
+            var properties = '';
             for (var i in elOject.styles[index]){
                 var rule = elOject.styles[index][i];
                 properties += rule.propery+':'+rule.value+'<br>';
@@ -109,25 +97,25 @@ $( document ).ready(function() {
                     var props = getProps();
                     ownStylesProperties.ownStyles.push(props)
                     $('#selfProperties').prepend('<div class="ownProperties">'+props+'</div>')
+                    console.log('IN1')
                 }
-                else if (elOject.selectors[index].split(',').length > 1){
-                    var props = getProps();
+                else if (elOject.selectors[index].split(',').length >= 2){
+
                     var groupPart = elOject.selectors[index].split(',');
                     var selectorType = 'group';
-                    console.log(elOject.selectors[index]);
-                    console.log(elOject.styles[index])
                     for (var i in groupPart){
-                            console.log(groupPart[i].split(':')[0]);
+
                         if (groupPart[i].split(':').length > 1 && groupPart[i].split(':')[0] =='.'+searchableSelector ){
-
-
-
-
+                            console.log('IN2')
+                            var props = getProps();
+                            console.log('IN2',props)
                          switch (groupPart[i].split(':')[1]){
-                             case 'hover': ownStylesProperties.pseudoSelectors.hover.push(props);
+                             case 'hover': ownStylesProperties.pseudoSelectors.hover=props;
                              break;
-                             case 'active': ownStylesProperties.pseudoSelectors.active.push(props);
+                             case 'active': ownStylesProperties.pseudoSelectors.active=(props);
                              break;
+                             case 'focus': ownStylesProperties.pseudoSelectors.focus=props;
+                                 break;
                          }
                         }
 
@@ -149,7 +137,16 @@ $( document ).ready(function() {
                 else if (elOject.selectors[index].split(':').length>=1){
                     var selectorType = 'Own';
                     console.log(selectorType)
-                    getProps()
+                    var props = getProps()
+                    console.log('in3')
+                    switch (elOject.selectors[index].split(':')[1]){
+                        case 'hover': ownStylesProperties.pseudoSelectors.hover=props;
+                            break;
+                        case 'active': ownStylesProperties.pseudoSelectors.active=(props);
+                            break;
+                        case 'focus': ownStylesProperties.pseudoSelectors.focus=props;
+                            break;
+                    }
                 }
 
 

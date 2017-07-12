@@ -30,7 +30,7 @@
     @include for-size(phone-only){
             @include space-i('module','=','tbrl','');
             display: block;
-            width:100%;
+            width:101%;
             text-align: center;
           }
     @include for-size(tablet-l-up){

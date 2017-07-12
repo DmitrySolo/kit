@@ -1,8 +1,73 @@
+.ElemMenu
+    .ElemMenu__header
+    .ElemMenu__section
+        +I('trash')
+    .ElemMenu__section
+        +I('locked')
+    .ElemMenu__section
+        +I('unlocked')
+    .ElemMenu__section
+        +I('target')
+div.clearfix.mediaChoiser
+    .col-12-tp
+        .iconMediachoiser.active.f-left
+            +I('computer3')
+        .iconMediachoiser.f-left
+            +I('computer2')
+        .iconMediachoiser.inList.f-left
+            +I('computer1')
+        .iconMediachoiser.f-left
+            +I('computer')
+        .iconMediachoiser.inList.f-left
+            +I('arrow')
+        .iconMediachoiser.f-left
+            +I('arrow')
 .classMaker
     section#context
     section#classSelector
     section#selfProperties
     section#extendsSelectors
+    section#pseudoSelectors.row
+        .col-12-tp
+            .pseudoBtn.f-left : hover
+            .pseudoBtn.f-left : active
+            .pseudoBtn.f-left : checked
+            .pseudoBtn.f-left : default
+            .pseudoBtn.f-left : dir()
+            .pseudoBtn.f-left : disabled
+            .pseudoBtn.f-left : empty
+            .pseudoBtn.f-left : enabled
+            .pseudoBtn.f-left : first
+            .pseudoBtn.f-left : first-child
+            .pseudoBtn.f-left : first-of-type
+            .pseudoBtn.f-left : fullscreen
+            .pseudoBtn.f-left : indeterminate
+            .pseudoBtn.f-left : in-range
+            .pseudoBtn.f-left : invalid
+            .pseudoBtn.f-left : lang()
+            .pseudoBtn.f-left : last-child
+            .pseudoBtn.f-left : last-of-type
+            .pseudoBtn.f-left : left
+            .pseudoBtn.f-left : link
+            .pseudoBtn.f-left : not()
+            .pseudoBtn.f-left : nth-child()
+            .pseudoBtn.f-left : nth-last-child()
+            .pseudoBtn.f-left : nth-last-of-type()
+            .pseudoBtn.f-left : nth-of-type()
+            .pseudoBtn.f-left : only-child
+            .pseudoBtn.f-left : only-of-type
+            .pseudoBtn.f-left : optional
+            .pseudoBtn.f-left : out-of-range
+            .pseudoBtn.f-left : nth-last-child()
+            .pseudoBtn.f-left : read-only
+            .pseudoBtn.f-left : read-write
+            .pseudoBtn.f-left : right
+            .pseudoBtn.f-left : root
+            .pseudoBtn.f-left : target
+            .pseudoBtn.f-left : valid
+            .pseudoBtn.f-left : visited
+
+
     section.row
         div.clearfix
             .col-6-tp

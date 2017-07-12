@@ -1,3 +1,4 @@
+
 var vendorsClasses = ['debugElement','ui-draggable-handle','ui-draggable','ui-resizable','resizeble'];
 var changerWatcher = {}
     changerWatcher.targets = {}
@@ -56,7 +57,6 @@ var changerWatcher = {}
         });
 
     })
-
 
 
 
@@ -240,6 +240,7 @@ function MakeEditable (elem) {
 $(document).ready(function () {
 
     $('#ball').draggable();
+    $('.ElemMenu',window.parent.document).draggable();
     $('.spacer').resizable({
         handles: "§se, s, w"
     });
