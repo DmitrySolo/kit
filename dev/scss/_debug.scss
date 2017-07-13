@@ -1100,7 +1100,7 @@
     background: #3c3f41 !important;
   }
   .hud-content {
-    margin-top: 20px;
+    margin-top: 21px;
     float: left;
     width: 75%;
     iframe {
@@ -1345,11 +1345,12 @@
       height: 2.2em;
       padding: 4px;
       fill: #00b3ee;
+
     }
   }
   .iconMediachoiser {
     display: inline-block;
-    padding: 5px 6px;
+    padding: 3px 3px;
   }
 
   .iconMediachoiser.active {
@@ -1383,7 +1384,10 @@
   }
   .ElemMenu{
     position: absolute;
-    width: 3.2em;
+    //display:none;
+    width: 2.7em;
+    top:40%;
+    right:17%;
     background-color: $panel;
 
     box-shadow: 2px 2px 2px #474747;
@@ -1406,6 +1410,8 @@
       height: 1.1em;
       width: 1.1em;
       fill:#00bfff;
+      stroke-width: 3px;
+      stroke: #00bfff;
     }
     padding: 7px;
   }

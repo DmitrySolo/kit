@@ -26,6 +26,17 @@
 				"": ""
 			}
 		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-HUD-script": {
 			"js": {
 				"quant-HUD-script-script": {
@@ -35,17 +46,6 @@
 				"JQUI-script": {
 					"src": "bower_components/jquery-ui/jquery-ui.min.js",
 					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-debug-JsonCss": {
-			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
 				}
 			},
 			"css": {
@@ -74,23 +74,35 @@
 				"": ""
 			}
 		},
-		"xRayView": {
-			"js": {
-				"xRayView-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"hero_video": {
 			"js": {
 				"hero_video-script": {
 					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
 					"container": "footer/init",
 					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"custom_scrollbar": {
+			"js": {
+				"hero_video-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--custom_scrollbar/custom_scrollbar_script.js",
+					"container": "footer/init",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"xRayView": {
+			"js": {
+				"xRayView-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
+					"container": "footer/init"
 				}
 			},
 			"css": {

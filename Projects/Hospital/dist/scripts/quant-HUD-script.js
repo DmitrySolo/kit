@@ -64,10 +64,6 @@ var changerWatcher = {}
 
 
 
-
-
-
-
 function MakeEditable (elem) {
 
     elem.on('click',function(e){
