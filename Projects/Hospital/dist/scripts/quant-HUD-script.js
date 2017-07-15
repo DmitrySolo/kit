@@ -5,10 +5,7 @@ var changerWatcher = {}
     var target ={};
          target.save = {
              "element-vistest-mainbutton":
-                {   type:'element',
-                    subType:'buttons',
-                    name:'visTest',
-                    className:'mainButton',
+                {
                     properties:{
                         'display':'block',
                         'width':'100%',

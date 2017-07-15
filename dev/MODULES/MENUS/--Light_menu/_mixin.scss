@@ -36,6 +36,9 @@
     @include for-size(tablet-l-up){
       color: #000;
     }
+    @include for-size(tablet-p-up){
+      color: #ade994;
+    }
 
 
   }

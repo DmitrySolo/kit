@@ -9,18 +9,18 @@
     .ElemMenu__section
         +I('target')
 div.clearfix.mediaChoiser
-    .col-12-tp
-        .iconMediachoiser.active.f-left
+        .col-12-tp
+        .iconMediachoiser.f-left.mediaAll.active
+            +I('alldisolays')
+        .iconMediachoiser.f-left.mediaMobile
             +I('computer3')
-        .iconMediachoiser.f-left
+        .iconMediachoiser.f-left.mediaTabletP
             +I('computer2')
-        .iconMediachoiser.inList.f-left
+        .iconMediachoiser.f-left.mediaTabletL
             +I('computer1')
-        .iconMediachoiser.f-left
+        .iconMediachoiser.f-left.mediaDesctop
             +I('computer')
-        .iconMediachoiser.inList.f-left
-            +I('arrow')
-        .iconMediachoiser.f-left
+        .iconMediachoiser.f-left.mediaDesctopLarge
             +I('arrow')
 .classMaker
     section#context

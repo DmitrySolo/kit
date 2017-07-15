@@ -1,6 +1,13 @@
 //  quant-debug script
 
 $( document ).ready(function() {
+    var mediaMap = {
+        phoneBreakpoint: parseInt($('#phone-upper-boundary').text(),10),
+        tabletPortraitBreakpoint:parseInt($('#tablet-portrait-upper-boundary').text(),10),
+        tabletLandscapeBreakpoint:parseInt($('#tablet-landscape-upper-boundary').text(),10),
+        desktopBreakpoint:parseInt($('#desktop-upper-boundary').text(),10),
+        desktoplBreakpoint:parseInt($('#desktopl-upper-boundary').text(),10)
+    }
     window.searchClosestofDebugElement = function (searchableEl) {
         var arr = ($(searchableEl).html()).split('<i>');
         var tag = arr[0]
@@ -152,7 +159,44 @@ $( document ).ready(function() {
 
             }
 
+                ownStylesProperties.media=elOject.media
+        if(ownStylesProperties.media.length){
+                //get prams from mainParamscreen and
+            for( var i in ownStylesProperties.media){
+                    var breakPoint = parseInt(ownStylesProperties.media[i][0].replace(/\D/g,''));
+                console.log(breakPoint,'9090',mediaMap.phoneBreakpoint-1);
+                switch(breakPoint){
+                    case(mediaMap.desktoplBreakpoint): $('.mediaDesctopLarge').addClass('inList');
+                    break;
+                    case(mediaMap.desktopBreakpoint): $('.mediaDesctop').addClass('inList');
+                    break;
+                    case(mediaMap.tabletLandscapeBreakpoint): $('.mediaTabletL').addClass('inList');
+                    break;
+                    case(mediaMap.tabletPortraitBreakpoint): $('.mediaTabletP').addClass('inList');
+                    break;
+                    case(mediaMap.phoneBreakpoint-1): $('.mediaMobile').addClass('inList');
+                    break;
+                }
+            }
+
+
+
+
+                //add class to tabber
+
+
+
+
+                console.log('media',ownStylesProperties.media)
+        }else{
+            console.log('noMedia',ownStylesProperties.media)
+        }
+
+
             console.log('+',ownStylesProperties,'+')
+
+
+
     })
 
     function getObjectStyles(className) {
@@ -200,13 +244,8 @@ $( document ).ready(function() {
 
 var engP = 'Platy bonito oceanic whitetip shark orangespine unicorn fish loach goby rockweed gunnel turkeyfish Port Jackson shark buffalofish, southern grayling. Arapaima viperfish eeltail catfish pearl danio Black swallower, Atlantic trout sailfin silverside. Tang, marlin tui chub Indian mul flashlight fish, skilfish loosejaw lenok porcupinefish bandfish. Clownfish eeltail catfish: freshwater hatchetfish codlet tenpounder ladyfish scissor-tail rasbora lancetfish tigerperch king of herring. Grideye Mozambique tilapia oceanic whitetip shark clingfish North American darter mail-cheeked fish lamprey bramble shark. Parrotfish loweye catfish squaretail. Lighthousefish yellowhead jawfish shark mola mola sunfish.';
 var eHead = 'This is Header';
-var mediaMap = {
-    phoneBreakpoint: parseInt($('#phone-upper-boundary').text(),10),
-    tabletPortraitBreakpoint:parseInt($('#tablet-portrait-upper-boundary').text(),10),
-    tabletLandscapeBreakpoint:parseInt($('#tablet-landscape-upper-boundary').text(),10),
-    desktopBreakpoint:parseInt($('#desktop-upper-boundary').text(),10),
-    desktoplBreakpoint:parseInt($('#desktopl-upper-boundary').text(),10)
-}
+
+console.log('MEDIAMAP',mediaMap)
 var mediaBreakPoinsChecker= function () {
     $( window ).resize(function(){
         var size = window.innerWidth;
