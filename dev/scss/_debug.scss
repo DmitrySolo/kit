@@ -402,7 +402,7 @@
     cursor: grab !important;
   }
   .debugPannel__wrapper {
-    display: none;
+   display:none;
     background: #3c3f41 !important;
     box-shadow: 2px -1px 0px 0px #2f2d2d;
     border-top: solid 1px #b19e9e;
@@ -1108,6 +1108,7 @@
       border-color: dodgerblue;
       display: block;
       margin: 0 auto;
+      height: 80vh;
 
     }
   }
