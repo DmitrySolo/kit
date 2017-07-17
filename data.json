@@ -1,10 +1,38 @@
 {
 	"LIBS": {
-		"JQ": {
+		"baseButton": {
 			"js": {
-				"jquery": {
-					"src": "bower_components/jquery/dist/jquery.min.js",
+				"lib1": {
+					"src": "",
 					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"custom_scrollbar": {
+			"js": {
+				"hero_video-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--custom_scrollbar/custom_scrollbar_script.js",
+					"container": "footer/init",
+					"type": "init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"hero_video": {
+			"js": {
+				"hero_video-script": {
+					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
+					"container": "footer/init",
+					"type": "init"
 				}
 			},
 			"css": {
@@ -15,6 +43,17 @@
 			"js": {
 				"quant-debug-JsonCss-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"JQ": {
+			"js": {
+				"jquery": {
+					"src": "bower_components/jquery/dist/jquery.min.js",
 					"container": "footer/libs"
 				}
 			},
@@ -63,45 +102,6 @@
 			"js": {
 				"xRayView-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"custom_scrollbar": {
-			"js": {
-				"hero_video-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--custom_scrollbar/custom_scrollbar_script.js",
-					"container": "footer/init",
-					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"hero_video": {
-			"js": {
-				"hero_video-script": {
-					"src": "dev/MODULES/PROJECT MODULES/--hero_video/_hero_video-script.js",
-					"container": "footer/init",
-					"type": "init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"baseButton": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
 					"container": "footer/init"
 				}
 			},
