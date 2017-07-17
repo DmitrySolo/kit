@@ -195,9 +195,40 @@ $( document ).ready(function() {
 
             console.log('+',ownStylesProperties,'+')
 
+        $('.iconMediachoiser').on('click',function () {
+            var _this = $(this);
+            if(_this.hasClass('inList')){
 
+                var classList = _this.attr('class');
+                var breakpoint = '';
+                switch(true){
+                    case(classList.indexOf('Mobile')>0): getMediaCss(mediaMap.phoneBreakpoint-1);
+                        break;
+                    case (classList.indexOf('TabletP')>0): getMediaCss(mediaMap.tabletPortraitBreakpoint);
+                        break;
+                    case(classList.indexOf('TabletL')>0): getMediaCss(mediaMap.tabletLandscapeBreakpoint);
+                        break;
+                    case(classList.indexOf('Desctop')>0): getMediaCss(mediaMap.desktopBreakpoint);
+                        break;
+                    case(classList.indexOf('DesctopLarge')>0): getMediaCss(mediaMap.desktoplBreakpoint);
+                        break;
+
+                }
+            }
+        })
+
+        var getMediaCss = function (bpoint) {
+
+            for (var i in ownStylesProperties.media){
+                if(ownStylesProperties.media[i][0].indexOf(bpoint)>0){
+                    ql(ownStylesProperties.media[i][1]['declarations'])
+                }
+            }
+        }
 
     })
+
+
 
     function getObjectStyles(className) {
 

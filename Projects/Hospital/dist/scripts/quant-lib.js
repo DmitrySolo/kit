@@ -1,6 +1,9 @@
 //  quant-lib script
 var qntEventFuncs={};
-
+/////////////////////////////////////////////////////// CONSOLE LOG
+var ql = function(msg,del=''){
+    console.log(del,msg,del)
+}
 ////////////////////////////////////////////////////// ACTION STARTER
 
 $( document ).ready(function() {
