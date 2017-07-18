@@ -72,6 +72,7 @@ $( document ).ready(function() {
     }
 //READ SELECTORS
     $('body').on('mousedown','.classtype__name',function () {
+        $('.iconMediachoiser').removeClass('active');
         var searchableSelector = $(this).text();
         var regExpss =new RegExp(searchableSelector, 'g');
         console.log(searchableSelector);
@@ -102,7 +103,8 @@ $( document ).ready(function() {
                     var selectorType = 'self';
                     console.log(selectorType)
                     var props = getProps();
-                    ownStylesProperties.ownStyles.push(props)
+                    ownStylesProperties.ownStyles.push(props);
+                    $('#selfProperties').empty()
                     $('#selfProperties').prepend('<div class="ownProperties">'+props+'</div>')
                     console.log('IN1')
                 }
@@ -127,13 +129,14 @@ $( document ).ready(function() {
                         }
 
                     }
-
+                    $('#extendsSelectors').empty();
                     $('#extendsSelectors').prepend('<div class="selectorHeader selectorGroup">'+elOject.selectors[index].replace(regExpss,'<span class="chosenSelector">'+'.'+searchableSelector+'</span>')+'<div class="propertyGroup">'+props+'</div></div>')
 
                 }else if (elOject.selectors[index].split(' ').length>1){
                     var selectorType = 'ParentChild';
                     console.log(selectorType)
                     var props = getProps()
+                    $('#extendsSelectors').empty();
                     $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt">'+elOject.selectors[index].replace(regExpss,'<span class="chosenSelector">'+'.'+searchableSelector+'</span>')+'<div class="propertyGroup">'+props+'</div></div>')
 
                 }else if (elOject.selectors[index].replace('.'+searchableSelector,'').split('.').length>1){
@@ -196,6 +199,9 @@ $( document ).ready(function() {
             console.log('+',ownStylesProperties,'+')
 
         $('.iconMediachoiser').on('click',function () {
+            $('.iconMediachoiser').removeClass('active')
+
+            $(this).addClass('active')
             var _this = $(this);
             if(_this.hasClass('inList')){
 
@@ -219,7 +225,8 @@ $( document ).ready(function() {
 
         var getMediaCss = function (bpoint) {
 
-            for (var i in ownStylesProperties.media){
+            $('.window').css('width',bpoint+'px')
+;            for (var i in ownStylesProperties.media){
                 if(ownStylesProperties.media[i][0].indexOf(bpoint)>0){
                 var props = ownStylesProperties.media[i][1]['declarations'];
 
@@ -232,7 +239,7 @@ $( document ).ready(function() {
                     prop = props[i]['property'];
                     val = props[i]['value'];
                     stringPropVal +=prop+' : '+val+'<br>';
-                }
+                }   $('.ownProperties').empty();
                     $('.ownProperties').html(stringPropVal);
 
                 }
