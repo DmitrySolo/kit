@@ -221,7 +221,20 @@ $( document ).ready(function() {
 
             for (var i in ownStylesProperties.media){
                 if(ownStylesProperties.media[i][0].indexOf(bpoint)>0){
-                    ql(ownStylesProperties.media[i][1]['declarations'])
+                var props = ownStylesProperties.media[i][1]['declarations'];
+
+                var prop = '';
+                var val = '';
+
+                var stringPropVal = '';
+
+                    for (var i in props){
+                    prop = props[i]['property'];
+                    val = props[i]['value'];
+                    stringPropVal +=prop+' : '+val+'<br>';
+                }
+                    $('.ownProperties').html(stringPropVal);
+
                 }
             }
         }
@@ -919,5 +932,11 @@ var addToBufer= function (content) {
 
             }
         })
+
+
+
+
+
+
 
 });
