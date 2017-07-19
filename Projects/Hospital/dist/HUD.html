@@ -440,14 +440,13 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
             </div>
           </section>
         </div>
+        <div class="editorWrapper">
+          <div class="editor" id="editorPug"></div>
+          <div class="editor" id="editorScss"></div>
+          <div class="editor" id="editorJs"></div>
+        </div>
         <div class="hud-bottom">
-          <div class="editorsContainer clearfix notEdit">
-            <div class="editorWrapper">
-              <div class="editor" id="editorPug"></div>
-              <div class="editor" id="editorScss"></div>
-              <div class="editor" id="editorJs"></div>
-            </div>
-          </div>
+          <div class="editorsContainer clearfix notEdit"></div>
           <div class="debugPannel__wrapper notEdit">
             <div class="debugPannel clearfix">
               <div class="debugPannel__section col-4-tp">
@@ -849,6 +848,13 @@ $( document ).ready(function() {
         return result;
     }
 //READ SELECTORS
+
+    var currentSelectorData = [];
+    var selectorsName = [];
+    var styleRules = [];
+    currentSelectorData.push(selectorsName,styleRules);
+
+
     $('body').on('mousedown','.classtype__name',function () {
         $('.iconMediachoiser').removeClass('active');
         var searchableSelector = $(this).text();
@@ -973,7 +979,7 @@ $( document ).ready(function() {
             console.log('noMedia',ownStylesProperties.media)
         }
 
-
+            currentSelectorData = ownStylesProperties;
             console.log('+',ownStylesProperties,'+')
 
         $('.iconMediachoiser').on('click',function () {
@@ -1004,7 +1010,7 @@ $( document ).ready(function() {
         var getMediaCss = function (bpoint) {
 
             $('.window').css('width',bpoint+'px')
-;            for (var i in ownStylesProperties.media){
+;                    for (var i in ownStylesProperties.media){
                 if(ownStylesProperties.media[i][0].indexOf(bpoint)>0){
                 var props = ownStylesProperties.media[i][1]['declarations'];
 

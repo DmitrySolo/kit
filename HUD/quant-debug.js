@@ -72,7 +72,10 @@ $( document ).ready(function() {
     }
 //READ SELECTORS
 
-    var currentSelectorData = {};
+    var currentSelectorData = [];
+    var selectorsName = [];
+    var styleRules = [];
+    currentSelectorData.push(selectorsName,styleRules);
 
 
     $('body').on('mousedown','.classtype__name',function () {
@@ -230,7 +233,7 @@ $( document ).ready(function() {
         var getMediaCss = function (bpoint) {
 
             $('.window').css('width',bpoint+'px')
-;            for (var i in ownStylesProperties.media){
+;                    for (var i in ownStylesProperties.media){
                 if(ownStylesProperties.media[i][0].indexOf(bpoint)>0){
                 var props = ownStylesProperties.media[i][1]['declarations'];
 
