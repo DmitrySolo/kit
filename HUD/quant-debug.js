@@ -71,6 +71,10 @@ $( document ).ready(function() {
         return result;
     }
 //READ SELECTORS
+
+    var currentSelectorData = {};
+
+
     $('body').on('mousedown','.classtype__name',function () {
         $('.iconMediachoiser').removeClass('active');
         var searchableSelector = $(this).text();
@@ -195,7 +199,7 @@ $( document ).ready(function() {
             console.log('noMedia',ownStylesProperties.media)
         }
 
-
+            currentSelectorData = ownStylesProperties;
             console.log('+',ownStylesProperties,'+')
 
         $('.iconMediachoiser').on('click',function () {
