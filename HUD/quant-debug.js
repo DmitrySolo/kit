@@ -72,96 +72,117 @@ $( document ).ready(function() {
     }
 //READ SELECTORS
 
-    var currentSelectorData = [];
-    var selectorsName = [];
-    var styleRules = [];
-    currentSelectorData.push(selectorsName,styleRules);
+    var currentSelectorsData = {};
+    currentSelectorsData.selectorName = [];
+    currentSelectorsData.selectorData = [];
 
-
+///////////////////////////////////////////CHANGER
     $('body').on('mousedown','.classtype__name',function () {
+
         $('.iconMediachoiser').removeClass('active');
         var searchableSelector = $(this).text();
-        var regExpss =new RegExp(searchableSelector, 'g');
-        console.log(searchableSelector);
-        var selectorType = '';
+        var indexE = currentSelectorsData.selectorName.indexOf(searchableSelector);
+        if (indexE>-1){
 
-        var elOject = getObjects(searchableSelector)
+            ql(indexE)
 
-           var ownStylesProperties={
-                ownStyles:[],
-                pseudoSelectors:{
-                    hover:[],
-                    active:[],
-                    focus:[]
+            var styles = currentSelectorsData.selectorData[indexE];
+            ql(styles,'kkkk')
+
+
+
+        }else {
+            ql('add new');
+
+
+            var regExpss = new RegExp(searchableSelector, 'g');
+            console.log(searchableSelector);
+            var selectorType = '';
+
+            var elOject = getObjects(searchableSelector)
+
+            var ownStylesProperties = {
+                selectorName: searchableSelector,
+                ownStyles: [],
+                pseudoSelectors: {
+                    hover: [],
+                    active: [],
+                    focus: []
                 }
             }
 
-        var getProps = function () {
-            var properties = '';
-            for (var i in elOject.styles[index]){
-                var rule = elOject.styles[index][i];
-                properties += rule.propery+':'+rule.value+'<br>';
+            var getProps = function () {
+                var properties = '';
+                for (var i in elOject.styles[index]) {
+                    var rule = elOject.styles[index][i];
+                    properties += rule.propery + ':' + rule.value + '<br>';
+                }
+                return properties
             }
-            return properties
-        }
-            for (var index in elOject.selectors){
+            for (var index in elOject.selectors) {
 
-                if (elOject.selectors[index] == '.'+searchableSelector){
+                if (elOject.selectors[index] == '.' + searchableSelector) {
                     var selectorType = 'self';
                     console.log(selectorType)
                     var props = getProps();
                     ownStylesProperties.ownStyles.push(props);
                     $('#selfProperties').empty()
-                    $('#selfProperties').prepend('<div class="ownProperties">'+props+'</div>')
+                    $('#selfProperties').prepend('<div class="ownProperties">' + props + '</div>')
                     console.log('IN1')
                 }
-                else if (elOject.selectors[index].split(',').length >= 2){
+                else if (elOject.selectors[index].split(',').length >= 2) {
 
                     var groupPart = elOject.selectors[index].split(',');
                     var selectorType = 'group';
-                    for (var i in groupPart){
+                    for (var i in groupPart) {
 
-                        if (groupPart[i].split(':').length > 1 && groupPart[i].split(':')[0] =='.'+searchableSelector ){
+                        if (groupPart[i].split(':').length > 1 && groupPart[i].split(':')[0] == '.' + searchableSelector) {
                             console.log('IN2')
                             var props = getProps();
-                            console.log('IN2',props)
-                         switch (groupPart[i].split(':')[1]){
-                             case 'hover': ownStylesProperties.pseudoSelectors.hover=props;
-                             break;
-                             case 'active': ownStylesProperties.pseudoSelectors.active=(props);
-                             break;
-                             case 'focus': ownStylesProperties.pseudoSelectors.focus=props;
-                                 break;
-                         }
+                            console.log('IN2', props)
+                            switch (groupPart[i].split(':')[1]) {
+                                case 'hover':
+                                    ownStylesProperties.pseudoSelectors.hover = props;
+                                    break;
+                                case 'active':
+                                    ownStylesProperties.pseudoSelectors.active = (props);
+                                    break;
+                                case 'focus':
+                                    ownStylesProperties.pseudoSelectors.focus = props;
+                                    break;
+                            }
                         }
 
                     }
                     $('#extendsSelectors').empty();
-                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorGroup">'+elOject.selectors[index].replace(regExpss,'<span class="chosenSelector">'+'.'+searchableSelector+'</span>')+'<div class="propertyGroup">'+props+'</div></div>')
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorGroup">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' + '.' + searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
 
-                }else if (elOject.selectors[index].split(' ').length>1){
+                } else if (elOject.selectors[index].split(' ').length > 1) {
                     var selectorType = 'ParentChild';
                     console.log(selectorType)
                     var props = getProps()
                     $('#extendsSelectors').empty();
-                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt">'+elOject.selectors[index].replace(regExpss,'<span class="chosenSelector">'+'.'+searchableSelector+'</span>')+'<div class="propertyGroup">'+props+'</div></div>')
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' + '.' + searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
 
-                }else if (elOject.selectors[index].replace('.'+searchableSelector,'').split('.').length>1){
+                } else if (elOject.selectors[index].replace('.' + searchableSelector, '').split('.').length > 1) {
                     var selectorType = 'Extends';
                     console.log(selectorType)
                     getProps()
                 }
-                else if (elOject.selectors[index].split(':').length>=1){
+                else if (elOject.selectors[index].split(':').length >= 1) {
                     var selectorType = 'Own';
                     console.log(selectorType)
                     var props = getProps()
                     console.log('in3')
-                    switch (elOject.selectors[index].split(':')[1]){
-                        case 'hover': ownStylesProperties.pseudoSelectors.hover=props;
+                    switch (elOject.selectors[index].split(':')[1]) {
+                        case 'hover':
+                            ownStylesProperties.pseudoSelectors.hover = props;
                             break;
-                        case 'active': ownStylesProperties.pseudoSelectors.active=(props);
+                        case 'active':
+                            ownStylesProperties.pseudoSelectors.active = (props);
                             break;
-                        case 'focus': ownStylesProperties.pseudoSelectors.focus=props;
+                        case 'focus':
+                            ownStylesProperties.pseudoSelectors.focus = props;
                             break;
                     }
                 }
@@ -169,93 +190,105 @@ $( document ).ready(function() {
 
             }
 
-                ownStylesProperties.media=elOject.media
-        if(ownStylesProperties.media.length){
+            ownStylesProperties.media = elOject.media
+            if (ownStylesProperties.media.length) {
                 //get prams from mainParamscreen and
-            for( var i in ownStylesProperties.media){
-                    var breakPoint = parseInt(ownStylesProperties.media[i][0].replace(/\D/g,''));
-                console.log(breakPoint,'9090',mediaMap.phoneBreakpoint-1);
-                switch(breakPoint){
-                    case(mediaMap.desktoplBreakpoint): $('.mediaDesctopLarge').addClass('inList');
-                    break;
-                    case(mediaMap.desktopBreakpoint): $('.mediaDesctop').addClass('inList');
-                    break;
-                    case(mediaMap.tabletLandscapeBreakpoint): $('.mediaTabletL').addClass('inList');
-                    break;
-                    case(mediaMap.tabletPortraitBreakpoint): $('.mediaTabletP').addClass('inList');
-                    break;
-                    case(mediaMap.phoneBreakpoint-1): $('.mediaMobile').addClass('inList');
-                    break;
+                for (var i in ownStylesProperties.media) {
+                    var breakPoint = parseInt(ownStylesProperties.media[i][0].replace(/\D/g, ''));
+                    console.log(breakPoint, '9090', mediaMap.phoneBreakpoint - 1);
+                    switch (breakPoint) {
+                        case(mediaMap.desktoplBreakpoint):
+                            $('.mediaDesctopLarge').addClass('inList');
+                            break;
+                        case(mediaMap.desktopBreakpoint):
+                            $('.mediaDesctop').addClass('inList');
+                            break;
+                        case(mediaMap.tabletLandscapeBreakpoint):
+                            $('.mediaTabletL').addClass('inList');
+                            break;
+                        case(mediaMap.tabletPortraitBreakpoint):
+                            $('.mediaTabletP').addClass('inList');
+                            break;
+                        case(mediaMap.phoneBreakpoint - 1):
+                            $('.mediaMobile').addClass('inList');
+                            break;
+                    }
                 }
-            }
-
-
 
 
                 //add class to tabber
 
 
+                console.log('media', ownStylesProperties.media)
+            } else {
+                console.log('noMedia', ownStylesProperties.media)
+            }
 
 
-                console.log('media',ownStylesProperties.media)
-        }else{
-            console.log('noMedia',ownStylesProperties.media)
-        }
+            currentSelectorsData.selectorName.push(searchableSelector);
+            currentSelectorsData.selectorData.push(ownStylesProperties);
 
-            currentSelectorData = ownStylesProperties;
-            console.log('+',ownStylesProperties,'+')
 
-        $('.iconMediachoiser').on('click',function () {
-            $('.iconMediachoiser').removeClass('active')
+            console.log('+', currentSelectorsData);
 
-            $(this).addClass('active')
-            var _this = $(this);
-            if(_this.hasClass('inList')){
+            $('.iconMediachoiser').on('click', function () {
+                $('.iconMediachoiser').removeClass('active')
 
-                var classList = _this.attr('class');
-                var breakpoint = '';
-                switch(true){
-                    case(classList.indexOf('Mobile')>0): getMediaCss(mediaMap.phoneBreakpoint-1);
-                        break;
-                    case (classList.indexOf('TabletP')>0): getMediaCss(mediaMap.tabletPortraitBreakpoint);
-                        break;
-                    case(classList.indexOf('TabletL')>0): getMediaCss(mediaMap.tabletLandscapeBreakpoint);
-                        break;
-                    case(classList.indexOf('Desctop')>0): getMediaCss(mediaMap.desktopBreakpoint);
-                        break;
-                    case(classList.indexOf('DesctopLarge')>0): getMediaCss(mediaMap.desktoplBreakpoint);
-                        break;
+                $(this).addClass('active')
+                var _this = $(this);
+                if (_this.hasClass('inList')) {
 
+                    var classList = _this.attr('class');
+                    var breakpoint = '';
+                    switch (true) {
+                        case(classList.indexOf('Mobile') > 0):
+                            getMediaCss(mediaMap.phoneBreakpoint - 1);
+                            break;
+                        case (classList.indexOf('TabletP') > 0):
+                            getMediaCss(mediaMap.tabletPortraitBreakpoint);
+                            break;
+                        case(classList.indexOf('TabletL') > 0):
+                            getMediaCss(mediaMap.tabletLandscapeBreakpoint);
+                            break;
+                        case(classList.indexOf('Desctop') > 0):
+                            getMediaCss(mediaMap.desktopBreakpoint);
+                            break;
+                        case(classList.indexOf('DesctopLarge') > 0):
+                            getMediaCss(mediaMap.desktoplBreakpoint);
+                            break;
+
+                    }
+                }
+            })
+
+            var getMediaCss = function (bpoint) {
+
+                $('.window').css('width', bpoint + 'px')
+                ;
+                for (var i in ownStylesProperties.media) {
+                    if (ownStylesProperties.media[i][0].indexOf(bpoint) > 0) {
+                        var props = ownStylesProperties.media[i][1]['declarations'];
+
+                        var prop = '';
+                        var val = '';
+
+                        var stringPropVal = '';
+
+                        for (var i in props) {
+                            prop = props[i]['property'];
+                            val = props[i]['value'];
+                            stringPropVal += prop + ' : ' + val + '<br>';
+                        }
+                        $('.ownProperties').empty();
+                        $('.ownProperties').html(stringPropVal);
+
+                    }
                 }
             }
-        })
-
-        var getMediaCss = function (bpoint) {
-
-            $('.window').css('width',bpoint+'px')
-;                    for (var i in ownStylesProperties.media){
-                if(ownStylesProperties.media[i][0].indexOf(bpoint)>0){
-                var props = ownStylesProperties.media[i][1]['declarations'];
-
-                var prop = '';
-                var val = '';
-
-                var stringPropVal = '';
-
-                    for (var i in props){
-                    prop = props[i]['property'];
-                    val = props[i]['value'];
-                    stringPropVal +=prop+' : '+val+'<br>';
-                }   $('.ownProperties').empty();
-                    $('.ownProperties').html(stringPropVal);
-
-                }
-            }
         }
-
     })
-
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
+/////END OF CHANGER
 
     function getObjectStyles(className) {
 
