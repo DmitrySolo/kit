@@ -38,7 +38,7 @@ $( document ).ready(function() {
                     var mediaPoint = mediaRules[i].media;
                     console.log(rule1,'qqqq',mediaRules[i].media)
                     result.media.push([mediaPoint,rule1])
-                }
+        }
             })
 
         })
@@ -50,8 +50,7 @@ $( document ).ready(function() {
             //console.log(selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr))
             if(selObj.hasOwnProperty('selectors') && selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr) != -1){
                 console.log(selObj);
-                result.position.push(selObj.position.start.column)
-                result.position.push(selObj.position.start.line)
+                result.position.push(selObj.position.start.column+'_'+selObj.position.start.line)
                 result.selectors.push(selObj.selectors.toString());
                 var stylesArr=[];
                 for(var zi in selObj.declarations){
@@ -75,9 +74,13 @@ $( document ).ready(function() {
     var currentSelectorsData = {};
     currentSelectorsData.selectorName = [];
     currentSelectorsData.selectorData = [];
-
+    var CURRENTSWITCHER;
 ///////////////////////////////////////////CHANGER
     $('body').on('mousedown','.classtype__name',function () {
+        CURRENTSWITCHER = {};
+        CURRENTSWITCHER.selector = '';
+        CURRENTSWITCHER.media = 'all';
+        CURRENTSWITCHER.pseudoEllements = '';
 
         $('.iconMediachoiser').removeClass('active');
         var searchableSelector = $(this).text();
@@ -87,7 +90,18 @@ $( document ).ready(function() {
             ql(indexE)
 
             var styles = currentSelectorsData.selectorData[indexE];
-            ql(styles,'kkkk')
+            CURRENTSWITCHER.selector = currentSelectorsData.selectorName[indexE];
+            $('#selfProperties').empty();
+
+
+            styles.ownStyles[0]=styles.ownStyles[0]+'color:superred';
+
+            for(var i in styles.ownStyles){
+
+                $('#selfProperties').prepend('<div class="ownProperties">' +styles.ownStyles[i] + '</div>')
+            }
+            markMedia(styles.media);
+
 
 
 
@@ -104,12 +118,16 @@ $( document ).ready(function() {
             var ownStylesProperties = {
                 selectorName: searchableSelector,
                 ownStyles: [],
+                position: '',
                 pseudoSelectors: {
                     hover: [],
                     active: [],
                     focus: []
                 }
             }
+            CURRENTSWITCHER.selector = searchableSelector+'1';
+
+
 
             var getProps = function () {
                 var properties = '';
@@ -121,10 +139,12 @@ $( document ).ready(function() {
             }
             for (var index in elOject.selectors) {
 
+
                 if (elOject.selectors[index] == '.' + searchableSelector) {
                     var selectorType = 'self';
                     console.log(selectorType)
                     var props = getProps();
+                    ownStylesProperties.position = elOject.position[index];
                     ownStylesProperties.ownStyles.push(props);
                     $('#selfProperties').empty()
                     $('#selfProperties').prepend('<div class="ownProperties">' + props + '</div>')
@@ -193,27 +213,7 @@ $( document ).ready(function() {
             ownStylesProperties.media = elOject.media
             if (ownStylesProperties.media.length) {
                 //get prams from mainParamscreen and
-                for (var i in ownStylesProperties.media) {
-                    var breakPoint = parseInt(ownStylesProperties.media[i][0].replace(/\D/g, ''));
-                    console.log(breakPoint, '9090', mediaMap.phoneBreakpoint - 1);
-                    switch (breakPoint) {
-                        case(mediaMap.desktoplBreakpoint):
-                            $('.mediaDesctopLarge').addClass('inList');
-                            break;
-                        case(mediaMap.desktopBreakpoint):
-                            $('.mediaDesctop').addClass('inList');
-                            break;
-                        case(mediaMap.tabletLandscapeBreakpoint):
-                            $('.mediaTabletL').addClass('inList');
-                            break;
-                        case(mediaMap.tabletPortraitBreakpoint):
-                            $('.mediaTabletP').addClass('inList');
-                            break;
-                        case(mediaMap.phoneBreakpoint - 1):
-                            $('.mediaMobile').addClass('inList');
-                            break;
-                    }
-                }
+                markMedia(ownStylesProperties.media);
 
 
                 //add class to tabber
@@ -243,21 +243,27 @@ $( document ).ready(function() {
                     switch (true) {
                         case(classList.indexOf('Mobile') > 0):
                             getMediaCss(mediaMap.phoneBreakpoint - 1);
+                            CURRENTSWITCHER.media=mediaMap.phoneBreakpoint;
                             break;
                         case (classList.indexOf('TabletP') > 0):
                             getMediaCss(mediaMap.tabletPortraitBreakpoint);
+                            CURRENTSWITCHER.media=mediaMap.tabletPortraitBreakpoint;
                             break;
                         case(classList.indexOf('TabletL') > 0):
                             getMediaCss(mediaMap.tabletLandscapeBreakpoint);
+                            CURRENTSWITCHER.media=mediaMap.tabletLandscapeBreakpoint;
                             break;
                         case(classList.indexOf('Desctop') > 0):
                             getMediaCss(mediaMap.desktopBreakpoint);
+                            CURRENTSWITCHER.media=mediaMap.desktopBreakpoint;
                             break;
                         case(classList.indexOf('DesctopLarge') > 0):
                             getMediaCss(mediaMap.desktoplBreakpoint);
+                            CURRENTSWITCHER.media=mediaMap.desktoplBreakpoint;
                             break;
 
                     }
+                    ql(CURRENTSWITCHER,'QS');
                 }
             })
 
@@ -286,10 +292,35 @@ $( document ).ready(function() {
                 }
             }
         }
+        ql(CURRENTSWITCHER,'QS')
     })
 //////////////////////////////////////////////////////////////////////////////////////////////////
 /////END OF CHANGER
+    ql(CURRENTSWITCHER,'QS')
 
+
+    function markMedia(media){
+    for (var i in media) {
+        var breakPoint = parseInt(media[i][0].replace(/\D/g, ''));
+        console.log(breakPoint, '9090', mediaMap.phoneBreakpoint - 1);
+        switch (breakPoint) {
+            case(mediaMap.desktoplBreakpoint):
+                $('.mediaDesctopLarge').addClass('inList');
+                break;
+            case(mediaMap.desktopBreakpoint):
+                $('.mediaDesctop').addClass('inList');
+                break;
+            case(mediaMap.tabletLandscapeBreakpoint):
+                $('.mediaTabletL').addClass('inList');
+                break;
+            case(mediaMap.tabletPortraitBreakpoint):
+                $('.mediaTabletP').addClass('inList');
+                break;
+            case(mediaMap.phoneBreakpoint - 1):
+                $('.mediaMobile').addClass('inList');
+                break;
+        }
+    }}
     function getObjectStyles(className) {
 
         elemClassStr= elemClassStr.trim();

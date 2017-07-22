@@ -13,17 +13,3 @@ mixin MODULE-lightMenu(dataMenu)
 				else
 					li(class='lightMenu__item ' + menuItem.dop_class)
 						a(href="" + menuItem.href)=menuItem.title
-mixin MODULE-hero_video()
-	<!-- split modules/hero_video -->
-	.hero_video
-		.homepage-hero-module
-			.video-container
-				.filter
-				video(autoplay loop class="fillWidth")
-					source(src="Hello-World.mp4" type="video/mp4")
-					|Your browser does not support the video tag. I suggest you upgrade your browser.
-					source(src="Hello-World.webm" type="video/webm")
-					|Your browser does not support the video tag. I suggest you upgrade your browser.
-				+hero-title-center('The best of the Rest')
-			.hero_video__poster.hidden
-				img(src="Hello-World.jpg" alt="x")
