@@ -27,7 +27,7 @@ div.clearfix.mediaChoiser
     section#classSelector
     section#selfProperties
     section#extendsSelectors
-    section#pseudoSelectors.row
+    section#pseudoSelectors.row.hidden
         .col-12-tp
             .pseudoBtn.f-left : hover
             .pseudoBtn.f-left : active
@@ -68,7 +68,7 @@ div.clearfix.mediaChoiser
             .pseudoBtn.f-left : visited
 
 
-    section.row
+    section.row.hidden
         div.clearfix
             .col-6-tp
                 label Block
@@ -98,7 +98,7 @@ div.clearfix.mediaChoiser
                         option clearfix
                         option mode
                         option active
-    section.row
+    section.row.hidden
         button#saveClass save
 
 
@@ -142,7 +142,16 @@ div.clearfix.mediaChoiser
                             option clearfix
                             option mode
                             option active
-
+            h6
+                +I('text')
+                | Text & Font
+            div
+                button.propChangerButton center
+                button.propChangerButton left
+                button.propChangerButton right
+                input(type='hidden',value='text-align:').propChanger__propertyName
+                input(type='hidden' value='').propChanger__propertyDelimetr
+                hr
                 hr
             h6
                 +I('column4')
@@ -185,14 +194,6 @@ div.clearfix.mediaChoiser
                 | Size
             div
                 button#100p 100%
-                hr
-            h6
-                +I('text')
-                | Text & Font
-            div
-                button#textAC center
-                button#textAL left
-                button#textAR right
                 hr
             h6
                 +I('mp')

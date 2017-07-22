@@ -146,6 +146,7 @@ $( document ).ready(function() {
                     var props = getProps();
                     ownStylesProperties.position = elOject.position[index];
                     ownStylesProperties.ownStyles.push(props);
+                    ownStylesProperties.stylesObject = elOject.styles[index]
                     $('#selfProperties').empty()
                     $('#selfProperties').prepend('<div class="ownProperties">' + props + '</div>')
                     console.log('IN1')
@@ -297,6 +298,43 @@ $( document ).ready(function() {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 /////END OF CHANGER
     ql(CURRENTSWITCHER,'QS')
+
+
+///ClassChanngerButton
+
+    $('.propChangerButton ').on('click',function () {
+        var val = $(this).text();
+        var delimetr = $(this).siblings('.propChanger__propertyDelimetr').val();
+        var propName = $(this).siblings( ".propChanger__propertyName" ).val();
+        var changes = propName+val+delimetr;
+        sendToCurrent(changes);
+    })
+/// Send changes to current
+    var sendToCurrent = function (changes) {
+    var selector = CURRENTSWITCHER.selector;
+    var media = CURRENTSWITCHER.media;
+        var indexE = currentSelectorsData.selectorName.indexOf(selector);
+        if (indexE>-1) {
+            var styles = currentSelectorsData.selectorData[indexE];
+            ql(styles,'ATTENTION')
+            if(CURRENTSWITCHER.media == 'all'){
+                var styles = styles.ownStyles[0]+changes+'<br>';
+                currentSelectorsData.selectorData[indexE].ownStyles[0] = styles;
+            }else{
+                var point = CURRENTSWITCHER.media;
+                var media = styles.media;
+                for ( var i in media ){
+                    if ( media[i][0].indexOf(point) != -1 ){
+                        currentSelectorsData.selectorData[indexE].media[i][1].declarations.push(changes)
+                    }
+                }
+            }
+        }
+        ql(currentSelectorsData,'Oject to send for api server');
+    }
+
+
+
 
 
     function markMedia(media){
