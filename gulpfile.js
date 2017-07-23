@@ -1380,83 +1380,134 @@ gulp.task('API-SERVER', function () {
             req.on('data', function (data) {
                 body += data;
                 body = JSON.parse(body);
-                for (var key in body.save) {
 
-                    var type = body.save[key].type
-                    var subType = body.save[key].subType
-                    var name = body.save[key].name
-                    var className = body.save[key].className
-                    var properties = body.save[key].properties
-                    var pElProps = body.save[key].pElProperties
-                    var media = body.save[key].mediaProperties
-                    console.log(projectDevDir + type + 's/' + subType + 's/--' + name + '/' + className + '.scss')
+                var col='';
+                var line='';
+                var orderLine =[];
 
 
-                    var string = '.' + className + '{';
+                for (var i in body.selectorData){
 
-                    // PROPERTIES
-                    for (key in properties) {
-
-                        string += '\n\t' + key.replace('_', '-') + ':' + properties[key] + ';';
-                    }
-
-                    // PSEUDO ELEMENTS
-                    for (pseudoSel in pElProps) {
-
-                        string += '\n\t&:' + pseudoSel.replace('_', '-') + '{';
-                        for (key in pElProps[pseudoSel]) {
-                            string += '\n\t\t' + key.replace('_', '-') + ':' + pElProps[pseudoSel][key] + ';';
-                        }
-                        string += '\n\t}';
-
-
-                    }
-
-                    // MEDIA
-
-                    for (mediaPoint in media) {
-
-                        string += '\n\t@include for-size(' + mediaPoint.replace('_', '-') + '){';
-
-                        for (key in media[mediaPoint].properties) {
-                            string += '\n\t\t' + key.replace('_', '-') + ':' + media[mediaPoint].properties[key] + ';';
-                        }
-
-                        for (pseudoSel in media[mediaPoint].pElProperties) {
-
-                            string += '\n\t\t&:' + pseudoSel.replace('_', '-') + '{';
-                            for (key in media[mediaPoint].pElProperties[pseudoSel]) {
-                                string += '\n\t\t\t' + key.replace('_', '-') + ':' + media[mediaPoint].pElProperties[pseudoSel][key] + ';';
-                            }
-                            string += '\n\t\t}';
-
-
-                        }
-                        string += '\n\t}';
-                    }
-
-
-                    //END FILE
-                    string += '\n}';
-
-                    // WRITE FILE
-                    fs.writeFileSync(projectDevDir + type + 's/' + subType + '/--' + name + '/classes/' + className + '.scss', string);
-
-
-                    // INCLUDE FILES
-                    var clFiles = fs.readdirSync(projectDevDir + type + 's/' + subType + '/--' + name + '/classes/');
-
-                    string = ''
-
-                    for (key in clFiles) {
-
-                        string += '@import "classes/' + clFiles[key] + '";\n'
-                    }
-                    fs.writeFileSync(projectDevDir + type + 's/' + subType + '/--' + name + '/style.scss', string);
-                    ////////////////////////////////////////////
-
-
+                    line = body.selectorData[i].position.split('_')[1];
+                    orderLine.push(line)
                 }
+                var ruleLine = orderLine.slice(0);
+                orderLine.sort(function(a, b){return b-a});
+                console.log(ruleLine)
+                console.log(orderLine)
+                for (var i in orderLine){
+
+                   var dataIndex = ruleLine.indexOf(orderLine[i]);
+
+                   body.selectorData[dataIndex];
+
+                    var className = '.' + body.selectorData[dataIndex].selectorName;
+                    var properties = body.selectorData[dataIndex].stylesObject;
+                    var media = body.selectorData[dataIndex].media;
+                    var pElProps = body.selectorData[dataIndex].pseudoSelectors;
+
+                    var string =  className + '{';
+
+                    for (var ix in properties) {
+
+                                string += '\n\t' + properties[ix].propery+':' + properties[ix].value+ ';';
+                             }
+
+                     if (media.length>0){
+                         for (var im in media){
+                                var rule = media[im][0];
+                                var styles = media[im][1].declarations;
+                            string +='\n@for'+rule+'{';
+                                for(var i in styles){
+                                    string+='\n\t'+styles[i].property+':'+styles[i].value+';';
+
+                                }
+                            string+='}';
+                         }
+
+
+                     }
+
+                    console.log(string)
+                }//END OF ONE
+
+                // for (var key in body.save) {
+                //
+                //     var type = body.save[key].type
+                //     var subType = body.save[key].subType
+                //     var name = body.save[key].name
+                //     var className = body.save[key].className
+                //     var properties = body.save[key].properties
+                //     var pElProps = body.save[key].pElProperties
+                //     var media = body.save[key].mediaProperties
+                //     console.log(projectDevDir + type + 's/' + subType + 's/--' + name + '/' + className + '.scss')
+                //
+                //
+                //     var string = '.' + className + '{';
+                //
+                //     // PROPERTIES
+                //     for (key in properties) {
+                //
+                //         string += '\n\t' + key.replace('_', '-') + ':' + properties[key] + ';';
+                //     }
+                //
+                //     // PSEUDO ELEMENTS
+                //     for (pseudoSel in pElProps) {
+                //
+                //         string += '\n\t&:' + pseudoSel.replace('_', '-') + '{';
+                //         for (key in pElProps[pseudoSel]) {
+                //             string += '\n\t\t' + key.replace('_', '-') + ':' + pElProps[pseudoSel][key] + ';';
+                //         }
+                //         string += '\n\t}';
+                //
+                //
+                //     }
+                //
+                //     // MEDIA
+                //
+                //     for (mediaPoint in media) {
+                //
+                //         string += '\n\t@include for-size(' + mediaPoint.replace('_', '-') + '){';
+                //
+                //         for (key in media[mediaPoint].properties) {
+                //             string += '\n\t\t' + key.replace('_', '-') + ':' + media[mediaPoint].properties[key] + ';';
+                //         }
+                //
+                //         for (pseudoSel in media[mediaPoint].pElProperties) {
+                //
+                //             string += '\n\t\t&:' + pseudoSel.replace('_', '-') + '{';
+                //             for (key in media[mediaPoint].pElProperties[pseudoSel]) {
+                //                 string += '\n\t\t\t' + key.replace('_', '-') + ':' + media[mediaPoint].pElProperties[pseudoSel][key] + ';';
+                //             }
+                //             string += '\n\t\t}';
+                //
+                //
+                //         }
+                //         string += '\n\t}';
+                //     }
+                //
+                //
+                //     //END FILE
+                //     string += '\n}';
+                //
+                //     // WRITE FILE
+                //     fs.writeFileSync(projectDevDir + type + 's/' + subType + '/--' + name + '/classes/' + className + '.scss', string);
+                //
+                //
+                //     // INCLUDE FILES
+                //     var clFiles = fs.readdirSync(projectDevDir + type + 's/' + subType + '/--' + name + '/classes/');
+                //
+                //     string = ''
+                //
+                //     for (key in clFiles) {
+                //
+                //         string += '@import "classes/' + clFiles[key] + '";\n'
+                //     }
+                //     fs.writeFileSync(projectDevDir + type + 's/' + subType + '/--' + name + '/style.scss', string);
+                //     ////////////////////////////////////////////
+                //
+                //
+                // }
             });
         }
 

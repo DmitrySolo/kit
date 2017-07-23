@@ -41,19 +41,7 @@ var changerWatcher = {}
                 }
     }
 
-    $('#saveToServer',window.parent.document).on('mousedown',function () {
-            console.log('sfg');
 
-        $.ajax({
-            url:"http://localhost:8181"
-            , type:'POST'
-            , data:JSON.stringify(target)
-            , success: function(res) {
-
-            }
-        });
-
-    })
 
 
 
