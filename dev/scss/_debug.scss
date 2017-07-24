@@ -1167,6 +1167,10 @@
   div[class*='Panel'] {
     background-color: $panel;
   }
+  .window{
+    margin: 0 auto;
+    transition: width .8s linear;
+  }
 
   .hud-bottom {
     position: absolute;
@@ -1415,6 +1419,9 @@
       stroke: #00bfff;
     }
     padding: 7px;
+  }
+  #getCode{
+    display: none;
   }
 }
 

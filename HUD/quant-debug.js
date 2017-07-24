@@ -48,7 +48,7 @@ $(document).ready(function () {
         for (var i in jsonCss.stylesheet.rules) {
             selObj = jsonCss.stylesheet.rules[i];
             //console.log(selObj.selectors.toString().replace(/\./g,'').indexOf(elemClassStr))
-            if (selObj.hasOwnProperty('selectors') && selObj.selectors.toString().replace(/\./g, '').indexOf(elemClassStr) != -1) {
+            if (selObj.hasOwnProperty('selectors') && selObj.selectors.toString().replace(/\./g, '').indexOf(elemClassStr) != -1 && selObj.selectors.toString().indexOf('debug') == -1) {
                 console.log(selObj);
                 result.position.push(selObj.position.start.column + '_' + selObj.position.start.line)
                 result.selectors.push(selObj.selectors.toString());
@@ -84,7 +84,7 @@ $(document).ready(function () {
         CURRENTSWITCHER.pseudoEllements = '';
 
         $('.iconMediachoiser').removeClass('active');
-        var searchableSelector = $(this).text();
+        var searchableSelector =  $(this).text();
         var indexE = currentSelectorsData.selectorName.indexOf(searchableSelector);
         if (indexE > -1) {
 
@@ -95,12 +95,17 @@ $(document).ready(function () {
             $('#selfProperties').empty();
 
 
-            styles.ownStyles[0] = styles.ownStyles[0] + 'color:superred';
+            styles.ownStyles[0] = styles.ownStyles[0];
 
-            for (var i in styles.ownStyles) {
+            var string ='';
 
-                $('#selfProperties').prepend('<div class="ownProperties">' + styles.ownStyles[i] + '</div>')
+            for (var i in styles.stylesObject) {
+
+                string += styles.stylesObject[i].propery+':'+styles.stylesObject[i].value+'<br>';
+
             }
+            $('#selfProperties').prepend('<div class="ownProperties">' + string + '</div>')
+
             markMedia(styles.media);
 
 
@@ -138,7 +143,7 @@ $(document).ready(function () {
             }
             for (var index in elOject.selectors) {
 
-
+                ql(elOject.selectors[index].search(/[a-z]+.mainHeader/),'sdsdaaaaaa');
                 if (elOject.selectors[index] == '.' + searchableSelector) {
                     var selectorType = 'self';
                     console.log(selectorType)
@@ -174,20 +179,22 @@ $(document).ready(function () {
                         }
 
                     }
-                    $('#extendsSelectors').empty();
-                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorGroup">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' + '.' + searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
+
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorGroup">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' +  searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
 
                 } else if (elOject.selectors[index].split(' ').length > 1) {
                     var selectorType = 'ParentChild';
                     console.log(selectorType)
-                    var props = getProps()
-                    $('#extendsSelectors').empty();
-                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' + '.' + searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
+                    var props = getProps();
 
-                } else if (elOject.selectors[index].replace('.' + searchableSelector, '').split('.').length > 1) {
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' +  searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
+
+                } else if (elOject.selectors[index].search(/[a-z]+.mainHeader/) >= 0) {
                     var selectorType = 'Extends';
+                    var props = getProps();
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' +  searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
                     console.log(selectorType)
-                    getProps()
+
                 }
                 else if (elOject.selectors[index].split(':').length >= 1) {
                     var selectorType = 'Own';

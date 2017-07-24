@@ -2452,7 +2452,7 @@ body.debug {
   margin-top: 40px;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -3771,6 +3771,10 @@ span.projectTitle {
 div[class*='Panel'] {
   background-color: #3c3f41; }
 
+.window {
+  margin: 0 auto;
+  transition: width .8s linear; }
+
 .hud-bottom {
   position: absolute;
   bottom: 0; }
@@ -3993,5 +3997,8 @@ div[class*='Panel'] {
     fill: #00bfff;
     stroke-width: 3px;
     stroke: #00bfff; }
+
+#getCode {
+  display: none; }
 
 /*# sourceMappingURL=maps/main.css.map */
