@@ -55,6 +55,8 @@ function MakeEditable (elem) {
 
         $('#selfProperties,#extendsSelectors,#context,#classSelector',window.parent.document).html('');
         $('.classChoser',window.parent.document).val('');console.log( $(this).attr('class'));
+        $('.iconMediachoiser',window.parent.document).removeClass('active').removeClass('inList');
+        $('.mediaAll',window.parent.document)
         if($('*').is($(this).closest('*[data-qcontent=true]'))){
             var parentEl = $(this).closest('*[data-qcontent=true]');
 

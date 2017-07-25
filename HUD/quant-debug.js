@@ -78,12 +78,14 @@ $(document).ready(function () {
     var CURRENTSWITCHER;
 ///////////////////////////////////////////CHANGER
     $('body').on('mousedown', '.classtype__name', function () {
+        $('#extendsSelectors').empty();
         CURRENTSWITCHER = {};
         CURRENTSWITCHER.selector = '';
         CURRENTSWITCHER.media = 'all';
         CURRENTSWITCHER.pseudoEllements = '';
 
         $('.iconMediachoiser').removeClass('active');
+        $('.iconMediachoiser').removeClass('inList');
         var searchableSelector =  $(this).text();
         var indexE = currentSelectorsData.selectorName.indexOf(searchableSelector);
         if (indexE > -1) {
@@ -143,7 +145,7 @@ $(document).ready(function () {
             }
             for (var index in elOject.selectors) {
 
-                ql(elOject.selectors[index].search(/[a-z]+.mainHeader/),'sdsdaaaaaa');
+
                 if (elOject.selectors[index] == '.' + searchableSelector) {
                     var selectorType = 'self';
                     console.log(selectorType)
@@ -179,7 +181,7 @@ $(document).ready(function () {
                         }
 
                     }
-
+                    var props = getProps();
                     $('#extendsSelectors').prepend('<div class="selectorHeader selectorGroup">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' +  searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
 
                 } else if (elOject.selectors[index].split(' ').length > 1) {
@@ -243,11 +245,15 @@ $(document).ready(function () {
 
                 $(this).addClass('active')
                 var _this = $(this);
-                if (_this.hasClass('inList')) {
+
 
                     var classList = _this.attr('class');
                     var breakpoint = '';
                     switch (true) {
+                        case(classList.indexOf('All') > 0):
+                            CURRENTSWITCHER.media = 'all';
+                            $('.window').css('width','100%');
+                            break;
                         case(classList.indexOf('Mobile') > 0):
                             getMediaCss(mediaMap.phoneBreakpoint - 1);
                             CURRENTSWITCHER.media = mediaMap.phoneBreakpoint;
@@ -271,7 +277,7 @@ $(document).ready(function () {
 
                     }
                     ql(CURRENTSWITCHER, 'QS');
-                }
+
             })
 
             var getMediaCss = function (bpoint) {
