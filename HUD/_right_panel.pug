@@ -9,63 +9,63 @@
     .ElemMenu__section
         +I('target')
 div.clearfix.mediaChoiser
-        .col-12-tp
-        .iconMediachoiser.f-left.mediaAll.active
-            +I('alldisolays')
-        .iconMediachoiser.f-left.mediaMobile
-            +I('computer3')
-        .iconMediachoiser.f-left.mediaTabletP
-            +I('computer2')
-        .iconMediachoiser.f-left.mediaTabletL
-            +I('computer1')
-        .iconMediachoiser.f-left.mediaDesctop
-            +I('computer')
-        .iconMediachoiser.f-left.mediaDesctopLarge
-            +I('arrow')
+            .iconMediachoiser.f-left.mediaAll.active.col-2-tp
+                +I('alldisolays')
+            .iconMediachoiser.f-left.mediaMobile.col-2-tp
+                +I('computer3')
+            .iconMediachoiser.f-left.mediaTabletP.col-2-tp
+                +I('computer2')
+            .iconMediachoiser.f-left.mediaTabletL.col-2-tp
+                +I('computer1')
+            .iconMediachoiser.f-left.mediaDesctop.col-2-tp
+                +I('computer')
+            .iconMediachoiser.f-left.mediaDesctopLarge.col-2-tp
+                +I('arrow')
 .classMaker
     section#context
     section#classSelector
-    section#selfProperties
-    section#extendsSelectors
-    section#pseudoSelectors.row.hidden
-        .col-12-tp
-            .pseudoBtn.f-left : hover
-            .pseudoBtn.f-left : active
-            .pseudoBtn.f-left : checked
-            .pseudoBtn.f-left : default
-            .pseudoBtn.f-left : dir()
-            .pseudoBtn.f-left : disabled
-            .pseudoBtn.f-left : empty
-            .pseudoBtn.f-left : enabled
-            .pseudoBtn.f-left : first
-            .pseudoBtn.f-left : first-child
-            .pseudoBtn.f-left : first-of-type
-            .pseudoBtn.f-left : fullscreen
-            .pseudoBtn.f-left : indeterminate
-            .pseudoBtn.f-left : in-range
-            .pseudoBtn.f-left : invalid
-            .pseudoBtn.f-left : lang()
-            .pseudoBtn.f-left : last-child
-            .pseudoBtn.f-left : last-of-type
-            .pseudoBtn.f-left : left
-            .pseudoBtn.f-left : link
-            .pseudoBtn.f-left : not()
-            .pseudoBtn.f-left : nth-child()
-            .pseudoBtn.f-left : nth-last-child()
-            .pseudoBtn.f-left : nth-last-of-type()
-            .pseudoBtn.f-left : nth-of-type()
-            .pseudoBtn.f-left : only-child
-            .pseudoBtn.f-left : only-of-type
-            .pseudoBtn.f-left : optional
-            .pseudoBtn.f-left : out-of-range
-            .pseudoBtn.f-left : nth-last-child()
-            .pseudoBtn.f-left : read-only
-            .pseudoBtn.f-left : read-write
-            .pseudoBtn.f-left : right
-            .pseudoBtn.f-left : root
-            .pseudoBtn.f-left : target
-            .pseudoBtn.f-left : valid
-            .pseudoBtn.f-left : visited
+    .combinedSelector
+        section#selfProperties
+        section#extendsSelectors
+        section#pseudoSelectors.row
+            .col-12-tp
+                .pseudoBtn.f-left : hover
+                .pseudoBtn.f-left : active
+                .pseudoBtn.f-left : checked
+                .pseudoBtn.f-left : default
+                .pseudoBtn.f-left : dir()
+                .pseudoBtn.f-left : disabled
+                .pseudoBtn.f-left : empty
+                .pseudoBtn.f-left : enabled
+                .pseudoBtn.f-left : first
+                .pseudoBtn.f-left : first-child
+                .pseudoBtn.f-left : first-of-type
+                .pseudoBtn.f-left : fullscreen
+                .pseudoBtn.f-left : indeterminate
+                .pseudoBtn.f-left : in-range
+                .pseudoBtn.f-left : invalid
+                .pseudoBtn.f-left : lang()
+                .pseudoBtn.f-left : last-child
+                .pseudoBtn.f-left : last-of-type
+                .pseudoBtn.f-left : left
+                .pseudoBtn.f-left : link
+                .pseudoBtn.f-left : not()
+                .pseudoBtn.f-left : nth-child()
+                .pseudoBtn.f-left : nth-last-child()
+                .pseudoBtn.f-left : nth-last-of-type()
+                .pseudoBtn.f-left : nth-of-type()
+                .pseudoBtn.f-left : only-child
+                .pseudoBtn.f-left : only-of-type
+                .pseudoBtn.f-left : optional
+                .pseudoBtn.f-left : out-of-range
+                .pseudoBtn.f-left : nth-last-child()
+                .pseudoBtn.f-left : read-only
+                .pseudoBtn.f-left : read-write
+                .pseudoBtn.f-left : right
+                .pseudoBtn.f-left : root
+                .pseudoBtn.f-left : target
+                .pseudoBtn.f-left : valid
+                .pseudoBtn.f-left : visited
 
 
     section.row.hidden
@@ -104,10 +104,6 @@ div.clearfix.mediaChoiser
 
 
 .debug-Pannel-Right.notEdit
-    .saveToServer
-        button#saveToServer
-            +I('save')
-            | save as code
     .debug-Pannel-Right__section.debugPannel__section
         .debug-Pannel-Right-content
             h6
@@ -214,4 +210,7 @@ div.clearfix.mediaChoiser
                 +I('image')
                 | Background
             div
-
+    .saveToServer
+        button#saveToServer
+            +I('save')
+            | save as code
