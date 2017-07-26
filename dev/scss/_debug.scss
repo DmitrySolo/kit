@@ -1100,6 +1100,9 @@
     margin-top: 21px;
     float: left;
     width: 75%;
+    background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
+    background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px;
     iframe {
       border-width: 3px;
       border-color: dodgerblue;

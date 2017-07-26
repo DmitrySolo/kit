@@ -1,6 +1,9 @@
 //  quant-debug script
 
 $(document).ready(function () {
+
+    $('.editor').draggable();
+
     var mediaMap = {
         phoneBreakpoint: parseInt($('#phone-upper-boundary').text(), 10),
         tabletPortraitBreakpoint: parseInt($('#tablet-portrait-upper-boundary').text(), 10),

@@ -17,8 +17,11 @@ html(lang=''+head.lang)
                 .hud-leftPanel
                     include _left_panel
                 .hud-content
+                    #editorPug(style="height:200px").editor
+                    #editorScss(style="height:200px").editor
+                    #editorJs(style="height:200px").editor
                     .window(window='viewport')
-                        .wrapperid#viewpr-content
+                        .wrapperid#viewpr-content.hidden
                             iframe(class='default-skin' id="index" src="index.html" width="100%" height="1200px" align="center" )
                             #currentSelectorWay.notEdit.clearfix
                                 div(style='background:#2b2b2b;color: #fff')
