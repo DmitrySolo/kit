@@ -2452,7 +2452,7 @@ body.debug {
   margin-top: 40px;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -3704,18 +3704,13 @@ body.hud {
   background: #3c3f41 !important; }
 
 .hud-content {
-  margin-top: 21px;
   float: left;
-  width: 75%;
-  background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
+  width: 75%; }
   .hud-content iframe {
-    border-width: 3px;
-    border-color: dodgerblue;
     display: block;
     margin: 0 auto;
-    height: 80vh; }
+    height: 80vh;
+    border: none; }
 
 .wrapperid {
   margin: 0 auto; }
@@ -3745,17 +3740,15 @@ span.projectTitle {
 .hud-content {
   position: relative; }
 
-.window:before {
-  position: absolute;
-  top: -26px;
-  left: 0;
-  content: attr(window);
+.windowMark {
   color: #fff;
   padding: 0px 10px 0px;
-  background-color: #006eb7;
-  border-top-left-radius: 3px;
+  background-color: #3c3f41;
   font-size: 16px;
-  text-shadow: 1px 1px 1px #2b2b2b; }
+  text-shadow: 1px 1px 1px #2b2b2b;
+  cursor: pointer; }
+  .windowMark.active {
+    background-color: #006eb7 !important; }
 
 .hud-rightPanel {
   width: 15%;
@@ -3775,7 +3768,10 @@ div[class*='Panel'] {
 .window {
   margin: 0 auto;
   transition: width .8s linear;
-  background-color: #333638; }
+  background-color: #333638;
+  background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .hud-bottom {
   position: absolute;
@@ -4039,5 +4035,27 @@ div[class*='Panel'] {
 
 .half {
   opacity: .3; }
+
+.hud-content {
+  position: relative;
+  padding: 0px 6px; }
+
+.window {
+  position: absolute;
+  width: 99%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  border: solid 3px dodgerblue;
+  height: 80vh; }
+
+.editorScriptBuilder {
+  min-height: 80vh;
+  width: 100%; }
+
+.step {
+  background: firebrick;
+  width: 300px;
+  height: 200px; }
 
 /*# sourceMappingURL=maps/main.css.map */

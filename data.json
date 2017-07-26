@@ -55,6 +55,21 @@
 				"": ""
 			}
 		},
+		"quant-HUD-script": {
+			"js": {
+				"quant-HUD-script-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "bower_components/jquery-ui/jquery-ui.min.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-debug-JsonCss": {
 			"js": {
 				"quant-debug-JsonCss-script": {
@@ -71,21 +86,6 @@
 				"quant-debug-ruller-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
 					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-HUD-script": {
-			"js": {
-				"quant-HUD-script-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "bower_components/jquery-ui/jquery-ui.min.js",
-					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -137,7 +137,7 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\r\n)"
+		"'HEADER'": "('Roboto Slab')\n)"
 	},
 	"space": "em",
 	"element_space": ".5",
@@ -165,11 +165,11 @@
 	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": "1em",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\r\n)"
+		"min-height": "1px\n)"
 	},
 	"phone-upper-boundary": "600px",
 	"tablet-portrait-upper-boundary": "768px",

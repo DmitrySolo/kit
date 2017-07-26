@@ -2,7 +2,9 @@
 
 $(document).ready(function () {
 
-    $('.editor').draggable();
+   // $('.editor').draggable();
+    $('.step').draggable().resizable();
+
 
     var mediaMap = {
         phoneBreakpoint: parseInt($('#phone-upper-boundary').text(), 10),
@@ -94,7 +96,7 @@ $(document).ready(function () {
 
         if (indexE > -1) {
 
-            ql(indexE)
+            ql(indexE,'GGGG')
 
             var styles = currentSelectorsData.selectorData[indexE];
             CURRENTSWITCHER.selector = currentSelectorsData.selectorName[indexE];
@@ -238,6 +240,8 @@ $(document).ready(function () {
                             ownStylesProperties.pseudoSelectors.focus = props;
                             break;
                     }
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt properties" data-index="'+index+'"">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' +  searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
+
                 }
 
 
@@ -258,7 +262,7 @@ $(document).ready(function () {
             }
 
 
-            currentSelectorsData.selectorName.push(searchableSelector);
+            currentSelectorsData.selectorName.push(elOject.selectors[index]);
             currentSelectorsData.selectorData.push(ownStylesProperties);
 
 
@@ -1109,5 +1113,12 @@ $(document).ready(function () {
         }
     })
 
-
+    $('body').on('mousedown','.windowMark',function () {
+        var activeMark = $(this).text();
+        ql('sdsdsdssdsdsd--s-s')
+        $('.window').css('z-index','0');
+        $('.windowMark').removeClass('active');
+        $(this).addClass('active');
+        $('.window[window="'+activeMark+'"]').css('z-index','1');
+    })
 });

@@ -1,6 +1,3 @@
-/**
- * Created by Dmitry Soloshenko on 25.07.2017.
- */
 /*
  * GoJS v1.7.17 JavaScript Library for HTML Diagrams
  * Northwoods Software, https://www.nwoods.com/
