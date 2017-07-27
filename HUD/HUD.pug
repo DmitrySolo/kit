@@ -20,7 +20,7 @@ html(lang=''+head.lang)
                     .windowSwitcher.clearfix
                         .windowMark.f-left.active Viewport
                         .windowMark.f-left Script
-                    .window(window='Viewport' style="z-index:1")
+                    .window(window='Viewport' style="z-index:5")
                         .wrapperid#viewpr-content
                             iframe(class='default-skin' id="index" src="index.html" width="100%" height="1200px" align="center" )
                             #currentSelectorWay.notEdit.clearfix
@@ -28,51 +28,15 @@ html(lang=''+head.lang)
                                     span BODY >
                     .window(window='Script')
                         .wrapperid#script-content.clearfix
-                            .plannerWrap.col-5-tp
+                            .plannerWrap.col-6-tp
                                 script(src="scripts/go.js")
                                 script(src="scripts/goDiagramm.js")
                                 #sample
                                     div(style='width:100%; white-space:nowrap;')
-                                        span(style='display: inline-block; vertical-align: top; width:105px')
-                                            #myPaletteDiv(style='border: solid 1px black; height: 620px')
-                                        span(style='display: inline-block; vertical-align: top; width:80%')
-                                            #myDiagramDiv(style='border: solid 1px black; height: 620px')
-                                    p
-                                        | This sample demonstrates the ability for the user to drag around a Link as if it were a Node.
-                                        | When either end of the link passes over a valid port, the port is highlighted.
-                                    p
-                                        | The link-dragging functionality is enabled by setting some or all of the following properties:
-                                        a DraggingTool.dragsLink
-                                        | ,
-                                        a LinkingTool.isUnconnectedLinkValid
-                                        | , and
-                                        a RelinkingTool.isUnconnectedLinkValid
-                                        | .
-                                    p
-                                        | Note that a Link is present in the
-                                        a Palette
-                                        |  so that it too can be dragged out and onto
-                                        |     the main Diagram.  Because links are not automatically routed when either end is not connected
-                                        |     with a Node, the route is provided explicitly when that Palette item is defined.
-                                    p
-                                        | This also demonstrates several custom Adornments:
-                                        a Part.selectionAdornmentTemplate
-                                        | ,
-                                        a Part.resizeAdornmentTemplate
-                                        | , and
-                                        a Part.rotateAdornmentTemplate
-                                        | .
-                                    p
-                                        | Finally this sample demonstrates saving and restoring the
-                                        a Diagram.position
-                                        |  as a property
-                                        |     on the
-                                        a Model.modelData
-                                        |  object that is automatically saved and restored when calling
-                                        a Model.toJson
-                                        |     and
-                                        a Model.fromJson
-                                        | .
+                                        span(style='border-right: solid 2px #fff;display: inline-block; vertical-align: top; width:7em; background-color:#242729')
+                                            #myPaletteDiv(style='min-height: 700px')
+                                        span(style='display: inline-block; vertical-align: top; width:90%')
+                                            #myDiagramDiv(style=' min-height: 700px')
                                     div
                                         div
                                             button#SaveButton(onclick='save()') Save
@@ -86,7 +50,7 @@ html(lang=''+head.lang)
                                             | ],
                                             | "linkDataArray": [
                                             | ]}
-                            .edWrap.col-7-tp
+                            .edWrap.col-6-tp
                                 #editorJs.editor.editorScriptBuilder
                 .hud-rightPanel
                     include _right_panel

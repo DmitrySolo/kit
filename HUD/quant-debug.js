@@ -1121,4 +1121,14 @@ $(document).ready(function () {
         $(this).addClass('active');
         $('.window[window="'+activeMark+'"]').css('z-index','1');
     })
+
+
+
+    $('.ace_rightAlignedText:contains("snippet")').css('color','red');
+
+
+
+
+
+
 });

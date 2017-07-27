@@ -84,7 +84,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
             <div class="windowMark f-left active">Viewport</div>
             <div class="windowMark f-left">Script</div>
           </div>
-          <div class="window" window="Viewport" style="z-index:1;">
+          <div class="window" window="Viewport" style="z-index:5;">
             <div class="wrapperid" id="viewpr-content">
               <iframe class="default-skin" id="index" src="index.html" width="100%" height="1200px" align="center"></iframe>
               <div class="notEdit clearfix" id="currentSelectorWay">
@@ -94,26 +94,13 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
           </div>
           <div class="window" window="Script">
             <div class="wrapperid clearfix" id="script-content">
-              <div class="plannerWrap col-5-tp">
+              <div class="plannerWrap col-6-tp">
                 <script src="scripts/go.js"></script>
                 <script src="scripts/goDiagramm.js"></script>
                 <div id="sample">
-                  <div style="width:100%; white-space:nowrap;"><span style="display: inline-block; vertical-align: top; width:105px;">
-                      <div id="myPaletteDiv" style="border: solid 1px black; height: 620px;"></div></span><span style="display: inline-block; vertical-align: top; width:80%;">
-                      <div id="myDiagramDiv" style="border: solid 1px black; height: 620px;"></div></span></div>
-                  <p>
-                    This sample demonstrates the ability for the user to drag around a Link as if it were a Node.
-                    When either end of the link passes over a valid port, the port is highlighted.
-                  </p>
-                  <p>The link-dragging functionality is enabled by setting some or all of the following properties:<a>DraggingTool.dragsLink</a>,<a>LinkingTool.isUnconnectedLinkValid</a>, and<a>RelinkingTool.isUnconnectedLinkValid</a>.</p>
-                  <p>Note that a Link is present in the<a>Palette</a> so that it too can be dragged out and onto
-                        the main Diagram.  Because links are not automatically routed when either end is not connected
-                        with a Node, the route is provided explicitly when that Palette item is defined.
-                  </p>
-                  <p>This also demonstrates several custom Adornments:<a>Part.selectionAdornmentTemplate</a>,<a>Part.resizeAdornmentTemplate</a>, and<a>Part.rotateAdornmentTemplate</a>.</p>
-                  <p>Finally this sample demonstrates saving and restoring the<a>Diagram.position</a> as a property
-                        on the<a>Model.modelData</a> object that is automatically saved and restored when calling<a>Model.toJson</a>    and<a>Model.fromJson</a>.
-                  </p>
+                  <div style="width:100%; white-space:nowrap;"><span style="border-right: solid 2px #fff;display: inline-block; vertical-align: top; width:7em; background-color:#242729;">
+                      <div id="myPaletteDiv" style="min-height: 700px;"></div></span><span style="display: inline-block; vertical-align: top; width:90%;">
+                      <div id="myDiagramDiv" style=" min-height: 700px;"></div></span></div>
                   <div>
                     <div>
                       <button id="SaveButton" onclick="save()">Save</button>
@@ -129,7 +116,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
                   </div>
                 </div>
               </div>
-              <div class="edWrap col-7-tp">
+              <div class="edWrap col-6-tp">
                 <div class="editor editorScriptBuilder" id="editorJs"></div>
               </div>
             </div>
@@ -1947,6 +1934,16 @@ $(document).ready(function () {
         $(this).addClass('active');
         $('.window[window="'+activeMark+'"]').css('z-index','1');
     })
+
+
+
+    $('.ace_rightAlignedText:contains("snippet")').css('color','red');
+
+
+
+
+
+
 });
     </script>
     <script>"use strict";function viewpr(params){var defaultParams={viewports:[{size:"320",name:"Mobile"},{size:"768",name:"Tablet"},{size:"1024",name:"Desktop"}],showName:true,svg:false,reset:"reset",wrapper:"viewpr-content",links:"viewpr-list",animation:"-webkit-transition:width .3s ease-in-out; -moz-transition: width .3s ease-in-out; -ms-transition: width .3s ease-in-out; -o-transition: width .3s ease-in-out; transition: width .3s ease-in-out;"};if(params){if(params.showName===false){defaultParams.showName=params.showName}if(params.svg===true){defaultParams.svg=params.svg}if(params.viewports){defaultParams.viewports=params.viewports}if(params.reset&&typeof params.reset==="string"){defaultParams.reset=params.reset}if(params.wrapper&&typeof params.reset==="string"){defaultParams.wrapper=params.wrapper}if(params.links&&typeof params.reset==="string"){defaultParams.links=params.links}if(params.animation&&typeof params.reset==="string"){defaultParams.animation=params.animation}}var viewports=defaultParams.viewports,links=document.getElementById(defaultParams.links),linklist=links.children,content=document.getElementById(defaultParams.wrapper),activeNav=document.getElementsByClassName("fr-active"),initWidth=content.style.width,title,styles;styles=content.getAttribute("style")+defaultParams.animation;content.setAttribute("style",styles);for(var i=0;i<viewports.length;i++){if(defaultParams.showName===true){title=viewports[i].name}else{title=viewports[i].size}if(defaultParams.svg===true){links.innerHTML=links.innerHTML+"<li><a data-portsize="+viewports[i].size+' href="#">'+title+'<svg><use xlink:href="#'+viewports[i].size+'"></use></svg></a></li>'}else{links.innerHTML=links.innerHTML+"<li><a data-portsize="+viewports[i].size+' href="#">'+title+"</a></li>"}}links.innerHTML+='<li><a class="fr-active" data-portsize="reset" href="#">'+defaultParams.reset+'<svg><use xlink:href="#'+defaultParams.reset+'"></use></svg></a></li>';for(var i=0;i<linklist.length;i++){linklist[i].children[0].onclick=function(e){e.preventDefault();for(var i=0;i<activeNav.length;i++){activeNav[i].classList.remove("fr-active")}if(this.getAttribute("data-portsize")=="reset"){this.classList.add("fr-active");content.style.width=initWidth;content.removeAttribute("fr-data")}else{this.classList.add("fr-active");content.style.width=this.getAttribute("data-portsize")+"px";content.setAttribute("fr-data","size-"+this.getAttribute("data-portsize"))}}}}</script>

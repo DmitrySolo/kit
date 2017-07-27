@@ -1166,6 +1166,7 @@
     background-color: $panel;
   }
   .window{
+    overflow: scroll;
     margin: 0 auto;
     transition: width .8s linear;
     background-color: #333638;
@@ -1358,7 +1359,6 @@
     }
     .icon {
       height: 2.2em;
-      padding: 4px;
       fill: #00b3ee;
 
     }
@@ -1483,10 +1483,15 @@
     height: 80vh;
   }
   .edWrap{
-
+    padding: 20px;
+    background: #242729;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
   .editorScriptBuilder {
-    min-height: 80vh;
+    min-height: 71.5vh;
     width: 100%;
   }
   .step {
@@ -1494,6 +1499,27 @@
     width: 300px;
     height: 200px;
   }
+
+  .ace_editor.ace_autocomplete {
+    width: 280px;
+    z-index: 200000;
+    background: #0086b3;
+    color: #36b5e0 !important;
+    border: 1px lightgray solid;
+    position: fixed;
+    box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+    line-height: 1.7;
+  }
+  .ace_completion-highlight {
+    color: #fc9627 !important;}
+  .ace-tomorrow-night-eighties .ace_marker-layer .ace_bracket {
+    margin: 0px 0 0 -1px !important;;
+    border: 2px solid #fc9627 !important;;
+    padding: 4px !important;;}
+  #editorJs .ace_gutter {
+    background: #565454;
+  }
+
 
   }
 

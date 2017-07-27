@@ -5,12 +5,7 @@ function init() {
     myDiagram =
         $(go.Diagram, "myDiagramDiv",  // must name or refer to the DIV HTML element
             {
-                grid: $(go.Panel, "Grid",
-                    $(go.Shape, "LineH", { stroke: "lightgray", strokeWidth: 0.5 }),
-                    $(go.Shape, "LineH", { stroke: "gray", strokeWidth: 0.5, interval: 10 }),
-                    $(go.Shape, "LineV", { stroke: "lightgray", strokeWidth: 0.5 }),
-                    $(go.Shape, "LineV", { stroke: "gray", strokeWidth: 0.5, interval: 10 })
-                ),
+
                 allowDrop: true,  // must be true to accept drops from the Palette
                 "draggingTool.dragsLink": true,
                 "draggingTool.isGridSnapEnabled": true,
@@ -162,11 +157,11 @@ function init() {
             $(go.Shape,  // the link path shape
                 { isPanelMain: true, strokeWidth: 2 }),
             $(go.Shape,  // the arrowhead
-                { toArrow: "Standard", stroke: null }),
+                { toArrow: "Standard", stroke: "#399100" }),
             $(go.Panel, "Auto",
                 new go.Binding("visible", "isSelected").ofObject(),
                 $(go.Shape, "RoundedRectangle",  // the link shape
-                    { fill: "#F8F8F8", stroke: null }),
+                    { fill: "#F8F8F8", stroke: "#F8F8F8" }),
                 $(go.TextBlock,
                     {
                         textAlign: "center",
@@ -197,9 +192,9 @@ function init() {
                                 $(go.Adornment, "Link",
                                     { locationSpot: go.Spot.Center },
                                     $(go.Shape,
-                                        { isPanelMain: true, fill: null, stroke: "deepskyblue", strokeWidth: 0 }),
+                                        { isPanelMain: true, fill: null, stroke: "deepskyblue", strokeWidth: 2 }),
                                     $(go.Shape,  // the arrowhead
-                                        { toArrow: "Standard", stroke: null })
+                                        { toArrow: "Standard", stroke: "#914f60" })
                                 )
                         },
                         {
@@ -217,10 +212,12 @@ function init() {
                 model: new go.GraphLinksModel([  // specify the contents of the Palette
                     { text: "Start", figure: "Circle", fill: "#00AD5F" },
                     { text: "Step" },
-                    { text: "DB", figure: "Database", fill: "lightgray" },
-                    { text: "???", figure: "Diamond", fill: "lightskyblue" },
-                    { text: "End", figure: "Circle", fill: "#CE0620" },
-                    { text: "Comment", figure: "RoundedRectangle", fill: "lightyellow" }
+                    { text: "Event",fill: "#a93e3b" },
+                    { text: "DB", figure: "Database", fill: "#00b3ee" },
+                    { text: "???", figure: "Diamond", fill: "#fc9627" },
+                    { text: "End", figure: "Circle", fill: "#a90007" },
+                    { text: "Comment", figure: "RoundedRectangle", fill: "lightyellow" },
+                    { text: "Comment", figure: "DividedEvent", fill: "lightyellow" }
                 ], [
                     // the Palette also has a disconnected Link, which the user can drag-and-drop
                     { points: new go.List(go.Point).addAll([new go.Point(0, 0), new go.Point(30, 0), new go.Point(30, 40), new go.Point(60, 40)]) }
@@ -268,6 +265,8 @@ function loadDiagramProperties(e) {
     var pos = myDiagram.model.modelData.position;
     if (pos) myDiagram.initialPosition = go.Point.parse(pos);
 }
-$('body').on('load',function () {
-    init();
-})
+
+    $(document).ready(function () {
+        init();
+    })
+
