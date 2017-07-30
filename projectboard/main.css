@@ -4087,4 +4087,31 @@ div[class*='Panel'] {
 #editorJs .ace_gutter {
   background: #565454; }
 
+.debug-creator {
+  background-color: rgba(12, 12, 12, 0.18) !important;
+  position: relative;
+  height: 700px; }
+
+.starterTab {
+  position: absolute;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.projectItem {
+  height: 150px;
+  border: solid 8px #00b3ee;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  margin-left: 10px;
+  cursor: pointer; }
+  .projectItem:hover {
+    border-color: #fc9627; }
+  .projectItem span {
+    padding-top: 50px;
+    display: inline-block; }
+
 /*# sourceMappingURL=maps/main.css.map */

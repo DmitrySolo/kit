@@ -1,33 +1,4 @@
 {
-	"menuData1": {
-		"Home": {
-			"title": "Продукция",
-			"href": "/production.html",
-			"dop_class": ""
-		},
-		"Products and help": {
-			"title": "Гарантия и сервис",
-			"href": "service.html",
-			"dop_class": ""
-		},
-		"Support": {
-			"title": "Партнерам",
-			"href": "partners.html",
-			"dop_class": ""
-		},
-		"AboutUs": {
-			"title": "Где купить",
-			"href": "buy.html",
-			"dop_class": "",
-			"childs": ""
-		},
-		"acc": {
-			"title": "Акции",
-			"href": "sale.html",
-			"dop_class": "lightmenu__item--active",
-			"childs": ""
-		}
-	},
 	"LIBS": {
 		"baseButton": {
 			"js": {
@@ -49,21 +20,6 @@
 				"jquery": {
 					"src": "bower_components/jquery/dist/jquery.min.js",
 					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-HUD-script": {
-			"js": {
-				"quant-HUD-script-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "bower_components/jquery-ui/jquery-ui.min.js",
-					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -92,6 +48,21 @@
 				"": ""
 			}
 		},
+		"quant-HUD-script": {
+			"js": {
+				"quant-HUD-script-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "bower_components/jquery-ui/jquery-ui.min.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-lib": {
 			"js": {
 				"quant-lib-script": {
@@ -113,6 +84,35 @@
 			"css": {
 				"": ""
 			}
+		}
+	},
+	"menuData1": {
+		"Home": {
+			"title": "Продукция",
+			"href": "/production.html",
+			"dop_class": ""
+		},
+		"Products and help": {
+			"title": "Гарантия и сервис",
+			"href": "service.html",
+			"dop_class": ""
+		},
+		"Support": {
+			"title": "Партнерам",
+			"href": "partners.html",
+			"dop_class": ""
+		},
+		"AboutUs": {
+			"title": "Где купить",
+			"href": "buy.html",
+			"dop_class": "",
+			"childs": ""
+		},
+		"acc": {
+			"title": "Акции",
+			"href": "sale.html",
+			"dop_class": "lightmenu__item--active",
+			"childs": ""
 		}
 	},
 	"switchers": {

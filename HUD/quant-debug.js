@@ -1127,7 +1127,39 @@ $(document).ready(function () {
     $('.ace_rightAlignedText:contains("snippet")').css('color','red');
 
 
+    //Projects Load
+var loadProjects = function loadProjects(){
 
+    $.ajax({
+        url: "http://localhost:8181/?action=getProjects"
+    })
+        .done(function (data) {
+            ql(data);
+            data = data.split(',');
+            for(var i in data){
+                $('#projectsCtn','body').prepend("<div class='projectItem col-2-tp'><span>"+data[i]+"</span></div>");
+            }
+        });
+
+}
+var   removeStarterDialog = function () {
+    $('.starter_dialog','body').css('display','none');
+}
+
+
+qntCheckCookie('project',loadProjects,removeStarterDialog);
+
+
+$('body').on('click','.projectItem',function () {
+    var pName = $('span',this).text();
+
+    $.ajax({
+        url: "http://localhost:8181/?action=loadProject&projectName="+pName
+    }).done(function (data) {
+        qntSetCookie('project', pName, 1)
+    });
+
+})
 
 
 

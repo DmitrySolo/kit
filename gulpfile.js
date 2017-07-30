@@ -65,12 +65,25 @@ const scriptCleaner = require(qp_path + 'scriptbuilder/scleaner');
 const scriptThrower = require(qp_path + 'scriptbuilder/sthrower');
 var qM = require(qp_path + 'q_functions');
 
-
-var projectName = 'Hospital';
+//// Load Project
+var globalData = JSON.parse(fs.readFileSync('globalData.json', 'utf8'));
+var projectName = globalData.currentProject;
 var projectDevDir = 'Projects/' + projectName + '/dev/';
 var dist = 'Projects/' + projectName + '/dist';
 
 //**********************************************************************************************************************
+
+//// Load Project
+
+gulp.task('loadProject', function () {
+    var globalData = JSON.parse(fs.readFileSync('globalData.json', 'utf8'));
+    console.log(globalData.currentProject);
+});
+
+
+
+
+
 
 
 gulp.task('phplint', function phplint() {
@@ -1329,7 +1342,27 @@ gulp.task('API-SERVER', function () {
 
                 switch (url_parts.query.action) {
 
-                    ///////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    case 'getProjects' :
+
+                       var pjs = fs.readdirSync('Projects')
+                        .filter(file => fs.lstatSync(path.join('Projects', file)).isDirectory())
+                        srvRes = pjs.toString();
+                        break;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    case 'loadProject' :
+
+                        var pro = url_parts.query.projectName;
+                        var globalData = JSON.parse(fs.readFileSync('globalData.json', 'utf8'));
+                        globalData.currentProject = pro;
+                        globalData = JSON.stringify(globalData);
+                        fs.writeFileSync("globalData.json", globalData);
+                        break;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
                     case 'getSourceCode' :
 
                         if (url_parts.query.line && url_parts.query.col) {
@@ -1340,15 +1373,18 @@ gulp.task('API-SERVER', function () {
                         }
                         break;
 
-                    /////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
                     case 'html2jade' :
                         var html = url_parts.query.html;
                         console.log(html);
                         html2jade.convertHtml(html, {'donotencode': true, 'bodyless': true}, function (err, jade) {
                             srvRes = jade;
                         });
+
                         break;
-///////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
                     case 'creator' :
                         var contentType = url_parts.query.element
 
@@ -1369,8 +1405,9 @@ gulp.task('API-SERVER', function () {
                             }
 
                         }
-                }
-
+//////////////////////////////////////////////////////////////////////////////////////
+                } //END SWITCH GET QUERY
+////////////////////////////////////////////////////////////////////////////////////////
 
             }
 
