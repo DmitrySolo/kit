@@ -1161,6 +1161,19 @@ $('body').on('click','.projectItem',function () {
 
 })
 
+function starterTabber(classTrigger,classTab) {
+    $(classTrigger).on('mousedown',function () {
+        $(classTrigger+'.active').removeClass('active');
+        $(this).addClass('active');
+       var start =  this.className.indexOf('starterTabTrigger');
+       var sliced = parseInt(this.className.slice(start+19,start+19+2));
 
+       $(classTab).hide();
+       $(classTab+'_'+sliced).show();
+
+    })
+}
+    starterTabber('.createTitle','.starterTab');
+    starterTabber('.cpP__tab','.cpP__tabContent');
 
 });

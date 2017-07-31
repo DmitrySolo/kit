@@ -63,21 +63,30 @@
     .debug-Dialog-content
         .row
             .debug-subtitle.col-4-tp
-                .createTitle
-                    +I('plus')
-                    | Create Project
-                .createTitle
+                .createTitle.active.starterTabTrigger__1
                     +I('export')
                     | Load Project
-                .createTitle
+                .createTitle.starterTabTrigger__2
+                    +I('plus')
+                    | Create Project
+                .createTitle.starterTabTrigger__3
                     +I('plus')
                     | Create Content
-                .createTitle
+                .createTitle.starterTabTrigger__4
                     +I('export')
                     | Load Content
             .debug-creator.col-8-tp
-                .projectLoad.starterTab_1.starterTab 1
+                .projectLoad.starterTab_1.starterTab
+                    h6.quant
+                        span Load Project
                     .row#projectsCtn
-                .newProject.starterTab_2.starterTab.hidden 2
-                .contentLoad.starterTab_3.starterTab.hidden 3
-                .newElement.starterTab_4.starterTab.hidden 4
+                .newProject.starterTab_2.starterTab.hidden
+                    h6.quant
+                        span Create Project
+                    include includes/_createProjectPage
+                .contentLoad.starterTab_3.starterTab.hidden
+                    h6.quant
+                        span Load Content
+                .newElement.starterTab_4.starterTab.hidden
+                    h6.quant
+                        span Create Content

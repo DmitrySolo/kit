@@ -1551,5 +1551,42 @@
   }
 }
 
+  .createTitle.active {
+    background-color: #0086b3;
   }
+
+  .starterTab div[class^="col-"]{
+    background: #2b2b2b !important
+  }
+
+  .cpP__tab{
+    
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-left: 1px;
+    cursor: pointer;
+    .starterTab &.active{
+      position: relative;
+      background: #0086b3 !important;
+      &:after{
+      content: '';
+      border:solid 7px transparent;
+      border-top-color: #0086b3;
+      position: absolute;
+      bottom:-14px;
+      right:0;
+      left:0;
+        height: 0;
+        width: 0;
+        margin: 0 auto;
+    }
+    }
+  }
+  .cpP__tabContent {
+    color: #fff;
+    background-color: #333333;
+    padding: 45px;
+  }
+}
 

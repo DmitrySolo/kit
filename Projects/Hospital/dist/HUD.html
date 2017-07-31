@@ -752,34 +752,85 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
           <div class="debug-Dialog-content">
             <div class="row">
               <div class="debug-subtitle col-4-tp">
-                <div class="createTitle">
-                          <svg class="icon ">
-                            <use xlink:href="#plus"></use>
-                          </svg>Create Project
-                </div>
-                <div class="createTitle">
+                <div class="createTitle active starterTabTrigger__1">
                           <svg class="icon ">
                             <use xlink:href="#export"></use>
                           </svg>Load Project
                 </div>
-                <div class="createTitle">
+                <div class="createTitle starterTabTrigger__2">
+                          <svg class="icon ">
+                            <use xlink:href="#plus"></use>
+                          </svg>Create Project
+                </div>
+                <div class="createTitle starterTabTrigger__3">
                           <svg class="icon ">
                             <use xlink:href="#plus"></use>
                           </svg>Create Content
                 </div>
-                <div class="createTitle">
+                <div class="createTitle starterTabTrigger__4">
                           <svg class="icon ">
                             <use xlink:href="#export"></use>
                           </svg>Load Content
                 </div>
               </div>
               <div class="debug-creator col-8-tp">
-                <div class="projectLoad starterTab_1 starterTab">1
+                <div class="projectLoad starterTab_1 starterTab">
+                  <h6 class="quant"><span>Load Project</span></h6>
                   <div class="row" id="projectsCtn"></div>
                 </div>
-                <div class="newProject starterTab_2 starterTab hidden">2</div>
-                <div class="contentLoad starterTab_3 starterTab hidden">3</div>
-                <div class="newElement starterTab_4 starterTab hidden">4</div>
+                <div class="newProject starterTab_2 starterTab hidden">
+                  <h6 class="quant"><span>Create Project</span></h6>
+                  <div class="cpP_tabber">
+                    <div class="row debugPannel">
+                      <div class="col-2-tp">
+                        <div class="cpP__tab active starterTabTrigger__1" data-page="1">Main</div>
+                      </div>
+                      <div class="col-2-tp">
+                        <div class="cpP__tab starterTabTrigger__2" data-page="2">Colors</div>
+                      </div>
+                      <div class="col-2-tp">
+                        <div class="cpP__tab starterTabTrigger__3" data-page="3">Fonts</div>
+                      </div>
+                      <div class="col-2-tp">
+                        <div class="cpP__tab starterTabTrigger__4" data-page="4">Layouts</div>
+                      </div>
+                      <div class="col-2-tp">
+                        <div class="cpP__tab starterTabTrigger__5" data-page="5">Pages</div>
+                      </div>
+                      <div class="col-2-tp">
+                        <div class="cpP__tab starterTabTrigger__6" data-page="6">Scripts</div>
+                      </div>
+                    </div>
+                    <div class="cpP__tabContent_1 cpP__tabContent">
+                      <div class="optionLine">
+                        <label>Project Title</label>
+                        <input type="text" required name="project_title">
+                      </div>
+                      <div class="optionLine">
+                        <label>Project Prefix</label>
+                        <input type="text" required name="project_prefix">
+                      </div>
+                      <div class="optionLine">
+                        <label>Project Language</label>
+                        <select name="project_language">
+                          <option>eng</option>
+                          <option>ru</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cpP__tabContent_2 cpP__tabContent">2</div>
+                    <div class="cpP__tabContent_3 cpP__tabContent">3</div>
+                    <div class="cpP__tabContent_4 cpP__tabContent">4</div>
+                    <div class="cpP__tabContent_5 cpP__tabContent">5</div>
+                    <div class="cpP__tabContent_6 cpP__tabContent">6</div>
+                  </div>
+                </div>
+                <div class="contentLoad starterTab_3 starterTab hidden">
+                  <h6 class="quant"><span>Load Content</span></h6>
+                </div>
+                <div class="newElement starterTab_4 starterTab hidden">
+                  <h6 class="quant"><span>Create Content</span></h6>
+                </div>
               </div>
             </div>
           </div>
@@ -1982,7 +2033,20 @@ $('body').on('click','.projectItem',function () {
 
 })
 
+function starterTabber(classTrigger,classTab) {
+    $(classTrigger).on('mousedown',function () {
+        $(classTrigger+'.active').removeClass('active');
+        $(this).addClass('active');
+       var start =  this.className.indexOf('starterTabTrigger');
+       var sliced = parseInt(this.className.slice(start+19,start+19+2));
 
+       $(classTab).hide();
+       $(classTab+'_'+sliced).show();
+
+    })
+}
+    starterTabber('.createTitle','.starterTab');
+    starterTabber('.cpP__tab','.cpP__tabContent');
 
 });
     </script>
