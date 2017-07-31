@@ -801,7 +801,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
                         <div class="cpP__tab starterTabTrigger__6" data-page="6">Scripts</div>
                       </div>
                     </div>
-                    <div class="cpP__tabContent_1 cpP__tabContent">
+                    <div class="cpP__tabContent_1 cpP__tabContent" style="display:block;">
                       <div class="optionLine">
                         <label>Project Title</label>
                         <input type="text" required name="project_title">
@@ -818,8 +818,53 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
                         </select>
                       </div>
                     </div>
-                    <div class="cpP__tabContent_2 cpP__tabContent">2</div>
-                    <div class="cpP__tabContent_3 cpP__tabContent">3</div>
+                    <div class="cpP__tabContent_2 cpP__tabContent">
+                      <div class="optionLine">
+                        <label>Primary Color</label>
+                        <input type="color" name="primary_color" value="#3b68c9">
+                      </div>
+                      <div class="optionLine">
+                        <label>Secondary Color</label>
+                        <input type="color" name="secondary_color" value="#c9612c">
+                      </div>
+                      <div class="optionLine">
+                        <label>Foreground Color</label>
+                        <input type="color" name="foreground_color" value="#5ac948">
+                      </div>
+                      <div class="optionLine">
+                        <label>Background Color</label>
+                        <input type="color" name="background_color" value="#7746c9">
+                      </div>
+                      <div class="optionLine">
+                        <label>Accent Color</label>
+                        <input type="color" name="accent_color" value="#c90028">
+                      </div>
+                      <div class="optionLine">
+                        <label>Font Color</label>
+                        <input type="color" name="font_color" value="#86c999">
+                      </div>
+                      <div class="optionLine">
+                        <label>Color lighter index</label>
+                        <input type="text" required name="color_lighterIndex" value="1.5">
+                      </div>
+                    </div>
+                    <div class="cpP__tabContent_3 cpP__tabContent" id="font_option">
+                      <div class="cpP_fl_h">Linked Fonts<span id="addLink">+</span></div>
+                      <div class="optionLine fl_group">
+                        <label>Font Name
+                          <input type="text" required name="link_font__1_name">
+                        </label>
+                        <label>Font Link
+                          <input type="text" required name="link_font__1_link">
+                        </label>
+                        <label>Font Role
+                          <select name="link_font__1_role">
+                            <option>Body font</option>
+                            <option>Header font</option>
+                          </select>
+                        </label>
+                      </div>
+                    </div>
                     <div class="cpP__tabContent_4 cpP__tabContent">4</div>
                     <div class="cpP__tabContent_5 cpP__tabContent">5</div>
                     <div class="cpP__tabContent_6 cpP__tabContent">6</div>
@@ -2048,6 +2093,13 @@ function starterTabber(classTrigger,classTab) {
     starterTabber('.createTitle','.starterTab');
     starterTabber('.cpP__tab','.cpP__tabContent');
 
+    $('#addLink').on('mousedown',function () {
+        var cnt = document.getElementsByClassName('fl_group').length;
+        var clone = $('.fl_group').first().clone();
+        $('input',clone).attr('name',$('input',clone).attr('name').replace('1',cnt+1));
+        $('#font_option').append(clone)
+    })
+    
 });
     </script>
     <script>"use strict";function viewpr(params){var defaultParams={viewports:[{size:"320",name:"Mobile"},{size:"768",name:"Tablet"},{size:"1024",name:"Desktop"}],showName:true,svg:false,reset:"reset",wrapper:"viewpr-content",links:"viewpr-list",animation:"-webkit-transition:width .3s ease-in-out; -moz-transition: width .3s ease-in-out; -ms-transition: width .3s ease-in-out; -o-transition: width .3s ease-in-out; transition: width .3s ease-in-out;"};if(params){if(params.showName===false){defaultParams.showName=params.showName}if(params.svg===true){defaultParams.svg=params.svg}if(params.viewports){defaultParams.viewports=params.viewports}if(params.reset&&typeof params.reset==="string"){defaultParams.reset=params.reset}if(params.wrapper&&typeof params.reset==="string"){defaultParams.wrapper=params.wrapper}if(params.links&&typeof params.reset==="string"){defaultParams.links=params.links}if(params.animation&&typeof params.reset==="string"){defaultParams.animation=params.animation}}var viewports=defaultParams.viewports,links=document.getElementById(defaultParams.links),linklist=links.children,content=document.getElementById(defaultParams.wrapper),activeNav=document.getElementsByClassName("fr-active"),initWidth=content.style.width,title,styles;styles=content.getAttribute("style")+defaultParams.animation;content.setAttribute("style",styles);for(var i=0;i<viewports.length;i++){if(defaultParams.showName===true){title=viewports[i].name}else{title=viewports[i].size}if(defaultParams.svg===true){links.innerHTML=links.innerHTML+"<li><a data-portsize="+viewports[i].size+' href="#">'+title+'<svg><use xlink:href="#'+viewports[i].size+'"></use></svg></a></li>'}else{links.innerHTML=links.innerHTML+"<li><a data-portsize="+viewports[i].size+' href="#">'+title+"</a></li>"}}links.innerHTML+='<li><a class="fr-active" data-portsize="reset" href="#">'+defaultParams.reset+'<svg><use xlink:href="#'+defaultParams.reset+'"></use></svg></a></li>';for(var i=0;i<linklist.length;i++){linklist[i].children[0].onclick=function(e){e.preventDefault();for(var i=0;i<activeNav.length;i++){activeNav[i].classList.remove("fr-active")}if(this.getAttribute("data-portsize")=="reset"){this.classList.add("fr-active");content.style.width=initWidth;content.removeAttribute("fr-data")}else{this.classList.add("fr-active");content.style.width=this.getAttribute("data-portsize")+"px";content.setAttribute("fr-data","size-"+this.getAttribute("data-portsize"))}}}}</script>

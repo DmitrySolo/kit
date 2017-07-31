@@ -1176,4 +1176,11 @@ function starterTabber(classTrigger,classTab) {
     starterTabber('.createTitle','.starterTab');
     starterTabber('.cpP__tab','.cpP__tabContent');
 
+    $('#addLink').on('mousedown',function () {
+        var cnt = document.getElementsByClassName('fl_group').length;
+        var clone = $('.fl_group').first().clone();
+        $('input',clone).attr('name',$('input',clone).attr('name').replace('1',cnt+1));
+        $('#font_option').append(clone)
+    })
+    
 });

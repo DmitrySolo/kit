@@ -12,7 +12,7 @@
             .cpP__tab.starterTabTrigger__5(data-page='5') Pages
         .col-2-tp
             .cpP__tab.starterTabTrigger__6(data-page='6') Scripts
-    .cpP__tabContent_1.cpP__tabContent
+    .cpP__tabContent_1.cpP__tabContent(style='display:block')
         .optionLine
             label Project Title
             input(type='text' required=true name="project_title")
@@ -25,8 +25,40 @@
                 option eng
                 option ru
 
-    .cpP__tabContent_2.cpP__tabContent 2
-    .cpP__tabContent_3.cpP__tabContent 3
+    .cpP__tabContent_2.cpP__tabContent
+        .optionLine
+            label Primary Color
+            input(type='color' name="primary_color" value='#3b68c9')
+        .optionLine
+            label Secondary Color
+            input(type='color' name="secondary_color" value='#c9612c')
+        .optionLine
+            label Foreground Color
+            input(type='color' name="foreground_color" value='#5ac948')
+        .optionLine
+            label Background Color
+            input(type='color' name="background_color" value='#7746c9')
+        .optionLine
+            label Accent Color
+            input(type='color' name="accent_color" value='#c90028')
+        .optionLine
+            label Font Color
+            input(type='color' name="font_color" value='#86c999')
+        .optionLine
+            label Color lighter index
+            input(type='text' required=true name="color_lighterIndex" value='1.5')
+    .cpP__tabContent_3.cpP__tabContent#font_option
+            div.cpP_fl_h Linked Fonts
+                span#addLink +
+            .optionLine.fl_group
+                label Font Name
+                    input(type='text' required=true name="link_font__1_name")
+                label Font Link
+                    input(type='text' required=true name="link_font__1_link")
+                label Font Role
+                    select(name="link_font__1_role")
+                        option Body font
+                        option Header font
     .cpP__tabContent_4.cpP__tabContent 4
     .cpP__tabContent_5.cpP__tabContent 5
     .cpP__tabContent_6.cpP__tabContent 6

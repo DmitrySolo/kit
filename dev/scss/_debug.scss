@@ -1524,6 +1524,7 @@
     background-color: rgba(12, 12, 12, 0.18) !important;
     position: relative;
     height: 700px;
+    overflow: auto;
   }
   .starterTab{
     position: absolute;
@@ -1558,7 +1559,14 @@
   .starterTab div[class^="col-"]{
     background: #2b2b2b !important
   }
-
+  .cpP_tabber {
+    input {
+      background: #2b2b2b !important;
+      color: #fff;
+      padding: 6px;
+      border: none;
+    }
+  }
   .cpP__tab{
     
     color: #fff;
@@ -1585,8 +1593,31 @@
   }
   .cpP__tabContent {
     color: #fff;
-    background-color: #333333;
+    display: none;
+    min-height: 500px;
+    background: #313335 !important;
     padding: 45px;
+  }
+  .fl_group{
+    padding: 10px 20px;
+    border:solid 2px #0086b3;
+    border-radius: 10px;
+    margin-bottom:8px;
+  }
+  .cpP_fl_h{
+    margin-bottom: 20px;
+  }
+  .cpP_fl_h span{
+    margin-left: 20px;
+    display: inline-block;
+    width:30px;
+    height:30px;
+    line-height: 30px;
+    font-size: .8em;
+    text-align: center;
+    background: #fc9627;
+    border-radius: 50%;
+    cursor: pointer;
   }
 }
 
