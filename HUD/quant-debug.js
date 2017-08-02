@@ -1143,7 +1143,7 @@ var loadProjects = function loadProjects(){
 
 }
 var   removeStarterDialog = function () {
-    $('.starter_dialog','body').css('display','none');
+    $(".debug-Dialog-start").dialog('destroy')
 }
 
 
@@ -1156,7 +1156,8 @@ $('body').on('click','.projectItem',function () {
     $.ajax({
         url: "http://localhost:8181/?action=loadProject&projectName="+pName
     }).done(function (data) {
-        qntSetCookie('project', pName, 1)
+        qntSetCookie('project', pName, 1);
+
     });
 
 })
@@ -1182,5 +1183,29 @@ function starterTabber(classTrigger,classTab) {
         $('input',clone).attr('name',$('input',clone).attr('name').replace('1',cnt+1));
         $('#font_option').append(clone)
     })
-    
+
+    /// TEST API SERVER
+
+    var testServer = function () {
+        try{
+            var request = $.ajax({
+                url: "http://localhost:8181?test=true",
+            });
+
+            request.done(function( msg ) {
+                $('#apitest').css('background','#25b14a')
+            });
+
+            request.fail(function( jqXHR, textStatus ) {
+                $('#apitest').css('background','#ff3300')
+            });
+        }catch(e){$('#apitest').css('background','#ff3300')}
+    }
+    testServer();
+    setInterval(testServer,1000*10)
+
+/////////////////
+
+
+
 });

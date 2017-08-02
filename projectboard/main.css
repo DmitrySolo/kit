@@ -4176,4 +4176,18 @@ div[class*='Panel'] {
   border-radius: 50%;
   cursor: pointer; }
 
+.apiTester {
+  float: right;
+  width: 50px;
+  height: 100%;
+  line-height: 40px;
+  text-align: center; }
+  .apiTester span {
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    background: #292929;
+    border-radius: 50%;
+    display: inline-block; }
+
 /*# sourceMappingURL=maps/main.css.map */

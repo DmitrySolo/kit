@@ -1196,7 +1196,7 @@ gulp.task('svgstore-debug', function () {
 
 //////////////////////////////////////////////////////
 gulp.task('START QUANT', function () {
-    runSequence('WATCHER:NEW', 'SERVER','WATCHCSSTOPARSEIT')
+    runSequence('API-SERVER','WATCHER:NEW', 'SERVER','WATCHCSSTOPARSEIT')
 });
 
 
