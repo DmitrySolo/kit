@@ -48,6 +48,15 @@
             label Color lighter index
             input(type='text' required=true name="color_lighterIndex" value='1.5')
     .cpP__tabContent_3.cpP__tabContent#font_option
+        .optionLine
+            label Screen Font
+            input(type='text' required=true name="screen_font" value='16')
+        .optionLine
+            label Mobile Font
+            input(type='text' required=true name="mobile_font" value='16')
+        .optionLine
+            label Line height Ratio
+            input(type='text' required=true name="lh_ratio" value='1.5')
             div.cpP_fl_h Linked Fonts
                 span#addLink +
             .optionLine.fl_group
@@ -57,9 +66,67 @@
                     input(type='text' required=true name="link_font__1_link")
                 label Font Role
                     select(name="link_font__1_role")
-                        option Body font
-                        option Header font
-    .cpP__tabContent_4.cpP__tabContent 4
+                        option Body
+                        option Header
+                        option Hero
+                        option Special 1
+                        option Special 2
+                label Font weight
+                    select(name="link_font__1_weight")
+                        option normal
+                        option 100
+                        option 200
+                        option 300
+                        option 400
+                        option 500
+                        option 600
+                        option 700
+                        option 800
+                        option 900
+                label Font typeface
+                    select(name="link_font__1_typeface")
+                        option Serif
+                        option San-serif
+                        option Monospace
+    .cpP__tabContent_4.cpP__tabContent
+        .optionLine
+            label Response
+                select(name="response")
+                    option true
+                    option false
+        .optionLine
+            label Vertical Rhythm
+                select(name="vRhythm")
+                    option true
+                    option false
+        .optionLine
+            label Space Unit
+                select(name="unit")
+                    option px
+                    option em
+                    option rem
+        .optionLine
+            label Spacer Principle
+                select(name="spacer_principle")
+                    option Fibonacci
+                    option Linear Progressive
+                    option Manual
+        .optionLine
+            label inear Progressive unit
+                input(type='text' name="progressive_unit" value="1.5")
+        .optionLine
+            label Element Inner / Outer
+                input(type='text' name="e_i" value=".5")
+                input(type='text' name="e_o" value=".7")
+            label Component Inner / Outer
+                input(type='text' name="e_i" value=".5")
+                input(type='text' name="e_o" value=".7")
+            label Module Inner / Outer
+                input(type='text' name="e_i" value=".5")
+                input(type='text' name="e_o" value=".7")
+            label Block Inner / Outer
+                input(type='text' name="e_i" value=".5")
+                input(type='text' name="e_o" value=".7")
     .cpP__tabContent_5.cpP__tabContent 5
     .cpP__tabContent_6.cpP__tabContent 6
 

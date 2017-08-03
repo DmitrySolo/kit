@@ -1566,7 +1566,11 @@
       padding: 6px;
       border: none;
     }
+    input[type='color'] {
+      padding: 2px;
+    }
   }
+
   .cpP__tab{
     
     color: #fff;
@@ -1574,6 +1578,9 @@
     padding: 15px;
     margin-left: 1px;
     cursor: pointer;
+    select {
+      background: #ffff00 !important;
+    }
     .starterTab &.active{
       position: relative;
       background: #0086b3 !important;

@@ -850,23 +850,117 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
                       </div>
                     </div>
                     <div class="cpP__tabContent_3 cpP__tabContent" id="font_option">
-                      <div class="cpP_fl_h">Linked Fonts<span id="addLink">+</span></div>
-                      <div class="optionLine fl_group">
-                        <label>Font Name
-                          <input type="text" required name="link_font__1_name">
-                        </label>
-                        <label>Font Link
-                          <input type="text" required name="link_font__1_link">
-                        </label>
-                        <label>Font Role
-                          <select name="link_font__1_role">
-                            <option>Body font</option>
-                            <option>Header font</option>
+                      <div class="optionLine">
+                        <label>Screen Font</label>
+                        <input type="text" required name="screen_font" value="16">
+                      </div>
+                      <div class="optionLine">
+                        <label>Mobile Font</label>
+                        <input type="text" required name="mobile_font" value="16">
+                      </div>
+                      <div class="optionLine">
+                        <label>Line height Ratio</label>
+                        <input type="text" required name="lh_ratio" value="1.5">
+                        <div class="cpP_fl_h">Linked Fonts<span id="addLink">+</span></div>
+                        <div class="optionLine fl_group">
+                          <label>Font Name
+                            <input type="text" required name="link_font__1_name">
+                          </label>
+                          <label>Font Link
+                            <input type="text" required name="link_font__1_link">
+                          </label>
+                          <label>Font Role
+                            <select name="link_font__1_role">
+                              <option>Body</option>
+                              <option>Header</option>
+                              <option>Hero</option>
+                              <option>Special 1</option>
+                              <option>Special 2</option>
+                            </select>
+                          </label>
+                          <label>Font weight
+                            <select name="link_font__1_weight">
+                              <option>normal</option>
+                              <option>100</option>
+                              <option>200</option>
+                              <option>300</option>
+                              <option>400</option>
+                              <option>500</option>
+                              <option>600</option>
+                              <option>700</option>
+                              <option>800</option>
+                              <option>900</option>
+                            </select>
+                          </label>
+                          <label>Font typeface
+                            <select name="link_font__1_typeface">
+                              <option>Serif</option>
+                              <option>San-serif</option>
+                              <option>Monospace</option>
+                            </select>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cpP__tabContent_4 cpP__tabContent">
+                      <div class="optionLine">
+                        <label>Response
+                          <select name="response">
+                            <option>true</option>
+                            <option>false</option>
                           </select>
                         </label>
                       </div>
+                      <div class="optionLine">
+                        <label>Vertical Rhythm
+                          <select name="vRhythm">
+                            <option>true</option>
+                            <option>false</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="optionLine">
+                        <label>Space Unit
+                          <select name="unit">
+                            <option>px</option>
+                            <option>em</option>
+                            <option>rem</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="optionLine">
+                        <label>Spacer Principle
+                          <select name="spacer_principle">
+                            <option>Fibonacci</option>
+                            <option>Linear Progressive</option>
+                            <option>Manual</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="optionLine">
+                        <label>inear Progressive unit
+                          <input type="text" name="progressive_unit" value="1.5">
+                        </label>
+                      </div>
+                      <div class="optionLine">
+                        <label>Element Inner / Outer
+                          <input type="text" name="e_i" value=".5">
+                          <input type="text" name="e_o" value=".7">
+                        </label>
+                        <label>Component Inner / Outer
+                          <input type="text" name="e_i" value=".5">
+                          <input type="text" name="e_o" value=".7">
+                        </label>
+                        <label>Module Inner / Outer
+                          <input type="text" name="e_i" value=".5">
+                          <input type="text" name="e_o" value=".7">
+                        </label>
+                        <label>Block Inner / Outer
+                          <input type="text" name="e_i" value=".5">
+                          <input type="text" name="e_o" value=".7">
+                        </label>
+                      </div>
                     </div>
-                    <div class="cpP__tabContent_4 cpP__tabContent">4</div>
                     <div class="cpP__tabContent_5 cpP__tabContent">5</div>
                     <div class="cpP__tabContent_6 cpP__tabContent">6</div>
                   </div>
@@ -2115,14 +2209,14 @@ function starterTabber(classTrigger,classTab) {
             });
 
             request.fail(function( jqXHR, textStatus ) {
-                $('#apitest').css('background','#b13900')
+                $('#apitest').css('background','#ff3300')
             });
-        }catch(e){$('#apitest').css('background','#b13900')}
+        }catch(e){$('#apitest').css('background','#ff3300')}
     }
     testServer();
     setInterval(testServer,1000*10)
 
-
+/////////////////
 
 
 
