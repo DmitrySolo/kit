@@ -1180,7 +1180,10 @@ function starterTabber(classTrigger,classTab) {
     $('#addLink').on('mousedown',function () {
         var cnt = document.getElementsByClassName('fl_group').length;
         var clone = $('.fl_group').first().clone();
-        $('input',clone).attr('name',$('input',clone).attr('name').replace('1',cnt+1));
+        $.each($('*[name]',clone),function (key,val) {
+            var attr =$(this).attr('name').replace('1',cnt+1);
+            $(this).attr('name',attr);
+        })
         $('#font_option').append(clone)
     })
 
@@ -1204,8 +1207,100 @@ function starterTabber(classTrigger,classTab) {
     testServer();
     setInterval(testServer,1000*10)
 
-/////////////////
+///////////////// CREATE PROJECT
+
+    $('#CreateProject').on('mousedown',function () {
+
+        var projectOptions = {};
+            if ($('input[name="project_title"]').val() != '' && $('input[name="project_prefix"]').val() != 0){
+
+                projectOptions.mainOpt = {
+
+                    "title": $('input[name="project_title"]').val(),
+                    "prefix": $('input[name="project_prefix"]').val(),
+                    "lang": $('select[name="project_language"]').val()
+                };
+                projectOptions.colorsOpt = {
+                    "primary": $('input[name="primary_color"]').val(),
+                    "secondary": $('input[name="secondary_color"]').val(),
+                    "foreground": $('input[name="foreground_color"]').val(),
+                    "background": $('input[name="background_color"]').val(),
+                    "accent": $('input[name="accent_color"]').val(),
+                    "font": $('input[name="font_color"]').val(),
+                    "index": $('input[name="color_lighterIndex"]').val(),
+                };
 
 
+                var linksObjArr = [];
+                $.each($('.fl_group'), function (key, val) {
+                    var linkObj = {}
+                    key++;
+                    linkObj.name = $('input[name="link_font__' + key + '_name"]').val();
+                    linkObj.link = $('input[name="link_font__' + key + '_link"]').val();
+                    linkObj.role = $('select[name="link_font__' + key + '_role"]').val();
+                    linkObj.weight = $('select[name="link_font__' + key + '_weight"]').val();
+                    linkObj.typeface = $('select[name="link_font__' + key + '_typeface"]').val();
+                    linksObjArr.push(linkObj);
+                })
 
-});
+                projectOptions.typography = {
+                    "screen_font": $('input[name="screen_font"]').val(),
+                    "mobile_font": $('input[name="mobile_font"]').val(),
+                    "lh_ratio": $('input[name="lh_ratio"]').val(),
+                    "linkFontsArr": linksObjArr
+
+                };
+
+                projectOptions.media = {
+                    "response": $('select[name="response"]').val(),
+                    "width": $('input[name="width"]').val(),
+                    "colums": $('input[name="colums"]').val(),
+                    "gutter": $('input[name="gutter"]').val(),
+                    "vRhythm": $('select[name="vRhythm"]').val(),
+                    "m_c": $('input[name="m_c"]').val(),
+                    "m_b": $('input[name="m_b"]').val(),
+                    "tp_c": $('input[name="tp_c"]').val(),
+                    "tp_b": $('input[name="tp_b"]').val(),
+                    "tl_c": $('input[name="tl_c"]').val(),
+                    "tl_b": $('input[name="tl_b"]').val(),
+                    "d_c": $('input[name="d_c"]').val(),
+                    "d_b": $('input[name="d_b"]').val()
+                };
+                projectOptions.spacer = {
+                    "unit": $('select[name="unit"]').val(),
+                    "spacer_principle": $('select[name="spacer_principle"]').val(),
+                    "progressive_unit": $('input[name="progressive_unit"]').val(),
+                    "e_i": $('input[name="e_i"]').val(),
+                    "e_o": $('input[name="e_o"]').val(),
+                    "c_i": $('input[name="c_i"]').val(),
+                    "c_o": $('input[name="c_o"]').val(),
+                    "m_i": $('input[name="m_i"]').val(),
+                    "m_o": $('input[name="m_o"]').val(),
+                    "b_i": $('input[name="b_i"]').val(),
+                    "b_o": $('input[name="b_o"]').val(),
+
+                };
+                ql(projectOptions,'Popt')
+
+
+                $.ajax({
+                    url: "http://localhost:8181"
+                    , type: 'POST'
+                    , data: JSON.stringify(projectOptions)
+                    , success: function (res) {
+
+                    }
+                });
+
+            }else {
+                Notification.requestPermission(function(permission){
+// переменная permission содержит результат запроса
+                    console.log('Результат запроса прав:', permission);
+                });
+                var notification = new Notification('PLEASE FILL THE TITLE AND PREFIX',
+                    { body: '<h1>ugug</h1>', dir: 'auto', icon: 'icon.jpg' }
+                );
+            }
+
+    })
+})

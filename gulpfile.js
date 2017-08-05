@@ -1342,7 +1342,11 @@ gulp.task('API-SERVER', function () {
 
                 switch (url_parts.query.action) {
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    case 'createProject' :
+                        var data = url_parts.query.data;
+                        console.log(JSON.parse(data));
+                        break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     case 'getProjects' :
 
@@ -1411,12 +1415,21 @@ gulp.task('API-SERVER', function () {
 
             }
 
-        } else if (req.method == 'POST') {
+        } else if (req.method == 'POST') { /////// POST
 
             var body = '';
             req.on('data', function (data) {
                 body += data;
                 body = JSON.parse(body);
+                console.log(body);
+
+///////////////////////////////////////////////////////////////////////CREATE PROJECT
+            if(body.mainOpt){
+                console.log('OK POST')
+
+////////////////////////////////////////////////////////////////////// SELECTORS
+            }else if (body.selectorData)
+                {
 
                 var col='';
                 var line='';
@@ -1434,9 +1447,9 @@ gulp.task('API-SERVER', function () {
                 console.log(orderLine)
                 for (var i in orderLine){
 
-                   var dataIndex = ruleLine.indexOf(orderLine[i]);
+                    var dataIndex = ruleLine.indexOf(orderLine[i]);
 
-                   body.selectorData[dataIndex];
+                    body.selectorData[dataIndex];
 
                     var className = '.' + body.selectorData[dataIndex].selectorName;
                     var properties = body.selectorData[dataIndex].stylesObject;
@@ -1447,26 +1460,29 @@ gulp.task('API-SERVER', function () {
 
                     for (var ix in properties) {
 
-                                string += '\n\t' + properties[ix].propery+':' + properties[ix].value+ ';';
-                             }
+                        string += '\n\t' + properties[ix].propery+':' + properties[ix].value+ ';';
+                    }
 
-                     if (media.length>0){
-                         for (var im in media){
-                                var rule = media[im][0];
-                                var styles = media[im][1].declarations;
+                    if (media.length>0){
+                        for (var im in media){
+                            var rule = media[im][0];
+                            var styles = media[im][1].declarations;
                             string +='\n@for'+rule+'{';
-                                for(var i in styles){
-                                    string+='\n\t'+styles[i].property+':'+styles[i].value+';';
+                            for(var i in styles){
+                                string+='\n\t'+styles[i].property+':'+styles[i].value+';';
 
-                                }
+                            }
                             string+='}';
-                         }
+                        }
 
 
-                     }
+                    }
 
                     console.log(string)
-                }//END OF ONE
+                }
+            }
+
+//END OF ONE
 
                 // for (var key in body.save) {
                 //

@@ -4195,4 +4195,21 @@ div[class*='Panel'] {
     border-radius: 50%;
     display: inline-block; }
 
+.verDel {
+  display: inline-block;
+  padding-bottom: 50px; }
+  .verDel > span {
+    border-bottom: solid 2px #fff; }
+
+.createButton {
+  display: inline-block;
+  padding: 16px;
+  float: right;
+  text-align: center;
+  background: #fc9627 !important;
+  color: #fff;
+  cursor: pointer; }
+  .createButton:hover {
+    background: #fc8027 !important; }
+
 /*# sourceMappingURL=maps/main.css.map */

@@ -1643,5 +1643,26 @@
 
     }
   }
+
+  .verDel {
+    display: inline-block;
+    padding-bottom:50px;
+
+    & > span {
+      border-bottom:solid 2px #fff;
+    }
+  }
+  .createButton {
+    display: inline-block;
+    padding: 16px;
+    float: right;
+    text-align: center;
+    background: #fc9627 !important;
+    color: #fff;
+    cursor: pointer;
+    &:hover{
+      background: #fc8027 !important;;
+    }
+  }
 }
 

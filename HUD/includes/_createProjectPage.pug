@@ -22,8 +22,8 @@
         .optionLine
             label Project Language
             select(name="project_language")
-                option eng
-                option ru
+                option(value='eng' selected= true) eng
+                option(value='eng') ru
 
     .cpP__tabContent_2.cpP__tabContent
         .optionLine
@@ -66,67 +66,96 @@
                     input(type='text' required=true name="link_font__1_link")
                 label Font Role
                     select(name="link_font__1_role")
-                        option Body
-                        option Header
-                        option Hero
-                        option Special 1
-                        option Special 2
+                        option(value='Body' selected= true) Body
+                        option(value='Header' ) Header
+                        option(value='Hero' ) Hero
+                        option(value='Special_1' ) Special 1
+                        option(value='Special_2' ) Special 2
                 label Font weight
                     select(name="link_font__1_weight")
-                        option normal
-                        option 100
-                        option 200
-                        option 300
-                        option 400
-                        option 500
-                        option 600
-                        option 700
-                        option 800
-                        option 900
+                        option(value='normal' selected= true) normal
+                        option(value='100') 100
+                        option(value='200') 200
+                        option(value='300') 300
+                        option(value='400') 400
+                        option(value='500') 500
+                        option(value='600') 600
+                        option(value='700') 700
+                        option(value='800') 800
+                        option(value='900') 900
                 label Font typeface
                     select(name="link_font__1_typeface")
-                        option Serif
-                        option San-serif
-                        option Monospace
+                        option(value='Serif' selected= true) Serif
+                        option(value='San-serif') San-serif
+                        option(value='Monospace') Monospace
     .cpP__tabContent_4.cpP__tabContent
-        .optionLine
-            label Response
-                select(name="response")
-                    option true
-                    option false
-        .optionLine
-            label Vertical Rhythm
-                select(name="vRhythm")
-                    option true
-                    option false
-        .optionLine
-            label Space Unit
-                select(name="unit")
-                    option px
-                    option em
-                    option rem
-        .optionLine
-            label Spacer Principle
-                select(name="spacer_principle")
-                    option Fibonacci
-                    option Linear Progressive
-                    option Manual
-        .optionLine
-            label inear Progressive unit
-                input(type='text' name="progressive_unit" value="1.5")
-        .optionLine
-            label Element Inner / Outer
-                input(type='text' name="e_i" value=".5")
-                input(type='text' name="e_o" value=".7")
-            label Component Inner / Outer
-                input(type='text' name="e_i" value=".5")
-                input(type='text' name="e_o" value=".7")
-            label Module Inner / Outer
-                input(type='text' name="e_i" value=".5")
-                input(type='text' name="e_o" value=".7")
-            label Block Inner / Outer
-                input(type='text' name="e_i" value=".5")
-                input(type='text' name="e_o" value=".7")
+        .col-6-tp.verDel(style='background:#313335 !important')
+            span MEDIA
+            .optionLine
+                label Response
+                    select(name="response")
+                        option(value='true' selected= true) true
+                        option(value='false') false
+            .optionLine
+                label Site Width
+                    input(type='text' name="width" value="1170px")
+            .optionLine
+                label Colums
+                    input(type='text' name="colums" value="12")
+            .optionLine
+                label Gutter Width
+                    input(type='text' name="gutter" value=".5em")
+            .optionLine
+                label Vertical Rhythm
+                    select(name="vRhythm")
+                        option(value='true' selected= true) true
+                        option(value='false') false
+            .optionLine
+                label Mobile : Container / Breakpoint
+                    input(type='text' name="m_c" value="100%")
+                    input(type='text' name="m_b" value="600px")
+            .optionLine
+                label Tablet Portrait : Container / Breakpoint
+                    input(type='text' name="tp_c" value="690px")
+                    input(type='text' name="tp_b" value="768px")
+            .optionLine
+                label Tablet LandScape : Container / Breakpoint
+                    input(type='text' name="tl_c" value="900px")
+                    input(type='text' name="tl_b" value="994px")
+            .optionLine
+                label Desktop  : Container / Breakpoint
+                    input(type='text' name="d_c" value="1120px")
+                    input(type='text' name="d_b" value="1200px")
+        .col-6-tp.verDel(style='background:#313335 !important')
+            span SPACER
+            .optionLine
+                label Space Unit
+                    select(name="unit")
+                        option(value='px' selected= true) px
+                        option(value='em') em
+                        option(value='rem') rem
+            .optionLine
+                label Spacer Principle
+                    select(name="spacer_principle")
+                        option(value='fibonacci' selected= true) Fibonacci
+                        option(value='linear') Linear Progressive
+                        option(value='manual') Manual
+            .optionLine
+                label Linear Progressive unit
+                    input(type='text' name="progressive_unit" value="1.5")
+            .optionLine
+                label Element Inner / Outer
+                    input(type='text' name="e_i" value=".5")
+                    input(type='text' name="e_o" value=".7")
+                label Component Inner / Outer
+                    input(type='text' name="c_i" value=".5")
+                    input(type='text' name="c_o" value=".7")
+                label Module Inner / Outer
+                    input(type='text' name="m_i" value=".5")
+                    input(type='text' name="m_o" value=".7")
+                label Block Inner / Outer
+                    input(type='text' name="b_i" value=".5")
+                    input(type='text' name="b_o" value=".7")
     .cpP__tabContent_5.cpP__tabContent 5
     .cpP__tabContent_6.cpP__tabContent 6
 
