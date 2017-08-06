@@ -2,17 +2,7 @@
 // COLLOR PALETE [ https://colordrop.io/ ]
 //GRADIENTS  [https://uigradients.com]
 
-// FOREGROUND -> MAIN -> SECONDARY
-$colors: (
-        'primary':#3b68c9,
-        'secondary': #ebebeb,
-        'accent': #00aab5,
-        'fground': #ebebeb,
-        'bground': #ffffff,
-        'font': #000000,
-        'hl': #e32a8e
-);
-$color-step: .15;
+@import "colors";
 
 $colors-map:(
 

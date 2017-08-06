@@ -56,7 +56,7 @@ var iconfontCss = require('gulp-iconfont-css');
 var sourceMap = require('source-map');
 var html2jade = require('html2jade');
 var css = require('css');
-
+var copydir = require('copy-dir');
 // QUANT PLUGINS&FUNCTIONS
 
 
@@ -79,7 +79,11 @@ gulp.task('loadProject', function () {
     var globalData = JSON.parse(fs.readFileSync('globalData.json', 'utf8'));
     console.log(globalData.currentProject);
 });
+gulp.task('createProject', function () {
 
+
+
+});
 
 
 
@@ -1421,11 +1425,81 @@ gulp.task('API-SERVER', function () {
             req.on('data', function (data) {
                 body += data;
                 body = JSON.parse(body);
-                console.log(body);
+                console.log(body.typography);
 
 ///////////////////////////////////////////////////////////////////////CREATE PROJECT
             if(body.mainOpt){
-                console.log('OK POST')
+                var p_path = 'Projects/'+body.mainOpt.title;
+                copydir.sync('vendor/project template/New Project', p_path);
+
+                var p_data = JSON.parse(fs.readFileSync(p_path+'/dev/data.json', 'utf8'));
+                p_data.head.lang  =  body.mainOpt.lang;
+                p_data.head.title =  body.mainOpt.title;
+                p_data.head.prefix =  body.mainOpt.prefix;
+                p_data.head.fontlinks={}
+
+                for (var i in body.typography.linkFontsArr) {
+
+                    p_data.head.fontlinks[i] = body.typography.linkFontsArr[i].link
+                }
+
+
+
+
+                var p_json = JSON.stringify(p_data);
+                fs.writeFile(p_path+'/dev/data.json', p_json, 'utf8');
+
+                var p_jsonOpt = JSON.stringify(body);
+                fs.writeFile(p_path+'/settings/settings.json', p_jsonOpt, 'utf8');
+
+
+                function setSettingsToCore (){
+
+                    // Colors
+                    var stringColors = '$colors: (\n\t';
+                    var strEnd='';
+                    for (var key in body.colorsOpt){
+                        if (key != 'index'){
+                            stringColors+= key+":"+body.colorsOpt[key]+",\n\t";
+                        }else {
+                             strEnd = "$color-step:"+ body.colorsOpt[key]+";";
+                        }
+
+                    }
+                    stringColors+=');\n';
+                    fs.writeFile('dev/scss/COLOR/_colors.scss', stringColors+strEnd, 'utf8');
+
+
+                    //Fonts
+
+                    var string = '$LINKED_FONTS_MAP:(\n\t';
+                    var stringLineOpt =''
+
+                    for (var i in body.typography.linkFontsArr) {
+
+                        var name = body.typography.linkFontsArr[i].name;
+                        var role = body.typography.linkFontsArr[i].role;
+                        if (role == 'Body'){
+                            stringLineOpt+='$body-font-weight   :'+body.typography.linkFontsArr[i].weight+';\n';
+                        }else if (role == 'Header'){
+                            stringLineOpt+='$header-font-weight   :'+body.typography.linkFontsArr[i].weight+';\n';
+                        }else if (role == 'Hero'){
+                            stringLineOpt+='$hero-font-weight   :'+body.typography.linkFontsArr[i].weight+';\n';
+                        }
+                        var typeface = body.typography.linkFontsArr[i].typeface;
+                        string+=role+":('"+name+"' "+typeface+"),\n\t";
+                    }
+                    string+=');\n';
+                    stringLineOpt+='$mobile-font :'+body.typography.mobile_font+';\n';
+                    stringLineOpt+='$screen-font  :'+body.typography.screen_font+';\n';
+                    stringLineOpt+='$line-height-ratio :'+body.typography.lh_ratio+';';
+                    console.log(string+stringLineOpt);
+                    fs.writeFile('dev/scss/MASTER_OPTIONS/_fontOption.scss', string+stringLineOpt, 'utf8');
+
+
+
+                }
+                setSettingsToCore();
 
 ////////////////////////////////////////////////////////////////////// SELECTORS
             }else if (body.selectorData)

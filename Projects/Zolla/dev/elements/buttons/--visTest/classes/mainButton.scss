@@ -1,0 +1,22 @@
+.mainButton{
+	display:block;
+	width:100%;
+	color:darkcyan;
+	background-image:url("http://home/image.jpg");
+	&:hover{
+		color:red;
+	}
+	&:last-child{
+		margin:0;
+	}
+	@include for-size(phone-only){
+		width:30%;
+		&:hover{
+			background-color:yellow;
+		}
+	}
+	@include for-size(desktop-up){
+		width:70%;
+		color:violet;
+	}
+}

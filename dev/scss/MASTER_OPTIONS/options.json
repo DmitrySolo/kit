@@ -20,8 +20,8 @@
 	"header-color": "cs('primary')",
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
-		"'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\n)"
+		"//  'MAIN'": "('Oswald')",
+		"'HEADER'": "('Roboto Slab')\n//)"
 	},
 	"space": "em",
 	"element_space": ".5",
@@ -39,13 +39,8 @@
 	"module_space_o": "26",
 	"block_space_i": "30",
 	"block_space_o": "51",
-	"body-font": "fs('MAIN'),san-serif",
-	"body-font-weight": "400",
+	"body-font": "fs('Body'),san-serif",
 	"header-font": "fs('HEADER'),san-serif",
-	"header-font-weight": "700",
-	"mobile-font": "14px",
-	"screen-font": "18px",
-	"line-height-ratio": "1.7",
 	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": "1em",
