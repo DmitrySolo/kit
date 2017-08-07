@@ -82,8 +82,10 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
 }
 
 @mixin t-header() {
-  font-family: $header-font;
-  font-weight: $header-font-weight;
+  @if($header-font){
+    font-family: $header-font;
+    font-weight: $header-font-weight;
+  }
   color: $header-color;
   clear: both;
 }
