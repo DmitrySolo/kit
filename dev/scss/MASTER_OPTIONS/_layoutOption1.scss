@@ -1,0 +1,33 @@
+$response: true;
+$vertical-rhythm: true;
+$siteWidth: 1170px;
+$colums: 12;
+$gutter-width: 1em;
+
+// BREAKPOINTS
+$phone-upper-boundary: 600px;
+$tablet-portrait-upper-boundary: 768px;
+$tablet-landscape-upper-boundary: 994px;
+$desktop-upper-boundary: 1200px;
+$desktopl-upper-boundary: 1400px;
+// CONTAINERS
+$tablet-p-container:690px; $siteMinWidth:$tablet-p-container;
+$tablet-l-container:900px;
+$desktop-container:1120px;
+$MEDIA:(
+        phoneBreakpoint: 600px,
+        tabletPortraitBreakpoint: 768px,
+        tabletLandscapeBreakpoint: 994px,
+        desktopBreakpoint: 1200px,
+        desktoplBreakpoint: 1400px,
+        tabletPcontainer:690px,
+        tabletLcontainer:900px,
+        desktopContainer:1120px,
+);
+$grid-map: (
+        mobile       :(prefix:m, container:100%, breakpoint:$phone-upper-boundary - 1),
+        tablet-p     :(prefix:tp, container:$tablet-p-container, breakpoint:$phone-upper-boundary),
+        tablet-l     :(prefix:tl, container:900px, breakpoint:$tablet-portrait-upper-boundary),
+        mediumScreen :(prefix:d, container:1120px, breakpoint:$tablet-landscape-upper-boundary),
+        largeScreen  :(prefix:dl, container:$siteWidth, breakpoint:$desktop-upper-boundary),
+);

@@ -182,7 +182,7 @@ gulp.task('VIEW-FINAL', function () {
 });
 
 gulp.task('VIEW-1-ELEMENTS', function () {
-    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+    // Callback modSe, useful if any plugin in the pipeline depends on the `end`/`flush` event
     return watch([
 
         'dev/ELEMENTS/**/*.pug',
@@ -1202,7 +1202,9 @@ gulp.task('svgstore-debug', function () {
 gulp.task('START QUANT', function () {
     runSequence('API-SERVER','WATCHER:NEW', 'SERVER','WATCHCSSTOPARSEIT')
 });
-
+gulp.task('RELOAD QUANT', function () {
+    runSequence('WATCHER:NEW','WATCHCSSTOPARSEIT')
+});
 
 /////UTILITIES
 gulp.task('u-h2p', function () {
@@ -1428,15 +1430,15 @@ gulp.task('API-SERVER', function () {
                 console.log(body.typography);
 
 ///////////////////////////////////////////////////////////////////////CREATE PROJECT
-            if(body.mainOpt){
-                var p_path = 'Projects/'+body.mainOpt.title;
+            if(body.mainOpt) {
+                var p_path = 'Projects/' + body.mainOpt.title;
                 copydir.sync('vendor/project template/New Project', p_path);
 
-                var p_data = JSON.parse(fs.readFileSync(p_path+'/dev/data.json', 'utf8'));
-                p_data.head.lang  =  body.mainOpt.lang;
-                p_data.head.title =  body.mainOpt.title;
-                p_data.head.prefix =  body.mainOpt.prefix;
-                p_data.head.fontlinks={}
+                var p_data = JSON.parse(fs.readFileSync(p_path + '/dev/data.json', 'utf8'));
+                p_data.head.lang = body.mainOpt.lang;
+                p_data.head.title = body.mainOpt.title;
+                p_data.head.prefix = body.mainOpt.prefix;
+                p_data.head.fontlinks = {}
 
                 for (var i in body.typography.linkFontsArr) {
 
@@ -1444,105 +1446,131 @@ gulp.task('API-SERVER', function () {
                 }
 
 
-
-
                 var p_json = JSON.stringify(p_data);
-                fs.writeFile(p_path+'/dev/data.json', p_json, 'utf8');
+                fs.writeFile(p_path + '/dev/data.json', p_json, 'utf8');
 
                 var p_jsonOpt = JSON.stringify(body);
-                fs.writeFile(p_path+'/settings/settings.json', p_jsonOpt, 'utf8');
+                fs.writeFile(p_path + '/settings/settings.json', p_jsonOpt, 'utf8');
 
 
-                function setSettingsToCore (){
+                function setSettingsToCore() {
 
                     // Colors
                     var stringColors = '$colors: (\n\t';
-                    var strEnd='';
-                    for (var key in body.colorsOpt){
-                        if (key != 'index'){
-                            stringColors+= key+":"+body.colorsOpt[key]+",\n\t";
-                        }else {
-                             strEnd = "$color-step:"+ body.colorsOpt[key]+";";
+                    var strEnd = '';
+                    for (var key in body.colorsOpt) {
+                        if (key != 'index') {
+                            stringColors += key + ":" + body.colorsOpt[key] + ",\n\t";
+                        } else {
+                            strEnd = "$color-step:" + body.colorsOpt[key] + ";";
                         }
 
                     }
-                    stringColors+=');\n';
-                    fs.writeFile('dev/scss/COLOR/_colors.scss', stringColors+strEnd, 'utf8');
+                    stringColors += ');\n';
+                    fs.writeFile('dev/scss/COLOR/_colors.scss', stringColors + strEnd, 'utf8');
 
 
                     //Fonts
 
                     var string = '$body-font:false;\n$hero-font:false;\n$header-font:false;\n$LINKED_FONTS_MAP:(\n\t';
-                    var stringLineOpt =''
+                    var stringLineOpt = ''
 
                     for (var i in body.typography.linkFontsArr) {
 
                         var name = body.typography.linkFontsArr[i].name;
                         var role = body.typography.linkFontsArr[i].role;
-                        if (role == 'Body'){
-                            stringLineOpt+='$body-font: fs("Body");';
-                            stringLineOpt+='$body-font-weight: '+body.typography.linkFontsArr[i].weight+';\n';
-                        }else if (role == 'Header'){
-                            stringLineOpt+='$header-font: fs("Header");'
-                            stringLineOpt+='$header-font-weight   :'+body.typography.linkFontsArr[i].weight+';\n';
-                        }else if (role == 'Hero'){
-                            stringLineOpt+='$hero-font: fs("Hero");'
-                            stringLineOpt+='$hero-font-weight   :'+body.typography.linkFontsArr[i].weight+';\n';
+                        if (role == 'Body') {
+                            stringLineOpt += '$body-font: fs("Body");';
+                            stringLineOpt += '$body-font-weight: ' + body.typography.linkFontsArr[i].weight + ';\n';
+                        } else if (role == 'Header') {
+                            stringLineOpt += '$header-font: fs("Header");'
+                            stringLineOpt += '$header-font-weight   :' + body.typography.linkFontsArr[i].weight + ';\n';
+                        } else if (role == 'Hero') {
+                            stringLineOpt += '$hero-font: fs("Hero");'
+                            stringLineOpt += '$hero-font-weight   :' + body.typography.linkFontsArr[i].weight + ';\n';
                         }
                         var typeface = body.typography.linkFontsArr[i].typeface;
-                        string+=role+":('"+name+"' , "+typeface+"),\n\t";
+                        string += role + ":('" + name + "' , " + typeface + "),\n\t";
                     }
-                    string+=');\n';
-                    stringLineOpt+='$mobile-font :'+body.typography.mobile_font+';\n';
-                    stringLineOpt+='$screen-font  :'+body.typography.screen_font+';\n';
-                    stringLineOpt+='$line-height-ratio :'+body.typography.lh_ratio+';';
-                    console.log(string+stringLineOpt);
-                    fs.writeFile('dev/scss/MASTER_OPTIONS/_fontOption.scss', string+stringLineOpt, 'utf8');
+                    string += ');\n';
+                    stringLineOpt += '$mobile-font :' + body.typography.mobile_font + ';\n';
+                    stringLineOpt += '$screen-font  :' + body.typography.screen_font + ';\n';
+                    stringLineOpt += '$line-height-ratio :' + body.typography.lh_ratio + ';';
+                    console.log(string + stringLineOpt);
+                    fs.writeFile('dev/scss/MASTER_OPTIONS/_fontOption.scss', string + stringLineOpt, 'utf8');
 
                     //spacer
-                    var spacerString ='$element_space_o:"";'+
-                    '$element_space_i:""; '+
-                    '$component_space_i:""; '+
-                    '$component_space_o:""; '+
-                    '$module_space_i:""; '+
-                    '$module_space_o:""; '+
-                    '$block_space_i:""; '+
-                    '$block_space_o:"";\n';
-                    spacerString+='$type :'+body.spacer.spacer_principle+';\n';
-                    spacerString+='$space: '+body.spacer.unit+';\n';
-                    spacerString+='$element_space_i: '+body.spacer.e_i+';\n';
-                    spacerString+='$element_space_o: '+body.spacer.e_o+';\n';
-                    spacerString+='@if($type == "progressive"){\n\t';
-                    spacerString+='$progressive_number:'+body.spacer.progressive_unit+';\n\t';
-                    spacerString +="$element_space_o:$element_space_i*$progressive_number;"+
-                    "$component_space_i:$element_space_o*$progressive_number;"+
-                    "$component_space_o:$component_space_i*$progressive_number;"+
-                    "$module_space_i:$component_space_o*$progressive_number;"+
-                    "$module_space_o:$module_space_i*$progressive_number;"+
-                    "$block_space_i:$module_space_o*$progressive_number;"+
-                    "$block_space_o:$block_space_i*$progressive_number;"+
-                    "}"+
-                    "//FIBONACHI\n"+
-                   "@if($type == 'fibonacci'){"+
-                            "$component_space_i:$element_space_i+$element_space_o;"+
-                            "$component_space_o:$component_space_i+$element_space_o;"+
-                            "$module_space_i:$component_space_o+$component_space_i;"+
-                            "$module_space_o:$module_space_i+$component_space_o;"+
-                            "$block_space_i:$module_space_i+$module_space_o;"+
-                            "$block_space_o:$block_space_i+$module_space_o;"+
+                    var spacerString = '$element_space_o:"";' +
+                        '$element_space_i:""; ' +
+                        '$component_space_i:""; ' +
+                        '$component_space_o:""; ' +
+                        '$module_space_i:""; ' +
+                        '$module_space_o:""; ' +
+                        '$block_space_i:""; ' +
+                        '$block_space_o:"";\n';
+                    spacerString += '$type :' + body.spacer.spacer_principle + ';\n';
+                    spacerString += '$space: ' + body.spacer.unit + ';\n';
+                    spacerString += '$element_space_i: ' + body.spacer.e_i + ';\n';
+                    spacerString += '$element_space_o: ' + body.spacer.e_o + ';\n';
+                    spacerString += '@if($type == "linear"){\n\t';
+                    spacerString += '$progressive_number:' + body.spacer.progressive_unit + ';\n\t';
+                    spacerString += "$element_space_o:$element_space_i*$progressive_number;" +
+                        "$component_space_i:$element_space_o*$progressive_number;" +
+                        "$component_space_o:$component_space_i*$progressive_number;" +
+                        "$module_space_i:$component_space_o*$progressive_number;" +
+                        "$module_space_o:$module_space_i*$progressive_number;" +
+                        "$block_space_i:$module_space_o*$progressive_number;" +
+                        "$block_space_o:$block_space_i*$progressive_number;" +
+                        "}" +
+                        "//FIBONACHI\n" +
+                        "@if($type == 'fibonacci'){" +
+                        "$component_space_i:$element_space_i+$element_space_o;" +
+                        "$component_space_o:$component_space_i+$element_space_o;" +
+                        "$module_space_i:$component_space_o+$component_space_i;" +
+                        "$module_space_o:$module_space_i+$component_space_o;" +
+                        "$block_space_i:$module_space_i+$module_space_o;" +
+                        "$block_space_o:$block_space_i+$module_space_o;" +
                         "};\n";
-                    spacerString +="//MANUAL\n\t"+"@if($type == 'manual'){\n\t"+
-                    "$component_space_i: "+body.spacer.c_i+";\n"+
-                    "$component_space_o: "+body.spacer.c_o+";\n"+
-                    "$module_space_i: "+body.spacer.m_i+";\n"+
-                    "$module_space_o: "+body.spacer.m_o+";\n"+
-                    "$block_space_i: "+body.spacer.b_i+";\n"+
-                    "$blockt_space_o: "+body.spacer.b_o+";\n";
-                    spacerString+="}";
+                    spacerString += "//MANUAL\n\t" + "@if($type == 'manual'){\n\t" +
+                        "$component_space_i: " + body.spacer.c_i + ";\n" +
+                        "$component_space_o: " + body.spacer.c_o + ";\n" +
+                        "$module_space_i: " + body.spacer.m_i + ";\n" +
+                        "$module_space_o: " + body.spacer.m_o + ";\n" +
+                        "$block_space_i: " + body.spacer.b_i + ";\n" +
+                        "$blockt_space_o: " + body.spacer.b_o + ";\n";
+                    spacerString += "}";
                     fs.writeFile('dev/scss/MASTER_OPTIONS/_spacerOption.scss', spacerString, 'utf8');
-                }
-                setSettingsToCore();
 
+                    //Media
+
+                    var string = "$response:" + body.media.response + ";\n" +
+                        "$vertical-rhythm:" + body.media.vRhythm + ";\n" +
+                        "$siteWidth: " + body.media.width + ";\n" +
+                        "$colums: " + body.media.colums + ";\n" +
+                        "$gutter-width: " + body.media.gutter + ";\n" +
+                        "// BREAKPOINTS\n" +
+                        "$phone-upper-boundary:" + body.media.m_b + ";\n" +
+                        "$tablet-portrait-upper-boundary:" + body.media.tp_b + ";\n" +
+                        "$tablet-landscape-upper-boundary:" + body.media.tl_b + ";\n" +
+                        "$desktop-upper-boundary:" + body.media.d_b + ";\n" +
+                        "$desktopl-upper-boundary:" + body.media.d_b + ";\n" +
+                        "// CONTAINERS\n" +
+                        "$tablet-p-container:" + body.media.tp_c + ";\n" +
+                        "$tablet-l-container:" + body.media.tl_c + ";\n" +
+                        "$siteMinWidth:$tablet-p-container;\n" +
+                        "$desktop-container:" + body.media.d_c + ";\n" +
+                        "$grid-map: (\n" +
+                        "mobile:(prefix:m, container:100%, breakpoint:$phone-upper-boundary - 1),\n" +
+                        "tablet-p :(prefix:tp, container:$tablet-p-container, breakpoint:$phone-upper-boundary),\n" +
+                        "tablet-l     :(prefix:tl, container:$tablet-l-container, breakpoint:$tablet-portrait-upper-boundary),\n" +
+                        "mediumScreen :(prefix:d, container:$desktop-container, breakpoint:$tablet-landscape-upper-boundary),\n" +
+                        "largeScreen  :(prefix:dl, container:$siteWidth, breakpoint:$desktop-upper-boundary))";
+                    fs.writeFile('dev/scss/MASTER_OPTIONS/_mediaOption.scss', string, 'utf8');
+
+            }
+                setSettingsToCore();
+                gulp.start('views');
+                gulp.start('styles');
 ////////////////////////////////////////////////////////////////////// SELECTORS
             }else if (body.selectorData)
                 {

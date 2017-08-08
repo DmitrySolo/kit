@@ -9,8 +9,6 @@
 		"production": "false",
 		"icon-font": "false"
 	},
-	"response": "true",
-	"vertical-rhythm": "true",
 	"linkFonts": "true",
 	"assetsFonts": "false",
 	"debug": "true",
@@ -28,42 +26,11 @@
 	"component_space": "2",
 	"element_space": "2",
 	"section_space": "4",
-	"siteWidth": "1170px",
-	"colums": "12",
-	"gutter-width": "1em",
 	"container-styles": "(\n\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
 		"min-height": "1px\n)"
-	},
-	"phone-upper-boundary": "600px",
-	"tablet-portrait-upper-boundary": "768px",
-	"tablet-landscape-upper-boundary": "994px",
-	"desktop-upper-boundary": "1200px",
-	"desktopl-upper-boundary": "1400px",
-	"tablet-p-container": "690px",
-	"siteMinWidth": "$tablet-p-container",
-	"tablet-l-container": "900px",
-	"desktop-container": "1120px",
-	"MEDIA": {
-		"phoneBreakpoint": "600px",
-		"tabletPortraitBreakpoint": "768px",
-		"tabletLandscapeBreakpoint": "994px",
-		"desktopBreakpoint": "1200px",
-		"desktoplBreakpoint": "1400px",
-		"tabletPcontainer": "690px",
-		"tabletLcontainer": "900px",
-		"desktopContainer": "1120px"
-	},
-	"grid-map": {
-		"mobile": "(prefix",
-		"container": "$siteWidth",
-		"breakpoint": "$desktop-upper-boundary)",
-		"tablet-p": "(prefix",
-		"tablet-l": "(prefix",
-		"mediumScreen": "(prefix",
-		"largeScreen": "(prefix"
 	},
 	"nr-colStyles": {
 		"float": "left"
