@@ -1074,6 +1074,58 @@ $(document).ready(function () {
     });
 
 
+    $("#optionSwitcher").not('.active').on('mousedown',function () {
+
+        $.ajax({
+            url: "http://localhost:8181/?action=loadOption"
+        })
+
+            .done(function (data) {
+
+                var jsonOpt = JSON.parse(data);
+                ql(jsonOpt);
+
+                $('input[name="project_title"]').val(jsonOpt.mainOpt.title);
+                $('input[name="project_prefix"]').val(jsonOpt.mainOpt.prefix);
+                $('select[name="project_language"]').val(jsonOpt.mainOpt.lang);
+                $('input[name="primary_color"]').val(jsonOpt.colorsOpt.primary);
+                $('input[name="secondary_color"]').val(jsonOpt.colorsOpt.secondary);
+                $('input[name="foreground_color"]').val(jsonOpt.colorsOpt.foreground);
+                $('input[name="background_color"]').val(jsonOpt.colorsOpt.background);
+                $('input[name="accent_color"]').val(jsonOpt.colorsOpt.accent);
+                $('input[name="font_color"]').val(jsonOpt.colorsOpt.font);
+                $('input[name="color_lighterIndex"]').val(jsonOpt.colorsOpt.index);
+
+                $('input[name="screen_font"]').val(jsonOpt.typography.screen_font);
+                $('input[name="mobile_font"]').val(jsonOpt.typography.mobile_font);
+                $('input[name="lh_ratio"]').val(jsonOpt.typography.lh_ratio);
+
+
+
+                $(".debug-changeProp").dialog({
+                    modal: true,
+                    title: "Options:",
+                    dialogClass: "option_dialog"
+
+                });
+                $(this).addClass('active')
+
+                color_lighterIndex
+            })
+
+
+    })
+
+
+
+
+
+
+    $("#optionSwitcher.active").on('click',function () {
+        $(".debug-changeProp").dialog('close');
+        $(this).removeClass('active')
+    })
+
     $('#cn').on('click', function () {
         $(".debug-Dialog").dialog("open");
     })
@@ -1177,7 +1229,7 @@ function starterTabber(classTrigger,classTab) {
     starterTabber('.createTitle','.starterTab');
     starterTabber('.cpP__tab','.cpP__tabContent');
 
-    $('#addLink').on('mousedown',function () {
+    $('#addLink,#addLink1').on('mousedown',function () {
         var cnt = document.getElementsByClassName('fl_group').length;
         var clone = $('.fl_group').first().clone();
         $.each($('*[name]',clone),function (key,val) {

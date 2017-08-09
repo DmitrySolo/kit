@@ -1360,6 +1360,12 @@ gulp.task('API-SERVER', function () {
                         .filter(file => fs.lstatSync(path.join('Projects', file)).isDirectory())
                         srvRes = pjs.toString();
                         break;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    case 'loadOption' :
+
+                        srvRes = fs.readFileSync('Projects/'+projectName+'/settings/settings.json', 'utf8');
+
+                        break;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     case 'loadProject' :
