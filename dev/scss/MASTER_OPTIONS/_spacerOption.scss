@@ -1,0 +1,18 @@
+$element_space_o:"";$element_space_i:""; $component_space_i:""; $component_space_o:""; $module_space_i:""; $module_space_o:""; $block_space_i:""; $block_space_o:"";
+$type :fibonacci;
+$space: px;
+$element_space_i: .5;
+$element_space_o: .7;
+@if($type == "linear"){
+	$progressive_number:1.5;
+	$element_space_o:$element_space_i*$progressive_number;$component_space_i:$element_space_o*$progressive_number;$component_space_o:$component_space_i*$progressive_number;$module_space_i:$component_space_o*$progressive_number;$module_space_o:$module_space_i*$progressive_number;$block_space_i:$module_space_o*$progressive_number;$block_space_o:$block_space_i*$progressive_number;}//FIBONACHI
+@if($type == 'fibonacci'){$component_space_i:$element_space_i+$element_space_o;$component_space_o:$component_space_i+$element_space_o;$module_space_i:$component_space_o+$component_space_i;$module_space_o:$module_space_i+$component_space_o;$block_space_i:$module_space_i+$module_space_o;$block_space_o:$block_space_i+$module_space_o;};
+//MANUAL
+	@if($type == 'manual'){
+	$component_space_i: .5;
+$component_space_o: .7;
+$module_space_i: .5;
+$module_space_o: .7;
+$block_space_i: .5;
+$blockt_space_o: .7;
+}

@@ -1,0 +1,17 @@
+meta(charset="utf-8")
+-var bodyClass = 'debug'
+link(rel="stylesheet",href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css")
+-var prefix = switchers.projectPrefix
+meta(name="prefix", content=''+prefix )
+block title
+    title=head.title
+include ../SCRIPTS-STYLES/HEAD/_top
+meta(name="description", content=""+head.desc)
+meta(name="keywords", content=""+head.kw)
+meta(name="viewport", content="width=device-width, initial-scale=1.0")
+if linkFonts
+    each link in head.fontlinks
+        link(href=""+link, rel="stylesheet", type="text/css")
+link(href="main.css",rel="stylesheet", type="text/css")
+include ../SCRIPTS-STYLES/HEAD/_headScripts
+include ../SCRIPTS-STYLES/HEAD/_bottom
