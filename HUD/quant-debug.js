@@ -2,6 +2,15 @@
 
 $(document).ready(function () {
 
+    $('.getFile').on('click', function (){
+        ql('ads');
+        $.ajax({
+            url: "http://localhost:8181?action=openFilesByPhpStorm"
+        });
+
+    })
+
+
    // $('.editor').draggable();
     $('.step').draggable().resizable();
 
@@ -1100,6 +1109,65 @@ $(document).ready(function () {
                 $('input[name="mobile_font"]').val(jsonOpt.typography.mobile_font);
                 $('input[name="lh_ratio"]').val(jsonOpt.typography.lh_ratio);
 
+                for(var i in jsonOpt.typography.linkFontsArr){
+
+                    if(i == 0){
+
+                       $('input[name="link_font__1_link"]').val(jsonOpt.typography.linkFontsArr[i].link);
+                       $('input[name="link_font__1_name"]').val(jsonOpt.typography.linkFontsArr[i].name);
+                       $('select[name="link_font__1_role"]').val(jsonOpt.typography.linkFontsArr[i].role);
+                       $('select[name="link_font__1_typeface"]').val(jsonOpt.typography.linkFontsArr[i].typeface);
+                       $('select[name="link_font__1_weight"]').val(jsonOpt.typography.linkFontsArr[i].weight);
+
+                   }else{
+
+                        var _it =i+1;
+                        var clone = $('.fl_group').first().clone();
+                        $.each($('*[name]',clone),function (key,val) {
+                            var attr =$(this).attr('name').replace('1','+_it+');
+                            $(this).attr('name',attr);
+                        })
+                        $('#font_option').append(clone)
+
+                        $('input[name="link_font__'+_it+'_link"]').val(jsonOpt.typography.linkFontsArr[i].link);
+                        $('input[name="link_font__'+_it+'_name"]').val(jsonOpt.typography.linkFontsArr[i].name);
+                        $('select[name="link_font__'+_it+'_role"]').val(jsonOpt.typography.linkFontsArr[i].role);
+                        $('select[name="link_font__'+_it+'_typeface"]').val(jsonOpt.typography.linkFontsArr[i].typeface);
+                        $('select[name="link_font__'+_it+'_weight"]').val(jsonOpt.typography.linkFontsArr[i].weight);
+
+
+                    }
+
+                }
+
+                $('select[name="response"]').val(jsonOpt.media.response);
+                $('input[name="width"]').val(jsonOpt.media.width);
+                $('input[name="colums"]').val(jsonOpt.media.colums);
+                $('input[name="gutter"]').val(jsonOpt.media.gutter);
+                $('select[name="vRhythm"]').val(jsonOpt.media.vRhythm);
+                $('input[name="m_c"]').val(jsonOpt.media.m_c);
+                $('input[name="m_b"]').val(jsonOpt.media.m_b);
+                $('input[name="tp_c"]').val(jsonOpt.media.tp_c);
+                $('input[name="tp_b"]').val(jsonOpt.media.tp_b);
+                $('input[name="tl_c"]').val(jsonOpt.media.tl_c);
+                $('input[name="tl_b"]').val(jsonOpt.media.tl_b);
+                $('input[name="d_c"]').val(jsonOpt.media.d_c);
+                $('input[name="d_b"]').val(jsonOpt.media.d_b);
+
+                $('select[name="unit"]').val(jsonOpt.media.unit);
+                $('select[name="spacer_principle"]').val(jsonOpt.spacer.spacer_principle);
+                $('input[name="progressive_unit"]').val(jsonOpt.spacer.progressive_unit);
+                $('input[name="b_i"]').val(jsonOpt.spacer.b_i);
+                $('input[name="b_o"]').val(jsonOpt.spacer.b_i);
+                $('input[name="c_i"]').val(jsonOpt.spacer.c_i);
+                $('input[name="c_o"]').val(jsonOpt.spacer.c_o);
+                $('input[name="m_i"]').val(jsonOpt.spacer.m_i);
+                $('input[name="m_o"]').val(jsonOpt.spacer.m_o);
+                $('input[name="e_i"]').val(jsonOpt.spacer.e_i);
+                $('input[name="e_o"]').val(jsonOpt.spacer.e_o);
+
+
+
 
 
                 $(".debug-changeProp").dialog({
@@ -1110,7 +1178,7 @@ $(document).ready(function () {
                 });
                 $(this).addClass('active')
 
-                color_lighterIndex
+
             })
 
 
@@ -1261,11 +1329,11 @@ function starterTabber(classTrigger,classTab) {
 
 ///////////////// CREATE PROJECT
 
-    $('#CreateProject').on('mousedown',function () {
-
+    $('.CreateProject').on('mousedown',function () {
+        ql($('input[name="project_title"]').val());
         var projectOptions = {};
-            if ($('input[name="project_title"]').val() != '' && $('input[name="project_prefix"]').val() != 0){
-
+            if ( $('input[name="project_title"]').val() !==''  && ! $('input[name="project_prefix"]').val() !==''){
+                    ql($('input[name="project_title"]').val());
                 projectOptions.mainOpt = {
 
                     "title": $('input[name="project_title"]').val(),
@@ -1333,7 +1401,7 @@ function starterTabber(classTrigger,classTab) {
 
                 };
                 ql(projectOptions,'Popt')
-
+                projectOptions.type = "create";
 
                 $.ajax({
                     url: "http://localhost:8181"

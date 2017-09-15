@@ -686,7 +686,7 @@ template {
  * TYPOGRAPHY
  */
 html {
-  font-family: "sq", Serif;
+  font-family: "", Serif;
   font-weight: normal;
   color: #86c999;
   font-size: 16px;
@@ -710,7 +710,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   padding: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #914f60;
+  color: #3b68c9;
   clear: both; }
 
 .text p, p.text,
@@ -853,7 +853,7 @@ address {
   font-style: normal; }
 
 dt {
-  color: #914f60;
+  color: #3b68c9;
   font-weight: bold; }
 
 .text ul, ul.text {
@@ -875,7 +875,7 @@ fieldset {
     margin-bottom: 0; }
 
 legend {
-  color: #914f60;
+  color: #3b68c9;
   font-weight: bold; }
 
 input[type="text"], input[type="email"], input[type="password"], textarea {
@@ -922,7 +922,7 @@ table {
 
 th {
   text-align: left;
-  color: #914f60;
+  color: #3b68c9;
   padding: 0.1875em 0.75em; }
   @media (min-width: 1170px) {
     th {
@@ -1442,14 +1442,14 @@ input[type='text'] {
 * CONSTRUCTION STYLES
 */
 section.block {
-  padding-top: 9em;
-  padding-bottom: 5.55em; }
+  padding-top: 19.65px;
+  padding-bottom: 12.15px; }
   section.block h2.block_title {
     text-align: center;
     width: 100%;
     border-bottom: 3px solid;
-    padding-bottom: 0.75em;
-    margin-bottom: 9em; }
+    padding-bottom: 1.8px;
+    margin-bottom: 19.65px; }
 
 /**
 * MODULES  STYLES
@@ -1462,29 +1462,29 @@ section.block {
 
 .lightMenu {
   font-size: 0;
-  background-color: #914f60;
+  background-color: #3b68c9;
   text-align: center; }
   @media (max-width: 599px) {
     .lightMenu {
       line-height: 2em;
-      padding-top: 2.1em;
-      padding-bottom: 3.45em; } }
+      padding-top: 4.65px;
+      padding-bottom: 7.5px; } }
 
 .lightMenu__item {
   transition-property: background-color;
   transition-duration: 0.2s;
   transition-timing-function: linear;
   list-style: none;
-  padding-right: 0.15em;
-  padding-left: 0.15em; }
+  padding-right: 0.75px;
+  padding-left: 0.75px; }
   .lightMenu__item:hover {
-    background-color: #5f343f; }
+    background-color: #284990; }
   @media (max-width: 599px) {
     .lightMenu__item {
-      padding-top: 3.45em;
-      padding-right: 3.45em;
-      padding-bottom: 3.45em;
-      padding-left: 3.45em;
+      padding-top: 7.5px;
+      padding-right: 7.5px;
+      padding-bottom: 7.5px;
+      padding-left: 7.5px;
       display: block;
       width: 101%;
       text-align: center; } }
@@ -1503,7 +1503,7 @@ section.block {
     color: #ffffff; }
 
 .lightmenu__item--active {
-  background-color: #5f343f; }
+  background-color: #284990; }
 
 .scrollable {
   position: relative; }
@@ -1797,8 +1797,8 @@ section.block {
 .infoElement {
   line-height: 60px; }
   .infoElement .iconWrapper, .infoElement h5, .infoElement span {
-    padding-right: 0.6em;
-    padding-left: 0.6em;
+    padding-right: 1.05px;
+    padding-left: 1.05px;
     display: inline-block; }
   .infoElement .infoElement__icon {
     width: 60px;
@@ -1856,26 +1856,26 @@ section.block {
 .icon-menu__button {
   cursor: pointer;
   width: 2.6em;
-  background-color: #5f343f;
+  background-color: #284990;
   border-radius: 3px;
-  padding: 3em; }
+  padding: 3px; }
 
 .ove-markedHeader {
   display: inline-block;
-  background-color: #914f60;
+  background-color: #3b68c9;
   width: 40px;
   height: 40px;
   line-height: 50px;
   vertical-align: middle;
   border-radius: 50%;
-  margin-right: 3em; }
+  margin-right: 3px; }
   .ove-markedHeader .icon {
     height: 1em;
     vertical-align: baseline;
     width: auto; }
 
 .ove-sectionHeader {
-  margin-bottom: 3em; }
+  margin-bottom: 3px; }
 
 input[type='text'].ove-cardRegInput {
   outline: none;
@@ -1883,11 +1883,11 @@ input[type='text'].ove-cardRegInput {
   width: 100%;
   border: solid 2px #c90028;
   background-color: transparent;
-  padding-top: 1.35em;
-  padding-right: 1.35em;
-  padding-bottom: 1.35em;
-  margin-bottom: 3.45em;
-  padding-left: 3.45em; }
+  padding-top: 2.85px;
+  padding-right: 2.85px;
+  padding-bottom: 2.85px;
+  margin-bottom: 7.5px;
+  padding-left: 7.5px; }
 
 .baseButton {
   display: inline-block;
@@ -1895,10 +1895,10 @@ input[type='text'].ove-cardRegInput {
   background-color: #0a7c84;
   color: #fff;
   border: 1px solid #0ea9b3;
-  padding-top: 3em;
-  padding-bottom: 3em;
-  padding-right: 3em;
-  padding-left: 3em;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 3px;
+  padding-left: 3px;
   background: linear-gradient(90deg, #0a7c84, #00aab5 65%); }
   .baseButton:hover, .baseButton:focus, .baseButton:active {
     color: #fff;
@@ -1920,11 +1920,11 @@ input[type='text'].ove-cardRegInput {
   background-color: transparent;
   color: #000000;
   border: 2px solid #c90028;
-  margin-bottom: 0.15em;
-  padding-top: 0.15em;
-  padding-bottom: 0.15em;
-  padding-right: 2.1em;
-  padding-left: 2.1em; }
+  margin-bottom: 0.75px;
+  padding-top: 0.75px;
+  padding-bottom: 0.75px;
+  padding-right: 4.65px;
+  padding-left: 4.65px; }
   .learnMoreButton:hover, .learnMoreButton:focus {
     color: #fff;
     background-color: #c90028; }
@@ -1958,21 +1958,21 @@ a, a.mainLink {
 * PROJECT  STYLES
 */
 header.mainHeader {
-  background-color: #914f60;
-  height: 9em;
-  line-height: 9em;
-  border-bottom: 3px solid #5f343f; }
+  background-color: #3b68c9;
+  height: 19.65em;
+  line-height: 19.65em;
+  border-bottom: 3px solid #284990; }
   header.mainHeader > .headerSectionDivider:first-child {
-    border-left: 2px solid #5f343f; }
+    border-left: 2px solid #284990; }
 
 .logo {
-  border-right: 2px solid #5f343f; }
+  border-right: 2px solid #284990; }
 
 .headerSectionDivider {
-  border-left: 1px solid #5f343f;
-  border-right: 1px solid #5f343f; }
+  border-left: 1px solid #284990;
+  border-right: 1px solid #284990; }
   .headerSectionDivider:last-child {
-    border-right: 2px solid #5f343f; }
+    border-right: 2px solid #284990; }
 
 .headerPhone {
   font-size: 2rem;
@@ -1989,9 +1989,9 @@ header.mainHeader {
   transition-duration: 0.2s;
   transition-timing-function: linear; }
   .js-trigger:hover {
-    background-color: #5f343f; }
+    background-color: #284990; }
   .js-trigger.active {
-    background-color: #5f343f; }
+    background-color: #284990; }
 
 .heroImageHolder {
   position: relative;
@@ -2011,18 +2011,18 @@ header.mainHeader {
 
 .recordButton {
   position: absolute;
-  top: 11.1em;
-  left: 5.55em;
+  top: 24.3em;
+  left: 12.15em;
   font-size: 1.5em; }
 
 /**
 * PAGES STYLES
 */
 .pr {
-  background-color: #914f60; }
+  background-color: #3b68c9; }
 
 .sc {
-  background-color: #c91549; }
+  background-color: #c9612c; }
 
 .ac {
   background-color: #c90028; }
@@ -2031,10 +2031,10 @@ header.mainHeader {
   background-color: #86c999; }
 
 .cpr {
-  color: #914f60; }
+  color: #3b68c9; }
 
 .csc {
-  color: #c91549; }
+  color: #c9612c; }
 
 .cac {
   color: #c90028; }
@@ -2053,43 +2053,43 @@ header.mainHeader {
 
 .pb-section {
   border-bottom: 1px solid #ededed;
-  padding-top: 4.5em;
-  padding-bottom: 4.5em; }
+  padding-top: 4.5px;
+  padding-bottom: 4.5px; }
 
 .pb-elementHeader {
   display: block; }
 
 .pb-element {
-  padding-right: 3em; }
+  padding-right: 3px; }
 
 .pb-colorBox {
   width: 90px;
   height: 90px;
-  margin-top: 3em; }
+  margin-top: 3px; }
 
 .pb-colorBox--primary {
-  background-color: #914f60; }
+  background-color: #3b68c9; }
 
 .pb-colorBox--primary-l {
-  background-color: #b57787; }
+  background-color: #7796da; }
 
 .pb-colorBox--primary-d {
-  background-color: #5f343f; }
+  background-color: #284990; }
 
 .pb-colorBox--primary-t {
-  background-color: rgba(145, 79, 96, 0.5); }
+  background-color: rgba(59, 104, 201, 0.5); }
 
 .pb-colorBox--secondary {
-  background-color: #c91549; }
+  background-color: #c9612c; }
 
 .pb-colorBox--secondary-l {
-  background-color: #eb4071; }
+  background-color: #dd8d64; }
 
 .pb-colorBox--secondary-d {
-  background-color: #840e30; }
+  background-color: #8a431e; }
 
 .pb-colorBox--secondary-t {
-  background-color: rgba(201, 21, 73, 0.5); }
+  background-color: rgba(201, 97, 44, 0.5); }
 
 .pb-colorBox--foreground {
   background-color: #5ac948; }
@@ -2141,8 +2141,8 @@ header.mainHeader {
 
 .pb-colorMaket section {
   font-size: 10px;
-  margin-top: 6em;
-  margin-bottom: 6em; }
+  margin-top: 6px;
+  margin-bottom: 6px; }
 
 .pb-colorMaket {
   position: relative;
@@ -2156,10 +2156,10 @@ header.mainHeader {
 .pb-colorMaket__ctn {
   position: relative;
   width: 80%;
-  padding-top: 6em;
-  padding-right: 6em;
-  padding-bottom: 6em;
-  padding-left: 6em;
+  padding-top: 6px;
+  padding-right: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
   margin: 0 auto; }
   .pb-colorMaket__ctn:before {
     position: absolute;
@@ -2171,73 +2171,73 @@ header.mainHeader {
   height: 60px; }
 
 .pb-colorMaket__header__primary {
-  padding-top: 3em;
-  padding-right: 3em;
-  padding-bottom: 3em;
-  padding-left: 3em;
-  background-color: #914f60;
+  padding-top: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  background-color: #3b68c9;
   width: 70%; }
 
 .pb-colorMaket__header__secondary {
-  padding-top: 3em;
-  padding-right: 3em;
-  padding-bottom: 3em;
-  padding-left: 3em;
-  background-color: #c91549;
+  padding-top: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  background-color: #c9612c;
   width: 30%; }
 
 .pb-colorMaket__header__accent {
   width: 100%;
-  padding-top: 3em;
-  padding-right: 3em;
-  padding-bottom: 3em;
-  padding-left: 3em;
+  padding-top: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
   background-color: #c90028; }
 
 .pb-colorMaket__body {
-  padding-top: 3em;
-  padding-right: 3em;
-  padding-bottom: 3em;
-  padding-left: 3em; }
+  padding-top: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px; }
 
 .pb-colorMaket__body__section {
-  padding-top: 6em;
-  padding-bottom: 6em;
-  background-color: #914f60; }
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: #3b68c9; }
 
 .pb-colorMaket__body__section__header {
-  padding-top: 3em;
-  padding-right: 3em;
-  padding-bottom: 3em;
-  padding-left: 3em;
-  background-color: #c91549; }
+  padding-top: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  background-color: #c9612c; }
 
 .pb-colorMaket__body__section__accent {
-  margin-top: 3em;
-  margin-bottom: 3em;
-  padding-top: 3em;
-  padding-right: 3em;
-  padding-bottom: 3em;
-  padding-left: 3em;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding-top: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
   width: 45%;
   background-color: #c90028; }
 
 .pb-colorMaket__footer {
-  padding-top: 3em;
-  padding-right: 3em;
-  padding-bottom: 3em;
-  padding-left: 3em;
-  background-color: #914f60; }
+  padding-top: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  background-color: #3b68c9; }
 
 .pb-colorMaket__hero {
   width: 30%;
-  margin-right: 3em;
+  margin-right: 3px;
   float: left;
   font-size: 16px;
-  padding-right: 6em;
-  padding-left: 6em;
-  margin-bottom: 3em;
-  color: #c91549; }
+  padding-right: 6px;
+  padding-left: 6px;
+  margin-bottom: 3px;
+  color: #c9612c; }
   .pb-colorMaket__hero button {
     border: none; }
 
@@ -2248,83 +2248,83 @@ header.mainHeader {
   background-color: rgba(199, 61, 96, 0.63);
   color: #fff;
   text-shadow: 1px 1px #061319;
-  padding-left: 3em;
+  padding-left: 3px;
   display: inline-block;
   width: 100%; }
 
 .fontSelector {
-  margin-bottom: 3em; }
+  margin-bottom: 3px; }
   .fontSelector button {
-    margin-top: 3em; }
+    margin-top: 3px; }
 
 .spacer {
   min-height: 1em;
   width: 100%; }
   .spacer span {
     text-shadow: 1px 1px #061319;
-    margin-top: 0.15em;
-    margin-left: 0.6em;
-    padding-top: 0.15em;
-    padding-right: 0.6em;
-    padding-bottom: 0.15em;
-    padding-left: 0.6em;
+    margin-top: 0.75px;
+    margin-left: 1.05px;
+    padding-top: 0.75px;
+    padding-right: 1.05px;
+    padding-bottom: 0.75px;
+    padding-left: 1.05px;
     box-shadow: 2px 2px 2px silver;
     color: #fff;
     display: inline-block; }
 
 .element-i {
   background-image: linear-gradient(#1cff70 1px, transparent 1px), linear-gradient(90deg, #1cff70 1px, transparent 1px) !important;
-  background-size: 0.15em 0.15em !important;
-  height: 0.6em; }
+  background-size: 0.75em 0.75em !important;
+  height: 3em; }
   .element-i span {
     background: #1cfd6f !important; }
 
 .element-o {
   background-image: linear-gradient(#19cd63 1px, transparent 1px), linear-gradient(90deg, #19cb62 1px, transparent 1px) !important;
-  background-size: 0.6em 0.6em !important;
-  height: 1.8em; }
+  background-size: 1.05em 1.05em !important;
+  height: 3.15em; }
   .element-o span {
     background: #19cd63 !important; }
 
 .component-i {
   background-image: linear-gradient(#2d377b 1px, transparent 1px), linear-gradient(90deg, #2d377a 1px, transparent 1px) !important;
-  background-size: 0.75em 0.75em !important;
-  height: 2.25em; }
+  background-size: 1.8em 1.8em !important;
+  height: 5.4em; }
   .component-i span {
     background: #2d377a !important; }
 
 .component-o {
   background-image: linear-gradient(#282855 1px, transparent 1px), linear-gradient(90deg, #282854 1px, transparent 1px) !important;
-  background-size: 1.35em 1.35em !important;
-  height: 4.05em; }
+  background-size: 2.85em 2.85em !important;
+  height: 8.55em; }
   .component-o span {
     background: #2a2a55 !important; }
 
 .module-i {
   background-image: linear-gradient(#fb4f1f 1px, transparent 1px), linear-gradient(90deg, #f94e1f 1px, transparent 1px) !important;
-  background-size: 2.1em 2.1em !important;
-  height: 4.2em; }
+  background-size: 4.65em 4.65em !important;
+  height: 9.3em; }
   .module-i span {
     background: #fc4f1f !important; }
 
 .module-o {
   background-image: linear-gradient(#cc431f 1px, transparent 1px), linear-gradient(90deg, #ca421f 1px, transparent 1px) !important;
-  background-size: 3.45em 3.45em !important;
-  height: 6.9em; }
+  background-size: 7.5em 7.5em !important;
+  height: 15em; }
   .module-o span {
     background: #ce441f !important; }
 
 .block-i {
   background-image: linear-gradient(#c72064 1px, transparent 1px), linear-gradient(90deg, #c62064 1px, transparent 1px) !important;
-  background-size: 5.55em 5.55em !important;
-  height: 5.55em; }
+  background-size: 12.15em 12.15em !important;
+  height: 12.15em; }
   .block-i span {
     background: #c82064 !important; }
 
 .block-o {
   background-image: linear-gradient(#99214c 1px, transparent 1px), linear-gradient(90deg, #99214c 1px, transparent 1px) !important;
-  background-size: 9em 9em !important;
-  height: 9em; }
+  background-size: 19.65em 19.65em !important;
+  height: 19.65em; }
   .block-o span {
     background: #9a214d !important; }
 
@@ -2333,7 +2333,7 @@ header.mainHeader {
   background-color: rgba(86, 12, 12, 0.36);
   border-left: 0.25em solid #ff6547;
   border-right: 0.25em solid #ff6547;
-  height: 55.5em;
+  height: 121.5em;
   text-align: center;
   color: #fff;
   padding-top: 40px; }
@@ -2358,7 +2358,7 @@ header.mainHeader {
 body.blueprint {
   background-color: #269;
   background-image: linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px), linear-gradient(#1cff70 1px, transparent 1px), linear-gradient(90deg, #1cff70 1px, transparent 1px);
-  background-size: 3.7em 3.7em, 3.7em 3.7em, 6em 6em, 6em 6em;
+  background-size: 8.1em 8.1em, 8.1em 8.1em, 13.1em 13.1em, 13.1em 13.1em;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -3128,11 +3128,11 @@ section#ball {
   border-top: solid 1px #b19e9e;
   z-index: 1000;
   width: 100%;
-  height: 10.35em;
-  padding-top: 0.75em;
-  padding-bottom: 0.75em;
-  padding-right: 0.75em;
-  padding-left: 0.75em; }
+  height: 22.5em;
+  padding-top: 1.8px;
+  padding-bottom: 1.8px;
+  padding-right: 1.8px;
+  padding-left: 1.8px; }
   .debugPannel__wrapper * {
     outline: none !important;
     color: #fff; }
@@ -3223,10 +3223,10 @@ section#ball {
 
 .notifyjs-tagClassInfo-base {
   background: #ffff00 !important;
-  padding-top: 0.15em;
-  padding-right: 0.6em;
-  padding-bottom: 0.15em;
-  padding-left: 0.6em;
+  padding-top: 0.75px;
+  padding-right: 1.05px;
+  padding-bottom: 0.75px;
+  padding-left: 1.05px;
   z-index: 102;
   position: absolute;
   line-height: 1.7rem !important; }

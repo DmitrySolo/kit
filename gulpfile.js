@@ -57,6 +57,7 @@ var sourceMap = require('source-map');
 var html2jade = require('html2jade');
 var css = require('css');
 var copydir = require('copy-dir');
+var cmd = require('node-cmd');
 // QUANT PLUGINS&FUNCTIONS
 
 
@@ -106,7 +107,7 @@ gulp.task('SCRIPTS ALL', gulpsync.sync(['SCRIPTS2'])
 
 
 gulp.task('views', function buildHTML() {
-    var data = JSON.parse(fs.readFileSync(projectDevDir + 'data.json', 'utf8'));
+    var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
     gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/*.pug', 'HUD/HUD.pug'])
         .pipe(pug({
             data: data,
@@ -582,12 +583,13 @@ gulp.task('bm', function () {
 
 gulp.task('bs', function () {
 
-    if (!fs.existsSync('dev/SCRIPTS/SCRIPTS/--' + options.name)) {
+    if (!fs.existsSync(projectDevDir+'scripts/' + options.name)) {
 
 
         var scrName = options.name,
             elemData = {
-                name: scrName
+                name: scrName,
+                path: projectDevDir
             },
 
             templates = fs.readdirSync('vendor/file_templates/SCRIPTS/_templates/');
@@ -601,7 +603,7 @@ gulp.task('bs', function () {
                 gulp.src('vendor/file_templates/SCRIPTS/_templates/' + templates[key])
                     .pipe(rename(file))
                     .pipe(template(elemData))
-                    .pipe(gulp.dest('dev/SCRIPTS/SCRIPTS/--' + scrName + '/'))
+                    .pipe(gulp.dest(projectDevDir+'scripts/' + options.name +'/'))
             }
         } catch (e) {
 
@@ -755,7 +757,7 @@ gulp.task('blueprint-wright-json', [], function () {
 });
 
 gulp.task('merge-json', [], function () {
-    gulp.src(['dev/**/*.json', 'blueprint/*.json'])
+    gulp.src(['dev/**/*.json', 'blueprint/*.json','Projects/' + projectName + '/data/*.json'])
         .pipe(merge('data.json'))
         .pipe(gulp.dest('./'));
 });
@@ -822,8 +824,9 @@ gulp.task('buildblueprint', function buildHTML() {
 gulp.task('mergeJson', function () {
     return gulp.src([
         'dev/{MODULES,ELEMENTS,SCRIPTS}/**/--*/*.json',
-        'dev/template/**/*.json',
         'dev/scss/MASTER_OPTIONS/*.json',
+        'Projects/' + projectName + '/data/*.json',
+        'Projects/' + projectName + '/dev/scripts/**/*.json',
         'blueprint/*.json',
         '!dev/SOURCE_FABRIC/STORRAGE/**/*.json',
         '!dev/{MODULES,ELEMENTS,SCRIPTS}/**/--*/off_*.json'
@@ -1347,7 +1350,10 @@ gulp.task('API-SERVER', function () {
 
 
                 switch (url_parts.query.action) {
-
+                    case 'openFilesByPhpStorm':
+                        console.log('f1');
+                        cmd.run(`/Applications/PhpStorm.app/Contents/MacOS/phpstorm ~/Desktop/QV2/kit/Projects/Zorro/dev/template/PAGESYSTEM/LAYOUT/layout.pug ~/Desktop/QV2/kit/Projects/Zorro/dev/template/PAGESYSTEM/LAYOUT/_header.pug ~/Desktop/QV2/kit/Projects/`+projectName+`/data/template/PAGESYSTEM/LAYOUT/_footer.pug`)
+                        break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     case 'createProject' :
                         var data = url_parts.query.data;
@@ -1400,7 +1406,7 @@ gulp.task('API-SERVER', function () {
 
                         break;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+                    /// CREATE MODULES AND OTHER
                     case 'creator' :
                         var contentType = url_parts.query.element
 
@@ -1432,13 +1438,22 @@ gulp.task('API-SERVER', function () {
             var body = '';
             req.on('data', function (data) {
                 body += data;
+                console.log(body);
                 body = JSON.parse(body);
                 console.log(body.typography);
 
 ///////////////////////////////////////////////////////////////////////CREATE PROJECT
             if(body.mainOpt) {
-                var p_path = 'Projects/' + body.mainOpt.title;
-                copydir.sync('vendor/project template/New Project', p_path);
+                console.log('true88');
+                if (body.type == "create"){
+                    console.log('true89');
+                    console.log(body.mainOpt);
+                    var p_path = 'Projects/' + body.mainOpt.title;
+                    copydir.sync('vendor/project template/New Project', p_path);
+                }else {
+                    var p_path = 'Projects/' + projectName;
+                }
+
 
                 var p_data = JSON.parse(fs.readFileSync(p_path + '/dev/data.json', 'utf8'));
                 p_data.head.lang = body.mainOpt.lang;

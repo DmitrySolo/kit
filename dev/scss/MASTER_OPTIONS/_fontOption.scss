@@ -2,7 +2,8 @@ $body-font:false;
 $hero-font:false;
 $header-font:false;
 $LINKED_FONTS_MAP:(
-	Body:('sq' , Serif),
+	Body:('' , Serif),
+	undefined:('undefined' , undefined),
 	);
 $body-font: fs("Body");$body-font-weight: normal;
 $mobile-font :16px;

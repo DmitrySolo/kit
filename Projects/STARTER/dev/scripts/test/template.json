@@ -1,9 +1,9 @@
 {
   "LIBS": {
-    "<%=name%>": {
+    "test": {
       "js": {
-        "<%=name%>-script": {
-          "src": "<%=path%>scripts/<%=name%>/<%=name%>.js",
+        "test-script": {
+          "src": "dev/SCRIPTS/SCRIPTS/--test/test.js",
           "container": "footer"
         }
       },
