@@ -1,0 +1,5 @@
+mixin B-toCart(value,className)
+	-if (!className) className =''
+	button.toCart(class=''+className)
+		+I('cart')
+

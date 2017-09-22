@@ -1363,6 +1363,8 @@ function starterTabber(classTrigger,classTab) {
                     linksObjArr.push(linkObj);
                 })
 
+
+
                 projectOptions.typography = {
                     "screen_font": $('input[name="screen_font"]').val(),
                     "mobile_font": $('input[name="mobile_font"]').val(),
@@ -1423,4 +1425,149 @@ function starterTabber(classTrigger,classTab) {
             }
 
     })
+
+    var loadProjectPath = function (path,placeTo) {
+
+        $.ajax({
+            url: "http://localhost:8181?action=loadProjectPath&path="+path
+
+        }).done(function (data) {
+
+           var pthJson = JSON.parse(data);
+                ql(pthJson)
+           for (var i in pthJson.children){
+
+               //ql(pthJson.children[i].name);
+
+                    $(placeTo+' ul').append('<li class="fs_list" data-path="'+pthJson.children[i].path+'">'+pthJson.children[i].name+'</li>')
+
+                if (path == 'dev/ELEMENTS'){
+
+                    ql(pthJson.children[i].name);
+
+                    if(pthJson.children[i].type == 'directory'){
+
+                      var parent = pthJson.children[i];
+
+                        for (var elem in parent.children ){
+                            $(placeTo+' ul').append('<li class="fs_list fs_list--child" data-path="'+parent.children[elem].path+'">'+parent.children[elem].name+'</li>')
+                        }
+                    }
+               }
+           }
+            $( '.fs' ).accordion({
+                active:false,
+                header: "h3",
+                collapsible: true
+            });
+
+        })
+
+
+    }
+    loadProjectPath('dev/MODULES/PROJECT_MODULES','.fs__modules');
+    loadProjectPath('dev/ELEMENTS','.fs__elements');
+
+    var loadContent = function () {
+
+        $('.fs').on('mousedown','.fs_list', function (e) {
+
+            var path1 = $(this).data('path');
+
+
+            $.ajax({
+                url: "http://localhost:8181?action=openFilesByPhpStorm&path="+path1
+
+            })
+
+
+
+        })
+
+    }
+    loadContent();
+    $('.contentNavigator').draggable();
+
+
+    var loadByDOM = function () {
+
+        $('#contentNavigator__load').on('mousedown',function () {
+
+            var type = $('#contentNavigator__type input').val();
+            var stype = $('#contentNavigator__stype input').val();
+            var name = $('#contentNavigator__name input').val();
+            ql(type, stype, name)
+
+            $.ajax({
+                url: "http://localhost:8181?action=loadByDOM&type="+type+"&stype="+stype+"&name="+name
+
+            }).done(function (data) {
+                if (data!=='') {
+                    var res = JSON.parse(data);
+
+                    editorPug.selectAll();
+                    editorJs.selectAll();
+                    editor.selectAll();
+                    if(res.pug) editorPug.insert(res.pug);
+                        else editorPug.insert('');
+                    if(res.JS) editorJs.insert(res.JS);
+                        else editorJs.insert('');
+                    if(res.scss) editor.insert(res.scss);
+                        else editor.insert('');
+                }
+                //
+            })
+            
+            
+
+        })
+
+
+
+    }
+    loadByDOM();
+
+    var saveCode = function () {
+        $('#savecode').on('mousedown',function () {
+
+            var scssContent = editor.getSession().getValue();
+            ql(scssContent)
+            var PugContent = editorPug.getSession().getValue();
+
+            var JsContent = editorJs.getSession().getValue();
+
+            var path = {type:$('#contentNavigator__type input').val(),
+                        stype:$('#contentNavigator__stype input').val(),
+                        name:$('#contentNavigator__name input').val()};
+
+         //   path = JSON.stringify(path);
+
+            var data = {
+                path:path,
+                scss:scssContent,
+                pug:PugContent,
+                js:JsContent
+            }
+
+
+            // $.ajax({
+            //     url:"http://localhost:8181?action=saveFomQuant&path="+path+"&scss="+scssContent+"&js="+JsContent+"&pug="+PugContent
+            // })
+
+            $.ajax({
+                url: "http://localhost:8181"
+                , type: 'POST'
+                , data: JSON.stringify(data)
+                , success: function (res) {
+
+                }
+            });
+
+
+        })
+    }
+    saveCode();
+
+
+
 })

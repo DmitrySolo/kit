@@ -1,0 +1,20 @@
+/**
+* starter styles
+*/
+
+@mixin starter(){
+
+  .starter__content{
+    color: #a90092;
+    padding: 20px;
+  }
+  .starter{
+    text-decoration: underline;
+  }
+
+}
+
+
+
+////////////////////////////////////////
+@include starter();

@@ -1,0 +1,41 @@
+/*** starter styles*/
+@mixin starter() {
+    
+  .starter__content {
+    color:red !important;
+    padding:20px;
+      
+  }
+  .starter1 {
+      color : #fff;
+      font-size : 22px;
+      text-align : center;
+  }
+    
+}
+@include starter();
+/* mainPageSection STYLE */
+
+.mainPageSection__content {
+
+}
+.mainPageSection__title {
+
+}
+/* PAGE STYLE */
+
+.page__content {
+  background-color: #ff5300;
+  padding: 40px;
+}
+.page__title {
+  color:sandybrown;
+}
+/* saleSection STYLE */
+
+.saleSection__content {
+  color: #0007ff;
+}
+.saleSection__title {
+
+}

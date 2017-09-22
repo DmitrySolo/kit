@@ -1,0 +1,24 @@
+mixin MODULE-starter()
+	<!-- split modules/starter -->
+	.starter__content(data-qcontent='module__starter')
+		.starter1 Hello!
+mixin LEVEL-mainPageSection(title,className)
+	-if (!className) className =''
+	.mainPageSection__content(class = 'page__content'+ className data-qcontent='level__mainPageSection')
+		h2.mainPageSection__title=title
+		block mainPageSection
+mixin LEVEL-page(title,className)
+	-if(!className) className =''
+	.page__content(class = 'page__content'+ className data-qcontent='level__page')
+		h6.page__title=title
+		p Some Content!
+		block LEVEL-page
+			
+
+
+
+
+mixin LEVEL-saleSection(title,className)
+	-if (!className) className =''
+	.saleSection__content(class = 'page__content'+ className data-qcontent='level__saleSection')
+		h2.saleSection__title=title

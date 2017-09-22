@@ -1,0 +1,16 @@
+/*** starter styles*/
+@mixin starter() {
+    
+  .starter__content {
+    color:red !important;
+    padding:20px;
+      
+  }
+  .starter1 {
+      color : #fff;
+      font-size : 22px;
+      text-align : center;
+  }
+    
+}
+@include starter();

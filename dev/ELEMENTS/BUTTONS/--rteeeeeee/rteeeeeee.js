@@ -1,1 +1,0 @@
-// Element: rteeeeeee script.

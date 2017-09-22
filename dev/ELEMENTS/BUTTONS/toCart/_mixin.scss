@@ -1,0 +1,28 @@
+$bkgColor__toCart:cs('accent');
+$bkgColor__toCart-hover:cs('accent-l');
+$color__toCart-hover:#fff;
+$color__toCart:#fff;
+
+.toCart {
+	background-color: $bkgColor__toCart;
+	color: $color__toCart;
+	border: none;
+	border-radius: 2px;
+	font-size: .8em;
+	@include space('element','a','');
+	height: 4em;
+	width:100%;
+	margin: 0;
+		&:hover, &:focus, &:active {
+		background-color: $bkgColor__toCart-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+	&.toCart--in {
+		background-color: #3bd43b;
+	}
+}

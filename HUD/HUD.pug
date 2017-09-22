@@ -14,48 +14,48 @@ html(lang=''+head.lang)
                 include _top_panel
             .hud-center.clearfix
                 #viewpr-list
-                .hud-leftPanel
-                    include _left_panel
-                .hud-content
-                    .windowSwitcher.clearfix
-                        .windowMark.f-left.active Viewport
-                        .windowMark.f-left Script
-                    .window(window='Viewport' style="z-index:5")
-                        .wrapperid#viewpr-content
-                            iframe(class='default-skin' id="index" src="index.html" width="100%" height="1200px" align="center" )
-                            #currentSelectorWay.notEdit.clearfix
-                                div(style='background:#2b2b2b;color: #fff')
-                                    span BODY >
-                    .window(window='Script')
-                        .wrapperid#script-content.clearfix
-                            .plannerWrap.col-6-tp
-                                script(src="scripts/go.js")
-                                script(src="scripts/goDiagramm.js")
-                                #sample
-                                    div(style='width:100%; white-space:nowrap;')
-                                        span(style='border-right: solid 2px #fff;display: inline-block; vertical-align: top; width:7em; background-color:#242729')
-                                            #myPaletteDiv(style='min-height: 700px')
-                                        span(style='display: inline-block; vertical-align: top; width:90%')
-                                            #myDiagramDiv(style=' min-height: 700px')
+            .hud-leftPanel.clearfix
+                include _left_panel
+            .hud-content.clearfix
+                .windowSwitcher.clearfix
+                    .windowMark.f-left.active Viewport
+                    .windowMark.f-left Script
+                .window(window='Viewport' style="z-index:5")
+                    .wrapperid#viewpr-content
+                        iframe(class='default-skin' id="index" src="index.html" width="100%" height="1200px" align="center" )
+                    #currentSelectorWay.notEdit.clearfix
+                        div(style='background:#2b2b2b;color: #fff')
+                            span BODY >
+                .window(window='Script')
+                    .wrapperid#script-content.clearfix
+                        .plannerWrap.col-6-tp
+                            script(src="scripts/go.js")
+                            script(src="scripts/goDiagramm.js")
+                            #sample
+                                div(style='width:100%; white-space:nowrap;')
+                                    span(style='border-right: solid 2px #fff;display: inline-block; vertical-align: top; width:7em; background-color:#242729')
+                                        #myPaletteDiv(style='min-height: 700px')
+                                    span(style='display: inline-block; vertical-align: top; width:90%')
+                                        #myDiagramDiv(style=' min-height: 700px')
+                                div
                                     div
-                                        div
-                                            button#SaveButton(onclick='save()') Save
-                                            button(onclick='load()') Load
-                                            |       Diagram Model saved in JSON format:
-                                        textarea#mySavedModel(style='width:100%;height:300px')
-                                            | { "class": "go.GraphLinksModel",
-                                            | "linkFromPortIdProperty": "fromPort",
-                                            | "linkToPortIdProperty": "toPort",
-                                            | "nodeDataArray": [
-                                            | ],
-                                            | "linkDataArray": [
-                                            | ]}
-                            .edWrap.col-6-tp
-                                #editorJs.editor.editorScriptBuilder
-                .hud-rightPanel
-                    include _right_panel
+                                        button#SaveButton(onclick='save()') Save
+                                        button(onclick='load()') Load
+                                        |       Diagram Model saved in JSON format:
+                                    textarea#mySavedModel(style='width:100%;height:300px')
+                                        | { "class": "go.GraphLinksModel",
+                                        | "linkFromPortIdProperty": "fromPort",
+                                        | "linkToPortIdProperty": "toPort",
+                                        | "nodeDataArray": [
+                                        | ],
+                                        | "linkDataArray": [
+                                        | ]}
+                        .edWrap.col-6-tp
+                            //#editorJs.editor.editorScriptBuilder
+            .hud-rightPanel.clearfix
+                include _right_panel
             .hud-bottomPanel
                 include _instruments
                 include _bottom_panel
                 include _modals
-        include _scripts
+            include _scripts

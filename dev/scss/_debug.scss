@@ -402,7 +402,7 @@
     cursor: grab !important;
   }
   .debugPannel__wrapper {
-   display:none;
+    display: none;
     background: #3c3f41 !important;
     box-shadow: 2px -1px 0px 0px #2f2d2d;
     border-top: solid 1px #b19e9e;
@@ -709,7 +709,7 @@
     right: 0;
     margin: auto;
     .debugPannel {
-     // display: none;
+      // display: none;
 
     }
   }
@@ -1155,7 +1155,7 @@
     min-height: 1px;
     float: left;
     float: left;
-    height:100vh;
+    height: 100vh;
   }
   .hud-leftPanel {
     width: 10%;
@@ -1165,7 +1165,7 @@
   div[class*='Panel'] {
     background-color: $panel;
   }
-  .window{
+  .window {
     overflow: scroll;
     margin: 0 auto;
     transition: width .8s linear;
@@ -1192,7 +1192,7 @@
     height: 20px;
   }
   .editorsContainer {
-    display: none;
+    //display: none;
   }
   .hud-Button {
     padding: 4px;
@@ -1267,10 +1267,9 @@
 
   }
 
-
-  .combinedSelector{
+  .combinedSelector {
     max-height: 40vh;
-    overflow-y:auto;
+    overflow-y: auto;
   }
   .qcnt {
 
@@ -1343,7 +1342,7 @@
     font-size: 14px;
     padding: 5px;
     color: #fff;
-   // background-color: #ffa500;
+    // background-color: #ffa500;
     background-color: #5b8213;
 
   }
@@ -1395,14 +1394,16 @@
     border: none;
     background: #006eb7 !important;
     margin: 1px;
-    &:hover{background-color: #005f9e}
+    &:hover {
+      background-color: #005f9e
+    }
   }
-  .ElemMenu{
+  .ElemMenu {
     position: absolute;
     //display:none;
     width: 2.7em;
-    top:30%;
-    right:110%;
+    top: 30%;
+    right: 110%;
     background-color: $panel;
 
     box-shadow: 2px 2px 2px #474747;
@@ -1410,27 +1411,27 @@
   }
   .ElemMenu__header {
     background-color: #00bfff;
-    height:1.5rem;
-    margin-top:-7;
+    height: 1.5rem;
+    margin-top: -7;
     cursor: move;
   }
   .ElemMenu__section {
     width: 100%;
     background-color: $panel-inner;
-    border:solid 1px #00bfff;
+    border: solid 1px #00bfff;
     margin-bottom: -1px;
     text-align: center;
     cursor: pointer;
-    .icon{
+    .icon {
       height: 1.1em;
       width: 1.1em;
-      fill:#00bfff;
+      fill: #00bfff;
       stroke-width: 3px;
       stroke: #00bfff;
     }
     padding: 7px;
   }
-  #getCode{
+  #getCode {
     display: none;
   }
   #classSelector {
@@ -1438,7 +1439,7 @@
   }
   .saveToServer {
     position: absolute;
-    bottom:0;
+    bottom: 0;
     text-align: center;
   }
   .hud-rightPanel {
@@ -1450,30 +1451,30 @@
   }
 
   *::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   }
 
   *::-webkit-scrollbar-thumb {
     background-color: #fbfff8;
     outline: 1px solid #f3f6ff;
-    margin-left:.5em;
+    margin-left: .5em;
   }
-  .combinedSelector{
+  .combinedSelector {
     background-color: $panel;
     padding: 5px;
   }
   .properties {
-      cursor: pointer;
+    cursor: pointer;
   }
-  .half{
-    opacity:.3;
+  .half {
+    opacity: .3;
   }
 
-  .hud-content{
+  .hud-content {
     position: relative;
     padding: 0px 6px;
   }
-  .window{
+  .window {
     position: absolute;
     width: 99%;
     margin: 0 auto;
@@ -1482,7 +1483,7 @@
     border: solid 3px dodgerblue;
     height: 80vh;
   }
-  .edWrap{
+  .edWrap {
     padding: 20px;
     background: #242729;
     position: absolute;
@@ -1507,57 +1508,59 @@
     color: #36b5e0 !important;
     border: 1px lightgray solid;
     position: fixed;
-    box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, .2);
     line-height: 1.7;
   }
   .ace_completion-highlight {
-    color: #fc9627 !important;}
+    color: #fc9627 !important;
+  }
   .ace-tomorrow-night-eighties .ace_marker-layer .ace_bracket {
     margin: 0px 0 0 -1px !important;;
     border: 2px solid #fc9627 !important;;
-    padding: 4px !important;;}
+    padding: 4px !important;;
+  }
   #editorJs .ace_gutter {
     background: #565454;
   }
 
-  .debug-creator{
+  .debug-creator {
     background-color: rgba(12, 12, 12, 0.18) !important;
     position: relative;
     height: 700px;
     overflow: auto;
   }
-  .starterTab{
+  .starterTab {
     position: absolute;
     padding: 20px;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     right: 0;
     bottom: 0;
   }
-.projectItem {
-  height: 150px;
-  border: solid 8px #00b3ee;
-  color: #fff;
-  display: inline-block;
-  text-align: center;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  &:hover {
-    border-color: #fc9627;
-  }
-  span{
-    padding-top: 50px;
+  .projectItem {
+    height: 150px;
+    border: solid 8px #00b3ee;
+    color: #fff;
     display: inline-block;
+    text-align: center;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+      border-color: #fc9627;
+    }
+    span {
+      padding-top: 50px;
+      display: inline-block;
 
+    }
   }
-}
 
   .createTitle.active {
     background-color: #0086b3;
   }
 
-  .starterTab div[class^="col-"]{
+  .starterTab div[class^="col-"] {
     background: #2b2b2b !important
   }
   .cpP_tabber {
@@ -1572,14 +1575,15 @@
     }
   }
 
-  .starterTabOpt{
-    div[class^='col-']{
+  .starterTabOpt {
+    div[class^='col-'] {
       background: transparent !important;
     }
 
-    background: #2b2b2b !important}
-  .cpP__tab{
-    
+    background: #2b2b2b !important
+  }
+  .cpP__tab {
+
     color: #fff;
     text-align: center;
     padding: 15px;
@@ -1588,21 +1592,21 @@
     select {
       background: #ffff00 !important;
     }
-    .starterTab &.active ,.starterTabOpt &.active {
+    .starterTab &.active, .starterTabOpt &.active {
       position: relative;
       background: #0086b3 !important;
-      &:after{
-      content: '';
-      border:solid 7px transparent;
-      border-top-color: #0086b3;
-      position: absolute;
-      bottom:-14px;
-      right:0;
-      left:0;
+      &:after {
+        content: '';
+        border: solid 7px transparent;
+        border-top-color: #0086b3;
+        position: absolute;
+        bottom: -14px;
+        right: 0;
+        left: 0;
         height: 0;
         width: 0;
         margin: 0 auto;
-    }
+      }
     }
   }
   .cpP__tabContent {
@@ -1612,20 +1616,20 @@
     background: #313335 !important;
     padding: 45px;
   }
-  .fl_group{
+  .fl_group {
     padding: 10px 20px;
-    border:solid 2px #0086b3;
+    border: solid 2px #0086b3;
     border-radius: 10px;
-    margin-bottom:8px;
+    margin-bottom: 8px;
   }
-  .cpP_fl_h{
+  .cpP_fl_h {
     margin-bottom: 20px;
   }
-  .cpP_fl_h span{
+  .cpP_fl_h span {
     margin-left: 20px;
     display: inline-block;
-    width:30px;
-    height:30px;
+    width: 30px;
+    height: 30px;
     line-height: 30px;
     font-size: .8em;
     text-align: center;
@@ -1634,7 +1638,7 @@
     cursor: pointer;
   }
 
-  .apiTester{
+  .apiTester {
     float: right;
     width: 50px;
     height: 100%;
@@ -1653,10 +1657,10 @@
 
   .verDel {
     display: inline-block;
-    padding-bottom:50px;
+    padding-bottom: 50px;
 
     & > span {
-      border-bottom:solid 2px #fff;
+      border-bottom: solid 2px #fff;
     }
   }
   .createButton {
@@ -1667,7 +1671,7 @@
     background: #fc9627 !important;
     color: #fff;
     cursor: pointer;
-    &:hover{
+    &:hover {
       background: #fc8027 !important;;
     }
   }
@@ -1675,13 +1679,78 @@
     top: 47px !important;
     left: 0 !important;
     overflow: auto;
-     width: 100% ;
+    width: 100%;
     height: 90% !important;
     /* z-index: 400000 !important; */
     /* background: url(str.jpg) !important; */
     /* background-size: cover; */
     margin: 0 auto;
     right: 0 !important;
+  }
+
+  .hud-leftPanel .ui-accordion .ui-accordion-content {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .hud-leftPanel .ui-accordion .ui-accordion-header {
+    background: #3c3f41;
+    color: #00b3ee;
+    font-size: 16px;
+    padding: 6px;
+  }
+  .fs_list {
+    cursor: pointer;
+    font-weight: bold;
+    &:hover {
+      color: #fa9527;
+    }
+
+  }
+  .fs_list--child {
+    font-weight: normal;
+  }
+
+  .hud-leftPanel .ui-accordion-content {
+    background-color: rgb(218, 218, 218);
+  }
+  .contentNavigator {
+    width: 200px;
+    height: 150px;
+    background-color: #3c3f41;
+    z-index: 9999999999;
+    position: absolute;
+    text-align: center;
+    right:0;
+    top: 508px;
+    &>input{
+      border:solid 2px;
+    }
+    button {
+      background: #fa9527;
+      outline: none;
+      color: #fff;
+      border: none;
+      margin-right: 1px;
+      display: inline-block;
+      font-size: 10px;
+    }
+    input{
+      box-sizing: border-box;
+      margin: 5px;
+      border-color: #00B3EE;
+      outline: none;
+      width: 90%;
+      background: #3c3f41;
+      font-size: 18px;
+      color:#fff;
+    }
+  }
+  .savecode {
+    fill:#fa9527 !important;
+  }
+  .buttonsSection {
+    padding-top: 4px;
   }
 }
 

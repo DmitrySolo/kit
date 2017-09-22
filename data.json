@@ -1,33 +1,4 @@
 {
-	"menuData1": {
-		"Home": {
-			"title": "Продукция",
-			"href": "/production.html",
-			"dop_class": ""
-		},
-		"Products and help": {
-			"title": "Гарантия и сервис",
-			"href": "service.html",
-			"dop_class": ""
-		},
-		"Support": {
-			"title": "Партнерам",
-			"href": "partners.html",
-			"dop_class": ""
-		},
-		"AboutUs": {
-			"title": "Где купить",
-			"href": "buy.html",
-			"dop_class": "",
-			"childs": ""
-		},
-		"acc": {
-			"title": "Акции",
-			"href": "sale.html",
-			"dop_class": "lightmenu__item--active",
-			"childs": ""
-		}
-	},
 	"LIBS": {
 		"baseButton": {
 			"js": {
@@ -81,6 +52,17 @@
 				"": ""
 			}
 		},
+		"quant-debug-ruller": {
+			"js": {
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"xRayView": {
 			"js": {
 				"xRayView-script": {
@@ -103,17 +85,6 @@
 				"": ""
 			}
 		},
-		"quant-debug-ruller": {
-			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"test": {
 			"js": {
 				"test-script": {
@@ -125,6 +96,41 @@
 				"": ""
 			}
 		}
+	},
+	"menuData1": {
+		"Home": {
+			"title": "Продукция",
+			"href": "/production.html",
+			"dop_class": ""
+		},
+		"Products and help": {
+			"title": "Гарантия и сервис",
+			"href": "service.html",
+			"dop_class": ""
+		},
+		"Support": {
+			"title": "Партнерам",
+			"href": "partners.html",
+			"dop_class": ""
+		},
+		"AboutUs": {
+			"title": "Где купить",
+			"href": "buy.html",
+			"dop_class": "",
+			"childs": ""
+		},
+		"acc": {
+			"title": "Акции",
+			"href": "sale.html",
+			"dop_class": "lightmenu__item--active",
+			"childs": ""
+		}
+	},
+	"breadcrumbs": {
+		"1": "22"
+	},
+	"starterModule": {
+		"starterModule": "1"
 	},
 	"switchers": {
 		"projectPrefix": "'ta'",
@@ -223,13 +229,26 @@
 	"blockt_space_o": ".7",
 	"head": {
 		"lang": "ru",
-		"title": "TEST APPLICATION!!!!",
-		"desc": "This is test framework application",
-		"kw": "application, test , hurray!!!",
+		"title": "STARTER",
+		"desc": "This is starter description",
+		"kw": "starter application , hurray!!!",
 		"fontlinks": {
 			"1": "https://fonts.googleapis.com/css?family=Oswald|Roboto+Slab:700"
 		},
 		"debug": false
+	},
+	"LIBS_removeThis_whenEdit": {
+		"xRayView": {
+			"js": {
+				"xRayView-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		}
 	},
 	"menuData": {
 		"Home": {
@@ -262,60 +281,33 @@
 	},
 	"name": "STARTER",
 	"version": "0.0.1",
+	"includes": {
+		"modules": {},
+		"components": {},
+		"elements": {}
+	},
 	"pages": {
 		"1": {
-			"title": "Главнаяzz",
+			"title": "MainPage",
 			"slug": "index",
-			"kw": "application, test , hurray!!!",
+			"kw": "starter application , hurray!!!",
 			"layout": "default",
 			"MainMenu": false,
 			"group": false,
 			"dop_class": ""
-		},
-		"2": {
-			"title": "Диспанцеризацioioия",
-			"slug": "dispanser",
-			"kw": "application, test , hurray!!!",
-			"layout": "default",
-			"MainMenu": true,
-			"group": false,
-			"dop_class": ""
-		},
-		"3": {
-			"title": "Платные услуги",
-			"slug": "pay",
-			"kw": "application, test , hurray!!!",
-			"layout": "default",
-			"MainMenu": true,
-			"group": false,
-			"dop_class": ""
-		},
-		"4": {
-			"title": "Документы",
-			"slug": "docs",
-			"kw": "application, test , hurray!!!",
-			"layout": "default",
-			"MainMenu": true,
-			"group": false,
-			"dop_class": ""
-		},
-		"5": {
-			"title": "Мед работникам",
-			"slug": "docs",
-			"kw": "application, test , hurray!!!",
-			"layout": "default",
-			"MainMenu": true,
-			"group": false,
-			"dop_class": ""
-		},
-		"pacients": {
-			"title": "Пациентам",
-			"slug": "pacients",
-			"kw": "application, test , hurray!!!",
-			"layout": "default",
-			"MainMenu": true,
-			"group": false,
-			"dop_class": ""
+		}
+	},
+	"___LIBS": {
+		"starter": {
+			"js": {
+				"starter-script": {
+					"src": "Projects/STRERXXX/dev/scripts/starter/starter.js",
+					"container": "footer"
+				}
+			},
+			"css": {
+				"": ""
+			}
 		}
 	},
 	"blueprint": "undefined",

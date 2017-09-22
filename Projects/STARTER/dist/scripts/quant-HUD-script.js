@@ -57,8 +57,35 @@ function MakeEditable (elem) {
         $('.classChoser',window.parent.document).val('');console.log( $(this).attr('class'));
         $('.iconMediachoiser',window.parent.document).removeClass('active').removeClass('inList');
         $('.mediaAll',window.parent.document)
+
+
+        // LOAD TO QUANT
+        $('#contentNavigator__type input,#contentNavigator__stype input,#contentNavigator__name input',window.parent.document).val('');
+        var content1 = $(this).closest('*[data-qcontent]').data('qcontent');
+        if (content1) {
+            content1 = content1.split('__');
+
+            if (content1.length == 2) {
+                $('#contentNavigator__type input', window.parent.document).val(content1[0]);
+                $('#contentNavigator__name input', window.parent.document).val(content1[1]);
+
+            } else if (content1.length == 3) {
+                $('#contentNavigator__stype input', window.parent.document).val(content1[1]);
+                $('#contentNavigator__name input', window.parent.document).val(content1[2]);
+            }
+        }
+//////////////////////////////////////////////////
+
+
+
+
+
+
+
         if($('*').is($(this).closest('*[data-qcontent=true]'))){
             var parentEl = $(this).closest('*[data-qcontent=true]');
+
+
 
             var context = parentEl[0].dataset.qcname;
 
