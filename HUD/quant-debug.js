@@ -1076,6 +1076,22 @@ $(document).ready(function () {
         autoOpen: false
     });
 
+    $('div#addContent').on('mousedown', function () {
+
+        $( ".debug-Dialog" ).dialog( "open" );
+    })
+    $('div#editorSwitcher').on('mousedown', function () {
+        $(this).toggleClass('on');
+        $( ".hud-bottom" ).toggle();
+    })
+    $('div#rulerSwitcher').on('mousedown',function () {
+        $(this).toggleClass('on');
+        $('.ruler.v,.ruler.h',window.frames['index'].contentDocument).css('display','block');
+    })
+
+    $( ".debug-Dialog" ).dialog( "close" );
+
+
     $(".debug-Dialog-start").dialog({
         modal: true,
         dialogClass: "starter_dialog"
@@ -1528,7 +1544,10 @@ function starterTabber(classTrigger,classTab) {
     loadByDOM();
 
     var saveCode = function () {
-        $('#savecode').on('mousedown',function () {
+        $('div#savecode').on('click',function () {
+
+            $('div.hud-Button#savecode').css('borderColor','#00b3ee');
+
 
             var scssContent = editor.getSession().getValue();
             ql(scssContent)
@@ -1559,7 +1578,7 @@ function starterTabber(classTrigger,classTab) {
                 , type: 'POST'
                 , data: JSON.stringify(data)
                 , success: function (res) {
-
+                    $('div.hud-Button#savecode').css('borderColor','initial');
                 }
             });
 
@@ -1567,7 +1586,10 @@ function starterTabber(classTrigger,classTab) {
         })
     }
     saveCode();
+    $('div#add\content').on('click',function () {
 
+
+    })
 
 
 })

@@ -4,12 +4,15 @@
   .starter__content {
     color:red !important;
     padding:20px;
+    background-color: violet;
       
   }
   .starter1 {
-      color : #fff;
-      font-size : 22px;
+      color : violet;
+      text-shadow: 2px 2px 2px #fff;
+      font-size : 38px;
       text-align : center;
+      text-decoration: underline;
   }
     
 }
@@ -17,7 +20,7 @@
 /* mainPageSection STYLE */
 
 .mainPageSection__content {
-
+    padding:0;
 }
 .mainPageSection__title {
 
@@ -26,7 +29,7 @@
 
 .page__content {
   background-color: #ff5300;
-  padding: 40px;
+  padding-bottom: 40px;
 }
 .page__title {
   color:sandybrown;

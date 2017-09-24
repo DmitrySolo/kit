@@ -1,7 +1,13 @@
 mixin MODULE-starter()
 	<!-- split modules/starter -->
-	.starter__content(data-qcontent='module__starter')
-		.starter1 Hello!
+	.container
+		.starter__content(data-qcontent='module__starter')
+				.starter1 
+					| Hello!
+					span hello122
+					span 360
+
+
 mixin LEVEL-mainPageSection(title,className)
 	-if (!className) className =''
 	.mainPageSection__content(class = 'page__content'+ className data-qcontent='level__mainPageSection')

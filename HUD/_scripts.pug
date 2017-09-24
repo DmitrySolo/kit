@@ -4,11 +4,13 @@ script.
        return $('iframe#index').contents().find(el)
     },
     frameContent = $('iframe#index').contents().find('body')
-
+script(src="https://cloud9ide.github.io/emmet-core/emmet.js")
 script
     include ../node_modules/ace-builds/src-min/ace.js
 script
     include ../node_modules/ace-builds/src-min/theme-tomorrow_night_eighties.js
+script
+    include ../node_modules/ace-builds/src/ext-emmet.js
 script
     include ../node_modules/ace-builds/src-min/mode-scss.js
 script
@@ -31,7 +33,11 @@ script(role='scss').
     editor.setTheme("ace/theme/tomorrow_night_eighties");
     var scssMode = ace.require("ace/mode/scss").Mode;
     editor.session.setMode(new scssMode());
-
+    editor.setOptions({
+        enableBasicAutocompletion: true
+    });
+    // enable emmet on the current editor
+        editor.setOption("enableEmmet", true);
     var staticWordCompleter = {
         getCompletions: function(editor, session, pos, prefix, callback) {
             var wordList = ["foo", "bar", "baz"];
@@ -55,6 +61,7 @@ script(role='pug').
     editorPug.setTheme("ace/theme/tomorrow_night_eighties");
     var PugMode = ace.require("ace/mode/jade").Mode;
     editorPug.session.setMode(new PugMode());
+    editorPug.session.setOptions({ tabSize: 4, useSoftTabs: false });
 
     var staticWordCompleter = {
         getCompletions: function(editorPug, session, pos, prefix, callback) {

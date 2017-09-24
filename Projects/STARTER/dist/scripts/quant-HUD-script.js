@@ -593,7 +593,7 @@ var RulersGuides = function (evt, dragdrop) {
         vBound      = 0,
         gridList    = null,
         gridListLen = 0,
-        menuBtn     = null,
+        menuBtn     = '#ruler',
         gInfoBlockWrapper = null,
         detailsStatus = 0,
         domElements = [],
@@ -1712,7 +1712,13 @@ var RulersGuides = function (evt, dragdrop) {
             }, 100);
         }
     });
+
+
+
+
+
 }
     var evt         = new Event(),
     dragdrop    = new Dragdrop(evt),
     rg          = new RulersGuides(evt, dragdrop);
+

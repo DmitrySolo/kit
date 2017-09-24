@@ -158,7 +158,7 @@ gulp.task('SERVER', [], function () {
 
     browserSync.init({
         server: dist,
-        index: "HUD.html"
+        index: "index.html"
     });
 
     gulp.watch([dist + "index.html", dist + "/*.css"]).on('change', browserSync.reload);

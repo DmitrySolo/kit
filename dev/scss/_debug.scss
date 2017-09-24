@@ -146,7 +146,7 @@
   body.debug {
     // background-color: $db-body-color;
     cursor: crosshair;
-    margin-top: 40px;
+    //margin-top: 40px;
     background-color: #2b2b2b;
     background-image: //linear-gradient(white 2px, transparent 2px),
             //linear-gradient(90deg, white 2px, transparent 2px);
@@ -870,13 +870,16 @@
   }
   .ruler.v {
     border-right: solid 1px #00e7ff !important;
-    padding-left: 0;
-    width: 34px !important;
+    padding-left: 0 !important;
+    width: 22px !important;
   }
   .ruler.h {
     border-bottom: solid 1px #00e7ff !important;
+    padding-top: 0 !important;
   }
-
+  .menu-btn {
+    opacity: 0 !important;
+  }
   .rg-overlay {
     pointer-events: none;
     z-index: $zOverElement;
@@ -897,19 +900,23 @@
     background-clip: content-box, padding-box;
   }
   #currentSelectorWay {
+    margin-bottom: 5px;
     & > div {
-      padding: 12px;
+
     }
     span {
-      font-size: .8em;
-      background-color: #3c3f41;
-      margin-right: 12px;
-      padding: 8px;
+      font-size: 1em;
+      background-color: #3d3f42;
+      margin-right: 3px;
+      padding: 4px;
+      &:last-child i{
+        color:#fff;
+      }
     }
     i {
-      font-size: .8em;
-      padding: 0 8px;
-      color: #006eb7;
+      font-size: 1em;
+      padding: 0 4px;
+      color: #00b3ef;
     }
   }
   input[type="range"] {
@@ -1177,7 +1184,14 @@
 
   .hud-bottom {
     position: absolute;
-    bottom: 0;
+    bottom: -1000px;
+    display: none;
+    height: 1200px;
+    &:before {
+      content: '';
+      padding: 40px;
+      background-color: #fff;
+    }
   }
   .rg-menu {
     background: $panel;
@@ -1715,14 +1729,13 @@
     background-color: rgb(218, 218, 218);
   }
   .contentNavigator {
-    width: 200px;
-    height: 150px;
+    //width: 600px;
     background-color: #3c3f41;
     z-index: 9999999999;
     position: absolute;
     text-align: center;
-    right:0;
-    top: 508px;
+    right:250px;
+    top: 8px;
     &>input{
       border:solid 2px;
     }
@@ -1742,7 +1755,7 @@
       outline: none;
       width: 90%;
       background: #3c3f41;
-      font-size: 18px;
+      font-size: 14px;
       color:#fff;
     }
   }
@@ -1751,6 +1764,13 @@
   }
   .buttonsSection {
     padding-top: 4px;
+  }
+  .addContent {
+    fill:#00B3EE !important;
+  }
+  .ruler.v,.ruler.h{
+    opacity: .5;
+    display: none;
   }
 }
 
