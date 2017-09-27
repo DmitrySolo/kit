@@ -1,20 +1,34 @@
 {
-	"LIBS": {
-		"baseButton": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/ELEMENTS/LINK-BUTTONS/--baseButton/baseButton.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
+	"menuData1": {
+		"Home": {
+			"title": "Продукция",
+			"href": "/production.html",
+			"dop_class": ""
 		},
+		"Products and help": {
+			"title": "Гарантия и сервис",
+			"href": "service.html",
+			"dop_class": ""
+		},
+		"Support": {
+			"title": "Партнерам",
+			"href": "partners.html",
+			"dop_class": ""
+		},
+		"AboutUs": {
+			"title": "Где купить",
+			"href": "buy.html",
+			"dop_class": "",
+			"childs": ""
+		},
+		"acc": {
+			"title": "Акции",
+			"href": "sale.html",
+			"dop_class": "lightmenu__item--active",
+			"childs": ""
+		}
+	},
+	"LIBS": {
 		"JQ": {
 			"js": {
 				"jquery": {
@@ -63,22 +77,22 @@
 				"": ""
 			}
 		},
-		"xRayView": {
+		"quant-lib": {
 			"js": {
-				"xRayView-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"quant-lib": {
+		"xRayView": {
 			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
+				"xRayView-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
+					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -96,41 +110,6 @@
 				"": ""
 			}
 		}
-	},
-	"menuData1": {
-		"Home": {
-			"title": "Продукция",
-			"href": "/production.html",
-			"dop_class": ""
-		},
-		"Products and help": {
-			"title": "Гарантия и сервис",
-			"href": "service.html",
-			"dop_class": ""
-		},
-		"Support": {
-			"title": "Партнерам",
-			"href": "partners.html",
-			"dop_class": ""
-		},
-		"AboutUs": {
-			"title": "Где купить",
-			"href": "buy.html",
-			"dop_class": "",
-			"childs": ""
-		},
-		"acc": {
-			"title": "Акции",
-			"href": "sale.html",
-			"dop_class": "lightmenu__item--active",
-			"childs": ""
-		}
-	},
-	"breadcrumbs": {
-		"1": "22"
-	},
-	"starterModule": {
-		"starterModule": "1"
 	},
 	"switchers": {
 		"projectPrefix": "'ta'",

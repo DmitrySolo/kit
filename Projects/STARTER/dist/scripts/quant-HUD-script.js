@@ -1,45 +1,47 @@
+$(document).ready(function () {
+
 
 var vendorsClasses = ['debugElement','ui-draggable-handle','ui-draggable','ui-resizable','resizeble'];
 var changerWatcher = {}
-    changerWatcher.targets = {}
-    var target ={};
-         target.save = {
-             "element-vistest-mainbutton":
-                {
+changerWatcher.targets = {}
+var target ={};
+target.save = {
+    "element-vistest-mainbutton":
+        {
+            properties:{
+                'display':'block',
+                'width':'100%',
+                'color':'darkcyan',
+                'background_image':'url("http://home/image.jpg")'
+            },
+            mediaProperties:{
+                phone_only:{
                     properties:{
-                        'display':'block',
-                        'width':'100%',
-                        'color':'darkcyan',
-                        'background_image':'url("http://home/image.jpg")'
+                        width:'30%'
                     },
-                    mediaProperties:{
-                        phone_only:{
-                            properties:{
-                                width:'30%'
-                            },
-                            pElProperties:{
-                                hover:{
-                                    background_color:'yellow'
-                                }
-                            }
-                        },
-                        desktop_up:{
-                           properties:{
-                               width:'70%',
-                               color:'violet'
-                           }
-                        }
-                    },
-                    pElProperties: {
+                    pElProperties:{
                         hover:{
-                            color:'red'
-                        },
-                        last_child:{
-                            margin:0
+                            background_color:'yellow'
                         }
                     }
+                },
+                desktop_up:{
+                    properties:{
+                        width:'70%',
+                        color:'violet'
+                    }
                 }
-    }
+            },
+            pElProperties: {
+                hover:{
+                    color:'red'
+                },
+                last_child:{
+                    margin:0
+                }
+            }
+        }
+}
 
 
 
@@ -59,21 +61,7 @@ function MakeEditable (elem) {
         $('.mediaAll',window.parent.document)
 
 
-        // LOAD TO QUANT
-        $('#contentNavigator__type input,#contentNavigator__stype input,#contentNavigator__name input',window.parent.document).val('');
-        var content1 = $(this).closest('*[data-qcontent]').data('qcontent');
-        if (content1) {
-            content1 = content1.split('__');
 
-            if (content1.length == 2) {
-                $('#contentNavigator__type input', window.parent.document).val(content1[0]);
-                $('#contentNavigator__name input', window.parent.document).val(content1[1]);
-
-            } else if (content1.length == 3) {
-                $('#contentNavigator__stype input', window.parent.document).val(content1[1]);
-                $('#contentNavigator__name input', window.parent.document).val(content1[2]);
-            }
-        }
 //////////////////////////////////////////////////
 
 
@@ -84,8 +72,6 @@ function MakeEditable (elem) {
 
         if($('*').is($(this).closest('*[data-qcontent=true]'))){
             var parentEl = $(this).closest('*[data-qcontent=true]');
-
-
 
             var context = parentEl[0].dataset.qcname;
 
@@ -102,7 +88,7 @@ function MakeEditable (elem) {
             console.log('no')
         }
 
-      //  var qecm = $(this).closest('*[data-qcontent=true]');
+        //  var qecm = $(this).closest('*[data-qcontent=true]');
 
 
 
@@ -112,10 +98,10 @@ function MakeEditable (elem) {
             //classString = classString.replace
 
             var classStringArr = classString.split(' '),
-             block = '',
-             element = '',
-             modifier = '',
-             result =[];
+                block = '',
+                element = '',
+                modifier = '',
+                result =[];
 
             $.each(classStringArr,function (index,value) {
                 if (value.indexOf('ta-')!=-1){
@@ -135,7 +121,7 @@ function MakeEditable (elem) {
                     result.push(predRes);
                 }else{
                     if (vendorsClasses.indexOf(value) == -1)
-                    $('#classSelector',window.parent.document).prepend('<div class=" cselector"><span class="classtype extClass">c</span><span class="classtype__name">'+value+'</span></div>')
+                        $('#classSelector',window.parent.document).prepend('<div class=" cselector"><span class="classtype extClass">c</span><span class="classtype__name">'+value+'</span></div>')
                 }
 
             })
@@ -593,7 +579,7 @@ var RulersGuides = function (evt, dragdrop) {
         vBound      = 0,
         gridList    = null,
         gridListLen = 0,
-        menuBtn     = '#ruler',
+        menuBtn     = null,
         gInfoBlockWrapper = null,
         detailsStatus = 0,
         domElements = [],
@@ -1712,13 +1698,10 @@ var RulersGuides = function (evt, dragdrop) {
             }, 100);
         }
     });
-
-
-
-
-
 }
-    var evt         = new Event(),
+var evt         = new Event(),
     dragdrop    = new Dragdrop(evt),
     rg          = new RulersGuides(evt, dragdrop);
 
+
+});

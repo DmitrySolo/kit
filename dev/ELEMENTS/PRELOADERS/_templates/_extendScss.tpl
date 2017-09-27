@@ -1,4 +1,0 @@
-.<%= prefix %> {
-@extend .<%= extend %>;
-
-}

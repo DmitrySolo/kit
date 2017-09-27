@@ -2,7 +2,11 @@
 
 $(document).ready(function () {
 
-    $('.getFile').on('click', function (){
+    //Default settings
+    var switchedEditor = 'quant';
+
+
+    $('.getFile').on('click', function () {
         ql('ads');
         $.ajax({
             url: "http://localhost:8181?action=openFilesByPhpStorm"
@@ -11,7 +15,7 @@ $(document).ready(function () {
     })
 
 
-   // $('.editor').draggable();
+    // $('.editor').draggable();
     $('.step').draggable().resizable();
 
 
@@ -100,12 +104,12 @@ $(document).ready(function () {
 
         $('.iconMediachoiser').removeClass('active');
         $('.iconMediachoiser').removeClass('inList');
-        var searchableSelector =  $(this).text();
+        var searchableSelector = $(this).text();
         var indexE = currentSelectorsData.selectorName.indexOf(searchableSelector);
 
         if (indexE > -1) {
 
-            ql(indexE,'GGGG')
+            ql(indexE, 'GGGG')
 
             var styles = currentSelectorsData.selectorData[indexE];
             CURRENTSWITCHER.selector = currentSelectorsData.selectorName[indexE];
@@ -114,11 +118,11 @@ $(document).ready(function () {
 
             styles.ownStyles[0] = styles.ownStyles[0];
 
-            var string ='';
+            var string = '';
 
             for (var i in styles.stylesObject) {
 
-                string += styles.stylesObject[i].propery+':'+styles.stylesObject[i].value+'<br>';
+                string += styles.stylesObject[i].propery + ':' + styles.stylesObject[i].value + '<br>';
 
             }
             $('#selfProperties').prepend('<div class="ownProperties">' + string + '</div>')
@@ -129,9 +133,9 @@ $(document).ready(function () {
         } else {
             ql('add new');
 
-            $('body').on('click','.properties',function () {
+            $('body').on('click', '.properties', function () {
 
-               var indexOf = qntGetThisData(this,'index');
+                var indexOf = qntGetThisData(this, 'index');
                 $('.properties').removeClass('half');
                 $('.properties').not(this).addClass('half');
 
@@ -160,7 +164,6 @@ $(document).ready(function () {
             }
 
 
-
             var getProps = function () {
                 var properties = '';
                 for (var i in elOject.styles[index]) {
@@ -170,7 +173,7 @@ $(document).ready(function () {
                 return properties
             }
 
-            function goToObjects(index){
+            function goToObjects(index) {
                 CURRENTSWITCHER.selector = elOject.selectors[index];
                 ownStylesProperties.selectorName = elOject.selectors[index];
                 ownStylesProperties.position = elOject.position[index];
@@ -178,7 +181,6 @@ $(document).ready(function () {
                 ownStylesProperties.stylesObject = elOject.styles[index];
                 ql(ownStylesProperties);
             }
-
 
 
             for (var index in elOject.selectors) {
@@ -189,7 +191,7 @@ $(document).ready(function () {
                     console.log(selectorType)
                     var props = getProps();
                     $('#selfProperties').empty()
-                    $('#selfProperties').prepend('<div class="ownProperties properties" data-index="'+index+'">' + props + '</div>')
+                    $('#selfProperties').prepend('<div class="ownProperties properties" data-index="' + index + '">' + props + '</div>')
                     console.log('IN1');
                 }
                 else if (elOject.selectors[index].split(',').length >= 2) {
@@ -217,19 +219,19 @@ $(document).ready(function () {
 
                     }
                     var props = getProps();
-                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorGroup properties" data-index="'+index+'"">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' +  searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorGroup properties" data-index="' + index + '"">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' + searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
 
                 } else if (elOject.selectors[index].split(' ').length > 1) {
                     var selectorType = 'ParentChild';
                     console.log(selectorType)
                     var props = getProps();
 
-                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt properties" data-index="'+index+'"">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' +  searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt properties" data-index="' + index + '"">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' + searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
 
                 } else if (elOject.selectors[index].search(/[a-z]+.mainHeader/) >= 0) {
                     var selectorType = 'Extends';
                     var props = getProps();
-                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt properties" data-index="'+index+'"">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' +  searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt properties" data-index="' + index + '"">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' + searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
                     console.log(selectorType)
 
                 }
@@ -249,7 +251,7 @@ $(document).ready(function () {
                             ownStylesProperties.pseudoSelectors.focus = props;
                             break;
                     }
-                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt properties" data-index="'+index+'"">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' +  searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
+                    $('#extendsSelectors').prepend('<div class="selectorHeader selectorExt properties" data-index="' + index + '"">' + elOject.selectors[index].replace(regExpss, '<span class="chosenSelector">' + searchableSelector + '</span>') + '<div class="propertyGroup">' + props + '</div></div>')
 
                 }
 
@@ -284,36 +286,36 @@ $(document).ready(function () {
                 var _this = $(this);
 
 
-                    var classList = _this.attr('class');
-                    var breakpoint = '';
-                    switch (true) {
-                        case(classList.indexOf('All') > 0):
-                            CURRENTSWITCHER.media = 'all';
-                            $('.window').css('width','100%');
-                            break;
-                        case(classList.indexOf('Mobile') > 0):
-                            getMediaCss(mediaMap.phoneBreakpoint - 1);
-                            CURRENTSWITCHER.media = mediaMap.phoneBreakpoint;
-                            break;
-                        case (classList.indexOf('TabletP') > 0):
-                            getMediaCss(mediaMap.tabletPortraitBreakpoint);
-                            CURRENTSWITCHER.media = mediaMap.tabletPortraitBreakpoint;
-                            break;
-                        case(classList.indexOf('TabletL') > 0):
-                            getMediaCss(mediaMap.tabletLandscapeBreakpoint);
-                            CURRENTSWITCHER.media = mediaMap.tabletLandscapeBreakpoint;
-                            break;
-                        case(classList.indexOf('Desctop') > 0):
-                            getMediaCss(mediaMap.desktopBreakpoint);
-                            CURRENTSWITCHER.media = mediaMap.desktopBreakpoint;
-                            break;
-                        case(classList.indexOf('DesctopLarge') > 0):
-                            getMediaCss(mediaMap.desktoplBreakpoint);
-                            CURRENTSWITCHER.media = mediaMap.desktoplBreakpoint;
-                            break;
+                var classList = _this.attr('class');
+                var breakpoint = '';
+                switch (true) {
+                    case(classList.indexOf('All') > 0):
+                        CURRENTSWITCHER.media = 'all';
+                        $('.window').css('width', '100%');
+                        break;
+                    case(classList.indexOf('Mobile') > 0):
+                        getMediaCss(mediaMap.phoneBreakpoint - 1);
+                        CURRENTSWITCHER.media = mediaMap.phoneBreakpoint;
+                        break;
+                    case (classList.indexOf('TabletP') > 0):
+                        getMediaCss(mediaMap.tabletPortraitBreakpoint);
+                        CURRENTSWITCHER.media = mediaMap.tabletPortraitBreakpoint;
+                        break;
+                    case(classList.indexOf('TabletL') > 0):
+                        getMediaCss(mediaMap.tabletLandscapeBreakpoint);
+                        CURRENTSWITCHER.media = mediaMap.tabletLandscapeBreakpoint;
+                        break;
+                    case(classList.indexOf('Desctop') > 0):
+                        getMediaCss(mediaMap.desktopBreakpoint);
+                        CURRENTSWITCHER.media = mediaMap.desktopBreakpoint;
+                        break;
+                    case(classList.indexOf('DesctopLarge') > 0):
+                        getMediaCss(mediaMap.desktoplBreakpoint);
+                        CURRENTSWITCHER.media = mediaMap.desktoplBreakpoint;
+                        break;
 
-                    }
-                    ql(CURRENTSWITCHER, 'QS');
+                }
+                ql(CURRENTSWITCHER, 'QS');
 
             })
 
@@ -1078,18 +1080,18 @@ $(document).ready(function () {
 
     $('div#addContent').on('mousedown', function () {
 
-        $( ".debug-Dialog" ).dialog( "open" );
+        $(".debug-Dialog").dialog("open");
     })
     $('div#editorSwitcher').on('mousedown', function () {
         $(this).toggleClass('on');
-        $( ".hud-bottom" ).toggle();
+        $(".hud-bottom").toggle();
     })
-    $('div#rulerSwitcher').on('mousedown',function () {
+    $('div#rulerSwitcher').on('mousedown', function () {
         $(this).toggleClass('on');
-        $('.ruler.v,.ruler.h',window.frames['index'].contentDocument).css('display','block');
+        $('.ruler.v,.ruler.h', window.frames['index'].contentDocument).toggle();
     })
 
-    $( ".debug-Dialog" ).dialog( "close" );
+    $(".debug-Dialog").dialog("close");
 
 
     $(".debug-Dialog-start").dialog({
@@ -1099,7 +1101,7 @@ $(document).ready(function () {
     });
 
 
-    $("#optionSwitcher").not('.active').on('mousedown',function () {
+    $("#optionSwitcher").not('.active').on('mousedown', function () {
 
         $.ajax({
             url: "http://localhost:8181/?action=loadOption"
@@ -1125,31 +1127,31 @@ $(document).ready(function () {
                 $('input[name="mobile_font"]').val(jsonOpt.typography.mobile_font);
                 $('input[name="lh_ratio"]').val(jsonOpt.typography.lh_ratio);
 
-                for(var i in jsonOpt.typography.linkFontsArr){
+                for (var i in jsonOpt.typography.linkFontsArr) {
 
-                    if(i == 0){
+                    if (i == 0) {
 
-                       $('input[name="link_font__1_link"]').val(jsonOpt.typography.linkFontsArr[i].link);
-                       $('input[name="link_font__1_name"]').val(jsonOpt.typography.linkFontsArr[i].name);
-                       $('select[name="link_font__1_role"]').val(jsonOpt.typography.linkFontsArr[i].role);
-                       $('select[name="link_font__1_typeface"]').val(jsonOpt.typography.linkFontsArr[i].typeface);
-                       $('select[name="link_font__1_weight"]').val(jsonOpt.typography.linkFontsArr[i].weight);
+                        $('input[name="link_font__1_link"]').val(jsonOpt.typography.linkFontsArr[i].link);
+                        $('input[name="link_font__1_name"]').val(jsonOpt.typography.linkFontsArr[i].name);
+                        $('select[name="link_font__1_role"]').val(jsonOpt.typography.linkFontsArr[i].role);
+                        $('select[name="link_font__1_typeface"]').val(jsonOpt.typography.linkFontsArr[i].typeface);
+                        $('select[name="link_font__1_weight"]').val(jsonOpt.typography.linkFontsArr[i].weight);
 
-                   }else{
+                    } else {
 
-                        var _it =i+1;
+                        var _it = i + 1;
                         var clone = $('.fl_group').first().clone();
-                        $.each($('*[name]',clone),function (key,val) {
-                            var attr =$(this).attr('name').replace('1','+_it+');
-                            $(this).attr('name',attr);
+                        $.each($('*[name]', clone), function (key, val) {
+                            var attr = $(this).attr('name').replace('1', '+_it+');
+                            $(this).attr('name', attr);
                         })
                         $('#font_option').append(clone)
 
-                        $('input[name="link_font__'+_it+'_link"]').val(jsonOpt.typography.linkFontsArr[i].link);
-                        $('input[name="link_font__'+_it+'_name"]').val(jsonOpt.typography.linkFontsArr[i].name);
-                        $('select[name="link_font__'+_it+'_role"]').val(jsonOpt.typography.linkFontsArr[i].role);
-                        $('select[name="link_font__'+_it+'_typeface"]').val(jsonOpt.typography.linkFontsArr[i].typeface);
-                        $('select[name="link_font__'+_it+'_weight"]').val(jsonOpt.typography.linkFontsArr[i].weight);
+                        $('input[name="link_font__' + _it + '_link"]').val(jsonOpt.typography.linkFontsArr[i].link);
+                        $('input[name="link_font__' + _it + '_name"]').val(jsonOpt.typography.linkFontsArr[i].name);
+                        $('select[name="link_font__' + _it + '_role"]').val(jsonOpt.typography.linkFontsArr[i].role);
+                        $('select[name="link_font__' + _it + '_typeface"]').val(jsonOpt.typography.linkFontsArr[i].typeface);
+                        $('select[name="link_font__' + _it + '_weight"]').val(jsonOpt.typography.linkFontsArr[i].weight);
 
 
                     }
@@ -1183,9 +1185,6 @@ $(document).ready(function () {
                 $('input[name="e_o"]').val(jsonOpt.spacer.e_o);
 
 
-
-
-
                 $(".debug-changeProp").dialog({
                     modal: true,
                     title: "Options:",
@@ -1201,11 +1200,7 @@ $(document).ready(function () {
     })
 
 
-
-
-
-
-    $("#optionSwitcher.active").on('click',function () {
+    $("#optionSwitcher.active").on('click', function () {
         $(".debug-changeProp").dialog('close');
         $(this).removeClass('active')
     })
@@ -1249,76 +1244,76 @@ $(document).ready(function () {
         }
     })
 
-    $('body').on('mousedown','.windowMark',function () {
+    $('body').on('mousedown', '.windowMark', function () {
         var activeMark = $(this).text();
         ql('sdsdsdssdsdsd--s-s')
-        $('.window').css('z-index','0');
+        $('.window').css('z-index', '0');
         $('.windowMark').removeClass('active');
         $(this).addClass('active');
-        $('.window[window="'+activeMark+'"]').css('z-index','1');
+        $('.window[window="' + activeMark + '"]').css('z-index', '1');
     })
 
 
-
-    $('.ace_rightAlignedText:contains("snippet")').css('color','red');
+    $('.ace_rightAlignedText:contains("snippet")').css('color', 'red');
 
 
     //Projects Load
-var loadProjects = function loadProjects(){
+    var loadProjects = function loadProjects() {
 
-    $.ajax({
-        url: "http://localhost:8181/?action=getProjects"
-    })
-        .done(function (data) {
-            ql(data);
-            data = data.split(',');
-            for(var i in data){
-                $('#projectsCtn','body').prepend("<div class='projectItem col-2-tp'><span>"+data[i]+"</span></div>");
-            }
+        $.ajax({
+            url: "http://localhost:8181/?action=getProjects"
+        })
+            .done(function (data) {
+                ql(data);
+                data = data.split(',');
+                for (var i in data) {
+                    $('#projectsCtn', 'body').prepend("<div class='projectItem col-2-tp'><span>" + data[i] + "</span></div>");
+                }
+            });
+
+    }
+    var removeStarterDialog = function () {
+        $(".debug-Dialog-start").dialog('destroy')
+    }
+
+
+    qntCheckCookie('project', loadProjects, removeStarterDialog);
+
+
+    $('body').on('click', '.projectItem', function () {
+        var pName = $('span', this).text();
+
+        $.ajax({
+            url: "http://localhost:8181/?action=loadProject&projectName=" + pName
+        }).done(function (data) {
+            qntSetCookie('project', pName, 1);
+
         });
 
-}
-var   removeStarterDialog = function () {
-    $(".debug-Dialog-start").dialog('destroy')
-}
-
-
-qntCheckCookie('project',loadProjects,removeStarterDialog);
-
-
-$('body').on('click','.projectItem',function () {
-    var pName = $('span',this).text();
-
-    $.ajax({
-        url: "http://localhost:8181/?action=loadProject&projectName="+pName
-    }).done(function (data) {
-        qntSetCookie('project', pName, 1);
-
-    });
-
-})
-
-function starterTabber(classTrigger,classTab) {
-    $(classTrigger).on('mousedown',function () {
-        $(classTrigger+'.active').removeClass('active');
-        $(this).addClass('active');
-       var start =  this.className.indexOf('starterTabTrigger');
-       var sliced = parseInt(this.className.slice(start+19,start+19+2));
-
-       $(classTab).hide();
-       $(classTab+'_'+sliced).show();
-
     })
-}
-    starterTabber('.createTitle','.starterTab');
-    starterTabber('.cpP__tab','.cpP__tabContent');
 
-    $('#addLink,#addLink1').on('mousedown',function () {
+    function starterTabber(classTrigger, classTab) {
+        $(classTrigger).on('mousedown', function () {
+            $(classTrigger + '.active').removeClass('active');
+            $(this).addClass('active');
+            var start = this.className.indexOf('starterTabTrigger');
+            var sliced = parseInt(this.className.slice(start + 19, start + 19 + 2));
+
+            $(classTab).hide();
+            $(classTab + '_' + sliced).show();
+
+        })
+    }
+
+    starterTabber('.createTitle', '.starterTab');
+    starterTabber('.cpP__tab', '.cpP__tabContent');
+
+    $('#addLink,#addLink1').on('mousedown', function () {
         var cnt = document.getElementsByClassName('fl_group').length;
         var clone = $('.fl_group').first().clone();
-        $.each($('*[name]',clone),function (key,val) {
-            var attr =$(this).attr('name').replace('1',cnt+1);
-            $(this).attr('name',attr);
+        $.each($('*[name]', clone), function (key, val) {
+            var attr = $(this).attr('name').replace('1', cnt + 1);
+            $(this).attr('name', attr);
         })
         $('#font_option').append(clone)
     })
@@ -1326,153 +1321,154 @@ function starterTabber(classTrigger,classTab) {
     /// TEST API SERVER
 
     var testServer = function () {
-        try{
+        try {
             var request = $.ajax({
                 url: "http://localhost:8181?test=true",
             });
 
-            request.done(function( msg ) {
-                $('#apitest').css('background','#25b14a')
+            request.done(function (msg) {
+                $('#apitest').css('background', '#25b14a')
             });
 
-            request.fail(function( jqXHR, textStatus ) {
-                $('#apitest').css('background','#ff3300')
+            request.fail(function (jqXHR, textStatus) {
+                $('#apitest').css('background', '#ff3300')
             });
-        }catch(e){$('#apitest').css('background','#ff3300')}
+        } catch (e) {
+            $('#apitest').css('background', '#ff3300')
+        }
     }
     testServer();
-    setInterval(testServer,1000*10)
+    setInterval(testServer, 1000 * 10)
 
 ///////////////// CREATE PROJECT
 
-    $('.CreateProject').on('mousedown',function () {
+    $('.CreateProject').on('mousedown', function () {
         ql($('input[name="project_title"]').val());
         var projectOptions = {};
-            if ( $('input[name="project_title"]').val() !==''  && ! $('input[name="project_prefix"]').val() !==''){
-                    ql($('input[name="project_title"]').val());
-                projectOptions.mainOpt = {
+        if ($('input[name="project_title"]').val() !== '' && !$('input[name="project_prefix"]').val() !== '') {
+            ql($('input[name="project_title"]').val());
+            projectOptions.mainOpt = {
 
-                    "title": $('input[name="project_title"]').val(),
-                    "prefix": $('input[name="project_prefix"]').val(),
-                    "lang": $('select[name="project_language"]').val()
-                };
-                projectOptions.colorsOpt = {
-                    "primary": $('input[name="primary_color"]').val(),
-                    "secondary": $('input[name="secondary_color"]').val(),
-                    "foreground": $('input[name="foreground_color"]').val(),
-                    "background": $('input[name="background_color"]').val(),
-                    "accent": $('input[name="accent_color"]').val(),
-                    "font": $('input[name="font_color"]').val(),
-                    "index": $('input[name="color_lighterIndex"]').val(),
-                };
-
-
-                var linksObjArr = [];
-                $.each($('.fl_group'), function (key, val) {
-                    var linkObj = {}
-                    key++;
-                    linkObj.name = $('input[name="link_font__' + key + '_name"]').val();
-                    linkObj.link = $('input[name="link_font__' + key + '_link"]').val();
-                    linkObj.role = $('select[name="link_font__' + key + '_role"]').val();
-                    linkObj.weight = $('select[name="link_font__' + key + '_weight"]').val();
-                    linkObj.typeface = $('select[name="link_font__' + key + '_typeface"]').val();
-                    linksObjArr.push(linkObj);
-                })
+                "title": $('input[name="project_title"]').val(),
+                "prefix": $('input[name="project_prefix"]').val(),
+                "lang": $('select[name="project_language"]').val()
+            };
+            projectOptions.colorsOpt = {
+                "primary": $('input[name="primary_color"]').val(),
+                "secondary": $('input[name="secondary_color"]').val(),
+                "foreground": $('input[name="foreground_color"]').val(),
+                "background": $('input[name="background_color"]').val(),
+                "accent": $('input[name="accent_color"]').val(),
+                "font": $('input[name="font_color"]').val(),
+                "index": $('input[name="color_lighterIndex"]').val(),
+            };
 
 
+            var linksObjArr = [];
+            $.each($('.fl_group'), function (key, val) {
+                var linkObj = {}
+                key++;
+                linkObj.name = $('input[name="link_font__' + key + '_name"]').val();
+                linkObj.link = $('input[name="link_font__' + key + '_link"]').val();
+                linkObj.role = $('select[name="link_font__' + key + '_role"]').val();
+                linkObj.weight = $('select[name="link_font__' + key + '_weight"]').val();
+                linkObj.typeface = $('select[name="link_font__' + key + '_typeface"]').val();
+                linksObjArr.push(linkObj);
+            })
 
-                projectOptions.typography = {
-                    "screen_font": $('input[name="screen_font"]').val(),
-                    "mobile_font": $('input[name="mobile_font"]').val(),
-                    "lh_ratio": $('input[name="lh_ratio"]').val(),
-                    "linkFontsArr": linksObjArr
 
-                };
+            projectOptions.typography = {
+                "screen_font": $('input[name="screen_font"]').val(),
+                "mobile_font": $('input[name="mobile_font"]').val(),
+                "lh_ratio": $('input[name="lh_ratio"]').val(),
+                "linkFontsArr": linksObjArr
 
-                projectOptions.media = {
-                    "response": $('select[name="response"]').val(),
-                    "width": $('input[name="width"]').val(),
-                    "colums": $('input[name="colums"]').val(),
-                    "gutter": $('input[name="gutter"]').val(),
-                    "vRhythm": $('select[name="vRhythm"]').val(),
-                    "m_c": $('input[name="m_c"]').val(),
-                    "m_b": $('input[name="m_b"]').val(),
-                    "tp_c": $('input[name="tp_c"]').val(),
-                    "tp_b": $('input[name="tp_b"]').val(),
-                    "tl_c": $('input[name="tl_c"]').val(),
-                    "tl_b": $('input[name="tl_b"]').val(),
-                    "d_c": $('input[name="d_c"]').val(),
-                    "d_b": $('input[name="d_b"]').val()
-                };
-                projectOptions.spacer = {
-                    "unit": $('select[name="unit"]').val(),
-                    "spacer_principle": $('select[name="spacer_principle"]').val(),
-                    "progressive_unit": $('input[name="progressive_unit"]').val(),
-                    "e_i": $('input[name="e_i"]').val(),
-                    "e_o": $('input[name="e_o"]').val(),
-                    "c_i": $('input[name="c_i"]').val(),
-                    "c_o": $('input[name="c_o"]').val(),
-                    "m_i": $('input[name="m_i"]').val(),
-                    "m_o": $('input[name="m_o"]').val(),
-                    "b_i": $('input[name="b_i"]').val(),
-                    "b_o": $('input[name="b_o"]').val(),
+            };
 
-                };
-                ql(projectOptions,'Popt')
-                projectOptions.type = "create";
+            projectOptions.media = {
+                "response": $('select[name="response"]').val(),
+                "width": $('input[name="width"]').val(),
+                "colums": $('input[name="colums"]').val(),
+                "gutter": $('input[name="gutter"]').val(),
+                "vRhythm": $('select[name="vRhythm"]').val(),
+                "m_c": $('input[name="m_c"]').val(),
+                "m_b": $('input[name="m_b"]').val(),
+                "tp_c": $('input[name="tp_c"]').val(),
+                "tp_b": $('input[name="tp_b"]').val(),
+                "tl_c": $('input[name="tl_c"]').val(),
+                "tl_b": $('input[name="tl_b"]').val(),
+                "d_c": $('input[name="d_c"]').val(),
+                "d_b": $('input[name="d_b"]').val()
+            };
+            projectOptions.spacer = {
+                "unit": $('select[name="unit"]').val(),
+                "spacer_principle": $('select[name="spacer_principle"]').val(),
+                "progressive_unit": $('input[name="progressive_unit"]').val(),
+                "e_i": $('input[name="e_i"]').val(),
+                "e_o": $('input[name="e_o"]').val(),
+                "c_i": $('input[name="c_i"]').val(),
+                "c_o": $('input[name="c_o"]').val(),
+                "m_i": $('input[name="m_i"]').val(),
+                "m_o": $('input[name="m_o"]').val(),
+                "b_i": $('input[name="b_i"]').val(),
+                "b_o": $('input[name="b_o"]').val(),
 
-                $.ajax({
-                    url: "http://localhost:8181"
-                    , type: 'POST'
-                    , data: JSON.stringify(projectOptions)
-                    , success: function (res) {
+            };
+            ql(projectOptions, 'Popt')
+            projectOptions.type = "create";
 
-                    }
-                });
+            $.ajax({
+                url: "http://localhost:8181"
+                , type: 'POST'
+                , data: JSON.stringify(projectOptions)
+                , success: function (res) {
 
-            }else {
-                Notification.requestPermission(function(permission){
+                }
+            });
+
+        } else {
+            Notification.requestPermission(function (permission) {
 // переменная permission содержит результат запроса
-                    console.log('Результат запроса прав:', permission);
-                });
-                var notification = new Notification('PLEASE FILL THE TITLE AND PREFIX',
-                    { body: '<h1>ugug</h1>', dir: 'auto', icon: 'icon.jpg' }
-                );
-            }
+                console.log('Результат запроса прав:', permission);
+            });
+            var notification = new Notification('PLEASE FILL THE TITLE AND PREFIX',
+                {body: '<h1>ugug</h1>', dir: 'auto', icon: 'icon.jpg'}
+            );
+        }
 
     })
 
-    var loadProjectPath = function (path,placeTo) {
+    var loadProjectPath = function (path, placeTo) {
 
         $.ajax({
-            url: "http://localhost:8181?action=loadProjectPath&path="+path
+            url: "http://localhost:8181?action=loadProjectPath&path=" + path
 
         }).done(function (data) {
 
-           var pthJson = JSON.parse(data);
-                ql(pthJson)
-           for (var i in pthJson.children){
+            var pthJson = JSON.parse(data);
+            ql(pthJson)
+            for (var i in pthJson.children) {
 
-               //ql(pthJson.children[i].name);
+                //ql(pthJson.children[i].name);s
+                //if(pthJson.children[i].type == 'directory' || pthJson.children[i].name != '_templates' )
+                $(placeTo + ' ul').append('<li class="fs_list" data-path="' + pthJson.children[i].path + '">' + pthJson.children[i].name + '</li>')
 
-                    $(placeTo+' ul').append('<li class="fs_list" data-path="'+pthJson.children[i].path+'">'+pthJson.children[i].name+'</li>')
-
-                if (path == 'dev/ELEMENTS'){
+                if (path == 'dev/ELEMENTS' || path == 'Projects/' + $("span.projectTitle").text() + '/dev/qContent/ELEMENTS') {
 
                     ql(pthJson.children[i].name);
 
-                    if(pthJson.children[i].type == 'directory'){
+                    if (pthJson.children[i].type == 'directory' && pthJson.children[i].name != '_templates') {
 
-                      var parent = pthJson.children[i];
+                        var parent = pthJson.children[i];
 
-                        for (var elem in parent.children ){
-                            $(placeTo+' ul').append('<li class="fs_list fs_list--child" data-path="'+parent.children[elem].path+'">'+parent.children[elem].name+'</li>')
+                        for (var elem in parent.children) {
+                            $(placeTo + ' ul').append('<li class="fs_list fs_list--child" data-path="' + parent.children[elem].path + '">' + parent.children[elem].name + '</li>')
                         }
                     }
-               }
-           }
-            $( '.fs' ).accordion({
-                active:false,
+                }
+            }
+            $('.fs').accordion({
+                active: false,
                 header: "h3",
                 collapsible: true
             });
@@ -1481,21 +1477,24 @@ function starterTabber(classTrigger,classTab) {
 
 
     }
-    loadProjectPath('dev/MODULES/PROJECT_MODULES','.fs__modules');
-    loadProjectPath('dev/ELEMENTS','.fs__elements');
-
+    ql('Projects/' + $("span.projectTitle").text() + '/dev/template/PGESYSTEM/LAYOUT', 'HAHAHA')
+    loadProjectPath('dev/MODULES/PROJECT_MODULES', '.fs__modules');
+    loadProjectPath('dev/ELEMENTS', '.fs__elements');
+    loadProjectPath('dev/MIXES', '.fs__mixes');
+    loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/LAYOUT', '.fs__layout');
+    loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/MODULES', '.fs__p_modules');
+    loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/ELEMENTS', '.fs__p_elements');
     var loadContent = function () {
 
-        $('.fs').on('mousedown','.fs_list', function (e) {
+        $('.fs').on('mousedown', '.fs_list', function (e) {
 
             var path1 = $(this).data('path');
 
 
             $.ajax({
-                url: "http://localhost:8181?action=openFilesByPhpStorm&path="+path1
+                url: "http://localhost:8181?action=openFilesByEditor&path=" + path1+"&editor="+switchedEditor
 
             })
-
 
 
         })
@@ -1505,48 +1504,82 @@ function starterTabber(classTrigger,classTab) {
     $('.contentNavigator').draggable();
 
 
-    var loadByDOM = function () {
+    var loadByDOM = function (auto, path) {
 
-        $('#contentNavigator__load').on('mousedown',function () {
+        if (auto) {
+            $('#contentNavigator__type input').val(path.type);
 
-            var type = $('#contentNavigator__type input').val();
-            var stype = $('#contentNavigator__stype input').val();
-            var name = $('#contentNavigator__name input').val();
-            ql(type, stype, name)
+            if (path.stype != '') $('#contentNavigator__stype input').val(path.stype);
+            $('#contentNavigator__name input').val(path.name);
 
+            var type = path.type;
+            var stype = path.stype;
+            var name = path.name
             $.ajax({
-                url: "http://localhost:8181?action=loadByDOM&type="+type+"&stype="+stype+"&name="+name
+                url: "http://localhost:8181?action=loadByDOM&type=" + type + "&stype=" + stype + "&name=" + name
 
             }).done(function (data) {
-                if (data!=='') {
+                if (data !== '') {
                     var res = JSON.parse(data);
 
                     editorPug.selectAll();
                     editorJs.selectAll();
                     editor.selectAll();
-                    if(res.pug) editorPug.insert(res.pug);
-                        else editorPug.insert('');
-                    if(res.JS) editorJs.insert(res.JS);
-                        else editorJs.insert('');
-                    if(res.scss) editor.insert(res.scss);
-                        else editor.insert('');
+                    if (res.pug) editorPug.insert(res.pug);
+                    else editorPug.insert('');
+                    if (res.JS) editorJs.insert(res.JS);
+                    else editorJs.insert('');
+                    if (res.scss) editor.insert(res.scss);
+                    else editor.insert('');
+                    $(".hud-bottom").css('display', 'block')
                 }
                 //
             })
-            
-            
-
-        })
 
 
+        } else if (auto === false) {
 
+
+            $('#contentNavigator__load').on('mousedown', function () {
+
+                var type = $('#contentNavigator__type input').val();
+                var stype = $('#contentNavigator__stype input').val();
+                var name = $('#contentNavigator__name input').val();
+                ql(type, stype, name)
+
+                $.ajax({
+                    url: "http://localhost:8181?action=loadByDOM&type=" + type + "&stype=" + stype + "&name=" + name
+
+                }).done(function (data) {
+                    if (data !== '') {
+                        var res = JSON.parse(data);
+
+                        editorPug.selectAll();
+                        editorJs.selectAll();
+                        editor.selectAll();
+                        if (res.pug) editorPug.insert(res.pug);
+                        else editorPug.insert('');
+                        if (res.JS) editorJs.insert(res.JS);
+                        else editorJs.insert('');
+                        if (res.scss) editor.insert(res.scss);
+                        else editor.insert('');
+                        $(".hud-bottom").css('display', 'block')
+                    }
+                    //
+                })
+
+
+            })
+
+
+        }
     }
-    loadByDOM();
+    loadByDOM(false);
 
     var saveCode = function () {
-        $('div#savecode').on('click',function () {
+        $('div#savecode').on('click', function () {
 
-            $('div.hud-Button#savecode').css('borderColor','#00b3ee');
+            $('div.hud-Button#savecode').css('borderColor', '#00b3ee');
 
 
             var scssContent = editor.getSession().getValue();
@@ -1555,30 +1588,34 @@ function starterTabber(classTrigger,classTab) {
 
             var JsContent = editorJs.getSession().getValue();
 
-            var path = {type:$('#contentNavigator__type input').val(),
-                        stype:$('#contentNavigator__stype input').val(),
-                        name:$('#contentNavigator__name input').val()};
+            var path = {
+                type: $('#contentNavigator__type input').val(),
+                stype: $('#contentNavigator__stype input').val(),
+                name: $('#contentNavigator__name input').val()
+            };
 
-         //   path = JSON.stringify(path);
+            //   path = JSON.stringify(path);
 
             var data = {
-                path:path,
-                scss:scssContent,
-                pug:PugContent,
-                js:JsContent
+                path: path,
+                scss: scssContent,
+                pug: PugContent,
+                js: JsContent
             }
 
 
             // $.ajax({
             //     url:"http://localhost:8181?action=saveFomQuant&path="+path+"&scss="+scssContent+"&js="+JsContent+"&pug="+PugContent
             // })
+            var codeForCookies = encodeURIComponent(JSON.stringify(path));
+            qntSetCookie('lastCode', codeForCookies, 1);
 
             $.ajax({
                 url: "http://localhost:8181"
                 , type: 'POST'
                 , data: JSON.stringify(data)
                 , success: function (res) {
-                    $('div.hud-Button#savecode').css('borderColor','initial');
+                    $('div.hud-Button#savecode').css('borderColor', 'initial');
                 }
             });
 
@@ -1586,10 +1623,89 @@ function starterTabber(classTrigger,classTab) {
         })
     }
     saveCode();
-    $('div#add\content').on('click',function () {
+    $('div#add\content').on('click', function () {
 
 
     })
 
+
+    qntCheckCookie('lastCode', function () {
+        ql('no cookies')
+    }, function () {
+
+
+        loadByDOM(true, JSON.parse(qntGetCookie('lastCode')));
+        $('#editorSwitcher').addClass('on')
+        ;
+    })
+
+    shortcut.add("Ctrl+Shift+S", function () {
+       // alert("Hi there!q");
+        $('div#savecode').trigger('click')
+    })
+
+
+    // LOAD TO QUANT
+    $('*', window.frames['index'].contentDocument).on('mousedown', function (e) {
+        e.stopPropagation();
+        $('#contentNavigator__type input,#contentNavigator__stype input,#contentNavigator__name input').val('');
+
+        ql('this')
+
+        var content1 = $(this).closest('*[data-qcontent]').data('qcontent');
+        ql(this, 'sdfjidsfio')
+        if (content1) {
+            content1 = content1.split('__');
+
+            if (content1.length == 2) {
+                $('#contentNavigator__type input').val(content1[0]);
+                $('#contentNavigator__name input').val(content1[1]);
+
+            } else if (content1.length == 3) {
+                $('#contentNavigator__stype input').val(content1[1]);
+                $('#contentNavigator__name input').val(content1[2]);
+            }
+
+            var type = $('#contentNavigator__type input').val();
+            var stype = $('#contentNavigator__stype input').val();
+            var name = $('#contentNavigator__name input').val();
+            ql(type, stype, name)
+
+            $.ajax({
+                url: "http://localhost:8181?action=loadByDOM&type=" + type + "&stype=" + stype + "&name=" + name
+
+            }).done(function (data) {
+                if (data !== '') {
+                    var res = JSON.parse(data);
+
+                    editorPug.selectAll();
+                    editorJs.selectAll();
+                    editor.selectAll();
+                    if (res.pug) editorPug.insert(res.pug);
+                    else editorPug.insert('');
+                    if (res.JS) editorJs.insert(res.JS);
+                    else editorJs.insert('');
+                    if (res.scss) editor.insert(res.scss);
+                    else editor.insert('');
+                    //$(".hud-bottom").css('display', 'block')
+                }
+                //
+            })
+
+        }
+    })
+
+    var switchEditor = function () {
+
+        $('.switcherLoaderButton button').on('mousedown', function () {
+
+            switchedEditor = $(this).text().toLowerCase();
+            $('.switcherLoaderButton button').removeClass('on');
+            $(this).addClass('on');
+            ql(switchedEditor);
+
+        })
+    }
+    switchEditor();
 
 })

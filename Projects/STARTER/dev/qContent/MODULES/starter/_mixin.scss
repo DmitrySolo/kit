@@ -2,17 +2,15 @@
 @mixin starter() {
     
   .starter__content {
-    color:red !important;
     padding:20px;
     background-color: violet;
+    padding-left: 40px;
       
   }
   .starter1 {
-      color : violet;
-      text-shadow: 2px 2px 2px #fff;
-      font-size : 38px;
-      text-align : center;
-      text-decoration: underline;
+        color: cs('accent-d');
+        font-size : 54px;
+        text-decoration: underline;
   }
     
 }

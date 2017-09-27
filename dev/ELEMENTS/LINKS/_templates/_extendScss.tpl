@@ -1,4 +1,0 @@
-.<%= elementName %> {
-@extend .<%= extend %>;
-
-}

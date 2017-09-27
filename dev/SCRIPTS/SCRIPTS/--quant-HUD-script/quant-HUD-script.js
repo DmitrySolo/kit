@@ -1,45 +1,47 @@
+$(document).ready(function () {
+
 
 var vendorsClasses = ['debugElement','ui-draggable-handle','ui-draggable','ui-resizable','resizeble'];
 var changerWatcher = {}
-    changerWatcher.targets = {}
-    var target ={};
-         target.save = {
-             "element-vistest-mainbutton":
-                {
+changerWatcher.targets = {}
+var target ={};
+target.save = {
+    "element-vistest-mainbutton":
+        {
+            properties:{
+                'display':'block',
+                'width':'100%',
+                'color':'darkcyan',
+                'background_image':'url("http://home/image.jpg")'
+            },
+            mediaProperties:{
+                phone_only:{
                     properties:{
-                        'display':'block',
-                        'width':'100%',
-                        'color':'darkcyan',
-                        'background_image':'url("http://home/image.jpg")'
+                        width:'30%'
                     },
-                    mediaProperties:{
-                        phone_only:{
-                            properties:{
-                                width:'30%'
-                            },
-                            pElProperties:{
-                                hover:{
-                                    background_color:'yellow'
-                                }
-                            }
-                        },
-                        desktop_up:{
-                           properties:{
-                               width:'70%',
-                               color:'violet'
-                           }
-                        }
-                    },
-                    pElProperties: {
+                    pElProperties:{
                         hover:{
-                            color:'red'
-                        },
-                        last_child:{
-                            margin:0
+                            background_color:'yellow'
                         }
                     }
+                },
+                desktop_up:{
+                    properties:{
+                        width:'70%',
+                        color:'violet'
+                    }
                 }
-    }
+            },
+            pElProperties: {
+                hover:{
+                    color:'red'
+                },
+                last_child:{
+                    margin:0
+                }
+            }
+        }
+}
 
 
 
@@ -57,6 +59,17 @@ function MakeEditable (elem) {
         $('.classChoser',window.parent.document).val('');console.log( $(this).attr('class'));
         $('.iconMediachoiser',window.parent.document).removeClass('active').removeClass('inList');
         $('.mediaAll',window.parent.document)
+
+
+
+//////////////////////////////////////////////////
+
+
+
+
+
+
+
         if($('*').is($(this).closest('*[data-qcontent=true]'))){
             var parentEl = $(this).closest('*[data-qcontent=true]');
 
@@ -75,7 +88,7 @@ function MakeEditable (elem) {
             console.log('no')
         }
 
-      //  var qecm = $(this).closest('*[data-qcontent=true]');
+        //  var qecm = $(this).closest('*[data-qcontent=true]');
 
 
 
@@ -85,10 +98,10 @@ function MakeEditable (elem) {
             //classString = classString.replace
 
             var classStringArr = classString.split(' '),
-             block = '',
-             element = '',
-             modifier = '',
-             result =[];
+                block = '',
+                element = '',
+                modifier = '',
+                result =[];
 
             $.each(classStringArr,function (index,value) {
                 if (value.indexOf('ta-')!=-1){
@@ -108,7 +121,7 @@ function MakeEditable (elem) {
                     result.push(predRes);
                 }else{
                     if (vendorsClasses.indexOf(value) == -1)
-                    $('#classSelector',window.parent.document).prepend('<div class=" cselector"><span class="classtype extClass">c</span><span class="classtype__name">'+value+'</span></div>')
+                        $('#classSelector',window.parent.document).prepend('<div class=" cselector"><span class="classtype extClass">c</span><span class="classtype__name">'+value+'</span></div>')
                 }
 
             })
@@ -1686,6 +1699,9 @@ var RulersGuides = function (evt, dragdrop) {
         }
     });
 }
-    var evt         = new Event(),
+var evt         = new Event(),
     dragdrop    = new Dragdrop(evt),
     rg          = new RulersGuides(evt, dragdrop);
+
+
+});

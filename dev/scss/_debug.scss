@@ -575,6 +575,7 @@
   }
   .editorsContainer, .notEdit {
     z-index: $zNotEdit;
+
   }
   .debug .pb-colorBox {
     width: 12px;
@@ -726,7 +727,7 @@
   .editorsContainer {
     background: $panel;
     padding-top: 5px;
-    height: 257px;
+    height: 340px;
     background: #3c3f41 !important;
     box-shadow: 2px -1px 0px 0px #2f2d2d;
     border-top: solid 1px #b19e9e;
@@ -1186,12 +1187,8 @@
     position: absolute;
     bottom: -1000px;
     display: none;
-    height: 1200px;
-    &:before {
-      content: '';
-      padding: 40px;
-      background-color: #fff;
-    }
+    height: 1400px;
+
   }
   .rg-menu {
     background: $panel;
@@ -1710,8 +1707,11 @@
   .hud-leftPanel .ui-accordion .ui-accordion-header {
     background: #3c3f41;
     color: #00b3ee;
-    font-size: 16px;
+    font-size: 12px;
+    border: none;
+    outline: none;
     padding: 6px;
+    border-bottom: 1px #0086b3 solid;
   }
   .fs_list {
     cursor: pointer;
@@ -1771,6 +1771,31 @@
   .ruler.v,.ruler.h{
     opacity: .5;
     display: none;
+  }
+
+  .switcherLoaderButton {
+    width: 100%;
+    text-align: center;
+    &>div{
+    width: 50%;
+  }
+    button.on {
+
+      background:#fa9527;
+
+    }
+    button {
+      display: inline-block;
+      font-size: 12px;
+      width:  100%;
+      background: #313335;
+      color: #fff;
+      outline: none;
+      border: none;
+    }
+
+
+
   }
 }
 

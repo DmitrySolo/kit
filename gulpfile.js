@@ -1394,10 +1394,16 @@ gulp.task('API-SERVER', function () {
                         srvRes = tree;
                     break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                    case 'openFilesByPhpStorm':
+                    case 'openFilesByEditor':
                         console.log(url_parts.query.path);
                         var path1 = url_parts.query.path;
-                        cmd.run(`/Applications/PhpStorm.app/Contents/MacOS/phpstorm ~/Desktop/QV2/kit/`+path1+`/_mixin.pug ~/Desktop/QV2/kit/`+path1+`/_mixin.scss`)
+                        var editor = url_parts.query.editor
+                        if (editor == 'phpstorm') {
+                            cmd.run(`/Applications/PhpStorm.app/Contents/MacOS/phpstorm ~/Desktop/QV2/kit/`+path1+`/_mixin.pug ~/Desktop/QV2/kit/`+path1+`/_mixin.scss`)
+                        }else{
+                            console.log('It is  quant content')
+                        }
+
                         break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     case 'loadByDOM':

@@ -105,6 +105,7 @@ function qntGetObjects(obj, key, val) {
 function qntGetCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
+    ql(decodeURIComponent(document.cookie,'CCC'))
     var ca = decodedCookie.split(';');
     for(var i = 0; i <ca.length; i++) {
         var c = ca[i];
