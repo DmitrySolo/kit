@@ -60,7 +60,17 @@
                         option LinkButton
                         option Icon
                 label PARENT
-                    input#elementParent(type='text' name='parent' placeholder='div')
+                    select#elementParent(type='text' name='parent' )
+                        option(value='div') Div
+                            option(value='section') Section
+                            option(value='article') Article
+                            option(value='aside') Aside
+                            option(value='main') Main
+                            option(value='header') Header
+                            option(value='footer') Footer
+                            option(value='nav') Nav
+                            option(value='figcaption') Figcaption
+                            option(value='figure') Figure
                 label Save to Global library:
                     label No
                         input(type='radio' name='saveto' checked value="false")

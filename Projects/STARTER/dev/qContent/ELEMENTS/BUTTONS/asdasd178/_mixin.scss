@@ -1,0 +1,20 @@
+$bkgColor__asdasd178:#fff;
+$bkgColor__asdasd178-hover:#fff;
+$color__asdasd178-hover:#fff;
+$color__asdasd178:#fff;
+
+.asdasd178 {
+	position: relative;
+	background-color: $bkgColor__asdasd178;
+	color: $color__asdasd178;
+		&:hover, &:focus, &:active {
+		color: $color__asdasd178-hover;
+		background-color: $bkgColor__asdasd178-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}

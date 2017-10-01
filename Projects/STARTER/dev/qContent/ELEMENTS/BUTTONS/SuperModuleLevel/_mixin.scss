@@ -1,0 +1,20 @@
+$bkgColor__SuperModuleLevel:#fff;
+$bkgColor__SuperModuleLevel-hover:#fff;
+$color__SuperModuleLevel-hover:#fff;
+$color__SuperModuleLevel:#fff;
+
+.SuperModuleLevel {
+	position: relative;
+	background-color: $bkgColor__SuperModuleLevel;
+	color: $color__SuperModuleLevel;
+		&:hover, &:focus, &:active {
+		color: $color__SuperModuleLevel-hover;
+		background-color: $bkgColor__SuperModuleLevel-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}

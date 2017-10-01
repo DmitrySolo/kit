@@ -1208,11 +1208,9 @@ $(document).ready(function () {
     $('#cn').on('click', function () {
         $(".debug-Dialog").dialog("open");
     })
-    $('.debug-registrator-active .creator').on('click', function () {
+    $('.debug-registrator-active .creator').on('mousedown', function () {
 
-        var creation = $('.debug-registrator-active #contentType').val();
-        switch (creation) {
-            case 'element': {
+        var creation = $('.debug-registrator-active #contentType').val().toLowerCase();
 
                 var elementTitle = $('#elname').val(),
                     elementType = $('#eltype').val(),
@@ -1220,17 +1218,19 @@ $(document).ready(function () {
                     elementParent = $("#elementParent").val(),
                     saveToGlobal = $("input[name='saveto']:checked").val();
 
-                if (elementTitle && elementType && elementExtends && elementParent && saveToGlobal) {
+                if (elementTitle && elementType ) {
 
 
                     $.ajax({
-                        url: "http://localhost:8181/?action=creator&element=element&title=" + elementTitle +
+                        url: "http://localhost:8181/?action=creator&element="+creation+"&title=" + elementTitle +
                         "&elementType=" + elementType + "&extends=" + elementExtends + "&parent=" + elementParent +
                         "&saveToGlobal=" + saveToGlobal
                     })
 
                         .done(function (data) {
-
+                            loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/LAYOUT', '.fs__layout');
+                            loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/MODULES', '.fs__p_modules');
+                            loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/ELEMENTS', '.fs__p_elements');
                             console.log('ok')
                             editorPug.insert(data)
 
@@ -1239,10 +1239,6 @@ $(document).ready(function () {
 
                 }
 
-
-            }
-
-        }
     })
 
     $('body').on('mousedown', '.windowMark', function () {
@@ -1478,7 +1474,7 @@ $(document).ready(function () {
 
 
     }
-    ql('Projects/' + $("span.projectTitle").text() + '/dev/template/PGESYSTEM/LAYOUT', 'HAHAHA')
+   // ql('Projects/' + $("span.projectTitle").text() + '/dev/template/PGESYSTEM/LAYOUT', 'HAHAHA')
     loadProjectPath('dev/MODULES/PROJECT_MODULES', '.fs__modules');
     loadProjectPath('dev/ELEMENTS', '.fs__elements');
     loadProjectPath('dev/MIXES', '.fs__mixes');
@@ -1494,13 +1490,48 @@ $(document).ready(function () {
             var path1 = $(this).data('path');
 
 
+
             $.ajax({
                 url: "http://localhost:8181?action=openFilesByEditor&path=" + path1+"&editor="+switchedEditor
 
             }).done(function (data) {
 
+                var arr = path1.split('/');
+
+
+                ql(arr);
+
+                if (arr.indexOf('ELEMENTS')!= -1){
+
+                    var name = arr[arr.length -1];
+                    var stype = arr[arr.length -2];
+                    var type ='element';
+
+                    ql(name, stype, type,'OOOOOOO')
+                    $('#contentNavigator__type input').val(type)
+                    $('#contentNavigator__stype input').val(stype)
+                    $('#contentNavigator__name input').val(name)
+
+                }
+
+
+
+               else if (arr.indexOf('MODULES')!=-1){
+                    var name = arr[arr.length -1];
+                    var stype = '';
+                    var type ='module';
+                    ql(name, stype, type, 'RRRRRRR')
+                    $('#contentNavigator__type input').val(type)
+                    $('#contentNavigator__stype input').val(stype)
+                    $('#contentNavigator__name input').val(name)
+
+
+                }
+
+
+
+
                 var res = JSON.parse(data);
-                ql(res,';p[l[k')
                 editorPug.selectAll();
                 editorJs.selectAll();
                 editor.selectAll();
@@ -1510,7 +1541,8 @@ $(document).ready(function () {
                 else editorJs.insert('');
                 if (res.scss) editor.insert(res.scss);
                 else editor.insert('');
-                $(".hud-bottom").css('display', 'block')
+                $(".hud-bottom").css('display', 'block');
+
 
             })
 
@@ -1729,22 +1761,38 @@ $(document).ready(function () {
     $('.createTitle').on('mousedown', function () {
 
         var elementType = $('span',$(this)).text();
-        $('input#contentType').val(elementType);
-        ql($('input#contentType').val());
 
-            if (elementType == 'Module' || elementType == 'Level') {
+        $('.debug-registrator input').val('');
+        $('input#contentType').val(elementType);
+
+
+            if (elementType == 'Module' ) {
 
                 $(  'label:contains(TYPE),' +
                     'label:contains(EXTENDS),' +
                     'label:contains(PARENT)'
                 ).css('display','none');
 
-
-
-
-
-
             }
+        if (elementType == 'Level' ) {
+
+            $(  'label:contains(TYPE),' +
+                'label:contains(EXTENDS)'
+            ).css('display','none');
+
+            $('label:contains(PARENT)'
+            ).css('display','block');
+
+
+        }
+        if (elementType == 'Element' ) {
+
+            $(  'label:contains(TYPE),' +
+                'label:contains(EXTENDS),' +
+                'label:contains(PARENT)'
+            ).css('display','block');
+
+        }
 
 
 

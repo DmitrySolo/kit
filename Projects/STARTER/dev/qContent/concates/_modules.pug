@@ -1,8 +1,32 @@
+mixin MODULE-SuperModule()
+	<!-- split modules/SuperModule -->
+	.SuperModule__content(data-qcontent=module__SuperModule)
+		.SuperModule
+mixin MODULE-SuperModuleLevel()
+	<!-- split modules/SuperModuleLevel -->
+	.SuperModuleLevel__content(data-qcontent=module__SuperModuleLevel)
+		.SuperModuleLevel
+mixin MODULE-asdasd178()
+	<!-- split modules/asdasd178 -->
+	.asdasd178__content(data-qcontent=module__asdasd178)
+		.asdasd178
+mixin MODULE-checker()
+	<!-- split modules/checker -->
+	.checker__content(data-qcontent=module__checker)
+		.checker
+mixin MODULE-newLevel()
+	<!-- split modules/newLevel -->
+	.newLevel__content(data-qcontent=module__newLevel)
+		.newLevel
 mixin owlGoodsSlider()
 	<!-- split modules/owlGoodsSliderw -->
 	.owlGoodsSlider__wrapper
 		.owlGoodsSlider.owl-carousel
 			+module('catalogItem')
+mixin MODULE-sddsds()
+	<!-- split modules/sddsds -->
+	.sddsds__content(data-qcontent=module__sddsds)
+		.sddsds
 mixin MODULE-starter()
 	<!-- split modules/starter -->
 	.container
@@ -13,6 +37,20 @@ mixin MODULE-starter()
 					span NE SERGIO.SIO
 
 
+mixin LEVEL-newLevel(title,className)
+	-if (!className) className =''
+	.newLevel__content(class = 'newLevel__content'+ className)
+		h2.newLevel__title=title
+		block newLevel
+mixin LEVEL-saleSection(title,className)
+	-if (!className) className =''
+	.saleSection__content(class = 'page__content'+ className data-qcontent='level__saleSection')
+		h2.saleSection__title=title
+mixin LEVEL-mainPageSection(title,className)
+	-if (!className) className =''
+	section.mainPageSection__content(class = 'mainPageSection__content '+ className data-qcontent='level__mainPageSection')
+		h2.mainPageSection__title=title
+		block mainPageSection
 // LEVEL-page
 
 mixin LEVEL-page(title,className)
@@ -27,13 +65,3 @@ mixin LEVEL-page(title,className)
 
 
 
-
-mixin LEVEL-mainPageSection(title,className)
-	-if (!className) className =''
-	section.mainPageSection__content(class = 'mainPageSection__content '+ className data-qcontent='level__mainPageSection')
-		h2.mainPageSection__title=title
-		block mainPageSection
-mixin LEVEL-saleSection(title,className)
-	-if (!className) className =''
-	.saleSection__content(class = 'page__content'+ className data-qcontent='level__saleSection')
-		h2.saleSection__title=title

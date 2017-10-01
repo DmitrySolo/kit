@@ -88,10 +88,6 @@ gulp.task('loadContent', function () {
 });
 
 
-
-
-
-
 gulp.task('phplint', function phplint() {
     gulp.src(dist + '/category.php')
         .pipe(phplint());
@@ -174,8 +170,8 @@ gulp.task('VIEW-FINAL', function () {
         'HUD/*.pug',
         'HUD/*.js',
         'dev/MIXES/_mixes.pug',
-        projectDevDir+'qContent/concates/_modules.pug',
-        projectDevDir+'template/PAGESYSTEM/{INCLUDES,LAYOUT,PAGES}/**/*.pug',
+        projectDevDir + 'qContent/concates/_modules.pug',
+        projectDevDir + 'template/PAGESYSTEM/{INCLUDES,LAYOUT,PAGES}/**/*.pug',
         'data.json',
         'blueprint/*.pug',
         '!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
@@ -208,7 +204,7 @@ gulp.task('VIEW-1-MIXES', function () {
 gulp.task('WATCHCSSTOPARSEIT', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
     return watch([
-        dist+'/main.css',
+        dist + '/main.css',
     ], function () {
         gulp.start('parc');
     });
@@ -217,8 +213,8 @@ gulp.task('VIEW-1-MODULES', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
     return watch([
 
-        projectDevDir+'qContent/MODULES/**/_mixin.pug',
-        projectDevDir+'template/PAGESYSTEM/LEVELS/**/*.pug',
+        projectDevDir + 'qContent/MODULES/**/_mixin.pug',
+        projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.pug',
 
     ], function () {
         gulp.start('concat-modules-pug');
@@ -276,7 +272,7 @@ gulp.task('STYLES-FINAL', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
     return watch([
         'dev/scss/**/*.scss',
-        projectDevDir+'qContent/concates/_modules.scss',
+        projectDevDir + 'qContent/concates/_modules.scss',
         '!dev/scss/PAGES/*-page.scss',
         'dev/ELEMENTS/_elements.scss',
         'dev/MIXES/_mixes.scss',
@@ -325,9 +321,9 @@ gulp.task('STYLES-1-MIXES', function () {
 gulp.task('STYLES-1-MODULES', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
     return watch([
-            projectDevDir+'qContent/{MODULES,ELEMENTS,COMPONENTS}/*/_mixin.scss',
-            projectDevDir+'template/PAGESYSTEM/LEVELS/**/*.scss'
-           ]
+            projectDevDir + 'qContent/{MODULES,ELEMENTS,COMPONENTS}/*/_mixin.scss',
+            projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.scss'
+        ]
         , function () {
             gulp.start('concat-modules-scss');
         });
@@ -335,7 +331,7 @@ gulp.task('STYLES-1-MODULES', function () {
 //SCRIPTS
 gulp.task('SCRIPTS-FINAL', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-    return watch(['dev/**/*.js','!dev/**/quant-debug-JsonCss.js']
+    return watch(['dev/**/*.js', '!dev/**/quant-debug-JsonCss.js']
         , function () {
             gulp.start('SCRIPTS ALL');
         });
@@ -463,18 +459,18 @@ gulp.task('concat-mixes-scss', function () {
 gulp.task('concat-modules-scss', function () {
 
 
-    gulp.src([projectDevDir+'qContent/{MODULES,ELEMENTS,COMPONENTS}/**/_mixin.scss',projectDevDir+'template/PAGESYSTEM/LEVELS/**/*.scss'])
+    gulp.src([projectDevDir + 'qContent/{MODULES,ELEMENTS,COMPONENTS}/**/_mixin.scss', projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.scss'])
         .pipe(concat('_modules.scss'))
-        .pipe(gulp.dest(projectDevDir+'qContent/concates/'));
+        .pipe(gulp.dest(projectDevDir + 'qContent/concates/'));
 
 });
 
 gulp.task('concat-modules-pug', function (done) {
 
 
-    gulp.src([projectDevDir+'qContent/MODULES/**/_mixin.pug',projectDevDir+'template/PAGESYSTEM/LEVELS/**/*.pug'])
+    gulp.src([projectDevDir + 'qContent/MODULES/**/_mixin.pug', projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.pug'])
         .pipe(concat('_modules.pug'))
-        .pipe(gulp.dest(projectDevDir+'qContent/concates/'));
+        .pipe(gulp.dest(projectDevDir + 'qContent/concates/'));
     done();
 
 });
@@ -501,9 +497,6 @@ var elementName = minimist(process.argv.slice(2), buildmodulesData);
 var elemExtend = minimist(process.argv.slice(2), extend);
 
 
-
-
-
 gulp.task('be', function () {
 
 
@@ -514,7 +507,7 @@ gulp.task('be', function () {
         dir: dir
     }
 
-    if (!fs.existsSync(projectDevDir+'qContent/ELEMENTS/' + dir + '/' + elemName)) {
+    if (!fs.existsSync(projectDevDir + 'qContent/ELEMENTS/' + dir + '/' + elemName)) {
 
         console.log('oki')
         var elemTemplates = fs.readdirSync('vendor/file_templates/ELEMENTS/' + dir + '/_templates/');
@@ -546,7 +539,7 @@ gulp.task('be', function () {
             gulp.src('vendor/file_templates/ELEMENTS/' + dir + '/_templates/' + elemTemplates[key])
                 .pipe(rename(file))
                 .pipe(template(elemData))
-                .pipe(gulp.dest(projectDevDir+'qContent/ELEMENTS/' + dir + '/' + elemName + '/'))
+                .pipe(gulp.dest(projectDevDir + 'qContent/ELEMENTS/' + dir + '/' + elemName + '/'))
 
 
         }
@@ -576,7 +569,7 @@ gulp.task('bm', function () {
                 gulp.src('vendor/file_templates/MODULES/_templates/' + moduleTemplates[key])
                     .pipe(rename(file))
                     .pipe(template(elemData))
-                    .pipe(gulp.dest(projectDevDir+'qContent/MODULES/' + moduleName + '/'))
+                    .pipe(gulp.dest(projectDevDir + 'qContent/MODULES/' + moduleName + '/'))
             }
         } catch (e) {
 
@@ -592,7 +585,7 @@ gulp.task('bm', function () {
 
 gulp.task('bs', function () {
 
-    if (!fs.existsSync(projectDevDir+'scripts/' + options.name)) {
+    if (!fs.existsSync(projectDevDir + 'scripts/' + options.name)) {
 
 
         var scrName = options.name,
@@ -612,7 +605,7 @@ gulp.task('bs', function () {
                 gulp.src('vendor/file_templates/SCRIPTS/_templates/' + templates[key])
                     .pipe(rename(file))
                     .pipe(template(elemData))
-                    .pipe(gulp.dest(projectDevDir+'scripts/' + options.name +'/'))
+                    .pipe(gulp.dest(projectDevDir + 'scripts/' + options.name + '/'))
             }
         } catch (e) {
 
@@ -662,7 +655,7 @@ gulp.task('bmx', function () {
 
 gulp.task('blvl', function () {
 
-    if (!fs.existsSync(projectDevDir+'template/PAGESYSTEM/LEVELS/LEVEL-' + options.name+'.pug')) {
+    if (!fs.existsSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + options.name + '.pug')) {
 
 
         var levelName = options.name,
@@ -674,13 +667,13 @@ gulp.task('blvl', function () {
         try {
             for (var key in templates) {
 
-                var file = 'LEVEL-' +levelName+ templates[key].slice(1, -4).slice(5,10);
+                var file = 'LEVEL-' + levelName + templates[key].slice(1, -4).slice(5, 10);
 
 
                 gulp.src('vendor/file_templates/LEVELS/' + templates[key])
                     .pipe(rename(file))
                     .pipe(template(elemData))
-                    .pipe(gulp.dest(projectDevDir+'template/PAGESYSTEM/LEVELS/LEVEL-' + levelName + '/'))
+                    .pipe(gulp.dest(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + levelName + '/'))
             }
         } catch (e) {
 
@@ -798,7 +791,7 @@ gulp.task('blueprint-wright-json', [], function () {
 });
 
 gulp.task('merge-json', [], function () {
-    gulp.src(['dev/**/*.json', 'blueprint/*.json','Projects/' + projectName + '/data/*.json'])
+    gulp.src(['dev/**/*.json', 'blueprint/*.json', 'Projects/' + projectName + '/data/*.json'])
         .pipe(merge('data.json'))
         .pipe(gulp.dest('./'));
 });
@@ -1244,10 +1237,10 @@ gulp.task('svgstore-debug', function () {
 
 //////////////////////////////////////////////////////
 gulp.task('START QUANT', function () {
-    runSequence('API-SERVER','WATCHER:NEW', 'SERVER','WATCHCSSTOPARSEIT')
+    runSequence('API-SERVER', 'WATCHER:NEW', 'SERVER', 'WATCHCSSTOPARSEIT')
 });
 gulp.task('RELOAD QUANT', function () {
-    runSequence('WATCHER:NEW','WATCHCSSTOPARSEIT')
+    runSequence('WATCHER:NEW', 'WATCHCSSTOPARSEIT')
 });
 
 /////UTILITIES
@@ -1298,7 +1291,7 @@ gulp.task('[D] DIST FRONT-END', function (done) {
 
 gulp.task('parc', function () {
     var ast = css.parse(file = fs.readFileSync(dist + '/main.css', "utf8"));
-    fs.writeFileSync(dist+"/scripts/quant-debug-JsonCss.js", 'var jsonCss = ' + JSON.stringify(ast));
+    fs.writeFileSync(dist + "/scripts/quant-debug-JsonCss.js", 'var jsonCss = ' + JSON.stringify(ast));
 
 });
 gulp.task('cocs', function () {
@@ -1550,13 +1543,16 @@ gulp.task('API-SERVER', function () {
                     case 'creator' :
                         var contentType = url_parts.query.element
 
+                        var name_cr = url_parts.query.title,
+                            type_cr = url_parts.query.elementType,
+                            extnds = url_parts.query.extends,
+                            prnt = url_parts.query.parent,
+                            save = url_parts.query.saveToGlobal;
+
+                        console.log(contentType+' HHHHHHHHHHHHHHHHHHHHHHHHH');
+
                         switch (contentType) {
                             case 'element': {
-                                var name_cr = url_parts.query.title,
-                                    type_cr = url_parts.query.elementType,
-                                    extnds = url_parts.query.extends,
-                                    prnt = url_parts.query.parent,
-                                    save = url_parts.query.saveToGlobal;
 
 
                                 var dir = type_cr.toUpperCase() + 'S';
@@ -1564,8 +1560,8 @@ gulp.task('API-SERVER', function () {
                                 var elemData = {
                                     elementName: name_cr,
                                     dir: dir,
-                                    extend:'',
-                                    type:''
+                                    extend: '',
+                                    type: ''
                                 }
 
                                 if (!fs.existsSync(projectDevDir + 'qContent/ELEMENTS/' + dir + '/' + name_cr)) {
@@ -1583,7 +1579,7 @@ gulp.task('API-SERVER', function () {
 
                                     for (var key in elemTemplates) {
 
-                                        var file = elemTemplates[key].slice(0,-4);
+                                        var file = elemTemplates[key].slice(0, -4);
 
                                         if (extnds != 'false' && file == 'extend.scss') {
 
@@ -1610,6 +1606,65 @@ gulp.task('API-SERVER', function () {
 
 
                             }
+                                break;
+                            case 'module' :
+                                var moduleName = name_cr,
+                                    elemData = {
+                                        moduleName: moduleName
+                                    },
+
+                                    moduleTemplates = fs.readdirSync('vendor/file_templates/MODULES/_templates/');
+                                try {
+                                    for (var key in moduleTemplates) {
+
+                                        var file = moduleTemplates[key].slice(1, -4);
+                                        if (file == 'moduleScript.js') file = moduleName + '.js';
+
+                                        gulp.src('vendor/file_templates/MODULES/_templates/' + moduleTemplates[key])
+                                            .pipe(rename(file))
+                                            .pipe(template(elemData))
+                                            .pipe(gulp.dest(projectDevDir + 'qContent/MODULES/' + moduleName + '/'))
+                                    }
+                                } catch (e) {
+
+                                    qM.err(e.name + ' ' + e.message);
+
+                                }
+                                qM.ok('Module added!');
+                                break;
+                            case 'level':
+                                if (!fs.existsSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + options.name + '.pug')) {
+
+
+                                    var levelName = name_cr,
+                                        elemData = {
+                                            levelName: levelName
+                                        },
+
+                                        templates = fs.readdirSync('vendor/file_templates/LEVELS/');
+                                    try {
+                                        for (var key in templates) {
+
+                                            var file = 'LEVEL-' + levelName + templates[key].slice(1, -4).slice(5, 10);
+
+
+                                            gulp.src('vendor/file_templates/LEVELS/' + templates[key])
+                                                .pipe(rename(file))
+                                                .pipe(template(elemData))
+                                                .pipe(gulp.dest(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + levelName + '/'))
+                                        }
+                                    } catch (e) {
+
+                                        qM.err(e.name + ' ' + e.message);
+
+                                    }
+                                    qM.ok('LEVEL added!');
+
+
+                                } else qM.err('THIS LEVEL ALREADY EXIST!');
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////
                         } //END SWITCH GET QUERY
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -1626,269 +1681,270 @@ gulp.task('API-SERVER', function () {
                 console.log(body.typography);
 
 ///////////////////////////////////////////////////////////////////////CREATE PROJECT
-            if(body.mainOpt) {
-                console.log('true88');
-                if (body.type == "create"){
-                    console.log('true89');
-                    console.log(body.mainOpt);
-                    var p_path = 'Projects/' + body.mainOpt.title;
-                    copydir.sync('vendor/project template/New Project', p_path);
-                }else {
-                    var p_path = 'Projects/' + projectName;
-                }
-
-
-                var p_data = JSON.parse(fs.readFileSync(p_path + '/dev/data.json', 'utf8'));
-                p_data.head.lang = body.mainOpt.lang;
-                p_data.head.title = body.mainOpt.title;
-                p_data.head.prefix = body.mainOpt.prefix;
-                p_data.head.fontlinks = {}
-
-                for (var i in body.typography.linkFontsArr) {
-
-                    p_data.head.fontlinks[i] = body.typography.linkFontsArr[i].link
-                }
-
-
-                var p_json = JSON.stringify(p_data);
-                fs.writeFile(p_path + '/dev/data.json', p_json, 'utf8');
-
-                var p_jsonOpt = JSON.stringify(body);
-                fs.writeFile(p_path + '/settings/settings.json', p_jsonOpt, 'utf8');
-
-
-                function setSettingsToCore() {
-
-                    // Colors
-                    var stringColors = '$colors: (\n\t';
-                    var strEnd = '';
-                    for (var key in body.colorsOpt) {
-                        if (key != 'index') {
-                            stringColors += key + ":" + body.colorsOpt[key] + ",\n\t";
-                        } else {
-                            strEnd = "$color-step:" + body.colorsOpt[key] + ";";
-                        }
-
+                if (body.mainOpt) {
+                    console.log('true88');
+                    if (body.type == "create") {
+                        console.log('true89');
+                        console.log(body.mainOpt);
+                        var p_path = 'Projects/' + body.mainOpt.title;
+                        copydir.sync('vendor/project template/New Project', p_path);
+                    } else {
+                        var p_path = 'Projects/' + projectName;
                     }
-                    stringColors += ');\n';
-                    fs.writeFile('dev/scss/COLOR/_colors.scss', stringColors + strEnd, 'utf8');
 
 
-                    //Fonts
-
-                    var string = '$body-font:false;\n$hero-font:false;\n$header-font:false;\n$LINKED_FONTS_MAP:(\n\t';
-                    var stringLineOpt = ''
+                    var p_data = JSON.parse(fs.readFileSync(p_path + '/dev/data.json', 'utf8'));
+                    p_data.head.lang = body.mainOpt.lang;
+                    p_data.head.title = body.mainOpt.title;
+                    p_data.head.prefix = body.mainOpt.prefix;
+                    p_data.head.fontlinks = {}
 
                     for (var i in body.typography.linkFontsArr) {
 
-                        var name = body.typography.linkFontsArr[i].name;
-                        var role = body.typography.linkFontsArr[i].role;
-                        if (role == 'Body') {
-                            stringLineOpt += '$body-font: fs("Body");';
-                            stringLineOpt += '$body-font-weight: ' + body.typography.linkFontsArr[i].weight + ';\n';
-                        } else if (role == 'Header') {
-                            stringLineOpt += '$header-font: fs("Header");'
-                            stringLineOpt += '$header-font-weight   :' + body.typography.linkFontsArr[i].weight + ';\n';
-                        } else if (role == 'Hero') {
-                            stringLineOpt += '$hero-font: fs("Hero");'
-                            stringLineOpt += '$hero-font-weight   :' + body.typography.linkFontsArr[i].weight + ';\n';
-                        }
-                        var typeface = body.typography.linkFontsArr[i].typeface;
-                        string += role + ":('" + name + "' , " + typeface + "),\n\t";
-                    }
-                    string += ');\n';
-                    stringLineOpt += '$mobile-font :' + body.typography.mobile_font + ';\n';
-                    stringLineOpt += '$screen-font  :' + body.typography.screen_font + ';\n';
-                    stringLineOpt += '$line-height-ratio :' + body.typography.lh_ratio + ';';
-                    console.log(string + stringLineOpt);
-                    fs.writeFile('dev/scss/MASTER_OPTIONS/_fontOption.scss', string + stringLineOpt, 'utf8');
-
-                    //spacer
-                    var spacerString = '$element_space_o:"";' +
-                        '$element_space_i:""; ' +
-                        '$component_space_i:""; ' +
-                        '$component_space_o:""; ' +
-                        '$module_space_i:""; ' +
-                        '$module_space_o:""; ' +
-                        '$block_space_i:""; ' +
-                        '$block_space_o:"";\n';
-                    spacerString += '$type :' + body.spacer.spacer_principle + ';\n';
-                    spacerString += '$space: ' + body.spacer.unit + ';\n';
-                    spacerString += '$element_space_i: ' + body.spacer.e_i + ';\n';
-                    spacerString += '$element_space_o: ' + body.spacer.e_o + ';\n';
-                    spacerString += '@if($type == "linear"){\n\t';
-                    spacerString += '$progressive_number:' + body.spacer.progressive_unit + ';\n\t';
-                    spacerString += "$element_space_o:$element_space_i*$progressive_number;" +
-                        "$component_space_i:$element_space_o*$progressive_number;" +
-                        "$component_space_o:$component_space_i*$progressive_number;" +
-                        "$module_space_i:$component_space_o*$progressive_number;" +
-                        "$module_space_o:$module_space_i*$progressive_number;" +
-                        "$block_space_i:$module_space_o*$progressive_number;" +
-                        "$block_space_o:$block_space_i*$progressive_number;" +
-                        "}" +
-                        "//FIBONACHI\n" +
-                        "@if($type == 'fibonacci'){" +
-                        "$component_space_i:$element_space_i+$element_space_o;" +
-                        "$component_space_o:$component_space_i+$element_space_o;" +
-                        "$module_space_i:$component_space_o+$component_space_i;" +
-                        "$module_space_o:$module_space_i+$component_space_o;" +
-                        "$block_space_i:$module_space_i+$module_space_o;" +
-                        "$block_space_o:$block_space_i+$module_space_o;" +
-                        "};\n";
-                    spacerString += "//MANUAL\n\t" + "@if($type == 'manual'){\n\t" +
-                        "$component_space_i: " + body.spacer.c_i + ";\n" +
-                        "$component_space_o: " + body.spacer.c_o + ";\n" +
-                        "$module_space_i: " + body.spacer.m_i + ";\n" +
-                        "$module_space_o: " + body.spacer.m_o + ";\n" +
-                        "$block_space_i: " + body.spacer.b_i + ";\n" +
-                        "$blockt_space_o: " + body.spacer.b_o + ";\n";
-                    spacerString += "}";
-                    fs.writeFile('dev/scss/MASTER_OPTIONS/_spacerOption.scss', spacerString, 'utf8');
-
-                    //Media
-
-                    var string = "$response:" + body.media.response + ";\n" +
-                        "$vertical-rhythm:" + body.media.vRhythm + ";\n" +
-                        "$siteWidth: " + body.media.width + ";\n" +
-                        "$colums: " + body.media.colums + ";\n" +
-                        "$gutter-width: " + body.media.gutter + ";\n" +
-                        "// BREAKPOINTS\n" +
-                        "$phone-upper-boundary:" + body.media.m_b + ";\n" +
-                        "$tablet-portrait-upper-boundary:" + body.media.tp_b + ";\n" +
-                        "$tablet-landscape-upper-boundary:" + body.media.tl_b + ";\n" +
-                        "$desktop-upper-boundary:" + body.media.d_b + ";\n" +
-                        "$desktopl-upper-boundary:" + body.media.d_b + ";\n" +
-                        "// CONTAINERS\n" +
-                        "$tablet-p-container:" + body.media.tp_c + ";\n" +
-                        "$tablet-l-container:" + body.media.tl_c + ";\n" +
-                        "$siteMinWidth:$tablet-p-container;\n" +
-                        "$desktop-container:" + body.media.d_c + ";\n" +
-                        "$grid-map: (\n" +
-                        "mobile:(prefix:m, container:100%, breakpoint:$phone-upper-boundary - 1),\n" +
-                        "tablet-p :(prefix:tp, container:$tablet-p-container, breakpoint:$phone-upper-boundary),\n" +
-                        "tablet-l     :(prefix:tl, container:$tablet-l-container, breakpoint:$tablet-portrait-upper-boundary),\n" +
-                        "mediumScreen :(prefix:d, container:$desktop-container, breakpoint:$tablet-landscape-upper-boundary),\n" +
-                        "largeScreen  :(prefix:dl, container:$siteWidth, breakpoint:$desktop-upper-boundary))";
-                    fs.writeFile('dev/scss/MASTER_OPTIONS/_mediaOption.scss', string, 'utf8');
-
-            }
-                setSettingsToCore();
-                gulp.start('views');
-                gulp.start('styles');
-////////////////////////////////////////////////////////////////////// SELECTORS
-            }else if (body.selectorData)
-                {
-
-                var col='';
-                var line='';
-                var orderLine =[];
-
-
-                for (var i in body.selectorData){
-
-                    line = body.selectorData[i].position.split('_')[1];
-                    orderLine.push(line)
-                }
-                var ruleLine = orderLine.slice(0);
-                orderLine.sort(function(a, b){return b-a});
-                console.log(ruleLine)
-                console.log(orderLine)
-                for (var i in orderLine){
-
-                    var dataIndex = ruleLine.indexOf(orderLine[i]);
-
-                    body.selectorData[dataIndex];
-
-                    var className = '.' + body.selectorData[dataIndex].selectorName;
-                    var properties = body.selectorData[dataIndex].stylesObject;
-                    var media = body.selectorData[dataIndex].media;
-                    var pElProps = body.selectorData[dataIndex].pseudoSelectors;
-
-                    var string =  className + '{';
-
-                    for (var ix in properties) {
-
-                        string += '\n\t' + properties[ix].propery+':' + properties[ix].value+ ';';
+                        p_data.head.fontlinks[i] = body.typography.linkFontsArr[i].link
                     }
 
-                    if (media.length>0){
-                        for (var im in media){
-                            var rule = media[im][0];
-                            var styles = media[im][1].declarations;
-                            string +='\n@for'+rule+'{';
-                            for(var i in styles){
-                                string+='\n\t'+styles[i].property+':'+styles[i].value+';';
 
+                    var p_json = JSON.stringify(p_data);
+                    fs.writeFile(p_path + '/dev/data.json', p_json, 'utf8');
+
+                    var p_jsonOpt = JSON.stringify(body);
+                    fs.writeFile(p_path + '/settings/settings.json', p_jsonOpt, 'utf8');
+
+
+                    function setSettingsToCore() {
+
+                        // Colors
+                        var stringColors = '$colors: (\n\t';
+                        var strEnd = '';
+                        for (var key in body.colorsOpt) {
+                            if (key != 'index') {
+                                stringColors += key + ":" + body.colorsOpt[key] + ",\n\t";
+                            } else {
+                                strEnd = "$color-step:" + body.colorsOpt[key] + ";";
                             }
-                            string+='}';
-                        }
 
+                        }
+                        stringColors += ');\n';
+                        fs.writeFile('dev/scss/COLOR/_colors.scss', stringColors + strEnd, 'utf8');
+
+
+                        //Fonts
+
+                        var string = '$body-font:false;\n$hero-font:false;\n$header-font:false;\n$LINKED_FONTS_MAP:(\n\t';
+                        var stringLineOpt = ''
+
+                        for (var i in body.typography.linkFontsArr) {
+
+                            var name = body.typography.linkFontsArr[i].name;
+                            var role = body.typography.linkFontsArr[i].role;
+                            if (role == 'Body') {
+                                stringLineOpt += '$body-font: fs("Body");';
+                                stringLineOpt += '$body-font-weight: ' + body.typography.linkFontsArr[i].weight + ';\n';
+                            } else if (role == 'Header') {
+                                stringLineOpt += '$header-font: fs("Header");'
+                                stringLineOpt += '$header-font-weight   :' + body.typography.linkFontsArr[i].weight + ';\n';
+                            } else if (role == 'Hero') {
+                                stringLineOpt += '$hero-font: fs("Hero");'
+                                stringLineOpt += '$hero-font-weight   :' + body.typography.linkFontsArr[i].weight + ';\n';
+                            }
+                            var typeface = body.typography.linkFontsArr[i].typeface;
+                            string += role + ":('" + name + "' , " + typeface + "),\n\t";
+                        }
+                        string += ');\n';
+                        stringLineOpt += '$mobile-font :' + body.typography.mobile_font + ';\n';
+                        stringLineOpt += '$screen-font  :' + body.typography.screen_font + ';\n';
+                        stringLineOpt += '$line-height-ratio :' + body.typography.lh_ratio + ';';
+                        console.log(string + stringLineOpt);
+                        fs.writeFile('dev/scss/MASTER_OPTIONS/_fontOption.scss', string + stringLineOpt, 'utf8');
+
+                        //spacer
+                        var spacerString = '$element_space_o:"";' +
+                            '$element_space_i:""; ' +
+                            '$component_space_i:""; ' +
+                            '$component_space_o:""; ' +
+                            '$module_space_i:""; ' +
+                            '$module_space_o:""; ' +
+                            '$block_space_i:""; ' +
+                            '$block_space_o:"";\n';
+                        spacerString += '$type :' + body.spacer.spacer_principle + ';\n';
+                        spacerString += '$space: ' + body.spacer.unit + ';\n';
+                        spacerString += '$element_space_i: ' + body.spacer.e_i + ';\n';
+                        spacerString += '$element_space_o: ' + body.spacer.e_o + ';\n';
+                        spacerString += '@if($type == "linear"){\n\t';
+                        spacerString += '$progressive_number:' + body.spacer.progressive_unit + ';\n\t';
+                        spacerString += "$element_space_o:$element_space_i*$progressive_number;" +
+                            "$component_space_i:$element_space_o*$progressive_number;" +
+                            "$component_space_o:$component_space_i*$progressive_number;" +
+                            "$module_space_i:$component_space_o*$progressive_number;" +
+                            "$module_space_o:$module_space_i*$progressive_number;" +
+                            "$block_space_i:$module_space_o*$progressive_number;" +
+                            "$block_space_o:$block_space_i*$progressive_number;" +
+                            "}" +
+                            "//FIBONACHI\n" +
+                            "@if($type == 'fibonacci'){" +
+                            "$component_space_i:$element_space_i+$element_space_o;" +
+                            "$component_space_o:$component_space_i+$element_space_o;" +
+                            "$module_space_i:$component_space_o+$component_space_i;" +
+                            "$module_space_o:$module_space_i+$component_space_o;" +
+                            "$block_space_i:$module_space_i+$module_space_o;" +
+                            "$block_space_o:$block_space_i+$module_space_o;" +
+                            "};\n";
+                        spacerString += "//MANUAL\n\t" + "@if($type == 'manual'){\n\t" +
+                            "$component_space_i: " + body.spacer.c_i + ";\n" +
+                            "$component_space_o: " + body.spacer.c_o + ";\n" +
+                            "$module_space_i: " + body.spacer.m_i + ";\n" +
+                            "$module_space_o: " + body.spacer.m_o + ";\n" +
+                            "$block_space_i: " + body.spacer.b_i + ";\n" +
+                            "$blockt_space_o: " + body.spacer.b_o + ";\n";
+                        spacerString += "}";
+                        fs.writeFile('dev/scss/MASTER_OPTIONS/_spacerOption.scss', spacerString, 'utf8');
+
+                        //Media
+
+                        var string = "$response:" + body.media.response + ";\n" +
+                            "$vertical-rhythm:" + body.media.vRhythm + ";\n" +
+                            "$siteWidth: " + body.media.width + ";\n" +
+                            "$colums: " + body.media.colums + ";\n" +
+                            "$gutter-width: " + body.media.gutter + ";\n" +
+                            "// BREAKPOINTS\n" +
+                            "$phone-upper-boundary:" + body.media.m_b + ";\n" +
+                            "$tablet-portrait-upper-boundary:" + body.media.tp_b + ";\n" +
+                            "$tablet-landscape-upper-boundary:" + body.media.tl_b + ";\n" +
+                            "$desktop-upper-boundary:" + body.media.d_b + ";\n" +
+                            "$desktopl-upper-boundary:" + body.media.d_b + ";\n" +
+                            "// CONTAINERS\n" +
+                            "$tablet-p-container:" + body.media.tp_c + ";\n" +
+                            "$tablet-l-container:" + body.media.tl_c + ";\n" +
+                            "$siteMinWidth:$tablet-p-container;\n" +
+                            "$desktop-container:" + body.media.d_c + ";\n" +
+                            "$grid-map: (\n" +
+                            "mobile:(prefix:m, container:100%, breakpoint:$phone-upper-boundary - 1),\n" +
+                            "tablet-p :(prefix:tp, container:$tablet-p-container, breakpoint:$phone-upper-boundary),\n" +
+                            "tablet-l     :(prefix:tl, container:$tablet-l-container, breakpoint:$tablet-portrait-upper-boundary),\n" +
+                            "mediumScreen :(prefix:d, container:$desktop-container, breakpoint:$tablet-landscape-upper-boundary),\n" +
+                            "largeScreen  :(prefix:dl, container:$siteWidth, breakpoint:$desktop-upper-boundary))";
+                        fs.writeFile('dev/scss/MASTER_OPTIONS/_mediaOption.scss', string, 'utf8');
 
                     }
 
-                    console.log(string)
+                    setSettingsToCore();
+                    gulp.start('views');
+                    gulp.start('styles');
+////////////////////////////////////////////////////////////////////// SELECTORS
+                } else if (body.selectorData) {
+
+                    var col = '';
+                    var line = '';
+                    var orderLine = [];
+
+
+                    for (var i in body.selectorData) {
+
+                        line = body.selectorData[i].position.split('_')[1];
+                        orderLine.push(line)
+                    }
+                    var ruleLine = orderLine.slice(0);
+                    orderLine.sort(function (a, b) {
+                        return b - a
+                    });
+                    console.log(ruleLine)
+                    console.log(orderLine)
+                    for (var i in orderLine) {
+
+                        var dataIndex = ruleLine.indexOf(orderLine[i]);
+
+                        body.selectorData[dataIndex];
+
+                        var className = '.' + body.selectorData[dataIndex].selectorName;
+                        var properties = body.selectorData[dataIndex].stylesObject;
+                        var media = body.selectorData[dataIndex].media;
+                        var pElProps = body.selectorData[dataIndex].pseudoSelectors;
+
+                        var string = className + '{';
+
+                        for (var ix in properties) {
+
+                            string += '\n\t' + properties[ix].propery + ':' + properties[ix].value + ';';
+                        }
+
+                        if (media.length > 0) {
+                            for (var im in media) {
+                                var rule = media[im][0];
+                                var styles = media[im][1].declarations;
+                                string += '\n@for' + rule + '{';
+                                for (var i in styles) {
+                                    string += '\n\t' + styles[i].property + ':' + styles[i].value + ';';
+
+                                }
+                                string += '}';
+                            }
+
+
+                        }
+
+                        console.log(string)
+                    }
+                } else if (body.path) {
+
+                    var elemPath = body.path;
+                    var scssToSave = body.scss;
+                    var pugToSave = body.pug;
+                    var jsToSave = body.js;
+
+
+                    if (elemPath['type'] == 'module') {
+
+
+                        fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/_mixin.pug', pugToSave)
+
+                        fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/_mixin.scss', scssToSave)
+
+                        fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/' + elemPath['name'] + '.js', jsToSave)
+
+
+                    }
+                    if (elemPath['type'] == 'element') {
+
+
+                        fs.writeFile(projectDevDir + 'qContent/ELEMENTS/' + elemPath['stype'] + '/' + elemPath['name'] + '/_mixin.pug', pugToSave, function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        })
+
+                        fs.writeFile(projectDevDir + 'qContent/ELEMENTS/' +elemPath['stype'] + '/' + elemPath['name'] + '/_mixin.scss', scssToSave, function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        })
+
+                        fs.writeFile(projectDevDir + 'qContent/ELEMENTS/' + elemPath['stype'] + '/' + elemPath['name'] + '/' + name + '.js', jsToSave, function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        })
+
+
+                    }
+                    if (elemPath['type'] == 'level') {
+
+
+                        fs.writeFile(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + elemPath['name'] + '/LEVEL-' + elemPath['name'] + '.pug', pugToSave, function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        })
+
+                        fs.writeFile(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + elemPath['name'] + '/LEVEL-' + elemPath['name'] + '.scss', scssToSave, function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        })
+                    }
+
+
                 }
-            }else if(body.path){
-
-                var elemPath = body.path;
-                var scssToSave = body.scss;
-                var pugToSave = body.pug;
-                var jsToSave = body.js;
-
-
-                if (elemPath['type'] == 'module'){
-
-
-                    fs.writeFileSync(projectDevDir+'qContent/MODULES/'+elemPath['name']+'/_mixin.pug',pugToSave)
-
-                    fs.writeFileSync(projectDevDir+'qContent/MODULES/'+elemPath['name']+'/_mixin.scss',scssToSave)
-
-                    fs.writeFileSync(projectDevDir+'qContent/MODULES/'+elemPath['name']+'/'+elemPath['name']+'.js',jsToSave)
-
-
-                }
-                if (elemPath['type'] == 'element'){
-
-
-                    fs.writeFile(projectDevDir+'qContent/ELEMENTS/'+stype+'/'+elemPath['name']+'_mixin.pug',pugToSave, function(err) {
-                        if (err) {
-                            return console.log(err);
-                        }
-                    })
-
-                    fs.writeFile(projectDevDir+'qContent/ELEMENTS/'+stype+'/'+elemPath['name']+'/_mixin.scss',scssToSave, function(err) {
-                        if (err) {
-                            return console.log(err);
-                        }
-                    })
-
-                    fs.writeFile(projectDevDir+'qContent/ELEMENTS/'+stype+'/'+elemPath['name']+'/'+name+'.js',jsToSave, function(err) {
-                        if (err) {
-                            return console.log(err);
-                        }
-                    })
-
-
-                }
-                if (elemPath['type'] == 'level'){
-
-
-                    fs.writeFile(projectDevDir+'template/PAGESYSTEM/LEVELS/LEVEL-'+elemPath['name']+'/LEVEL-'+elemPath['name']+'.pug',pugToSave, function(err) {
-                        if (err) {
-                            return console.log(err);
-                        }
-                    })
-
-                    fs.writeFile(projectDevDir+'template/PAGESYSTEM/LEVELS/LEVEL-'+elemPath['name']+'/LEVEL-'+elemPath['name']+'.scss',scssToSave, function(err) {
-                        if (err) {
-                            return console.log(err);
-                        }
-                    })
-                }
-
-
-
-            }
 
 //END OF ONE
 
@@ -2035,7 +2091,7 @@ gulp.task('convertExtScss', function () {
 
     // Get end of code block
     var sassAST = require('sass-ast');
-     sassAST.parse({
+    sassAST.parse({
             file: 'dev/scss/' + originalFilePath,
         },
         function (err, ast) {
@@ -2063,7 +2119,7 @@ gulp.task('convertExtScss', function () {
 
 
             var codeBlocks = getObjects(ast, 'type', 'block');
-            var codeend ='';
+            var codeend = '';
             var codeBlocksCount = 0;
             for (var index in codeBlocks) {
                 codeBlocksCount++;
@@ -2087,7 +2143,7 @@ gulp.task('convertExtScss', function () {
 
                 }
             }
-            if (!codeend){
+            if (!codeend) {
 
                 var codeSelectors = getObjects(ast, 'type', 'selector');
                 for (var index in codeSelectors) {
@@ -2096,13 +2152,13 @@ gulp.task('convertExtScss', function () {
 
                         var selectEnd = codeSelectors[index].start.line;
 
-                        for (var i = 1;codeBlocksCount>=i;i++){
+                        for (var i = 1; codeBlocksCount >= i; i++) {
                             var line = selectEnd + i;
 
                             for (var index in codeBlocks) {
                                 if (codeBlocks[index].start.line == line) {
 
-                                    console.log('We GOT A FINAL LINE!!! '+codeBlocks[index].start.line);
+                                    console.log('We GOT A FINAL LINE!!! ' + codeBlocks[index].start.line);
                                     var originalFileLine1 = codeBlocks[index].start.line;
 
                                     for (var index1 in codeBlocks) {
@@ -2130,12 +2186,9 @@ gulp.task('convertExtScss', function () {
                                     }
 
 
-
-
                                 }
                             }
                         }
-
 
 
                     }
@@ -2150,8 +2203,6 @@ gulp.task('convertExtScss', function () {
 });
 
 
-
-
 var contentType = {
     string: 'type',
 };
@@ -2159,11 +2210,12 @@ var contentType = minimist(process.argv.slice(2), contentType);
 
 gulp.task('loadContent', function () {
 
-    var res = 'dev/'+contentType.type+'/'+options.name;
-    var dir = projectDevDir+'qContent/'+contentType.type+'/'+options.name;
+    var res = 'dev/' + contentType.type + '/' + options.name;
+    var dir = projectDevDir + 'qContent/' + contentType.type + '/' + options.name;
 
 
-    copydir(res,dir,()=>{});
+    copydir(res, dir, () => {
+    });
 
 });
 //var modules = requireFolderTree('dev/MODULES/PROJECT MODULES');

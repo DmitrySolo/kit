@@ -1,3 +1,93 @@
+/**
+* SuperModule styles
+*/
+
+@mixin SuperModule(){
+
+  .SuperModule__content{
+
+  }
+  .SuperModule{
+
+  }
+
+}
+
+
+////////////////////////////////////////
+@include SuperModule();
+/**
+* checker styles
+*/
+
+@mixin checker(){
+
+  .checker__content{
+
+  }
+  .checker{
+
+  }
+
+}
+
+
+////////////////////////////////////////
+@include checker();
+/**
+* asdasd178 styles
+*/
+
+@mixin asdasd178(){
+
+  .asdasd178__content{
+
+  }
+  .asdasd178{
+
+  }
+
+}
+
+
+////////////////////////////////////////
+@include asdasd178();
+/**
+* SuperModuleLevel styles
+*/
+
+@mixin SuperModuleLevel(){
+
+  .SuperModuleLevel__content{
+
+  }
+  .SuperModuleLevel{
+
+  }
+
+}
+
+
+////////////////////////////////////////
+@include SuperModuleLevel();
+/**
+* newLevel styles
+*/
+
+@mixin newLevel(){
+
+  .newLevel__content{
+
+  }
+  .newLevel{
+
+  }
+
+}
+
+
+////////////////////////////////////////
+@include newLevel();
 @mixin owlGoodsSlider() {
 
   .owlGoodsSlider {
@@ -50,25 +140,43 @@
     
 }
 @include starter();
-ul.infoElement__container {
+/**
+* sddsds styles
+*/
+
+@mixin sddsds(){
+
+  .sddsds__content{
+
+  }
+  .sddsds{
+
+  }
 
 }
-.infoElement{
-  line-height:60px;
-
-  .iconWrapper,h5,span{
-    @include space-i('element','=','rl','');
-    display: inline-block;
-    //vertical-align: top;
-  }
-  .infoElement__icon{
-    width: 60px;
-    height: 60px;
-    fill: cs('accent');
-    vertical-align: top;
-  }
 
 
+////////////////////////////////////////
+@include sddsds();
+$bkgColor__Leveler:#fff;
+$bkgColor__Leveler-hover:#fff;
+$color__Leveler-hover:#fff;
+$color__Leveler:#fff;
+
+.Leveler {
+	position: relative;
+	background-color: $bkgColor__Leveler;
+	color: $color__Leveler;
+		&:hover, &:focus, &:active {
+		color: $color__Leveler-hover;
+		background-color: $bkgColor__Leveler-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
 }
 $color__button:#aaa;
 $color__button-hover:#aaa;
@@ -89,6 +197,86 @@ $color__button-active:#aaa;
 @extend .false;
 
 }
+$bkgColor__SuperModule:#fff;
+$bkgColor__SuperModule-hover:#fff;
+$color__SuperModule-hover:#fff;
+$color__SuperModule:#fff;
+
+.SuperModule {
+	position: relative;
+	background-color: $bkgColor__SuperModule;
+	color: $color__SuperModule;
+		&:hover, &:focus, &:active {
+		color: $color__SuperModule-hover;
+		background-color: $bkgColor__SuperModule-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+$bkgColor__SuperModuleLevel:#fff;
+$bkgColor__SuperModuleLevel-hover:#fff;
+$color__SuperModuleLevel-hover:#fff;
+$color__SuperModuleLevel:#fff;
+
+.SuperModuleLevel {
+	position: relative;
+	background-color: $bkgColor__SuperModuleLevel;
+	color: $color__SuperModuleLevel;
+		&:hover, &:focus, &:active {
+		color: $color__SuperModuleLevel-hover;
+		background-color: $bkgColor__SuperModuleLevel-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+$bkgColor__aaassc:#fff;
+$bkgColor__aaassc-hover:#fff;
+$color__aaassc-hover:#fff;
+$color__aaassc:#fff;
+
+.aaassc {
+	position: relative;
+	background-color: $bkgColor__aaassc;
+	color: $color__aaassc;
+		&:hover, &:focus, &:active {
+		color: $color__aaassc-hover;
+		background-color: $bkgColor__aaassc-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+$bkgColor__asdasd178:#fff;
+$bkgColor__asdasd178-hover:#fff;
+$color__asdasd178-hover:#fff;
+$color__asdasd178:#fff;
+
+.asdasd178 {
+	position: relative;
+	background-color: $bkgColor__asdasd178;
+	color: $color__asdasd178;
+		&:hover, &:focus, &:active {
+		color: $color__asdasd178-hover;
+		background-color: $bkgColor__asdasd178-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
 .dwqqwed {
 @extend .false;
 
@@ -100,6 +288,86 @@ $color__button-active:#aaa;
 .gipperButton {
 @extend .false;
 
+}
+$bkgColor__newLevel:#fff;
+$bkgColor__newLevel-hover:#fff;
+$color__newLevel-hover:#fff;
+$color__newLevel:#fff;
+
+.newLevel {
+	position: relative;
+	background-color: $bkgColor__newLevel;
+	color: $color__newLevel;
+		&:hover, &:focus, &:active {
+		color: $color__newLevel-hover;
+		background-color: $bkgColor__newLevel-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+$bkgColor__sadsfff:#fff;
+$bkgColor__sadsfff-hover:#fff;
+$color__sadsfff-hover:#fff;
+$color__sadsfff:#fff;
+
+.sadsfff {
+	position: relative;
+	background-color: $bkgColor__sadsfff;
+	color: $color__sadsfff;
+		&:hover, &:focus, &:active {
+		color: $color__sadsfff-hover;
+		background-color: $bkgColor__sadsfff-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+$bkgColor__sccsscsccssc:#fff;
+$bkgColor__sccsscsccssc-hover:#fff;
+$color__sccsscsccssc-hover:#fff;
+$color__sccsscsccssc:#fff;
+
+.sccsscsccssc {
+	position: relative;
+	background-color: $bkgColor__sccsscsccssc;
+	color: $color__sccsscsccssc;
+		&:hover, &:focus, &:active {
+		color: $color__sccsscsccssc-hover;
+		background-color: $bkgColor__sccsscsccssc-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+$bkgColor__sddsds:#fff;
+$bkgColor__sddsds-hover:#fff;
+$color__sddsds-hover:#fff;
+$color__sddsds:#fff;
+
+.sddsds {
+	position: relative;
+	background-color: $bkgColor__sddsds;
+	color: $color__sddsds;
+		&:hover, &:focus, &:active {
+		color: $color__sddsds-hover;
+		background-color: $bkgColor__sddsds-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
 }
 .superBuper {
 @extend .false;
@@ -134,6 +402,56 @@ $color__toCart:#fff;
 	}
 }
 
+gipperButtonwe1112{
+  .iconWrapper{}
+  h5{}
+  span{}
+
+}
+ul.infoElement__container {
+
+}
+.infoElement{
+  line-height:60px;
+
+  .iconWrapper,h5,span{
+    @include space-i('element','=','rl','');
+    display: inline-block;
+    //vertical-align: top;
+  }
+  .infoElement__icon{
+    width: 60px;
+    height: 60px;
+    fill: cs('accent');
+    vertical-align: top;
+  }
+
+
+}
+.gipperLoader {
+
+  -webkit-animation: gipperLoader 1.0s infinite ease-in-out;
+  animation: anim-gipperLoader 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes anim-gipperLoader {
+  0% { -webkit-transform: scale(0) }
+  100% {
+  -webkit-transform: scale(1.0);
+  opacity: .4;
+    }
+}
+
+@keyframes anim-gipperLoader {
+  0% {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+} 100% {
+  -webkit-transform: scale(1.0);
+  transform: scale(1.0);
+  opacity: 0;
+  }
+}
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -204,6 +522,31 @@ $color__toCart:#fff;
 .ove-sectionHeader {
   @include space('element','','b');
 }
+/* newLevel STYLE */
+
+.newLevel__content {
+
+}
+.newLevel__title {
+
+}
+/* saleSection STYLE */
+
+.saleSection__content {
+  color: #0007ff;
+}
+.saleSection__title {
+
+}
+/* mainPageSection STYLE */
+
+.mainPageSection__content {
+    padding:0 10px;
+    background:cs('background')
+}
+.mainPageSection__title {
+
+}
 /* PAGE STYLE */
 
 .page__content {
@@ -222,21 +565,4 @@ $color__toCart:#fff;
 .page__title {
   color:sandybrown;
   padding: 10px;
-}
-/* mainPageSection STYLE */
-
-.mainPageSection__content {
-    padding:0 10px;
-    background:cs('background')
-}
-.mainPageSection__title {
-
-}
-/* saleSection STYLE */
-
-.saleSection__content {
-  color: #0007ff;
-}
-.saleSection__title {
-
 }

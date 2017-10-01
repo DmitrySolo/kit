@@ -1,0 +1,18 @@
+/**
+* SuperModule styles
+*/
+
+@mixin SuperModule(){
+
+  .SuperModule__content{
+
+  }
+  .SuperModule{
+
+  }
+
+}
+
+
+////////////////////////////////////////
+@include SuperModule();

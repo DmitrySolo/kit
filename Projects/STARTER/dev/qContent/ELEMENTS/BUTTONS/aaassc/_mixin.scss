@@ -1,0 +1,20 @@
+$bkgColor__aaassc:#fff;
+$bkgColor__aaassc-hover:#fff;
+$color__aaassc-hover:#fff;
+$color__aaassc:#fff;
+
+.aaassc {
+	position: relative;
+	background-color: $bkgColor__aaassc;
+	color: $color__aaassc;
+		&:hover, &:focus, &:active {
+		color: $color__aaassc-hover;
+		background-color: $bkgColor__aaassc-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
