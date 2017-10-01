@@ -2,8 +2,18 @@
 
 .page__content {
   background-color: #005300;
-  padding-bottom: 88px;
+  padding: 17px;
+      li{
+          padding: 10px;
+      }
+      h3 {
+          padding: 20px;
+          text-align: center;
+      }
+      color:cs('accent-d');
 }
+
 .page__title {
   color:sandybrown;
+  padding: 10px;
 }

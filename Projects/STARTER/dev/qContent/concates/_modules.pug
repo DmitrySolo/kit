@@ -1,3 +1,8 @@
+mixin owlGoodsSlider()
+	<!-- split modules/owlGoodsSliderw -->
+	.owlGoodsSlider__wrapper
+		.owlGoodsSlider.owl-carousel
+			+module('catalogItem')
 mixin MODULE-starter()
 	<!-- split modules/starter -->
 	.container
@@ -8,22 +13,27 @@ mixin MODULE-starter()
 					span NE SERGIO.SIO
 
 
+// LEVEL-page
+
+mixin LEVEL-page(title,className)
+	-if(!className) className =''
+	.page__content(class = 'page__content'+ className data-qcontent='level__page')
+		h6.page__title=title
+		p Some Content! HERE in blocl
+		li hello li
+		li hello li
+		block LEVEL-page
+			
+
+
+
+
 mixin LEVEL-mainPageSection(title,className)
 	-if (!className) className =''
-	.mainPageSection__content(class = 'mainPageSection__content '+ className data-qcontent='level__mainPageSection')
+	section.mainPageSection__content(class = 'mainPageSection__content '+ className data-qcontent='level__mainPageSection')
 		h2.mainPageSection__title=title
 		block mainPageSection
 mixin LEVEL-saleSection(title,className)
 	-if (!className) className =''
 	.saleSection__content(class = 'page__content'+ className data-qcontent='level__saleSection')
 		h2.saleSection__title=title
-mixin LEVEL-page(title,className)
-	-if(!className) className =''
-	.page__content(class = 'page__content'+ className data-qcontent='level__page')
-		h6.page__title=title
-		p Some Content! HERE in blocl 
-			block LEVEL-page
-			
-
-
-

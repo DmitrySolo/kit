@@ -66,22 +66,22 @@
 				"": ""
 			}
 		},
-		"quant-debug-ruller": {
+		"quant-lib": {
 			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"quant-lib": {
+		"quant-debug-ruller": {
 			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -138,27 +138,27 @@
 		"undefined": "('undefined'",
 		"//  'MAIN'": "('Oswald')"
 	},
-	"space": "em",
+	"space": "px",
 	"element_space": "2",
 	"component_space": "2",
 	"module_space": "3",
 	"block_space": "4",
 	"section_space": "4",
 	"progressive": "true",
-	"progressive_number": "1.4",
+	"progressive_number": "1.5",
 	"element_space_i": ".5",
 	"element_space_o": "$element_space_i*$progressive_number",
-	"component_space_i": "\"\"",
-	"component_space_o": "\"\"",
-	"module_space_i": "\"\"",
-	"module_space_o": "\"\"",
-	"block_space_i": "\"\"",
-	"block_space_o": "\"\"",
+	"component_space_i": ".5",
+	"component_space_o": ".7",
+	"module_space_i": ".5",
+	"module_space_o": ".7",
+	"block_space_i": ".5",
+	"block_space_o": "$block_space_i+$module_space_o",
 	"body-font": "fs(\"Body\")",
-	"body-font-weight": "400",
+	"body-font-weight": "normal",
 	"header-font": "false",
 	"header-font-weight": "700",
-	"mobile-font": "14px",
+	"mobile-font": "16px",
 	"screen-font": "18px",
 	"line-height-ratio": "1.7",
 	"siteWidth": "1170px",
@@ -202,7 +202,6 @@
 		"float": "left"
 	},
 	"hero-font": "false",
-	"hero-font-weight": "900",
 	"type": "fibonacci",
 	"type == 'fibonacci'){$component_space_i": "$element_space_i+$element_space_o",
 	"blockt_space_o": ".7",

@@ -1456,30 +1456,76 @@ section.block {
 */
 /*** starter styles*/
 .starter__content {
-  padding: 20px;
+  padding: 22px;
   background-color: violet;
-  padding-left: 40px; }
+  padding-left: 60px; }
 
 .starter1 {
   color: #7d0019;
   font-size: 54px;
   text-decoration: underline; }
 
+.mainButton {
+  background-color: #aaa; }
+  .mainButton:focus {
+    outline: thin dotted; }
+  .mainButton:hover, .mainButton:active {
+    outline: 2; }
+
+.toCart {
+  background-color: #c90028;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  font-size: .8em;
+  padding: 3.4px;
+  height: 4em;
+  width: 100%;
+  margin: 0; }
+  .toCart:hover, .toCart:focus, .toCart:active {
+    background-color: #ff1745; }
+  .toCart:focus {
+    outline: none; }
+  .toCart:hover, .toCart:active {
+    outline: none; }
+  .toCart.toCart--in {
+    background-color: #3bd43b; }
+
+.infoElement {
+  line-height: 60px; }
+  .infoElement .iconWrapper, .infoElement h5, .infoElement span {
+    padding-right: 1.19px;
+    padding-left: 1.19px;
+    display: inline-block; }
+  .infoElement .infoElement__icon {
+    width: 60px;
+    height: 60px;
+    fill: #c90028;
+    vertical-align: top; }
+
 /* mainPageSection STYLE */
 .mainPageSection__content {
-  padding: 0; }
-
-/* saleSection STYLE */
-.saleSection__content {
-  color: #0007ff; }
+  padding: 0 10px;
+  background: #7746c9; }
 
 /* PAGE STYLE */
 .page__content {
   background-color: #005300;
-  padding-bottom: 88px; }
+  padding-bottom: 8px;
+  color: #7d0019; }
+  .page__content li {
+    padding: 10px; }
+  .page__content h3 {
+    padding: 20px;
+    text-align: center; }
 
 .page__title {
-  color: sandybrown; }
+  color: sandybrown;
+  padding: 10px; }
+
+/* saleSection STYLE */
+.saleSection__content {
+  color: #0007ff; }
 
 /**
 * MIXES  STYLES
@@ -1498,18 +1544,6 @@ section.block {
 /**
 * ELEMENTS  STYLES
 */
-.infoElement {
-  line-height: 60px; }
-  .infoElement .iconWrapper, .infoElement h5, .infoElement span {
-    padding-right: 1.19px;
-    padding-left: 1.19px;
-    display: inline-block; }
-  .infoElement .infoElement__icon {
-    width: 60px;
-    height: 60px;
-    fill: #c90028;
-    vertical-align: top; }
-
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -1580,83 +1614,6 @@ section.block {
 
 .ove-sectionHeader {
   margin-bottom: 3.4px; }
-
-input[type='text'].ove-cardRegInput {
-  outline: none;
-  color: #000000;
-  width: 100%;
-  border: solid 2px #c90028;
-  background-color: transparent;
-  padding-top: 3.23px;
-  padding-right: 3.23px;
-  padding-bottom: 3.23px;
-  margin-bottom: 8.5px;
-  padding-left: 8.5px; }
-
-.baseButton {
-  display: inline-block;
-  padding: 0;
-  background-color: #0a7c84;
-  color: #fff;
-  border: 1px solid #0ea9b3;
-  padding-top: 3.4px;
-  padding-bottom: 3.4px;
-  padding-right: 3.4px;
-  padding-left: 3.4px;
-  background: linear-gradient(90deg, #0a7c84, #00aab5 65%); }
-  .baseButton:hover, .baseButton:focus, .baseButton:active {
-    color: #fff;
-    background-color: #0ea9b3;
-    background: linear-gradient(90deg, #0a7c84, #00aab5 25%); }
-  .baseButton:visited {
-    color: #fff; }
-  .baseButton:hover, .baseButton:focus, .baseButton:active {
-    color: #fff; }
-  .baseButton:focus {
-    outline: none; }
-  .baseButton:hover, .baseButton:active {
-    outline: none; }
-  .baseButton.login {
-    text-transform: uppercase; }
-
-.learnMoreButton {
-  display: inline-block;
-  background-color: transparent;
-  color: #000000;
-  border: 2px solid #c90028;
-  margin-bottom: 0.85px;
-  padding-top: 0.85px;
-  padding-bottom: 0.85px;
-  padding-right: 5.27px;
-  padding-left: 5.27px; }
-  .learnMoreButton:hover, .learnMoreButton:focus {
-    color: #fff;
-    background-color: #c90028; }
-  .learnMoreButton:active {
-    background-color: #b00023;
-    border-color: #b00023; }
-  .learnMoreButton:visited {
-    color: #232323; }
-  .learnMoreButton:hover, .learnMoreButton:focus, .learnMoreButton:active {
-    color: #fff; }
-  .learnMoreButton:focus {
-    outline: none; }
-  .learnMoreButton:hover, .learnMoreButton:active {
-    outline: none; }
-  .learnMoreButton.learnMoreButton--onImage {
-    color: #fff; }
-
-a, a.mainLink {
-  color: #51b16c;
-  text-decoration: none; }
-  a:visited, a.mainLink:visited {
-    color: #51b16c; }
-  a:hover, a:focus, a:active, a.mainLink:hover, a.mainLink:focus, a.mainLink:active {
-    color: #bbe1c6; }
-  a:focus, a.mainLink:focus {
-    outline: none; }
-  a:hover, a:active, a.mainLink:hover, a.mainLink:active {
-    outline: none; }
 
 /**
 * PROJECT  STYLES
@@ -3984,16 +3941,17 @@ div[class*='Panel'] {
   width: 100%;
   text-align: center; }
   .switcherLoaderButton > div {
-    width: 50%; }
+    width: 33.33333333%; }
   .switcherLoaderButton button.on {
     background: #fa9527; }
   .switcherLoaderButton button {
     display: inline-block;
-    font-size: 12px;
+    font-size: 11px;
+    border: none;
+    border-right: 1px solid #4c4c4c;
     width: 100%;
     background: #313335;
     color: #fff;
-    outline: none;
-    border: none; }
+    outline: none; }
 
 /*# sourceMappingURL=maps/main.css.map */

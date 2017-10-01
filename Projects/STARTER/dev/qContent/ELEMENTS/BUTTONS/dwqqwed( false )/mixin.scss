@@ -1,0 +1,20 @@
+$bkgColor__dwqqwed:#fff;
+$bkgColor__dwqqwed-hover:#fff;
+$color__dwqqwed-hover:#fff;
+$color__dwqqwed:#fff;
+
+.dwqqwed {
+	position: relative;
+	background-color: $bkgColor__dwqqwed;
+	color: $color__dwqqwed;
+		&:hover, &:focus, &:active {
+		color: $color__dwqqwed-hover;
+		background-color: $bkgColor__dwqqwed-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}

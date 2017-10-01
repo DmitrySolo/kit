@@ -96,7 +96,10 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
             <button class="on" id="loadByQuant">Quant</button>
           </div>
           <div class="f-left">
-            <button id="loadByPhpStorm">PhpStorm</button>
+            <button id="loadByPhpStorm">PhpS</button>
+          </div>
+          <div class="f-left">
+            <button id="throwToProject">ToPjt</button>
           </div>
         </div>
         <div class="fs">
@@ -745,54 +748,55 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
                 <div class="createTitle active">
                           <svg class="icon ">
                             <use xlink:href="#cube"></use>
-                          </svg>Element
+                          </svg><span>Element</span>
                 </div>
                 <div class="createTitle">
                           <svg class="icon ">
                             <use xlink:href="#cube"></use>
-                          </svg>Component
+                          </svg><span>Component</span>
                 </div>
                 <div class="createTitle">
                           <svg class="icon ">
                             <use xlink:href="#cube"></use>
-                          </svg>Module
+                          </svg><span>Module</span>
                 </div>
                 <div class="createTitle">
                           <svg class="icon ">
                             <use xlink:href="#cube"></use>
-                          </svg>Block/Section
+                          </svg><span>Level</span>
                 </div>
                 <div class="createTitle">
                           <svg class="icon ">
                             <use xlink:href="#cube"></use>
-                          </svg>Animation
+                          </svg><span>Animation</span>
                 </div>
                 <div class="createTitle">
                           <svg class="icon ">
                             <use xlink:href="#cube"></use>
-                          </svg>Class
+                          </svg><span>Class</span>
                 </div>
                 <div class="createTitle">
                           <svg class="icon ">
                             <use xlink:href="#cube"></use>
-                          </svg>Script
+                          </svg><span>Script</span>
                 </div>
               </div>
               <div class="debug-registrator col-7-tp debug-registrator-active">
                 <input id="contentType" type="hidden" value="element">
-                <label>Element Name:
+                <label>NAME:
                   <input id="elname" type="text">
                 </label>
-                <label>Element Type:
+                <label>TYPE:
                   <select id="eltype" name="elemType">
                     <option value="button">button</option>
                     <option value="icon">Icon</option>
+                    <option value="icon-title-text">Icon Tytle-Text</option>
                     <option value="link">Link</option>
-                    <option value="linkbutton">LinkButton</option>
+                    <option value="link-button">LinkButton</option>
                     <option value="preloader">Preloader</option>
                   </select>
                 </label>
-                <label>Element Extends:
+                <label>EXTENDS:
                   <select id="elementExtends" name="vextends">
                     <option value="false">No extends</option>
                     <option value="button">Icon</option>
@@ -806,7 +810,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
                     <option>Icon</option>
                   </select>
                 </label>
-                <label>Element Parent:
+                <label>PARENT
                   <input id="elementParent" type="text" name="parent" placeholder="div">
                 </label>
                 <label>Save to Global library:
@@ -3794,6 +3798,7 @@ $(document).ready(function () {
         $(".debug-Dialog").dialog("open");
     })
     $('.debug-registrator-active .creator').on('click', function () {
+
         var creation = $('.debug-registrator-active #contentType').val();
         switch (creation) {
             case 'element': {
@@ -4069,6 +4074,8 @@ $(document).ready(function () {
     loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/LAYOUT', '.fs__layout');
     loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/MODULES', '.fs__p_modules');
     loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/ELEMENTS', '.fs__p_elements');
+    loadProjectPath('dev/scss/MASTER_OPTIONS', '.fs__options');
+    loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/PAGES', '.fs__pages');
     var loadContent = function () {
 
         $('.fs').on('mousedown', '.fs_list', function (e) {
@@ -4078,6 +4085,21 @@ $(document).ready(function () {
 
             $.ajax({
                 url: "http://localhost:8181?action=openFilesByEditor&path=" + path1+"&editor="+switchedEditor
+
+            }).done(function (data) {
+
+                var res = JSON.parse(data);
+                ql(res,';p[l[k')
+                editorPug.selectAll();
+                editorJs.selectAll();
+                editor.selectAll();
+                if (res.pug) editorPug.insert(res.pug);
+                else editorPug.insert('');
+                if (res.js) editorJs.insert(res.js);
+                else editorJs.insert('');
+                if (res.scss) editor.insert(res.scss);
+                else editor.insert('');
+                $(".hud-bottom").css('display', 'block')
 
             })
 
@@ -4224,7 +4246,7 @@ $(document).ready(function () {
         ;
     })
 
-    shortcut.add("Ctrl+Shift+S", function () {
+    shortcut.add("Ctrl+Alt+S", function () {
        // alert("Hi there!q");
         $('div#savecode').trigger('click')
     })
@@ -4292,6 +4314,32 @@ $(document).ready(function () {
         })
     }
     switchEditor();
+
+    $('.createTitle').on('mousedown', function () {
+
+        var elementType = $('span',$(this)).text();
+        $('input#contentType').val(elementType);
+        ql($('input#contentType').val());
+
+            if (elementType == 'Module' || elementType == 'Level') {
+
+                $(  'label:contains(TYPE),' +
+                    'label:contains(EXTENDS),' +
+                    'label:contains(PARENT)'
+                ).css('display','none');
+
+
+
+
+
+
+            }
+
+
+
+    })
+
+
 
 })
       </script>

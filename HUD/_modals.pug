@@ -16,37 +16,38 @@
             .debug-subtitle.col-5-tp
                 .createTitle.active
                     +I('cube')
-                    |Element
+                    span Element
                 .createTitle
                     +I('cube')
-                    |Component
+                    span Component
                 .createTitle
                     +I('cube')
-                    |Module
+                    span Module
                 .createTitle
                     +I('cube')
-                    |Block/Section
+                    span Level
                 .createTitle
                     +I('cube')
-                    |Animation
+                    span Animation
                 .createTitle
                     +I('cube')
-                    |Class
+                    span Class
                 .createTitle
                     +I('cube')
-                    |Script
+                    span Script
             .debug-registrator.col-7-tp.debug-registrator-active
                 input#contentType(type='hidden' value='element')
-                label Element Name:
+                label NAME:
                     input#elname(type='text')
-                label Element Type:
+                label TYPE:
                     select#eltype(name='elemType')
                         option(value='button') button
                         option(value='icon') Icon
+                        option(value='icon-title-text') Icon Tytle-Text
                         option(value='link') Link
-                        option(value='linkbutton') LinkButton
+                        option(value='link-button') LinkButton
                         option(value='preloader') Preloader
-                label Element Extends:
+                label EXTENDS:
                     select#elementExtends(name='vextends')
                         option(value='false') No extends
                         option(value='button') Icon
@@ -58,7 +59,7 @@
                         option Link
                         option LinkButton
                         option Icon
-                label Element Parent:
+                label PARENT
                     input#elementParent(type='text' name='parent' placeholder='div')
                 label Save to Global library:
                     label No

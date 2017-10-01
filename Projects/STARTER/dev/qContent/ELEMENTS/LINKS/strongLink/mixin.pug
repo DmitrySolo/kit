@@ -1,0 +1,3 @@
+mixin A-strongLink(content,href,className)
+	-if (!className) className =''
+	a(class='strongLink '+className,href=href data-qcontent=elements__LINKS__strongLink)=content

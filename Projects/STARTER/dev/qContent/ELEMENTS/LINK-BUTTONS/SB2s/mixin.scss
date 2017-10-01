@@ -1,0 +1,31 @@
+$bkgColor__SB2s:#fff;
+$bkgColor__SB2s-hover:#fff;
+$color__SB2s-hover:#fff;
+$color__SB2s:#fff;
+
+.SB2s {
+	display: inline-block;
+	padding:0;
+	background-color: $bkgColor__SB2s;
+	color: $color__SB2s;
+		&:hover, &:focus, &:active {
+		color: $color__SB2s-hover;
+		background-color: $bkgColor__SB2s-hover;
+		}
+
+		&:visited {
+		color: $color__SB2s-visited;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+		color: $color__SB2s-hover;
+		}
+		&:focus {
+		outline: none;
+		}
+		&:hover,
+		&:active {
+		outline: none;
+		}
+}

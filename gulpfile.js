@@ -500,6 +500,10 @@ var elemType = minimist(process.argv.slice(2), type);
 var elementName = minimist(process.argv.slice(2), buildmodulesData);
 var elemExtend = minimist(process.argv.slice(2), extend);
 
+
+
+
+
 gulp.task('be', function () {
 
 
@@ -510,9 +514,9 @@ gulp.task('be', function () {
         dir: dir
     }
 
-    if (!fs.existsSync('dev/ELEMENTS/' + dir + '/--' + elemName)) {
+    if (!fs.existsSync(projectDevDir+'qContent/ELEMENTS/' + dir + '/' + elemName)) {
 
-
+        console.log('oki')
         var elemTemplates = fs.readdirSync('vendor/file_templates/ELEMENTS/' + dir + '/_templates/');
 
         if (elemExtend.extend) {
@@ -529,7 +533,7 @@ gulp.task('be', function () {
 
             if (elemExtend.extend && file == 'extend.scss') {
 
-                file = 'style.scss'
+                file = '_mixin.scss'
             }
 
             else if (elemExtend.extend && file == 'style.scss') {
@@ -542,7 +546,7 @@ gulp.task('be', function () {
             gulp.src('vendor/file_templates/ELEMENTS/' + dir + '/_templates/' + elemTemplates[key])
                 .pipe(rename(file))
                 .pipe(template(elemData))
-                .pipe(gulp.dest('dev/ELEMENTS/' + dir + '/--' + elemName + '/'))
+                .pipe(gulp.dest(projectDevDir+'qContent/ELEMENTS/' + dir + '/' + elemName + '/'))
 
 
         }
@@ -1392,16 +1396,58 @@ gulp.task('API-SERVER', function () {
                         var path1 = url_parts.query.path;
                         const tree = JSON.stringify(dirTree(path1));
                         srvRes = tree;
-                    break;
+                        break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     case 'openFilesByEditor':
                         console.log(url_parts.query.path);
                         var path1 = url_parts.query.path;
                         var editor = url_parts.query.editor
-                        if (editor == 'phpstorm') {
-                            cmd.run(`/Applications/PhpStorm.app/Contents/MacOS/phpstorm ~/Desktop/QV2/kit/`+path1+`/_mixin.pug ~/Desktop/QV2/kit/`+path1+`/_mixin.scss`)
-                        }else{
-                            console.log('It is  quant content')
+                        if (editor == 'phps' && (path1.indexOf('MODULES') > -1 || path1.indexOf('ELEMENTS') > -1)) {
+                            cmd.run(`/Applications/PhpStorm.app/Contents/MacOS/phpstorm ~/Desktop/QV2/kit/` + path1 + `/_mixin.pug ~/Desktop/QV2/kit/` + path1 + `/_mixin.scss`)
+                        } else if (editor == 'phps') {
+                            cmd.run(`/Applications/PhpStorm.app/Contents/MacOS/phpstorm ~/Desktop/QV2/kit/` + path1)
+                        }
+                        else if (editor == 'quant') {
+
+                            if (path1.indexOf('MODULES') > -1 || path1.indexOf('ELEMENTS') > -1) {
+
+                                console.log('It is  quant content')
+                                var sname = path1.split('/');
+
+                                var l = sname.length;
+                                var name = sname[l - 1];
+
+                                var pug = fs.readFileSync(path1 + '/_mixin.pug', 'utf8');
+                                var scss = fs.readFileSync(path1 + '/_mixin.scss', 'utf8');
+                                var js = fs.readFileSync(path1 + '/' + name + '.js', 'utf8');
+
+                                var codeRes = {
+
+                                    pug: pug,
+                                    scss: scss,
+                                    js: js
+
+                                };
+
+                                srvRes = JSON.stringify(codeRes);
+
+                            }
+
+
+                        } else if (editor == 'topjt' && (path1.indexOf('MODULES') > -1 || path1.indexOf('ELEMENTS') > -1)) {
+
+                            var sname = path1.split('/');
+
+                            var l = sname.length;
+                            var name = sname[l - 1];
+
+                            var resDir = projectDevDir + 'qContent/' + path1.replace('dev/', '').replace('PROJECT_MODULES/', '');
+                            console.log(path1);
+                            var dir = path1;
+                            copydir(dir, resDir, () => {
+                            });
+                        } else {
+                            'ok'
                         }
 
                         break;
@@ -1410,11 +1456,11 @@ gulp.task('API-SERVER', function () {
                         var name = url_parts.query.name;
                         var type = url_parts.query.type;
                         var stype = url_parts.query.stype;
-                        if (name !=='') {
+                        if (name !== '') {
                             if (type == 'module') {
-                                var PugContent = fs.readFileSync(projectDevDir+'qContent/MODULES/' + name + '/_mixin.pug', 'utf8');
-                                var ScssContent = fs.readFileSync(projectDevDir+'qContent/MODULES/' + name + '/_mixin.scss', 'utf8');
-                                var JsContent = fs.readFileSync(projectDevDir+'qContent/MODULES/' + name + '/' + name + '.js', 'utf8');
+                                var PugContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/_mixin.pug', 'utf8');
+                                var ScssContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/_mixin.scss', 'utf8');
+                                var JsContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/' + name + '.js', 'utf8');
 
                             } else if (type == 'element') {
 
@@ -1422,11 +1468,11 @@ gulp.task('API-SERVER', function () {
                                 var ScssContent = fs.readFileSync('dev/ELEMENTS/' + stype + '/' + name + '/_mixin.scss', 'utf8');
                                 var JsContent = fs.readFileSync('dev/ELEMENTS/' + stype + '/' + name + '/' + name + '.js', 'utf8');
 
-                            } else if (type == 'level'){
+                            } else if (type == 'level') {
 
-                                var PugContent = fs.readFileSync(projectDevDir+'template/PAGESYSTEM/LEVELS/LEVEL-'+name+'/LEVEL-'+name+'.pug', 'utf8');
-                                var ScssContent = fs.readFileSync(projectDevDir+'template/PAGESYSTEM/LEVELS/LEVEL-'+name+'/LEVEL-'+name+'.scss', 'utf8');
-                                var JsContent ='';
+                                var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + name + '/LEVEL-' + name + '.pug', 'utf8');
+                                var ScssContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + name + '/LEVEL-' + name + '.scss', 'utf8');
+                                var JsContent = '';
                             }
 
                             var result = {
@@ -1435,7 +1481,7 @@ gulp.task('API-SERVER', function () {
                                 JS: JsContent
                             }
                             srvRes = JSON.stringify(result)
-                        }else{
+                        } else {
                             srvRes = '';
                         }
 
@@ -1444,13 +1490,6 @@ gulp.task('API-SERVER', function () {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                     case 'saveFomQuant' :
-
-
-
-
-
-
-
 
 
                         break;
@@ -1463,14 +1502,14 @@ gulp.task('API-SERVER', function () {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     case 'getProjects' :
 
-                       var pjs = fs.readdirSync('Projects')
-                        .filter(file => fs.lstatSync(path.join('Projects', file)).isDirectory())
+                        var pjs = fs.readdirSync('Projects')
+                            .filter(file => fs.lstatSync(path.join('Projects', file)).isDirectory())
                         srvRes = pjs.toString();
                         break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     case 'loadOption' :
 
-                        srvRes = fs.readFileSync('Projects/'+projectName+'/settings/settings.json', 'utf8');
+                        srvRes = fs.readFileSync('Projects/' + projectName + '/settings/settings.json', 'utf8');
 
                         break;
 
@@ -1513,25 +1552,68 @@ gulp.task('API-SERVER', function () {
 
                         switch (contentType) {
                             case 'element': {
-
-                                var name = url_parts.query.title,
-                                    type = url_parts.query.elementType,
-                                    extnds = url_parts.query.elementExtends,
-                                    prnt = url_parts.query.elementParent,
+                                var name_cr = url_parts.query.title,
+                                    type_cr = url_parts.query.elementType,
+                                    extnds = url_parts.query.extends,
+                                    prnt = url_parts.query.parent,
                                     save = url_parts.query.saveToGlobal;
 
-                                gulp.task('creator', shell.task([
-                                    'gulp be --name ' + name + ' --type ' + type
-                                ]))
-                                gulp.start('creator')
+
+                                var dir = type_cr.toUpperCase() + 'S';
+
+                                var elemData = {
+                                    elementName: name_cr,
+                                    dir: dir,
+                                    extend:'',
+                                    type:''
+                                }
+
+                                if (!fs.existsSync(projectDevDir + 'qContent/ELEMENTS/' + dir + '/' + name_cr)) {
+
+                                    console.log('oki')
+                                    var elemTemplates = fs.readdirSync('vendor/file_templates/ELEMENTS/' + dir + '/_templates/');
+
+                                    if (extnds != 'false') {
+
+                                        elemData.extend = extnds;
+                                        name_cr += '( ' + extnds + ' )';
+
+
+                                    }
+
+                                    for (var key in elemTemplates) {
+
+                                        var file = elemTemplates[key].slice(0,-4);
+
+                                        if (extnds != 'false' && file == 'extend.scss') {
+
+                                            file = '_mixin.scss'
+                                        }
+
+                                        else if (extnds != 'false' && file == 'mixin.scss') {
+                                            continue;
+                                        } else if (extnds == 'false' && file == 'extend.scss') {
+                                            continue;
+                                        }
+                                        if (file == 'elementScript.js') file = name_cr + '.js';
+
+                                        gulp.src('vendor/file_templates/ELEMENTS/' + dir + '/_templates/' + elemTemplates[key])
+                                            .pipe(rename(file))
+                                            .pipe(template(elemData))
+                                            .pipe(gulp.dest(projectDevDir + 'qContent/ELEMENTS/' + dir + '/' + name_cr + '/'))
+
+
+                                    }
+
+                                    qM.ok('Element added!');
+                                } else qM.err('THIS ELEMENT ALREADY EXIST!');
+
 
                             }
-
-                        }
 //////////////////////////////////////////////////////////////////////////////////////
-                } //END SWITCH GET QUERY
+                        } //END SWITCH GET QUERY
 ////////////////////////////////////////////////////////////////////////////////////////
-
+                }
             }
 
         } else if (req.method == 'POST') { /////// POST

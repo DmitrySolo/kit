@@ -1,0 +1,5 @@
+mixin BL-(value,href,className)
+    -if (!className) className =''
+    -if (!href) href ='#'
+    a.(class=''+className,href=''+href)=value
+

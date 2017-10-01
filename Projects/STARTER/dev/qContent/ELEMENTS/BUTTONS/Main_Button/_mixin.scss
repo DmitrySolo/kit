@@ -1,0 +1,15 @@
+$color__button:#aaa;
+$color__button-hover:#aaa;
+$color__button-active:#aaa;
+//--Main Button
+.mainButton {
+  background-color: $color__button;
+
+  &:focus {
+    outline: thin dotted;
+  }
+  &:hover,
+  &:active {
+    outline: 2;
+  }
+}

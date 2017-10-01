@@ -1777,7 +1777,7 @@
     width: 100%;
     text-align: center;
     &>div{
-    width: 50%;
+    width: 33.33333333%;
   }
     button.on {
 
@@ -1786,12 +1786,14 @@
     }
     button {
       display: inline-block;
-      font-size: 12px;
+      font-size: 11px;
+      border: none;
+      border-right:1px solid #4c4c4c;
       width:  100%;
       background: #313335;
       color: #fff;
       outline: none;
-      border: none;
+
     }
 
 

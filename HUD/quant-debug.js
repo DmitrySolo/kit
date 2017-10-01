@@ -1209,6 +1209,7 @@ $(document).ready(function () {
         $(".debug-Dialog").dialog("open");
     })
     $('.debug-registrator-active .creator').on('click', function () {
+
         var creation = $('.debug-registrator-active #contentType').val();
         switch (creation) {
             case 'element': {
@@ -1484,6 +1485,8 @@ $(document).ready(function () {
     loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/LAYOUT', '.fs__layout');
     loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/MODULES', '.fs__p_modules');
     loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/ELEMENTS', '.fs__p_elements');
+    loadProjectPath('dev/scss/MASTER_OPTIONS', '.fs__options');
+    loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/PAGES', '.fs__pages');
     var loadContent = function () {
 
         $('.fs').on('mousedown', '.fs_list', function (e) {
@@ -1493,6 +1496,21 @@ $(document).ready(function () {
 
             $.ajax({
                 url: "http://localhost:8181?action=openFilesByEditor&path=" + path1+"&editor="+switchedEditor
+
+            }).done(function (data) {
+
+                var res = JSON.parse(data);
+                ql(res,';p[l[k')
+                editorPug.selectAll();
+                editorJs.selectAll();
+                editor.selectAll();
+                if (res.pug) editorPug.insert(res.pug);
+                else editorPug.insert('');
+                if (res.js) editorJs.insert(res.js);
+                else editorJs.insert('');
+                if (res.scss) editor.insert(res.scss);
+                else editor.insert('');
+                $(".hud-bottom").css('display', 'block')
 
             })
 
@@ -1639,7 +1657,7 @@ $(document).ready(function () {
         ;
     })
 
-    shortcut.add("Ctrl+Shift+S", function () {
+    shortcut.add("Ctrl+Alt+S", function () {
        // alert("Hi there!q");
         $('div#savecode').trigger('click')
     })
@@ -1707,5 +1725,31 @@ $(document).ready(function () {
         })
     }
     switchEditor();
+
+    $('.createTitle').on('mousedown', function () {
+
+        var elementType = $('span',$(this)).text();
+        $('input#contentType').val(elementType);
+        ql($('input#contentType').val());
+
+            if (elementType == 'Module' || elementType == 'Level') {
+
+                $(  'label:contains(TYPE),' +
+                    'label:contains(EXTENDS),' +
+                    'label:contains(PARENT)'
+                ).css('display','none');
+
+
+
+
+
+
+            }
+
+
+
+    })
+
+
 
 })

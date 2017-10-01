@@ -1,0 +1,20 @@
+$bkgColor__SuperButton:#fff;
+$bkgColor__SuperButton-hover:#fff;
+$color__SuperButton-hover:#fff;
+$color__SuperButton:#fff;
+
+.SuperButton {
+	position: relative;
+	background-color: $bkgColor__SuperButton;
+	color: $color__SuperButton;
+		&:hover, &:focus, &:active {
+		color: $color__SuperButton-hover;
+		background-color: $bkgColor__SuperButton-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}

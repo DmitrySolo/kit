@@ -1,0 +1,10 @@
+mixin gipperButtonwe1112(icon,title,text,classModifier)
+    -if (!className) className =''
+    li(class='' data-qcontent=elements__ICON-TITLE-TEXTS__gipperButtonwe1112)
+        .iconWrapper
+            svg(class=' ' + classModifier)
+                use(xlink:href="#" + icon)
+        h5=title+':'
+        span=text
+
+

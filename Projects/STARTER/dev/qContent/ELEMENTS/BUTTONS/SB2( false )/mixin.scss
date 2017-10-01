@@ -1,0 +1,20 @@
+$bkgColor__SB2:#fff;
+$bkgColor__SB2-hover:#fff;
+$color__SB2-hover:#fff;
+$color__SB2:#fff;
+
+.SB2 {
+	position: relative;
+	background-color: $bkgColor__SB2;
+	color: $color__SB2;
+		&:hover, &:focus, &:active {
+		color: $color__SB2-hover;
+		background-color: $bkgColor__SB2-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
