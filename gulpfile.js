@@ -460,8 +460,8 @@ gulp.task('concat-modules-scss', function () {
 
 
     gulp.src([projectDevDir + 'qContent/{MODULES,ELEMENTS,COMPONENTS}/**/_mixin.scss', projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.scss'])
-        .pipe(concat('_modules.scss'))
-        .pipe(gulp.dest(projectDevDir + 'qContent/concates/'));
+        .pipe(concat('_project.scss'))
+        .pipe(gulp.dest('dev/scss/'));
 
 });
 
@@ -667,7 +667,7 @@ gulp.task('blvl', function () {
         try {
             for (var key in templates) {
 
-                var file = 'LEVEL-' + levelName + templates[key].slice(1, -4).slice(5, 10);
+                var file =  templates[key].slice(0, -4);
 
 
                 gulp.src('vendor/file_templates/LEVELS/' + templates[key])
@@ -1237,10 +1237,12 @@ gulp.task('svgstore-debug', function () {
 
 //////////////////////////////////////////////////////
 gulp.task('START QUANT', function () {
-    runSequence('API-SERVER', 'WATCHER:NEW', 'SERVER', 'WATCHCSSTOPARSEIT')
+    runSequence('concat-modules-pug','concat-modules-scss','views','styles','API-SERVER', 'WATCHER:NEW', 'SERVER', 'WATCHCSSTOPARSEIT')
 });
 gulp.task('RELOAD QUANT', function () {
-    runSequence('WATCHER:NEW', 'WATCHCSSTOPARSEIT')
+    runSequence('WATCHER:NEW', 'WATCHCSSTOPARSEIT','mergeJson',
+    'views',
+    'styles')
 });
 
 /////UTILITIES
@@ -1414,17 +1416,43 @@ gulp.task('API-SERVER', function () {
                                 var scss = fs.readFileSync(path1 + '/_mixin.scss', 'utf8');
                                 var js = fs.readFileSync(path1 + '/' + name + '.js', 'utf8');
 
-                                var codeRes = {
 
-                                    pug: pug,
-                                    scss: scss,
-                                    js: js
 
-                                };
+                            }else if (path1.indexOf('LEVELS') > -1){
 
-                                srvRes = JSON.stringify(codeRes);
 
-                            }
+
+                                var pug = fs.readFileSync(path1+'/_mixin.pug', 'utf8');
+                                var scss = fs.readFileSync(path1+'/_mixin.scss', 'utf8');
+
+
+                            }else if (path1.indexOf('MASTER_OPTIONS') > -1){
+
+
+
+
+                            var scss = fs.readFileSync(path1, 'utf8');
+
+
+                        }else if (path1.indexOf('PAGES') > -1 || path1.indexOf('LAYOUT') > -1){
+
+
+
+
+                            var pug = fs.readFileSync(path1, 'utf8');
+
+
+                        }
+
+                            var codeRes = {
+
+                                pug: pug,
+                                scss: scss,
+                                js: js
+
+                            };
+
+                            srvRes = JSON.stringify(codeRes);
 
 
                         } else if (editor == 'topjt' && (path1.indexOf('MODULES') > -1 || path1.indexOf('ELEMENTS') > -1)) {
@@ -1467,6 +1495,20 @@ gulp.task('API-SERVER', function () {
                                 var ScssContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + name + '/LEVEL-' + name + '.scss', 'utf8');
                                 var JsContent = '';
                             }
+
+                            else if (type == 'page') {
+
+                                var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/PAGES/' + name +'.pug', 'utf8');
+                                var ScssContent = '';
+                                var JsContent = '';
+                            }
+                            else if (type == 'layout') {
+
+                                var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LAYOUT/_' + name +'.pug', 'utf8');
+                                var ScssContent = '';
+                                var JsContent = '';
+                            }
+
 
                             var result = {
                                 pug: PugContent,
@@ -1645,7 +1687,7 @@ gulp.task('API-SERVER', function () {
                                     try {
                                         for (var key in templates) {
 
-                                            var file = 'LEVEL-' + levelName + templates[key].slice(1, -4).slice(5, 10);
+                                            var file = templates[key].slice(0, -4);
 
 
                                             gulp.src('vendor/file_templates/LEVELS/' + templates[key])
@@ -1687,13 +1729,22 @@ gulp.task('API-SERVER', function () {
                         console.log('true89');
                         console.log(body.mainOpt);
                         var p_path = 'Projects/' + body.mainOpt.title;
-                        copydir.sync('vendor/project template/New Project', p_path);
+                        copydir.sync('vendor/project template/STARTER', p_path);
+
+                        // Change Project Name
+                        var globalData = JSON.parse(fs.readFileSync('globalData.json', 'utf8'));
+                        globalData.currentProject = body.mainOpt.title;
+                        globalData_txt = JSON.stringify(globalData);
+                        fs.writeFile('globalData.json', globalData_txt, 'utf8');
+                        projectName = body.mainOpt.title;
+
+
                     } else {
                         var p_path = 'Projects/' + projectName;
                     }
 
 
-                    var p_data = JSON.parse(fs.readFileSync(p_path + '/dev/data.json', 'utf8'));
+                    var p_data = JSON.parse(fs.readFileSync(p_path + '/data/headInfo.json', 'utf8'));
                     p_data.head.lang = body.mainOpt.lang;
                     p_data.head.title = body.mainOpt.title;
                     p_data.head.prefix = body.mainOpt.prefix;
@@ -1706,13 +1757,13 @@ gulp.task('API-SERVER', function () {
 
 
                     var p_json = JSON.stringify(p_data);
-                    fs.writeFile(p_path + '/dev/data.json', p_json, 'utf8');
+                    fs.writeFile(p_path + '/data/headInfo.json', p_json, 'utf8');
 
                     var p_jsonOpt = JSON.stringify(body);
                     fs.writeFile(p_path + '/settings/settings.json', p_jsonOpt, 'utf8');
 
 
-                    function setSettingsToCore() {
+                    function setSettingsToCore() { ///// TO DEV FOLDERS
 
                         // Colors
                         var stringColors = '$colors: (\n\t';
@@ -1827,10 +1878,9 @@ gulp.task('API-SERVER', function () {
                         fs.writeFile('dev/scss/MASTER_OPTIONS/_mediaOption.scss', string, 'utf8');
 
                     }
-
+                    gulp.start('RELOAD QUANT')
                     setSettingsToCore();
-                    gulp.start('views');
-                    gulp.start('styles');
+
 ////////////////////////////////////////////////////////////////////// SELECTORS
                 } else if (body.selectorData) {
 
@@ -1891,6 +1941,26 @@ gulp.task('API-SERVER', function () {
                     var scssToSave = body.scss;
                     var pugToSave = body.pug;
                     var jsToSave = body.js;
+
+
+
+
+                    if (elemPath['type'] == 'options') {
+
+                        fs.writeFileSync( 'dev/scss/MASTER_OPTIONS/' + elemPath['name'], scssToSave);
+
+                    }
+                    if (elemPath['type'] == 'page') {
+
+                        fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/PAGES/' +elemPath['name'], pugToSave);
+
+                    }
+                    if (elemPath['type'] == 'layout') {
+
+                        fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/LAYOUT/' +elemPath['name'], pugToSave);
+
+                    }
+
 
 
                     if (elemPath['type'] == 'module') {

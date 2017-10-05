@@ -1,3 +1,0 @@
-/**
-* MODULE: checker script
-*/

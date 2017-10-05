@@ -66,22 +66,22 @@
 				"": ""
 			}
 		},
-		"quant-lib": {
+		"quant-debug-ruller": {
 			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"quant-debug-ruller": {
+		"quant-lib": {
 			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -102,7 +102,7 @@
 		"test": {
 			"js": {
 				"test-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--test/test.js",
+					"src": "dev/SCRIPTS/SCRIPTS/test/test.js",
 					"container": "footer"
 				}
 			},
@@ -159,8 +159,8 @@
 	"header-font": "false",
 	"header-font-weight": "700",
 	"mobile-font": "16px",
-	"screen-font": "18px",
-	"line-height-ratio": "1.7",
+	"screen-font": "16px",
+	"line-height-ratio": "1.5",
 	"siteWidth": "1170px",
 	"colums": "12",
 	"gutter-width": ".5em",
@@ -206,20 +206,21 @@
 	"type == 'fibonacci'){$component_space_i": "$element_space_i+$element_space_o",
 	"blockt_space_o": ".7",
 	"head": {
-		"lang": "ru",
-		"title": "STARTER",
+		"lang": "eng",
+		"title": "T11",
 		"desc": "This is starter description",
 		"kw": "starter application , hurray!!!",
 		"fontlinks": {
-			"1": "https://fonts.googleapis.com/css?family=Oswald|Roboto+Slab:700"
+			"0": ""
 		},
-		"debug": false
+		"debug": false,
+		"prefix": "11t"
 	},
 	"LIBS_removeThis_whenEdit": {
-		"xRayView": {
+		"exampleName": {
 			"js": {
-				"xRayView-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
+				"example-script": {
+					"src": "dev/scripts/example/example.js",
 					"container": "footer/init"
 				}
 			},
@@ -233,28 +234,6 @@
 			"title": "Продукция",
 			"href": "/production.html",
 			"dop_class": ""
-		},
-		"Products and help": {
-			"title": "Гарантия и сервис",
-			"href": "service.html",
-			"dop_class": ""
-		},
-		"Support": {
-			"title": "Партнерам",
-			"href": "partners.html",
-			"dop_class": ""
-		},
-		"AboutUs": {
-			"title": "Где купить",
-			"href": "buy.html",
-			"dop_class": "",
-			"childs": ""
-		},
-		"acc": {
-			"title": "Акции",
-			"href": "sale.html",
-			"dop_class": "lightmenu__item--active",
-			"childs": ""
 		}
 	},
 	"name": "STARTER",
@@ -271,6 +250,15 @@
 			"kw": "starter application , hurray!!!",
 			"layout": "default",
 			"MainMenu": false,
+			"group": false,
+			"dop_class": ""
+		},
+		"2": {
+			"title": "ExamplePage",
+			"slug": "example",
+			"kw": "starter application , hurray!!!",
+			"layout": "default",
+			"MainMenu": true,
 			"group": false,
 			"dop_class": ""
 		}

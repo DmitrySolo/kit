@@ -1,0 +1,22 @@
+include ../INCLUDES/_includes
+<!-- split header.html -->
+doctype html
+html(lang=''+head.lang)
+    head
+        include ../INCLUDES/_head
+    body(class=''+bodyClass, data-qcontent="layout__header")
+        .projectWrapper
+            <!-- HEADER -->
+            include _header
+
+                <!-- split #{page.slug}.html -->
+	            <!-- MAIN -->
+	            block page
+
+            <!-- FOOTER -->
+            include _footer
+
+            <!-- SCRIPTS -->
+                <!-- split footer-scripts.html -->
+            include ../SCRIPTS-STYLES/FOOTER/_footerScripts
+    include ../INCLUDES/_debugPannel

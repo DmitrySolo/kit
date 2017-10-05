@@ -1,3 +1,0 @@
-/**
-* MODULE: starter script
-*/

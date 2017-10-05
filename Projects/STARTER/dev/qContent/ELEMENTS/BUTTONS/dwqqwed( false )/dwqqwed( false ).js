@@ -1,1 +1,0 @@
-// Element: dwqqwed script.

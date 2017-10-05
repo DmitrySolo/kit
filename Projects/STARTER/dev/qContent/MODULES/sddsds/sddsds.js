@@ -1,3 +1,0 @@
-/**
-* MODULE: sddsds script
-*/

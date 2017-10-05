@@ -1,0 +1,21 @@
+/**
+* Test styles
+*/
+
+@mixin Test(){
+
+  .Test__content{
+      text-align: center;
+      @include space('element','','tbrl');
+      @include space('block','t','');
+    
+  }
+  .Test{
+    background: cs('background');
+  }
+
+}
+
+
+////////////////////////////////////////
+@include Test();

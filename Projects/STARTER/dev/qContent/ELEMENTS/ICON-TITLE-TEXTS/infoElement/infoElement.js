@@ -1,1 +1,0 @@
-// Element: infoElement script.

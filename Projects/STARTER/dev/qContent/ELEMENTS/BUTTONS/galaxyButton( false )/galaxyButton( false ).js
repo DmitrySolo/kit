@@ -1,1 +1,0 @@
-// Element: galaxyButton script.

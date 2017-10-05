@@ -1340,6 +1340,7 @@ $(document).ready(function () {
 ///////////////// CREATE PROJECT
 
     $('.CreateProject').on('mousedown', function () {
+        qntDeleteAllCookies();
         ql($('input[name="project_title"]').val());
         var projectOptions = {};
         if ($('input[name="project_title"]').val() !== '' && !$('input[name="project_prefix"]').val() !== '') {
@@ -1483,6 +1484,7 @@ $(document).ready(function () {
     loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/ELEMENTS', '.fs__p_elements');
     loadProjectPath('dev/scss/MASTER_OPTIONS', '.fs__options');
     loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/PAGES', '.fs__pages');
+    loadProjectPath('Projects/'+ $("span.projectTitle").text()+'/dev/template/PAGESYSTEM/LEVELS','.fs__levels');
     var loadContent = function () {
 
         $('.fs').on('mousedown', '.fs_list', function (e) {
@@ -1512,7 +1514,57 @@ $(document).ready(function () {
                     $('#contentNavigator__stype input').val(stype)
                     $('#contentNavigator__name input').val(name)
 
+                }else if (arr.indexOf('MASTER_OPTIONS')!= -1){
+
+                    var name = arr[arr.length -1];
+                    var stype = "";
+                    var type ='options';
+
+                    ql(name, stype, type,'OOOOOOO')
+                    $('#contentNavigator__type input').val(type)
+                    $('#contentNavigator__stype input').val(stype)
+                    $('#contentNavigator__name input').val(name)
+
                 }
+                else if (arr.indexOf('PAGES')!= -1){
+
+                    var name = arr[arr.length -1];
+                    var stype = "";
+                    var type ='page';
+
+                    ql(name, stype, type,'OOOOOOO')
+                    $('#contentNavigator__type input').val(type)
+                    $('#contentNavigator__stype input').val(stype)
+                    $('#contentNavigator__name input').val(name)
+
+                }
+                else if (arr.indexOf('LEVELS')!= -1){
+
+                    var name = arr[arr.length -1];
+                    var stype = "";
+                    var type ='level';
+
+                    ql(name, stype, type,'OO')
+                    $('#contentNavigator__type input').val(type)
+                    $('#contentNavigator__stype input').val(stype)
+                    $('#contentNavigator__name input').val(name)
+
+                }
+                else if (arr.indexOf('LAYOUT')!= -1){
+
+                    var name = arr[arr.length -1];
+                    var stype = "";
+                    var type ='layout';
+
+                    ql(name, stype, type,'OOOOOOO')
+                    $('#contentNavigator__type input').val(type)
+                    $('#contentNavigator__stype input').val(stype)
+                    $('#contentNavigator__name input').val(name)
+
+                }
+
+
+
 
 
 

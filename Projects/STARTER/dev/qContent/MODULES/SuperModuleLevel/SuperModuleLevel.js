@@ -1,3 +1,0 @@
-/**
-* MODULE: SuperModuleLevel script
-*/
