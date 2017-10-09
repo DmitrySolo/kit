@@ -74,7 +74,14 @@ var quantScss = [
     "	cs('background${1:type}')",
     "snippet fore",
     "	cs('foreground${1:type}')",
-    ""
+    "snippet -e",
+    "	@include space-i('element','=','','')",
+    "snippet -c",
+    "	@include space-i('component','=','','')",
+    "snippet -m",
+    "	@include space-i('module','=','','')",
+    "snippet -b",
+    "	@include space-i('block','=','','')",
 ].join(eol);
 
 

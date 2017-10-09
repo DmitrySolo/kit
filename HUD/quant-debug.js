@@ -1540,7 +1540,7 @@ $(document).ready(function () {
                 }
                 else if (arr.indexOf('LEVELS')!= -1){
 
-                    var name = arr[arr.length -1];
+                    var name = arr[arr.length -1].split('-')[1];
                     var stype = "";
                     var type ='level';
 
@@ -1552,7 +1552,7 @@ $(document).ready(function () {
                 }
                 else if (arr.indexOf('LAYOUT')!= -1){
 
-                    var name = arr[arr.length -1];
+                    var name = arr[arr.length -1].slice(1,-4);
                     var stype = "";
                     var type ='layout';
 

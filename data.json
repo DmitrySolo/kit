@@ -29,26 +29,22 @@
 		}
 	},
 	"LIBS": {
-		"JQ": {
+		"quant-debug-ruller": {
 			"js": {
-				"jquery": {
-					"src": "bower_components/jquery/dist/jquery.min.js",
-					"container": "footer/libs"
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"quant-HUD-script": {
+		"JQ": {
 			"js": {
-				"quant-HUD-script-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "bower_components/jquery-ui/jquery-ui.min.js",
-					"container": "footer/libs+"
+				"jquery": {
+					"src": "bower_components/jquery/dist/jquery.min.js",
+					"container": "footer/libs"
 				}
 			},
 			"css": {
@@ -66,11 +62,15 @@
 				"": ""
 			}
 		},
-		"quant-debug-ruller": {
+		"quant-HUD-script": {
 			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+				"quant-HUD-script-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
 					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "bower_components/jquery-ui/jquery-ui.min.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -207,14 +207,14 @@
 	"blockt_space_o": ".7",
 	"head": {
 		"lang": "eng",
-		"title": "T11",
+		"title": "saleTerminalWindows",
 		"desc": "This is starter description",
 		"kw": "starter application , hurray!!!",
 		"fontlinks": {
-			"0": ""
+			"0": "https://fonts.googleapis.com/css?family=Rubik:500,900&amp;subset=cyrillicc"
 		},
 		"debug": false,
-		"prefix": "11t"
+		"prefix": "stw"
 	},
 	"LIBS_removeThis_whenEdit": {
 		"exampleName": {
