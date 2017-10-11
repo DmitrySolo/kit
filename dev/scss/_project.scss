@@ -3,7 +3,7 @@ $color__radialConturButton: inherit;
 
 .radialConturButton {
     text-transform: uppercase;
-    margin: 0 auto;
+    margin: 0 auto 5vh auto;
 	position: relative;
 	background-color: $bkgColor__radialConturButton;
 	color: $color__radialConturButton;
@@ -89,7 +89,7 @@ $color__radialConturButton: inherit;
 /* actionWindow STYLE */
 
 .actionWindow__content {
-    height: 45%;
+    height: 45.5vh;
     z-index:1;
     width: 50%;
     float:left;
@@ -97,11 +97,11 @@ $color__radialConturButton: inherit;
     cursor: pointer;
     transition: background 0.1s ease;
     transition: transform  0.1s ease;
-    @include space-i('block','=','trlb','');
+    padding: 2vh;
     
     .icon {
-        width: 18%;
-        height: 18%;
+        width: 11vh;
+        height: 11vh;
     }
     &:hover{
         z-index:2;
@@ -119,9 +119,13 @@ $color__radialConturButton: inherit;
 }
 
 .actionWindow__title {
-   @include space-i('block','|','','b');
-   @include space-i('module','=','','t');
-   height: 3em;
+   //@include space-i('block','|','','b');
+     font-size: 1.7em;
+     @include for-size(big-desktop-up){
+         font-size: 1.9em;
+     }
+   height: 14vh;
+   max-height: 3em;
 }
 
 .actionWindow--lowerPrice {
@@ -187,21 +191,27 @@ $color__radialConturButton: inherit;
    overflow:hidden;
    background-image:url('images/geometry.png');
    background-color: rgba(255,255,255,.5);
-   padding: .75%;
-   height: 92%;
+   padding: 1vh;
+   height: 100vh;
    h1 {
+       
        text-transform: uppercase;
        color:cs('background-d');
-       //height: 8%;
+       height: 7vh;
    }
 }
 
 .actionWindow__icon {
-    @include space-i('block','=','','b')
+   padding-bottom: 2vh;
 }
 
 .actionWindow__desc {
-    font-size: 1.5em;    
+    @include for-size(big-desktop-up){
+        font-size: 1.5em;
+    }
+    font-size: 1.4em;
+
+    padding-bottom: 3vh;
 }
 
 

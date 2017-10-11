@@ -132,15 +132,15 @@ gulp.task('PAGESYSTEM', function () {
             var str = "//- " + attr.slug + ".pug\nextends ../LAYOUT/layout.pug\nblock title\n\t-var page={slug:'" + attr.slug + "',title:'" + attr.title + "'};\n\ttitle " + attr.title;
         else
             var str = "//- " + attr.slug + ".pug\nextends ../LAYOUT/" + attr.layout + "/layout.pug\nblock title\n\t-var page={slug:'" + attr.slug + "',title:'" + attr.title + "'};\n\ttitle " + attr.title;
-        if (!fs.existsSync('dev/template/PAGESYSTEM/PAGES/' + attr.slug + '.pug') && !fs.existsSync('dev/scss/PAGES/_' + attr.slug + '.scss')) {
+        if (!fs.existsSync(projectDevDir+'template/PAGESYSTEM/PAGES/' + attr.slug + '.pug') ) {
             file(attr.slug + '.pug', str)
-                .pipe(gulp.dest('dev/template/PAGESYSTEM/PAGES'));
+                .pipe(gulp.dest(projectDevDir+'/template/PAGESYSTEM/PAGES'));
 
-            var pageName = attr.slug.toUpperCase();
-            gulp.src('vendor/file_templates/PAGES/Styles/_page.scss.tpl')
-                .pipe(rename('off_' + attr.slug + '-page.scss'))
-                .pipe(template({name: pageName}))
-                .pipe(gulp.dest('dev/scss/PAGES/'))
+            // var pageName = attr.slug.toUpperCase();
+            // gulp.src('vendor/file_templates/PAGES/Styles/_page.scss.tpl')
+            //     .pipe(rename('off_' + attr.slug + '-page.scss'))
+            //     .pipe(template({name: pageName}))
+            //     .pipe(gulp.dest('dev/scss/PAGES/'))
 
         }
 
@@ -1592,6 +1592,7 @@ gulp.task('API-SERVER', function () {
                             prnt = url_parts.query.parent,
                             save = url_parts.query.saveToGlobal;
 
+
                         console.log(contentType+' HHHHHHHHHHHHHHHHHHHHHHHHH');
 
                         switch (contentType) {
@@ -1706,6 +1707,28 @@ gulp.task('API-SERVER', function () {
 
                                 } else qM.err('THIS LEVEL ALREADY EXIST!');
 
+                                break;
+                            case 'page':
+                                var pageInfo = {
+                                    title:name_cr,
+                                    slug:url_parts.query.slug,
+                                    MainMenu:url_parts.query.mainMenu,
+                                    dop_class:url_parts.query.dop_class,
+                                    layout:url_parts.query.layout,
+                                    group:url_parts.query.group
+                                }
+                                var pagesData = JSON.parse(fs.readFileSync('Projects/'+projectName+'/data/pages.json', 'utf8'));
+                                if (!pagesData.pages.hasOwnProperty(pageInfo.title)){
+
+                                   var pageNum = Object.keys(pagesData.pages).length+1;
+                                    pagesData.pages[pageNum] = pageInfo;
+                                    console.log(pagesData);
+                                    pagesData = JSON.stringify(pagesData)
+                                    fs.writeFile('Projects/'+projectName+'/data/pages.json', pagesData, 'utf8');
+
+                                }
+
+                                break;
 
 
 //////////////////////////////////////////////////////////////////////////////////////

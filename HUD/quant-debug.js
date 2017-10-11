@@ -1216,7 +1216,12 @@ $(document).ready(function () {
                     elementType = $('#eltype').val(),
                     elementExtends = $('#elementExtends').val(),
                     elementParent = $("#elementParent").val(),
-                    saveToGlobal = $("input[name='saveto']:checked").val();
+                    saveToGlobal = $("input[name='saveto']:checked").val(),
+                    slug=$("#slug").val(),
+                    layout=$("#layout").val(),
+                    mainMenu=$("#mainMenu").val(),
+                    group=$("#group").val(),
+                    dop_class=$("#dop_class").val();
 
                 if (elementTitle && elementType ) {
 
@@ -1224,7 +1229,8 @@ $(document).ready(function () {
                     $.ajax({
                         url: "http://localhost:8181/?action=creator&element="+creation+"&title=" + elementTitle +
                         "&elementType=" + elementType + "&extends=" + elementExtends + "&parent=" + elementParent +
-                        "&saveToGlobal=" + saveToGlobal
+                        "&saveToGlobal=" + saveToGlobal+"&slug=" + slug + "&layout=" + layout + "&mainMenu=" + mainMenu +
+                        "&group=" + group + "&dop_class=" +dop_class
                     })
 
                         .done(function (data) {
@@ -1466,9 +1472,9 @@ $(document).ready(function () {
                 }
             }
             $('.fs').accordion({
-                active: false,
+                active: 4,
                 header: "h3",
-                collapsible: true
+                collapsible: false
             });
 
         })
@@ -1817,8 +1823,30 @@ $(document).ready(function () {
         $('.debug-registrator input').val('');
         $('input#contentType').val(elementType);
 
+        if (elementType == 'Page' ) {
 
-            if (elementType == 'Module' ) {
+            $(  'label:contains(Slug),' +
+                'label:contains(Main menu),' +
+                'label:contains(Layout),'+
+                'label:contains(Additional),'+
+                'label:contains(Group)'
+            ).css('display','block');
+
+        }
+
+        if (elementType != 'Page' ) {
+
+            $(  'label:contains(Slug),' +
+                'label:contains(Main menu),' +
+                'label:contains(Layout),'+
+                'label:contains(Additional),'+
+                'label:contains(Group)'
+            ).css('display','none');
+
+        }
+
+
+            if (elementType == 'Module' || elementType == 'Page' ) {
 
                 $(  'label:contains(TYPE),' +
                     'label:contains(EXTENDS),' +

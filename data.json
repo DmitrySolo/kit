@@ -29,22 +29,26 @@
 		}
 	},
 	"LIBS": {
-		"quant-debug-ruller": {
+		"JQ": {
 			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
+				"jquery": {
+					"src": "bower_components/jquery/dist/jquery.min.js",
+					"container": "footer/libs"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"JQ": {
+		"quant-HUD-script": {
 			"js": {
-				"jquery": {
-					"src": "bower_components/jquery/dist/jquery.min.js",
-					"container": "footer/libs"
+				"quant-HUD-script-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "bower_components/jquery-ui/jquery-ui.min.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -62,15 +66,11 @@
 				"": ""
 			}
 		},
-		"quant-HUD-script": {
+		"quant-debug-ruller": {
 			"js": {
-				"quant-HUD-script-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
 					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "bower_components/jquery-ui/jquery-ui.min.js",
-					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -134,8 +134,7 @@
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
 		"'HEADER'": "('Roboto Slab')\n//)",
-		"Body": "(''",
-		"undefined": "('undefined'",
+		"Body": "('Rubik'",
 		"//  'MAIN'": "('Oswald')"
 	},
 	"space": "px",
@@ -159,7 +158,7 @@
 	"header-font": "false",
 	"header-font-weight": "700",
 	"mobile-font": "16px",
-	"screen-font": "16px",
+	"screen-font": "20px",
 	"line-height-ratio": "1.5",
 	"siteWidth": "1170px",
 	"colums": "12",
@@ -261,6 +260,14 @@
 			"MainMenu": true,
 			"group": false,
 			"dop_class": ""
+		},
+		"3": {
+			"title": "ere",
+			"slug": "ertert",
+			"mainMenu": "false",
+			"dop_class": "",
+			"layout": "errtert",
+			"group": "ertret"
 		}
 	},
 	"___LIBS": {

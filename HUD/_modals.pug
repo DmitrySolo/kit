@@ -28,6 +28,9 @@
                     span Level
                 .createTitle
                     +I('cube')
+                    span Page
+                .createTitle
+                    +I('cube')
                     span Animation
                 .createTitle
                     +I('cube')
@@ -47,6 +50,18 @@
                         option(value='link') Link
                         option(value='link-button') LinkButton
                         option(value='preloader') Preloader
+                label(style='display:none') Slug:
+                    input#slug(type='text')
+                label(style='display:none') Layout:
+                    input#layout(type='text', value='default')
+                label(style='display:none') Main menu:
+                    select#mainMenu(name='mainMenu')
+                        option(value='false') false
+                        option(value='true') true
+                label(style='display:none') Group:
+                    input#group(type='text',value='default')
+                label(style='display:none') Additional Class:
+                    input#dop_class(type='text')
                 label EXTENDS:
                     select#elementExtends(name='vextends')
                         option(value='false') No extends
