@@ -126,6 +126,7 @@ gulp.task('views', function buildHTML() {
 
 ///////////////////////////////////////////////////////// CHANGE DIST //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 gulp.task('PAGESYSTEM', function () {
+    console.log('');
     for (var index in data.pages) {
         var attr = data.pages[index];
         if (attr.layout == 'default')
@@ -133,14 +134,14 @@ gulp.task('PAGESYSTEM', function () {
         else
             var str = "//- " + attr.slug + ".pug\nextends ../LAYOUT/" + attr.layout + "/layout.pug\nblock title\n\t-var page={slug:'" + attr.slug + "',title:'" + attr.title + "'};\n\ttitle " + attr.title;
         if (!fs.existsSync(projectDevDir+'template/PAGESYSTEM/PAGES/' + attr.slug + '.pug') ) {
-            file(attr.slug + '.pug', str)
-                .pipe(gulp.dest(projectDevDir+'/template/PAGESYSTEM/PAGES'));
+                file(attr.slug + '.pug', str)
+                    .pipe(gulp.dest(projectDevDir+'/template/PAGESYSTEM/PAGES'));
 
-            // var pageName = attr.slug.toUpperCase();
-            // gulp.src('vendor/file_templates/PAGES/Styles/_page.scss.tpl')
-            //     .pipe(rename('off_' + attr.slug + '-page.scss'))
-            //     .pipe(template({name: pageName}))
-            //     .pipe(gulp.dest('dev/scss/PAGES/'))
+                // var pageName = attr.slug.toUpperCase();
+                // gulp.src('vendor/file_templates/PAGES/Styles/_page.scss.tpl')
+                //     .pipe(rename('off_' + attr.slug + '-page.scss'))
+                //     .pipe(template({name: pageName}))
+                //     .pipe(gulp.dest('dev/scss/PAGES/'))
 
         }
 
@@ -154,10 +155,15 @@ gulp.task('SERVER', [], function () {
 
     browserSync.init({
         server: dist,
-        index: "index.html"
+        reloadOnRestart: false,
+        index: "index.html",
+        snippetOptions: {
+
+            // Ignore all HTML files within the templates folder
+            ignorePaths: "Projects/"+projectName+"/dist/HUD.html"}
     });
 
-    gulp.watch([dist + "index.html", dist + "/*.css"]).on('change', browserSync.reload);
+    gulp.watch([dist + "index.html", dist + "/*.css"]).on('change', browserSync.reload('index.html'));
 
 
 });
@@ -169,6 +175,7 @@ gulp.task('VIEW-FINAL', function () {
         'dev/ELEMENTS/_elements.pug',
         'HUD/*.pug',
         'HUD/*.js',
+        '!HUD/_currentPage.pug',
         'dev/MIXES/_mixes.pug',
         projectDevDir + 'qContent/concates/_modules.pug',
         projectDevDir + 'template/PAGESYSTEM/{INCLUDES,LAYOUT,PAGES}/**/*.pug',
@@ -229,7 +236,8 @@ gulp.task('VIEW-1-DATA', function () {
         'dev/**/*.json',
         '!dev/scss/MASTER_OPTIONS/*.json',
         '!dev/SOURCE_FABRIC/**/*.json',
-        'Projects/'+projectName+'/data/*.json'
+        'Projects/'+projectName+'/data/*.json',
+        '!Projects/'+projectName+'/data/currentPage.json'
     ], function () {
         runSequence('mergeJson');
 
@@ -240,7 +248,7 @@ gulp.task('VIEW-1-DATA', function () {
 gulp.task('SERVER WATCHER', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
     return watch([dist + "/index.html", dist + "/*.css", projectDevDir + "SCRIPTS/scriptMap.js"], function () {
-        browserSync.reload();
+        browserSync.reload('index.html');
 
     });
 });
@@ -1238,7 +1246,7 @@ gulp.task('svgstore-debug', function () {
 
 //////////////////////////////////////////////////////
 gulp.task('START QUANT', function () {
-    runSequence('concat-modules-pug','concat-modules-scss','views','styles','API-SERVER', 'WATCHER:NEW', 'SERVER', 'WATCHCSSTOPARSEIT')
+    runSequence('API-SERVER', 'WATCHER:NEW', 'SERVER', 'WATCHCSSTOPARSEIT')
 });
 gulp.task('RELOAD QUANT', function () {
     runSequence('WATCHER:NEW', 'WATCHCSSTOPARSEIT','mergeJson',
@@ -1437,10 +1445,15 @@ gulp.task('API-SERVER', function () {
 
                         }else if (path1.indexOf('PAGES') > -1 || path1.indexOf('LAYOUT') > -1){
 
+                                var pageNameArr = path1.split('/');
+                                var pageName = pageNameArr[pageNameArr.length -1].slice(0,-3)+'html'
+
+                                var curStr = '-var currentPage = "'+pageName+'"';
+                                fs.writeFileSync('HUD/_currentPage.pug',curStr);
 
 
 
-                            var pug = fs.readFileSync(path1, 'utf8');
+                                var pug = fs.readFileSync(path1, 'utf8');
 
 
                         }
@@ -1498,6 +1511,9 @@ gulp.task('API-SERVER', function () {
                             }
 
                             else if (type == 'page') {
+
+
+
 
                                 var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/PAGES/' + name , 'utf8');
                                 var ScssContent = '';
@@ -1723,8 +1739,29 @@ gulp.task('API-SERVER', function () {
                                    var pageNum = Object.keys(pagesData.pages).length+1;
                                     pagesData.pages[pageNum] = pageInfo;
                                     console.log(pagesData);
-                                    pagesData = JSON.stringify(pagesData)
-                                    fs.writeFile('Projects/'+projectName+'/data/pages.json', pagesData, 'utf8');
+                                    var pagesDatastr = JSON.stringify(pagesData)
+                                    fs.writeFile('Projects/'+projectName+'/data/pages.json', pagesDatastr, 'utf8')
+                                        //gulp.start('PAGESYSTEM');
+                                    for (var index in pagesData.pages) {
+                                        var attr = pagesData.pages[index];
+                                        if (attr.layout == 'default')
+                                            var str = "//- " + attr.slug + ".pug\nextends ../LAYOUT/_layout.pug\nblock title\n\t-var page={slug:'" + attr.slug + "',title:'" + attr.title + "'};\n\ttitle " + attr.title + "\nblock page\n\th1 "+ attr.title;
+                                        else
+                                            var str = "//- " + attr.slug + ".pug\nextends ../LAYOUT/" + attr.layout + "/_layout.pug\nblock title\n\t-var page={slug:'" + attr.slug + "',title:'" + attr.title + "'};\n\ttitle " + attr.title+ + "\nblock page\n\th1 "+ attr.title;
+                                        if (!fs.existsSync(projectDevDir+'template/PAGESYSTEM/PAGES/' + attr.slug + '.pug') ) {
+                                            fs.writeFileSync(projectDevDir+'/template/PAGESYSTEM/PAGES/'+attr.slug + '.pug', str)
+
+                                            // var pageName = attr.slug.toUpperCase();
+                                            // gulp.src('vendor/file_templates/PAGES/Styles/_page.scss.tpl')
+                                            //     .pipe(rename('off_' + attr.slug + '-page.scss'))
+                                            //     .pipe(template({name: pageName}))
+                                            //     .pipe(gulp.dest('dev/scss/PAGES/'))
+
+                                        }
+
+                                    }
+
+
 
                                 }
 

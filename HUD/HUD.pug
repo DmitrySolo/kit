@@ -1,3 +1,4 @@
+include _currentPage
 doctype html
 html(lang=''+head.lang)
     head
@@ -25,7 +26,7 @@ html(lang=''+head.lang)
                     //.windowMark.f-left Script
                 .window(window='Viewport' style="z-index:5")
                     .wrapperid#viewpr-content
-                        iframe(class='default-skin' id="index" src="index.html" width="100%" height="1200px" align="center" )
+                        iframe(class='default-skin' id="index" src=currentPage width="100%" height="1200px" align="center" )
                 .window(window='Script')
                     .wrapperid#script-content.clearfix
                         .plannerWrap.col-6-tp

@@ -479,7 +479,7 @@ $(document).ready(function () {
     //Viewport Resizer
 
     //$('body').wrapInner( "<div id='project-debug'></div>");
-    $('a').not($('.tabAnchr')).removeAttr('href');
+    $('a').not($('.tabAnchr')).not($('.tabAnchr',window.frames['index'].contentDocument)).removeAttr('href');
     $("#__bs_script__").insertAfter("body");
     //rea$('.editorsContainer').resizable();
 
@@ -1535,6 +1535,8 @@ $(document).ready(function () {
                 else if (arr.indexOf('PAGES')!= -1){
 
                     var name = arr[arr.length -1];
+                    var redirName = name.slice(0,-3)+'html';
+                    document.getElementById('index').src=redirName;
                     var stype = "";
                     var type ='page';
 
