@@ -1,0 +1,23 @@
+{
+  "LIBS": {
+    "modalWindow": {
+      "js": {
+        "lib1": {
+          "src": "bower_components/vex/dist/js/vex.js",
+          "container": "footer/libs"
+        },
+        "lib2": {
+          "src": "bower_components/vex/dist/js/vex.combined.min.js",
+          "container": "footer/libs"
+        },
+        "init": {
+          "src": "Projects/saleTerminalWindows/dev/qContent/MODULES/modalHint/modalHint.js",
+          "container": "footer/init/init"
+        }
+      },
+      "css": {
+        "": ""
+      }
+    }
+  }
+}

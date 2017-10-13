@@ -1,3 +1,20 @@
+/**
+* modalHint styles
+*/
+
+@mixin modalHint(){
+
+  .modalHint__content{
+
+  }
+  .modalHint{
+
+  }
+
+}
+
+////////////////////////////////////////
+@include modalHint();
 $bkgColor__radialConturButton:transparent;
 $color__radialConturButton: inherit;
 

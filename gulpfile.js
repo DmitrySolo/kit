@@ -237,6 +237,7 @@ gulp.task('VIEW-1-DATA', function () {
         '!dev/scss/MASTER_OPTIONS/*.json',
         '!dev/SOURCE_FABRIC/**/*.json',
         'Projects/'+projectName+'/data/*.json',
+        'Projects/'+projectName+'/qContent/**/*.json',
         '!Projects/'+projectName+'/data/currentPage.json'
     ], function () {
         runSequence('mergeJson');
@@ -340,7 +341,7 @@ gulp.task('STYLES-1-MODULES', function () {
 //SCRIPTS
 gulp.task('SCRIPTS-FINAL', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-    return watch(['dev/**/*.js', '!dev/**/quant-debug-JsonCss.js']
+    return watch(['dev/**/*.js', projectDevDir+'qContent/**/*.js','!dev/**/quant-debug-JsonCss.js']
         , function () {
             gulp.start('SCRIPTS ALL');
         });
@@ -869,6 +870,7 @@ gulp.task('mergeJson', function () {
         'dev/{MODULES,ELEMENTS,SCRIPTS}/**/--*/*.json',
         'dev/scss/MASTER_OPTIONS/*.json',
         'Projects/' + projectName + '/data/*.json',
+        'Projects/' + projectName + '/dev/qContent/**/*libs.json',
         'Projects/' + projectName + '/dev/scripts/**/*.json',
         'blueprint/*.json',
         '!dev/SOURCE_FABRIC/STORRAGE/**/*.json',
