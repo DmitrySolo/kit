@@ -1,0 +1,130 @@
+/* actionWindow STYLE */
+
+.actionWindow__content {
+    height: 45.5vh;
+    z-index:1;
+    width: 50%;
+    float:left;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.1s ease;
+    transition: transform  0.1s ease;
+    padding: 2vh;
+    
+    .icon {
+        width: 11vh;
+        height: 11vh;
+    }
+    &:hover{
+        z-index:2;
+        transform: scale(1.03);
+        transition: all .3s;
+        
+    }
+    
+    &:nth-child(even):hover{
+        box-shadow: -1px 1px 32px #000000;
+    }
+    &:nth-child(odd):hover{
+        box-shadow: 1px 1px 32px #000000;
+    }
+}
+
+.actionWindow__title {
+   //@include space-i('block','|','','b');
+     font-size: 1.7em;
+     @include for-size(big-desktop-up){
+         font-size: 1.9em;
+     }
+   height: 14vh;
+   max-height: 3em;
+}
+
+.actionWindow--lowerPrice {
+    background:cs('primary');
+    color: cs('foreground');
+    .actionWindow__title {
+        color: cs('foreground');
+    }
+    .icon {
+        fill: cs('foreground');
+    }
+    
+    &:hover {
+        background: darken(cs('primary'),5%);
+    }
+    
+}
+
+.actionWindow--eshop {
+    background:cs('secondary');
+       .actionWindow__title {
+        color: cs('font');
+        text-shadow: 1px 1px 1px #000;
+    }
+    &:hover {
+        background: darken(cs('secondary'),5%);
+    }
+    
+}
+
+.actionWindow--sale {
+    background:cs('foreground');
+    color: cs('primary');
+    .actionWindow__title {
+        color: cs('primary');
+    }
+    .icon {
+        fill: cs('primary');
+    }
+    &:hover {
+        background: darken(cs('foreground'),5%);
+    }
+    
+}
+
+.actionWindow--stock{
+    background:cs('background');
+      .actionWindow__title {
+        color: cs('font');
+         text-shadow: 1px 1px 1px #000;
+    }
+    &:hover {
+        background: darken(cs('background'),5%);
+    }
+}
+
+.actionWindow {
+    background: rgba(255,255,255,.5);
+}
+
+.terminalContainer {
+   text-align:center;
+   overflow:hidden;
+   background-image:url('images/geometry.png');
+   background-color: rgba(255,255,255,.5);
+   padding: 1vh;
+   height: 100vh;
+   h1 {
+       
+       text-transform: uppercase;
+       color:cs('background-d');
+       height: 7vh;
+   }
+}
+
+.actionWindow__icon {
+   padding-bottom: 2vh;//
+}
+
+.actionWindow__desc {
+    @include for-size(big-desktop-up){
+        font-size: 1.5em;
+    }
+    font-size: 1.4em;
+
+    padding-bottom: 3vh;//
+}
+
+
+

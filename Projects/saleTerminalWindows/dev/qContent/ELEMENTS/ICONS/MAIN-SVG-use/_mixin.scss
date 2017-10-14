@@ -1,0 +1,70 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 2rem;
+  max-width: 100%;
+  fill: #fff;
+}
+
+.icon--close {
+  height: 6.8rem;
+  width: 6.8rem;
+  fill: cs('font-d');
+  cursor: pointer;
+}
+.icon--heart {
+   height: 6.8rem;
+   width: 6.8rem;
+   fill: red;
+   cursor: pointer;
+ }
+.icon--heart--animate {
+  @include a-set-frame(heart, 1.5s,  1s,  1,linear,$frames:(
+            0  :(transform:rotate(30deg)),
+            .5 :(transform:rotate(60deg)),
+            1 :(transform:rotate(180deg))
+    ));
+}
+.icon--search {
+  width: 2rem;
+}
+
+.icon--angle {
+  height: 1rem;
+  width: 1rem;
+  fill: cs('font-l');
+}
+
+.catalogMenu__list__item--active {
+  .icon--angle {
+    fill: cs('accent');
+  }
+}
+
+.icon-menu__button {
+  cursor: pointer;
+  width: 2.6em;
+  background-color: cs('primary-d');
+  border-radius: 3px;
+  @include space('element','a','');
+}
+.ove-markedHeader {
+  display: inline-block;
+  background-color: cs('primary');
+  width: 40px;
+  height: 40px;
+  line-height: 50px;
+  vertical-align: middle;
+  border-radius: 50%;
+  @include space('element','','r');
+  .icon {
+    height: 1em;
+    vertical-align: baseline;
+    width: auto;
+
+  }
+}
+.ove-sectionHeader {
+  @include space('element','','b');
+}

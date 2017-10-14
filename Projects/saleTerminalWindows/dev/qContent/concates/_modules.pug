@@ -1,0 +1,24 @@
+mixin MODULE-modalHint()
+	<!-- split modules/modalHint -->
+	.modalHint__content(data-qcontent='module__modalHint')
+		.modalHint.vex-theme-default
+			h3 Modal Hint!!!
+
+mixin B-radialConturButton(value,className)
+	-if (!className) className =''
+	button.radialConturButton(class=''+className data-qcontent='elements__buttons__radialConturButton')=value
+
+
+mixin I(id,classModifier)
+	-if (!classModifier) classModifier =''
+	svg(class='icon '+classModifier)
+		use(xlink:href="#"+id)
+mixin LEVEL-actionWindow(title,className,icon,subtext,actionButtonText)
+	-if (!className) className =''
+	.actionWindow__content(class = 'actionWindow__content '+ className data-qcontent="level__actionWindow")
+		h2.actionWindow__title=title
+		.actionWindow__icon
+			+I(icon)
+		p.actionWindow__desc=subtext
+		+B-radialConturButton(actionButtonText)
+			

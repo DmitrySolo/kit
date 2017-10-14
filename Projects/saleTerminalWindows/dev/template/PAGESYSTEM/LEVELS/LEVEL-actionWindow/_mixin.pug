@@ -1,0 +1,9 @@
+mixin LEVEL-actionWindow(title,className,icon,subtext,actionButtonText)
+	-if (!className) className =''
+	.actionWindow__content(class = 'actionWindow__content '+ className data-qcontent="level__actionWindow")
+		h2.actionWindow__title=title
+		.actionWindow__icon
+			+I(icon)
+		p.actionWindow__desc=subtext
+		+B-radialConturButton(actionButtonText)
+			
