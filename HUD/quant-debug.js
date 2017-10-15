@@ -1755,7 +1755,7 @@ $(document).ready(function () {
 	})
 
 
-	// LOAD TO QUANT
+	// LOAD TO QUANT!
 	$('*', window.frames['index'].contentDocument).on('mousedown', function (e) {
 		e.stopPropagation();
 		$('#contentNavigator__type input,#contentNavigator__stype input,#contentNavigator__name input').val('');
