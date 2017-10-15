@@ -1,5 +1,13 @@
-mixin MODULE-modalHint()
+mixin MODULE-modalHint(className,title,textBlockAfterTitle,textBlockAfterP)
 	<!-- split modules/modalHint -->
+	-if (!className) className =''
 	.modalHint__content(data-qcontent='module__modalHint')
-		.modalHint.vex-theme-default
-			h3 Modal Hint!!!
+		.modalHint(class=' '+className)
+			.modalHint__icons
+				+I('hint','toShops')
+				+I('hint','toSearch')
+				+I('close','close')
+			h2.text.modalHint__title=title
+			p.text=textBlockAfterTitle
+			h5.text.modalHint__q=textBlockAfterP
+			

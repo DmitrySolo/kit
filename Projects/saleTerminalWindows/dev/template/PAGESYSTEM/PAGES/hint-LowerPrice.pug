@@ -4,4 +4,6 @@ block title
 	-var page={slug:'hint-LowerPrice',title:'Hint Desevle'};
 	title Hint Desevle
 block page
-	+MODULE-modalHint()
+	-var textBlockAfterTitle = 'Введите наименование товара в поиск Яндекс Маркета или проверьте магазины из списка '
+	-var textBlockAfterP = 'Нашли товар дешевле чем у нас?'
+	+MODULE-modalHint('modalHint--lowerPrice','Сравнивайте цены.',textBlockAfterTitle,textBlockAfterP)

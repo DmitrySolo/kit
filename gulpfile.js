@@ -341,7 +341,7 @@ gulp.task('STYLES-1-MODULES', function () {
 //SCRIPTS
 gulp.task('SCRIPTS-FINAL', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-    return watch(['dev/**/*.js', projectDevDir+'qContent/**/*.js','!dev/**/quant-debug-JsonCss.js']
+    return watch(['dev/**/*.js','!dev/**/quant-debug-JsonCss.js']
         , function () {
             gulp.start('SCRIPTS ALL');
         });

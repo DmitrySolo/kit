@@ -2,19 +2,89 @@
 * modalHint styles
 */
 
-@mixin modalHint(){
+@mixin modalHint($w,$h){
 
   .modalHint__content{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: lighten(violet,20%);
+      
 
   }
   .modalHint{
-
+    position: absolute;
+    padding:2%;
+    top: 50%;
+    left:50%;
+    right: 50%;
+    width: $w;
+    height: $h;
+    margin-top: $h/-2;
+    margin-left: $w/-2;
+    border: solid 3px cs('primary-d');
+    border-radius: 2%;
+        .icon{
+            position: absolute;
+        }
+        .close {
+            position:absolute;
+            top     : -15px;
+            right   : -44px;
+            height  :3em;
+            fill    : #000;
+            cursor  : pointer;
+        }
+      
+  }
+  .modalHint__title {
+      text-align: center;
+  }
+  .modalHint__q {
+      text-transform: uppercase;
+      text-align: center;
+  }
+  .modalHint--lowerPrice{
+      background-color:cs('primary');
+      .icon.toShops{
+          top:-80px;
+          left:30px;
+          width:3em;
+          height: 3em;
+          transform: rotate(220deg) scale(4.2) rotateY(180deg);
+          fill:darken(cs('primary-d'),2%);
+          stroke: #fff;
+          stroke-width: 1;
+      }
+      .icon.toSearch{
+          top:-50px;
+          left: -60px;
+          width:3em;
+          height: 3em;
+          transform: rotate(180deg) scale(3.5) rotateY(180deg);
+          fill:darken(cs('primary-d'),2%);
+          stroke: #fff;
+          stroke-width: 1;
+      }
+      .modalHint__title {
+          color:#000;
+      }
+      p{
+          color:#3d3f42;
+      }
+      .modalHint__q {
+          color: #000;
+      }
+      
   }
 
 }
 
 ////////////////////////////////////////
-@include modalHint();
+@include modalHint(500px,600px);
 $bkgColor__radialConturButton:transparent;
 $color__radialConturButton: inherit;
 
