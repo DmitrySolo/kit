@@ -3,3 +3,8 @@ extends ../LAYOUT//_layout.pug
 block title
 	-var page={slug:'hint-stock',title:'hint-stock'};
 	title hint-stockNaNhint-stock
+block page
+	-var textBlockAfterTitle = 'Введите наименование товара в поиск Яндекс Маркета или проверьте магазины из списка '
+	-var textBlockAfterP = 'Нашли товар дешевле чем у нас?'
+	-var actionText ="Пригласите продавца-консультанта!"
+	+MODULE-modalHint('modalHint--lowerPrice','Сравнивайте цены.',textBlockAfterTitle,textBlockAfterP,actionText)

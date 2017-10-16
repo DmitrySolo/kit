@@ -1,4 +1,7 @@
 /**
 * MODULE: modalHint script
 */
-alert('It doesnt works')
+$('.close').on('mousedown',function () {
+  $('.modalHint__content').css('display','none').animate();
+    
+})

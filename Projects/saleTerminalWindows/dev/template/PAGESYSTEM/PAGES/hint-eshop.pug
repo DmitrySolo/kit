@@ -3,3 +3,8 @@ extends ../LAYOUT//_layout.pug
 block title
 	-var page={slug:'hint-eshop',title:'hint-eshop'};
 	title hint-eshopNaNhint-eshop
+block page
+	-var textBlockAfterTitle = 'Введите наименование товара в поиск <br> или начните подбор по каталогу '
+	-var textBlockAfterP = 'Нашли, что искали или возникли вопросы ?'
+	-var actionText ="Для консультации или оформления заказа пригласите продавца-консультанта!"
+	+MODULE-modalHint('modalHint--eshop','Выбирайте из всего ассортимента.',textBlockAfterTitle,textBlockAfterP,actionText)

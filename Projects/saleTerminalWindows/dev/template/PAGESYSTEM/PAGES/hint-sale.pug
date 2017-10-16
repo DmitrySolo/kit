@@ -3,3 +3,8 @@ extends ../LAYOUT//_layout.pug
 block title
 	-var page={slug:'hint-sale',title:'hint-sale'};
 	title hint-saleNaNhint-sale
+block page
+	-var textBlockAfterTitle = 'Выбирайте среди лучших и постоянно обновляющихся предложений! Добавляйте понравившиеся товары в закладки.'
+	-var textBlockAfterP = 'Необходима консультация или готовы оформить заказ?'
+	-var actionText ="Пригласите продавца-консультанта!"
+	+MODULE-modalHint('modalHint--sale','РАСПРОДАЖА.',textBlockAfterTitle,textBlockAfterP,actionText)

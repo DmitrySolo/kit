@@ -1,13 +1,23 @@
-mixin MODULE-modalHint(className,title,textBlockAfterTitle,textBlockAfterP)
+mixin MODULE-modalHint(className,title,textBlockAfterTitle,textBlockAfterP,actionText)
 	<!-- split modules/modalHint -->
 	-if (!className) className =''
 	.modalHint__content(data-qcontent='module__modalHint')
 		.modalHint(class=' '+className)
 			.modalHint__icons
-				+I('hint','toShops')
-				+I('hint','toSearch')
+				-if(className == 'modalHint--lowerPrice')
+					+I('hint','toSearch')
+					+I('hint','toShops')
+				-if(className == 'modalHint--eshop')
+					+I('hint','toSearch')
+					+I('hint','toCat')
+				-if(className == 'modalHint--sale')
+					+I('hint','toBookmarks')
+					+I('hint','toCat')
 				+I('close','close')
 			h2.text.modalHint__title=title
 			p.text=textBlockAfterTitle
 			h5.text.modalHint__q=textBlockAfterP
+			.modalHint__sellerIcon
+				+I('seller','seller')
+			span.modalHint__action=actionText
 			
