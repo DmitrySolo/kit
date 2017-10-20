@@ -1,0 +1,27 @@
+mixin MODULE-flyPageFragment()
+	<!-- split modules/flyPageFragment -->
+	.flyPageFragment__content(data-qcontent='module__flyPageFragment')
+		.flyPageFragment
+			button.toOrder.active Добавить в заявку
+			button.toOrder.succes В заявке
+			table
+				tr
+					td.fragmentTitle Артикул
+					td.sku 123243
+				tr
+					td.fragmentTitle МРЦ: 
+					td.rrc_price 8900 Р
+				tr
+					td.fragmentTitle МОЦ:
+					td.mop_price 6500 Р
+				tr
+					td.fragmentTitle Доступно:
+					td.stock 12 шт
+mixin I(id,classModifier)
+	-if (!classModifier) classModifier =''
+	svg(class='icon '+classModifier)
+		use(xlink:href="#"+id)
+mixin B-radialConturButton(value,className)
+	-if (!className) className =''
+	button.radialConturButton(class=''+className data-qcontent='elements__buttons__radialConturButton')=value
+

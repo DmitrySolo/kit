@@ -1,7 +1,7 @@
 mixin MODULE-modalHint(className,title,textBlockAfterTitle,textBlockAfterP,actionText)
 	<!-- split modules/modalHint -->
 	-if (!className) className =''
-	.modalHint__content(data-qcontent='module__modalHint')
+	#modalHint.modalHint__content(data-qcontent='module__modalHint')
 		.modalHint(class=' '+className)
 			.modalHint__icons
 				-if(className == 'modalHint--lowerPrice')
@@ -12,6 +12,8 @@ mixin MODULE-modalHint(className,title,textBlockAfterTitle,textBlockAfterP,actio
 					+I('hint','toCat')
 				-if(className == 'modalHint--sale')
 					+I('hint','toBookmarks')
+					+I('hint','toCat')
+				-if(className == 'modalHint--stock')
 					+I('hint','toCat')
 				+I('close','close')
 			h2.text.modalHint__title=title
@@ -27,6 +29,11 @@ mixin B-radialConturButton(value,className)
 	button.radialConturButton(class=''+className data-qcontent='elements__buttons__radialConturButton')=value
 
 
+mixin B-sdfsdf(value,className)
+	-if (!className) className =''
+	button.sdfsdf(class=''+className data-qcontent=elements__buttons__sdfsdf)=value
+
+
 mixin I(id,classModifier)
 	-if (!classModifier) classModifier =''
 	svg(class='icon '+classModifier)
@@ -40,3 +47,8 @@ mixin LEVEL-actionWindow(title,className,icon,subtext,actionButtonText)
 		p.actionWindow__desc=subtext
 		+B-radialConturButton(actionButtonText)
 			
+mixin LEVEL-sfsdfsdww(title,className)
+	-if (!className) className =''
+	.sfsdfsdww__content(class = 'sfsdfsdww__content'+ className data-qcontent="level__sfsdfsdww")
+		h2.sfsdfsdww__title=title
+		block sfsdfsdww

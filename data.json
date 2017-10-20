@@ -55,6 +55,33 @@
 				"": ""
 			}
 		},
+		"quant-debug": {
+			"js": {
+				"quant-debug-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
+					"container": "footer/init"
+				},
+				"notify": {
+					"src": "bower_components/notifyjs/dist/notify.js",
+					"container": "footer/libs+"
+				},
+				"JQUI-script": {
+					"src": "bower_components/jquery-ui/jquery-ui.min.js",
+					"container": "footer/libs+"
+				},
+				"vieport": {
+					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
+					"container": "footer/libs+"
+				},
+				"viewportResizer": {
+					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-debug-JsonCss": {
 			"js": {
 				"quant-debug-JsonCss-script": {
@@ -99,33 +126,14 @@
 				"": ""
 			}
 		},
-		"radialConturButton": {
+		"flyPageFragment": {
 			"js": {
 				"lib1": {
 					"src": "",
 					"container": "footer/libs"
 				},
 				"init": {
-					"src": "dev/ELEMENTS/BUTTONS/--radialConturButton/radialConturButton.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"modalWindow": {
-			"js": {
-				"lib1": {
-					"src": "bower_components/vex/dist/js/vex.js",
-					"container": "footer/libs"
-				},
-				"lib2": {
-					"src": "bower_components/vex/dist/js/vex.combined.min.js",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/saleTerminalWindows/dev/qContent/MODULES/modalHint/modalHint.js",
+					"src": "Projects/stsFragments/dev/qContent/MODULES/flyPageFragment/flyPageFragment.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -168,7 +176,8 @@
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
 		"'HEADER'": "('Roboto Slab')\n//)",
-		"Body": "('Rubik'",
+		"Body": "(''",
+		"undefined": "('undefined'",
 		"//  'MAIN'": "('Oswald')"
 	},
 	"space": "px",
@@ -191,8 +200,8 @@
 	"body-font-weight": "normal",
 	"header-font": "false",
 	"header-font-weight": "700",
-	"mobile-font": "16px",
-	"screen-font": "20px",
+	"mobile-font": "11px",
+	"screen-font": "16px",
 	"line-height-ratio": "1.5",
 	"siteWidth": "1170px",
 	"colums": "12",
@@ -240,14 +249,14 @@
 	"blockt_space_o": ".7",
 	"head": {
 		"lang": "eng",
-		"title": "saleTerminalWindows",
+		"title": "stsFragments",
 		"desc": "This is starter description",
 		"kw": "starter application , hurray!!!",
 		"fontlinks": {
-			"0": "https://fonts.googleapis.com/css?family=Rubik:500,900&amp;subset=cyrillicc"
+			"0": ""
 		},
 		"debug": false,
-		"prefix": "stw"
+		"prefix": "sf"
 	},
 	"LIBS_removeThis_whenEdit": {
 		"exampleName": {
@@ -287,52 +296,13 @@
 			"dop_class": ""
 		},
 		"2": {
-			"title": "Hint Desevle",
-			"slug": "hint-LowerPrice",
-			"MainMenu": "false",
-			"dop_class": "",
-			"layout": "",
-			"group": ""
-		},
-		"3": {
-			"title": "hint-eshop",
-			"slug": "hint-eshop",
-			"MainMenu": "false",
-			"dop_class": "",
-			"layout": "",
-			"group": ""
-		},
-		"4": {
-			"title": "hint-eshop",
-			"slug": "hint-eshop",
-			"MainMenu": "false",
-			"dop_class": "",
-			"layout": "",
-			"group": ""
-		},
-		"5": {
-			"title": "hint-sale",
-			"slug": "hint-sale",
-			"MainMenu": "false",
-			"dop_class": "",
-			"layout": "",
-			"group": ""
-		},
-		"6": {
-			"title": "hint-stock",
-			"slug": "hint-stock",
-			"MainMenu": "false",
-			"dop_class": "",
-			"layout": "",
-			"group": ""
-		},
-		"7": {
-			"title": "test",
-			"slug": "test",
-			"MainMenu": "false",
-			"dop_class": "",
-			"layout": "",
-			"group": ""
+			"title": "ExamplePage",
+			"slug": "example",
+			"kw": "starter application , hurray!!!",
+			"layout": "default",
+			"MainMenu": true,
+			"group": false,
+			"dop_class": ""
 		}
 	},
 	"___LIBS": {

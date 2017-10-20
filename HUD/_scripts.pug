@@ -1,5 +1,16 @@
 script(src='scripts/quant-debug-JsonCss.js')
 script.
+    var qscale = function (v) {
+        var stepMinus = -(1 - v)*10*21;
+
+        $('iframe#index').contents().find('.projectWrapper').css({
+            "transform": "scale(" + v + ")",
+            "position":"relative",
+            "top":stepMinus+"px"
+        })
+        $('#scallerLabel').text(v);
+    }
+script.
     var frameEl = function (el) {
        return $('iframe#index').contents().find(el)
     },

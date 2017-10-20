@@ -60,3 +60,104 @@ html(lang=''+head.lang)
                 include _bottom_panel
                 include _modals
             include _scripts
+        .debugPannel__section.col-2-tp.elAdderCtn
+            .tabList.elAdder
+                div#tabs-add-elment
+                    div#tabtags
+                        ul.debugPannel__colorSpecific
+                            .clearfix
+                                li.col-1-tp Bl:
+                                li.headers#addHeader.col-1-tp.elAdder(data-el='<h1></h1><h2></h2><h3></h3><h4></h4><h5></h5><h6></h6>') H1+
+                                li.col-1-tp.prgrph.elAdder(data-el='p') P
+                                li.col-1-tp.ul.elAdder(data-el='<ul></ul>') ul
+                                li.col-1-tp.li.elAdder(data-el='<li> the li element </li>') li
+                                li.col-1-tp.div.elAdder(data-el='<div></div>') div
+                                li.col-1-tp.main.elAdder(data-el='<main></main>') main
+                                li.col-1-tp.nav.elAdder(data-el='<nav><nav>') nav
+                                li.col-1-tp.tbl.elAdder(data-el='<table></table>') tbl
+                                li.col-1-tp.dl.elAdder(data-el='<dl></dl>') dl
+                                li.col-1-tp.dt.elAdder(data-el='<dt></dt>') dt
+                                li.col-1-tp.dd.elAdder(data-el='<dd></dd>') dd
+                                li.col-1-tp
+                                li.col-1-tp.blockquote.elAdder(data-el='<blockquote></blockquote>') blqt
+                                li.col-1-tp.form.elAdder(data-el='<form></form>') form
+                            .clearfix
+                                li.col-1-tp Inl:
+                                li.col-1-tp.span.elAdder(data-el='<span> Span Text</span>') span
+                                li.col-1-tp.link.elAdder(data-el='<a>this is link</a>') a
+                                li.col-1-tp.i.elAdder(data-el='<i>italic</i>') i
+                                li.col-1-tp.input.elAdder(data-el='<input>') inpt
+                                li.col-1-tp.button.elAdder(data-el='<button>Button</button>') btn
+                                li.col-1-tp.cite.elAdder(data-el='<cite></cite>') cite
+                                li.col-1-tp.select.elAdder(data-el='<select></select>') select
+                                li.col-1-tp.label.elAdder(data-el='<label></label>') label
+                                li.col-1-tp.textarea.elAdder(data-el='<textarea>') txta
+                                li.col-1-tp.tr.elAdder(data-el='<tr></tr>') tr
+                                li.col-1-tp.td.elAdder(data-el='<td></td>') td
+                                li.col-1-tp
+                                li.col-1-tp.th.elAdder(data-el='<thead></thead>') th
+                    div#tabHTML5
+                        ul.debugPannel__colorSpecific
+                            .clearfix
+                                li.col-1-tp.header.elAdder(data-el='<header></header>') Hdr
+                                li.col-1-tp.footer.elAdder(data-el='<footer></footer>') Ftr
+                                li.col-1-tp.article.elAdder(data-el='<article></article>') arcl
+                                li.col-1-tp.aside.elAdder(data-el='<aside></aside>') aside
+                                li.col-1-tp.section.elAdder(data-el='<section></section>') sectn
+                                li.col-1-tp.figure.elAdder(data-el='<figure></figure>') figure
+                                li.col-1-tp.figcaption.elAdder(data-el='<figcaption></figcaption>') figcpt
+                    div#tabclass
+                        ul.debugPannel__colorSpecific
+                            li span
+
+                            li a
+                                span(style={
+                                    display: 'inline-block',
+                                    width: '100%',
+                                    "text-shadow": "1px 1px 1px black"
+                                }) Span
+                            li
+                                img(alt='img/svg',style={
+                                    display: 'inline-flex',
+                                    "vertical-align": 'middle',
+                                    "text-shadow": "1px 1px 1px black"
+                                })
+                            li
+                                div Div
+                    div#tabcombination
+                        ul.debugPannel__colorSpecific
+                            li.headers
+                                h6(style={
+                                    margin: '0',
+                                    "font-size": '1rem',
+                                    "font-weight": '400',
+                                    "text-shadow": "1px 1px 1px black"
+                                }) h1-h6
+                            li
+                                p  P
+                            li
+                                ul  ul
+                            li
+                                li li
+                            li
+                                .col-  .Col
+                            li
+                                a(style={
+                                    display: 'inline-block',
+                                    width: '100%',
+                                    "text-shadow": "1px 1px 1px black"
+                                }) A
+                            li
+                                span(style={
+                                    display: 'inline-block',
+                                    width: '100%',
+                                    "text-shadow": "1px 1px 1px black"
+                                }) Span
+                            li
+                                img(alt='img/svg',style={
+                                    display: 'inline-flex',
+                                    "vertical-align": 'middle',
+                                    "text-shadow": "1px 1px 1px black"
+                                })
+                            li
+                                div Div

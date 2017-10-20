@@ -1,32 +1,35 @@
 include ../dev/templates/PAGESYSTEM/INCLUDES/_includes
 include ../dev/templates/mixins/_mixins
 script
-    include jquery-ui.min.js
+	include jquery-ui.min.js
 .top-panel-content
-    .quant.hud Q
-    span.projectTitle= head.title
-    .buttonsSection.f-left.clearfix
-        .hud-Button.f-left#debugViewSwitcher
-            +I('allocation')
-        .hud-Button.f-left
-            +I('pantone')
-        .hud-Button.f-left#gridb
-            +I('grid')
-        .hud-Button.f-left#editorSwitcher
-            +I('html')
-        .hud-Button.f-left#optionSwitcher
-            +I('settings')
-        .hud-Button.f-left#spacerSwitcher
-            +I('compass')
-        .hud-Button.f-left#rulerSwitcher
-            +I('timeline')
-        .hud-Button.f-left
-            +I('four-layers')
-        .hud-Button.f-left
-            +I('testing')
-        .hud-Button.f-left#addContent
-            +I('addContent','addContent')
-        .hud-Button.f-left#savecode
-            +I('savecode','savecode')
-    .apiTester
-        span#apitest
+	.quant.hud Q
+	span.projectTitle= head.title
+	.buttonsSection.f-left.clearfix
+		.hud-Button.f-left#debugViewSwitcher
+			+I('allocation')
+		.hud-Button.f-left
+			+I('pantone')
+		.hud-Button.f-left#gridb
+			+I('grid')
+		.hud-Button.f-left#editorSwitcher
+			+I('html')
+		.hud-Button.f-left#optionSwitcher
+			+I('settings')
+		.hud-Button.f-left#spacerSwitcher
+			+I('compass')
+		.hud-Button.f-left#rulerSwitcher
+			+I('timeline')
+		.hud-Button.f-left
+			+I('four-layers')
+		.hud-Button.f-left
+			+I('testing')
+		.hud-Button.f-left#addContent
+			+I('addContent','addContent')
+		.hud-Button.f-left#savecode
+			+I('savecode','savecode')
+		.hud-Button.f-left
+			input#scaller(type = "range" min = ".3" max = "2" step = ".1"  onchange = "qscale(this.value)",value='1')
+			span#scallerLabel(style="line-height:0; color:#006eb7 !important") 1
+	.apiTester
+		span#apitest

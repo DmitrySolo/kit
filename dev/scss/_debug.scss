@@ -402,7 +402,7 @@
     cursor: grab !important;
   }
   .debugPannel__wrapper {
-    display: none;
+   // display: none;
     background: #3c3f41 !important;
     box-shadow: 2px -1px 0px 0px #2f2d2d;
     border-top: solid 1px #b19e9e;
@@ -824,6 +824,10 @@
   .elAdder {
     .clearfix {
       margin-top: 4px;
+    }
+    color: #006eb7;
+    &.col-1-tp{
+      background-color: #1c1c1c;
     }
   }
   .mChacker {
@@ -1806,6 +1810,14 @@
   .ace_jade.ace_tag {
     color: #ffa40a !important;
   }
-
+  .elAdderCtn {
+    position: absolute;
+    right:0;
+    top:300px;
+  }
+  #scallerLabel{
+    font-weight: bold;
+    padding-left: 5px;
+  }
 }
 

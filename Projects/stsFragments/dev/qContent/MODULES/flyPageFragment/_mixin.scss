@@ -1,0 +1,57 @@
+/**
+* flyPageFragment styles
+*/
+
+@mixin flyPageFragment(){
+
+  .flyPageFragment__content{
+    font-family: arial, san-serif;
+  }
+  .flyPageFragment{
+    background:cs('foreground');
+    .stock_title, .stock {
+        color: cs('succes-d');
+        font-size: 16px;
+    }
+    .fragmentTitle {
+        font-weight: bold;
+    }
+    .rrc_price{
+        font-size: 22px;
+    }
+    .mop_price {
+        font-size: 26px;
+        color: cs('succes-d');
+    }
+    .toOrder {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 20px;
+        text-align: center;
+        background: cs('accent');
+        border: solid 2px cs('accent-l');
+        padding: 20px 0px;
+        width: 240px;
+        border-radius: 5px;
+        transition: background .2s ease;
+        text-shadow: 1px 1px 1px #000;
+        text-decoration: none;
+        &.succes {
+            background: cs('succes');
+            border-color: cs('succes-l');
+            &:hover{
+                background: cs('succes-l');
+            }
+        }
+        &:hover{
+            background: cs('accent-l');
+        
+        }
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include flyPageFragment();

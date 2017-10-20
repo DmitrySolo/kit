@@ -4,7 +4,8 @@
 
 @mixin modalHint($w,$h){
 
-  .modalHint__content{
+  
+      .modalHint__content{
       position: fixed;
       top: 0;
       left: 0;
@@ -15,6 +16,8 @@
       
 
   }
+  #modalHint{
+     font: fs("Body");$body-font-weight: normal;
   .modalHint{
     text-align: center;
     position: absolute;
@@ -27,6 +30,7 @@
     margin-top: $h/-2;
     margin-left: $w/-2;
     border-radius: 2%;
+    box-shadow: 0px 0px 59px 11px silver;
         .icon{
             position: absolute;
         }
@@ -202,7 +206,52 @@
       }
       
   }
+    // STOCK
+  .modalHint--stock{
+      text-shadow: 1px 1px 1px #000;
+       border: solid 3px lighten(cs('background'), 5%);
+      background-color: cs('background');
+
+      .icon.toCat{
+            transform: rotateY(180deg) rotate(-90deg) scale(4);
+            left:-110px;
+            width: 3em;
+            height: 3em;
+            top: 175px;
+            fill:cs('background-d');
+            stroke: #fff;
+            stroke-width: 1;
+      }
+      
+      .modalHint__sellerIcon {
+         text-align: center;
+         height: 4em;
+         margin-bottom: 15px;
+      }
+      .icon.seller {
+          width: 4em;
+          height: 4em;
+          fill:#fff;
+          margin-left: -2em;
+      }
+      .modalHint__title {
+          color:cs('primary');
+      }
+      p{
+          color:#fff;
+      }
+      .modalHint__q {
+          color: #fff;
+          @include space-i('block','|','b','b')
+      }
+      .modalHint__action{
+          color:#fff;
+      }
+      
+      }
+      
+      }
 }
 
 ////////////////////////////////////////
-@include modalHint(500px,600px);
+@include modalHint(500px,650px);

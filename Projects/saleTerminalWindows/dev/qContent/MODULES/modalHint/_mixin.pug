@@ -1,7 +1,7 @@
 mixin MODULE-modalHint(className,title,textBlockAfterTitle,textBlockAfterP,actionText)
 	<!-- split modules/modalHint -->
 	-if (!className) className =''
-	.modalHint__content(data-qcontent='module__modalHint')
+	#modalHint.modalHint__content(data-qcontent='module__modalHint')
 		.modalHint(class=' '+className)
 			.modalHint__icons
 				-if(className == 'modalHint--lowerPrice')
@@ -12,6 +12,8 @@ mixin MODULE-modalHint(className,title,textBlockAfterTitle,textBlockAfterP,actio
 					+I('hint','toCat')
 				-if(className == 'modalHint--sale')
 					+I('hint','toBookmarks')
+					+I('hint','toCat')
+				-if(className == 'modalHint--stock')
 					+I('hint','toCat')
 				+I('close','close')
 			h2.text.modalHint__title=title
