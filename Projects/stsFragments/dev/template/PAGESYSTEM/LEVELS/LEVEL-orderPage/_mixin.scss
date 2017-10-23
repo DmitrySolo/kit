@@ -1,0 +1,40 @@
+/* orderPage STYLE */
+
+.orderPage__content {
+  background: cs('foreground');
+  padding: 60px 30px;
+  a {
+    color: cs('primary');
+  }
+}
+
+.orderPage__title {
+  text-align: center;
+  margin-bottom: 30px;
+  color:cs('succes');
+}
+
+.orderPage__mainMessage {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.orderPage__subMess {
+  color: cs('font-l');
+  width: 50%;
+  margin: 0 auto 30px;
+  li {
+    list-style: circle;
+  }
+  @include for-size(phone-only){
+      width: 100%;
+  }
+
+  }
+
+.orderPage__actions {
+  text-align: center;
+}

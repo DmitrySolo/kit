@@ -1,0 +1,18 @@
+/**
+* confirmedOrderPage styles
+*/
+
+@mixin confirmedOrderPage(){
+
+  .confirmedOrderPage__content{
+
+  }
+  .confirmedOrderPage{
+        color:red;
+  }
+
+}
+
+
+////////////////////////////////////////
+@include confirmedOrderPage();

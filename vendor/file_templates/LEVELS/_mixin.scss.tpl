@@ -1,8 +1,10 @@
 /* <%=levelName%> STYLE */
 
-.<%=levelName%>__content {
+.<%=levelName%> {
+    &__content {
 
-}
-.<%=levelName%>__title {
+    }
+    &__title {
 
+    }
 }

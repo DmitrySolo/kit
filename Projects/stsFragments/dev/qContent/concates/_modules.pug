@@ -1,9 +1,18 @@
+mixin MODULE-anotherTest()
+	<!-- split modules/anotherTest -->
+	.anotherTest__content(data-qcontent='module__anotherTest')
+		.anotherTest
+mixin confirmedOrderPage()
+	<!-- split modules/confirmedOrderPage -->
+	.confirmedOrderPage__content(data-qcontent='module__confirmedOrderPage')
+		.confirmedOrderPage 
+			span hello Dude!!!
 mixin MODULE-flyPageFragment()
 	<!-- split modules/flyPageFragment -->
 	.flyPageFragment__content(data-qcontent='module__flyPageFragment')
 		.flyPageFragment
-			button.toOrder.active Добавить в заявку
-			button.toOrder.succes В заявке
+			button.toOrder.active.notEdit Добавить в заявку
+			button.toOrder.succes.notEdit В заявке
 			table
 				tr
 					td.fragmentTitle Артикул
@@ -17,6 +26,19 @@ mixin MODULE-flyPageFragment()
 				tr
 					td.fragmentTitle Доступно:
 					td.stock 12 шт
+mixin MODULE-test()
+	<!-- split modules/test -->
+	.test__content(data-qcontent='module__test')
+		.test
+mixin MODULE-testOfParent()
+	<!-- split modules/testOfParent -->
+	.testOfParent__content(data-qcontent='module__testOfParent')
+		span.testOfParent Hurray!!! Levels are BACK!!!
+		span Its real good News
+mixin MODULE-testSnippetModule()
+	<!-- split modules/testSnippetModule -->
+	.testSnippetModule__content(data-qcontent='module__testSnippetModule')
+		.testSnippetModule
 mixin I(id,classModifier)
 	-if (!classModifier) classModifier =''
 	svg(class='icon '+classModifier)
@@ -25,3 +47,29 @@ mixin B-radialConturButton(value,className)
 	-if (!className) className =''
 	button.radialConturButton(class=''+className data-qcontent='elements__buttons__radialConturButton')=value
 
+
+mixin LEVEL-orderPage(title,className)
+	-if (!className) className =''
+	section.orderPage__content(class = 'orderPage__content'+ className data-qcontent="level__orderPage")
+		h2.orderPage__title=title
+		p.orderPage__mainMessage.text
+			-var link = "<a href='/'>N 123123</a>"
+			-var link1 = "<a href='/'>личном кабинете</a>"
+			-var link2 = "<a href='/'>Иванов Иван</a>"
+			| Ваша заявка 
+			|!{link}
+			| принята на обработку.
+		ul.orderPage__subMess
+			li В настоящий момент заявка ожидает подтверждения менеджером.
+			li Ваш ответственный менеджер !{link2} автоматически оповещен.
+			li Отслеживать статус заявки вы можете в !{link1}.
+			li Электронная копия заявки отправлена на указанный вами email.
+			
+		.orderPage__actions
+			a(href='/') &larr; В личный Кабинет.
+			br
+			a(href='/') &larr; На главную.
+		if block
+			block
+			
+		

@@ -38,6 +38,8 @@ script
     include classMaker.js
 script
     include ../vendor/Editor Snippets/snippets.js
+script
+    include ../vendor/Editor Snippets/quantContent.js
 script.
     /**
      * http://www.openjs.com/scripts/events/keyboard_shortcuts/
@@ -300,7 +302,7 @@ script(role='scss').
     var session = editor.getSession();
 
 
-    // Csoncat together the built in extensions
+    // Csoncat together the built in extensions quantCon
     var myCustomSnippetText = quantScss;
 
     session.setMode(new scssMode());
@@ -311,7 +313,8 @@ script(role='pug').
     var PugMode = ace.require("ace/mode/jade").Mode;
     editorPug.session.setMode(new PugMode());
     editorPug.session.setOptions({ tabSize: 4, useSoftTabs: false });
-
+    ace.require("ace/ext/language_tools");
+        ace.require('ace/multi_select');
     var staticWordCompleter = {
         getCompletions: function(editorPug, session, pos, prefix, callback) {
             var wordList = ["foo", "bar", "baz"];
@@ -329,6 +332,10 @@ script(role='pug').
         enableSnippets: true,
         enableLiveAutocompletion: true
     });
+    var myCustomSnippetTextPug = quantCon;
+        var sessionPug = editorPug.getSession();
+        sessionPug.setMode(new PugMode());
+        ace_snippets(editorPug, sessionPug, 'jade',myCustomSnippetTextPug);
 script(role='js').
     var editorJs = ace.edit("editorJs");
     ace.require("ace/ext/language_tools");

@@ -1,0 +1,18 @@
+/**
+* anotherTest styles
+*/
+
+@mixin anotherTest(){
+
+  .anotherTest__content{
+
+  }
+  .anotherTest{
+
+  }
+
+}
+
+
+////////////////////////////////////////
+@include anotherTest();

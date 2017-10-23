@@ -1,0 +1,18 @@
+/**
+* testOfParent styles
+*/
+
+@mixin testOfParent(){
+
+  .testOfParent {
+    &__content {
+        color:orangered;
+        text-align: center;
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include testOfParent();

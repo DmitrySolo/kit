@@ -158,7 +158,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </div>
         <div class="window" window="Viewport" style="z-index:5;">
           <div class="wrapperid" id="viewpr-content">
-            <iframe class="default-skin" id="index" src="index.html" width="100%" height="1200px" align="center"></iframe>
+            <iframe class="default-skin" id="index" src="oc.html" width="100%" height="1200px" align="center"></iframe>
           </div>
         </div>
         <div class="window" window="Script">
@@ -4455,62 +4455,95 @@ ace.require('ace/ext/language_tools');
 // Is ace a psuedo global? i.e. as should be loaded before this file is includes
 // This file should be included before the js file in which your editor is defined
 var ace_snippets = function(editor, session, mode, snippetText) {
-    var snippet = setup(editor, session, mode, snippetText);
-    snippet.manager.register(snippet.m.snippet, snippet.m.scope);
+	var snippet = setup(editor, session, mode, snippetText);
+	snippet.manager.register(snippet.m.snippet, snippet.m.scope);
 };
 
 var getNames = function (editor, session, mode, snippetText) {
-    var snippet = setup(editor, session, mode, snippetText),
-        names = [];
+	var snippet = setup(editor, session, mode, snippetText),
+		names = [];
 
-    for (var i = 0; i < snippet.m.snippet.length; i++) {
-        names.push(snippet.m.snippet[i].name);
-    }
+	for (var i = 0; i < snippet.m.snippet.length; i++) {
+		names.push(snippet.m.snippet[i].name);
+	}
 
-    return names;
+	return names;
 };
 
 var getContent = function (editor, session, mode, snippetText) {
-    var snippet = setup(editor, session, mode, snippetText),
-        content = [];
+	var snippet = setup(editor, session, mode, snippetText),
+		content = [];
 
-    for (var i = 0; i < snippet.m.snippet.length; i++) {
-        content.push(snippet.m.snippet[i].content);
-    }
+	for (var i = 0; i < snippet.m.snippet.length; i++) {
+		content.push(snippet.m.snippet[i].content);
+	}
 
-    return content;
+	return content;
 };
 
 /*
  *  Helper function that sets up the snippet code
  */
 function setup(editor, session, mode, snippetText) {
-    editor.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true
-    });
+	editor.setOptions({
+		enableBasicAutocompletion: true,
+		enableSnippets: true
+	});
 
-    var snippetManager = ace.require("ace/snippets").snippetManager;
+	var snippetManager = ace.require("ace/snippets").snippetManager;
 
-    var id = session.$mode.$id || "";
-    var m = snippetManager.files[id];
+	var id = session.$mode.$id || "";
+	var m = snippetManager.files[id];
 
-    m.scope = mode;
-    m.snippetText = snippetText;
-    m.snippet = snippetManager.parseSnippetFile(snippetText, m.scope);
+	m.scope = mode;
+	m.snippetText = snippetText;
+	m.snippet = snippetManager.parseSnippetFile(snippetText, m.scope);
 
-    return {
-        manager: snippetManager,
-        id: id,
-        m: m
-    };
+	return {
+		manager: snippetManager,
+		id: id,
+		m: m
+	};
 }
 
 // End of line character
 var eol = '\n';
 
 var quantScss = [
-    "snippet acc",
+	"snippet acc",
+	"	cs('accent${1:type}')",
+	"snippet pri",
+	"	cs('primary{1:type}')",
+	"snippet sec",
+	"	cs('secondary${1:type}')",
+	"snippet fon",
+	"	cs('font${1:type}')",
+	"snippet back",
+	"	cs('background${1:type}')",
+	"snippet fore",
+	"	cs('foreground${1:type}')",
+	"snippet -e",
+	"	@include space-i('element','=','','')",
+	"snippet -c",
+	"	@include space-i('component','=','','')",
+	"snippet -m",
+	"	@include space-i('module','=','','')",
+	"snippet -b",
+	"	@include space-i('block','=','','')",
+	"snippet -for-phone-only",
+	"	@include for-size(phone-only){${0:${SELECTED_TEXT:/* code */}}}",
+	"snippet -for-tablet-portrait-and-up",
+	"	@include for-size(tablet-p-up){${0:${SELECTED_TEXT:/* code */}}}",
+	"snippet --for-tablet-landscape-and-up",
+	"	@include for-size(tablet-l-up){${0:${SELECTED_TEXT:/* code */}}}",
+	"snippet -for-laptop-and-up",
+	"	@include for-size(desktop-up){${0:${SELECTED_TEXT:/* code */}}}",
+	"snippet -for-fullHd-and-up",
+	"	@include for-size(big-desktop-up){${0:${SELECTED_TEXT:/* code */}}}",
+].join(eol);
+
+var quantCon = [
+    "snippet axcc",
     "	cs('accent${1:type}')",
     "snippet pri",
     "	cs('primary{1:type}')",
@@ -4545,6 +4578,32 @@ var quantScss = [
 
 
 
+      </script>
+      <script>var quantCon = [
+    "snippet -for-phone-only",
+    "	@include for-size(phone-only){${0:${SELECTED_TEXT:/* code */}}}",
+    "snippet -for-tablet-portrait-and-up",
+    "	@include for-size(tablet-p-up){${0:${SELECTED_TEXT:/* code */}}}",
+    "snippet --for-tablet-landscape-and-up",
+    "	@include for-size(tablet-l-up){${0:${SELECTED_TEXT:/* code */}}}",
+    "snippet -for-laptop-and-up",
+    "	@include for-size(desktop-up){${0:${SELECTED_TEXT:/* code */}}}",
+    "snippet -for-fullHd-and-up",
+    "	@include for-size(big-desktop-up){${0:${SELECTED_TEXT:/* code */}}}",	"snippet +M-confirmedOrderPage",
+	"	+MODULE-confirmedOrderPage()",
+	"snippet +M-confirmedOrderPage",
+	"	MODULE-confirmedOrderPage()",
+	"snippet +M-confirmedOrderPage",
+	"	MODULE-confirmedOrderPage()",
+	"snippet +M-testSnippetModule",
+	"	MODULE-testSnippetModule()",
+	"snippet +M-test",
+	"	MODULE-test()",
+	"snippet +M-anotherTest",
+	"	MODULE-anotherTest()",
+	"snippet +M-testOfParent",
+	"	MODULE-testOfParent()",
+].join(eol);
       </script>
       <script>
         /**
@@ -4809,7 +4868,7 @@ var quantScss = [
         var session = editor.getSession();
         
         
-        // Csoncat together the built in extensions
+        // Csoncat together the built in extensions quantCon
         var myCustomSnippetText = quantScss;
         
         session.setMode(new scssMode());
@@ -4821,7 +4880,8 @@ var quantScss = [
         var PugMode = ace.require("ace/mode/jade").Mode;
         editorPug.session.setMode(new PugMode());
         editorPug.session.setOptions({ tabSize: 4, useSoftTabs: false });
-        
+        ace.require("ace/ext/language_tools");
+            ace.require('ace/multi_select');
         var staticWordCompleter = {
             getCompletions: function(editorPug, session, pos, prefix, callback) {
                 var wordList = ["foo", "bar", "baz"];
@@ -4839,6 +4899,10 @@ var quantScss = [
             enableSnippets: true,
             enableLiveAutocompletion: true
         });
+        var myCustomSnippetTextPug = quantCon;
+            var sessionPug = editorPug.getSession();
+            sessionPug.setMode(new PugMode());
+            ace_snippets(editorPug, sessionPug, 'jade',myCustomSnippetTextPug);
       </script>
       <script role="js">
         var editorJs = ace.edit("editorJs");

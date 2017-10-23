@@ -126,6 +126,36 @@
 				"": ""
 			}
 		},
+		"anotherTest": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--anotherTest/anotherTest.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"confirmedOrderPage": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--confirmedOrderPage/confirmedOrderPage.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"flyPageFragment": {
 			"js": {
 				"lib1": {
@@ -143,9 +173,47 @@
 		},
 		"test": {
 			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--test/test.js",
+					"container": "footer/init/init"
+				},
 				"test-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/test/test.js",
 					"container": "footer"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"testOfParent": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--testOfParent/testOfParent.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"testSnippetModule": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--testSnippetModule/testSnippetModule.js",
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
@@ -176,36 +244,34 @@
 	"LINKED_FONTS_MAP": {
 		"'MAIN'": "('Oswald')",
 		"'HEADER'": "('Roboto Slab')\n//)",
-		"Body": "(''",
-		"undefined": "('undefined'",
 		"//  'MAIN'": "('Oswald')"
 	},
-	"space": "px",
+	"space": "em",
 	"element_space": "2",
 	"component_space": "2",
 	"module_space": "3",
 	"block_space": "4",
 	"section_space": "4",
 	"progressive": "true",
-	"progressive_number": "1.5",
+	"progressive_number": "1.4",
 	"element_space_i": ".5",
-	"element_space_o": "$element_space_i*$progressive_number",
-	"component_space_i": ".5",
-	"component_space_o": ".7",
-	"module_space_i": ".5",
-	"module_space_o": ".7",
-	"block_space_i": ".5",
-	"block_space_o": "$block_space_i+$module_space_o",
-	"body-font": "fs(\"Body\")",
-	"body-font-weight": "normal",
-	"header-font": "false",
+	"element_space_o": "4",
+	"component_space_i": "6",
+	"component_space_o": "10",
+	"module_space_i": "16",
+	"module_space_o": "26",
+	"block_space_i": "30",
+	"block_space_o": "51",
+	"body-font": "fs('MAIN'),san-serif",
+	"body-font-weight": "400",
+	"header-font": "fs('HEADER'),san-serif",
 	"header-font-weight": "700",
-	"mobile-font": "11px",
-	"screen-font": "16px",
-	"line-height-ratio": "1.5",
+	"mobile-font": "14px",
+	"screen-font": "18px",
+	"line-height-ratio": "1.7",
 	"siteWidth": "1170px",
 	"colums": "12",
-	"gutter-width": ".5em",
+	"gutter-width": "1em",
 	"container-styles": "(\n\n)",
 	"colStyles": {
 		"width": "100%",
@@ -216,7 +282,7 @@
 	"tablet-portrait-upper-boundary": "768px",
 	"tablet-landscape-upper-boundary": "994px",
 	"desktop-upper-boundary": "1200px",
-	"desktopl-upper-boundary": "1200px",
+	"desktopl-upper-boundary": "1400px",
 	"tablet-p-container": "690px",
 	"siteMinWidth": "$tablet-p-container",
 	"tablet-l-container": "900px",
@@ -243,10 +309,6 @@
 	"nr-colStyles": {
 		"float": "left"
 	},
-	"hero-font": "false",
-	"type": "fibonacci",
-	"type == 'fibonacci'){$component_space_i": "$element_space_i+$element_space_o",
-	"blockt_space_o": ".7",
 	"head": {
 		"lang": "eng",
 		"title": "stsFragments",
@@ -303,6 +365,14 @@
 			"MainMenu": true,
 			"group": false,
 			"dop_class": ""
+		},
+		"3": {
+			"title": "orderConfirm",
+			"slug": "oc",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "default",
+			"group": ""
 		}
 	},
 	"___LIBS": {

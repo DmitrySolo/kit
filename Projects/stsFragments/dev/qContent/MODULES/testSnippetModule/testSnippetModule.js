@@ -1,0 +1,3 @@
+/**
+* MODULE: testSnippetModule script
+*/

@@ -711,7 +711,7 @@ gulp.task('styles', function () {
 			.pipe(gulp.dest('blueprint'))
 			.pipe(gulp.dest('projectboard'));
 
-		gulp.src('dev/scss/MASTER_OPTIONS/*.scss')
+		gulp.src('dev/scss/MASTER_OPTIONS/_options.scss')
 			.pipe(sassJson())
 			.pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
 		alredyCompile = false;
@@ -1189,7 +1189,7 @@ gulp.task('buildfonts2', function () {
 //SASS VARIABLES TO JSON
 gulp.task('sass-json', function () {
 	return gulp
-		.src('dev/scss/MASTER_OPTIONS/*.scss')
+		.src('dev/scss/MASTER_OPTIONS/_options.scss')
 		.pipe(sassJson())
 		.pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
 });
@@ -1695,6 +1695,7 @@ gulp.task('API-SERVER', function () {
 									qM.err(e.name + ' ' + e.message);
 
 								}
+								setContentSnippet('pug','module',moduleName)
 								qM.ok('Module added!');
 								break;
 							case 'level':
@@ -1750,9 +1751,9 @@ gulp.task('API-SERVER', function () {
 									for (var index in pagesData.pages) {
 										var attr = pagesData.pages[index];
 										if (attr.layout == 'default')
-											var str = "//- " + attr.slug + ".pug\nextends ../LAYOUT/_layout.pug\nblock title\n\t-var page={slug:'" + attr.slug + "',title:'" + attr.title + "'};\n\ttitle " + attr.title + "\nblock page\n\th1 "+ attr.title;
+											var str = "//- " + attr.slug + ".pug\nextends ../LAYOUT/layout.pug\nblock title\n\t-var page={slug:'" + attr.slug + "',title:'" + attr.title + "'};\n\ttitle " + attr.title + "\nblock page\n\th1 "+ attr.title;
 										else
-											var str = "//- " + attr.slug + ".pug\nextends ../LAYOUT/" + attr.layout + "/_layout.pug\nblock title\n\t-var page={slug:'" + attr.slug + "',title:'" + attr.title + "'};\n\ttitle " + attr.title+ + "\nblock page\n\th1 "+ attr.title;
+											var str = "//- " + attr.slug + ".pug\nextends ../LAYOUT/" + attr.layout + "/layout.pug\nblock title\n\t-var page={slug:'" + attr.slug + "',title:'" + attr.title + "'};\n\ttitle " + attr.title+ + "\nblock page\n\th1 "+ attr.title;
 										if (!fs.existsSync(projectDevDir+'template/PAGESYSTEM/PAGES/' + attr.slug + '.pug') ) {
 											fs.writeFileSync(projectDevDir+'/template/PAGESYSTEM/PAGES/'+attr.slug + '.pug', str)
 
@@ -2356,3 +2357,30 @@ gulp.task('loadContent', function () {
 });
 //var modules = requireFolderTree('dev/MODULES/PROJECT MODULES');
 const tree = dirTree('dev/MODULES/PROJECT MODULES');
+
+function setContentSnippet(editor,type,name) {
+
+	switch (editor){
+		case 'pug':
+			switch (type){
+				case 'module':
+					var snippetText = "\n\t\"snippet +M-"+name+"\",\n\t\"\tMODULE-"+name+"()\",\n].join(eol);";
+				break;
+
+				case 'level':
+					var snippetText = "\n\t\"snippet +L-"+name+"\",\n\t\"\tLEVEL-"+name+"()\",\n].join(eol);";
+				break;
+			}
+	}
+
+	fs.readFile('vendor/Editor Snippets/quantContent.js', function (err, data) {
+		if (err) throw err;
+		theFile = data.toString().split("\n");
+		theFile.splice(-1, 1);
+		fs.writeFile('vendor/Editor Snippets/quantContent.js', theFile.join('\n')+snippetText, function (err) {
+			if (err) {
+				return console.log(err);
+			}
+		});
+	});
+}

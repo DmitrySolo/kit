@@ -1,0 +1,3 @@
+/**
+* MODULE: confirmedOrderPage script
+*/

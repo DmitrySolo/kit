@@ -1546,6 +1546,15 @@ section.block {
 * PROJECT  STYLES
 */
 /**
+* anotherTest styles
+*/
+/**
+* confirmedOrderPage styles
+*/
+.confirmedOrderPage {
+  color: red; }
+
+/**
 * flyPageFragment styles
 */
 .flyPageFragment__content {
@@ -1566,16 +1575,19 @@ section.block {
   .flyPageFragment .toOrder {
     color: #fff;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     background: orangered;
     border: solid 2px #ff6a33;
-    padding: 20px 0px;
+    height: 61px;
+    line-height: 45px;
     width: 240px;
     border-radius: 5px;
     transition: background .2s ease;
     text-shadow: 1px 1px 1px #000;
     text-decoration: none; }
+    .flyPageFragment .toOrder svg {
+      margin-top: -2px; }
     .flyPageFragment .toOrder.succes {
       background: #46bb90;
       border-color: #6bc9a6; }
@@ -1584,6 +1596,19 @@ section.block {
     .flyPageFragment .toOrder:hover {
       background: #ff6a33; }
 
+/**
+* test styles
+*/
+/**
+* testOfParent styles
+*/
+.testOfParent__content {
+  color: orangered;
+  text-align: center; }
+
+/**
+* testSnippetModule styles
+*/
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -1654,6 +1679,37 @@ section.block {
 
 .ove-sectionHeader {
   margin-bottom: 3px; }
+
+/* orderPage STYLE */
+.orderPage__content {
+  background: #fff;
+  padding: 60px 30px; }
+  .orderPage__content a {
+    color: #007FC3; }
+
+.orderPage__title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #46bb90; }
+
+.orderPage__mainMessage {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center; }
+
+.orderPage__subMess {
+  color: #616161;
+  width: 50%;
+  margin: 0 auto 30px; }
+  .orderPage__subMess li {
+    list-style: circle; }
+  @media (max-width: 599px) {
+    .orderPage__subMess {
+      width: 100%; } }
+
+.orderPage__actions {
+  text-align: center; }
 
 /**
 * PAGES STYLES

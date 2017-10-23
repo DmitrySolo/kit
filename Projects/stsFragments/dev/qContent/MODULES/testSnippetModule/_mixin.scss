@@ -1,0 +1,18 @@
+/**
+* testSnippetModule styles
+*/
+
+@mixin testSnippetModule(){
+
+  .testSnippetModule__content{
+
+  }
+  .testSnippetModule{
+
+  }
+
+}
+
+
+////////////////////////////////////////
+@include testSnippetModule();

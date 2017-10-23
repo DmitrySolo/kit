@@ -4,11 +4,10 @@
 
 @mixin <%= moduleName %>(){
 
-  .<%= moduleName %>__content{
+  .<%=moduleName%> {
+    &__content {
 
-  }
-  .<%= moduleName %>{
-
+    }
   }
 
 }

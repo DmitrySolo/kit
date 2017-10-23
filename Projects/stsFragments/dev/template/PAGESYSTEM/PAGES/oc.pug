@@ -1,0 +1,10 @@
+//- oc.pug
+extends ../LAYOUT/layout.pug
+block title
+	-var page={slug:'oc',title:'orderConfirm'};
+	title orderConfirm
+block page
+	.container
+		+LEVEL-orderPage('Заявка оформлена.')
+			+MODULE-testOfParent()
+		
