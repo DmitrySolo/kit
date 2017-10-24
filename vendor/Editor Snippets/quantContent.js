@@ -22,4 +22,6 @@ var quantCon = [
 	"	MODULE-anotherTest()",
 	"snippet +M-testOfParent",
 	"	MODULE-testOfParent()",
+	"snippet +M-testModuleSergeConnectPeopleareStranged",
+	"	MODULE-testModuleSergeConnectPeopleareStranged()",
 ].join(eol);

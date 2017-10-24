@@ -115,6 +115,23 @@
 ////////////////////////////////////////
 @include test();
 /**
+* testModuleSergeConnectPeopleareStranged styles
+*/
+
+@mixin testModuleSergeConnectPeopleareStranged(){
+
+  .testModuleSergeConnectPeopleareStranged {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include testModuleSergeConnectPeopleareStranged();
+/**
 * testOfParent styles
 */
 
@@ -123,7 +140,7 @@
   .testOfParent {
     &__content {
         color:orangered;
-        text-align: center;
+        text-align: right;
     }
   }
 
@@ -233,11 +250,11 @@
 .orderPage__title {
   text-align: center;
   margin-bottom: 30px;
-  color:cs('succes');
+  color:cs('succes-d');
 }
 
 .orderPage__mainMessage {
-  font-size: 26px;
+  font-size: 25px;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
@@ -259,4 +276,14 @@
 
 .orderPage__actions {
   text-align: center;
+}
+/* testOfSergConnectingSupport STYLE */
+
+.testOfSergConnectingSupport {
+    &__content {
+
+    }
+    &__title {
+
+    }
 }

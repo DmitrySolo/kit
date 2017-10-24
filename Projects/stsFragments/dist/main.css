@@ -1600,11 +1600,14 @@ section.block {
 * test styles
 */
 /**
+* testModuleSergeConnectPeopleareStranged styles
+*/
+/**
 * testOfParent styles
 */
 .testOfParent__content {
   color: orangered;
-  text-align: center; }
+  text-align: right; }
 
 /**
 * testSnippetModule styles
@@ -1690,10 +1693,10 @@ section.block {
 .orderPage__title {
   text-align: center;
   margin-bottom: 30px;
-  color: #46bb90; }
+  color: #379774; }
 
 .orderPage__mainMessage {
-  font-size: 26px;
+  font-size: 25px;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center; }
@@ -1711,6 +1714,7 @@ section.block {
 .orderPage__actions {
   text-align: center; }
 
+/* testOfSergConnectingSupport STYLE */
 /**
 * PAGES STYLES
 */
@@ -4019,5 +4023,9 @@ div[class*='Panel'] {
 #scallerLabel {
   font-weight: bold;
   padding-left: 5px; }
+
+#viewpr-content {
+  border-right: solid 0.5px rgba(255, 164, 10, 0.27) !important;
+  border-left: solid 0.5px rgba(255, 164, 10, 0.59) !important; }
 
 /*# sourceMappingURL=maps/main.css.map */

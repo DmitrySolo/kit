@@ -30,6 +30,10 @@ mixin MODULE-test()
 	<!-- split modules/test -->
 	.test__content(data-qcontent='module__test')
 		.test
+mixin MODULE-testModuleSergeConnectPeopleareStranged()
+	<!-- split modules/testModuleSergeConnectPeopleareStranged -->
+	.testModuleSergeConnectPeopleareStranged__content(data-qcontent='module__testModuleSergeConnectPeopleareStranged')
+		.testModuleSergeConnectPeopleareStranged
 mixin MODULE-testOfParent()
 	<!-- split modules/testOfParent -->
 	.testOfParent__content(data-qcontent='module__testOfParent')
@@ -73,3 +77,8 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
+mixin LEVEL-testOfSergConnectingSupport(title,className)
+	-if (!className) className =''
+	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
+		h2.testOfSergConnectingSupport__title=title
+		block testOfSergConnectingSupport

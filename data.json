@@ -55,33 +55,6 @@
 				"": ""
 			}
 		},
-		"quant-debug": {
-			"js": {
-				"quant-debug-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
-					"container": "footer/init"
-				},
-				"notify": {
-					"src": "bower_components/notifyjs/dist/notify.js",
-					"container": "footer/libs+"
-				},
-				"JQUI-script": {
-					"src": "bower_components/jquery-ui/jquery-ui.min.js",
-					"container": "footer/libs+"
-				},
-				"vieport": {
-					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
-					"container": "footer/libs+"
-				},
-				"viewportResizer": {
-					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"quant-debug-JsonCss": {
 			"js": {
 				"quant-debug-JsonCss-script": {
@@ -126,6 +99,33 @@
 				"": ""
 			}
 		},
+		"quant-debug": {
+			"js": {
+				"quant-debug-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
+					"container": "footer/init"
+				},
+				"notify": {
+					"src": "bower_components/notifyjs/dist/notify.js",
+					"container": "footer/libs+"
+				},
+				"JQUI-script": {
+					"src": "bower_components/jquery-ui/jquery-ui.min.js",
+					"container": "footer/libs+"
+				},
+				"vieport": {
+					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
+					"container": "footer/libs+"
+				},
+				"viewportResizer": {
+					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"anotherTest": {
 			"js": {
 				"lib1": {
@@ -156,6 +156,25 @@
 				"": ""
 			}
 		},
+		"test": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--test/test.js",
+					"container": "footer/init/init"
+				},
+				"test-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/test/test.js",
+					"container": "footer"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"flyPageFragment": {
 			"js": {
 				"lib1": {
@@ -171,19 +190,15 @@
 				"": ""
 			}
 		},
-		"test": {
+		"testModuleSergeConnectPeopleareStranged": {
 			"js": {
 				"lib1": {
 					"src": "",
 					"container": "footer/libs"
 				},
 				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--test/test.js",
+					"src": "dev/MODULES/PROJECT MODULES/--testModuleSergeConnectPeopleareStranged/testModuleSergeConnectPeopleareStranged.js",
 					"container": "footer/init/init"
-				},
-				"test-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/test/test.js",
-					"container": "footer"
 				}
 			},
 			"css": {

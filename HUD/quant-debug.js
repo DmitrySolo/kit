@@ -791,6 +791,10 @@ $(document).ready(function () {
 					name: 'Mobile'
 				},
 				{
+					size: '640',
+					name: 'IP4 Portrait'
+				},
+				{
 					size: '768',
 					name: 'Tablet'
 				},
@@ -801,6 +805,10 @@ $(document).ready(function () {
 				{
 					size: '1280',
 					name: 'Desktop'
+				},
+				{
+					size: '1980',
+					name: 'Desktop HD'
 				}
 			],
 			showName: true,
@@ -829,7 +837,11 @@ $(document).ready(function () {
 				},
 				{
 					size: '1280',
-					name: 'Desktop'
+					name: 'Desktop1'
+				},
+				{
+					size: '1980',
+					name: 'DesktopHD'
 				}
 			],
 			showName: true,
@@ -1693,7 +1705,11 @@ $(document).ready(function () {
 
 
 			var scssContent = editor.getSession().getValue();
-			ql(scssContent)
+			var scssCursor = editor.getCursorPosition();
+			console.log(scssCursor)
+		//	editor.navigateTo(12,10);
+		//	editor.focus();
+
 			var PugContent = editorPug.getSession().getValue();
 
 			var JsContent = editorJs.getSession().getValue();
@@ -1763,7 +1779,8 @@ $(document).ready(function () {
 		ql('this')
 
 		var content1 = $(this).closest('*[data-qcontent]').data('qcontent');
-		ql(this, 'sdfjidsfio')
+		ql(this, 'sdfjidsfio');
+		var _this =this;
 		if (content1) {
 			content1 = content1.split('__');
 
@@ -1798,6 +1815,14 @@ $(document).ready(function () {
 					if (res.scss) editor.insert(res.scss);
 					else editor.insert('');
 					//$(".hud-bottom").css('display', 'block')
+					ql($(_this).attr('class'),'ee');
+				   editor.find($(_this).attr('class').split(' ')[0]);
+				   editorPug.find($(_this).attr('class').split(' ')[0]);
+				   editor.onCursorChange(function () {
+					   console.log('CHANGE')
+                   })
+
+
 				}
 				//
 			})
