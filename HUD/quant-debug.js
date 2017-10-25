@@ -2,6 +2,49 @@
 
 $(document).ready(function () {
 
+	var pugChanged = false;
+	var scssChanged = false;
+	var jsChanged = false;
+	var scssChangeCounter = 1;
+	var pugChangeCounter = 1;
+	var JSChangeCounter = 1;
+
+	function editorsListner(){
+
+
+			editor.on('change',function (e) {
+				ql(scssChangeCounter,'CHNGEINCOUNT');
+				scssChangeCounter++;
+				if(scssChangeCounter == 4){
+					scssChanged = true;
+					ql('SCSS CHANGED');
+				}
+
+
+			})
+			editorPug.on('change',function (e) {
+				pugChangeCounter++;
+				if(pugChangeCounter  == 4) {
+					ql('PUG CHANGED');
+					pugChanged = true;
+				}
+
+
+			})
+			editorJs.on('change',function (e) {
+				JSChangeCounter++;
+				if(JSChangeCounter == 4){
+					jsChanged = true;
+				}
+
+			})
+
+
+	}
+	editorsListner();
+
+
+
 	//Default settings
 	var switchedEditor = 'quant';
 
@@ -1616,17 +1659,23 @@ $(document).ready(function () {
 				$(".hud-bottom").css('display', 'block');
 
 
+
 			})
 
 
 		})
-
 	}
-	loadContent();
+
+	 loadContent();
+	 editorsListner();
+
+
 	$('.contentNavigator').draggable();
 
 
 	var loadByDOM = function (auto, path) {
+
+		console.log(scssChangeCounter+'--sss--s')
 
 		if (auto) {
 			$('#contentNavigator__type input').val(path.type);
@@ -1641,18 +1690,39 @@ $(document).ready(function () {
 				url: "http://localhost:8181?action=loadByDOM&type=" + type + "&stype=" + stype + "&name=" + name
 
 			}).done(function (data) {
+				scssChangeCounter = 1;
+				pugChangeCounter = 1;
+				JSChangeCounter = 1;
+				ql(JSChangeCounter,'qwweqrwqrwqr!!!');
+				savedCursors = JSON.parse(qntGetCookie('cursors'));
 				if (data !== '') {
 					var res = JSON.parse(data);
 
 					editorPug.selectAll();
 					editorJs.selectAll();
 					editor.selectAll();
-					if (res.pug) editorPug.insert(res.pug);
+					if (res.pug){
+						editorPug.insert(res.pug);
+						if (savedCursors.hasOwnProperty('PugCursor'))
+							editorPug.gotoLine(savedCursors.PugCursor.row+1,savedCursors.PugCursor.column,)
+
+					}
 					else editorPug.insert('');
-					if (res.JS) editorJs.insert(res.JS);
+					if (res.JS) {
+						editorJs.insert(res.JS);
+						if (savedCursors.hasOwnProperty('JSCursor'))
+							editorJs.gotoLine(savedCursors.JSCursor.row+1,savedCursors.JSCursor.column,)
+                        	editorjs.scrollToRow(savedCursors.JSCursor.row+5)
+					}
 					else editorJs.insert('');
-					if (res.scss) editor.insert(res.scss);
+					if (res.scss){
+						editor.insert(res.scss);
+						if (savedCursors.hasOwnProperty('scssCursor'))
+							editor.gotoLine(savedCursors.scssCursor.row+1,savedCursors.scssCursor.column,)
+                        	editor.scrollToRow(savedCursors.scssCursor.row+5)
+					}
 					else editor.insert('');
+
 					$(".hud-bottom").css('display', 'block')
 				}
 				//
@@ -1661,8 +1731,12 @@ $(document).ready(function () {
 
 		} else if (auto === false) {
 
-
 			$('#contentNavigator__load').on('mousedown', function () {
+
+				scssChangeCounter = 1;
+				pugChangeCounter = 1;
+				JSChangeCounter = 1;
+				ql(JSChangeCounter,'qwweqrwqrwqr!!!');
 
 				var type = $('#contentNavigator__type input').val();
 				var stype = $('#contentNavigator__stype input').val();
@@ -1673,6 +1747,11 @@ $(document).ready(function () {
 					url: "http://localhost:8181?action=loadByDOM&type=" + type + "&stype=" + stype + "&name=" + name
 
 				}).done(function (data) {
+
+
+
+
+
 					if (data !== '') {
 						var res = JSON.parse(data);
 
@@ -1701,18 +1780,31 @@ $(document).ready(function () {
 	var saveCode = function () {
 		$('div#savecode').on('mousedown', function () {
 
-			$('div.hud-Button#savecode').css('borderColor', '#00b3ee');
 
+		var cursorsObj = {};
 
+		ql(pugChanged,'||||');
+		if (scssChanged){
 			var scssContent = editor.getSession().getValue();
-			var scssCursor = editor.getCursorPosition();
-			console.log(scssCursor)
-		//	editor.navigateTo(12,10);
-		//	editor.focus();
-
+			cursorsObj.scssCursor = editor.getCursorPosition();
+		} else var scssContent = 'notChanged';
+		if (pugChanged){
 			var PugContent = editorPug.getSession().getValue();
-
+			cursorsObj.PugCursor = editorPug.getCursorPosition();
+		} else var PugContent = 'notChanged';
+		if (jsChanged){
 			var JsContent = editorJs.getSession().getValue();
+			cursorsObj.JSCursor = editorJs.getCursorPosition();
+		} else var JsContent = 'notChanged';
+
+
+			//	editor.navigateTo(12,10);
+			//	editor.focus();
+
+
+
+
+
 
 			var path = {
 				type: $('#contentNavigator__type input').val(),
@@ -1734,14 +1826,17 @@ $(document).ready(function () {
 			//     url:"http://localhost:8181?action=saveFomQuant&path="+path+"&scss="+scssContent+"&js="+JsContent+"&pug="+PugContent
 			// })
 			var codeForCookies = encodeURIComponent(JSON.stringify(path));
+			var cursors = encodeURIComponent(JSON.stringify(cursorsObj));
+
 			qntSetCookie('lastCode', codeForCookies, 1);
+			qntSetCookie('cursors', cursors, 1);
 
 			$.ajax({
 				url: "http://localhost:8181"
 				, type: 'POST'
 				, data: JSON.stringify(data)
 				, success: function (res) {
-					$('div.hud-Button#savecode').css('borderColor', 'initial');
+					$('div.hud-Button#savecode').css('borderColor', 'lightgreen');
 				}
 			});
 
@@ -1773,13 +1868,16 @@ $(document).ready(function () {
 
 	// LOAD TO QUANT!
 	$('*', window.frames['index'].contentDocument).on('mousedown', function (e) {
+		scssChangeCounter = -1;
+		pugChangeCounter = -1;
+		JSChangeCounter = -1;
+		ql(JSChangeCounter,'qwweqrwqrwqr!!!');
 		e.stopPropagation();
 		$('#contentNavigator__type input,#contentNavigator__stype input,#contentNavigator__name input').val('');
 
-		ql('this')
 
 		var content1 = $(this).closest('*[data-qcontent]').data('qcontent');
-		ql(this, 'sdfjidsfio');
+
 		var _this =this;
 		if (content1) {
 			content1 = content1.split('__');
@@ -1820,7 +1918,7 @@ $(document).ready(function () {
 				   editorPug.find($(_this).attr('class').split(' ')[0]);
 				   editor.onCursorChange(function () {
 					   console.log('CHANGE')
-                   })
+				   })
 
 
 				}
@@ -1829,6 +1927,8 @@ $(document).ready(function () {
 
 		}
 	})
+
+
 
 	var switchEditor = function () {
 

@@ -4,19 +4,19 @@ mixin LEVEL-orderPage(title,className)
 		h2.orderPage__title=title
 		p.orderPage__mainMessage.text
 			-var link = "<a href='/'>N 123123</a>"
-			-var link1 = "<a href='/'>личном кабинете</a>"
-			-var link2 = "<a href='/'>Иванов Иван</a>"
+			-var link1 = "<a href='/'>личном кабинетеQ</a>"
+			-var link2 = "<a href='/'>Иванов Иван.</a>"
 			| Ваша заявка 
 			|!{link}
 			| принята на обработку.
 		ul.orderPage__subMess
-			li В настоящий момент заявка ожидает подтверждения менеджером.
+			li В настоящий моzмент заявка ожидает подтверждения менеджером.
 			li Ваш ответственный менеджер !{link2} автоматически оповещен.
 			li Отслеживать статус заявки вы можете в !{link1}.
 			li Электронная копия заявки отправлена на указанный вами email.
 			
 		.orderPage__actions
-			a(href='/') &larr; В личный Кабинет.
+			a(href='/') &larr; В личный Кабинет!!!. 
 			br
 			a(href='/') &larr; На главную.
 		if block

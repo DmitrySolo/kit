@@ -180,11 +180,9 @@ gulp.task('VIEW-FINAL', function () {
 		projectDevDir + 'qContent/concates/_modules.pug',
 		projectDevDir + 'template/PAGESYSTEM/{INCLUDES,LAYOUT,PAGES}/**/*.pug',
 		'data.json',
-		'blueprint/*.pug',
 		'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
 	], function () {
 		gulp.start('views');
-		gulp.start('compile-blueprint-view');
 	});
 });
 
@@ -287,11 +285,8 @@ gulp.task('STYLES-FINAL', function () {
 		'dev/ELEMENTS/_elements.scss',
 		'dev/MIXES/_mixes.scss',
 		'dev/MODULES/_modules.scss',
-		'blueprint/*.scss',
 	], function () {
 		gulp.start('styles');
-		gulp.start('compile-blueprint-sass');
-		gulp.start('throw-main-css');
 
 	});
 });
@@ -708,7 +703,6 @@ gulp.task('styles', function () {
 			.pipe(sass.sync().on('error', sass.logError))
 			.pipe(sourcemaps.write('maps/'))
 			.pipe(gulp.dest(dist))
-			.pipe(gulp.dest('blueprint'))
 			.pipe(gulp.dest('projectboard'));
 
 		gulp.src('dev/scss/MASTER_OPTIONS/_options.scss')
@@ -720,10 +714,10 @@ gulp.task('styles', function () {
 	}
 
 });
-gulp.task('throw-main-css', function () {
-	gulp.src(dist + '/main.css')
-		.pipe(gulp.dest('blueprint'));
-});
+// gulp.task('throw-main-css', function () {
+// 	gulp.src(dist + '/main.css')
+// 		.pipe(gulp.dest('blueprint'));
+// });
 gulp.task('browser-reload', function () {
 	browserSync.reload
 
@@ -2014,17 +2008,19 @@ gulp.task('API-SERVER', function () {
 
 					if (elemPath['type'] == 'options') {
 
-						fs.writeFileSync( 'dev/scss/MASTER_OPTIONS/' + elemPath['name'], scssToSave);
+						if (scssToSave != 'notChanged' )
+							fs.writeFileSync( 'dev/scss/MASTER_OPTIONS/' + elemPath['name'], scssToSave);
 
 					}
 					if (elemPath['type'] == 'page') {
-
-						fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/PAGES/' +elemPath['name'], pugToSave);
+						console.log(pugToSave)
+						if (pugToSave != 'notChanged' )
+							fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/PAGES/' +elemPath['name'], pugToSave);
 
 					}
 					if (elemPath['type'] == 'layout') {
-
-						fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/LAYOUT/' +elemPath['name'], pugToSave);
+						if (pugToSave != 'notChanged' )
+							fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/LAYOUT/' +elemPath['name'], pugToSave);
 
 					}
 
@@ -2032,52 +2028,58 @@ gulp.task('API-SERVER', function () {
 
 					if (elemPath['type'] == 'module') {
 
-
-						fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/_mixin.pug', pugToSave)
-
-						fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/_mixin.scss', scssToSave)
-
-						fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/' + elemPath['name'] + '.js', jsToSave)
+						if (pugToSave != 'notChanged' )
+							fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/_mixin.pug', pugToSave)
+						if (scssToSave != 'notChanged' )
+							fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/_mixin.scss', scssToSave)
+						if (jsToSave != 'notChanged' )
+							fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/' + elemPath['name'] + '.js', jsToSave)
 
 
 					}
 					if (elemPath['type'] == 'element') {
 
-
-						fs.writeFile(projectDevDir + 'qContent/ELEMENTS/' + elemPath['stype'] + '/' + elemPath['name'] + '/_mixin.pug', pugToSave, function (err) {
-							if (err) {
-								return console.log(err);
-							}
-						})
-
-						fs.writeFile(projectDevDir + 'qContent/ELEMENTS/' +elemPath['stype'] + '/' + elemPath['name'] + '/_mixin.scss', scssToSave, function (err) {
-							if (err) {
-								return console.log(err);
-							}
-						})
-
-						fs.writeFile(projectDevDir + 'qContent/ELEMENTS/' + elemPath['stype'] + '/' + elemPath['name'] + '/' + name + '.js', jsToSave, function (err) {
-							if (err) {
-								return console.log(err);
-							}
-						})
+						if(pugToSave != 'notChanged' )
+							fs.writeFile(projectDevDir + 'qContent/ELEMENTS/' + elemPath['stype'] + '/' + elemPath['name'] + '/_mixin.pug', pugToSave, function (err) {
+								if (err) {
+									return console.log(err);
+								}
+							})
+						if(scssToSave != 'notChanged' )
+							fs.writeFile(projectDevDir + 'qContent/ELEMENTS/' +elemPath['stype'] + '/' + elemPath['name'] + '/_mixin.scss', scssToSave, function (err) {
+								if (err) {
+									return console.log(err);
+								}
+							})
+						if(jsToSave != 'notChanged' )
+							fs.writeFile(projectDevDir + 'qContent/ELEMENTS/' + elemPath['stype'] + '/' + elemPath['name'] + '/' + name + '.js', jsToSave, function (err) {
+								if (err) {
+									return console.log(err);
+								}
+							})
 
 
 					}
 					if (elemPath['type'] == 'level') {
 
-
-						fs.writeFile(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + elemPath['name'] + '/_mixin.pug', pugToSave, function (err) {
-							if (err) {
-								return console.log(err);
-							}
-						})
-
-						fs.writeFile(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + elemPath['name'] + '/_mixin.scss', scssToSave, function (err) {
-							if (err) {
-								return console.log(err);
-							}
-						})
+						if(pugToSave != 'notChanged' )
+							fs.writeFile(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + elemPath['name'] + '/_mixin.pug', pugToSave, function (err) {
+								if (err) {
+									return console.log(err);
+								}
+							})
+						if(scssToSave != 'notChanged' )
+							fs.writeFile(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + elemPath['name'] + '/_mixin.scss', scssToSave, function (err) {
+								if (err) {
+									return console.log(err);
+								}
+							})
+						if(jsToSave != 'notChanged' )
+							fs.writeFile(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + elemPath['name'] + '/level.js', jsToSave, function (err) {
+								if (err) {
+									return console.log(err);
+								}
+							})
 					}
 
 
