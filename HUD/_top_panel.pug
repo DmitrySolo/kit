@@ -4,8 +4,25 @@ script
 	include jquery-ui.min.js
 .top-panel-content
 	.quant.hud Q
-	span.projectTitle= head.title
+	.projecttitleCtn.f-left
+		span.projectTitle= head.title
+		include _currentPage
+		span.projectPage=currentPage
 	.buttonsSection.f-left.clearfix
+		a(href='/'+currentPage target="_blank").tabAnchr#playhref
+			.hud-Button.f-left
+				+I('play','playButston')
+		.viewportButton.f-left
+			.hud-Button.f-left.viewportSwitch(data-viewport='mobile')
+				+I('computer3')
+			.hud-Button.f-left.viewportSwitch(data-viewport='tablet')
+				+I('computer2')
+			.hud-Button.f-left.viewportSwitch(data-viewport='tabletL')
+				+I('computer1')
+			.hud-Button.f-left.viewportSwitch(data-viewport='laptop')
+				+I('computer')
+			.hud-Button.f-left.viewportSwitch(data-viewport='desktop')
+				+I('arrow')
 		.hud-Button.f-left#debugViewSwitcher
 			+I('allocation')
 		.hud-Button.f-left

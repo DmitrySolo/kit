@@ -2020,7 +2020,7 @@ gulp.task('API-SERVER', function () {
 					}
 					if (elemPath['type'] == 'layout') {
 						if (pugToSave != 'notChanged' )
-							fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/LAYOUT/' +elemPath['name'], pugToSave);
+							fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/LAYOUT/' +elemPath['name']+'.pug', pugToSave);
 
 					}
 

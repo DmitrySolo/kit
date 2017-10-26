@@ -2,12 +2,45 @@
 
 $(document).ready(function () {
 
+	//getViewport
+    var viewports = {
+        mobile:'320',
+        tablet: '768',
+        tabletL: '1024',
+        laptop: '1280',
+        desktop:'1980'
+
+    }
+
+    $('#viewpr-content').css('width',qntGetCookie('viewport'));
+
+    function swap(json){
+        var ret = {};
+        for(var key in json){
+            ret[json[key]] = key;
+        }
+        return ret;
+    }
+    var viewPortsFlip = swap(viewports);
+	//ql($('.viewportSwitch[data-viewport="'+viewPortsFlip[qntGetCookie('viewport').slice(0,-2)]+'"]'),234234)
+    $('.viewportSwitch[data-viewport="'+viewPortsFlip[qntGetCookie('viewport').slice(0,-2)]+'"]')
+		.css('background','rgb(0, 179, 239)')
+   		.find('.icon').css('fill','#fff');
+
+
+
+
+
+
 	var pugChanged = false;
 	var scssChanged = false;
 	var jsChanged = false;
 	var scssChangeCounter = 1;
 	var pugChangeCounter = 1;
 	var JSChangeCounter = 1;
+
+
+
 
 	function editorsListner(){
 
@@ -857,6 +890,7 @@ $(document).ready(function () {
 			showName: true,
 			reset: 'Original',
 			animation: '',
+			svg:true
 		};
 		viewpr(v_options);
 
@@ -894,7 +928,37 @@ $(document).ready(function () {
 		viewpr(v_options);
 
 	}
-	//auto_media()
+
+
+	var changeViewport = function () {
+
+
+
+		$('.viewportSwitch').on('mousedown',function () {
+
+			var vP = qntGetThisData(this,'viewport');
+            $('#viewpr-content').css('width',viewports[vP]+'px');
+            qntSetCookie('viewport',viewports[vP]+'px',1);
+            $('.viewportSwitch').css('background','initial');
+            $('.icon','.viewportSwitch').css('fill','#00b3ee')
+            $(this).css('background','rgb(0, 179, 239)');
+            $(this).find('.icon').css('fill','#fff')
+
+        })
+
+
+    }
+
+    changeViewport();
+
+
+
+
+
+
+
+
+
 
 
 	function download(filename, text) {
@@ -1592,6 +1656,8 @@ $(document).ready(function () {
 					var name = arr[arr.length -1];
 					var redirName = name.slice(0,-3)+'html';
 					document.getElementById('index').src=redirName;
+					$('span.projectPage').text(redirName);
+					$('a#playhref').attr('href',redirName);
 					var stype = "";
 					var type ='page';
 

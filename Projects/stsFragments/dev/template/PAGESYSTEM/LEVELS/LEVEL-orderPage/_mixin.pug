@@ -1,11 +1,11 @@
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
+	-var link = "<a href='/'>N 123123</a>"
+	-var link1 = "<a href='/'>личном кабинетеQ</a>"
+	-var link2 = "<a href='/'>Иванов Иван.</a>"
 	section.orderPage__content(class = 'orderPage__content'+ className data-qcontent="level__orderPage")
 		h2.orderPage__title=title
 		p.orderPage__mainMessage.text
-			-var link = "<a href='/'>N 123123</a>"
-			-var link1 = "<a href='/'>личном кабинетеQ</a>"
-			-var link2 = "<a href='/'>Иванов Иван.</a>"
 			| Ваша заявка 
 			|!{link}
 			| принята на обработку.

@@ -1688,18 +1688,21 @@ section.block {
   background: #fff;
   padding: 60px 30px; }
   .orderPage__content a {
-    color: #00a0f6; }
+    color: #005e90; }
 
 .orderPage__title {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 31px;
   color: #379774; }
 
 .orderPage__mainMessage {
-  font-size: 27px;
+  font-size: 25px;
   text-transform: uppercase;
   font-weight: bold;
-  text-align: left; }
+  text-align: center; }
+  @media (max-width: 599px) {
+    .orderPage__mainMessage {
+      font-size: 16px; } }
 
 .orderPage__subMess {
   color: #616161;
@@ -1712,7 +1715,7 @@ section.block {
       width: 100%; } }
 
 .orderPage__actions {
-  text-align: left; }
+  text-align: center; }
 
 /* testOfSergConnectingSupport STYLE */
 /**
@@ -3094,7 +3097,8 @@ section#ball {
 .editorsContainer {
   background: #3c3f41;
   padding-top: 5px;
-  height: 340px;
+  height: 500px;
+  opacity: .98;
   background: #3c3f41 !important;
   box-shadow: 2px -1px 0px 0px #2f2d2d;
   border-top: solid 1px #b19e9e; }
@@ -3422,8 +3426,10 @@ body.hud {
   margin-bottom: 0;
   line-height: 44px; }
 
+.projecttitleCtn {
+  min-width: 250px; }
+
 span.projectTitle {
-  min-width: 400px;
   text-transform: uppercase;
   float: left;
   font-size: 18px;
@@ -3431,6 +3437,16 @@ span.projectTitle {
   padding: 0px 5px;
   font-family: poppins;
   color: #fff;
+  line-height: 40px;
+  padding-top: 4px;
+  overflow: hidden; }
+
+.projectPage {
+  font-family: poppins;
+  font-size: 11px;
+  color: #fa9429;
+  float: left;
+  display: block;
   line-height: 40px;
   padding-top: 4px; }
 
@@ -4027,5 +4043,13 @@ div[class*='Panel'] {
 #viewpr-content {
   border-right: solid 0.5px rgba(255, 164, 10, 0.27) !important;
   border-left: solid 0.5px rgba(255, 164, 10, 0.59) !important; }
+
+.viewportButton {
+  margin-right: 40px; }
+  .viewportButton .icon {
+    fill: #00b3ee; }
+
+.icon.playButston {
+  fill: #fa9429; }
 
 /*# sourceMappingURL=maps/main.css.map */

@@ -1,12 +1,13 @@
 script(src='scripts/quant-debug-JsonCss.js')
 script.
     var qscale = function (v) {
-        var stepMinus = -(1 - v)*10*21;
+        var stepMinus = -(1 - v)*100/2;
 
-        $('iframe#index').contents().find('.projectWrapper').css({
+        $('#viewpr-content').css({
+            "transform": "translate(0,"+v+")",
             "transform": "scale(" + v + ")",
             "position":"relative",
-            "top":stepMinus+"px"
+            "top":stepMinus+"%"
         })
         $('#scallerLabel').text(v);
     }

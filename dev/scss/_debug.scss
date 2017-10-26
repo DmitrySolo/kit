@@ -727,7 +727,8 @@
   .editorsContainer {
     background: $panel;
     padding-top: 5px;
-    height: 340px;
+    height: 500px;
+    opacity: .98;
     background: #3c3f41 !important;
     box-shadow: 2px -1px 0px 0px #2f2d2d;
     border-top: solid 1px #b19e9e;
@@ -1133,8 +1134,11 @@
     line-height: 44px;
 
   }
+  .projecttitleCtn {
+    min-width: 250px;
+  }
   span.projectTitle {
-    min-width: 400px;
+    //min-width: 200px;
     text-transform: uppercase;
     float: left;
     font-size: 18px;
@@ -1142,6 +1146,16 @@
     padding: 0px 5px;
     font-family: poppins;
     color: #fff;
+    line-height: 40px;
+    padding-top: 4px;
+    overflow: hidden;
+  }
+  .projectPage {
+    font-family: poppins;
+    font-size: 11px;
+    color: #fa9429;
+    float: left;
+    display: block;
     line-height: 40px;
     padding-top: 4px;
   }
@@ -1823,5 +1837,15 @@
     border-right: solid .5px rgba(255, 164, 10, 0.27) !important;
     border-left: solid .5px rgba(255, 164, 10, 0.59) !important;
   }
+  .viewportButton {
+    margin-right: 40px;
+    .icon {
+      fill:#00b3ee;
+    }
+  }
+  .icon.playButston{
+    fill:#fa9429;
+  }
+
 }
 
