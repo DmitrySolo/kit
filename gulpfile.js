@@ -5,6 +5,7 @@ var wait = require('gulp-wait');
 var frep = require('gulp-frep');
 const path = require('path');
 var cache = require('gulp-cache');
+var notify = require("gulp-notify");
 var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
 const template = require('gulp-template');
@@ -112,7 +113,9 @@ gulp.task('views', function buildHTML() {
 			filters: {
 				php: pugPHPFilter
 			}
-		})).pipe(gulp.dest(dist));
+		})).on('error', notify.onError(function (error) {
+        return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
+    })).pipe(gulp.dest(dist));
 	var str = "include ../template/PAGESYSTEM/INCLUDES/_includes\n";
 	gulp.src(projectDevDir + 'template/projectboard.pug').pipe(insert.prepend(str)).pipe(rename(function (path) {
 		path.basename = 'index';
@@ -700,7 +703,9 @@ gulp.task('styles', function () {
 		alredyCompile = true;
 		gulp.src('dev/scss/main.scss')
 			.pipe(sourcemaps.init())
-			.pipe(sass.sync().on('error', sass.logError))
+			.pipe(sass.sync().on('error',notify.onError(function (error) {
+                return 'SASS ERROR\n' + error;
+            })))
 			.pipe(sourcemaps.write('maps/'))
 			.pipe(gulp.dest(dist))
 			.pipe(gulp.dest('projectboard'));

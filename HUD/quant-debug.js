@@ -1,31 +1,103 @@
 //  quant-debug script
+function loadToQuant(){
+	ql('LOAD  TRIGGERED');
+	$('*', window.frames['index'].contentDocument).on('mousedown', function (e) {
+		scssChangeCounter = -1;
+		pugChangeCounter = -1;
+		JSChangeCounter = -1;
+		ql(JSChangeCounter,'qwweqrwqrwqr!!!');
+		e.stopPropagation();
+		$('#contentNavigator__type input,#contentNavigator__stype input,#contentNavigator__name input').val('');
 
+
+		var content1 = $(this).closest('*[data-qcontent]').data('qcontent');
+		ql(content1,'QC');
+
+		var _this =this;
+		if (content1) {
+			content1 = content1.split('__');
+
+			if (content1.length == 2) {
+				$('#contentNavigator__type input').val(content1[0]);
+				$('#contentNavigator__name input').val(content1[1]);
+
+			} else if (content1.length == 3) {
+				$('#contentNavigator__stype input').val(content1[1]);
+				$('#contentNavigator__name input').val(content1[2]);
+			}
+
+			var type = $('#contentNavigator__type input').val();
+			var stype = $('#contentNavigator__stype input').val();
+			var name = $('#contentNavigator__name input').val();
+			ql(type, stype, name)
+
+			$.ajax({
+				url: "http://localhost:8181?action=loadByDOM&type=" + type + "&stype=" + stype + "&name=" + name
+
+			}).done(function (data) {
+				if (data !== '') {
+					var res = JSON.parse(data);
+
+					editorPug.selectAll();
+					editorJs.selectAll();
+					editor.selectAll();
+					if (res.pug) editorPug.insert(res.pug);
+					else editorPug.insert('');
+					if (res.JS) editorJs.insert(res.JS);
+					else editorJs.insert('');
+					if (res.scss) editor.insert(res.scss);
+					else editor.insert('');
+					//$(".hud-bottom").css('display', 'block')
+					ql($(_this).attr('class'),'ee');
+					editor.find($(_this).attr('class').split(' ')[0]);
+					editorPug.find($(_this).attr('class').split(' ')[0]);
+                    editorJs.find($(_this).attr('class').split(' ')[0]);
+
+
+
+				}
+				//
+			})
+
+		}
+	})
+
+}
+document.getElementById('index').onload= function() {
+	loadToQuant();
+};
 $(document).ready(function () {
 
+
+
+
+
+
+
 	//getViewport
-    var viewports = {
-        mobile:'320',
-        tablet: '768',
-        tabletL: '1024',
-        laptop: '1280',
-        desktop:'1980'
+	var viewports = {
+		mobile:'320',
+		tablet: '768',
+		tabletL: '1024',
+		laptop: '1280',
+		desktop:'1980'
 
-    }
+	}
 
-    $('#viewpr-content').css('width',qntGetCookie('viewport'));
+	$('#viewpr-content').css('width',qntGetCookie('viewport'));
 
-    function swap(json){
-        var ret = {};
-        for(var key in json){
-            ret[json[key]] = key;
-        }
-        return ret;
-    }
-    var viewPortsFlip = swap(viewports);
+	function swap(json){
+		var ret = {};
+		for(var key in json){
+			ret[json[key]] = key;
+		}
+		return ret;
+	}
+	var viewPortsFlip = swap(viewports);
 	//ql($('.viewportSwitch[data-viewport="'+viewPortsFlip[qntGetCookie('viewport').slice(0,-2)]+'"]'),234234)
-    $('.viewportSwitch[data-viewport="'+viewPortsFlip[qntGetCookie('viewport').slice(0,-2)]+'"]')
+	$('.viewportSwitch[data-viewport="'+viewPortsFlip[qntGetCookie('viewport').slice(0,-2)]+'"]')
 		.css('background','rgb(0, 179, 239)')
-   		.find('.icon').css('fill','#fff');
+		.find('.icon').css('fill','#fff');
 
 
 
@@ -937,19 +1009,19 @@ $(document).ready(function () {
 		$('.viewportSwitch').on('mousedown',function () {
 
 			var vP = qntGetThisData(this,'viewport');
-            $('#viewpr-content').css('width',viewports[vP]+'px');
-            qntSetCookie('viewport',viewports[vP]+'px',1);
-            $('.viewportSwitch').css('background','initial');
-            $('.icon','.viewportSwitch').css('fill','#00b3ee')
-            $(this).css('background','rgb(0, 179, 239)');
-            $(this).find('.icon').css('fill','#fff')
+			$('#viewpr-content').css('width',viewports[vP]+'px');
+			qntSetCookie('viewport',viewports[vP]+'px',1);
+			$('.viewportSwitch').css('background','initial');
+			$('.icon','.viewportSwitch').css('fill','#00b3ee')
+			$(this).css('background','rgb(0, 179, 239)');
+			$(this).find('.icon').css('fill','#fff')
 
-        })
+		})
 
 
-    }
+	}
 
-    changeViewport();
+	changeViewport();
 
 
 
@@ -1655,11 +1727,15 @@ $(document).ready(function () {
 
 					var name = arr[arr.length -1];
 					var redirName = name.slice(0,-3)+'html';
+
 					document.getElementById('index').src=redirName;
 					$('span.projectPage').text(redirName);
 					$('a#playhref').attr('href',redirName);
+
 					var stype = "";
 					var type ='page';
+
+
 
 					ql(name, stype, type,'OOOOOOO')
 					$('#contentNavigator__type input').val(type)
@@ -1769,23 +1845,30 @@ $(document).ready(function () {
 					editor.selectAll();
 					if (res.pug){
 						editorPug.insert(res.pug);
-						if (savedCursors.hasOwnProperty('PugCursor'))
+						if (savedCursors.hasOwnProperty('PugCursor')){
 							editorPug.gotoLine(savedCursors.PugCursor.row+1,savedCursors.PugCursor.column,)
+							editorPug.scrollToRow(savedCursors.PugCursor.row+5)
+						}
+
 
 					}
 					else editorPug.insert('');
 					if (res.JS) {
 						editorJs.insert(res.JS);
-						if (savedCursors.hasOwnProperty('JSCursor'))
+						if (savedCursors.hasOwnProperty('JSCursor')){
 							editorJs.gotoLine(savedCursors.JSCursor.row+1,savedCursors.JSCursor.column,)
-                        	editorjs.scrollToRow(savedCursors.JSCursor.row+5)
+							editorJs.scrollToRow(savedCursors.JSCursor.row+5)
+						}
+
 					}
 					else editorJs.insert('');
 					if (res.scss){
 						editor.insert(res.scss);
-						if (savedCursors.hasOwnProperty('scssCursor'))
+						if (savedCursors.hasOwnProperty('scssCursor')){
 							editor.gotoLine(savedCursors.scssCursor.row+1,savedCursors.scssCursor.column,)
-                        	editor.scrollToRow(savedCursors.scssCursor.row+5)
+							editor.scrollToRow(savedCursors.scssCursor.row+5)
+						}
+
 					}
 					else editor.insert('');
 
@@ -1933,66 +2016,8 @@ $(document).ready(function () {
 
 
 	// LOAD TO QUANT!
-	$('*', window.frames['index'].contentDocument).on('mousedown', function (e) {
-		scssChangeCounter = -1;
-		pugChangeCounter = -1;
-		JSChangeCounter = -1;
-		ql(JSChangeCounter,'qwweqrwqrwqr!!!');
-		e.stopPropagation();
-		$('#contentNavigator__type input,#contentNavigator__stype input,#contentNavigator__name input').val('');
 
-
-		var content1 = $(this).closest('*[data-qcontent]').data('qcontent');
-
-		var _this =this;
-		if (content1) {
-			content1 = content1.split('__');
-
-			if (content1.length == 2) {
-				$('#contentNavigator__type input').val(content1[0]);
-				$('#contentNavigator__name input').val(content1[1]);
-
-			} else if (content1.length == 3) {
-				$('#contentNavigator__stype input').val(content1[1]);
-				$('#contentNavigator__name input').val(content1[2]);
-			}
-
-			var type = $('#contentNavigator__type input').val();
-			var stype = $('#contentNavigator__stype input').val();
-			var name = $('#contentNavigator__name input').val();
-			ql(type, stype, name)
-
-			$.ajax({
-				url: "http://localhost:8181?action=loadByDOM&type=" + type + "&stype=" + stype + "&name=" + name
-
-			}).done(function (data) {
-				if (data !== '') {
-					var res = JSON.parse(data);
-
-					editorPug.selectAll();
-					editorJs.selectAll();
-					editor.selectAll();
-					if (res.pug) editorPug.insert(res.pug);
-					else editorPug.insert('');
-					if (res.JS) editorJs.insert(res.JS);
-					else editorJs.insert('');
-					if (res.scss) editor.insert(res.scss);
-					else editor.insert('');
-					//$(".hud-bottom").css('display', 'block')
-					ql($(_this).attr('class'),'ee');
-				   editor.find($(_this).attr('class').split(' ')[0]);
-				   editorPug.find($(_this).attr('class').split(' ')[0]);
-				   editor.onCursorChange(function () {
-					   console.log('CHANGE')
-				   })
-
-
-				}
-				//
-			})
-
-		}
-	})
+	loadToQuant();
 
 
 

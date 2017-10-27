@@ -55,6 +55,17 @@
 				"": ""
 			}
 		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-debug": {
 			"js": {
 				"quant-debug-script": {
@@ -76,17 +87,6 @@
 				"viewportResizer": {
 					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
 					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-debug-JsonCss": {
-			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
 				}
 			},
 			"css": {
@@ -171,25 +171,6 @@
 				"": ""
 			}
 		},
-		"test": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--test/test.js",
-					"container": "footer/init/init"
-				},
-				"test-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/test/test.js",
-					"container": "footer"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"testModuleSergeConnectPeopleareStranged": {
 			"js": {
 				"lib1": {
@@ -229,6 +210,25 @@
 				"init": {
 					"src": "dev/MODULES/PROJECT MODULES/--testSnippetModule/testSnippetModule.js",
 					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"test": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--test/test.js",
+					"container": "footer/init/init"
+				},
+				"test-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/test/test.js",
+					"container": "footer"
 				}
 			},
 			"css": {

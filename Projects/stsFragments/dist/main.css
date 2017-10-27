@@ -1570,12 +1570,12 @@ section.block {
   .flyPageFragment .rrc_price {
     font-size: 22px; }
   .flyPageFragment .mop_price {
-    font-size: 26px;
+    font-size: 25px;
     color: #379774; }
   .flyPageFragment .toOrder {
     color: #fff;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 17px;
     text-align: center;
     background: orangered;
     border: solid 2px #ff6a33;
@@ -4051,5 +4051,8 @@ div[class*='Panel'] {
 
 .icon.playButston {
   fill: #fa9429; }
+
+.editorsContainer .ace-twilight .ace_marker-layer .ace_selected-word {
+  border: 1px solid #8BC34A; }
 
 /*# sourceMappingURL=maps/main.css.map */

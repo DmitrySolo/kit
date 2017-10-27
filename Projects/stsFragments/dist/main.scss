@@ -1,0 +1,98 @@
+  @import "imports";
+///////////////////////////////////////////////////////
+/*
+ * NORMALIZE
+ */
+@import "NORMALIZE/normalize-5-0-0";
+
+@if($assetsFonts){
+/*
+* FONTS
+*/
+  @include make-font-face();
+}
+
+/*
+ * BASE STYLES
+ */
+@import "base";
+
+
+/**
+ * TYPOGRAPHY
+ */
+@include typographic();
+
+  /**
+  * ICONFONT
+  *
+  */
+  @import "../../dist/fonts/scss/_iconFont.scss";
+
+  /*
+   * RESET
+   */
+  @import "reset";
+
+/**
+ * HIERARCHY
+ */
+@import "HIERARCHY/hierarchy";
+/**
+ * GRID
+ */
+ @if($response){
+  @include drawGrid($grid-map, $options);
+}@else {
+  @include nr-drawGrid($nr-options);
+ }
+
+
+/**
+* LAYOUT HELPERS
+*/
+@include helpers();
+
+/////////////////////////////////////////////////////
+/**
+* CONSTRUCTION STYLES
+*/
+@import "CONSTRUCTION/construction";
+/**
+* MODULES  STYLES
+*/
+@import "../../vendor/project template/STARTER/dev/qContent/concates/modules";
+
+/**
+* MIXES  STYLES
+*/
+@import "../MIXES/mixes";
+
+/**
+* ELEMENTS  STYLES
+*/
+@import "../ELEMENTS/elements";
+
+/**
+* PROJECT  STYLES
+*/
+@import "project";
+
+/**
+* PAGES STYLES
+*/
+  @import "PAGES/pages";
+
+//NO PRODUCTION
+@import "debug";
+@if($production == false){
+  @include projectBoard();
+  @include draft();
+  @include toJSMap();
+  @include blueprint();
+  //DEBUG
+  @if($debug){
+    @include debug();
+  }
+}
+
