@@ -1696,7 +1696,8 @@ $(document).ready(function () {
 			}).done(function (data) {
 
 				var arr = path1.split('/');
-
+				if (arr.length == 1)
+				arr = path1.split('\\');
 
 				ql(arr);
 
@@ -1727,7 +1728,7 @@ $(document).ready(function () {
 
 					var name = arr[arr.length -1];
 					var redirName = name.slice(0,-3)+'html';
-
+					ql('HELLO I M HERE');
 					document.getElementById('index').src=redirName;
 					$('span.projectPage').text(redirName);
 					$('a#playhref').attr('href',redirName);

@@ -1,54 +1,10 @@
 {
-	"menuData1": {
-		"Home": {
-			"title": "Продукция",
-			"href": "/production.html",
-			"dop_class": ""
-		},
-		"Products and help": {
-			"title": "Гарантия и сервис",
-			"href": "service.html",
-			"dop_class": ""
-		},
-		"Support": {
-			"title": "Партнерам",
-			"href": "partners.html",
-			"dop_class": ""
-		},
-		"AboutUs": {
-			"title": "Где купить",
-			"href": "buy.html",
-			"dop_class": "",
-			"childs": ""
-		},
-		"acc": {
-			"title": "Акции",
-			"href": "sale.html",
-			"dop_class": "lightmenu__item--active",
-			"childs": ""
-		}
-	},
 	"LIBS": {
 		"JQ": {
 			"js": {
 				"jquery": {
-					"src": "bower_components/jquery/dist/jquery.min.js",
+					"src": "node_modules/jquery/dist/jquery.min.js",
 					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-HUD-script": {
-			"js": {
-				"quant-HUD-script-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "bower_components/jquery-ui/jquery-ui.min.js",
-					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -66,38 +22,26 @@
 				"": ""
 			}
 		},
-		"quant-debug": {
+		"quant-debug-ruller": {
 			"js": {
-				"quant-debug-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
 					"container": "footer/init"
-				},
-				"notify": {
-					"src": "bower_components/notifyjs/dist/notify.js",
-					"container": "footer/libs+"
-				},
-				"JQUI-script": {
-					"src": "bower_components/jquery-ui/jquery-ui.min.js",
-					"container": "footer/libs+"
-				},
-				"vieport": {
-					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
-					"container": "footer/libs+"
-				},
-				"viewportResizer": {
-					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
-					"container": "footer/libs+"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"quant-debug-ruller": {
+		"quant-HUD-script": {
 			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+				"quant-HUD-script-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
 					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -126,36 +70,6 @@
 				"": ""
 			}
 		},
-		"anotherTest": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--anotherTest/anotherTest.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"confirmedOrderPage": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--confirmedOrderPage/confirmedOrderPage.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"flyPageFragment": {
 			"js": {
 				"lib1": {
@@ -164,21 +78,6 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/MODULES/flyPageFragment/flyPageFragment.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"testModuleSergeConnectPeopleareStranged": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--testModuleSergeConnectPeopleareStranged/testModuleSergeConnectPeopleareStranged.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -200,40 +99,6 @@
 			"css": {
 				"": ""
 			}
-		},
-		"testSnippetModule": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--testSnippetModule/testSnippetModule.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"test": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--test/test.js",
-					"container": "footer/init/init"
-				},
-				"test-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/test/test.js",
-					"container": "footer"
-				}
-			},
-			"css": {
-				"": ""
-			}
 		}
 	},
 	"switchers": {
@@ -246,8 +111,6 @@
 		"production": "false",
 		"icon-font": "false"
 	},
-	"response": "true",
-	"vertical-rhythm": "true",
 	"linkFonts": "true",
 	"assetsFonts": "false",
 	"debug": "true",
@@ -257,69 +120,19 @@
 	"header-color": "cs('primary')",
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
-		"'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\n//)",
-		"//  'MAIN'": "('Oswald')"
+		"//  'MAIN'": "('Oswald')",
+		"'HEADER'": "('Roboto Slab')\r\n//)"
 	},
-	"space": "em",
-	"element_space": "2",
-	"component_space": "2",
-	"module_space": "3",
 	"block_space": "4",
+	"module_space": "3",
+	"component_space": "2",
+	"element_space": "2",
 	"section_space": "4",
-	"progressive": "true",
-	"progressive_number": "1.4",
-	"element_space_i": ".5",
-	"element_space_o": "4",
-	"component_space_i": "6",
-	"component_space_o": "10",
-	"module_space_i": "16",
-	"module_space_o": "26",
-	"block_space_i": "30",
-	"block_space_o": "51",
-	"body-font": "fs('MAIN'),san-serif",
-	"body-font-weight": "400",
-	"header-font": "fs('HEADER'),san-serif",
-	"header-font-weight": "700",
-	"mobile-font": "14px",
-	"screen-font": "18px",
-	"line-height-ratio": "1.7",
-	"siteWidth": "1170px",
-	"colums": "12",
-	"gutter-width": "1em",
-	"container-styles": "(\n\n)",
+	"container-styles": "(\r\n\r\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\n)"
-	},
-	"phone-upper-boundary": "600px",
-	"tablet-portrait-upper-boundary": "768px",
-	"tablet-landscape-upper-boundary": "994px",
-	"desktop-upper-boundary": "1200px",
-	"desktopl-upper-boundary": "1400px",
-	"tablet-p-container": "690px",
-	"siteMinWidth": "$tablet-p-container",
-	"tablet-l-container": "900px",
-	"desktop-container": "1120px",
-	"MEDIA": {
-		"phoneBreakpoint": "600px",
-		"tabletPortraitBreakpoint": "768px",
-		"tabletLandscapeBreakpoint": "994px",
-		"desktopBreakpoint": "1200px",
-		"desktoplBreakpoint": "1400px",
-		"tabletPcontainer": "690px",
-		"tabletLcontainer": "900px",
-		"desktopContainer": "1120px"
-	},
-	"grid-map": {
-		"mobile": "(prefix",
-		"container": "$siteWidth",
-		"breakpoint": "$desktop-upper-boundary)",
-		"tablet-p": "(prefix",
-		"tablet-l": "(prefix",
-		"mediumScreen": "(prefix",
-		"largeScreen": "(prefix"
+		"min-height": "1px\r\n)"
 	},
 	"nr-colStyles": {
 		"float": "left"
@@ -389,20 +202,5 @@
 			"layout": "default",
 			"group": ""
 		}
-	},
-	"___LIBS": {
-		"starter": {
-			"js": {
-				"starter-script": {
-					"src": "Projects/STRERXXX/dev/scripts/starter/starter.js",
-					"container": "footer"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		}
-	},
-	"blueprint": "undefined",
-	"izolate": "false"
+	}
 }

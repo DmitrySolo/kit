@@ -1,22 +1,4 @@
 /**
-* anotherTest styles
-*/
-
-@mixin anotherTest(){
-
-  .anotherTest__content{
-
-  }
-  .anotherTest{
-
-  }
-
-}
-
-
-////////////////////////////////////////
-@include anotherTest();
-/**
 * confirmedOrderPage styles
 */
 
@@ -47,7 +29,7 @@
     background:cs('foreground');
     .stock_title, .stock {
         color: cs('succes-d');
-        font-size: 16px;
+        font-size: 28px;
     }
     .fragmentTitle {
         font-weight: bold;
@@ -56,8 +38,8 @@
         font-size: 22px;
     }
     .mop_price {
-        font-size: 25px;
-        color: cs('succes-d');
+        font-size: 22px;
+        color: cs('accent-d');
     }
     .toOrder {
         color: #fff;
@@ -97,41 +79,6 @@
 ////////////////////////////////////////
 @include flyPageFragment();
 /**
-* test styles
-*/
-
-@mixin test(){
-
-  .test__content{
-
-  }
-  .test{
-
-  }
-
-}
-
-
-////////////////////////////////////////
-@include test();
-/**
-* testModuleSergeConnectPeopleareStranged styles
-*/
-
-@mixin testModuleSergeConnectPeopleareStranged(){
-
-  .testModuleSergeConnectPeopleareStranged {
-    &__content {
-
-    }
-  }
-
-}
-
-
-////////////////////////////////////////
-@include testModuleSergeConnectPeopleareStranged();
-/**
 * testOfParent styles
 */
 
@@ -139,7 +86,7 @@
 
   .testOfParent {
     &__content {
-        color:orangered;
+        color:green;
         text-align: right;
     }
   }
@@ -250,11 +197,11 @@
 .orderPage__title {
   text-align: center;
   margin-bottom: 31px;
-  color:cs('succes-d');
+  color:cs('succes');
 }
 
 .orderPage__mainMessage {
-  font-size: 25px;
+  font-size: 21px;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;

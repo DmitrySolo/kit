@@ -3,10 +3,11 @@ const gutil = require('gulp-util');
 const through = require('through2');
 const del = require('del');
 var Sync = require('sync');
-const fs = require('fs');
+var fs = require('fs');
 var vfs = require('vinyl-fs');
 var foreach = require('gulp-foreach');
 var concat = require('gulp-concat');
+const fse = require('fs-extra');
 var path = require('path');
 var insert = require('gulp-insert');
 var rimraf = require('rimraf');
@@ -16,6 +17,14 @@ console.log('test-deleted');
 }
 
 module.exports = (options) => {
+
+    if(process.platform == 'win32'){
+        var delim = '\\';
+    }else{
+       var delim = '/';
+    };
+
+
     // Какие-то действия с опциями. Например, проверка их существования,
     // задание значения по умолчанию и т.д.
     var dist = options.dist
@@ -53,6 +62,7 @@ module.exports = (options) => {
 
 
         //fs.unlink('./dev/SCRIPTS/scriptMap.json');
+
         deleteFolderRecursive(dist+'/scripts');
         fs.truncateSync(dev+'template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_top.pug');
         fs.truncateSync(dev+'template/PAGESYSTEM/SCRIPTS-STYLES/FOOTER/_libs.pug');
@@ -104,6 +114,7 @@ module.exports = (options) => {
 
                 var srcArr = scriptsMap[scontainer];
                 var scontainerArr = scontainer.split('/');
+                console.log(scontainerArr);
                 var path1 = scontainerArr[0];
                 var path2 = scontainerArr[1];
 
@@ -127,9 +138,12 @@ module.exports = (options) => {
 
                         var strCtn ="\nscript(src='scripts/"+file+"' type='text/javascript')";
                         fs.appendFileSync(dev+'template/PAGESYSTEM/SCRIPTS-STYLES/'+path1+'/_'+path2+'.pug',strCtn);
+                        console.log(srcArr[index]);
+                        if(delim == '\\') srcArr[index]=srcArr[index].replace(/\//ig,'\\');
+                        console.log(srcArr[index]);
+                        if(srcArr[index] != '')
+                        fse.copy(srcArr[index], dist+'/scripts/'+file);
 
-                        vfs.src(srcArr[index])
-                            .pipe(vfs.dest(dist+'/scripts'));
 
 
                     }

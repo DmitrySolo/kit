@@ -1,9 +1,8 @@
 /**
 * MODULE: flyPageFragment script
 */
-
 var func = function(){
-	return true;
+	return false;
 }
 var onload = function(){
 	return true;

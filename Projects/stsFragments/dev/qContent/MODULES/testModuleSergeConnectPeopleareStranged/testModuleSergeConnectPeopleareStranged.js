@@ -1,3 +1,0 @@
-/**
-* MODULE: testModuleSergeConnectPeopleareStranged script
-*/

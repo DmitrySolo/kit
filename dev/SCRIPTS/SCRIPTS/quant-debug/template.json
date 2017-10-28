@@ -5,12 +5,9 @@
         "quant-debug-script": {
           "src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
           "container": "footer/init"
-        },        "notify": {
-          "src": "bower_components/notifyjs/dist/notify.js",
-          "container": "footer/libs+"
         },
         "JQUI-script": {
-          "src": "bower_components/jquery-ui/jquery-ui.min.js",
+          "src": "node_modules/jquery-ui/custom/jquery-ui.min.js",
           "container": "footer/libs+"
         },
 

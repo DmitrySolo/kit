@@ -64,6 +64,17 @@ const dirTree = require('directory-tree');
 
 
 var qp_path = "./gulp plugins/";
+var OS = require(qp_path + 'OS');
+
+var OS = OS.getOS();
+if(OS == 'win32') {
+	var delimetr = '\\';
+}
+else{
+    var delimetr = '/';
+}
+
+
 const scriptCleaner = require(qp_path + 'scriptbuilder/scleaner');
 const scriptThrower = require(qp_path + 'scriptbuilder/sthrower');
 var qM = require(qp_path + 'q_functions');
@@ -866,14 +877,12 @@ gulp.task('buildblueprint', function buildHTML() {
 });
 gulp.task('mergeJson', function () {
 	return gulp.src([
-		'dev/{MODULES,ELEMENTS,SCRIPTS}/**/--*/*.json',
+		'dev/SCRIPTS/**/--*/*.json',
 		'dev/scss/MASTER_OPTIONS/*.json',
 		'Projects/' + projectName + '/data/*.json',
-		'Projects/' + projectName + '/dev/qContent/**/*libs.json',
+		'Projects/' + projectName + '/dev/qContent/**/libs.json',
 		'Projects/' + projectName + '/dev/scripts/**/*.json',
-		'blueprint/*.json',
 		'!dev/SOURCE_FABRIC/STORRAGE/**/*.json',
-		'!dev/{MODULES,ELEMENTS,SCRIPTS}/**/--*/off_*.json'
 	])
 		.pipe(merge('data.json'))
 		.pipe(gulp.dest('./'));
@@ -1246,7 +1255,7 @@ gulp.task('svgstore-debug', function () {
 });
 
 //////////////////////////////////////////////////////
-gulp.task('START QUANT', function () {
+gulp.task('START_QUANT', function () {
 	runSequence('API-SERVER', 'WATCHER:NEW', 'SERVER', 'WATCHCSSTOPARSEIT')
 });
 gulp.task('RELOAD QUANT', function () {
@@ -1305,7 +1314,7 @@ gulp.task('[D] DIST FRONT-END', function (done) {
 });
 
 gulp.task('parc', function () {
-	var ast = css.parse(file = fs.readFileSync(dist + '/main.css', "utf8"));
+	var ast = css.parse(file = fs.readFileSync(dist + '\\main.css', "utf8"));
 	fs.writeFileSync(dist + "/scripts/quant-debug-JsonCss.js", 'var jsonCss = ' + JSON.stringify(ast));
 
 });
@@ -1420,7 +1429,8 @@ gulp.task('API-SERVER', function () {
 							if (path1.indexOf('MODULES') > -1 || path1.indexOf('ELEMENTS') > -1) {
 
 								console.log('It is  quant content')
-								var sname = path1.split('/');
+
+									var sname = path1.split(delimetr);
 
 								var l = sname.length;
 								var name = sname[l - 1];
@@ -1448,9 +1458,9 @@ gulp.task('API-SERVER', function () {
 
 
 						}else if (path1.indexOf('PAGES') > -1 || path1.indexOf('LAYOUT') > -1){
+								 var pageNameArr = path1.split(delimetr);
 
-								var pageNameArr = path1.split('/');
-								var pageName = pageNameArr[pageNameArr.length -1].slice(0,-3)+'html'
+                                var pageName = pageNameArr[pageNameArr.length -1].slice(0,-3)+'html'
 
 								var curStr = '-var currentPage = "'+pageName+'"';
 								fs.writeFileSync('HUD/_currentPage.pug',curStr);
@@ -1475,7 +1485,7 @@ gulp.task('API-SERVER', function () {
 
 						} else if (editor == 'topjt' && (path1.indexOf('MODULES') > -1 || path1.indexOf('ELEMENTS') > -1)) {
 
-							var sname = path1.split('/');
+							var sname = path1.split(delimetr);
 
 							var l = sname.length;
 							var name = sname[l - 1];
