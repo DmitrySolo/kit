@@ -18,15 +18,15 @@ script.
     frameContent = $('iframe#index').contents().find('body')
 script(src="https://cloud9ide.github.io/emmet-core/emmet.js")
 script
-    include ../node_modules/ace-builds/src-min/ace.js
+    include ../node_modules/ace-builds/src/ace.js
 script
     include ../node_modules/ace-builds/src-min/theme-twilight.js
 script
     include ../node_modules/ace-builds/src/ext-emmet.js
 script
-    include ../node_modules/ace-builds/src-min/mode-scss.js
+    include ../node_modules/ace-builds/src/mode-scss.js
 script
-    include ../node_modules/ace-builds/src-min/mode-jade.js
+    include ../node_modules/ace-builds/src/mode-jade.js
 script
     include ../node_modules/ace-builds/src-min/mode-javascript.js
 script
@@ -312,6 +312,9 @@ script(role='pug').
     var editorPug = ace.edit("editorPug");
     editorPug.setTheme("ace/theme/twilight");
     var PugMode = ace.require("ace/mode/jade").Mode;
+
+
+
     editorPug.session.setMode(new PugMode());
     editorPug.session.setOptions({ tabSize: 4, useSoftTabs: false });
     ace.require("ace/ext/language_tools");

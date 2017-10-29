@@ -2354,7 +2354,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   max-width: 100%;
   padding: 0.375em;
   font-size: 11px;
-  margin-bottom: 1.07812em; }
+  margin-bottom: 1.07813em; }
   @media (min-width: 690px) {
     input[type="text"], input[type="email"], input[type="password"], textarea {
       font-size: calc(11px + (16 - 11) * ((100vw - 690px) / (1170 - 690))); } }
@@ -2380,7 +2380,7 @@ input[type="submit"], button {
 label {
   display: block;
   padding-bottom: 0.1875em;
-  margin-bottom: -0.14062em; }
+  margin-bottom: -0.14063em; }
 
 table {
   width: 100%;
@@ -3034,7 +3034,7 @@ section.block {
   background: #fff; }
   .flyPageFragment .stock_title, .flyPageFragment .stock {
     color: #379774;
-    font-size: 20px; }
+    font-size: 21px; }
   .flyPageFragment .fragmentTitle {
     font-weight: bold; }
   .flyPageFragment .rrc_price {
@@ -3074,9 +3074,8 @@ section.block {
 .testOfParent {
   color: red; }
   .testOfParent__content {
-    padding-top: 10px;
     color: yellow;
-    text-align: right; }
+    text-align: center; }
   .testOfParent__--clicked {
     color: orangered; }
 
@@ -3154,6 +3153,7 @@ section.block {
 .ove-sectionHeader {
   margin-bottom: 3px; }
 
+/* testOfSergConnectingSupport STYLE */
 /* orderPage STYLE */
 .orderPage__content {
   background: #fff;
@@ -3166,11 +3166,11 @@ section.block {
 
 .orderPage__title {
   text-align: center;
-  margin-bottom: 31px;
+  margin-bottom: 30px;
   color: #379774; }
 
 .orderPage__mainMessage {
-  font-size: 21px;
+  font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center; }
@@ -3194,7 +3194,6 @@ section.block {
 .orderPage__actions {
   text-align: center; }
 
-/* testOfSergConnectingSupport STYLE */
 /**
 * PAGES STYLES
 */
@@ -3622,7 +3621,7 @@ body.debug {
   cursor: crosshair;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -5531,5 +5530,11 @@ div[class*='Panel'] {
 
 .editorsContainer .ace-twilight .ace_marker-layer .ace_selected-word {
   border: 1px solid #8BC34A; }
+
+.ace_level {
+  color: #00e7ff; }
+
+.ace_module {
+  color: #fc8b27; }
 
 /*# sourceMappingURL=maps/main.css.map */

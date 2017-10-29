@@ -32,7 +32,7 @@
     background:cs('foreground');
     .stock_title, .stock {
         color: cs('succes-d');
-        font-size: 20px;
+        font-size: 21px;
     }
     .fragmentTitle {
         font-weight: bold;
@@ -94,9 +94,9 @@
   .testOfParent {
       color: red;
     &__content {
-        padding-top: 10px;
+       // padding-top: 1px;
         color:yellow;
-        text-align: right;
+        text-align: center;
     }
     &__--clicked{
         color: cs('accent');
@@ -196,6 +196,16 @@
 .ove-sectionHeader {
   @include space('element','','b');
 }
+/* testOfSergConnectingSupport STYLE */
+
+.testOfSergConnectingSupport {
+    &__content {
+
+    }
+    &__title {
+
+    }
+}
 /* orderPage STYLE */
 
 .orderPage__content {
@@ -211,12 +221,12 @@
  
 .orderPage__title {
   text-align: center;
-  margin-bottom: 31px;
+  margin-bottom: 30px;
   color:cs('succes-d');
 }
 
 .orderPage__mainMessage {
-  font-size: 21px;
+  font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
@@ -244,14 +254,4 @@
 
 .orderPage__actions {
   text-align: center;
-}
-/* testOfSergConnectingSupport STYLE */
-
-.testOfSergConnectingSupport {
-    &__content {
-
-    }
-    &__title {
-
-    }
 }

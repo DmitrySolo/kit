@@ -7,9 +7,9 @@
   .testOfParent {
       color: red;
     &__content {
-        padding-top: 10px;
+       // padding-top: 1px;
         color:yellow;
-        text-align: right;
+        text-align: center;
     }
     &__--clicked{
         color: cs('accent');
