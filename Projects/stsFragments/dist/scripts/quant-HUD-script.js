@@ -147,13 +147,14 @@ function MakeEditable (elem) {
 
 		if($(this).hasClass('ruler')){ e.stopPropagation()}
 		if (!$(this).hasClass('debugElement')){
-
+			$(this).resizable({handles: "n, e, s, w"});
+			$(this).draggable();
 			$('*').removeClass('debugElement');
 			$('*').remove('.mChacker');
 
 			$('#getCode').remove();
 			// $('*').removeAttr('contentEditable');
-			$(this).addClass('resizeble');
+			$(this).addClass('resizable');
 			//  $(this).attr('oncontextmenu',"console.log('blogged')");
 			$(this).addClass('debugElement');
 			$(this).attr('contenteditable','true')
@@ -165,10 +166,7 @@ function MakeEditable (elem) {
 
 			var _this = $(this);
 			//$( ".resizeble" ).resizable( "disable" );
-			$(this).resizable({
-				handles: "n, e, s, w"
-			});
-			$(this).draggable();
+
 
 
 			// $('.debugElement').contextmenu(function(e) {
@@ -239,9 +237,9 @@ $(document).ready(function () {
 
 	$('#ball').draggable();
 	$('.ElemMenu',window.parent.document).draggable();
-	$('.spacer').resizable({
-		handles: "§se, s, w"
-	});
+	$('.spacer').resizable(
+
+	);
 
 })
 

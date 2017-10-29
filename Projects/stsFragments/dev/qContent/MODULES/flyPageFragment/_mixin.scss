@@ -6,12 +6,15 @@
 
   .flyPageFragment__content{
     font-family: arial, san-serif;
+    table {
+        text-align: center;
+    }
   }
   .flyPageFragment{
     background:cs('foreground');
     .stock_title, .stock {
         color: cs('succes-d');
-        font-size: 28px;
+        font-size: 20px;
     }
     .fragmentTitle {
         font-weight: bold;
@@ -21,7 +24,8 @@
     }
     .mop_price {
         font-size: 22px;
-        color: cs('accent-d');
+        color: cs('accent');
+        //font-weight: bold;
     }
     .toOrder {
         color: #fff;
@@ -52,6 +56,9 @@
             background: cs('accent-l');
         
         }
+    }
+    .table_row{
+        color: green;
     }
   }
 

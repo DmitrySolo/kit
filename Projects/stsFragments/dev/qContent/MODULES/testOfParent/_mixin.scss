@@ -5,9 +5,14 @@
 @mixin testOfParent(){
 
   .testOfParent {
+      color: red;
     &__content {
-        color:green;
+        padding-top: 10px;
+        color:yellow;
         text-align: right;
+    }
+    &__--clicked{
+        color: cs('accent');
     }
   }
 

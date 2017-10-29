@@ -2,7 +2,9 @@
 var qntEventFuncs={};
 /////////////////////////////////////////////////////// CONSOLE LOG
 var ql = function(msg,del=''){
-    console.log(del,msg,del)
+
+    msg = "QUANT LOG: "+msg;
+    console.log('%c '+msg+' '+del,'background: #00a2ee; #000; font-weight:bold')
 }
 ////////////////////////////////////////////////////// ACTION STARTER
 

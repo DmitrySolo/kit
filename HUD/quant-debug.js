@@ -51,7 +51,7 @@ function loadToQuant(){
 					ql($(_this).attr('class'),'ee');
 					editor.find($(_this).attr('class').split(' ')[0]);
 					editorPug.find($(_this).attr('class').split(' ')[0]);
-                    editorJs.find($(_this).attr('class').split(' ')[0]);
+					editorJs.find($(_this).attr('class').split(' ')[0]);
 
 
 
@@ -64,7 +64,9 @@ function loadToQuant(){
 
 }
 document.getElementById('index').onload= function() {
+    $('div.hud-Button#savecode ').css('background', 'initial');
 	loadToQuant();
+    $('#debugViewSwitcher').trigger('mousedown');
 };
 $(document).ready(function () {
 
@@ -730,7 +732,7 @@ $(document).ready(function () {
 		frameEl('#grid').toggleClass('hidden')
 		$(this).toggleClass('on')
 	})
-	$('#debugViewSwitcher').on('click', function () {
+	$('#debugViewSwitcher').on('mousedown', function () {
 		frameEl('body').toggleClass('debug');
 		$(this).toggleClass('on');
 
@@ -1092,57 +1094,59 @@ $(document).ready(function () {
 
 	}
 	//
-	$(window.frames[0]).on('click', $('#getCode'), function () {
 
-		console.log('hekol')
-		classStr = frameEl('.debugElement').attr('class').replace(/resizeble/, '')
-			.replace(/debugElement/g, '')
-			.replace(/ui-resizable/g, '')
-			.replace(/ui-draggable-handle/g, '')
-			.replace(/ui-draggable/g, '');
-		var tagStr = frameEl('.debugElement')[0].tagName;
-		console.log(tagStr);
-		var resMap = getObjects(classStr);
-		console.log(resMap)
-		var cssModPanelText = '';
-		var mapLine = resMap.position[1];
-		var mapCol = resMap.position[0];
-		for (var i in resMap.selectors) {
-			cssModPanelText += resMap.selectors[i] + '{';
-			for (var zi in resMap.styles[i]) {
-				cssModPanelText += resMap.styles[i][zi].propery + ':' + resMap.styles[i][zi].value + ';'
-			}
-			cssModPanelText += '}';
-		}
-
-		$.ajax({
-			url: "http://localhost:8181/?action=getSourceCode&line=" + (mapLine) + "&col=" + (mapCol - 1),
-		})
-			.done(function (data) {
-				console.log(data)
-				var dataArr = data.split('[^]')
-				var rsourse = dataArr[0];
-				var line = dataArr[1];
-				var pugContent = dataArr[2];
-				var jsContent = dataArr[3];
-				$.getJSON("maps/main.css.map", function (dataMap) {
-
-
-					var filetoEditIndex = dataMap.sources.indexOf(rsourse)
-
-					filetoEdit = dataMap.sourcesContent[filetoEditIndex];
-					editor.insert(filetoEdit);
-					editor.$blockScrolling = Infinity
-					editor.gotoLine(line);
-					console.log(pugContent)
-					editorPug.insert(pugContent);
-					editorJs.insert(jsContent);
-				});
-
-			});
-
-
-	});
+	//  GETCODE LOCK FUNC
+	// $(window.frames[0]).on('click', $('#getCode'), function () {
+    //
+	// 	console.log('hekol')
+	// 	classStr = frameEl('.debugElement').attr('class').replace(/resizeble/, '')
+	// 		.replace(/debugElement/g, '')
+	// 		.replace(/ui-resizable/g, '')
+	// 		.replace(/ui-draggable-handle/g, '')
+	// 		.replace(/ui-draggable/g, '');
+	// 	var tagStr = frameEl('.debugElement')[0].tagName;
+	// 	console.log(tagStr);
+	// 	var resMap = getObjects(classStr);
+	// 	console.log(resMap)
+	// 	var cssModPanelText = '';
+	// 	var mapLine = resMap.position[1];
+	// 	var mapCol = resMap.position[0];
+	// 	for (var i in resMap.selectors) {
+	// 		cssModPanelText += resMap.selectors[i] + '{';
+	// 		for (var zi in resMap.styles[i]) {
+	// 			cssModPanelText += resMap.styles[i][zi].propery + ':' + resMap.styles[i][zi].value + ';'
+	// 		}
+	// 		cssModPanelText += '}';
+	// 	}
+    //
+	// 	$.ajax({
+	// 		url: "http://localhost:8181/?action=getSourceCode&line=" + (mapLine) + "&col=" + (mapCol - 1),
+	// 	})
+	// 		.done(function (data) {
+	// 			console.log(data)
+	// 			var dataArr = data.split('[^]')
+	// 			var rsourse = dataArr[0];
+	// 			var line = dataArr[1];
+	// 			var pugContent = dataArr[2];
+	// 			var jsContent = dataArr[3];
+	// 			$.getJSON("maps/main.css.map", function (dataMap) {
+    //
+    //
+	// 				var filetoEditIndex = dataMap.sources.indexOf(rsourse)
+    //
+	// 				filetoEdit = dataMap.sourcesContent[filetoEditIndex];
+	// 				editor.insert(filetoEdit);
+	// 				editor.$blockScrolling = Infinity
+	// 				editor.gotoLine(line);
+	// 				console.log(pugContent)
+	// 				editorPug.insert(pugContent);
+	// 				editorJs.insert(jsContent);
+	// 			});
+    //
+	// 		});
+    //
+    //
+	// });
 	$('.elAdder').on('click', function () {
 
 		var elem = qntGetThisData(this, 'el')
@@ -1517,11 +1521,17 @@ $(document).ready(function () {
 	var testServer = function () {
 		try {
 			var request = $.ajax({
-				url: "http://localhost:8181?test=true",
+				url: "http://localhost:8181?action=test",
 			});
 
 			request.done(function (msg) {
-				$('#apitest').css('background', '#25b14a')
+				$('#apitest').css('background', '#25b14a');
+				ql(msg, 'DONE');
+				if (msg == '1'){
+                    var iframe = document.getElementById('index');
+                    iframe.src = iframe.src;
+
+				}
 			});
 
 			request.fail(function (jqXHR, textStatus) {
@@ -1532,7 +1542,7 @@ $(document).ready(function () {
 		}
 	}
 	testServer();
-	setInterval(testServer, 1000 * 10)
+	setInterval(testServer, 100 )
 
 ///////////////// CREATE PROJECT
 
@@ -1986,7 +1996,7 @@ $(document).ready(function () {
 				, type: 'POST'
 				, data: JSON.stringify(data)
 				, success: function (res) {
-					$('div.hud-Button#savecode').css('borderColor', 'lightgreen');
+					$('div.hud-Button#savecode ').css('background', 'rgb(37, 177, 74)');
 				}
 			});
 

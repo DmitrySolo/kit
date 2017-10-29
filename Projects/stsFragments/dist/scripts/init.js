@@ -1,11 +1,12 @@
 /**
 * MODULE: flyPageFragment script
 */
+
 var func = function(){
-	return false;
+	return true;
 }
 var onload = function(){
-	return true;
+	return false;
 }
 
 $('.toOrder.active').on('mousedown',function () {

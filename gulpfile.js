@@ -61,7 +61,7 @@ var copydir = require('copy-dir');
 var cmd = require('node-cmd');
 const dirTree = require('directory-tree');
 // QUANT PLUGINS&FUNCTIONS
-
+var Qupdate = false;
 
 var qp_path = "./gulp plugins/";
 var OS = require(qp_path + 'OS');
@@ -71,7 +71,7 @@ if(OS == 'win32') {
 	var delimetr = '\\';
 }
 else{
-    var delimetr = '/';
+	var delimetr = '/';
 }
 
 
@@ -125,8 +125,8 @@ gulp.task('views', function buildHTML() {
 				php: pugPHPFilter
 			}
 		})).on('error', notify.onError(function (error) {
-        return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
-    })).pipe(gulp.dest(dist));
+		return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
+	})).pipe(gulp.dest(dist));
 	var str = "include ../template/PAGESYSTEM/INCLUDES/_includes\n";
 	gulp.src(projectDevDir + 'template/projectboard.pug').pipe(insert.prepend(str)).pipe(rename(function (path) {
 		path.basename = 'index';
@@ -177,7 +177,9 @@ gulp.task('SERVER', [], function () {
 			ignorePaths: "Projects/"+projectName+"/dist/HUD.html"}
 	});
 
-	gulp.watch([dist + "index.html", dist + "/*.css"]).on('change', browserSync.reload('index.html'));
+	gulp.watch([dist + "index.html", dist + "/*.css"]).on('change',function () {
+		Qupdate = '1';
+    });
 
 
 });
@@ -225,7 +227,7 @@ gulp.task('WATCHCSSTOPARSEIT', function () {
 	return watch([
 		dist + '/main.css',
 	], function () {
-		gulp.start('parc');
+		gulp.start('parc1');
 	});
 });
 gulp.task('VIEW-1-MODULES', function () {
@@ -261,7 +263,7 @@ gulp.task('VIEW-1-DATA', function () {
 gulp.task('SERVER WATCHER', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([dist + "/index.html", dist + "/*.css", projectDevDir + "SCRIPTS/scriptMap.js"], function () {
-		browserSync.reload('index.html');
+		Qupdate = '1';
 
 	});
 });
@@ -715,8 +717,8 @@ gulp.task('styles', function () {
 		gulp.src('dev/scss/main.scss')
 			.pipe(sourcemaps.init())
 			.pipe(sass.sync().on('error',notify.onError(function (error) {
-                return 'SASS ERROR\n' + error;
-            })))
+				return 'SASS ERROR\n' + error;
+			})))
 			.pipe(sourcemaps.write('maps/'))
 			.pipe(gulp.dest(dist))
 			.pipe(gulp.dest('projectboard'));
@@ -1313,8 +1315,8 @@ gulp.task('[D] DIST FRONT-END', function (done) {
 		.pipe(gulp.dest('../'))
 });
 
-gulp.task('parc', function () {
-	var ast = css.parse(file = fs.readFileSync(dist + '\\main.css', "utf8"));
+gulp.task('parc1', function () {
+	var ast = css.parse(file = fs.readFileSync(dist + '/main.css', "utf8"));
 	fs.writeFileSync(dist + "/scripts/quant-debug-JsonCss.js", 'var jsonCss = ' + JSON.stringify(ast));
 
 });
@@ -1460,7 +1462,7 @@ gulp.task('API-SERVER', function () {
 						}else if (path1.indexOf('PAGES') > -1 || path1.indexOf('LAYOUT') > -1){
 								 var pageNameArr = path1.split(delimetr);
 
-                                var pageName = pageNameArr[pageNameArr.length -1].slice(0,-3)+'html'
+								var pageName = pageNameArr[pageNameArr.length -1].slice(0,-3)+'html'
 
 								var curStr = '-var currentPage = "'+pageName+'"';
 								fs.writeFileSync('HUD/_currentPage.pug',curStr);
@@ -1588,6 +1590,15 @@ gulp.task('API-SERVER', function () {
 						globalData = JSON.stringify(globalData);
 						fs.writeFileSync("globalData.json", globalData);
 						break;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    case 'test' :
+
+                        console.log(Qupdate);
+                        console.log('/'+Qupdate);
+                        srvRes = Qupdate;
+                        Qupdate = '0';
+                        break;
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

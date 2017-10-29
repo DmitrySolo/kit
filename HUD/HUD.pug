@@ -27,31 +27,31 @@ html(lang=''+head.lang)
                 .window(window='Viewport' style="z-index:5")
                     .wrapperid#viewpr-content
                         iframe(class='default-skin' id="index" src=currentPage width="100%" height="1200px" align="center" )
-                .window(window='Script')
-                    .wrapperid#script-content.clearfix
-                        .plannerWrap.col-6-tp
-                            script(src="scripts/go.js")
-                            script(src="scripts/goDiagramm.js")
-                            #sample
-                                div(style='width:100%; white-space:nowrap;')
-                                    span(style='border-right: solid 2px #fff;display: inline-block; vertical-align: top; width:7em; background-color:#242729')
-                                        #myPaletteDiv(style='min-height: 700px')
-                                    span(style='display: inline-block; vertical-align: top; width:90%')
-                                        #myDiagramDiv(style=' min-height: 700px')
-                                div
-                                    div
-                                        button#SaveButton(onclick='save()') Save
-                                        button(onclick='load()') Load
-                                        |       Diagram Model saved in JSON format:
-                                    textarea#mySavedModel(style='width:100%;height:300px')
-                                        | { "class": "go.GraphLinksModel",
-                                        | "linkFromPortIdProperty": "fromPort",
-                                        | "linkToPortIdProperty": "toPort",
-                                        | "nodeDataArray": [
-                                        | ],
-                                        | "linkDataArray": [
-                                        | ]}
-                        .edWrap.col-6-tp
+                //.window(window='Script')
+                //    .wrapperid#script-content.clearfix
+                //        .plannerWrap.col-6-tp
+                //            script(src="scripts/go.js")
+                //            script(src="scripts/goDiagramm.js")
+                //            #sample
+                //                div(style='width:100%; white-space:nowrap;')
+                //                    span(style='border-right: solid 2px #fff;display: inline-block; vertical-align: top; width:7em; background-color:#242729')
+                //                        #myPaletteDiv(style='min-height: 700px')
+                //                    span(style='display: inline-block; vertical-align: top; width:90%')
+                //                        #myDiagramDiv(style=' min-height: 700px')
+                //                div
+                //                    div
+                //                        button#SaveButton(onclick='save()') Save
+                //                        button(onclick='load()') Load
+                //                        |       Diagram Model saved in JSON format:
+                //                    textarea#mySavedModel(style='width:100%;height:300px')
+                //                        | { "class": "go.GraphLinksModel",
+                //                        | "linkFromPortIdProperty": "fromPort",
+                //                        | "linkToPortIdProperty": "toPort",
+                //                        | "nodeDataArray": [
+                //                        | ],
+                //                        | "linkDataArray": [
+                //                        | ]}
+                //        .edWrap.col-6-tp
                             //#editorJs.editor.editorScriptBuilder
             .hud-rightPanel.clearfix
                 include _right_panel

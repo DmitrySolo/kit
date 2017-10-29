@@ -2,16 +2,19 @@
 
 .orderPage__content {
   background: cs('foreground');
-  padding: 60px 30px;
+  padding: 60px 3px;
+  @include for-size(phone-only){
+       padding: 30px 15px;
+  }
   a {
-    color: cs('primary-d');
+    color: cs('primary');
   }
 }
  
 .orderPage__title {
   text-align: center;
   margin-bottom: 31px;
-  color:cs('succes');
+  color:cs('succes-d');
 }
 
 .orderPage__mainMessage {
@@ -26,9 +29,12 @@
 }
 
 .orderPage__subMess {
+    @include for-size(phone-only){
+        padding: 0 0 0 15px;
+    }
   color: cs('font-l');
   width: 50%;
-  margin: 0 auto 30px;
+  margin: 0 auto 15px;
   li {
     list-style: circle;
   }

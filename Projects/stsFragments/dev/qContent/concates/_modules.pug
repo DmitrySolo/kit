@@ -9,8 +9,8 @@ mixin MODULE-flyPageFragment()
 		.flyPageFragment
 			button.toOrder.active.notEdit Добавить в заявку
 			button.toOrder.succes.notEdit В заявке
-			table
-				tr
+			table.flyPageFragment__table
+				tr.table_row
 					td.fragmentTitle Артикул
 					td.sku 123243
 				tr
@@ -18,15 +18,15 @@ mixin MODULE-flyPageFragment()
 					td.rrc_price 8900 Р
 				tr
 					td.fragmentTitle МОЦ:
-					td.mop_price 65 500 Р
+					td.mop_price 6 500 Р
 				tr
 					td.fragmentTitle Доступно:
-					td.stock 12 штs
+					td.stock 14 штs
 mixin MODULE-testOfParent()
 	<!-- split modules/testOfParent -->
 	.testOfParent__content(data-qcontent='module__testOfParent')
 		span.testOfParent Hurray!!! Levels are BACK!!!
-		span Its real good NewsSad
+		span.testOfParent--clicked Its real good NewsSadw22
 mixin MODULE-testSnippetModule()
 	<!-- split modules/testSnippetModule -->
 	.testSnippetModule__content(data-qcontent='module__testSnippetModule')
@@ -42,7 +42,7 @@ mixin B-radialConturButton(value,className)
 
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
-	-var link = "<a href='/'>N 123123</a>"
+	-var link = "<a href='/'>N 12312356s769wwww</a>"
 	-var link1 = "<a href='/'>личном кабинетеQ</a>"
 	-var link2 = "<a href='/'>Иванов Иван.</a>"
 	section.orderPage__content(class = 'orderPage__content'+ className data-qcontent="level__orderPage")
@@ -52,7 +52,7 @@ mixin LEVEL-orderPage(title,className)
 			|!{link}
 			| принята на обработку.
 		ul.orderPage__subMess
-			li В настоящий моzмент заявка ожидает подтверждения менеджером.
+			li В настоящий моzмент заявка ожидаетd подтверждения менеджером.
 			li Ваш ответственный менеджер !{link2} автоматически оповещен.
 			li Отслеживать статус заявки вы можете в !{link1}.
 			li Электронная копия заявки отправлена на указанный вами email.
