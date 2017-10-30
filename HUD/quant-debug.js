@@ -1298,7 +1298,7 @@ $(document).ready(function () {
 		$('.ruler.v,.ruler.h', window.frames['index'].contentDocument).toggle();
 	})
 
-	$(".debug-Dialog").dialog("close");
+	$(".debug-Dialog").dialog("close"); //
 
 
 	$(".debug-Dialog-start").dialog({
