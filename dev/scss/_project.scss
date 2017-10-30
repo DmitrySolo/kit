@@ -92,7 +92,7 @@
 @mixin testOfParent(){
 
   .testOfParent {
-      color: red;
+      color: green;
     &__content {
        // padding-top: 1px;
         color:yellow;
@@ -196,16 +196,6 @@
 .ove-sectionHeader {
   @include space('element','','b');
 }
-/* testOfSergConnectingSupport STYLE */
-
-.testOfSergConnectingSupport {
-    &__content {
-
-    }
-    &__title {
-
-    }
-}
 /* orderPage STYLE */
 
 .orderPage__content {
@@ -238,7 +228,7 @@
 
 .orderPage__subMess {
     @include for-size(phone-only){
-        padding: 0 0 0 15px;
+        padding: 0 0 0 13px;
     }
   color: cs('font-l');
   width: 50%;
@@ -254,4 +244,14 @@
 
 .orderPage__actions {
   text-align: center;
+}
+/* testOfSergConnectingSupport STYLE */
+
+.testOfSergConnectingSupport {
+    &__content {
+
+    }
+    &__title {
+
+    }
 }

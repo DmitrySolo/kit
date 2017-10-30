@@ -1003,7 +1003,7 @@
   .debug-Dialog-content {
 
     padding: 20px;
-    background: #2b2b2b !important;
+    background: rgba(43, 43, 43, 0.87)  !important;
 
   }
   .createTitle {
@@ -1852,7 +1852,10 @@
     color: #00e7ff;
   }
   .ace_module{
-    color: #fc8b27;
+    color: tomato;
+  }
+  .ace_icon{
+    color: #fffd78;
   }
 }
 

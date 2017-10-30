@@ -106,14 +106,10 @@ gulp.task('phplint', function phplint() {
 })
 
 
-gulp.task('SCRIPTS2', function () {
+gulp.task('SCRIPTS', function () {
 	gulp.src('data.json')
 		.pipe(scriptThrower({dist: dist, dev: projectDevDir}));
 })
-
-gulp.task('SCRIPTS ALL', gulpsync.sync(['SCRIPTS2'])
-);
-
 
 gulp.task('views', function buildHTML() {
 	var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
@@ -170,11 +166,7 @@ gulp.task('SERVER', [], function () {
 	browserSync.init({
 		server: dist,
 		reloadOnRestart: false,
-		index: "index.html",
-		snippetOptions: {
-
-			// Ignore all HTML files within the templates folder
-			ignorePaths: "Projects/"+projectName+"/dist/HUD.html"}
+		index: "HUD.html",
 	});
 
 	gulp.watch([dist + "index.html", dist + "/*.css"]).on('change',function () {
@@ -354,7 +346,7 @@ gulp.task('SCRIPTS-FINAL', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch(['dev/**/*.js','!dev/**/quant-debug-JsonCss.js',projectDevDir+'qContent/**/*.js']
 		, function () {
-			gulp.start('SCRIPTS ALL');
+			gulp.start('SCRIPTS');
 		});
 });
 gulp.task('WATCHER:NEW', function () {
@@ -383,7 +375,7 @@ gulp.task('BUILDUP'
 			'concat-elements-scss',
 			'concat-modules-scss',
 			'styles',
-			'SCRIPTS ALL')
+			'SCRIPTS')
 		callback();
 	}
 )
@@ -1593,8 +1585,8 @@ gulp.task('API-SERVER', function () {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     case 'test' :
 
-                        console.log(Qupdate);
-                        console.log('/'+Qupdate);
+                        // console.log(Qupdate);
+                        // console.log('/'+Qupdate);
                         srvRes = Qupdate;
                         Qupdate = '0';
                         break;

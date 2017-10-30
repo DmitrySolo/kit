@@ -11,11 +11,40 @@
 				"": ""
 			}
 		},
+		"quant-HUD-script": {
+			"js": {
+				"quant-HUD-script-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"uicss": {
+					"src": "node_modules/jquery-ui-dist/jquery-ui.min.css",
+					"container": "head/libs"
+				}
+			}
+		},
 		"quant-debug-JsonCss": {
 			"js": {
 				"quant-debug-JsonCss-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
 					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-lib": {
+			"js": {
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -38,32 +67,6 @@
 				"xRayView-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
 					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-lib": {
-			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-HUD-script": {
-			"js": {
-				"quant-HUD-script-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
-					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -121,18 +124,18 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"//  'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\r\n//)"
+		"'HEADER'": "('Roboto Slab')\n//)"
 	},
 	"block_space": "4",
 	"module_space": "3",
 	"component_space": "2",
 	"element_space": "2",
 	"section_space": "4",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\r\n)"
+		"min-height": "1px\n)"
 	},
 	"nr-colStyles": {
 		"float": "left"

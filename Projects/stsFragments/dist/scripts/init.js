@@ -6,7 +6,7 @@ var func = function(){
 	return true;
 }
 var onload = function(){
-	return false;
+	return true;
 }
 
 $('.toOrder.active').on('mousedown',function () {

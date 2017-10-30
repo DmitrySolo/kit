@@ -1272,6 +1272,18 @@ $(document).ready(function () {
 		title: "Create New:",
 		autoOpen: false
 	});
+    $(".debug-colorManager").dialog({
+        modal: true,
+        title: "Color System:",
+        autoOpen: false,
+        draggable: true
+    });
+
+    $('div#colorSystem').on('mousedown', function () {
+        $(this).toggleClass('on');
+        $(".debug-colorManager").dialog("open");
+    })
+
 
 	$('div#addContent').on('mousedown', function () {
 
@@ -1542,7 +1554,7 @@ $(document).ready(function () {
 		}
 	}
 	testServer();
-	setInterval(testServer, 100 )
+	setInterval(testServer, 200 )
 
 ///////////////// CREATE PROJECT
 

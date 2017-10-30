@@ -5,7 +5,7 @@
 @mixin testOfParent(){
 
   .testOfParent {
-      color: red;
+      color: green;
     &__content {
        // padding-top: 1px;
         color:yellow;

@@ -12,7 +12,10 @@
         }
       },
       "css": {
-        "": ""
+        "uicss": {
+          "src": "node_modules/jquery-ui-dist/jquery-ui.min.css",
+          "container": "head/libs"
+        }
       }
     }
   }
