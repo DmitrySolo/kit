@@ -11,6 +11,28 @@
 				"": ""
 			}
 		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-debug-ruller": {
+			"js": {
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-HUD-script": {
 			"js": {
 				"quant-HUD-script-script": {
@@ -29,33 +51,11 @@
 				}
 			}
 		},
-		"quant-debug-JsonCss": {
-			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"quant-lib": {
 			"js": {
 				"quant-lib-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
 					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-debug-ruller": {
-			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -124,22 +124,33 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"//  'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\n//)"
+		"'HEADER'": "('Roboto Slab')\r\n//)"
 	},
 	"block_space": "4",
 	"module_space": "3",
 	"component_space": "2",
 	"element_space": "2",
 	"section_space": "4",
-	"container-styles": "(\n\n)",
+	"container-styles": "(\r\n\r\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\n)"
+		"min-height": "1px\r\n)"
 	},
 	"nr-colStyles": {
 		"float": "left"
 	},
+	"colors": {
+		"primary": "#007FC3",
+		"secondary": "#474747",
+		"foreground": "#fff",
+		"background": "#C5C5C5",
+		"accent": "orangered",
+		"font": "#474747",
+		"succes": "#46bb90",
+		"erorr": "#DD403A"
+	},
+	"color-step": ".1",
 	"head": {
 		"lang": "eng",
 		"title": "stsFragments",

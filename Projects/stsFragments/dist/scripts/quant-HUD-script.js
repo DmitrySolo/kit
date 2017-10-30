@@ -218,9 +218,9 @@ function MakeEditable (elem) {
 
 			// Возвращаем фокус туда, где был
 			fontSize = $(this).css('fontSize');
-			if (! $('#ball').hasClass('eventLock')){
-				$('#ball').css('fontSize',fontSize);
-				$('.lh').text('Line height of font-size ='+ fontSize);
+			if (! $('#ball',window.parent.document).hasClass('eventLock')){
+				$('#ball',window.parent.document).css('fontSize',fontSize);
+				$('.lh',window.parent.document).text('Line height of font-size ='+ fontSize);
 			}
 
 

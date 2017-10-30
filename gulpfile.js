@@ -171,6 +171,7 @@ gulp.task('SERVER', [], function () {
 
 	gulp.watch([dist + "index.html", dist + "/*.css"]).on('change',function () {
 		Qupdate = '1';
+
     });
 
 
@@ -295,6 +296,7 @@ gulp.task('STYLES-FINAL', function () {
 		'dev/MODULES/_modules.scss',
 	], function () {
 		gulp.start('styles');
+        gulp.start('sass-json');
 
 	});
 });
@@ -715,7 +717,7 @@ gulp.task('styles', function () {
 			.pipe(gulp.dest(dist))
 			.pipe(gulp.dest('projectboard'));
 
-		gulp.src('dev/scss/MASTER_OPTIONS/_options.scss')
+		gulp.src(['dev/scss/COLOR/_colors.scs'])
 			.pipe(sassJson())
 			.pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
 		alredyCompile = false;
@@ -1191,7 +1193,7 @@ gulp.task('buildfonts2', function () {
 //SASS VARIABLES TO JSON
 gulp.task('sass-json', function () {
 	return gulp
-		.src('dev/scss/MASTER_OPTIONS/_options.scss')
+		.src(['dev/scss/MASTER_OPTIONS/_options.scss','dev/scss/COLOR/_colors.scss'])
 		.pipe(sassJson())
 		.pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
 });

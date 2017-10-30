@@ -1,4 +1,17 @@
 //  quant-debug script
+ function addToBufer (content) {
+    let tmp = document.createElement('INPUT'), // Создаём новый текстовой input
+        focus = document.activeElement; // Получаем ссылку на элемент в фокусе (чтобы не терять фокус)
+    tmp.value = content;
+
+    // Временному input вставляем текст для копирования
+    document.body.appendChild(tmp); // Вставляем input в DOM
+    tmp.select(); // Выделяем весь текст в input
+    document.execCommand('copy'); // Магия! Копирует в буфер выделенный текст (см. команду выше)
+    document.body.removeChild(tmp); // Удаляем временный input
+    focus.focus();
+
+}
 function loadToQuant(){
 	ql('LOAD  TRIGGERED');
 	$('*', window.frames['index'].contentDocument).on('mousedown', function (e) {
@@ -49,9 +62,10 @@ function loadToQuant(){
 					else editor.insert('');
 					//$(".hud-bottom").css('display', 'block')
 					ql($(_this).attr('class'),'ee');
-					editor.find($(_this).attr('class').split(' ')[0]);
-					editorPug.find($(_this).attr('class').split(' ')[0]);
-					editorJs.find($(_this).attr('class').split(' ')[0]);
+					var target = $(_this).attr('class').split(' ')[0];
+					editor.find(target);
+					editorPug.find(target);
+					editorJs.find(target);
 
 
 
@@ -66,7 +80,7 @@ function loadToQuant(){
 document.getElementById('index').onload= function() {
     $('div.hud-Button#savecode ').css('background', 'initial');
 	loadToQuant();
-    $('#debugViewSwitcher').trigger('mousedown');
+    $('.hud-Button').not('#editorSwitcher').filter($('.on')).trigger('mousedown').addClass('on');
 };
 $(document).ready(function () {
 
@@ -180,9 +194,14 @@ $(document).ready(function () {
 		var arr = ($(searchableEl).html()).split('<i>');
 		var tag = arr[0]
 		var classes = arr[1].replace(/<\/i>/, '').replace(/ /g, '.').replace(/&gt;/g, '');
+		var classesArray =  classes.split(' ');
+		var target = classesArray[0];
 		var searchElem = tag + '.' + classes;
 
 		var newDebug = frameEl('.debugElement').closest(frameEl(searchElem));
+        editor.find(target);
+        editorPug.find(target);
+        editorJs.find(target);
 		console.log(newDebug)
 		$('.debugElement').removeClass('debugElement');
 		newDebug.trigger('click');
@@ -666,19 +685,7 @@ $(document).ready(function () {
 	}
 	mediaBreakPoinsChecker();
 
-	var addToBufer = function (content) {
-		let tmp = document.createElement('INPUT'), // Создаём новый текстовой input
-			focus = document.activeElement; // Получаем ссылку на элемент в фокусе (чтобы не терять фокус)
-		tmp.value = content;
 
-		// Временному input вставляем текст для копирования
-		document.body.appendChild(tmp); // Вставляем input в DOM
-		tmp.select(); // Выделяем весь текст в input
-		document.execCommand('copy'); // Магия! Копирует в буфер выделенный текст (см. команду выше)
-		document.body.removeChild(tmp); // Удаляем временный input
-		focus.focus();
-
-	}
 
 	function paste(elem) {
 		elem.focus();
@@ -725,10 +732,11 @@ $(document).ready(function () {
 
 ///////////////
 	$('#spacerSwitcher').on('click', function () {
-		frameEl('#ball').toggleClass('hidden');
+		$('#ball').toggleClass('hidden');
 		$(this).toggleClass('on')
+		$('.spacer,#ball').draggable().resizable();
 	})
-	$('#gridb').on('click', function () {
+	$('#gridb').on('mousedown', function () {
 		frameEl('#grid').toggleClass('hidden')
 		$(this).toggleClass('on')
 	})
@@ -737,6 +745,14 @@ $(document).ready(function () {
 		$(this).toggleClass('on');
 
 	})
+
+	$('div#testing').on('mousedown', function () {
+        frameEl('body').toggleClass('testBlackWhite');
+        $(this).toggleClass('on');
+
+    })
+
+
 	$('#addRect').on('click', function () {
 		$(".debugElement").append("<div class='mod rect'></div>");
 		MakeEditable($('.mod.rect'));

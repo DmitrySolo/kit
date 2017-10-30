@@ -95,7 +95,7 @@
       color: green;
     &__content {
        // padding-top: 1px;
-        color:yellow;
+        color:tomato;
         text-align: center;
     }
     &__--clicked{
@@ -200,9 +200,9 @@
 
 .orderPage__content {
   background: cs('foreground');
-  padding: 60px 3px;
+  padding: 60px 10px;
   @include for-size(phone-only){
-       padding: 30px 15px;
+       padding: 30px 16px;
   }
   a {
     color: cs('primary');
@@ -211,8 +211,8 @@
  
 .orderPage__title {
   text-align: center;
-  margin-bottom: 30px;
-  color:cs('succes-d');
+  margin-bottom: 35px;
+  color:cs('succes');
 }
 
 .orderPage__mainMessage {
@@ -221,7 +221,7 @@
   font-weight: bold;
   text-align: center;
   @include for-size(phone-only){
-      font-size: 16px;
+      font-size: 24px;
   }
 
 }

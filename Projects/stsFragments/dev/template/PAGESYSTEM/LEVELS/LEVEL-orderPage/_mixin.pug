@@ -1,6 +1,6 @@
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
-	-var link = "<a href='/'>N 12312356s769wwww</a>"
+	-var link = "<a href='/'>N 12312356</a>"
 	-var link1 = "<a href='/'>личном кабинетеQ</a>"
 	-var link2 = "<a href='/'>Иванов Иван.</a>"
 	section.orderPage__content(class = 'orderPage__content'+ className data-qcontent="level__orderPage")
@@ -13,7 +13,7 @@ mixin LEVEL-orderPage(title,className)
 			li В настоящий моzмент заявка ожидаетd подтверждения менеджером.
 			li Ваш ответственный менеджер !{link2} автоматически оповещен.
 			li Отслеживать статус заявки вы можете в !{link1}.
-			li Электронная копия заявки отправлена на указанный вами email.
+			li Электронная копия заявки отправлена на указанный вами email@.
 			
 		.orderPage__actions
 			a(href='/') &larr; В личный Кабинет!!!. 

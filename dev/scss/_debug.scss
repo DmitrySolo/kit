@@ -103,7 +103,7 @@
   //div-form-input
 
   #ball {
-    position: fixed !important;
+    position: absolute !important;
     top: 0;
     left: 0;
     width: 30%;
@@ -1217,7 +1217,7 @@
     }
   }
   .pb-colorBox {
-    width: 20px;
+    width: 90px;
     height: 20px;
   }
   .editorsContainer {
@@ -1747,7 +1747,7 @@
     background-color: rgb(218, 218, 218);
   }
   .contentNavigator {
-    //width: 600px;
+    width:200px;
     background-color: #3c3f41;
     z-index: 9999999999;
     position: absolute;
@@ -1836,6 +1836,7 @@
   #viewpr-content {
     border-right: solid .5px rgba(255, 164, 10, 0.27) !important;
     border-left: solid .5px rgba(255, 164, 10, 0.59) !important;
+    position: relative;
   }
   .viewportButton {
     margin-right: 40px;
@@ -1856,6 +1857,9 @@
   }
   .ace_icon{
     color: #fffd78;
+  }
+  .testBlackWhite{
+    filter: grayscale(100%);
   }
 }
 
