@@ -11,6 +11,17 @@
 				"": ""
 			}
 		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-HUD-script": {
 			"js": {
 				"quant-HUD-script-script": {
@@ -29,11 +40,11 @@
 				}
 			}
 		},
-		"quant-debug-JsonCss": {
+		"quant-debug-ruller": {
 			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -45,17 +56,6 @@
 				"quant-lib-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
 					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-debug-ruller": {
-			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -104,6 +104,7 @@
 			}
 		}
 	},
+	"color__link": "lighten(#3a155a,5%)",
 	"colors": {
 		"primary": "#3a155a",
 		"secondary": "#474747",
@@ -136,23 +137,22 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"//  'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\n//)"
+		"'HEADER'": "('Roboto Slab')\r\n//)"
 	},
 	"block_space": "4",
 	"module_space": "3",
 	"component_space": "2",
 	"element_space": "2",
 	"section_space": "4",
-	"container-styles": "(\n\n)",
+	"container-styles": "(\r\n\r\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\n)"
+		"min-height": "1px\r\n)"
 	},
 	"nr-colStyles": {
 		"float": "left"
 	},
-	"color__link": "lighten(#3a155a,5%)",
 	"head": {
 		"lang": "eng",
 		"title": "stsFragments",

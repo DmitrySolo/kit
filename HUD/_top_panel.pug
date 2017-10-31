@@ -2,7 +2,7 @@ include ../dev/templates/PAGESYSTEM/INCLUDES/_includes
 include ../dev/templates/mixins/_mixins
 script
 	include jquery-ui.min.js
-.top-panel-content
+.top-panel-content.clearfix
 	.quant.hud Q
 	.projecttitleCtn.f-left
 		span.projectTitle= head.title
@@ -45,8 +45,11 @@ script
 			+I('addContent','addContent')
 		.hud-Button.f-left#savecode
 			+I('savecode','savecode')
-		.hud-Button.f-left
+		.hud-Button.f-left#resizer
 			input#scaller(type = "range" min = ".3" max = "2" step = ".1"  onchange = "qscale(this.value)",value='1')
 			span#scallerLabel(style="line-height:0; color:#006eb7 !important") 1
-	.apiTester
+		.contentbuttons.f-left.clearfix
+			.hud-Button.f-left#openDownload
+						+I('container')
+	.apiTester.f-right
 		span#apitest

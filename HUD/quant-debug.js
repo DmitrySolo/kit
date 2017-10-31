@@ -575,15 +575,24 @@ $(document).ready(function () {
 
 	$('#saveToServer').on('mousedown', function () {
 
-		$.ajax({
-			url: "http://localhost:8181"
-			, type: 'POST'
-			, data: JSON.stringify(currentSelectorsData)
-			, success: function (res) {
+        $.ajax({
+            url: "http://localhost:8181"
+            , type: 'POST'
+            , data: JSON.stringify(currentSelectorsData)
+            , success: function (res) {
 
-			}
-		});
-	})
+            }
+        });
+    })
+
+	//EXEC
+    $('#openDownload').on('mousedown', function () {
+
+        $.ajax({
+            url: "http://localhost:8181?action=execute&command=Explorer.exe C:\\Users\\Dmitry Soloshenko\\Downloads"
+        });
+    })
+
 
 
 	function markMedia(media) {

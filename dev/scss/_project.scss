@@ -98,8 +98,8 @@
         color:tomato;
         text-align: center;
     }
-    &__--clicked{
-        color: cs('accent');
+    &--clicked{
+        color: cs('link-d');
     }
   }
 
@@ -221,7 +221,7 @@
   font-weight: bold;
   text-align: center;
   @include for-size(phone-only){
-      font-size: 24px;
+      font-size: 22px;
   }
 
 }

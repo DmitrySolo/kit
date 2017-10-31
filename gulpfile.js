@@ -1411,6 +1411,15 @@ gulp.task('API-SERVER', function () {
 						srvRes = tree;
 						break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    case 'execute':
+                        var command = url_parts.query.command;
+                        console.log(command)
+						cmd.run(command);
+						break;
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 					case 'openFilesByEditor':
 						console.log(url_parts.query.path);
 						var path1 = url_parts.query.path;
