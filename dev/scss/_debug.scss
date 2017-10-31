@@ -588,6 +588,9 @@
       padding-right: 50px;
     }
   }
+  .originColor {
+    border: solid 1px #fff;
+  }
   .colors * {
 
     color: #000000 !important;
@@ -1216,8 +1219,11 @@
       outline: none;
     }
   }
+  .pb-elementHeader{
+    text-align: center;
+  }
   .pb-colorBox {
-    width: 90px;
+    width: 110px;
     height: 20px;
   }
   .editorsContainer {
@@ -1860,6 +1866,13 @@
   }
   .testBlackWhite{
     filter: grayscale(100%);
+  }
+  .debug-colorManager.ui-dialog-content.ui-widget-content {
+    color: #f1f1f1;
+  }
+  .hud .Ace-Tern-tooltip.Ace-Tern-hint-doc {
+    right:31% !important;
+    left:initial !important;
   }
 }
 

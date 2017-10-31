@@ -172,7 +172,7 @@ gulp.task('SERVER', [], function () {
 	gulp.watch([dist + "index.html", dist + "/*.css"]).on('change',function () {
 		Qupdate = '1';
 
-    });
+	});
 
 
 });
@@ -296,7 +296,7 @@ gulp.task('STYLES-FINAL', function () {
 		'dev/MODULES/_modules.scss',
 	], function () {
 		gulp.start('styles');
-        gulp.start('sass-json');
+		gulp.start('sass-json');
 
 	});
 });
@@ -1585,13 +1585,13 @@ gulp.task('API-SERVER', function () {
 						fs.writeFileSync("globalData.json", globalData);
 						break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                    case 'test' :
+					case 'test' :
 
-                        // console.log(Qupdate);
-                        // console.log('/'+Qupdate);
-                        srvRes = Qupdate;
-                        Qupdate = '0';
-                        break;
+						// console.log(Qupdate);
+						// console.log('/'+Qupdate);
+						srvRes = Qupdate;
+						Qupdate = '0';
+						break;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////

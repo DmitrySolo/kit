@@ -1,0 +1,15 @@
+{
+  "!name":"quant",
+  "qnt":{
+    "search": {
+      "!type": "fn(selector?: string) -> jQuery.fn",
+      "!url": "http://api.jquery.com/addBack/",
+      "!doc": "Add the previous set of elements on the stack to the current set, optionally filtered by a selector."
+    },
+    "gogog": {
+      "!type": "fn(className: string) -> jQuery.fn",
+      "!url": "http://api.jquery.com/addClass/",
+      "!doc": "Adds the specified class(es) to each of the set of matched elements."
+    }
+  }
+}

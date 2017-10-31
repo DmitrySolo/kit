@@ -701,7 +701,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   padding: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #007FC3;
+  color: #3a155a;
   clear: both; }
 
 .text p, p.text,
@@ -844,7 +844,7 @@ address {
   font-style: normal; }
 
 dt {
-  color: #007FC3;
+  color: #3a155a;
   font-weight: bold; }
 
 .text ul, ul.text {
@@ -866,7 +866,7 @@ fieldset {
     margin-bottom: 0; }
 
 legend {
-  color: #007FC3;
+  color: #3a155a;
   font-weight: bold; }
 
 input[type="text"], input[type="email"], input[type="password"], textarea {
@@ -874,7 +874,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   max-width: 100%;
   padding: 0.375em;
   font-size: 11px;
-  margin-bottom: 1.07813em; }
+  margin-bottom: 1.07812em; }
   @media (min-width: 690px) {
     input[type="text"], input[type="email"], input[type="password"], textarea {
       font-size: calc(11px + (16 - 11) * ((100vw - 690px) / (1170 - 690))); } }
@@ -900,7 +900,7 @@ input[type="submit"], button {
 label {
   display: block;
   padding-bottom: 0.1875em;
-  margin-bottom: -0.14063em; }
+  margin-bottom: -0.14062em; }
 
 table {
   width: 100%;
@@ -913,7 +913,7 @@ table {
 
 th {
   text-align: left;
-  color: #007FC3;
+  color: #3a155a;
   padding: 0.1875em 0.75em; }
   @media (min-width: 1170px) {
     th {
@@ -1512,13 +1512,13 @@ section.block {
 .icon-menu__button {
   cursor: pointer;
   width: 2.6em;
-  background-color: #005e90;
+  background-color: #1f0b31;
   border-radius: 3px;
   padding: 3px; }
 
 .ove-markedHeader {
   display: inline-block;
-  background-color: #007FC3;
+  background-color: #3a155a;
   width: 40px;
   height: 40px;
   line-height: 50px;
@@ -1554,7 +1554,7 @@ section.block {
   background: #fff; }
   .flyPageFragment .stock_title, .flyPageFragment .stock {
     color: #379774;
-    font-size: 21px; }
+    font-size: 22px; }
   .flyPageFragment .fragmentTitle {
     font-weight: bold; }
   .flyPageFragment .rrc_price {
@@ -1652,13 +1652,13 @@ section.block {
 .icon-menu__button {
   cursor: pointer;
   width: 2.6em;
-  background-color: #005e90;
+  background-color: #1f0b31;
   border-radius: 3px;
   padding: 3px; }
 
 .ove-markedHeader {
   display: inline-block;
-  background-color: #007FC3;
+  background-color: #3a155a;
   width: 40px;
   height: 40px;
   line-height: 50px;
@@ -1679,9 +1679,9 @@ section.block {
   padding: 60px 10px; }
   @media (max-width: 599px) {
     .orderPage__content {
-      padding: 30px 16px; } }
+      padding: 30px 15px; } }
   .orderPage__content a {
-    color: #007FC3; }
+    color: #3a155a; }
 
 .orderPage__title {
   text-align: center;
@@ -1718,7 +1718,7 @@ section.block {
 * PAGES STYLES
 */
 .pr {
-  background-color: #007FC3 !important; }
+  background-color: #3a155a !important; }
 
 .sc {
   background-color: #474747 !important; }
@@ -1736,7 +1736,7 @@ section.block {
   background-color: #474747 !important; }
 
 .cpr {
-  color: #007FC3 !important; }
+  color: #3a155a !important; }
 
 .csc {
   color: #474747 !important; }
@@ -1773,19 +1773,28 @@ section.block {
   margin-top: 3px; }
 
 .pb-colorBox--primary {
-  background-color: #007FC3; }
+  background-color: #3a155a; }
+
+.pb-colorBox--primary-l2 {
+  background-color: #6f28ad; }
 
 .pb-colorBox--primary-l {
-  background-color: #00a0f6; }
+  background-color: #551f83; }
 
 .pb-colorBox--primary-d {
-  background-color: #005e90; }
+  background-color: #1f0b31; }
+
+.pb-colorBox--primary-d2 {
+  background-color: #050207; }
 
 .pb-colorBox--primary-t {
-  background-color: rgba(0, 127, 195, 0.5); }
+  background-color: rgba(58, 21, 90, 0.5); }
 
 .pb-colorBox--secondary {
   background-color: #474747; }
+
+.pb-colorBox--secondary-l2 {
+  background-color: #7a7a7a; }
 
 .pb-colorBox--secondary-l {
   background-color: #616161; }
@@ -1793,11 +1802,17 @@ section.block {
 .pb-colorBox--secondary-d {
   background-color: #2e2e2e; }
 
+.pb-colorBox--secondary-d2 {
+  background-color: #141414; }
+
 .pb-colorBox--secondary-t {
   background-color: rgba(71, 71, 71, 0.5); }
 
 .pb-colorBox--foreground {
   background-color: #fff; }
+
+.pb-colorBox--foreground-l2 {
+  background-color: white; }
 
 .pb-colorBox--foreground-l {
   background-color: white; }
@@ -1805,11 +1820,17 @@ section.block {
 .pb-colorBox--foreground-d {
   background-color: #e6e6e6; }
 
+.pb-colorBox--foreground-d2 {
+  background-color: #cccccc; }
+
 .pb-colorBox--foreground-t {
   background-color: rgba(255, 255, 255, 0.5); }
 
 .pb-colorBox--background {
   background-color: #C5C5C5; }
+
+.pb-colorBox--background-l2 {
+  background-color: #f8f8f8; }
 
 .pb-colorBox--background-l {
   background-color: #dfdfdf; }
@@ -1817,11 +1838,17 @@ section.block {
 .pb-colorBox--background-d {
   background-color: #acacac; }
 
+.pb-colorBox--background-d2 {
+  background-color: #929292; }
+
 .pb-colorBox--background-t {
   background-color: rgba(197, 197, 197, 0.5); }
 
 .pb-colorBox--accent {
   background-color: orangered; }
+
+.pb-colorBox--accent-l2 {
+  background-color: #ff8f66; }
 
 .pb-colorBox--accent-l {
   background-color: #ff6a33; }
@@ -1829,11 +1856,17 @@ section.block {
 .pb-colorBox--accent-d {
   background-color: #cc3700; }
 
+.pb-colorBox--accent-d2 {
+  background-color: #992900; }
+
 .pb-colorBox--accent-t {
   background-color: rgba(255, 69, 0, 0.5); }
 
 .pb-colorBox--font {
   background-color: #474747; }
+
+.pb-colorBox--font-l2 {
+  background-color: #7a7a7a; }
 
 .pb-colorBox--font-l {
   background-color: #616161; }
@@ -1841,11 +1874,17 @@ section.block {
 .pb-colorBox--font-d {
   background-color: #2e2e2e; }
 
+.pb-colorBox--font-d2 {
+  background-color: #141414; }
+
 .pb-colorBox--font-t {
   background-color: rgba(71, 71, 71, 0.5); }
 
 .pb-colorBox--succes {
   background-color: #46bb90; }
+
+.pb-colorBox--succes-l2 {
+  background-color: #91d6bd; }
 
 .pb-colorBox--succes-l {
   background-color: #6bc9a6; }
@@ -1853,11 +1892,17 @@ section.block {
 .pb-colorBox--succes-d {
   background-color: #379774; }
 
+.pb-colorBox--succes-d2 {
+  background-color: #2a7157; }
+
 .pb-colorBox--succes-t {
   background-color: rgba(70, 187, 144, 0.5); }
 
 .pb-colorBox--erorr {
   background-color: #DD403A; }
+
+.pb-colorBox--erorr-l2 {
+  background-color: #ec9491; }
 
 .pb-colorBox--erorr-l {
   background-color: #e56a65; }
@@ -1865,8 +1910,29 @@ section.block {
 .pb-colorBox--erorr-d {
   background-color: #c22722; }
 
+.pb-colorBox--erorr-d2 {
+  background-color: #971f1a; }
+
 .pb-colorBox--erorr-t {
   background-color: rgba(221, 64, 58, 0.5); }
+
+.pb-colorBox--link {
+  background-color: #471a6f; }
+
+.pb-colorBox--link-l2 {
+  background-color: #7d2dc1; }
+
+.pb-colorBox--link-l {
+  background-color: #622398; }
+
+.pb-colorBox--link-d {
+  background-color: #2d1045; }
+
+.pb-colorBox--link-d2 {
+  background-color: #12071c; }
+
+.pb-colorBox--link-t {
+  background-color: rgba(71, 26, 111, 0.5); }
 
 .pb-colorMaket section {
   font-size: 10px;
@@ -1904,7 +1970,7 @@ section.block {
   padding-right: 3px;
   padding-bottom: 3px;
   padding-left: 3px;
-  background-color: #007FC3;
+  background-color: #3a155a;
   width: 70%; }
 
 .pb-colorMaket__header__secondary {
@@ -1932,7 +1998,7 @@ section.block {
 .pb-colorMaket__body__section {
   padding-top: 6px;
   padding-bottom: 6px;
-  background-color: #007FC3; }
+  background-color: #3a155a; }
 
 .pb-colorMaket__body__section__header {
   padding-top: 3px;
@@ -1956,7 +2022,7 @@ section.block {
   padding-right: 3px;
   padding-bottom: 3px;
   padding-left: 3px;
-  background-color: #007FC3; }
+  background-color: #3a155a; }
 
 .pb-colorMaket__hero {
   width: 30%;
@@ -2159,7 +2225,7 @@ body.debug {
   cursor: crosshair;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -3000,6 +3066,9 @@ section#ball {
 .colors .pb-element:first-child {
   padding-right: 50px; }
 
+.originColor {
+  border: solid 1px #fff; }
+
 .colors * {
   color: #000000 !important; }
   .colors * .pb-colorBox {
@@ -3514,8 +3583,11 @@ div[class*='Panel'] {
     background: #3c3f41;
     outline: none; }
 
+.pb-elementHeader {
+  text-align: center; }
+
 .pb-colorBox {
-  width: 90px;
+  width: 110px;
   height: 20px; }
 
 .hud-Button {
@@ -4082,5 +4154,12 @@ div[class*='Panel'] {
 
 .testBlackWhite {
   filter: grayscale(100%); }
+
+.debug-colorManager.ui-dialog-content.ui-widget-content {
+  color: #f1f1f1; }
+
+.hud .Ace-Tern-tooltip.Ace-Tern-hint-doc {
+  right: 31% !important;
+  left: initial !important; }
 
 /*# sourceMappingURL=maps/main.css.map */

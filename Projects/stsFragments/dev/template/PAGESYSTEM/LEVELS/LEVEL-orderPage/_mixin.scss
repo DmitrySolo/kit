@@ -4,7 +4,7 @@
   background: cs('foreground');
   padding: 60px 10px;
   @include for-size(phone-only){
-       padding: 30px 16px;
+       padding: 30px 15px;
   }
   a {
     color: cs('primary');

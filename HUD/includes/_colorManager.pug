@@ -1,7 +1,12 @@
 section.pb-section.clearfix
+    h6=color-step
     each val, index in colors
         .pb-element.f-left
             span.pb-elementHeader= index
-                .pb-colorBox(class='pb-colorBox--'+index)
-                .pb-colorBox(class='pb-colorBox--'+index+'-d')
+                .pb-colorBox(class='pb-colorBox--'+index+'-l2')
                 .pb-colorBox(class='pb-colorBox--'+index+'-l')
+                .pb-colorBox.originColor(class='pb-colorBox--'+index)
+                .pb-colorBox(class='pb-colorBox--'+index+'-d')
+                .pb-colorBox(class='pb-colorBox--'+index+'-d2')
+
+

@@ -11,8 +11,10 @@ $colors-map:(
 
 		$colors-map1:(
 				'#{$role}':  map-get($colors, $role),
+				'#{$role}-l2': lighten(lighten(map-get($colors, $role),percentage($color-step)),percentage($color-step)),
 				'#{$role}-l': lighten(map-get($colors, $role),percentage($color-step)),
 				'#{$role}-d':darken(map-get($colors, $role),percentage($color-step)),
+				'#{$role}-d2':darken(darken(map-get($colors, $role),percentage($color-step)),percentage($color-step)),
 				'#{$role}-t':transparentize(map-get($colors, $role), 0.5)
 		);
 		$colors-map:map-merge($colors-map,$colors-map1);
