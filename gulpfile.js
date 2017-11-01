@@ -69,9 +69,37 @@ var OS = require(qp_path + 'OS');
 var OS = OS.getOS();
 if(OS == 'win32') {
 	var delimetr = '\\';
+	var sys ='win'
 }
 else{
 	var delimetr = '/';
+	var sys = 'mac'
+}
+
+//// Load Project
+var globalData = JSON.parse(fs.readFileSync('globalData.json', 'utf8'));
+var projectName = globalData.currentProject;
+var projectDevDir = 'Projects/' + projectName + '/dev/';
+var dist = 'Projects/' + projectName + '/dist';
+
+
+////PATH
+var pathToProj ={
+    win:'',
+	mac:'~/Desktop/QV2/kit/Projects/'+projectName
+}
+var pathObj = {
+
+
+	downloads:{
+		win:'Explorer',
+		mac:`open ~/Downloads`
+	},
+	svgs:{
+		win:'',
+		mac: 'Open '+pathToProj.mac+'/source_fabric/SVGSpriteIcons'
+	}
+
 }
 
 
@@ -79,11 +107,7 @@ const scriptCleaner = require(qp_path + 'scriptbuilder/scleaner');
 const scriptThrower = require(qp_path + 'scriptbuilder/sthrower');
 var qM = require(qp_path + 'q_functions');
 
-//// Load Project
-var globalData = JSON.parse(fs.readFileSync('globalData.json', 'utf8'));
-var projectName = globalData.currentProject;
-var projectDevDir = 'Projects/' + projectName + '/dev/';
-var dist = 'Projects/' + projectName + '/dist';
+
 
 //**********************************************************************************************************************
 
@@ -194,6 +218,21 @@ gulp.task('VIEW-FINAL', function () {
 		gulp.start('views');
 	});
 });
+gulp.task('VIEW-SOURCE', function () {
+    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+    return watch([
+        'Projects/'+projectName+'/source_fabric/SVGSpriteIcons',
+    ], function () {
+        gulp.start('svgstore');
+        gulp.start('views');
+    });
+});
+
+
+
+
+
+
 
 gulp.task('VIEW-1-ELEMENTS', function () {
 	// Callback modSe, useful if any plugin in the pipeline depends on the `end`/`flush` event
@@ -1217,7 +1256,7 @@ gulp.task('bsold', [], function () {
 
 gulp.task('svgstore', function () {
 	return gulp
-		.src('dev/SOURCE_FABRIC/ICONS_COMBINER/icons-terminal/*.svg')
+		.src('Projects/'+projectName+'/source_fabric/SVGSpriteIcons/*.svg')
 		.pipe(svgmin(function (file) {
 			var prefix = path.basename(file.relative, path.extname(file.relative));
 			return {
@@ -1230,7 +1269,7 @@ gulp.task('svgstore', function () {
 			}
 		}))
 		.pipe(svgstore())
-		.pipe(gulp.dest(dist + '/icons/'));
+		.pipe(gulp.dest(dist + '/source/icons/'));
 });
 gulp.task('svgstore-debug', function () {
 	return gulp
@@ -1397,7 +1436,7 @@ gulp.task('API-SERVER', function () {
 
 		if (req.method == 'GET') {
 			var url_parts = url.parse(req.url, true);
-			console.log(url_parts.query);
+			//console.log(url_parts.query);
 			//GET SOURCE CODE
 
 			if (url_parts.query) {
@@ -1412,9 +1451,15 @@ gulp.task('API-SERVER', function () {
 						break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     case 'execute':
-                        var command = url_parts.query.command;
-                        console.log(command)
-						cmd.run(command);
+                    	var CommandMessage = url_parts.query.command.split('__');
+                        var command = CommandMessage[0];
+                        var options = CommandMessage[1];
+						console.log(pathObj[options][sys])
+                        switch(command){
+							case 'open':
+                                cmd.run(pathObj[options][sys])
+								break;
+						}
 						break;
 
 

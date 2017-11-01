@@ -874,7 +874,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   max-width: 100%;
   padding: 0.375em;
   font-size: 11px;
-  margin-bottom: 1.07813em; }
+  margin-bottom: 1.07812em; }
   @media (min-width: 690px) {
     input[type="text"], input[type="email"], input[type="password"], textarea {
       font-size: calc(11px + (16 - 11) * ((100vw - 690px) / (1170 - 690))); } }
@@ -900,7 +900,7 @@ input[type="submit"], button {
 label {
   display: block;
   padding-bottom: 0.1875em;
-  margin-bottom: -0.14063em; }
+  margin-bottom: -0.14062em; }
 
 table {
   width: 100%;
@@ -1560,7 +1560,7 @@ section.block {
   .flyPageFragment .rrc_price {
     font-size: 22px; }
   .flyPageFragment .mop_price {
-    font-size: 22px;
+    font-size: 25px;
     color: orangered; }
   .flyPageFragment .toOrder {
     color: #fff;
@@ -1682,14 +1682,16 @@ section.block {
       padding: 30px 15px; } }
   .orderPage__content a {
     color: #3a155a; }
+  .orderPage__content .order_confirmed, .orderPage__content .tri {
+    fill: #46bb90; }
 
 .orderPage__title {
   text-align: center;
   margin-bottom: 35px;
-  color: #46bb90; }
+  color: #7d2dc1; }
 
 .orderPage__mainMessage {
-  font-size: 20px;
+  font-size: 21px;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center; }
@@ -2225,7 +2227,7 @@ body.debug {
   cursor: crosshair;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -4167,5 +4169,34 @@ div[class*='Panel'] {
 
 .contentbuttons {
   margin-left: 30px; }
+
+#openInternet {
+  position: relative; }
+
+.Qnt__dropMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #3d3f42;
+  z-index: 100;
+  width: 300%;
+  margin-left: -100%;
+  border: solid 1px #00b3f0;
+  margin-top: 4px;
+  padding: 4px;
+  padding: 9px;
+  color: #1a96c3;
+  box-shadow: 0px 0px 2px 2px #2b2b2b; }
+  .Qnt__dropMenu li {
+    border-bottom: 1px solid  #595757; }
+
+#Qnt__dropMenu__TRIGGER {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 /*# sourceMappingURL=maps/main.css.map */

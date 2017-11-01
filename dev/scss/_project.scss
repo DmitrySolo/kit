@@ -41,7 +41,7 @@
         font-size: 22px;
     }
     .mop_price {
-        font-size: 22px;
+        font-size: 25px;
         color: cs('accent');
         //font-weight: bold;
     }
@@ -207,16 +207,20 @@
   a {
     color: cs('primary');
   }
+  .order_confirmed, .tri{
+      
+     fill:cs('succes');
+  }
 }
  
 .orderPage__title {
   text-align: center;
   margin-bottom: 35px;
-  color:cs('succes');
+  color:cs('link-l2');
 }
 
 .orderPage__mainMessage {
-  font-size: 20px;
+  font-size: 21px;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;

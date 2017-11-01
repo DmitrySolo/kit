@@ -49,7 +49,16 @@ script
 			input#scaller(type = "range" min = ".3" max = "2" step = ".1"  onchange = "qscale(this.value)",value='1')
 			span#scallerLabel(style="line-height:0; color:#006eb7 !important") 1
 		.contentbuttons.f-left.clearfix
+			.hud-Button.f-left#openInternet
+				+I('internet')
+				#Qnt__dropMenu__TRIGGER
+				.Qnt__dropMenu
+					ul
+						li.Qnt__dropMenu__item(data-content='https://www.flaticon.com') FlatIcons
+						li.Qnt__dropMenu__item(data-content='http://allthefreestock.com/') FreeStocks
 			.hud-Button.f-left#openDownload
-						+I('container')
+				+I('dock')
+			.hud-Button.f-left#openSVGforSrite
+				+I('svg')
 	.apiTester.f-right
 		span#apitest

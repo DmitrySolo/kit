@@ -1,15 +1,15 @@
 //  quant-debug script
  function addToBufer (content) {
-    let tmp = document.createElement('INPUT'), // Создаём новый текстовой input
-        focus = document.activeElement; // Получаем ссылку на элемент в фокусе (чтобы не терять фокус)
-    tmp.value = content;
+	let tmp = document.createElement('INPUT'), // Создаём новый текстовой input
+		focus = document.activeElement; // Получаем ссылку на элемент в фокусе (чтобы не терять фокус)
+	tmp.value = content;
 
-    // Временному input вставляем текст для копирования
-    document.body.appendChild(tmp); // Вставляем input в DOM
-    tmp.select(); // Выделяем весь текст в input
-    document.execCommand('copy'); // Магия! Копирует в буфер выделенный текст (см. команду выше)
-    document.body.removeChild(tmp); // Удаляем временный input
-    focus.focus();
+	// Временному input вставляем текст для копирования
+	document.body.appendChild(tmp); // Вставляем input в DOM
+	tmp.select(); // Выделяем весь текст в input
+	document.execCommand('copy'); // Магия! Копирует в буфер выделенный текст (см. команду выше)
+	document.body.removeChild(tmp); // Удаляем временный input
+	focus.focus();
 
 }
 function loadToQuant(){
@@ -78,9 +78,9 @@ function loadToQuant(){
 
 }
 document.getElementById('index').onload= function() {
-    $('div.hud-Button#savecode ').css('background', 'initial');
+	$('div.hud-Button#savecode ').css('background', 'initial');
 	loadToQuant();
-    $('.hud-Button').not('#editorSwitcher').filter($('.on')).trigger('mousedown').addClass('on');
+	$('.hud-Button').not('#editorSwitcher').filter($('.on')).trigger('mousedown').addClass('on');
 };
 $(document).ready(function () {
 
@@ -199,9 +199,9 @@ $(document).ready(function () {
 		var searchElem = tag + '.' + classes;
 
 		var newDebug = frameEl('.debugElement').closest(frameEl(searchElem));
-        editor.find(target);
-        editorPug.find(target);
-        editorJs.find(target);
+		editor.find(target);
+		editorPug.find(target);
+		editorJs.find(target);
 		console.log(newDebug)
 		$('.debugElement').removeClass('debugElement');
 		newDebug.trigger('click');
@@ -575,23 +575,29 @@ $(document).ready(function () {
 
 	$('#saveToServer').on('mousedown', function () {
 
-        $.ajax({
-            url: "http://localhost:8181"
-            , type: 'POST'
-            , data: JSON.stringify(currentSelectorsData)
-            , success: function (res) {
+		$.ajax({
+			url: "http://localhost:8181"
+			, type: 'POST'
+			, data: JSON.stringify(currentSelectorsData)
+			, success: function (res) {
 
-            }
-        });
-    })
+			}
+		});
+	})
 
 	//EXEC
-    $('#openDownload').on('mousedown', function () {
+	$('#openDownload').on('mousedown', function () {
 
-        $.ajax({
-            url: "http://localhost:8181?action=execute&command=Explorer.exe C:\\Users\\Dmitry Soloshenko\\Downloads"
-        });
-    })
+		$.ajax({
+			url: "http://localhost:8181?action=execute&command=open__downloads"
+		});
+	})
+	$('#openSVGforSrite').on('mousedown', function () {
+
+		$.ajax({
+			url: "http://localhost:8181?action=execute&command=open__svgs"
+		});
+	})
 
 
 
@@ -756,10 +762,10 @@ $(document).ready(function () {
 	})
 
 	$('div#testing').on('mousedown', function () {
-        frameEl('body').toggleClass('testBlackWhite');
-        $(this).toggleClass('on');
+		frameEl('body').toggleClass('testBlackWhite');
+		$(this).toggleClass('on');
 
-    })
+	})
 
 
 	$('#addRect').on('click', function () {
@@ -875,8 +881,6 @@ $(document).ready(function () {
 	$('#lockSpacer').on('click', function () {
 		$("#ball").toggleClass('eventLock');
 		$(this).toggleClass('on');
-
-
 	})
 
 
@@ -943,7 +947,7 @@ $(document).ready(function () {
 	})
 	$('#unsplash').on('click', function () {
 
-		$('body').append('<div id="imagesOnline" class="htmlToPug"><iframe id="pugIfrm" src="http://allthefreestock.com/" width="1200" height="800" align="left"></iframe><span class="js-trigger">close</span></div>');
+			$('body').append('<div id="imagesOnline" class="htmlToPug"><iframe id="pugIfrm" src="http://allthefreestock.com/" width="1200" height="800" align="left"></iframe><span class="js-trigger">close</span></div>');
 		$('#imagesOnline .js-trigger-close').on('click', function () {
 			$('#imagesOnline').remove();
 
@@ -957,6 +961,24 @@ $(document).ready(function () {
 
 
 	})
+
+
+	$('.Qnt__dropMenu li').on('mousedown',function (e) {
+
+		var iframe = document.getElementById('index');
+		iframe.src = qntGetThisData(this,'content');
+	})
+	$('#Qnt__dropMenu__TRIGGER').on('mousedown',function (e) {
+
+		$('#Qnt__dropMenu').toggleClass('on')
+			$('.Qnt__dropMenu').toggle();
+
+
+	})
+
+
+
+
 	$('#startMediaTest').on('click', function () {
 
 		var v_options = {
@@ -1122,7 +1144,7 @@ $(document).ready(function () {
 
 	//  GETCODE LOCK FUNC
 	// $(window.frames[0]).on('click', $('#getCode'), function () {
-    //
+	//
 	// 	console.log('hekol')
 	// 	classStr = frameEl('.debugElement').attr('class').replace(/resizeble/, '')
 	// 		.replace(/debugElement/g, '')
@@ -1143,7 +1165,7 @@ $(document).ready(function () {
 	// 		}
 	// 		cssModPanelText += '}';
 	// 	}
-    //
+	//
 	// 	$.ajax({
 	// 		url: "http://localhost:8181/?action=getSourceCode&line=" + (mapLine) + "&col=" + (mapCol - 1),
 	// 	})
@@ -1155,10 +1177,10 @@ $(document).ready(function () {
 	// 			var pugContent = dataArr[2];
 	// 			var jsContent = dataArr[3];
 	// 			$.getJSON("maps/main.css.map", function (dataMap) {
-    //
-    //
+	//
+	//
 	// 				var filetoEditIndex = dataMap.sources.indexOf(rsourse)
-    //
+	//
 	// 				filetoEdit = dataMap.sourcesContent[filetoEditIndex];
 	// 				editor.insert(filetoEdit);
 	// 				editor.$blockScrolling = Infinity
@@ -1167,10 +1189,10 @@ $(document).ready(function () {
 	// 				editorPug.insert(pugContent);
 	// 				editorJs.insert(jsContent);
 	// 			});
-    //
+	//
 	// 		});
-    //
-    //
+	//
+	//
 	// });
 	$('.elAdder').on('click', function () {
 
@@ -1297,17 +1319,17 @@ $(document).ready(function () {
 		title: "Create New:",
 		autoOpen: false
 	});
-    $(".debug-colorManager").dialog({
-        modal: true,
-        title: "Color System:",
-        autoOpen: false,
-        draggable: true
-    });
+	$(".debug-colorManager").dialog({
+		modal: true,
+		title: "Color System:",
+		autoOpen: false,
+		draggable: true
+	});
 
-    $('div#colorSystem').on('mousedown', function () {
-        $(this).toggleClass('on');
-        $(".debug-colorManager").dialog("open");
-    })
+	$('div#colorSystem').on('mousedown', function () {
+		$(this).toggleClass('on');
+		$(".debug-colorManager").dialog("open");
+	})
 
 
 	$('div#addContent').on('mousedown', function () {
@@ -1565,8 +1587,8 @@ $(document).ready(function () {
 				$('#apitest').css('background', '#25b14a');
 				ql(msg, 'DONE');
 				if (msg == '1'){
-                    var iframe = document.getElementById('index');
-                    iframe.src = iframe.src;
+					var iframe = document.getElementById('index');
+					iframe.src = iframe.src;
 
 				}
 			});
@@ -2057,7 +2079,7 @@ $(document).ready(function () {
 		;
 	})
 
-	shortcut.add("Ctrl+Alt+S", function () {
+	shortcut.add("Ctrl+Alt", function () {
 	   // alert("Hi there!q");
 		$('div#savecode').trigger('mousedown')
 	})

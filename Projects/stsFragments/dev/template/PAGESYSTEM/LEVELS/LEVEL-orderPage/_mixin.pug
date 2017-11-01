@@ -5,10 +5,15 @@ mixin LEVEL-orderPage(title,className)
 	-var link2 = "<a href='/'>Иванов Иван.</a>"
 	section.orderPage__content(class = 'orderPage__content'+ className data-qcontent="level__orderPage")
 		h2.orderPage__title=title
+		+I('svg','order_confirmed')
+		+I('plus-button')
+		+I('button')
+		+I('tri','tri')
+		+I('car-front','tri')
 		p.orderPage__mainMessage.text
 			| Ваша заявка 
 			|!{link}
-			| принята на обработку.
+			| принята на обработку!
 		ul.orderPage__subMess
 			li В настоящий момент заявка ожидаетd подтверждения менеджером.
 			li Ваш ответственный менеджер !{link2} автоматически оповещен.
@@ -18,7 +23,7 @@ mixin LEVEL-orderPage(title,className)
 		.orderPage__actions
 			a(href='/') &larr; В личный Кабинет!. 
 			br
-			a(href='/') &larr; На главнуюa.
+			a(href='/') &larr; На главнуюa!.
 		if block
 			block
 			

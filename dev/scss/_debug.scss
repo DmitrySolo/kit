@@ -1880,6 +1880,38 @@
   .contentbuttons{
     margin-left:30px;
   }
+  #openInternet {
+    position: relative;
+  }
+  .Qnt__dropMenu {
+    display: none;
+    position: absolute;
+    top:100%;
+    left: 0;
+    right: 0;
+    background-color: #3d3f42;
+    z-index: 100;
+    width: 300%;
+    margin-left: -100%;
+    border: solid 1px #00b3f0;
+    margin-top: 4px;
+    padding: 4px;
+    padding: 9px;
+    color: #1a96c3;
+    box-shadow: 0px 0px 2px 2px #2b2b2b;
+    li{
+      border-bottom:1px solid  #595757;
+
+    }
+  }
+  #Qnt__dropMenu__TRIGGER {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+  }
 }
 
 
