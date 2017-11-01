@@ -963,12 +963,12 @@ $(document).ready(function () {
 	})
 
 
-	$('.Qnt__dropMenu li').on('mousedown',function (e) {
+	$('.Qnt__dropMenu li').on('mousedown',function () {
 
 		var iframe = document.getElementById('index');
 		iframe.src = qntGetThisData(this,'content');
 	})
-	$('#Qnt__dropMenu__TRIGGER').on('mousedown',function (e) {
+	$('#Qnt__dropMenu__TRIGGER').on('mousedown',function () {
 
 		$('#Qnt__dropMenu').toggleClass('on')
 			$('.Qnt__dropMenu').toggle();
