@@ -1,7 +1,9 @@
 /* orderPage STYLE */
 
 .orderPage__content {
-  background: cs('foreground');
+   
+
+  background: cs('foreground-d');
   padding: 60px 10px;
   @include for-size(phone-only){
        padding: 30px 15px;
@@ -18,7 +20,7 @@
 .orderPage__title {
   text-align: center;
   margin-bottom: 35px;
-  color:cs('link-l2');
+  color:cs('link');
 }
 
 .orderPage__mainMessage {

@@ -85,18 +85,18 @@ var dist = 'Projects/' + projectName + '/dist';
 
 ////PATH
 var pathToProj ={
-    win:'',
+    win:'C:\\Users\\Dmitry Soloshenko\\Desktop\\git\\kit\\Projects\\'+projectName,
 	mac:'~/Desktop/QV2/kit/Projects/'+projectName
 }
 var pathObj = {
 
 
 	downloads:{
-		win:'Explorer',
+		win:'Explorer.exe C:\\Users\\Dmitry Soloshenko\\Downloads',
 		mac:`open ~/Downloads`
 	},
 	svgs:{
-		win:'',
+		win:'Explorer.exe '+pathToProj.win+'\\source_fabric\\SVGSpriteIcons',
 		mac: 'Open '+pathToProj.mac+'/source_fabric/SVGSpriteIcons'
 	}
 
@@ -225,6 +225,16 @@ gulp.task('VIEW-SOURCE', function () {
     ], function () {
         gulp.start('svgstore');
         gulp.start('views');
+    });
+});
+gulp.task('VIEW-DOCK', function () {
+    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+    return watch([
+        'C:/Users/Dmitry Soloshenko/Downloads/_quantDockStation/SVG_FOR_SPRITE/*.svg',
+    ], function () {
+        gulp.src('C:/Users/Dmitry Soloshenko/Downloads/_quantDockStation/SVG_FOR_SPRITE/*.svg')
+			.pipe(clean({force: true}))
+       		.pipe(gulp.dest('Projects/'+projectName+'/source_fabric/SVGSpriteIcons'))
     });
 });
 

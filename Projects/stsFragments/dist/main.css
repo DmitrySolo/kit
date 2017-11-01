@@ -874,7 +874,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   max-width: 100%;
   padding: 0.375em;
   font-size: 11px;
-  margin-bottom: 1.07812em; }
+  margin-bottom: 1.07813em; }
   @media (min-width: 690px) {
     input[type="text"], input[type="email"], input[type="password"], textarea {
       font-size: calc(11px + (16 - 11) * ((100vw - 690px) / (1170 - 690))); } }
@@ -900,7 +900,7 @@ input[type="submit"], button {
 label {
   display: block;
   padding-bottom: 0.1875em;
-  margin-bottom: -0.14062em; }
+  margin-bottom: -0.14063em; }
 
 table {
   width: 100%;
@@ -1675,7 +1675,7 @@ section.block {
 
 /* orderPage STYLE */
 .orderPage__content {
-  background: #fff;
+  background: #e6e6e6;
   padding: 60px 10px; }
   @media (max-width: 599px) {
     .orderPage__content {
@@ -1688,7 +1688,7 @@ section.block {
 .orderPage__title {
   text-align: center;
   margin-bottom: 35px;
-  color: #7d2dc1; }
+  color: #471a6f; }
 
 .orderPage__mainMessage {
   font-size: 21px;
@@ -2227,7 +2227,7 @@ body.debug {
   cursor: crosshair;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
