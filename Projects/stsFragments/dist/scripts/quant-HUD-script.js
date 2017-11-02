@@ -252,44 +252,46 @@ var firstInTagsLine ='';
 function GetParents(el) {
 
 
+	if (el.tagName != 'svg'){
+        $('#currentSelectorWay',$(window.parent.document)).html('');
+        var parents = el.parents("*").not($('html')).not($('body')).not($('svg'));
+        var selectors = "<div style='background: #2b2b2b;color:#fff'>";
+        var selectorFirstFinded = false
+        for (var i = parents.length-1; i >= 0; i--) {
 
 
-	$('#currentSelectorWay',$(window.parent.document)).html('');
-	var parents = el.parents("*").not($('html')).not($('body'));
-	var selectors = "<div style='background: #2b2b2b;color:#fff'>";
-	var selectorFirstFinded = false
-	for (var i = parents.length-1; i >= 0; i--) {
+            parents[i].classList.remove("resizeble");
+            parents[i].classList.remove("ui-resizable");
+            parents[i].classList.remove("ui-draggable");
+            parents[i].classList.remove("ui-draggable-handle");
+            // el.removeClass('resizeble')
+            // el.removeClass('ui-resizable')
+            // el.removeClass('ui-draggable')
+            // el.removeClass('ui-draggable-handle')
+
+            if (!selectorFirstFinded){
+                firstInTagsLine = parents[i].tagName+'.'+parents[i].className;
+                selectorFirstFinded = true;
+            }
+
+            selectors += "<span onclick='searchClosestofDebugElement(this)'>"+parents[i].tagName + "<i>"+parents[i].className+ "</i>></span>";
+        }
+
+        var ElCls =  el.prop("className").replace(/resizeble/g,'')
+            .replace(/resizable/g,'')
+            .replace(/debugElement/g,'')
+            .replace(/draggable/g,'')
+            .replace(/ui-/g,'')
+            .replace(/-handle/g,'')
 
 
-		parents[i].classList.remove("resizeble");
-		parents[i].classList.remove("ui-resizable");
-		parents[i].classList.remove("ui-draggable");
-		parents[i].classList.remove("ui-draggable-handle");
-		// el.removeClass('resizeble')
-		// el.removeClass('ui-resizable')
-		// el.removeClass('ui-draggable')
-		// el.removeClass('ui-draggable-handle')
 
-		if (!selectorFirstFinded){
-			firstInTagsLine = parents[i].tagName+'.'+parents[i].className;
-			selectorFirstFinded = true;
-		}
+        selectors +="<span style='background: #0086b3;'>"+el.prop("tagName")+"<i>"+ElCls+"</i></span></div>";
 
-		selectors += "<span onclick='searchClosestofDebugElement(this)'>"+parents[i].tagName + "<i>"+parents[i].className+ "</i>></span>";
+        $('#currentSelectorWay',$(window.parent.document)).html(selectors);
 	}
 
-	var ElCls =  el.prop("className").replace(/resizeble/g,'')
-		.replace(/resizable/g,'')
-		.replace(/debugElement/g,'')
-		.replace(/draggable/g,'')
-		.replace(/ui-/g,'')
-		.replace(/-handle/g,'')
 
-
-
-	selectors +="<span style='background: #0086b3;'>"+el.prop("tagName")+"<i>"+ElCls+"</i></span></div>";
-
-	$('#currentSelectorWay',$(window.parent.document)).html(selectors);
 }
 
 
@@ -1499,9 +1501,9 @@ var RulersGuides = function (evt, dragdrop) {
 			scrollPos       = getScrollPos(),
 			snap            = 0;
 
-		if (src.className.indexOf('menu-btn') === -1) {
-			menu.close();
-		}
+		// if (src.classNa	me.indexOf('menu-btn') === -1) {
+		// 	menu.close();
+		// }
 
 		if (vBound === 0) {
 			vBound = vRuler.offsetWidth;

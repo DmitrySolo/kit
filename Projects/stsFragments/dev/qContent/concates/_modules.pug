@@ -31,39 +31,30 @@ mixin MODULE-testSnippetModule()
 	<!-- split modules/testSnippetModule -->
 	.testSnippetModule__content(data-qcontent='module__testSnippetModule')
 		.testSnippetModule
-mixin I(id,classModifier)
-	-if (!classModifier) classModifier =''
-	svg(class='icon '+classModifier)
-		use(xlink:href="#"+id)
-mixin B-radialConturButton(value,className)
-	-if (!className) className =''
-	button.radialConturButton(class=''+className data-qcontent='elements__buttons__radialConturButton')=value
-
-
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
-	-var link = "<a href='/'>N 12312356</a>"
+	-var link = "<a href='/'>N 1231238</a>"
 	-var link1 = "<a href='/'>личном кабинетеQ</a>"
 	-var link2 = "<a href='/'>Иванов Иван.</a>"
 	section.orderPage__content(class = 'orderPage__content'+ className data-qcontent="level__orderPage")
-		h2.orderPage__title=title
-		+I('svg','order_confirmed')
+		h1.orderPage__title=title
+		+I('svg','red')
 		+I('plus-button')
-		+I('button')
+		+I('button','tri')
 		+I('tri','tri')
 		+I('car-front','tri')
 		+I('rocket','tri')
 		+I('eco','tri')
 		+I('drop','tri')
 		p.orderPage__mainMessage.text
-			| Ваша заявка 
+			| Ваша заявка 1q2222qq1s
 			|!{link}
-			| принята на обработку!
+			| принята на обработку!!1eeewsaaq
 		ul.orderPage__subMess
 			li В настоящий момент заявка ожидаетd подтверждения менеджером.
 			li Ваш ответственный менеджер !{link2} автоматически оповещен.
 			li Отслеживать статус заявки вы можете в !{link1}.
-			li Электронная копия заявки отправлена на указанный вами email@.
+			li Электронная копия заявки отправлена на указанный вами email.
 			
 		.orderPage__actions
 			a(href='/') &larr; В личный Кабинет!. 

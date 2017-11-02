@@ -85,7 +85,7 @@ var dist = 'Projects/' + projectName + '/dist';
 
 ////PATH
 var pathToProj ={
-    win:'C:\\Users\\Dmitry Soloshenko\\Desktop\\git\\kit\\Projects\\'+projectName,
+	win:'C:\\Users\\Dmitry Soloshenko\\Desktop\\git\\kit\\Projects\\'+projectName,
 	mac:'~/Desktop/QV2/kit/Projects/'+projectName
 }
 var pathObj = {
@@ -211,6 +211,7 @@ gulp.task('VIEW-FINAL', function () {
 		'!HUD/_currentPage.pug',
 		'dev/MIXES/_mixes.pug',
 		projectDevDir + 'qContent/concates/_modules.pug',
+        projectDevDir + 'qContent/concates/_elements.pug',
 		projectDevDir + 'template/PAGESYSTEM/{INCLUDES,LAYOUT,PAGES}/**/*.pug',
 		'data.json',
 		'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
@@ -219,23 +220,23 @@ gulp.task('VIEW-FINAL', function () {
 	});
 });
 gulp.task('VIEW-SOURCE', function () {
-    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-    return watch([
-        'Projects/'+projectName+'/source_fabric/SVGSpriteIcons',
-    ], function () {
-        gulp.start('svgstore');
-        gulp.start('views');
-    });
+	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+	return watch([
+		'Projects/'+projectName+'/source_fabric/SVGSpriteIcons',
+	], function () {
+		gulp.start('svgstore');
+		gulp.start('views');
+	});
 });
 gulp.task('VIEW-DOCK', function () {
-    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-    return watch([
-        'C:/Users/Dmitry Soloshenko/Downloads/_quantDockStation/SVG_FOR_SPRITE/*.svg',
-    ], function () {
-        gulp.src('C:/Users/Dmitry Soloshenko/Downloads/_quantDockStation/SVG_FOR_SPRITE/*.svg')
+	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+	return watch([
+		'C:/Users/Dmitry Soloshenko/Downloads/_quantDockStation/SVG_FOR_SPRITE/*.svg',
+	], function () {
+		gulp.src('C:/Users/Dmitry Soloshenko/Downloads/_quantDockStation/SVG_FOR_SPRITE/*.svg')
 			.pipe(clean({force: true}))
-       		.pipe(gulp.dest('Projects/'+projectName+'/source_fabric/SVGSpriteIcons'))
-    });
+			.pipe(gulp.dest('Projects/'+projectName+'/source_fabric/SVGSpriteIcons'))
+	});
 });
 
 
@@ -248,7 +249,7 @@ gulp.task('VIEW-1-ELEMENTS', function () {
 	// Callback modSe, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([
 
-		'dev/ELEMENTS/**/*.pug',
+		projectDevDir+'qContent/ELEMENTS/**/*.pug',
 		'!dev/ELEMENTS/_elements.pug'
 	], function () {
 		gulp.start('concat-elements-pug');
@@ -275,7 +276,6 @@ gulp.task('WATCHCSSTOPARSEIT', function () {
 gulp.task('VIEW-1-MODULES', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([
-		projectDevDir + 'qContent/ELEMENTS/**/_mixin.pug',
 		projectDevDir + 'qContent/MODULES/**/_mixin.pug',
 		projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.pug',
 
@@ -352,8 +352,8 @@ gulp.task('STYLES-FINAL', function () {
 gulp.task('STYLES-1-ELEMENTS', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([
-		'dev/ELEMENTS/**/--*/*.scss',
-		'!dev/ELEMENTS/_elements.scss'
+		projectDevDir+'qContent/ELEMENTS/*/*/*.scss',
+		'!'+projectDevDir+'qContent/ELEMENTS/_elements.scss'
 	], function () {
 		gulp.start('concat-elements-scss');
 	});
@@ -385,12 +385,20 @@ gulp.task('STYLES-1-MIXES', function () {
 gulp.task('STYLES-1-MODULES', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([
-			projectDevDir + 'qContent/{MODULES,ELEMENTS,COMPONENTS}/*/_mixin.scss',
-			projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.scss'
+			projectDevDir + 'qContent/MODULES/**/_mixin.scss',
 		]
 		, function () {
 			gulp.start('concat-modules-scss');
 		});
+});
+gulp.task('STYLES-1-LEVELS', function () {
+    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+    return watch([
+            projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.scss'
+        ]
+        , function () {
+            gulp.start('concat-levels-scss');
+        });
 });
 //SCRIPTS
 gulp.task('SCRIPTS-FINAL', function () {
@@ -405,6 +413,9 @@ gulp.task('WATCHER:NEW', function () {
 
 		'VIEW-FINAL', 'VIEW-1-MIXES', 'VIEW-1-MODULES', 'VIEW-1-ELEMENTS', 'VIEW-1-DATA',
 		'STYLES-FINAL', 'STYLES-1-MIXES', 'STYLES-1-ELEMENTS', 'STYLES-1-MODULES', 'STYLES-1-PAGES',
+        'STYLES-1-LEVELS',
+		'VIEW-SOURCE',
+		'VIEW-DOCK',
 		'SCRIPTS-FINAL',
 		'SERVER WATCHER',
 		'readyWatcher'
@@ -483,17 +494,17 @@ gulp.task('concat-elements', function () {
 gulp.task('concat-elements-pug', function () {
 
 
-	gulp.src('dev/ELEMENTS/*/*/*.pug')
+	gulp.src(projectDevDir+'qContent/ELEMENTS/*/*/*.pug')
 		.pipe(concat('_elements.pug'))
-		.pipe(gulp.dest('dev/ELEMENTS/'));
+		.pipe(gulp.dest(projectDevDir+'qContent/concates/'));
 });
 
 gulp.task('concat-elements-scss', function () {
 
 
-	gulp.src('dev/ELEMENTS/*/--*/*.scss')
+	gulp.src(projectDevDir+'qContent/ELEMENTS/*/*/*.scss')
 		.pipe(concat('_elements.scss'))
-		.pipe(gulp.dest('dev/ELEMENTS/'));
+		.pipe(gulp.dest('dev/scss/PROJECT'));
 });
 
 gulp.task('concat-pages-scss', function () {
@@ -523,16 +534,24 @@ gulp.task('concat-mixes-scss', function () {
 gulp.task('concat-modules-scss', function () {
 
 
-	gulp.src([projectDevDir + 'qContent/{MODULES,ELEMENTS,COMPONENTS}/**/_mixin.scss', projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.scss'])
-		.pipe(concat('_project.scss'))
-		.pipe(gulp.dest('dev/scss/'));
+	gulp.src([projectDevDir + 'qContent/MODULES/**/_mixin.scss'])
+		.pipe(concat('_modules.scss'))
+		.pipe(gulp.dest('dev/scss/PROJECT'));
+
+});
+gulp.task('concat-levels-scss', function () {
+
+
+	gulp.src([ projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.scss'])
+		.pipe(concat('_levels.scss'))
+		.pipe(gulp.dest('dev/scss/PROJECT'));
 
 });
 
 gulp.task('concat-modules-pug', function (done) {
 
 
-	gulp.src([projectDevDir + 'qContent/MODULES/**/_mixin.pug',projectDevDir +'qContent/ELEMENTS/**/**/_mixin.pug','Projects/saleTerminalWindows/dev/qContent/ELEMENTS/BUTTONS/radialConturButton/_mixin.pug',projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.pug'])
+	gulp.src([projectDevDir + 'qContent/MODULES/**/_mixin.pug',projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.pug'])
 		.pipe(concat('_modules.pug'))
 		.pipe(gulp.dest(projectDevDir + 'qContent/concates/'));
 	done();
@@ -1460,14 +1479,14 @@ gulp.task('API-SERVER', function () {
 						srvRes = tree;
 						break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                    case 'execute':
-                    	var CommandMessage = url_parts.query.command.split('__');
-                        var command = CommandMessage[0];
-                        var options = CommandMessage[1];
+					case 'execute':
+						var CommandMessage = url_parts.query.command.split('__');
+						var command = CommandMessage[0];
+						var options = CommandMessage[1];
 						console.log(pathObj[options][sys])
-                        switch(command){
+						switch(command){
 							case 'open':
-                                cmd.run(pathObj[options][sys])
+								cmd.run(pathObj[options][sys])
 								break;
 						}
 						break;

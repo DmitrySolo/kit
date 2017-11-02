@@ -58,10 +58,6 @@
 * CONSTRUCTION STYLES
 */
 @import "CONSTRUCTION/construction";
-/**
-* MODULES  STYLES
-*/
-@import "../../vendor/project template/STARTER/dev/qContent/concates/modules";
 
 /**
 * MIXES  STYLES
@@ -69,19 +65,11 @@
 @import "../MIXES/mixes";
 
 /**
-* ELEMENTS  STYLES
-*/
-@import "../ELEMENTS/elements";
-
-/**
 * PROJECT  STYLES
 */
-@import "project";
+@import "PROJECT/project";
 
-/**
-* PAGES STYLES
-*/
-  @import "PAGES/pages";
+
 
 //NO PRODUCTION
 @import "debug";

@@ -35,6 +35,18 @@ script
 			+I('settings')
 		.hud-Button.f-left#spacerSwitcher
 			+I('compass')
+			.Qnt__dropMenu__TRIGGER
+			.Qnt__dropMenu
+				ul
+					li.Qnt__dropMenu__spacer(data-content='element-i') Element i
+					li.Qnt__dropMenu__spacer(data-content='element-o') Element o
+					li.Qnt__dropMenu__spacer(data-content='component-i') Component i
+					li.Qnt__dropMenu__spacer(data-content='component-o') Component o
+					li.Qnt__dropMenu__spacer(data-content='module-i') Module i
+					li.Qnt__dropMenu__spacer(data-content='module-o') Module o
+					li.Qnt__dropMenu__spacer(data-content='block-i') Block i
+					li.Qnt__dropMenu__spacer(data-content='block-o') Block o
+					li.Qnt__dropMenu__Lock#lockSpacer(data-content='Block-o') LOCK
 		.hud-Button.f-left#rulerSwitcher
 			+I('timeline')
 		.hud-Button.f-left
@@ -51,11 +63,12 @@ script
 		.contentbuttons.f-left.clearfix
 			.hud-Button.f-left#openInternet
 				+I('internet')
-				#Qnt__dropMenu__TRIGGER
+				.Qnt__dropMenu__TRIGGER
 				.Qnt__dropMenu
 					ul
 						li.Qnt__dropMenu__item(data-content='https://www.flaticon.com') FlatIcons
 						li.Qnt__dropMenu__item(data-content='http://allthefreestock.com/') FreeStocks
+						li.Qnt__dropMenu__item(data-content='https://codemyui.com/') CodeMyUI
 			.hud-Button.f-left#openDownload
 				+I('dock')
 			.hud-Button.f-left#openSVGforSrite

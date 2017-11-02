@@ -1,4 +1,4 @@
 mixin I(id,classModifier)
 	-if (!classModifier) classModifier =''
-	svg(class='icon '+classModifier)
+	svg(class='icon noicon'+classModifier data-qcontent='element__icon__MAIN-SVG-use')
 		use(xlink:href="#"+id)
