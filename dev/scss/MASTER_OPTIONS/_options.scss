@@ -18,7 +18,8 @@ $icon-font: false;
 @import "fontOption";
 
 // COLORS ///////////////////////////////////////////////
-
+@import "colors";
+@import "../COLOR/_color";
 $body-color         : cs('font'); // OF FONT
 $header-color       : cs('primary'); // OF FONT
 $background-color   : cs('bground');

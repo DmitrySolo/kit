@@ -1536,7 +1536,7 @@ gulp.task('API-SERVER', function () {
 							var scss = fs.readFileSync(path1, 'utf8');
 
 
-						}else if (path1.indexOf('PAGES') > -1 || path1.indexOf('LAYOUT') > -1){
+						}else if (path1.indexOf('PAGESYSTEM')> -1 && path1.indexOf('LAYOUT') == -1 ){
 								 var pageNameArr = path1.split(delimetr);
 
 								var pageName = pageNameArr[pageNameArr.length -1].slice(0,-3)+'html'
@@ -1549,7 +1549,12 @@ gulp.task('API-SERVER', function () {
 								var pug = fs.readFileSync(path1, 'utf8');
 
 
-						}
+						}else if (path1.indexOf('LAYOUT')> -1  ){
+
+								var pug = fs.readFileSync(path1, 'utf8');
+
+
+                            }
 
 							var codeRes = {
 
@@ -1614,7 +1619,7 @@ gulp.task('API-SERVER', function () {
 							}
 							else if (type == 'layout') {
 
-								var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LAYOUT/_' + name+'.pug' , 'utf8');
+								var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LAYOUT/' + name, 'utf8');
 								var ScssContent = '';
 								var JsContent = '';
 							}
@@ -2122,8 +2127,11 @@ gulp.task('API-SERVER', function () {
 
 					}
 					if (elemPath['type'] == 'layout') {
-						if (pugToSave != 'notChanged' )
-							fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/LAYOUT/' +elemPath['name']+'.pug', pugToSave);
+						if (pugToSave != 'notChanged' ){
+
+                            fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/LAYOUT/'+elemPath['name'], pugToSave);
+						}
+
 
 					}
 
@@ -2155,7 +2163,7 @@ gulp.task('API-SERVER', function () {
 								}
 							})
 						if(jsToSave != 'notChanged' )
-							fs.writeFile(projectDevDir + 'qContent/ELEMENTS/' + elemPath['stype'] + '/' + elemPath['name'] + '/' + name + '.js', jsToSave, function (err) {
+							fs.writeFile(projectDevDir + 'qContent/ELEMENTS/' + elemPath['stype'] + '/' + elemPath['name'] + '/' + elemPath['name'] + '.js', jsToSave, function (err) {
 								if (err) {
 									return console.log(err);
 								}

@@ -162,8 +162,13 @@ function MakeEditable (elem) {
 			var position = $('.debugElement').position();
 			$('body').prepend('<div id="getCode" class=".notEdit" style="position: absolute;top: '+position.top+'px; left: '+position.left+'px; z-index:10000">Get Code</div>')
 			if ( parseInt($(this).css('marginBottom'))>0 )
-				$(this).prepend("<div style='position:absolute;bottom:-"+$(this).css('marginBottom')+"; height:"+$(this).css('marginBottom')+";width:100%;line-height:1' class='mChacker' >&#8681</div> ")
-
+                $(this).prepend("<div style='position:absolute;bottom:-"+$(this).css('marginBottom')+"; height:"+$(this).css('marginBottom')+";width:100%;line-height:1' class='mChacker' >&#8681</div> ")
+            if ( parseInt($(this).css('marginLeft'))>0 )
+                $(this).prepend("<div style='position:absolute;left:-"+$(this).css('marginLeft')+"; width:"+$(this).css('marginLeft')+";height:100%;line-height:1' class='mChacker' >&#8681</div> ")
+            if ( parseInt($(this).css('marginRight'))>0 )
+				$(this).prepend("<div style='position:absolute;right:-"+$(this).css('marginRight')+"; width:"+$(this).css('marginRight')+";height:100%;line-height:1' class='mChacker' >&#8681</div> ")
+            if ( parseInt($(this).css('marginTop'))>0 )
+                $(this).prepend("<div style='position:absolute;top:-"+$(this).css('marginTop')+"; height:"+$(this).css('marginTop')+";width:100%;line-height:1' class='mChacker' >&#8681</div> ")
 			var _this = $(this);
 			//$( ".resizeble" ).resizable( "disable" );
 

@@ -7,18 +7,21 @@ mixin LEVEL-orderPage(title,className)
 		h1.orderPage__title=title
 		+I('svg','red')
 		+I('plus-button')
-		+I('button','tri')
+		+I('button','tri') 
 		+I('tri','tri')
 		+I('car-front','tri')
-		+I('rocket','tri')
-		+I('eco','tri')
+		+I('rocket','rocket')
+		+I('eco','tri')  
 		+I('drop','tri')
+		+I('search','tri')
+		.buttonWrapper
+			+B-b1('hello')
 		p.orderPage__mainMessage.text
-			| Ваша заявка 1q2222qq1s
-			|!{link}
-			| принята на обработку!!1eeewsaaq
+			| Ваша заявка 1q2222338ss
+			|!{link} 
+			| принята на обработку!!1e2sa eewsaaq ыв
 		ul.orderPage__subMess
-			li В настоящий момент заявка ожидаетd подтверждения менеджером.
+			li В настоящий момент заявка ожидаетd подтверждения м    енеджером.
 			li Ваш ответственный менеджер !{link2} автоматически оповещен.
 			li Отслеживать статус заявки вы можете в !{link1}.
 			li Электронная копия заявки отправлена на указанный вами email.

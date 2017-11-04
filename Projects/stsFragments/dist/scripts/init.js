@@ -1,3 +1,5 @@
+// Element: b1 script.
+
 /**
 * MODULE: flyPageFragment script
 */

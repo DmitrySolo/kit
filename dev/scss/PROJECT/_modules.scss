@@ -1,4 +1,21 @@
 /**
+* atest styles
+*/
+
+@mixin atest(){
+
+  .atest {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include atest();
+/**
 * confirmedOrderPage styles
 */
 
@@ -30,9 +47,10 @@
   }
   .flyPageFragment{
     background:cs('foreground');
+    padding-bottom: 1px;
     .stock_title, .stock {
         color: cs('succes-d');
-        font-size: 22px;
+        font-size: 25px;
     }
     .fragmentTitle {
         font-weight: bold;
@@ -41,7 +59,7 @@
         font-size: 22px;
     }
     .mop_price {
-        font-size: 25px;
+        font-size: 22px;
         color: cs('accent');
         //font-weight: bold;
     }
@@ -93,6 +111,7 @@
 
   .testOfParent {
       color: green;
+      font-weight:bold;
     &__content {
        // padding-top: 1px;
         color:tomato;

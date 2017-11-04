@@ -1,0 +1,17 @@
+/**
+* atest styles
+*/
+
+@mixin atest(){
+
+  .atest {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include atest();

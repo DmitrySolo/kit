@@ -1,6 +1,6 @@
 mixin I(id,classModifier)
 	-if (!classModifier) classModifier =''
 	-else classModifier = 'icon--'+classModifier
-	.icon__Wrapper(data-qcontent='element__ICONS__MAIN-SVG-use')
+	span.icon__Wrapper(data-qcontent='element__ICONS__MAIN-SVG-use')
 		svg(class='icon '+classModifier )
 			use(xlink:href="#"+id)

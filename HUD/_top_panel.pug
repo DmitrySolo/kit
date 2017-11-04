@@ -49,7 +49,7 @@ script
 					li.Qnt__dropMenu__Lock#lockSpacer(data-content='Block-o') LOCK
 		.hud-Button.f-left#rulerSwitcher
 			+I('timeline')
-		.hud-Button.f-left
+		.hud-Button.f-left#layers
 			+I('four-layers')
 		.hud-Button.f-left#testing
 			+I('testing')
@@ -60,6 +60,8 @@ script
 		.hud-Button.f-left#resizer
 			input#scaller(type = "range" min = ".3" max = "2" step = ".1"  onchange = "qscale(this.value)",value='1')
 			span#scallerLabel(style="line-height:0; color:#006eb7 !important") 1
+		.hud-Button.f-left#font
+			+I('font')
 		.contentbuttons.f-left.clearfix
 			.hud-Button.f-left#openInternet
 				+I('internet')

@@ -1,0 +1,3 @@
+/**
+* MODULE: atest script
+*/
