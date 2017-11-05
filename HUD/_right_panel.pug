@@ -8,11 +8,11 @@
         +I('unlocked')
     .ElemMenu__section
         +I('target')
-div.clearfix.mediaChoiser
-            .iconMediachoiser.f-left.mediaAll.active.col-2-tp
-                +I('alldisplays')
-            .iconMediachoiser.f-left.mediaMobile.col-2-tp
-                +I('computer3')
+div.clearfix.mediaChoiser.clearfix
+            .hud-Button.f-left#css
+                +I('css')
+            .hud-Button.f-left#font
+                +I('font')
             .iconMediachoiser.f-left.mediaTabletP.col-2-tp
                 +I('computer2')
             .iconMediachoiser.f-left.mediaTabletL.col-2-tp
@@ -21,196 +21,164 @@ div.clearfix.mediaChoiser
                 +I('computer')
             .iconMediachoiser.f-left.mediaDesctopLarge.col-2-tp
                 +I('arrow')
-.classMaker
+.classMaker.rightPlTab
     section#context
     section#classSelector
     .combinedSelector
         section#selfProperties
         section#extendsSelectors
-        section#pseudoSelectors.row
-            .col-12-tp
-                .pseudoBtn.f-left : hover
-                .pseudoBtn.f-left : active
-                .pseudoBtn.f-left : checked
-                .pseudoBtn.f-left : default
-                .pseudoBtn.f-left : dir()
-                .pseudoBtn.f-left : disabled
-                .pseudoBtn.f-left : empty
-                .pseudoBtn.f-left : enabled
-                .pseudoBtn.f-left : first
-                .pseudoBtn.f-left : first-child
-                .pseudoBtn.f-left : first-of-type
-                .pseudoBtn.f-left : fullscreen
-                .pseudoBtn.f-left : indeterminate
-                .pseudoBtn.f-left : in-range
-                .pseudoBtn.f-left : invalid
-                .pseudoBtn.f-left : lang()
-                .pseudoBtn.f-left : last-child
-                .pseudoBtn.f-left : last-of-type
-                .pseudoBtn.f-left : left
-                .pseudoBtn.f-left : link
-                .pseudoBtn.f-left : not()
-                .pseudoBtn.f-left : nth-child()
-                .pseudoBtn.f-left : nth-last-child()
-                .pseudoBtn.f-left : nth-last-of-type()
-                .pseudoBtn.f-left : nth-of-type()
-                .pseudoBtn.f-left : only-child
-                .pseudoBtn.f-left : only-of-type
-                .pseudoBtn.f-left : optional
-                .pseudoBtn.f-left : out-of-range
-                .pseudoBtn.f-left : nth-last-child()
-                .pseudoBtn.f-left : read-only
-                .pseudoBtn.f-left : read-write
-                .pseudoBtn.f-left : right
-                .pseudoBtn.f-left : root
-                .pseudoBtn.f-left : target
-                .pseudoBtn.f-left : valid
-                .pseudoBtn.f-left : visited
+.showFonts.rightPlTab
+    section.fontFilter
+    section.fontList
+        ul
 
-
-    section.row.hidden
-        div.clearfix
-            .col-6-tp
-                label Block
-                    input(type='text' name='block').classChoser
-                label Element
-                    input(type='text' name="element").classChoser
-                label Modifier
-                    input(type='text' name="modifier").classChoser
-                label Optional
-                    input(type='text' mame="optionalClass").classChoser
-            .col-6-tp
-                label Vendor classes
-                    select(multiple='multiple',size='5' name="vendorName")
-                        option hide
-                        option show
-                        option clearfix
-                        option mode
-                        option active
-                        option platform
-                        option selected
-                        option additional
-                        option support
-                label Project classes
-                    select(multiple='multiple',size='4')
-                        option hide
-                        option show
-                        option clearfix
-                        option mode
-                        option active
-    section.row.hidden
-        button#saveClass save
+section.row.hidden
+    div.clearfix
+        .col-6-tp
+            label Block
+                input(type='text' name='block').classChoser
+            label Element
+                input(type='text' name="element").classChoser
+            label Modifier
+                input(type='text' name="modifier").classChoser
+            label Optional
+                input(type='text' mame="optionalClass").classChoser
+        .col-6-tp
+            label Vendor classes
+                select(multiple='multiple',size='5' name="vendorName")
+                    option hide
+                    option show
+                    option clearfix
+                    option mode
+                    option active
+                    option platform
+                    option selected
+                    option additional
+                    option support
+            label Project classes
+                select(multiple='multiple',size='4')
+                    option hide
+                    option show
+                    option clearfix
+                    option mode
+                    option active
+.contentNavigator.debug.clearfix
+    #contentNavigator__type.f-left.cntNav
+        input
+    #contentNavigator__stype.f-left.cntNav
+        input
+    #contentNavigator__name.f-left.cntNav
+        input
+section.row.hidden
+    button#saveClass save
 
 
 
-.debug-Pannel-Right.notEdit
-    .debug-Pannel-Right__section.debugPannel__section
-        .debug-Pannel-Right-content
-            h6
-                +I('target')
-                | Classes
-            div.clearfix
-                .col-6-tp
-                    label Block
-                        input(type='text' name='block').classChoser
-                    label Element
-                        input(type='text' name="element").classChoser
-                    label Modifier
-                        input(type='text' name="modifier").classChoser
-                    label Optional
-                        input(type='text' mame="optionalClass").classChoser
-                .col-6-tp
-                    label Vendor classes
-                        select(multiple='multiple',size='5' name="vendorName")
-                            option hide
-                            option show
-                            option clearfix
-                            option mode
-                            option active
-                            option platform
-                            option selected
-                            option additional
-                            option support
-                    label Project classes
-                        select(multiple='multiple',size='4')
-                            option hide
-                            option show
-                            option clearfix
-                            option mode
-                            option active
-            h6
-                +I('text')
-                | Text & Font
-            div
-                button.propChangerButton center
-                button.propChangerButton left
-                button.propChangerButton right
-                input(type='hidden',value='text-align:').propChanger__propertyName
-                input(type='hidden' value='').propChanger__propertyDelimetr
-                hr
-                hr
-            h6
-                +I('column4')
-                | Grids
-            div.clearfix
-                .col-2-tp
-                    +I('computer3')
-                    +I('computer2')
-                    +I('computer1')
-                    +I('computer')
-                    +I('arrow')
-                .col-2-tp
-                    input( type="text" value=0 name="mobileGridder")
-                    input( type="text" value=0 name="tpGridder")
-                    input( type="text" value=0 name="tlGridder")
-                    input( type="text" value=0 name="desctopGridder")
-                    input( type="text" value=0 name="bigDesctopGridder")
-                .col-8-tp
-                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('mobileGridder',this.value)" value="0")
-                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tpGridder',this.value)" value="0")
-                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tlGridder',this.value)" value="0")
-                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('desctopGridder',this.value)" value="0")
-                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('bigDesctopGridder',this.value)" value="0")
-                hr
-            h6 MediaChoser
-            div.clearfix
-                .mediaChoser
-                    +I('computer3')
-                .mediaChoser
-                    +I('computer2')
-                .mediaChoser
-                    +I('computer1')
-                .mediaChoser
-                    +I('computer')
-                .mediaChoser
-                    +I('arrow')
+//.debug-Pannel-Right.notEdit
+//    .debug-Pannel-Right__section.debugPannel__section
+//        .debug-Pannel-Right-content
+//            h6
+//                +I('target')
+//                | Classes
+//            div.clearfix
+//                .col-6-tp
+//                    label Block
+//                        input(type='text' name='block').classChoser
+//                    label Element
+//                        input(type='text' name="element").classChoser
+//                    label Modifier
+//                        input(type='text' name="modifier").classChoser
+//                    label Optional
+//                        input(type='text' mame="optionalClass").classChoser
+//                .col-6-tp
+//                    label Vendor classes
+//                        select(multiple='multiple',size='5' name="vendorName")
+//                            option hide
+//                            option show
+//                            option clearfix
+//                            option mode
+//                            option active
+//                            option platform
+//                            option selected
+//                            option additional
+//                            option support
+//                    label Project classes
+//                        select(multiple='multiple',size='4')
+//                            option hide
+//                            option show
+//                            option clearfix
+//                            option mode
+//                            option active
+//            h6
+//                +I('text')
+//                | Text & Font
+//            div
+//                button.propChangerButton center
+//                button.propChangerButton left
+//                button.propChangerButton right
+//                input(type='hidden',value='text-align:').propChanger__propertyName
+//                input(type='hidden' value='').propChanger__propertyDelimetr
+//                hr
+//                hr
+//            h6
+//                +I('column4')
+//                | Grids
+//            div.clearfix
+//                .col-2-tp
+//                    +I('computer3')
+//                    +I('computer2')
+//                    +I('computer1')
+//                    +I('computer')
+//                    +I('arrow')
+//                .col-2-tp
+//                    input( type="text" value=0 name="mobileGridder")
+//                    input( type="text" value=0 name="tpGridder")
+//                    input( type="text" value=0 name="tlGridder")
+//                    input( type="text" value=0 name="desctopGridder")
+//                    input( type="text" value=0 name="bigDesctopGridder")
+//                .col-8-tp
+//                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('mobileGridder',this.value)" value="0")
+//                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tpGridder',this.value)" value="0")
+//                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('tlGridder',this.value)" value="0")
+//                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('desctopGridder',this.value)" value="0")
+//                    input( type="range" min="0" max="12" step="1" list="tickmarks" onchange="gridder('bigDesctopGridder',this.value)" value="0")
+//                hr
+//            h6 MediaChoser
+//            div.clearfix
+//                .mediaChoser
+//                    +I('computer3')
+//                .mediaChoser
+//                    +I('computer2')
+//                .mediaChoser
+//                    +I('computer1')
+//                .mediaChoser
+//                    +I('computer')
+//                .mediaChoser
+//                    +I('arrow')
+//
+//            h6
+//                +I('ruler')
+//                | Size
+//            div
+//                button#100p 100%
+//                hr
+//            h6
+//                +I('mp')
+//                | Paddings & Margins
+//            div
+//                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padder(this.value)")
+//                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padderrl(this.value)")
+//                input( type="range" min=".1" max="2" step=".1" list="tickmarks" onchange="paddertb(this.value)")
+//                hr
+//                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginer(this.value)")
+//                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginerrl(this.value)")
+//                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginertb(this.value)")
+//            h6
+//                +I('boxborder')
+//                | Border & Box
+//            div
+//            h6
+//                +I('image')
+//                | Background
+//            div
 
-            h6
-                +I('ruler')
-                | Size
-            div
-                button#100p 100%
-                hr
-            h6
-                +I('mp')
-                | Paddings & Margins
-            div
-                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padder(this.value)")
-                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="padderrl(this.value)")
-                input( type="range" min=".1" max="2" step=".1" list="tickmarks" onchange="paddertb(this.value)")
-                hr
-                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginer(this.value)")
-                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginerrl(this.value)")
-                input( type="range" min=".1" max="2" step=".2" list="tickmarks" onchange="marginertb(this.value)")
-            h6
-                +I('boxborder')
-                | Border & Box
-            div
-            h6
-                +I('image')
-                | Background
-            div
-    .saveToServer
-        button#saveToServer
-            +I('save')
-            | save as code

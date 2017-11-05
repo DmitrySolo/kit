@@ -14,26 +14,26 @@
   }
   .order_confirmed, .tri{
       
-     fill:cs('succes-l');
+     fill:cs('succes-d');
   }
 }
  
 .orderPage__title {
   text-align: center;         
-  margin-bottom: 35px;
+  margin-bottom: 32px; 
   margin-left: auto;
   margin-right: auto;
-  width:60%;
-  color:cs('link');
+  width:50%;
+  color:cs('primary-l2'); 
 }
 
 .orderPage__mainMessage {
-  font-size: 22px;
+  font-size: 22px;  
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
   @include for-size(phone-only){
-      font-size: 18px;
+      font-size: 19px;
   }
 
 }

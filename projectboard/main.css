@@ -874,7 +874,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   max-width: 100%;
   padding: 0.375em;
   font-size: 11px;
-  margin-bottom: 1.07813em; }
+  margin-bottom: 1.07812em; }
   @media (min-width: 690px) {
     input[type="text"], input[type="email"], input[type="password"], textarea {
       font-size: calc(11px + (16 - 11) * ((100vw - 690px) / (1170 - 690))); } }
@@ -900,7 +900,7 @@ input[type="submit"], button {
 label {
   display: block;
   padding-bottom: 0.1875em;
-  margin-bottom: -0.14063em; }
+  margin-bottom: -0.14062em; }
 
 table {
   width: 100%;
@@ -1476,15 +1476,15 @@ Layout&Pages
     color: #283E56;
     text-decoration: none; }
   .orderPage__content .order_confirmed, .orderPage__content .tri {
-    fill: #6bc9a6; }
+    fill: #379774; }
 
 .orderPage__title {
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 32px;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
-  color: #471a6f; }
+  width: 50%;
+  color: #48709c; }
 
 .orderPage__mainMessage {
   font-size: 22px;
@@ -1493,7 +1493,7 @@ Layout&Pages
   text-align: center; }
   @media (max-width: 599px) {
     .orderPage__mainMessage {
-      font-size: 18px; } }
+      font-size: 19px; } }
 
 .orderPage__subMess {
   color: #616161;
@@ -1582,7 +1582,8 @@ Modules
 */
 .testOfParent {
   color: green;
-  font-weight: bold; }
+  font-weight: bold;
+  font-size: 18px; }
   .testOfParent__content {
     color: tomato;
     text-align: center; }
@@ -1595,24 +1596,6 @@ Modules
 /**
 Elements
 * */
-.b1 {
-  display: inline-block;
-  position: relative;
-  background-color: #FFDE25;
-  color: #fff;
-  text-transform: uppercase;
-  transition: background , .2s linear;
-  border: 2px solid;
-  line-height: 1.7;
-  border-radius: 5px; }
-  .b1:hover, .b1:focus, .b1:active {
-    background-color: #bea100;
-    border: 2px solid; }
-  .b1:focus {
-    outline: none; }
-  .b1:hover, .b1:active {
-    outline: none; }
-
 .icon__Wrapper {
   width: 2em;
   height: 2em;
@@ -1630,6 +1613,24 @@ Elements
     fill: red; }
   .icon--rocket {
     fill: #f1cd00; }
+
+.b1 {
+  display: inline-block;
+  position: relative;
+  background-color: #FFDE25;
+  color: #fff;
+  text-transform: uppercase;
+  transition: background , .2s linear;
+  border: 2px solid;
+  line-height: 1.7;
+  border-radius: 5px; }
+  .b1:hover, .b1:focus, .b1:active {
+    background-color: #bea100;
+    border: 2px solid #bea100; }
+  .b1:focus {
+    outline: none; }
+  .b1:hover, .b1:active {
+    outline: none; }
 
 .pr {
   background-color: #283E56 !important; }
@@ -2139,7 +2140,7 @@ body.debug {
   cursor: crosshair;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -3398,7 +3399,7 @@ body.hud {
 
 .top-panel-content {
   width: 100%;
-  height: 40px;
+  height: 44px;
   background: #3c3f41 !important; }
 
 .hud-content {
@@ -3553,25 +3554,28 @@ div[class*='Panel'] {
   background: #00498f; }
 
 .saveToServer button {
-  width: 100%;
+  width: 200px;
+  margin: 5px 37px 5px 0px;
   border: solid 2px #fc8a0e;
   background: #fc9627;
   color: #fff;
-  font-size: 20px;
   text-transform: uppercase;
   border-radius: 5px;
   text-align: center; }
 
 .saveToServer .icon {
   height: 1rem;
-  float: left; }
+  float: left;
+  width: 1rem;
+  display: inline !important;
+  fill: #fff; }
 
 .classMaker {
   padding: 7px;
   background-color: #2b2b2b; }
 
 .combinedSelector {
-  max-height: 40vh;
+  height: 40vh;
   overflow-y: auto; }
 
 .qcnt {
@@ -3690,6 +3694,7 @@ div[class*='Panel'] {
   top: 30%;
   right: 110%;
   background-color: #3c3f41;
+  z-index: 99999999;
   box-shadow: 2px 2px 2px #474747; }
 
 .ElemMenu__header {
@@ -3720,8 +3725,6 @@ div[class*='Panel'] {
   padding-bottom: 20px; }
 
 .saveToServer {
-  position: absolute;
-  bottom: 0;
   text-align: center; }
 
 .hud-rightPanel {
@@ -3905,7 +3908,8 @@ div[class*='Panel'] {
   width: 50px;
   height: 100%;
   line-height: 40px;
-  text-align: center; }
+  text-align: center;
+  background: #343639; }
   .apiTester span {
     vertical-align: middle;
     width: 10px;
@@ -3969,15 +3973,15 @@ div[class*='Panel'] {
   background-color: #dadada; }
 
 .contentNavigator {
-  width: 200px;
-  background-color: #3c3f41;
+  width: 265px;
+  background-color: #35373a;
   z-index: 9999999999;
   position: absolute;
   text-align: center;
-  right: 250px;
-  top: 8px; }
+  left: -275px;
+  top: -54px; }
   .contentNavigator > input {
-    border: solid 2px; }
+    border: solid .5px; }
   .contentNavigator button {
     background: #fa9527;
     outline: none;
@@ -3988,13 +3992,16 @@ div[class*='Panel'] {
     font-size: 10px; }
   .contentNavigator input {
     box-sizing: border-box;
-    margin: 5px;
     border-color: #00B3EE;
     outline: none;
-    width: 90%;
-    background: #3c3f41;
-    font-size: 14px;
+    width: 100%;
+    background: #35373a;
     color: #fff; }
+
+.cntNav {
+  width: 50%;
+  margin-bottom: -7px;
+  margin-left: -2px; }
 
 .savecode {
   fill: #fa9527 !important; }
@@ -4034,6 +4041,7 @@ div[class*='Panel'] {
   color: #ffa40a !important; }
 
 .elAdderCtn {
+  display: none;
   position: absolute;
   right: 0;
   top: 300px; }
@@ -4081,7 +4089,7 @@ div[class*='Panel'] {
   border: none; }
 
 .contentbuttons {
-  margin-left: 30px; }
+  margin-left: 10px; }
 
 .hud-Button {
   position: relative; }
@@ -4128,5 +4136,10 @@ div[class*='Panel'] {
   z-index: 10;
   background: #27ff0d;
   border-radius: 50%; }
+
+button.classLoading {
+  background: url(loading.svg) !important;
+  background-position: center !important;
+  background-size: 127% !important; }
 
 /*# sourceMappingURL=maps/main.css.map */

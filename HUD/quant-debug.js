@@ -228,7 +228,7 @@ function loadToQuant() {
 }
 document.getElementById('index').onload = function () {
 
-    $('div.hud-Button#savecode ').css('background', 'initial');
+    $('button#savecode').removeClass('classLoading')
     loadToQuant();
     $('.fs__modules ul,.fs__p_modules ul,.fs__p_elements ul,.fs__pages ul,.fs__levels ul,.fs__options ul,.fs__layout ul').html('');
     loadProjectPath('dev/MODULES/PROJECT_MODULES', '.fs__modules');
@@ -2063,7 +2063,7 @@ $(document).ready(function () {
     loadByDOM(false);
 
     var saveCode = function () {
-        $('div#savecode').on('mousedown', function () {
+        $('button#savecode').on('mousedown', function () {
 
 
             var cursorsObj = {};
@@ -2117,7 +2117,7 @@ $(document).ready(function () {
                 , type: 'POST'
                 , data: JSON.stringify(data)
                 , success: function (res) {
-                    $('div.hud-Button#savecode ').css('background', 'rgb(37, 177, 74)');
+                    $('button#savecode ').addClass('classLoading');
                 }
             });
 
@@ -2143,7 +2143,7 @@ $(document).ready(function () {
 
     shortcut.add("Ctrl+Alt", function () {
         // alert("Hi there!q");
-        $('div#savecode').trigger('mousedown')
+        $('button#savecode').trigger('mousedown')
     })
 
 
@@ -2240,10 +2240,28 @@ $(document).ready(function () {
             }
         )
     }
+
+
+    var loadFonts = function () {
+
+
+
+            $.ajax({
+                url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBXP7OaLUJZWwHwDdwCbAFIo79kA3PZlnw"
+
+            }).done(function (data) {
+               for(var i in data.items) {
+                   console.log(data.items[i].family)
+               }
+                //var pthJson = JSON.parse(data);
+                //ql(pthJson)
+            })
+
+
+    }
     $('div#font').on('mousedown',function () {
         $(this).toggleClass('on');
-        loadFont('Anton','bold');
+        loadFonts();
 
     })
-
 })

@@ -1109,7 +1109,7 @@
   }
   .top-panel-content {
     width: 100%;
-    height: 40px;
+    height: 44px;
     background: #3c3f41 !important;
   }
   .hud-content {
@@ -1283,11 +1283,11 @@
   }
   .saveToServer {
     button {
-      width: 100%;
+      width: 200px;
+      margin: 5px 37px 5px 0px;
       border: solid 2px darken(#fc9627, 5%);
       background: #fc9627;
       color: #fff;
-      font-size: 20px;
       text-transform: uppercase;
       border-radius: 5px;
       text-align: center;
@@ -1295,6 +1295,9 @@
     .icon {
       height: 1rem;
       float: left;
+      width: 1rem;
+      display: inline !important;
+      fill:#fff;
     }
   }
   .classMaker {
@@ -1304,7 +1307,7 @@
   }
 
   .combinedSelector {
-    max-height: 40vh;
+    height: 40vh;
     overflow-y: auto;
   }
   .qcnt {
@@ -1441,7 +1444,7 @@
     top: 30%;
     right: 110%;
     background-color: $panel;
-
+    z-index:99999999;
     box-shadow: 2px 2px 2px #474747;
 
   }
@@ -1474,8 +1477,7 @@
     padding-bottom: 20px;
   }
   .saveToServer {
-    position: absolute;
-    bottom: 0;
+
     text-align: center;
   }
   .hud-rightPanel {
@@ -1680,6 +1682,7 @@
     height: 100%;
     line-height: 40px;
     text-align: center;
+    background: #343639;
     span {
       vertical-align: middle;
       width: 10px;
@@ -1754,15 +1757,15 @@
     background-color: rgb(218, 218, 218);
   }
   .contentNavigator {
-    width:200px;
-    background-color: #3c3f41;
+    width:265px;
+    background-color: #35373a;
     z-index: 9999999999;
     position: absolute;
     text-align: center;
-    right:250px;
-    top: 8px;
+    left: -275px;
+    top: -54px;
     &>input{
-      border:solid 2px;
+      border:solid .5px;
     }
     button {
       background: #fa9527;
@@ -1775,14 +1778,17 @@
     }
     input{
       box-sizing: border-box;
-      margin: 5px;
       border-color: #00B3EE;
       outline: none;
-      width: 90%;
-      background: #3c3f41;
-      font-size: 14px;
+      width: 100%;
+      background: #35373a;
       color:#fff;
     }
+  }
+  .cntNav{
+    width: 50%;
+    margin-bottom: -7px;
+    margin-left: -2px;
   }
   .savecode {
     fill:#fa9527 !important;
@@ -1832,6 +1838,7 @@
     color: #ffa40a !important;
   }
   .elAdderCtn {
+    display: none;
     position: absolute;
     right:0;
     top:300px;
@@ -1879,7 +1886,7 @@
     border:none;
   }
   .contentbuttons{
-    margin-left:30px;
+    margin-left:10px;
   }
 
   .hud-Button {
@@ -1936,6 +1943,11 @@
       background: #27ff0d;
       border-radius: 50%;
     }
+  }
+  button.classLoading{
+    background: url(loading.svg) !important;
+    background-position: center !important;
+    background-size: 127% !important;
   }
 }
 

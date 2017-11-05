@@ -12,10 +12,10 @@ $color__b1:#fff;
 	transition: background , .2s linear;
 	border: 2px solid cs('accent-d1');
 	line-height: 1.7;
-	border-radius: 5px;
+	border-radius: 5px; 
 		&:hover, &:focus, &:active {      
 		background-color: $bkgColor__b1-hover;
-		border: 2px solid cs('accent-d1');
+		border: 2px solid cs('accent-d2');
 		}
 		&:focus {
 			outline: none;
