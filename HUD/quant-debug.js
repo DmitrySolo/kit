@@ -2225,43 +2225,92 @@ $(document).ready(function () {
 
 
     })
-    loadFont = function (fName,fWeight) {
+    loadFont = function (fName) {
         WebFont.load({
             google: {
                 families: [fName]
             },
             context: frames['viewport']
         });
-        $('link[href$="'+fName+'"', window.frames['index'].contentDocument).attr('href',$('link[href$="'+fName+'"', window.frames['index'].contentDocument).attr('href')+':400,700i,900');
+        $('link[href$="' + fName + '"', window.frames['index'].contentDocument).attr('href', $('link[href$="' + fName + '"', window.frames['index'].contentDocument).attr('href') + ':400,700i,900');
         frameEl('.debugElement').css(
             {
                 'font-family': fName,
-                'font-weight': fWeight
             }
         )
     }
 
+    var fontFilter={
 
+        'subsets':'cyrillic'
+    }
     var loadFonts = function () {
+        fontFilter1 =swap(fontFilter)
+        var filteredFonts =[];
+        $.ajax({
+            url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBXP7OaLUJZWwHwDdwCbAFIo79kA3PZlnw"
 
+        }).done(function (data) {
+            for (var i in data.items) {
 
+                var searchable = true;
+                for(var i1 in fontFilter){
+                    console.log(fontFilter[i1])
+                    console.log(data.items[i][fontFilter[i1]])
+                    if(i1=='category'){
+                        if(fontFilter[i1] != data.items[i][i1]) searchable = false;
+                    }else {
+                        console.log(data.items[i][i1]+'mass of subsset')
+                        console.log(!data.items[i][i1].indexOf(fontFilter[i1])+'RESULT')
+                        if(data.items[i][i1].indexOf(fontFilter[i1])==-1) searchable = false;
+                    }
 
-            $.ajax({
-                url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBXP7OaLUJZWwHwDdwCbAFIo79kA3PZlnw"
+                }if(searchable){
+                    $('.fontList ul').append('<li>'+data.items[i].family+'</li>');
+                    console.log(data.items[i])
+                }
+            }
 
-            }).done(function (data) {
-               for(var i in data.items) {
-                   console.log(data.items[i].family)
-               }
-                //var pthJson = JSON.parse(data);
-                //ql(pthJson)
-            })
+        })
 
 
     }
-    $('div#font').on('mousedown',function () {
-        $(this).toggleClass('on');
+    $('.fontList ul ').on('mousedown','li',function () {
+
+       if(!$(this).hasClass('on')){
+           $(this).addClass('on')
+           loadFont($(this).text())
+       }else{
+           $('link[href$="' + $(this).text() + ':400,700i,900"', window.frames['index'].contentDocument).remove();
+           $(this).removeClass('on')
+       }
+
+    })
+
+    ////Right Panel
+    $('div#font').on('mousedown', function () {
+        $('.hud-rightPanel .hud-Button').removeClass('on')
+        $(this).addClass('on');
+        $('.rightPlTab').css(
+            'display', 'none'
+        );
+        $('.showFonts').css(
+            'display', 'block'
+        )
+
         loadFonts();
+
+    })
+    $('div#css').on('mousedown', function () {
+        $('.hud-rightPanel .hud-Button').removeClass('on')
+        $(this).addClass('on');
+        $('.rightPlTab').css(
+            'display', 'none'
+        );
+        $('.classMaker').css(
+            'display', 'block'
+        )
+
 
     })
 })

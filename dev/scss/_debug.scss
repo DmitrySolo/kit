@@ -1300,9 +1300,11 @@
       fill:#fff;
     }
   }
-  .classMaker {
+  .rightPlTab {
     padding: 7px;
     background-color: #2b2b2b;
+    max-height: 40vh;
+    overflow: auto;
 
   }
 
@@ -1948,6 +1950,18 @@
     background: url(loading.svg) !important;
     background-position: center !important;
     background-size: 127% !important;
+  }
+  .showFonts {
+    color:#fff;
+  }
+  .fontList .on{
+    background: #016b90;
+  }
+  .fontList {
+    padding: 15px 10px;
+    li{
+      padding-left: 5px;
+    }
   }
 }
 

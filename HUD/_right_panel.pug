@@ -9,7 +9,7 @@
     .ElemMenu__section
         +I('target')
 div.clearfix.mediaChoiser.clearfix
-            .hud-Button.f-left#css
+            .hud-Button.f-left.on#css
                 +I('css')
             .hud-Button.f-left#font
                 +I('font')
@@ -27,11 +27,15 @@ div.clearfix.mediaChoiser.clearfix
     .combinedSelector
         section#selfProperties
         section#extendsSelectors
-.showFonts.rightPlTab
+.showFonts.rightPlTab.hidden
     section.fontFilter
+        span Serif
+        span San-serif
+        span Display
+        span Latin
+        span Cyrilic
     section.fontList
         ul
-
 section.row.hidden
     div.clearfix
         .col-6-tp

@@ -16,15 +16,16 @@
       
      fill:cs('succes-d');
   }
-}
+} 
  
 .orderPage__title {
   text-align: center;         
-  margin-bottom: 32px; 
+  margin-bottom: 22px; 
   margin-left: auto;
   margin-right: auto;
   width:50%;
-  color:cs('primary-l2'); 
+  color: cs('font-d2');
+  background: cs('accent-d2');
 }
 
 .orderPage__mainMessage {

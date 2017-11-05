@@ -1,3 +1,29 @@
+$bkgColor__b1:cs('accent');
+$bkgColor__b1-hover:cs('accent-d2');
+$color__b1-hover:lighten(red,15%);
+$color__b1:#fff;
+
+.b1 {
+    display: inline-block;
+	position: relative;
+	background-color: $bkgColor__b1;
+	color: $color__b1;
+	text-transform: uppercase;
+	transition: background , .2s linear;
+	border: 2px solid cs('accent-d2');
+	line-height: 1.7;
+	border-radius: 5px; 
+		&:hover, &:focus, &:active {      
+		background-color: $bkgColor__b1-hover;
+		border: 2px solid cs('accent-d2');
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
 .icon__Wrapper {
   width: 2em;
   height: 2em;
@@ -23,30 +49,3 @@
   
 
 
-
-$bkgColor__b1:cs('accent');
-$bkgColor__b1-hover:cs('accent-d2');
-$color__b1-hover:lighten(red,15%);
-$color__b1:#fff;
-
-.b1 {
-    display: inline-block;
-	position: relative;
-	background-color: $bkgColor__b1;
-	color: $color__b1;
-	text-transform: uppercase;
-	transition: background , .2s linear;
-	border: 2px solid cs('accent-d1');
-	line-height: 1.7;
-	border-radius: 5px; 
-		&:hover, &:focus, &:active {      
-		background-color: $bkgColor__b1-hover;
-		border: 2px solid cs('accent-d2');
-		}
-		&:focus {
-			outline: none;
-		}
-		&:hover, &:active {
-			outline: none;
-	}
-}
