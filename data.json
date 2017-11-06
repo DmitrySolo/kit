@@ -11,24 +11,6 @@
 				"": ""
 			}
 		},
-		"quant-HUD-script": {
-			"js": {
-				"quant-HUD-script-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"uicss": {
-					"src": "node_modules/jquery-ui-dist/jquery-ui.min.css",
-					"container": "head/libs"
-				}
-			}
-		},
 		"quant-debug-JsonCss": {
 			"js": {
 				"quant-debug-JsonCss-script": {
@@ -51,6 +33,24 @@
 				"": ""
 			}
 		},
+		"quant-HUD-script": {
+			"js": {
+				"quant-HUD-script-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"uicss": {
+					"src": "node_modules/jquery-ui-dist/jquery-ui.min.css",
+					"container": "head/libs"
+				}
+			}
+		},
 		"quant-lib": {
 			"js": {
 				"quant-lib-script": {
@@ -67,6 +67,21 @@
 				"xRayView-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
 					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"b1": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
@@ -96,21 +111,6 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/MODULES/testOfParent/testOfParent.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"b1": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -152,18 +152,18 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"//  'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\n//)"
+		"'HEADER'": "('Roboto Slab')\r\n//)"
 	},
 	"block_space": "4",
 	"module_space": "3",
 	"component_space": "2",
 	"element_space": "2",
 	"section_space": "4",
-	"container-styles": "(\n\n)",
+	"container-styles": "(\r\n\r\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\n)"
+		"min-height": "1px\r\n)"
 	},
 	"nr-colStyles": {
 		"float": "left"

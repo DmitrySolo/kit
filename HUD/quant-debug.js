@@ -1,9 +1,4 @@
-WebFont.load({
-	google: {
-		families: ['Pacifico', 'Droid Serif']
-	},
-	context: frames['viewport']
-});
+
 
 var loadProjectPath = function (path, placeTo) {
 
@@ -35,7 +30,7 @@ var loadProjectPath = function (path, placeTo) {
 			}
 		}
 		$('.fs').accordion({
-			active: 4,
+			active: 1,
 			header: "h3",
 			collapsible: false
 		});
@@ -231,7 +226,7 @@ document.getElementById('index').onload = function () {
 
 	$('button#savecode').removeClass('classLoading')
 	loadToQuant();
-	$('.fs__modules ul,.fs__p_modules ul,.fs__p_elements ul,.fs__pages ul,.fs__levels ul,.fs__options ul,.fs__layout ul').html('');
+	$('.fs__modules ul,.fs__p_modules ul,.fs__p_elements ul,.fs__pages ul,.fs__levels ul,.fs__options ul,.fs__layout ul,.fs__data ul').html('');
 	loadProjectPath('dev/MODULES/PROJECT_MODULES', '.fs__modules');
 	loadProjectPath('dev/ELEMENTS', '.fs__elements');
 	loadProjectPath('dev/MIXES', '.fs__mixes');
@@ -241,6 +236,7 @@ document.getElementById('index').onload = function () {
 	loadProjectPath('dev/scss/MASTER_OPTIONS', '.fs__options');
 	loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/PAGES', '.fs__pages');
 	loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/LEVELS', '.fs__levels');
+    loadProjectPath('Projects/' + $("span.projectTitle").text() + '/data', '.fs__data');
 	scssChangeCounter = 1;
 	pugChangeCounter = 1;
 	JSChangeCounter = 1;
@@ -1871,6 +1867,18 @@ $(document).ready(function () {
 					$('#contentNavigator__name input').val(name)
 
 				}
+                else if (arr.indexOf('data') != -1) {
+
+                    var name = arr[arr.length - 1];
+                    var stype = "";
+                    var type = 'data';
+
+                    ql(name, stype, type, 'OOOOOOO')
+                    $('#contentNavigator__type input').val(type)
+                    $('#contentNavigator__stype input').val(stype)
+                    $('#contentNavigator__name input').val(name)
+
+                }
 				else if (arr.indexOf('PAGES') != -1) {
 
 					var name = arr[arr.length - 1];
@@ -2354,4 +2362,6 @@ $(document).ready(function () {
 	  })
 
   };setFontsFilter()
+
+//////////////////////////////
 })

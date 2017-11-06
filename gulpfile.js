@@ -1533,10 +1533,19 @@ gulp.task('API-SERVER', function () {
 
 
 
-							var scss = fs.readFileSync(path1, 'utf8');
+                                var scss = fs.readFileSync(path1, 'utf8');
 
 
-						}else if (path1.indexOf('PAGESYSTEM')> -1 && path1.indexOf('LAYOUT') == -1 ){
+                            }else if (path1.indexOf('data') > -1){
+
+
+
+
+                                var js = fs.readFileSync(path1, 'utf8');
+
+
+                            }
+                            else if (path1.indexOf('PAGESYSTEM')> -1 && path1.indexOf('LAYOUT') == -1 ){
 								 var pageNameArr = path1.split(delimetr);
 
 								var pageName = pageNameArr[pageNameArr.length -1].slice(0,-3)+'html'

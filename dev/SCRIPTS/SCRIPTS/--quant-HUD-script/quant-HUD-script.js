@@ -53,7 +53,7 @@ target.save = {
 
 function MakeEditable (elem) {
 
-	elem.on('mousedown',function(e){
+	elem.on('click',function(e){
 
 		$('#selfProperties,#extendsSelectors,#context,#classSelector',window.parent.document).html('');
 		$('.classChoser',window.parent.document).val('');

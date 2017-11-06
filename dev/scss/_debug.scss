@@ -1210,6 +1210,7 @@
     display: none;
     height: 1400px;
 
+
   }
   .rg-menu {
     background: $panel;
@@ -1737,11 +1738,12 @@
   .hud-leftPanel .ui-accordion .ui-accordion-header {
     background: #3c3f41;
     color: #00b3ee;
-    font-size: 12px;
+    font-size: 11px;
     border: none;
     outline: none;
-    padding: 6px;
-    border-bottom: 1px #0086b3 solid;
+    padding: 2px;
+    border-bottom: 1px #292929 solid;
+    border-radius: 0;
   }
   .fs_list {
     cursor: pointer;
@@ -1864,6 +1866,7 @@
     fill:#fa9429;
   }
   .editorsContainer .ace-twilight .ace_marker-layer .ace_selected-word {
+
     border: 1px solid #8BC34A; }
   .ace_level{
     color: #00e7ff;
