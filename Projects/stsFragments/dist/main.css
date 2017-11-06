@@ -874,7 +874,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   max-width: 100%;
   padding: 0.375em;
   font-size: 11px;
-  margin-bottom: 1.07813em; }
+  margin-bottom: 1.07812em; }
   @media (min-width: 690px) {
     input[type="text"], input[type="email"], input[type="password"], textarea {
       font-size: calc(11px + (16 - 11) * ((100vw - 690px) / (1170 - 690))); } }
@@ -900,7 +900,7 @@ input[type="submit"], button {
 label {
   display: block;
   padding-bottom: 0.1875em;
-  margin-bottom: -0.14063em; }
+  margin-bottom: -0.14062em; }
 
 table {
   width: 100%;
@@ -1471,12 +1471,10 @@ Layout&Pages
   padding: 60px 30px; }
   @media (max-width: 599px) {
     .orderPage__content {
-      padding: 30px 20px; } }
+      padding: 30px 10px; } }
   .orderPage__content a {
     color: #283E56;
     text-decoration: none; }
-  .orderPage__content .order_confirmed, .orderPage__content .tri {
-    fill: #379774; }
 
 .orderPage__title {
   text-align: center;
@@ -1484,8 +1482,7 @@ Layout&Pages
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  color: #141414;
-  background: #bea100; }
+  color: #474747; }
 
 .orderPage__mainMessage {
   font-size: 22px;
@@ -1631,7 +1628,7 @@ Elements
   .icon--red {
     fill: red; }
   .icon--rocket {
-    fill: #f1cd00; }
+    fill: #7d2dc1; }
 
 .pr {
   background-color: #283E56 !important; }
@@ -2141,7 +2138,7 @@ body.debug {
   cursor: crosshair;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -3657,7 +3654,7 @@ div[class*='Panel'] {
   border-bottom: solid 5px #2b2b2b; }
 
 .mediaChoiser .icon {
-  height: 2.2em;
+  height: 1.2em;
   fill: #00b3ee; }
 
 .iconMediachoiser {
@@ -4155,5 +4152,23 @@ button.classLoading {
   padding: 15px 10px; }
   .fontList li {
     padding-left: 5px; }
+
+.filterButton {
+  display: block;
+  padding: 4px;
+  margin-right: 5px;
+  background: #3c3f41;
+  border: solid 1px #000; }
+  .filterButton.on {
+    background-color: #84c4e6; }
+
+.ace_keyword:before {
+  position: absolute;
+  content: 'A';
+  left: 0px;
+  font-size: 14px;
+  color: #fffb00;
+  background-color: lightslategrey;
+  border-radius: 5px; }
 
 /*# sourceMappingURL=maps/main.css.map */

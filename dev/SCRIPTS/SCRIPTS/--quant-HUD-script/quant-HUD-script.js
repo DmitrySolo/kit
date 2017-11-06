@@ -53,10 +53,10 @@ target.save = {
 
 function MakeEditable (elem) {
 
-	elem.on('click',function(e){
+	elem.on('mousedown',function(e){
 
 		$('#selfProperties,#extendsSelectors,#context,#classSelector',window.parent.document).html('');
-		$('.classChoser',window.parent.document).val('');console.log( $(this).attr('class'));
+		$('.classChoser',window.parent.document).val('');
 		$('.iconMediachoiser',window.parent.document).removeClass('active').removeClass('inList');
 		$('.mediaAll',window.parent.document)
 
@@ -123,6 +123,7 @@ function MakeEditable (elem) {
 				}else{
 					if (vendorsClasses.indexOf(value) == -1)
 						$('#classSelector',window.parent.document).prepend('<div class=" cselector"><span class="classtype extClass">c</span><span class="classtype__name">'+value+'</span></div>')
+					$('.cselector',window.parent.document).trigger('click');
 				}
 
 			})
@@ -162,13 +163,13 @@ function MakeEditable (elem) {
 			var position = $('.debugElement').position();
 			$('body').prepend('<div id="getCode" class=".notEdit" style="position: absolute;top: '+position.top+'px; left: '+position.left+'px; z-index:10000">Get Code</div>')
 			if ( parseInt($(this).css('marginBottom'))>0 )
-                $(this).prepend("<div style='position:absolute;bottom:-"+$(this).css('marginBottom')+"; height:"+$(this).css('marginBottom')+";width:100%;line-height:1' class='mChacker' >&#8681</div> ")
-            if ( parseInt($(this).css('marginLeft'))>0 )
-                $(this).prepend("<div style='position:absolute;left:-"+$(this).css('marginLeft')+"; width:"+$(this).css('marginLeft')+";height:100%;line-height:1' class='mChacker' >&#8681</div> ")
-            if ( parseInt($(this).css('marginRight'))>0 )
+				$(this).prepend("<div style='position:absolute;bottom:-"+$(this).css('marginBottom')+"; height:"+$(this).css('marginBottom')+";width:100%;line-height:1' class='mChacker' >&#8681</div> ")
+			if ( parseInt($(this).css('marginLeft'))>0 )
+				$(this).prepend("<div style='position:absolute;left:-"+$(this).css('marginLeft')+"; width:"+$(this).css('marginLeft')+";height:100%;line-height:1' class='mChacker' >&#8681</div> ")
+			if ( parseInt($(this).css('marginRight'))>0 )
 				$(this).prepend("<div style='position:absolute;right:-"+$(this).css('marginRight')+"; width:"+$(this).css('marginRight')+";height:100%;line-height:1' class='mChacker' >&#8681</div> ")
-            if ( parseInt($(this).css('marginTop'))>0 )
-                $(this).prepend("<div style='position:absolute;top:-"+$(this).css('marginTop')+"; height:"+$(this).css('marginTop')+";width:100%;line-height:1' class='mChacker' >&#8681</div> ")
+			if ( parseInt($(this).css('marginTop'))>0 )
+				$(this).prepend("<div style='position:absolute;top:-"+$(this).css('marginTop')+"; height:"+$(this).css('marginTop')+";width:100%;line-height:1' class='mChacker' >&#8681</div> ")
 			var _this = $(this);
 			//$( ".resizeble" ).resizable( "disable" );
 
@@ -258,42 +259,42 @@ function GetParents(el) {
 
 
 	if (el.tagName != 'svg'){
-        $('#currentSelectorWay',$(window.parent.document)).html('');
-        var parents = el.parents("*").not($('html')).not($('body')).not($('svg'));
-        var selectors = "<div style='background: #2b2b2b;color:#fff'>";
-        var selectorFirstFinded = false
-        for (var i = parents.length-1; i >= 0; i--) {
+		$('#currentSelectorWay',$(window.parent.document)).html('');
+		var parents = el.parents("*").not($('html')).not($('body')).not($('svg'));
+		var selectors = "<div style='background: #2b2b2b;color:#fff'>";
+		var selectorFirstFinded = false
+		for (var i = parents.length-1; i >= 0; i--) {
 
 
-            parents[i].classList.remove("resizeble");
-            parents[i].classList.remove("ui-resizable");
-            parents[i].classList.remove("ui-draggable");
-            parents[i].classList.remove("ui-draggable-handle");
-            // el.removeClass('resizeble')
-            // el.removeClass('ui-resizable')
-            // el.removeClass('ui-draggable')
-            // el.removeClass('ui-draggable-handle')
+			parents[i].classList.remove("resizeble");
+			parents[i].classList.remove("ui-resizable");
+			parents[i].classList.remove("ui-draggable");
+			parents[i].classList.remove("ui-draggable-handle");
+			// el.removeClass('resizeble')
+			// el.removeClass('ui-resizable')
+			// el.removeClass('ui-draggable')
+			// el.removeClass('ui-draggable-handle')
 
-            if (!selectorFirstFinded){
-                firstInTagsLine = parents[i].tagName+'.'+parents[i].className;
-                selectorFirstFinded = true;
-            }
+			if (!selectorFirstFinded){
+				firstInTagsLine = parents[i].tagName+'.'+parents[i].className;
+				selectorFirstFinded = true;
+			}
 
-            selectors += "<span onclick='searchClosestofDebugElement(this)'>"+parents[i].tagName + "<i>"+parents[i].className+ "</i>></span>";
-        }
+			selectors += "<span onclick='searchClosestofDebugElement(this)'>"+parents[i].tagName + "<i>"+parents[i].className+ "</i>></span>";
+		}
 
-        var ElCls =  el.prop("className").replace(/resizeble/g,'')
-            .replace(/resizable/g,'')
-            .replace(/debugElement/g,'')
-            .replace(/draggable/g,'')
-            .replace(/ui-/g,'')
-            .replace(/-handle/g,'')
+		var ElCls =  el.prop("className").replace(/resizeble/g,'')
+			.replace(/resizable/g,'')
+			.replace(/debugElement/g,'')
+			.replace(/draggable/g,'')
+			.replace(/ui-/g,'')
+			.replace(/-handle/g,'')
 
 
 
-        selectors +="<span style='background: #0086b3;'>"+el.prop("tagName")+"<i>"+ElCls+"</i></span></div>";
+		selectors +="<span style='background: #0086b3;'>"+el.prop("tagName")+"<i>"+ElCls+"</i></span></div>";
 
-        $('#currentSelectorWay',$(window.parent.document)).html(selectors);
+		$('#currentSelectorWay',$(window.parent.document)).html(selectors);
 	}
 
 

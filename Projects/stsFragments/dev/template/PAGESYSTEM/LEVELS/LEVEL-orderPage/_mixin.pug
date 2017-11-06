@@ -4,6 +4,7 @@ mixin LEVEL-orderPage(title,className)
 	-var link1 = "<a href='/'>личном кабинетеQ</a>"
 	-var link2 = "<a href='/'>Иванов Иван.</a>"
 	section.orderPage__content(class = 'orderPage__content'+ className data-qcontent="level__orderPage")
+		+breadcrumbs()
 		h1.orderPage__title=title
 		+I('svg','red')
 		+I('plus-button')

@@ -1398,7 +1398,7 @@
       border-bottom: solid 5px #2b2b2b;
     }
     .icon {
-      height: 2.2em;
+      height: 1.2em;
       fill: #00b3ee;
 
     }
@@ -1961,6 +1961,28 @@
     padding: 15px 10px;
     li{
       padding-left: 5px;
+    }
+  }
+  .filterButton {
+
+    display: block;
+    padding: 4px;
+    margin-right:5px;
+    background: #3c3f41;
+    border: solid 1px #000;
+    &.on{
+      background-color: #84c4e6;
+    }
+  }
+  .ace_keyword{
+    &:before{
+      position: absolute;
+      content: 'A';
+      left:0px;
+      font-size: 14px;
+      color:#fffb00;
+      background-color: lightslategrey;
+      border-radius: 5px;
     }
   }
 }

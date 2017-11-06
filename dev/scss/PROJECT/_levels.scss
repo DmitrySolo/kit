@@ -6,7 +6,7 @@
   background: cs('foreground-d'); 
   padding: 60px 30px;
   @include for-size(phone-only){ 
-       padding: 30px 20px; 
+       padding: 30px 10px; 
   }
   a {
     color: cs('primary');
@@ -14,7 +14,7 @@
   }
   .order_confirmed, .tri{
       
-     fill:cs('succes-d');
+     fill:cs('succes-d-1');
   }
 } 
  
@@ -24,8 +24,7 @@
   margin-left: auto;
   margin-right: auto;
   width:50%;
-  color: cs('font-d2');
-  background: cs('accent-d2');
+  color: cs('font'); 
 }
 
 .orderPage__mainMessage {
@@ -49,7 +48,7 @@
   li {
     list-style: circle;
   }
-  @include for-size(phone-only){
+ @include for-size(phone-only){
       width: 100%;
   }
 

@@ -2,6 +2,13 @@ mixin MODULE-atest()
 	<!-- split modules/atest -->
 	.atest__content(data-qcontent='module__atest')
 		.atest
+mixin breadcrumbs()
+	.breadcrumb__content(data-qcontent=modules_breadcrubs)
+		nav.breadCrumb.visible-l
+			a(href='/').breadcrumb__section.breadCrumb__section--home Главная
+			+loop(9)
+				a(href='/').breadcrumb__section Другая страница12
+
 mixin confirmedOrderPage()
 	<!-- split modules/confirmedOrderPage -->
 	.confirmedOrderPage__content(data-qcontent='module__confirmedOrderPage')
@@ -41,6 +48,7 @@ mixin LEVEL-orderPage(title,className)
 	-var link1 = "<a href='/'>личном кабинетеQ</a>"
 	-var link2 = "<a href='/'>Иванов Иван.</a>"
 	section.orderPage__content(class = 'orderPage__content'+ className data-qcontent="level__orderPage")
+		+breadcrumbs()
 		h1.orderPage__title=title
 		+I('svg','red')
 		+I('plus-button')

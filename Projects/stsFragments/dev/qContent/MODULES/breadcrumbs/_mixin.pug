@@ -1,0 +1,6 @@
+mixin breadcrumbs()
+	.breadcrumb__content(data-qcontent=modules_breadcrubs)
+		nav.breadCrumb.visible-l
+			a(href='/').breadcrumb__section.breadCrumb__section--home Главная
+			+loop(9)
+				a(href='/').breadcrumb__section Другая страница12
