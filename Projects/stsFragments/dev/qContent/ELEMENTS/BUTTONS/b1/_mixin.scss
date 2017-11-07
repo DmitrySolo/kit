@@ -1,6 +1,6 @@
 $bkgColor__b1:cs('accent');
-$bkgColor__b1-hover:cs('accent-d2');
-$color__b1-hover:lighten(red,15%);
+$bkgColor__b1-hover:cs('accent-l2');
+$color__b1-hover:lighten(cs('accent-l2'),5%);
 $color__b1:#fff;
 
 .b1 {
@@ -9,7 +9,7 @@ $color__b1:#fff;
 	background-color: $bkgColor__b1;
 	color: $color__b1;
 	text-transform: uppercase;
-	transition: background , .2s linear;
+	transition: background .2s linear;
 	border: 2px solid cs('accent-d2');
 	line-height: 1.7;
 	border-radius: 5px; 

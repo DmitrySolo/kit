@@ -123,7 +123,6 @@ function MakeEditable (elem) {
 				}else{
 					if (vendorsClasses.indexOf(value) == -1)
 						$('#classSelector',window.parent.document).prepend('<div class=" cselector"><span class="classtype extClass">c</span><span class="classtype__name">'+value+'</span></div>')
-					$('.cselector',window.parent.document).trigger('click');
 				}
 
 			})

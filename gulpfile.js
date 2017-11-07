@@ -941,7 +941,7 @@ gulp.task('buildblueprint', function buildHTML() {
 });
 gulp.task('mergeJson', function () {
 	return gulp.src([
-		'dev/SCRIPTS/**/--*/*.json',
+        'Projects/' + projectName +'/settings/*.json',
 		'dev/scss/MASTER_OPTIONS/*.json',
 		'Projects/' + projectName + '/data/*.json',
 		'Projects/' + projectName + '/dev/qContent/**/libs.json',
@@ -1261,9 +1261,9 @@ gulp.task('buildfonts2', function () {
 //SASS VARIABLES TO JSON
 gulp.task('sass-json', function () {
 	return gulp
-		.src(['dev/scss/MASTER_OPTIONS/_options.scss','dev/scss/COLOR/_colors.scss'])
+		.src(['dev/scss/MASTER_OPTIONS/_options.scss','dev/scss/MASTER_OPTIONS/_colors.scss'])
 		.pipe(sassJson())
-		.pipe(gulp.dest('dev/scss/MASTER_OPTIONS/'));
+		.pipe(gulp.dest('Projects/'+projectName+'/settings/'));
 });
 
 
@@ -1626,6 +1626,7 @@ gulp.task('API-SERVER', function () {
 								var ScssContent = '';
 								var JsContent = '';
 							}
+
 							else if (type == 'layout') {
 
 								var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LAYOUT/' + name, 'utf8');
@@ -2129,6 +2130,12 @@ gulp.task('API-SERVER', function () {
 							fs.writeFileSync( 'dev/scss/MASTER_OPTIONS/' + elemPath['name'], scssToSave);
 
 					}
+                    if (elemPath['type'] == 'data') {
+
+                        if (jsToSave != 'notChanged')
+                            fs.writeFileSync('Projects/'+projectName+'/data/'+elemPath['name'], jsToSave);
+
+                    }
 					if (elemPath['type'] == 'page') {
 						console.log(pugToSave)
 						if (pugToSave != 'notChanged' )

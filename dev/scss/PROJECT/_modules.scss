@@ -79,13 +79,13 @@
   }
   .flyPageFragment{
     background:cs('foreground');
-    padding-bottom: 1px;
+    padding-bottom: 2px;
     .stock_title, .stock {
         color: cs('succes-d');
         font-size: 25px;
     }
     .fragmentTitle {
-        font-weight: bold;
+        font-weight: 700;
     }
     .rrc_price{
         font-size: 22px;

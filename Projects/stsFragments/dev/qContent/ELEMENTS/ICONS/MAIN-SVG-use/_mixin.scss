@@ -16,7 +16,8 @@
           fill:red;
       }
       &--rocket { 
-          fill:cs('link-l2'); 
+          fill:cs('succes');
+           @include space-i('element','=','','b');
       }
     
 }

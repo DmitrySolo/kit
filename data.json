@@ -1,131 +1,11 @@
 {
-	"LIBS": {
-		"JQ": {
-			"js": {
-				"jquery": {
-					"src": "node_modules/jquery/dist/jquery.min.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-debug-JsonCss": {
-			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-debug-ruller": {
-			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-HUD-script": {
-			"js": {
-				"quant-HUD-script-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"uicss": {
-					"src": "node_modules/jquery-ui-dist/jquery-ui.min.css",
-					"container": "head/libs"
-				}
-			}
-		},
-		"quant-lib": {
-			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"xRayView": {
-			"js": {
-				"xRayView-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"b1": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"flyPageFragment": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/MODULES/flyPageFragment/flyPageFragment.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"testOfParent": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/MODULES/testOfParent/testOfParent.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		}
-	},
 	"color__link": "lighten(#3a155a,5%)",
 	"colors": {
-		"primary": "#3a155a",
-		"secondary": "#474747",
+		"primary": "#283E56",
+		"secondary": "#1989AC",
 		"foreground": "#fff",
-		"background": "#C5C5C5",
-		"accent": "orangered",
+		"background": "#E8F1F5",
+		"accent": "#FFDE25",
 		"font": "#474747",
 		"succes": "#46bb90",
 		"erorr": "#DD403A",
@@ -152,24 +32,83 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"//  'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\r\n//)"
+		"'HEADER'": "('Roboto Slab')\n//)"
 	},
 	"block_space": "4",
 	"module_space": "3",
 	"component_space": "2",
 	"element_space": "2",
 	"section_space": "4",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\r\n)"
+		"min-height": "1px\n)"
 	},
 	"nr-colStyles": {
 		"float": "left"
 	},
+	"mainOpt": {
+		"title": "stsFragments",
+		"prefix": "sf",
+		"lang": "eng"
+	},
+	"colorsOpt": {
+		"primary": "#3b68c9",
+		"secondary": "#c9612c",
+		"foreground": "#5ac948",
+		"background": "#7746c9",
+		"accent": "#c90028",
+		"font": "#86c999",
+		"index": ".15"
+	},
+	"typography": {
+		"screen_font": "16px",
+		"mobile_font": "16px",
+		"lh_ratio": "1.5",
+		"linkFontsArr": [
+			{
+				"name": "",
+				"link": "",
+				"role": "Body",
+				"weight": "normal",
+				"typeface": "Serif"
+			},
+			{}
+		]
+	},
+	"media": {
+		"response": "true",
+		"width": "1170px",
+		"colums": "12",
+		"gutter": ".5em",
+		"vRhythm": "true",
+		"m_c": "100%",
+		"m_b": "600px",
+		"tp_c": "690px",
+		"tp_b": "768px",
+		"tl_c": "900px",
+		"tl_b": "994px",
+		"d_c": "1120px",
+		"d_b": "1200px"
+	},
+	"spacer": {
+		"unit": "px",
+		"spacer_principle": "fibonacci",
+		"progressive_unit": "1.5",
+		"e_i": ".5",
+		"e_o": ".7",
+		"c_i": ".5",
+		"c_o": ".7",
+		"m_i": ".5",
+		"m_o": ".7",
+		"b_i": ".5",
+		"b_o": ".7"
+	},
+	"type": "create",
 	"OPTIONS": {
-		"useSVGSprite": "true"
+		"useSVGSprite": "true",
+		"DEBUG MODE": "on"
 	},
 	"head": {
 		"lang": "eng",
@@ -203,7 +142,7 @@
 		}
 	},
 	"name": "STARTER",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"includes": {
 		"modules": {},
 		"components": {},
@@ -235,6 +174,53 @@
 			"dop_class": "",
 			"layout": "default",
 			"group": ""
+		}
+	},
+	"LIBS": {
+		"flyPageFragment": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/flyPageFragment/flyPageFragment.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"testOfParent": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/testOfParent/testOfParent.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"b1": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
 		}
 	}
 }

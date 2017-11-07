@@ -874,7 +874,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   max-width: 100%;
   padding: 0.375em;
   font-size: 11px;
-  margin-bottom: 1.07813em; }
+  margin-bottom: 1.07812em; }
   @media (min-width: 690px) {
     input[type="text"], input[type="email"], input[type="password"], textarea {
       font-size: calc(11px + (16 - 11) * ((100vw - 690px) / (1170 - 690))); } }
@@ -900,7 +900,7 @@ input[type="submit"], button {
 label {
   display: block;
   padding-bottom: 0.1875em;
-  margin-bottom: -0.14063em; }
+  margin-bottom: -0.14062em; }
 
 table {
   width: 100%;
@@ -1468,27 +1468,33 @@ Layout&Pages
 /* orderPage STYLE */
 .orderPage__content {
   background: #e6e6e6;
-  padding: 60px 30px; }
+  padding: 70px 30px; }
   @media (max-width: 599px) {
     .orderPage__content {
       padding: 30px 10px; } }
   .orderPage__content a {
     color: #283E56;
     text-decoration: none; }
+  .orderPage__content .order_confirmed, .orderPage__content .tri {
+    fill: #379774; }
 
 .orderPage__title {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  color: #474747; }
+  color: #2a7157; }
+  @media (max-width: 599px) {
+    .orderPage__title {
+      width: 90%; } }
 
 .orderPage__mainMessage {
   font-size: 22px;
   text-transform: uppercase;
   font-weight: bold;
-  text-align: center; }
+  text-align: center;
+  color: #379774; }
   @media (max-width: 599px) {
     .orderPage__mainMessage {
       font-size: 19px; } }
@@ -1538,12 +1544,12 @@ Modules
 
 .flyPageFragment {
   background: #fff;
-  padding-bottom: 1px; }
+  padding-bottom: 2px; }
   .flyPageFragment .stock_title, .flyPageFragment .stock {
     color: #379774;
     font-size: 25px; }
   .flyPageFragment .fragmentTitle {
-    font-weight: bold; }
+    font-weight: 700; }
   .flyPageFragment .rrc_price {
     font-size: 22px; }
   .flyPageFragment .mop_price {
@@ -1594,24 +1600,6 @@ Modules
 /**
 Elements
 * */
-.b1 {
-  display: inline-block;
-  position: relative;
-  background-color: #FFDE25;
-  color: #fff;
-  text-transform: uppercase;
-  transition: background , .2s linear;
-  border: 2px solid #bea100;
-  line-height: 1.7;
-  border-radius: 5px; }
-  .b1:hover, .b1:focus, .b1:active {
-    background-color: #bea100;
-    border: 2px solid #bea100; }
-  .b1:focus {
-    outline: none; }
-  .b1:hover, .b1:active {
-    outline: none; }
-
 .icon__Wrapper {
   width: 2em;
   height: 2em;
@@ -1628,7 +1616,26 @@ Elements
   .icon--red {
     fill: red; }
   .icon--rocket {
-    fill: #7d2dc1; }
+    fill: #46bb90;
+    margin-bottom: 1.05px; }
+
+.b1 {
+  display: inline-block;
+  position: relative;
+  background-color: #FFDE25;
+  color: #fff;
+  text-transform: uppercase;
+  transition: background .2s linear;
+  border: 2px solid #bea100;
+  line-height: 1.7;
+  border-radius: 5px; }
+  .b1:hover, .b1:focus, .b1:active {
+    background-color: #ffed8b;
+    border: 2px solid #bea100; }
+  .b1:focus {
+    outline: none; }
+  .b1:hover, .b1:active {
+    outline: none; }
 
 .pr {
   background-color: #283E56 !important; }
@@ -2138,7 +2145,7 @@ body.debug {
   cursor: crosshair;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {

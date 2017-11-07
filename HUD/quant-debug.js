@@ -76,9 +76,9 @@ function editorsListner() {
 
 }
 
-var scssChangeCounter = -1;
-var pugChangeCounter = -1;
-var JSChangeCounter = -1;//  quant-debug script
+var scssChangeCounter = 1;
+var pugChangeCounter = 1;
+var JSChangeCounter = 1;//  quant-debug script
 var pugChanged = false;
 var scssChanged = false;
 var jsChanged = false;
@@ -218,7 +218,7 @@ function loadToQuant() {
 			})
 
 		}
-        $('.classtype__name').trigger('mousedown')
+
 	})
 
 }
@@ -236,7 +236,7 @@ document.getElementById('index').onload = function () {
 	loadProjectPath('dev/scss/MASTER_OPTIONS', '.fs__options');
 	loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/PAGES', '.fs__pages');
 	loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/LEVELS', '.fs__levels');
-    loadProjectPath('Projects/' + $("span.projectTitle").text() + '/data', '.fs__data');
+	loadProjectPath('Projects/' + $("span.projectTitle").text() + '/data', '.fs__data');
 	scssChangeCounter = 1;
 	pugChangeCounter = 1;
 	JSChangeCounter = 1;
@@ -320,12 +320,15 @@ $(document).ready(function () {
 		var searchElem = tag + '.' + classes;
 
 		var newDebug = frameEl('.debugElement').closest(frameEl(searchElem));
+		$('.debugElement').removeClass('debugElement');
+		newDebug.trigger('click');
+
 		editor.find(target);
 		editorPug.find(target);
 		editorJs.find(target);
 		console.log(newDebug)
-		$('.debugElement').removeClass('debugElement');
-		newDebug.trigger('click');
+
+
 	}
 	var mediaRules = qntGetObjects(jsonCss, 'type', 'media');
 	var curentEditable;
@@ -1829,6 +1832,9 @@ $(document).ready(function () {
 	var loadContent = function () {
 
 		$('.fs').on('mousedown', '.fs_list', function (e) {
+            scssChangeCounter = 1;
+            pugChangeCounter = 1;
+            JSChangeCounter = 1;
 
 			var path1 = $(this).data('path');
 
@@ -1867,18 +1873,18 @@ $(document).ready(function () {
 					$('#contentNavigator__name input').val(name)
 
 				}
-                else if (arr.indexOf('data') != -1) {
+				else if (arr.indexOf('data') != -1) {
 
-                    var name = arr[arr.length - 1];
-                    var stype = "";
-                    var type = 'data';
+					var name = arr[arr.length - 1];
+					var stype = "";
+					var type = 'data';
 
-                    ql(name, stype, type, 'OOOOOOO')
-                    $('#contentNavigator__type input').val(type)
-                    $('#contentNavigator__stype input').val(stype)
-                    $('#contentNavigator__name input').val(name)
+					ql(name, stype, type, 'OOOOOOO')
+					$('#contentNavigator__type input').val(type)
+					$('#contentNavigator__stype input').val(stype)
+					$('#contentNavigator__name input').val(name)
 
-                }
+				}
 				else if (arr.indexOf('PAGES') != -1) {
 
 					var name = arr[arr.length - 1];
@@ -2030,9 +2036,9 @@ $(document).ready(function () {
 
 			$('#contentNavigator__load').on('mousedown', function () {
 
-				scssChangeCounter = 1;
-				pugChangeCounter = 1;
-				JSChangeCounter = 1;
+				scssChangeCounter = 3;
+				pugChangeCounter = 3;
+				JSChangeCounter = 3;
 				ql(JSChangeCounter, 'qwweqrwqrwqr!!!');
 
 				var type = $('#contentNavigator__type input').val();
