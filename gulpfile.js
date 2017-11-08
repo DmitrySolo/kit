@@ -941,6 +941,7 @@ gulp.task('buildblueprint', function buildHTML() {
 });
 gulp.task('mergeJson', function () {
 	return gulp.src([
+		'dev/SCRIPTS/SCRIPTS/--*/*.json',
         'Projects/' + projectName +'/settings/*.json',
 		'dev/scss/MASTER_OPTIONS/*.json',
 		'Projects/' + projectName + '/data/*.json',

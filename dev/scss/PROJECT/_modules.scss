@@ -142,9 +142,9 @@
 @mixin testOfParent(){
 
   .testOfParent {
-      color: green;
+      color: #000;
       font-weight:bold;
-      font-size: 18px;
+      font-size: 19px; 
     &__content {
        // padding-top: 1px;
         color:tomato;

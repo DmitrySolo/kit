@@ -2,6 +2,7 @@
 <html lang="eng">
   <head>
     <link href="main.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="scripts/jquery.min.js"></script>
     <script src="scripts/quant-lib.js"></script>
@@ -151,6 +152,17 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
                         <svg class="icon ">
                           <use xlink:href="#svg"></use>
                         </svg>
+              </div>
+              <div class="contentNavigator debug clearfix">
+                <div class="f-left cntNav" id="contentNavigator__type">
+                  <input>
+                </div>
+                <div class="f-left cntNav" id="contentNavigator__stype">
+                  <input>
+                </div>
+                <div class="f-left cntNav" id="contentNavigator__name">
+                  <input>
+                </div>
               </div>
             </div>
           </div>
@@ -406,17 +418,6 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
             </div>
           </div>
         </section>
-        <div class="contentNavigator debug clearfix">
-          <div class="f-left cntNav" id="contentNavigator__type">
-            <input>
-          </div>
-          <div class="f-left cntNav" id="contentNavigator__stype">
-            <input>
-          </div>
-          <div class="f-left cntNav" id="contentNavigator__name">
-            <input>
-          </div>
-        </div>
         <section class="row hidden">
           <button id="saveClass">save</button>
         </section>

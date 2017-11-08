@@ -1,5 +1,3 @@
-// Element: b1 script.
-
 /**
 * MODULE: flyPageFragment script
 */
@@ -35,3 +33,5 @@ $('.toOrder.active').on('mousedown',function () {
 /**
 * MODULE: testOfParent script
 */
+
+// Element: b1 script.

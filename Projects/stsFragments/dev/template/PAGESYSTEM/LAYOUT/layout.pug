@@ -18,4 +18,15 @@ html(lang=''+head.lang)
 			<!-- SCRIPTS -->
 				<!-- split footer-scripts.html -->
 			include ../SCRIPTS-STYLES/FOOTER/_footerScripts
+			-if (OPTIONS.useSVGSprite=="true")
+				<!-- split SVG SPRITE -->
+				.hidden
+					include ../../../../dist/source/icons/SVGSpriteIcons.svg
+			-if (OPTIONS.accessibilityTesting =='true')
+				script.
+					axe.run(function (err, results) {
+					console.log(results)
+
+					});
+
 	include ../INCLUDES/_debugPannel

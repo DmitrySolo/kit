@@ -1476,11 +1476,11 @@ Layout&Pages
     color: #283E56;
     text-decoration: none; }
   .orderPage__content .order_confirmed, .orderPage__content .tri {
-    fill: #379774; }
+    fill: #2a7157; }
 
 .orderPage__title {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
@@ -1497,7 +1497,7 @@ Layout&Pages
   color: #379774; }
   @media (max-width: 599px) {
     .orderPage__mainMessage {
-      font-size: 19px; } }
+      font-size: 16px; } }
 
 .orderPage__subMess {
   color: #616161;
@@ -1585,9 +1585,9 @@ Modules
 * testOfParent styles
 */
 .testOfParent {
-  color: green;
+  color: #000;
   font-weight: bold;
-  font-size: 18px; }
+  font-size: 19px; }
   .testOfParent__content {
     color: tomato;
     text-align: center; }
@@ -1600,6 +1600,24 @@ Modules
 /**
 Elements
 * */
+.b1 {
+  display: inline-block;
+  position: relative;
+  background-color: #FFDE25;
+  color: #8b7600;
+  text-transform: uppercase;
+  transition: background .2s linear;
+  border: 2px solid #bea100;
+  line-height: 1.7;
+  border-radius: 5px; }
+  .b1:hover, .b1:focus, .b1:active {
+    background-color: #ffed8b;
+    border: 2px solid #bea100; }
+  .b1:focus {
+    outline: none; }
+  .b1:hover, .b1:active {
+    outline: none; }
+
 .icon__Wrapper {
   width: 2em;
   height: 2em;
@@ -1616,26 +1634,8 @@ Elements
   .icon--red {
     fill: red; }
   .icon--rocket {
-    fill: #46bb90;
-    margin-bottom: 1.05px; }
-
-.b1 {
-  display: inline-block;
-  position: relative;
-  background-color: #FFDE25;
-  color: #fff;
-  text-transform: uppercase;
-  transition: background .2s linear;
-  border: 2px solid #bea100;
-  line-height: 1.7;
-  border-radius: 5px; }
-  .b1:hover, .b1:focus, .b1:active {
-    background-color: #ffed8b;
-    border: 2px solid #bea100; }
-  .b1:focus {
-    outline: none; }
-  .b1:hover, .b1:active {
-    outline: none; }
+    fill: #2a7157;
+    margin-right: 1.05px; }
 
 .pr {
   background-color: #283E56 !important; }
@@ -3420,7 +3420,7 @@ body.hud {
   margin: 0 auto; }
 
 .quant.hud {
-  font-size: 24px !important;
+  font-size: 30px !important;
   padding-left: 10px;
   padding-right: 10px;
   background: #242729 !important;
@@ -3984,10 +3984,9 @@ div[class*='Panel'] {
   width: 265px;
   background-color: #35373a;
   z-index: 9999999999;
-  position: absolute;
   text-align: center;
-  left: -275px;
-  top: -54px; }
+  float: left;
+  margin-left: 4px; }
   .contentNavigator > input {
     border: solid .5px; }
   .contentNavigator button {

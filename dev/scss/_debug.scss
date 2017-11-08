@@ -1127,7 +1127,7 @@
     margin: 0 auto;
   }
   .quant.hud {
-    font-size: 24px !important;
+    font-size: 30px !important;
     padding-left: 10px;
     padding-right: 10px;
     background: #242729 !important;
@@ -1764,10 +1764,9 @@
     width:265px;
     background-color: #35373a;
     z-index: 9999999999;
-    position: absolute;
     text-align: center;
-    left: -275px;
-    top: -54px;
+    float: left;
+    margin-left:4px;
     &>input{
       border:solid .5px;
     }

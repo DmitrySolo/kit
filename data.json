@@ -1,4 +1,128 @@
 {
+	"LIBS": {
+		"quant-HUD-script": {
+			"js": {
+				"quant-HUD-script-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
+					"container": "footer/libs+"
+				},
+				"AXE": {
+					"src": "node_modules/axe-core/axe.min.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"uicss": {
+					"src": "node_modules/jquery-ui-dist/jquery-ui.min.css",
+					"container": "head/libs"
+				}
+			}
+		},
+		"JQ": {
+			"js": {
+				"jquery": {
+					"src": "node_modules/jquery/dist/jquery.min.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"xRayView": {
+			"js": {
+				"xRayView-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-lib": {
+			"js": {
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-debug-ruller": {
+			"js": {
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"flyPageFragment": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/flyPageFragment/flyPageFragment.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"testOfParent": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/testOfParent/testOfParent.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"b1": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		}
+	},
 	"color__link": "lighten(#3a155a,5%)",
 	"colors": {
 		"primary": "#283E56",
@@ -108,7 +232,8 @@
 	"type": "create",
 	"OPTIONS": {
 		"useSVGSprite": "true",
-		"DEBUG MODE": "on"
+		"DEBUG MODE": "on",
+		"accessibilityTesting": "true"
 	},
 	"head": {
 		"lang": "eng",
@@ -174,53 +299,6 @@
 			"dop_class": "",
 			"layout": "default",
 			"group": ""
-		}
-	},
-	"LIBS": {
-		"flyPageFragment": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/MODULES/flyPageFragment/flyPageFragment.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"testOfParent": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/MODULES/testOfParent/testOfParent.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"b1": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
 		}
 	}
 }

@@ -1,7 +1,7 @@
 $bkgColor__b1:cs('accent');
 $bkgColor__b1-hover:cs('accent-l2');
-$color__b1-hover:lighten(cs('accent-l2'),5%);
-$color__b1:#fff;
+$color__b1-hover:cs('accent-d');
+$color__b1:darken(cs('accent-d2'),10%);
 
 .b1 {
     display: inline-block;
