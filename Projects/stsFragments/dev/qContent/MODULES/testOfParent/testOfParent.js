@@ -1,3 +1,0 @@
-/**
-* MODULE: testOfParent script
-*/

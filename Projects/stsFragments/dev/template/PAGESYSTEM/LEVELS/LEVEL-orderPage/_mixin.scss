@@ -1,15 +1,13 @@
 /* orderPage STYLE */
 
 .orderPage__content {
-   
-
   background: cs('foreground-d'); 
   padding: 70px 30px;
   @include for-size(phone-only){ 
        padding: 30px 10px; 
   }
   a {
-    color: cs('primary');
+    color: cs('primary-d');
    text-decoration: none; 
   }
   .order_confirmed, .tri{
@@ -33,10 +31,10 @@
 
 .orderPage__mainMessage {
   font-size: 22px;  
-  text-transform: uppercase;
+  text-transform: uppercase; 
   font-weight: bold;
   text-align: center;
-  color: cs('succes-d');
+  color: cs('succes-d2');
   @include for-size(phone-only){
       font-size: 16px; 
   }

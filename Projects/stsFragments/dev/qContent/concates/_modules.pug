@@ -33,15 +33,6 @@ mixin MODULE-flyPageFragment()
 				tr
 					td.fragmentTitle Доступно:
 					td.stock 14 шт
-mixin MODULE-testOfParent()
-	<!-- split modules/testOfParent -->
-	.testOfParent__content(data-qcontent='module__testOfParent')
-		span.testOfParent Hurray!!! Levels are BACK!!!
-		span.testOfParent--clicked Its real good NewsSadw221
-mixin MODULE-testSnippetModule()
-	<!-- split modules/testSnippetModule -->
-	.testSnippetModule__content(data-qcontent='module__testSnippetModule')
-		.testSnippetModule
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = "<a href='/'>N 1231238</a>"
@@ -61,7 +52,7 @@ mixin LEVEL-orderPage(title,className)
 		.buttonWrapper
 			+B-b1('hello')
 		p.orderPage__mainMessage.text
-			| Ваша заявка! 
+			| Ваша заявка!
 			|!{link} 
 			| принята на обработку!!1e2sa eewsaaq ывsssw  
 		ul.orderPage__subMess

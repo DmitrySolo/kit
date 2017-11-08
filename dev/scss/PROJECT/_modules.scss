@@ -151,30 +151,11 @@
         text-align: center;
     }
     &--clicked{
-        color: cs('link-d');
-    }
+        color: #000;
   }
 
+}
 }
 
 
 ////////////////////////////////////////
-@include testOfParent();
-/**
-* testSnippetModule styles
-*/
-
-@mixin testSnippetModule(){
-
-  .testSnippetModule__content{
-
-  }
-  .testSnippetModule{
-
-  }
-
-}
-
-
-////////////////////////////////////////
-@include testSnippetModule();
