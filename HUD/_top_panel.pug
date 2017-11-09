@@ -53,6 +53,25 @@ script
 			+I('four-layers')
 		.hud-Button.f-left#testing
 			+I('testing')
+			.Qnt__dropMenu__TRIGGER
+			.Qnt__dropMenu.clearfix
+				.f-left(style='width:50%')
+					#violations Violations: |
+						span
+							| - 0
+					#inapplicable Inapplicable: |
+						span
+							| - 0
+					#incomplete Incomplete: |
+						span
+							| - 0
+					#passes Succes: |
+						span
+							| - 0
+				.f-left(style='width:50%')
+					.testButton#grayscale Grayscale
+					.testButton#rotate Rotate
+
 		.hud-Button.f-left#addContent
 			+I('addContent','addContent')
 		.hud-Button.f-left#resizer

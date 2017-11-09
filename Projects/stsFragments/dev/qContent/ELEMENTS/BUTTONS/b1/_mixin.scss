@@ -1,7 +1,7 @@
 $bkgColor__b1:cs('accent');
 $bkgColor__b1-hover:cs('accent-l2');
 $color__b1-hover:cs('accent-d');
-$color__b1:darken(cs('accent-d2'),50%);
+$color__b1:cs('font-l2');   
  
 .b1 {
     display: inline-block;
@@ -10,12 +10,12 @@ $color__b1:darken(cs('accent-d2'),50%);
 	color: $color__b1;
 	text-transform: uppercase;
 	transition: background .2s linear;
-	border: 2px solid cs('accent-d2');
+	border: 2px solid cs('accent-d1'); 
 	line-height: 1.7;
 	border-radius: 5px; 
 		&:hover, &:focus, &:active {      
 		background-color: $bkgColor__b1-hover;
-		border: 2px solid cs('accent-d2');
+		border: 2px solid cs('accent-d1');
 		}
 		&:focus {
 			outline: none;

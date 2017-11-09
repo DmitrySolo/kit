@@ -25,8 +25,35 @@ html(lang=''+head.lang)
 			-if (OPTIONS.accessibilityTesting =='true')
 				script.
 					axe.run(function (err, results) {
-					console.log(results)
-
+					var errAcc =false;
+					console.log(results);
+					var viol =$('#violations span',window.parent.document).text(results.violations.length)
+						if (results.violations.length == 0) viol.css('color','green')
+						else{
+							viol.css('color','red');
+							errAcc = true;
+						$(''+results.violations[0].nodes[0].target).css({
+							'outline':'1px dotted red',
+							'outline-offset':'15px'
+						});
+						console.log(results.violations[0].nodes[0].target);
+						}
+					viol =$('#inapplicable span',window.parent.document).text(results.inapplicable.length)
+					if (results.inapplicable.length == 0) viol.css('color', 'green')
+						else{
+						viol.css('color', 'red')
+						errAcc = true}
+					viol =$('#incomplete span',window.parent.document).text(results.incomplete.length)
+						if (results.incomplete.length == 0) viol.css('color', 'green')
+						else {viol.css('color', 'red')
+							errAcc = true
+						}
+					$('#passes span',window.parent.document).text(results.passes.length).css('color','green')
+						if (errAcc){
+							$('div#testing',window.parent.document).addClass('testingErr')
+						}else{
+							$('div#testing',window.parent.document).removeClass('testingErr')
+						}
 					});
 
 	include ../INCLUDES/_debugPannel

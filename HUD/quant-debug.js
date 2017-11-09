@@ -247,15 +247,10 @@ document.getElementById('index').onload = function () {
 	jsChanged = false;
 	$('#editorJs').removeClass('edited');
 	editorsListner();
-	$('.hud-Button').not('#editorSwitcher').filter($('.on')).trigger('mousedown').addClass('on');
+	$('.hud-Button,.testButton').not('#editorSwitcher').filter($('.on')).trigger('mousedown').addClass('on');
+
 };
 $(document).ready(function () {
-
-
-
-
-
-
 
 	//getViewport
 	var viewports = {
@@ -883,11 +878,16 @@ $(document).ready(function () {
 
 	})
 
-	$('div#testing').on('mousedown', function () {
+	$('div#grayscale').on('mousedown', function () {
 		frameEl('body').toggleClass('testBlackWhite');
 		$(this).toggleClass('on');
 
 	})
+    $('div#rotate').on('mousedown', function () {
+        frameEl('body').toggleClass('testRotate');
+        $(this).toggleClass('on');
+
+    })
 
 
 	$('#addRect').on('click', function () {
@@ -1111,6 +1111,13 @@ $(document).ready(function () {
 		$(this).closest('.hud-Button').toggleClass('on');
 
 	})
+
+    $('.Qnt__dropMenu__TRIGGER', "div#testing").on('mousedown', function () {
+
+        $(this).next('.Qnt__dropMenu').toggle();
+        $(this).closest('.hud-Button').toggleClass('on');
+
+    })
 
 
 	$('#startMediaTest').on('click', function () {

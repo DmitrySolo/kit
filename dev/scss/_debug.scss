@@ -1906,7 +1906,7 @@
     right: 0;
     background-color: #3d3f42;
     z-index: 100;
-    width: 300%;
+
     margin-left: -100%;
     border: solid 1px #00b3f0;
     margin-top: 4px;
@@ -1922,6 +1922,11 @@
       border-bottom:1px solid  #595757;
 
     }
+  }
+  #testing .Qnt__dropMenu {
+
+    width: 650px;
+
   }
   .Qnt__dropMenu__TRIGGER {
     position: absolute;
@@ -1985,6 +1990,36 @@
       color:#fffb00;
       background-color: lightslategrey;
       border-radius: 5px;
+    }
+  }
+  .testButton{
+    padding: 4px 4px 4px 7px;
+    background: #696b6d;
+    border: solid 1px #343639;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    &.on{
+      background: #01bfff;
+      color:#fff;
+    }
+  }
+  .testRotate{
+    transform: rotate(180deg);
+  }
+  #__bs_notify__{
+    opacity: 0;
+  }
+  .testingErr{
+    &:after{
+      background: red;
+      display: inline-block;
+      position: absolute;
+      top: 10%;
+      right: 2px;
+      content: '';
+      height: 5px;
+      width: 5px;
+      border-radius: 2px;
     }
   }
 }

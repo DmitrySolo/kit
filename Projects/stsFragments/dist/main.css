@@ -874,7 +874,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   max-width: 100%;
   padding: 0.375em;
   font-size: 11px;
-  margin-bottom: 1.07813em; }
+  margin-bottom: 1.07812em; }
   @media (min-width: 690px) {
     input[type="text"], input[type="email"], input[type="password"], textarea {
       font-size: calc(11px + (16 - 11) * ((100vw - 690px) / (1170 - 690))); } }
@@ -900,7 +900,7 @@ input[type="submit"], button {
 label {
   display: block;
   padding-bottom: 0.1875em;
-  margin-bottom: -0.14063em; }
+  margin-bottom: -0.14062em; }
 
 table {
   width: 100%;
@@ -1480,7 +1480,7 @@ Layout&Pages
 
 .orderPage__title {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
@@ -1591,15 +1591,15 @@ Elements
   display: inline-block;
   position: relative;
   background-color: #FFDE25;
-  color: black;
+  color: #7a7a7a;
   text-transform: uppercase;
   transition: background .2s linear;
-  border: 2px solid #bea100;
+  border: 2px solid;
   line-height: 1.7;
   border-radius: 5px; }
   .b1:hover, .b1:focus, .b1:active {
     background-color: #ffed8b;
-    border: 2px solid #bea100; }
+    border: 2px solid; }
   .b1:focus {
     outline: none; }
   .b1:hover, .b1:active {
@@ -2132,7 +2132,7 @@ body.debug {
   cursor: crosshair;
   background-color: #2b2b2b;
   background-image: linear-gradient(rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(60, 63, 65, 0.3) 1px, transparent 1px), linear-gradient(#4a4e4f 1px, transparent 1px), linear-gradient(90deg, #4a4e4f 1px, transparent 1px);
-  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
+  background-size: 1rem 1rem, 1rem 1rem, 5rem 5rem, 5rem 5rem;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -7px; }
 
 .canvas {
@@ -4096,7 +4096,6 @@ div[class*='Panel'] {
   right: 0;
   background-color: #3d3f42;
   z-index: 100;
-  width: 300%;
   margin-left: -100%;
   border: solid 1px #00b3f0;
   margin-top: 4px;
@@ -4108,6 +4107,9 @@ div[class*='Panel'] {
     color: #016b90; }
   .Qnt__dropMenu li {
     border-bottom: 1px solid  #595757; }
+
+#testing .Qnt__dropMenu {
+  width: 650px; }
 
 .Qnt__dropMenu__TRIGGER {
   position: absolute;
@@ -4164,5 +4166,32 @@ button.classLoading {
   color: #fffb00;
   background-color: lightslategrey;
   border-radius: 5px; }
+
+.testButton {
+  padding: 4px 4px 4px 7px;
+  background: #696b6d;
+  border: solid 1px #343639;
+  border-radius: 6px;
+  margin-bottom: 5px; }
+  .testButton.on {
+    background: #01bfff;
+    color: #fff; }
+
+.testRotate {
+  transform: rotate(180deg); }
+
+#__bs_notify__ {
+  opacity: 0; }
+
+.testingErr:after {
+  background: red;
+  display: inline-block;
+  position: absolute;
+  top: 10%;
+  right: 2px;
+  content: '';
+  height: 5px;
+  width: 5px;
+  border-radius: 2px; }
 
 /*# sourceMappingURL=maps/main.css.map */
