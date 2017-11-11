@@ -1467,7 +1467,9 @@ Layout&Pages
  **/
 /* orderPage STYLE */
 .orderPage__content {
-  background: #e6e6e6;
+  background: url(?holder.js/200x200?theme=social);
+  background-position: cover;
+  background-repeat: no-repeat;
   padding: 70px 30px; }
   @media (max-width: 599px) {
     .orderPage__content {
@@ -1513,10 +1515,14 @@ Layout&Pages
       width: 100%; } }
 
 .buttonWrapper {
-  text-align: center; }
+  text-align: center;
+  margin-top: 17px; }
 
 .orderPage__actions {
   text-align: center; }
+
+.page__loader {
+  vertical-align: top; }
 
 /* testOfSergConnectingSupport STYLE */
 /**
@@ -1591,7 +1597,7 @@ Elements
   display: inline-block;
   position: relative;
   background-color: #FFDE25;
-  color: #7a7a7a;
+  color: #141414;
   text-transform: uppercase;
   transition: background .2s linear;
   border: 2px solid;
@@ -3726,15 +3732,19 @@ div[class*='Panel'] {
   padding: 0px 5px 30px 5px; }
 
 *::-webkit-scrollbar {
-  width: .5em; }
+  width: .5em;
+  pointer-events: none;
+  display: none; }
 
 *::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  pointer-events: none; }
 
 *::-webkit-scrollbar-thumb {
   background-color: #fbfff8;
   outline: 1px solid #f3f6ff;
-  margin-left: .5em; }
+  margin-left: .5em;
+  pointer-events: none; }
 
 .combinedSelector {
   background-color: #3c3f41;
@@ -4042,7 +4052,8 @@ div[class*='Panel'] {
 
 #scallerLabel {
   font-weight: bold;
-  padding-left: 5px; }
+  padding-left: 5px;
+  font-syze: 12px; }
 
 #viewpr-content {
   border-right: solid 0.5px rgba(255, 164, 10, 0.27) !important;

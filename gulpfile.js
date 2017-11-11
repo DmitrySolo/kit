@@ -191,6 +191,7 @@ gulp.task('SERVER', [], function () {
 		server: dist,
 		reloadOnRestart: false,
 		index: "HUD.html",
+		notify: false
 	});
 
 	gulp.watch([dist + "index.html", dist + "/*.css"]).on('change',function () {

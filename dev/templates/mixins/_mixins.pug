@@ -2,4 +2,16 @@ include _navMix
 include _loops
 include module_includer
 include _noON
-
+mixin holder(className,size,themeNumum,random)
+    -var thems = ['sky', 'vine', 'lava', 'gray', 'industrial','social'];
+    -var rule = '';
+    -if(themeNumum)
+        -if(thems.indexOf(themeNumum) != -1)
+            -rule='?theme='+thems[themeNumum]
+        -else
+            -rule='?bg='+themeNumum
+    -else
+        -rule='?random=true'
+    -if(!random) random = false
+    -var theme = thems[themeNumum];
+    img(class=''+className, src="holder.js/"+size+rule)

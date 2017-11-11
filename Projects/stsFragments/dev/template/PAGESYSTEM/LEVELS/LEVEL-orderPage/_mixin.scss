@@ -1,7 +1,9 @@
 /* orderPage STYLE */
 
 .orderPage__content {
-  background: cs('foreground-d'); 
+  background: holder('200x200');
+  background-position: cover;
+  background-repeat: no-repeat;
   padding: 70px 30px;
   @include for-size(phone-only){ 
        padding: 30px 10px; 
@@ -58,8 +60,12 @@
   }
   .buttonWrapper {
       text-align: center;
+      margin-top: 17px;
   }
 
 .orderPage__actions {
   text-align: center;
+}
+.page__loader {
+    vertical-align: top;
 }
