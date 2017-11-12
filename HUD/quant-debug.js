@@ -2315,7 +2315,7 @@ $(document).ready(function () {
 		   loadFont(qntGetThisData(this,'font'));
 	   }else{
 		   $('link[href$="' + $(this).text() + ':400,700i,900"', window.frames['index'].contentDocument).remove();
-		   $(this).removeClass('on')
+		   $(this).removeClass('on');
 	   }
 
 	})
