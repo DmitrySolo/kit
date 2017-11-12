@@ -92,22 +92,23 @@
     }
     .mop_price {
         font-size: 22px;
-        color: cs('accent');
+        color: cs('erorr-d'); 
         //font-weight: bold;
     }
     .toOrder {
-        color: #fff;
+        color: #000;
         text-transform: uppercase;
         font-size: 17px;
         text-align: center;
-        background: cs('accent');
+        font-weight:bold;
+        background: #f17a00;  
         border: solid 2px cs('accent-l');
         height: 61px;
         line-height: 45px;
         width: 240px;
         border-radius: 5px;
         transition: background .2s ease;
-        text-shadow: 1px 1px 1px #000;
+        text-shadow: 0px 0px 7px #000;
         text-decoration: none;
         svg {
             margin-top: -2px;
@@ -117,11 +118,11 @@
             background: cs('succes');
             border-color: cs('succes-l');
             &:hover{
-                background: cs('succes-l');
+                background: cs('succes-d2');
             }
         }
         &:hover{
-            background: cs('accent-l');
+            background: cs('accent-d2');
         
         }
     }
@@ -135,27 +136,3 @@
 
 ////////////////////////////////////////
 @include flyPageFragment();
-/**
-* testOfParent styles
-*/
-
-@mixin testOfParent(){
-
-  .testOfParent {
-      color: #000;
-      font-weight:bold;
-      font-size: 19px; 
-    &__content {
-       // padding-top: 1px;
-        color:tomato;
-        text-align: center;
-    }
-    &--clicked{
-        color: #000;
-  }
-
-}
-}
-
-
-////////////////////////////////////////

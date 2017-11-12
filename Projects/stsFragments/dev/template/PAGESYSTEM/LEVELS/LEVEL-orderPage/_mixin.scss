@@ -6,10 +6,10 @@
   background-repeat: no-repeat;
   padding: 70px 30px;
   @include for-size(phone-only){ 
-       padding: 30px 10px; 
+       padding: 30px 15px; 
   }
-  a {
-    color: cs('primary-d');
+  a {  
+    color:#000;
    text-decoration: none; 
   }
   .order_confirmed, .tri{
@@ -20,11 +20,11 @@
  
 .orderPage__title { 
   text-align: center;         
-  margin-bottom: 20px;  
+  margin-bottom: 22px;   
   margin-left: auto; 
   margin-right: auto;
   width:50%;
-  color: cs('succes-d2'); 
+  color: cs('secondary-d'); 
   @include for-size(phone-only){
       width:90%;
   }
@@ -38,7 +38,7 @@
   text-align: center;
   color: cs('succes-d2');
   @include for-size(phone-only){
-      font-size: 16px; 
+      font-size: 18px;  
   }
 
 }

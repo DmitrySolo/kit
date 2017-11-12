@@ -102,7 +102,7 @@ var pathObj = {
 		mac: 'Open '+pathToProj.mac+'/source_fabric/SVGSpriteIcons'
 	},
 	lighthouse:{
-        win:'Explorer.exe '+pathToProj.win+'\\source_fabric\\SVGSpriteIcons',
+        win:'lighthouse http://localhost:3000/',
         mac: 'lighthouse http://localhost:3000/'
 	}
 
@@ -1545,8 +1545,11 @@ gulp.task('API-SERVER', function () {
 							case 'open':
 								if (url_parts.query.page){
                                     cmd.run(pathObj[options][sys]+url_parts.query.page+' --view')
+
+                                }else{
+                                    cmd.run(pathObj[options][sys])
 								}
-								cmd.run(pathObj[options][sys])
+
 								break;
 						}
 						break;
