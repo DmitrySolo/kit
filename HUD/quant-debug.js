@@ -717,6 +717,12 @@ $(document).ready(function () {
 			url: "http://localhost:8181?action=execute&command=open__svgs"
 		});
 	})
+	$('#lighthouse').on('mousedown', function () {
+
+		$.ajax({
+			url: "http://localhost:8181?action=execute&command=open__lighthouse&page="+$('.projectPage').text()
+		});
+	})
 
 
 	function markMedia(media) {
@@ -883,11 +889,11 @@ $(document).ready(function () {
 		$(this).toggleClass('on');
 
 	})
-    $('div#rotate').on('mousedown', function () {
-        frameEl('body').toggleClass('testRotate');
-        $(this).toggleClass('on');
+	$('div#rotate').on('mousedown', function () {
+		frameEl('body').toggleClass('testRotate');
+		$(this).toggleClass('on');
 
-    })
+	})
 
 
 	$('#addRect').on('click', function () {
@@ -1112,12 +1118,12 @@ $(document).ready(function () {
 
 	})
 
-    $('.Qnt__dropMenu__TRIGGER', "div#testing").on('mousedown', function () {
+	$('.Qnt__dropMenu__TRIGGER', "div#testing").on('mousedown', function () {
 
-        $(this).next('.Qnt__dropMenu').toggle();
-        $(this).closest('.hud-Button').toggleClass('on');
+		$(this).next('.Qnt__dropMenu').toggle();
+		$(this).closest('.hud-Button').toggleClass('on');
 
-    })
+	})
 
 
 	$('#startMediaTest').on('click', function () {
@@ -1839,9 +1845,9 @@ $(document).ready(function () {
 	var loadContent = function () {
 
 		$('.fs').on('mousedown', '.fs_list', function (e) {
-            scssChangeCounter = 1;
-            pugChangeCounter = 1;
-            JSChangeCounter = 1;
+			scssChangeCounter = 1;
+			pugChangeCounter = 1;
+			JSChangeCounter = 1;
 
 			var path1 = $(this).data('path');
 
@@ -2290,7 +2296,9 @@ $(document).ready(function () {
 					}
 
 				}if(searchable){
-					$('.fontList ul').append('<li>'+data.items[i].family+'</li>');
+					var variantList= data.items[i].variants.join(' ');
+					variantList =" <span>"+variantList+"</span>";
+					$('.fontList ul').append('<li style="border:solid 1px #fa9429;padding:0 5px" data-font="'+data.items[i].family+'">'+data.items[i].family+'<br>'+variantList+'</li>');
 					console.log(data.items[i])
 				}
 			}
@@ -2303,7 +2311,8 @@ $(document).ready(function () {
 
 	   if(!$(this).hasClass('on')){
 		   $(this).addClass('on')
-		   loadFont($(this).text())
+
+		   loadFont(qntGetThisData(this,'font'));
 	   }else{
 		   $('link[href$="' + $(this).text() + ':400,700i,900"', window.frames['index'].contentDocument).remove();
 		   $(this).removeClass('on')
@@ -2375,6 +2384,15 @@ $(document).ready(function () {
 	  })
 
   };setFontsFilter()
+
+
+
+
+
+
+
+
+
 
 //////////////////////////////
 })

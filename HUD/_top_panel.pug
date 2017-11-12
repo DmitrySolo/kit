@@ -56,21 +56,24 @@ script
 			.Qnt__dropMenu__TRIGGER
 			.Qnt__dropMenu.clearfix
 				.f-left(style='width:50%')
-					#violations Violations: |
+					.testLabel#violations Violations: |
 						span
 							| - 0
-					#inapplicable Inapplicable: |
+					.testLabel#inapplicable Inapplicable: |
 						span
 							| - 0
-					#incomplete Incomplete: |
+					.testLabel#incomplete Incomplete: |
 						span
 							| - 0
-					#passes Succes: |
+					.testLabel#passes Succes: |
 						span
 							| - 0
 				.f-left(style='width:50%')
 					.testButton#grayscale Grayscale
 					.testButton#rotate Rotate
+					.testButton#lighthouse LIGHTHOUSE CHECKING
+				.testDesc(style='clear:both')
+					ul
 
 		.hud-Button.f-left#addContent
 			+I('addContent','addContent')

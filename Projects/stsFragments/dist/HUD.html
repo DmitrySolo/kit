@@ -27,9 +27,9 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </script>
         <div class="top-panel-content clearfix">
           <div class="quant hud">Q</div>
-          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">oc.html</span>
+          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">index.html</span>
           </div>
-          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/oc.html" target="_blank" id="playhref">
+          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/index.html" target="_blank" id="playhref">
               <div class="hud-Button f-left">
                         <svg class="icon playButston">
                           <use xlink:href="#play"></use>
@@ -123,14 +123,18 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
               <div class="Qnt__dropMenu__TRIGGER"></div>
               <div class="Qnt__dropMenu clearfix">
                 <div class="f-left" style="width:50%;">
-                  <div id="violations">Violations: |<span>- 0</span></div>
-                  <div id="inapplicable">Inapplicable: |<span>- 0</span></div>
-                  <div id="incomplete">Incomplete: |<span>- 0</span></div>
-                  <div id="passes">Succes: |<span>- 0</span></div>
+                  <div class="testLabel" id="violations">Violations: |<span>- 0</span></div>
+                  <div class="testLabel" id="inapplicable">Inapplicable: |<span>- 0</span></div>
+                  <div class="testLabel" id="incomplete">Incomplete: |<span>- 0</span></div>
+                  <div class="testLabel" id="passes">Succes: |<span>- 0</span></div>
                 </div>
                 <div class="f-left" style="width:50%;">
                   <div class="testButton" id="grayscale">Grayscale</div>
                   <div class="testButton" id="rotate">Rotate</div>
+                  <div class="testButton" id="lighthouse">LIGHTHOUSE CHECKING</div>
+                </div>
+                <div class="testDesc" style="clear:both;">
+                  <ul></ul>
                 </div>
               </div>
             </div>
@@ -261,7 +265,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </div>
         <div class="window" window="Viewport" style="z-index:5;">
           <div class="wrapperid" id="viewpr-content">
-            <iframe class="default-skin" id="index" src="oc.html" width="100%" height="1200px" align="center" name="viewport"></iframe>
+            <iframe class="default-skin" id="index" src="index.html" width="100%" height="1200px" align="center" name="viewport"></iframe>
             <section class="pb-section clearfix hidden" id="ball"><span class="lh">Line height</span>
               <div class="spacer element-i"><span>Element i</span></div>
               <div class="spacer element-o"><span>Element o</span></div>
@@ -25606,6 +25610,12 @@ $(document).ready(function () {
 			url: "http://localhost:8181?action=execute&command=open__svgs"
 		});
 	})
+	$('#lighthouse').on('mousedown', function () {
+
+		$.ajax({
+			url: "http://localhost:8181?action=execute&command=open__lighthouse&page="+$('.projectPage').text()
+		});
+	})
 
 
 	function markMedia(media) {
@@ -25772,11 +25782,11 @@ $(document).ready(function () {
 		$(this).toggleClass('on');
 
 	})
-    $('div#rotate').on('mousedown', function () {
-        frameEl('body').toggleClass('testRotate');
-        $(this).toggleClass('on');
+	$('div#rotate').on('mousedown', function () {
+		frameEl('body').toggleClass('testRotate');
+		$(this).toggleClass('on');
 
-    })
+	})
 
 
 	$('#addRect').on('click', function () {
@@ -26001,12 +26011,12 @@ $(document).ready(function () {
 
 	})
 
-    $('.Qnt__dropMenu__TRIGGER', "div#testing").on('mousedown', function () {
+	$('.Qnt__dropMenu__TRIGGER', "div#testing").on('mousedown', function () {
 
-        $(this).next('.Qnt__dropMenu').toggle();
-        $(this).closest('.hud-Button').toggleClass('on');
+		$(this).next('.Qnt__dropMenu').toggle();
+		$(this).closest('.hud-Button').toggleClass('on');
 
-    })
+	})
 
 
 	$('#startMediaTest').on('click', function () {
@@ -26728,9 +26738,9 @@ $(document).ready(function () {
 	var loadContent = function () {
 
 		$('.fs').on('mousedown', '.fs_list', function (e) {
-            scssChangeCounter = 1;
-            pugChangeCounter = 1;
-            JSChangeCounter = 1;
+			scssChangeCounter = 1;
+			pugChangeCounter = 1;
+			JSChangeCounter = 1;
 
 			var path1 = $(this).data('path');
 
@@ -27179,7 +27189,9 @@ $(document).ready(function () {
 					}
 
 				}if(searchable){
-					$('.fontList ul').append('<li>'+data.items[i].family+'</li>');
+					var variantList= data.items[i].variants.join(' ');
+					variantList =" <span>"+variantList+"</span>";
+					$('.fontList ul').append('<li style="border:solid 1px #fa9429;padding:0 5px" data-font="'+data.items[i].family+'">'+data.items[i].family+'<br>'+variantList+'</li>');
 					console.log(data.items[i])
 				}
 			}
@@ -27192,7 +27204,8 @@ $(document).ready(function () {
 
 	   if(!$(this).hasClass('on')){
 		   $(this).addClass('on')
-		   loadFont($(this).text())
+
+		   loadFont(qntGetThisData(this,'font'));
 	   }else{
 		   $('link[href$="' + $(this).text() + ':400,700i,900"', window.frames['index'].contentDocument).remove();
 		   $(this).removeClass('on')
@@ -27264,6 +27277,15 @@ $(document).ready(function () {
 	  })
 
   };setFontsFilter()
+
+
+
+
+
+
+
+
+
 
 //////////////////////////////
 })

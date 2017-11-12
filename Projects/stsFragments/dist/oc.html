@@ -17,7 +17,8 @@
       <header data-qcontent="layout__header">HEADER.!q a8923qqqsa!!!<!-- split oc.html --></header><!-- MAIN -->
       <div class="container">
         <section class="orderPage__content holderjs orderPage__content" data-qcontent="level__orderPage">
-          <h1 class="orderPage__title">Заявка оформлена!</h1><span class="icon__Wrapper" data-qcontent="element__ICONS__MAIN-SVG-use">
+          <h1 class="orderPage__title">Заявка оформлена!</h1>
+          <div class="newClass">Hello  </div><span class="icon__Wrapper" data-qcontent="element__ICONS__MAIN-SVG-use">
             <svg class="icon icon--red">
               <use xlink:href="#svg"></use>
             </svg></span><span class="icon__Wrapper" data-qcontent="element__ICONS__MAIN-SVG-use">
@@ -44,7 +45,7 @@
             </svg></span><span class="icon__Wrapper" data-qcontent="element__ICONS__MAIN-SVG-use">
             <svg class="icon icon--tri">
               <use xlink:href="#search"></use>
-            </svg></span><img class="page__loader" src="holder.js/100px100?bg=#283E56"/><img class="page__loader" src="holder.js/100px100?random=true"/><img class="page__loader" src="holder.js/100px100?random=true"/><img class="page__loader" src="holder.js/100px100?random=true"/><img class="page__loader" src="holder.js/100px100?random=true"/><img class="page__loader" src="holder.js/100px100?random=true"/><img class="page__loader" src="holder.js/100px100?random=true"/><img class="page__loader" src="holder.js/100px100?random=true"/><img class="page__loader" src="holder.js/100px100?random=true"/><img class="page__loader" src="holder.js/100px100?random=true"/><img class="page__loader" src="holder.js/100px100?random=true"/>
+            </svg></span><img class="page__loader" src="holder.js/100px100?bg=#283E56" role="" alt="alt"/><img class="page__loader" src="holder.js/100px100?random=true" role="" alt="alt"/><img class="page__loader" src="holder.js/100px100?random=true" role="" alt="alt"/><img class="page__loader" src="holder.js/100px100?random=true" role="" alt="alt"/><img class="page__loader" src="holder.js/100px100?random=true" role="" alt="alt"/><img class="page__loader" src="holder.js/100px100?random=true" role="" alt="alt"/>
           <div class="buttonWrapper">
             <button class="b1" data-qcontent="element__buttons__b1">hello</button>
           </div>
@@ -106,7 +107,32 @@
         	}else{
         		$('div#testing',window.parent.document).removeClass('testingErr')
         	}
+        $('.testLabel',window.parent.document).on('mousedown',function () {
+        
+        	var testtype = $(this).attr('id');
+        	$('.testLabel',window.parent.document).css('border','none');
+        	$(this).css('border','solid 1px ');
+        	$('.testDesc ul',window.parent.document).html('');
+        	console.log(testtype);
+        	var testInfoArr = results[testtype.toLowerCase()];
+        	for (var i in testInfoArr){
+        		var t_id = testInfoArr[i].id;
+        		var t_impact = '<span style="color:red">'+testInfoArr[i].impact.toUpperCase()+' > '+t_id+'</span>';
+        		var t_desc ='<p>'+testInfoArr[i].description.replace('<','')+'</p>'
+        		var t_help ="<p>"+testInfoArr[i].help+" <a href='"+testInfoArr[i].helpUrl+"' target='_blank'>Help Link</a></p>"
+        		var t_nodes = '<ul>';
+        		for(var i1 in testInfoArr[i].nodes){
+        			t_nodes+='<li>'+testInfoArr[i].nodes[i1].html+'</li>'
+        		}
+        		t_nodes+='</ul>';
+        
+        		$('.testDesc ul',window.parent.document).append("<li style='background:#2b2b2b;padding:20px;border-bottom:solid 3px #fff'>"+t_impact+t_desc+t_help+t_nodes+"</li>");
+        	}
+        
+        })
+        
         });
+        
         
       </script>
     </div>

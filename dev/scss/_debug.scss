@@ -1304,13 +1304,13 @@
   .rightPlTab {
     padding: 7px;
     background-color: #2b2b2b;
-    max-height: 40vh;
+    max-height: 90vh;
     overflow: auto;
 
   }
 
   .combinedSelector {
-    height: 40vh;
+    height: 90vh;
     overflow-y: auto;
   }
   .qcnt {
@@ -1903,7 +1903,10 @@
   }
 
   .Qnt__dropMenu {
-
+    &::-webkit-scrollbar{
+      display: block;
+    }
+    overflow: auto;
     display: none;
     position: absolute;
     top:100%;
@@ -1911,6 +1914,7 @@
     right: 0;
     background-color: #3d3f42;
     z-index: 100;
+    max-height: 80vh;
 
     margin-left: -100%;
     border: solid 1px #00b3f0;
@@ -2026,6 +2030,10 @@
       width: 5px;
       border-radius: 2px;
     }
+  }
+  .testLabel{
+    width: 60%;
+    padding-left: 10px;
   }
 }
 

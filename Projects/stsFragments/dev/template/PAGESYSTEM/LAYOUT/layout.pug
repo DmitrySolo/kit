@@ -54,6 +54,31 @@ html(lang=''+head.lang)
 						}else{
 							$('div#testing',window.parent.document).removeClass('testingErr')
 						}
+					$('.testLabel',window.parent.document).on('mousedown',function () {
+
+						var testtype = $(this).attr('id');
+						$('.testLabel',window.parent.document).css('border','none');
+						$(this).css('border','solid 1px ');
+						$('.testDesc ul',window.parent.document).html('');
+						console.log(testtype);
+						var testInfoArr = results[testtype.toLowerCase()];
+						for (var i in testInfoArr){
+							var t_id = testInfoArr[i].id;
+							var t_impact = '<span style="color:red">'+testInfoArr[i].impact.toUpperCase()+' > '+t_id+'</span>';
+							var t_desc ='<p>'+testInfoArr[i].description.replace('<','')+'</p>'
+							var t_help ="<p>"+testInfoArr[i].help+" <a href='"+testInfoArr[i].helpUrl+"' target='_blank'>Help Link</a></p>"
+							var t_nodes = '<ul>';
+							for(var i1 in testInfoArr[i].nodes){
+								t_nodes+='<li>'+testInfoArr[i].nodes[i1].html+'</li>'
+							}
+							t_nodes+='</ul>';
+
+							$('.testDesc ul',window.parent.document).append("<li style='background:#2b2b2b;padding:20px;border-bottom:solid 3px #fff'>"+t_impact+t_desc+t_help+t_nodes+"</li>");
+						}
+
+					})
+
 					});
+
 
 	include ../INCLUDES/_debugPannel

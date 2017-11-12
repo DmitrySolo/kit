@@ -1467,8 +1467,7 @@ Layout&Pages
  **/
 /* orderPage STYLE */
 .orderPage__content {
-  background: url(?holder.js/200x200?theme=social);
-  background-position: cover;
+  background-color: #fff;
   background-repeat: no-repeat;
   padding: 70px 30px; }
   @media (max-width: 599px) {
@@ -3571,11 +3570,11 @@ div[class*='Panel'] {
 .rightPlTab {
   padding: 7px;
   background-color: #2b2b2b;
-  max-height: 40vh;
+  max-height: 90vh;
   overflow: auto; }
 
 .combinedSelector {
-  height: 40vh;
+  height: 90vh;
   overflow-y: auto; }
 
 .qcnt {
@@ -4100,6 +4099,7 @@ div[class*='Panel'] {
   position: relative; }
 
 .Qnt__dropMenu {
+  overflow: auto;
   display: none;
   position: absolute;
   top: 100%;
@@ -4107,6 +4107,7 @@ div[class*='Panel'] {
   right: 0;
   background-color: #3d3f42;
   z-index: 100;
+  max-height: 80vh;
   margin-left: -100%;
   border: solid 1px #00b3f0;
   margin-top: 4px;
@@ -4114,6 +4115,8 @@ div[class*='Panel'] {
   padding: 9px;
   color: #01bfff;
   box-shadow: 0px 0px 2px 2px #2b2b2b; }
+  .Qnt__dropMenu::-webkit-scrollbar {
+    display: block; }
   .Qnt__dropMenu--off {
     color: #016b90; }
   .Qnt__dropMenu li {
@@ -4204,5 +4207,9 @@ button.classLoading {
   height: 5px;
   width: 5px;
   border-radius: 2px; }
+
+.testLabel {
+  width: 60%;
+  padding-left: 10px; }
 
 /*# sourceMappingURL=maps/main.css.map */

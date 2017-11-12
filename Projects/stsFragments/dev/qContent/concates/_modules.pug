@@ -40,6 +40,7 @@ mixin LEVEL-orderPage(title,className)
 	-var link2 = "<a href='/'>Иванов Иван.</a>"
 	section.orderPage__content.holderjs(class = 'orderPage__content'+ className data-qcontent="level__orderPage")
 		h1.orderPage__title=title
+		.newClass Hello  
 		+I('svg','red')
 		+I('plus-button')  
 		+I('button','tri') 
@@ -50,7 +51,7 @@ mixin LEVEL-orderPage(title,className)
 		+I('drop','tri')
 		+I('search','tri')
 		+holder('page__loader','100px100',colors.primary)
-		+loop(10)
+		+loop(5)
 			+holder('page__loader','100px100')  
 		.buttonWrapper
 			+B-b1('hello')

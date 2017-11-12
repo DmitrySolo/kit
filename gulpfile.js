@@ -16,7 +16,7 @@ var css = require('css');
 const cssScss = require('gulp-css-scss');
 var merge = require('gulp-merge-json');
 var data = require('./data.json');
-htmlv = require('gulp-html-validator');
+
 var Vinyl = require('vinyl');
 var shell = require('gulp-shell');
 var sassJson = require('gulp-sass-json');
@@ -60,6 +60,8 @@ var css = require('css');
 var copydir = require('copy-dir');
 var cmd = require('node-cmd');
 const dirTree = require('directory-tree');
+var htmllint = require('gulp-htmllint')
+var gutil = require('gulp-util');
 // QUANT PLUGINS&FUNCTIONS
 var Qupdate = false;
 
@@ -98,6 +100,10 @@ var pathObj = {
 	svgs:{
 		win:'Explorer.exe '+pathToProj.win+'\\source_fabric\\SVGSpriteIcons',
 		mac: 'Open '+pathToProj.mac+'/source_fabric/SVGSpriteIcons'
+	},
+	lighthouse:{
+        win:'Explorer.exe '+pathToProj.win+'\\source_fabric\\SVGSpriteIcons',
+        mac: 'lighthouse http://localhost:3000/'
 	}
 
 }
@@ -110,6 +116,55 @@ var qM = require(qp_path + 'q_functions');
 
 
 //**********************************************************************************************************************
+
+// PROJECT TESTING
+
+gulp.task('TESTHTML', function() {
+
+    const validator = require('html-validator')
+    const options1 = {
+
+        format: 'html',
+    }
+    fs.readFile( dist+'/oc.html', 'utf8', (err, html) => {
+
+        if (err) {
+            throw err;
+        }
+
+        options1.data = html
+
+        validator(options1, (error, data) => {
+            if (error) {
+                console.error(error)
+            }
+
+            console.log(data)
+        })
+
+    })
+
+
+
+
+});
+
+function htmllintReporter(filepath, issues) {
+	if (issues.length > 0) {
+		issues.forEach(function (issue) {
+			gutil.log(gutil.colors.cyan('[gulp-htmllint] ') + gutil.colors.white(filepath + ' [' + issue.line + ',' + issue.column + ']: ') + gutil.colors.red('(' + issue.code + ') ' + issue.msg));
+		});
+
+		process.exitCode = 1;
+	}
+}
+
+
+
+
+
+
+
 
 //// Load Project
 
@@ -212,7 +267,7 @@ gulp.task('VIEW-FINAL', function () {
 		'!HUD/_currentPage.pug',
 		'dev/MIXES/_mixes.pug',
 		projectDevDir + 'qContent/concates/_modules.pug',
-        projectDevDir + 'qContent/concates/_elements.pug',
+		projectDevDir + 'qContent/concates/_elements.pug',
 		projectDevDir + 'template/PAGESYSTEM/{INCLUDES,LAYOUT,PAGES}/**/*.pug',
 		'data.json',
 		'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
@@ -393,13 +448,13 @@ gulp.task('STYLES-1-MODULES', function () {
 		});
 });
 gulp.task('STYLES-1-LEVELS', function () {
-    // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-    return watch([
-            projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.scss'
-        ]
-        , function () {
-            gulp.start('concat-levels-scss');
-        });
+	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
+	return watch([
+			projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.scss'
+		]
+		, function () {
+			gulp.start('concat-levels-scss');
+		});
 });
 //SCRIPTS
 gulp.task('SCRIPTS-FINAL', function () {
@@ -414,7 +469,7 @@ gulp.task('WATCHER:NEW', function () {
 
 		'VIEW-FINAL', 'VIEW-1-MIXES', 'VIEW-1-MODULES', 'VIEW-1-ELEMENTS', 'VIEW-1-DATA',
 		'STYLES-FINAL', 'STYLES-1-MIXES', 'STYLES-1-ELEMENTS', 'STYLES-1-MODULES', 'STYLES-1-PAGES',
-        'STYLES-1-LEVELS',
+		'STYLES-1-LEVELS',
 		'VIEW-SOURCE',
 		'VIEW-DOCK',
 		'SCRIPTS-FINAL',
@@ -805,7 +860,7 @@ gulp.task('browser-reload', function () {
 });
 var htmlhint = require("gulp-htmlhint");
 gulp.task('validw3c', function () {
-	gulp.src(dist + '/index.php.html')
+	gulp.src(dist + '/oc.html')
 		.pipe(htmlv({format: 'html'}))
 		.pipe(gulp.dest(dist + '/1/'));
 });
@@ -943,7 +998,7 @@ gulp.task('buildblueprint', function buildHTML() {
 gulp.task('mergeJson', function () {
 	return gulp.src([
 		'dev/SCRIPTS/SCRIPTS/--*/*.json',
-        'Projects/' + projectName +'/settings/*.json',
+		'Projects/' + projectName +'/settings/*.json',
 		'dev/scss/MASTER_OPTIONS/*.json',
 		'Projects/' + projectName + '/data/*.json',
 		'Projects/' + projectName + '/dev/qContent/**/libs.json',
@@ -1488,6 +1543,9 @@ gulp.task('API-SERVER', function () {
 						console.log(pathObj[options][sys])
 						switch(command){
 							case 'open':
+								if (url_parts.query.page){
+                                    cmd.run(pathObj[options][sys]+url_parts.query.page+' --view')
+								}
 								cmd.run(pathObj[options][sys])
 								break;
 						}
@@ -1535,19 +1593,19 @@ gulp.task('API-SERVER', function () {
 
 
 
-                                var scss = fs.readFileSync(path1, 'utf8');
+								var scss = fs.readFileSync(path1, 'utf8');
 
 
-                            }else if (path1.indexOf('data') > -1){
+							}else if (path1.indexOf('data') > -1){
 
 
 
 
-                                var js = fs.readFileSync(path1, 'utf8');
+								var js = fs.readFileSync(path1, 'utf8');
 
 
-                            }
-                            else if (path1.indexOf('PAGESYSTEM')> -1 && path1.indexOf('LAYOUT') == -1 ){
+							}
+							else if (path1.indexOf('PAGESYSTEM')> -1 && path1.indexOf('LAYOUT') == -1 ){
 								 var pageNameArr = path1.split(delimetr);
 
 								var pageName = pageNameArr[pageNameArr.length -1].slice(0,-3)+'html'
@@ -1565,7 +1623,7 @@ gulp.task('API-SERVER', function () {
 								var pug = fs.readFileSync(path1, 'utf8');
 
 
-                            }
+							}
 
 							var codeRes = {
 
@@ -2132,12 +2190,12 @@ gulp.task('API-SERVER', function () {
 							fs.writeFileSync( 'dev/scss/MASTER_OPTIONS/' + elemPath['name'], scssToSave);
 
 					}
-                    if (elemPath['type'] == 'data') {
+					if (elemPath['type'] == 'data') {
 
-                        if (jsToSave != 'notChanged')
-                            fs.writeFileSync('Projects/'+projectName+'/data/'+elemPath['name'], jsToSave);
+						if (jsToSave != 'notChanged')
+							fs.writeFileSync('Projects/'+projectName+'/data/'+elemPath['name'], jsToSave);
 
-                    }
+					}
 					if (elemPath['type'] == 'page') {
 						console.log(pugToSave)
 						if (pugToSave != 'notChanged' )
@@ -2147,7 +2205,7 @@ gulp.task('API-SERVER', function () {
 					if (elemPath['type'] == 'layout') {
 						if (pugToSave != 'notChanged' ){
 
-                            fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/LAYOUT/'+elemPath['name'], pugToSave);
+							fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/LAYOUT/'+elemPath['name'], pugToSave);
 						}
 
 

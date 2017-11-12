@@ -1,8 +1,8 @@
 /* orderPage STYLE */
 
 .orderPage__content {
-  background: holder('200x200');
-  background-position: cover;
+ // background-image: holder('200x200');
+  background-color: cs('foreground');
   background-repeat: no-repeat;
   padding: 70px 30px;
   @include for-size(phone-only){ 
