@@ -1472,20 +1472,20 @@ Layout&Pages
   padding: 70px 30px; }
   @media (max-width: 599px) {
     .orderPage__content {
-      padding: 30px 10px; } }
+      padding: 30px 15px; } }
   .orderPage__content a {
-    color: #182533;
+    color: #000;
     text-decoration: none; }
   .orderPage__content .order_confirmed, .orderPage__content .tri {
     fill: #2a7157; }
 
 .orderPage__title {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  color: #2a7157; }
+  color: #13667f; }
   @media (max-width: 599px) {
     .orderPage__title {
       width: 90%; } }
@@ -1498,7 +1498,7 @@ Layout&Pages
   color: #2a7157; }
   @media (max-width: 599px) {
     .orderPage__mainMessage {
-      font-size: 16px; } }
+      font-size: 18px; } }
 
 .orderPage__subMess {
   color: #616161;
@@ -1522,6 +1522,22 @@ Layout&Pages
 
 .page__loader {
   vertical-align: top; }
+
+/* showcase STYLE */
+.showcase__content {
+  background-color: #fff;
+  padding: 40px 22px; }
+
+.showcase__title {
+  color: #283E56;
+  text-align: center;
+  line-height: 2.25;
+  width: 60%;
+  margin: 0 auto 35px;
+  border-bottom: solid 1px #e6e6e6; }
+
+.showcase__subtytle {
+  color: #2e2e2e; }
 
 /* testOfSergConnectingSupport STYLE */
 /**
@@ -1566,14 +1582,13 @@ Modules
     font-size: 17px;
     text-align: center;
     font-weight: bold;
-    background: #f17a00;
+    background: #f1cd00;
     border: solid 2px #ffe658;
     height: 61px;
     line-height: 45px;
     width: 240px;
     border-radius: 5px;
     transition: background .2s ease;
-    text-shadow: 0px 0px 7px #000;
     text-decoration: none; }
     .flyPageFragment .toOrder svg {
       margin-top: -2px; }
@@ -1583,7 +1598,7 @@ Modules
       .flyPageFragment .toOrder.succes:hover {
         background: #2a7157; }
     .flyPageFragment .toOrder:hover {
-      background: #bea100; }
+      background: #ffe658; }
   .flyPageFragment .table_row {
     color: green; }
 

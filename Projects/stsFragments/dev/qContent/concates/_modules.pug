@@ -75,6 +75,15 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
+mixin LEVEL-showcase(title,className)
+	-if (!className) className =''
+	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
+		h1.showcase__title=title
+		.container
+			p.showcase__subtytle.text Hello its Showcase Content
+			+holder('page__loader','100px300',colors.primary)
+			if block
+				block
 mixin LEVEL-testOfSergConnectingSupport(title,className)
 	-if (!className) className =''
 	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")

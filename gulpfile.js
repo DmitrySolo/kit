@@ -1874,7 +1874,7 @@ gulp.task('API-SERVER', function () {
 								qM.ok('Module added!');
 								break;
 							case 'level':
-								if (!fs.existsSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + options.name + '.pug')) {
+								if (!fs.existsSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + name_cr + '.pug')) {
 
 
 									var levelName = name_cr,

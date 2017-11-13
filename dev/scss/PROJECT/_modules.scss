@@ -15,38 +15,6 @@
 
 ////////////////////////////////////////
 @include atest();
-@mixin breadcrumbs(){
-	.breadCrumb {
-      @include space('component','tb','');
-      @include space('block','lr','');
-      background-color: cs('fground');
-      text-transform: uppercase;
-      font-size: .9em;
-      a:link,a:visited {
-        color: cs('font-l');
-        text-decoration: none;
-      }
-      a:hover{
-        color: cs('font-d');
-      }
-    }
-  .breadcrumb__section {
-    display: inline-block;
-    @include space('element','','tbrl');
-    &:before {
-      content: '/rsssdssesss[[sshuray it workss';
-      margin-right: 20px;
-    }
-  }
-  .breadCrumb__section--home {
-    font-weight: 600;
-    &:before{
-      content: '';
-      margin-right:0;
-
-    }
-  }
-}
 /**
 * confirmedOrderPage styles
 */
@@ -101,14 +69,13 @@
         font-size: 17px;
         text-align: center;
         font-weight:bold;
-        background: #f17a00;  
+        background: cs('accent-d');   
         border: solid 2px cs('accent-l');
         height: 61px;
         line-height: 45px;
         width: 240px;
         border-radius: 5px;
         transition: background .2s ease;
-        text-shadow: 0px 0px 7px #000;
         text-decoration: none;
         svg {
             margin-top: -2px;
@@ -122,7 +89,7 @@
             }
         }
         &:hover{
-            background: cs('accent-d2');
+            background: cs('accent-l');
         
         }
     }
@@ -136,3 +103,35 @@
 
 ////////////////////////////////////////
 @include flyPageFragment();
+@mixin breadcrumbs(){
+	.breadCrumb {
+      @include space('component','tb','');
+      @include space('block','lr','');
+      background-color: cs('fground');
+      text-transform: uppercase;
+      font-size: .9em;
+      a:link,a:visited {
+        color: cs('font-l');
+        text-decoration: none;
+      }
+      a:hover{
+        color: cs('font-d');
+      }
+    }
+  .breadcrumb__section {
+    display: inline-block;
+    @include space('element','','tbrl');
+    &:before {
+      content: '/rsssdssesss[[sshuray it workss';
+      margin-right: 20px;
+    }
+  }
+  .breadCrumb__section--home {
+    font-weight: 600;
+    &:before{
+      content: '';
+      margin-right:0;
+
+    }
+  }
+}
