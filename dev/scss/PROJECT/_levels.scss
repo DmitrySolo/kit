@@ -69,23 +69,22 @@
 .page__loader {
     vertical-align: top;
 }
-/* showcase STYLE */
+/* showCasePage STYLE */
 
-.showcase {
+.showCasePage {
     &__content {
-    background-color: cs('foreground');
-    padding: 40px 22px;
+        background-color: cs('foreground');
+        padding: 30px 15px;
     }
     &__title {
-        color: cs('primary');
-        text-align: center;
-        line-height: $line-height-ratio*1.5;
-        width:60%;
-        margin: 0 auto 35px;
-        border-bottom: solid 1px cs('foreground-d');
+        margin-bottom: 20px;
     }
-    &__subtytle{
-        color: cs('font-d');
+    &__subtitle{
+        color: cs('succes-d');
+        border-bottom: 2px solid;
+        &--red{
+            color:red;
+        }
     }
 }
 /* testOfSergConnectingSupport STYLE */

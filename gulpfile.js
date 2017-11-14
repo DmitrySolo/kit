@@ -43,6 +43,7 @@ var rename = require("gulp-rename");
 var unquote = require('unquote');
 const del = require('del');
 var Sync = require('sync');
+cheerio = require('gulp-cheerio');
 var gulpsync = require('gulp-sync')(gulp);
 var svgstore = require('gulp-svgstore');
 var svgmin = require('gulp-svgmin');
@@ -1343,6 +1344,12 @@ gulp.task('bsold', [], function () {
 gulp.task('svgstore', function () {
 	return gulp
 		.src('Projects/'+projectName+'/source_fabric/SVGSpriteIcons/*.svg')
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+            },
+            parserOptions: { xmlMode: true }
+        }))
 		.pipe(svgmin(function (file) {
 			var prefix = path.basename(file.relative, path.extname(file.relative));
 			return {

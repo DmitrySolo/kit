@@ -1,0 +1,18 @@
+/* showCasePage STYLE */
+
+.showCasePage {
+    &__content {
+        background-color: cs('foreground');
+        padding: 30px 15px;
+    }
+    &__title {
+        margin-bottom: 20px;
+    }
+    &__subtitle{
+        color: cs('succes-d');
+        border-bottom: 2px solid;
+        &--red{
+            color:red;
+        }
+    }
+}

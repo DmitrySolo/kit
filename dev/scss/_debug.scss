@@ -595,7 +595,7 @@
 
     color: #000000 !important;
     .pb-colorBox {
-      margin-top: .45em;
+      margin-top: .15em;
     }
   }
   .htmlToPug {
@@ -1489,8 +1489,7 @@
   }
   *::-webkit-scrollbar {
     width: .5em;
-    pointer-events: none;
-    display: none;
+    //display: none;
   }
 
   *::-webkit-scrollbar-track {
@@ -1904,7 +1903,7 @@
 
   .Qnt__dropMenu {
     &::-webkit-scrollbar{
-      display: block;
+
     }
     overflow: auto;
     display: none;
@@ -2031,6 +2030,9 @@
   .testLabel{
     width: 60%;
     padding-left: 10px;
+  }
+  .activePage {
+    background: orange;
   }
 }
 

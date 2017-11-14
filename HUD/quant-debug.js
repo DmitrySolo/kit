@@ -13,7 +13,11 @@ var loadProjectPath = function (path, placeTo) {
 
 			//ql(pthJson.children[i].name);s
 			//if(pthJson.children[i].type == 'directory' || pthJson.children[i].name != '_templates' )
-			$(placeTo + ' ul').append('<li class="fs_list" data-path="' + pthJson.children[i].path + '">' + pthJson.children[i].name + '</li>')
+			console.log($("span.projectTitle").text().replace('html',''))
+
+			if ( pthJson.children[i].path.indexOf($("span.projectPage").text().replace('html','')) !=-1) {var activePage ='activePage';}
+			else {var activePage =''}
+			$(placeTo + ' ul').append('<li class="fs_list ' +activePage+'" data-path="' + pthJson.children[i].path + '">' + pthJson.children[i].name + '</li>')
 
 			if (path == 'dev/ELEMENTS' || path == 'Projects/' + $("span.projectTitle").text() + '/dev/qContent/ELEMENTS') {
 
@@ -24,13 +28,14 @@ var loadProjectPath = function (path, placeTo) {
 					var parent = pthJson.children[i];
 
 					for (var elem in parent.children) {
+
 						$(placeTo + ' ul').append('<li class="fs_list fs_list--child" data-path="' + parent.children[elem].path + '">' + parent.children[elem].name + '</li>')
 					}
 				}
 			}
 		}
 		$('.fs').accordion({
-			active: 1,
+			active: 2,
 			header: "h3",
 			collapsible: false
 		});
@@ -195,12 +200,20 @@ function loadToQuant() {
 					else editor.insert('');
 					//$(".hud-bottom").css('display', 'block')
 					ql($(_this).attr('class'), 'ee');
-					if (_this.tagName != "svg") {
+
 						var target = $(_this).attr('class').split(' ')[0];
-						editor.find(target);
+
 						editorPug.find(target);
 						editorJs.find(target);
-					}
+
+						if (target.indexOf('--') !=-1) var tArr = target.split('--');
+						else var tArr = target.split('__');
+
+
+						editor.find(tArr[tArr.length-1]);
+
+
+
 
 					scssChangeCounter = 1;
 					pugChangeCounter = 1;

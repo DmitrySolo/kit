@@ -1,0 +1,30 @@
+mixin LEVEL-showCasePage(data)
+	-if (!className) className =''
+	.container
+		.showCasePage__content(class = 'showCasePage__content'+ data.class data-qcontent="level__showCasePage")
+			h2.showCasePage__title=data.title
+			h4.showCasePage__subtitle.text Icons:
+			+I('box')
+			+I('search')
+			+I('eshop')
+			+I('cart','cart_Main')
+			+I('cart','cart_btn')
+			+I('truck')
+			+I('arrow')
+			+I('marker')
+			+I('clock')
+			+I('sale')
+			+I('star')
+			+I('toilet')
+			+I('bath')
+			h4.showCasePage__subtitle.text Headings:
+			h1.showCasePage__subtitle--red Headerq wqe qw  a  asd  sadsqdqwdwqdqwddsadasad asd         
+			h2 Header
+			h3 Header
+			h4 Header
+			h5 Header
+			h6 Header
+			h4.showCasePage__subtitle.text Paragraph:
+			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
+			if block
+				block
