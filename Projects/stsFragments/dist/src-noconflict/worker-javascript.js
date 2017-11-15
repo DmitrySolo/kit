@@ -8176,7 +8176,7 @@ var events = _dereq_("events");
 var reg    = _dereq_("./reg.js");
 var state  = _dereq_("./state.js").state;
 
-var unicodeData = _dereq_("../data/ascii-identifier-data.js");
+var unicodeData = _dereq_("../data/ascii-identifier-data.json");
 var asciiIdentifierStartTable = unicodeData.asciiIdentifierStartTable;
 var asciiIdentifierPartTable = unicodeData.asciiIdentifierPartTable;
 
@@ -9719,7 +9719,7 @@ Lexer.prototype = {
 exports.Lexer = Lexer;
 exports.Context = Context;
 
-},{"../data/ascii-identifier-data.js":"/node_modules/jshint/data/ascii-identifier-data.js","../lodash":"/node_modules/jshint/lodash.js","./reg.js":"/node_modules/jshint/src/reg.js","./state.js":"/node_modules/jshint/src/state.js","events":"/node_modules/browserify/node_modules/events/events.js"}],"/node_modules/jshint/src/messages.js":[function(_dereq_,module,exports){
+},{"../data/ascii-identifier-data.js":"/node_modules/jshint/data/ascii-identifier-data.json","../lodash":"/node_modules/jshint/lodash.js","./reg.js":"/node_modules/jshint/src/reg.js","./state.js":"/node_modules/jshint/src/state.js","events":"/node_modules/browserify/node_modules/events/events.js"}],"/node_modules/jshint/src/messages.js":[function(_dereq_,module,exports){
 "use strict";
 
 var _ = _dereq_("../lodash");

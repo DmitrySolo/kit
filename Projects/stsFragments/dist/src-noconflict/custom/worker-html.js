@@ -17775,7 +17775,7 @@ var events = _dereq_("events");
 var reg    = _dereq_("./reg.js");
 var state  = _dereq_("./state.js").state;
 
-var unicodeData = _dereq_("../data/ascii-identifier-data.js");
+var unicodeData = _dereq_("../data/ascii-identifier-data.json");
 var asciiIdentifierStartTable = unicodeData.asciiIdentifierStartTable;
 var asciiIdentifierPartTable = unicodeData.asciiIdentifierPartTable;
 

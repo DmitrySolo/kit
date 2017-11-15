@@ -52,6 +52,7 @@ script(role='scss').
 	var editor = ace.edit("editorScss");
 	ace.require("ace/ext/language_tools");
 	ace.require('ace/multi_select');
+	editor.resize(true)
 	editor.setTheme("ace/theme/twilight");
 	var scssMode = ace.require("ace/mode/scss").Mode;
 	editor.session.setMode(new scssMode());
@@ -103,6 +104,7 @@ script(role='pug').
 
 
 	editorPug.session.setMode(new PugMode());
+	//editorPug.setShowInvisibles(true)
 	editorPug.session.setOptions({ tabSize: 4, useSoftTabs: false });
 	ace.require("ace/ext/language_tools");
 		ace.require('ace/multi_select');

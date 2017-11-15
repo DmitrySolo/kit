@@ -1,9 +1,13 @@
 /* showCasePage STYLE */
 
 .showCasePage {
+
     &__content {
         background-color: cs('foreground');
         padding: 30px 20px;
+         p{
+            color:cs('font-d');
+        }
     }
     &__title {
         margin-bottom: 20px;  
@@ -12,7 +16,12 @@
         color: cs('succes-d');
         border-bottom: 2px solid;
         &--red{
-            color:red;
+            text-transform: uppercase;
+            text-align:left;
+            line-height:2.5em;  
+            color:violet;
         }
     }
+
+   
 }

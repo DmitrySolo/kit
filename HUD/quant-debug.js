@@ -204,16 +204,37 @@ function loadToQuant() {
 					//$(".hud-bottom").css('display', 'block')
 					ql($(_this).attr('class'), 'ee');
 
-						var target = $(_this).attr('class').split(' ')[0];
-
-						editorPug.find(target);
-						editorJs.find(target);
-
-						if (target.indexOf('--') !=-1) var tArr = target.split('--');
-						else var tArr = target.split('__');
 
 
-						editor.find(tArr[tArr.length-1]);
+						var target = $(_this).attr('class');
+						if(target.split(' ').length > 1){
+							for(var i in target.split(' ')){
+								var modify = false;
+								if(target.split(' ')[i].indexOf('--') !=-1 && target.split(' ')[i].indexOf('__') !=-1){
+                                    var tArr
+                                    editor.find(target.split(' ')[i].split('--')[target.split(' ')[i].split('--').length-1])
+                                    editorPug.find(target.split(' ')[i])
+                                    editorJs.find(target.split(' ')[i])
+								}else if(!modify && target.split(' ')[i].indexOf('__') !=-1){
+                                    editorPug.find(target.split(' ')[i])
+                                    editorJs.find(target.split(' ')[i])
+                                    editor.find(target.split(' ')[i].split('__')[target.split('__').length-1])
+								}
+							}
+						}else{
+                            if (target.indexOf('--') !=-1) var tArr = target.split('--');
+                            else var tArr = target.split('__');
+                            editor.find(tArr[tArr.length-1]);
+                            editorPug.find(target);
+                            editorJs.find(target);
+						}
+						//
+						//
+
+
+
+
+
 
 
 

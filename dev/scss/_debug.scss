@@ -730,7 +730,7 @@
   .editorsContainer {
     background: $panel;
     padding-top: 5px;
-    height: 300px;
+    height: 400px;
     opacity: .98;
     background: #3c3f41 !important;
     box-shadow: 2px -1px 0px 0px #2f2d2d;
@@ -2070,9 +2070,14 @@
   }
   .ace_content{
     //height: 100% !important;
-    overflow: auto;
+    position: absolute;
+    top:0;
+    bottom:0;
   }
-
+  .ace_scroller{
+    bottom: 0 !important;
+    height: 100% !important;
+  }
 }
 
 

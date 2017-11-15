@@ -251,7 +251,7 @@ gulp.task('SERVER', [], function () {
 	});
 
 	gulp.watch([dist + "index.html", dist + "/*.css"]).on('change',function () {
-		Qupdate = '1';
+		//Qupdate = '1';
 
 	});
 
@@ -274,6 +274,7 @@ gulp.task('VIEW-FINAL', function () {
 		'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
 	], function () {
 		gulp.start('views');
+        Qupdate = '1';
 	});
 });
 gulp.task('VIEW-SOURCE', function () {
@@ -363,7 +364,7 @@ gulp.task('VIEW-1-DATA', function () {
 gulp.task('SERVER WATCHER', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([dist + "/index.html", dist + "/*.css", projectDevDir + "SCRIPTS/scriptMap.js"], function () {
-		Qupdate = '1';
+		//Qupdate = '1';
 
 	});
 });
@@ -404,6 +405,7 @@ gulp.task('STYLES-FINAL', function () {
 	], function () {
 		gulp.start('styles');
 		gulp.start('sass-json');
+        Qupdate = '1';
 
 	});
 });
@@ -1677,7 +1679,7 @@ gulp.task('API-SERVER', function () {
 								var PugContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/_mixin.pug', 'utf8');
 								var ScssContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/_mixin.scss', 'utf8');
 								var JsContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/' + name + '.js', 'utf8');
-								var dataContent =fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/data.js', 'utf8');;
+								var dataContent =fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/data.json', 'utf8');;
 
 							} else if (type == 'element') {
 

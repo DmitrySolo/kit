@@ -19,4 +19,6 @@ var quantCon = [
 	"	MODULE-atest()",
     "snippet +holder",
     "	+holder('page__loader','100px100',colors.primary)",
+	"snippet +M-reactTest",
+	"	MODULE-reactTest()",
 ].join(eol);

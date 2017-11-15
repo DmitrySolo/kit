@@ -1,0 +1,21 @@
+/**
+* reactTest styles
+*/
+
+@mixin reactTest(){
+
+  .reactTest {
+    &__content {
+        h1{
+            color: cs('link');
+        }
+        
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include reactTest();
