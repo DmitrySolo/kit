@@ -103,8 +103,8 @@ var pathObj = {
 		mac: 'Open '+pathToProj.mac+'/source_fabric/SVGSpriteIcons'
 	},
 	lighthouse:{
-        win:'lighthouse http://localhost:3000/',
-        mac: 'lighthouse http://localhost:3000/'
+		win:'lighthouse http://localhost:3000/',
+		mac: 'lighthouse http://localhost:3000/'
 	}
 
 }
@@ -122,28 +122,28 @@ var qM = require(qp_path + 'q_functions');
 
 gulp.task('TESTHTML', function() {
 
-    const validator = require('html-validator')
-    const options1 = {
+	const validator = require('html-validator')
+	const options1 = {
 
-        format: 'html',
-    }
-    fs.readFile( dist+'/oc.html', 'utf8', (err, html) => {
+		format: 'html',
+	}
+	fs.readFile( dist+'/oc.html', 'utf8', (err, html) => {
 
-        if (err) {
-            throw err;
-        }
+		if (err) {
+			throw err;
+		}
 
-        options1.data = html
+		options1.data = html
 
-        validator(options1, (error, data) => {
-            if (error) {
-                console.error(error)
-            }
+		validator(options1, (error, data) => {
+			if (error) {
+				console.error(error)
+			}
 
-            console.log(data)
-        })
+			console.log(data)
+		})
 
-    })
+	})
 
 
 
@@ -351,6 +351,7 @@ gulp.task('VIEW-1-DATA', function () {
 		'!dev/SOURCE_FABRIC/**/*.json',
 		'Projects/'+projectName+'/data/*.json',
 		'Projects/'+projectName+'/qContent/**/*.json',
+		'Projects/'+projectName+'/dev/template/PAGESYSTEM/LEVELS/**/*.json',
 		'!Projects/'+projectName+'/data/currentPage.json'
 	], function () {
 		runSequence('mergeJson');
@@ -1003,6 +1004,9 @@ gulp.task('mergeJson', function () {
 		'dev/scss/MASTER_OPTIONS/*.json',
 		'Projects/' + projectName + '/data/*.json',
 		'Projects/' + projectName + '/dev/qContent/**/libs.json',
+		'Projects/' + projectName + '/dev/qContent/**/data.json',
+		'Projects/' + projectName + '/dev/template/PAGESYSTEM/LEVELS/**/libs.json',
+		'Projects/' + projectName + '/dev/template/PAGESYSTEM/LEVELS/**/data.json',
 		'Projects/' + projectName + '/dev/scripts/**/*.json',
 		'!dev/SOURCE_FABRIC/STORRAGE/**/*.json',
 	])
@@ -1344,12 +1348,12 @@ gulp.task('bsold', [], function () {
 gulp.task('svgstore', function () {
 	return gulp
 		.src('Projects/'+projectName+'/source_fabric/SVGSpriteIcons/*.svg')
-        .pipe(cheerio({
-            run: function ($) {
-                $('[fill]').removeAttr('fill');
-            },
-            parserOptions: { xmlMode: true }
-        }))
+		.pipe(cheerio({
+			run: function ($) {
+				$('[fill]').removeAttr('fill');
+			},
+			parserOptions: { xmlMode: true }
+		}))
 		.pipe(svgmin(function (file) {
 			var prefix = path.basename(file.relative, path.extname(file.relative));
 			return {
@@ -1551,10 +1555,10 @@ gulp.task('API-SERVER', function () {
 						switch(command){
 							case 'open':
 								if (url_parts.query.page){
-                                    cmd.run(pathObj[options][sys]+url_parts.query.page+' --view')
+									cmd.run(pathObj[options][sys]+url_parts.query.page+' --view')
 
-                                }else{
-                                    cmd.run(pathObj[options][sys])
+								}else{
+									cmd.run(pathObj[options][sys])
 								}
 
 								break;
@@ -1673,6 +1677,7 @@ gulp.task('API-SERVER', function () {
 								var PugContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/_mixin.pug', 'utf8');
 								var ScssContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/_mixin.scss', 'utf8');
 								var JsContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/' + name + '.js', 'utf8');
+								var dataContent =fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/data.js', 'utf8');;
 
 							} else if (type == 'element') {
 
@@ -1684,7 +1689,8 @@ gulp.task('API-SERVER', function () {
 
 								var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + name +'/_mixin.pug', 'utf8');
 								var ScssContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + name +'/_mixin.scss', 'utf8');
-								var JsContent = '';
+								var JsContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + name +'/level.js', 'utf8');
+								var dataContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + name +'/data.json', 'utf8');
 							}
 
 							else if (type == 'page') {
@@ -1695,6 +1701,7 @@ gulp.task('API-SERVER', function () {
 								var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/PAGES/' + name , 'utf8');
 								var ScssContent = '';
 								var JsContent = '';
+								var dataContent ='';
 							}
 
 							else if (type == 'layout') {
@@ -1702,13 +1709,15 @@ gulp.task('API-SERVER', function () {
 								var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LAYOUT/' + name, 'utf8');
 								var ScssContent = '';
 								var JsContent = '';
+								var dataContent ='';
 							}
 
 
 							var result = {
 								pug: PugContent,
 								scss: ScssContent,
-								JS: JsContent
+								JS: JsContent,
+								data: dataContent
 							}
 							srvRes = JSON.stringify(result)
 						} else {

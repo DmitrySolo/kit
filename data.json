@@ -37,22 +37,22 @@
 				}
 			}
 		},
-		"quant-debug-ruller": {
+		"quant-debug-JsonCss": {
 			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
 				}
 			},
 			"css": {
 				"": ""
 			}
 		},
-		"quant-debug-JsonCss": {
+		"quant-debug-ruller": {
 			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -248,9 +248,13 @@
 			}
 		}
 	},
-	"showCase": {
+	"showCaseq": {
 		"title": "Showcase: Data",
 		"class": "dopClass"
+	},
+	"showCase1": {
+		"title": "Showcase: Data1",
+		"class": "dopClass1"
 	},
 	"menuData": {
 		"Home": {
@@ -293,5 +297,23 @@
 			"layout": "default",
 			"group": ""
 		}
+	},
+	"atest": {
+		"atest": "1"
+	},
+	"breadcrumbs": {
+		"1": "22"
+	},
+	"confirmedOrderPage": {
+		"confirmedOrderPage": "1"
+	},
+	"flyPageFragment": {
+		"flyPageFragment": "1"
+	},
+	"showCasePage": {
+		"title": "Main show page:",
+		"class": "huray2",
+		"id": "tworwo",
+		"dataAtr": ""
 	}
 }

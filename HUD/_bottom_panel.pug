@@ -1,85 +1,88 @@
-.hud-bottom(style="width:100%")
-	.editorsContainer.clearfix.notEdit(style="width:100%")
-		.editorWrapper(style="width:100%")
-			#editorPug.editor
-			#editorScss.editor
-			#editorJs.editor
-	.debugPannel__wrapper.notEdit
-		.debugPannel.clearfix
-			script.
-				$("#tabs-add-elment").tabs();
-			.debugPannel__section.col-4-tp
-				button#spacerSwitcher Spacer
-				button#gridb grid
-				button#debugViewSwitcher.on Debug View
-				button#clone Clone
-				button#getHtml Get View!
-				button#up Up
-				button#down Down
-				button#del Delete
-				button#lock Lock
-				button#unlock UnLock
-				button#save Save
-				button#load Load
-				button#lockSpacer lock Spacer
-				button#addBkg add Background
-				button#startMediaTest Media
-				button#getScssCode Get scss
-				button#getinnerView Get Html
-				button#cn CREATE NEW...
-				a.tabAnchr(href="javascript:onclick=maximizeme()") Maximize
-				script.
-					var qscale = function (v) {
-						$('#viewpr-content').css({
-							"transform": "scale(" + v + ")"
-						})
-					}
-				input#scaller( type="range" min=".3" max="2" step=".1"  onchange="qscale(this.value)")
-				#editableDiv(contenteditable='true') Paste
-			.debugPannel__section.col-4-tp.colors
-				.pb-element.f-left
-					.pb-colorBox
-					.pb-colorBox
-						span.pb-elementHeader Base
-					.pb-colorBox
-						span.pb-elementHeader Darken
-					.pb-colorBox
-						span.pb-elementHeader light
-				.pb-element.f-left
-					span.pb-elementHeader 1
-					.pb-colorBox.pb-colorBox--primary
-					.pb-colorBox.pb-colorBox--primary-d
-					.pb-colorBox.pb-colorBox--primary-l
-				.pb-element.f-left
-					span.pb-elementHeader 2
-					.pb-colorBox.pb-colorBox--secondary
-					.pb-colorBox.pb-colorBox--secondary-d
-					.pb-colorBox.pb-colorBox--secondary-l
-				.pb-element.f-left
-					span.pb-elementHeader A
-					.pb-colorBox.pb-colorBox--accent
-					.pb-colorBox.pb-colorBox--accent-d
-					.pb-colorBox.pb-colorBox--accent-l
-				.pb-element.f-left
-					span.pb-elementHeader Fg
-					.pb-colorBox.pb-colorBox--fground
-					.pb-colorBox.pb-colorBox--fground-d
-					.pb-colorBox.pb-colorBox--fground-l
-				.pb-element.f-left
-					span.pb-elementHeader Bg
-					.pb-colorBox.pb-colorBox--bground
-					.pb-colorBox.pb-colorBox--bground-d
-					.pb-colorBox.pb-colorBox--bground-l
-				.pb-element.f-left
-					span.pb-elementHeader F
-					.pb-colorBox.pb-colorBox--font
-					.pb-colorBox.pb-colorBox--font-d
-					.pb-colorBox.pb-colorBox--font-l
-				.pb-element.f-left
-					span B
-						input(id='colorPicker',type='color')
-					span C
-						input(id='colorPickerFont',type='color')
+.editorsContainer.clearfix.notEdit(style="width:100%;bottom:5%; position: absolute;")
+	.editorMarker.clearfix
+		.editorMarkerSN.f-left
+		.editorMarkerSD.f-right
+			span#openData Data
+	#editorPug.editor
+	#editorScss.editor
+	#editorJs.editor
+	#editorData.editor
+	//.debugPannel__wrapper.notEdit
+	//	.debugPannel.clearfix
+	//		script.
+	//			$("#tabs-add-elment").tabs();
+	//		.debugPannel__section.col-4-tp
+	//			button#spacerSwitcher Spacer
+	//			button#gridb grid
+	//			button#debugViewSwitcher.on Debug View
+	//			button#clone Clone
+	//			button#getHtml Get View!
+	//			button#up Up
+	//			button#down Down
+	//			button#del Delete
+	//			button#lock Lock
+	//			button#unlock UnLock
+	//			button#save Save
+	//			button#load Load
+	//			button#lockSpacer lock Spacer
+	//			button#addBkg add Background
+	//			button#startMediaTest Media
+	//			button#getScssCode Get scss
+	//			button#getinnerView Get Html
+	//			button#cn CREATE NEW...
+	//			a.tabAnchr(href="javascript:onclick=maximizeme()") Maximize
+	//			script.
+	//				var qscale = function (v) {
+	//					$('#viewpr-content').css({
+	//						"transform": "scale(" + v + ")"
+	//					})
+	//				}
+	//			input#scaller( type="range" min=".3" max="2" step=".1"  onchange="qscale(this.value)")
+	//			#editableDiv(contenteditable='true') Paste
+	//		.debugPannel__section.col-4-tp.colors
+	//			.pb-element.f-left
+	//				.pb-colorBox
+	//				.pb-colorBox
+	//					span.pb-elementHeader Base
+	//				.pb-colorBox
+	//					span.pb-elementHeader Darken
+	//				.pb-colorBox
+	//					span.pb-elementHeader light
+	//			.pb-element.f-left
+	//				span.pb-elementHeader 1
+	//				.pb-colorBox.pb-colorBox--primary
+	//				.pb-colorBox.pb-colorBox--primary-d
+	//				.pb-colorBox.pb-colorBox--primary-l
+	//			.pb-element.f-left
+	//				span.pb-elementHeader 2
+	//				.pb-colorBox.pb-colorBox--secondary
+	//				.pb-colorBox.pb-colorBox--secondary-d
+	//				.pb-colorBox.pb-colorBox--secondary-l
+	//			.pb-element.f-left
+	//				span.pb-elementHeader A
+	//				.pb-colorBox.pb-colorBox--accent
+	//				.pb-colorBox.pb-colorBox--accent-d
+	//				.pb-colorBox.pb-colorBox--accent-l
+	//			.pb-element.f-left
+	//				span.pb-elementHeader Fg
+	//				.pb-colorBox.pb-colorBox--fground
+	//				.pb-colorBox.pb-colorBox--fground-d
+	//				.pb-colorBox.pb-colorBox--fground-l
+	//			.pb-element.f-left
+	//				span.pb-elementHeader Bg
+	//				.pb-colorBox.pb-colorBox--bground
+	//				.pb-colorBox.pb-colorBox--bground-d
+	//				.pb-colorBox.pb-colorBox--bground-l
+	//			.pb-element.f-left
+	//				span.pb-elementHeader F
+	//				.pb-colorBox.pb-colorBox--font
+	//				.pb-colorBox.pb-colorBox--font-d
+	//				.pb-colorBox.pb-colorBox--font-l
+	//			.pb-element.f-left
+	//				span B
+	//					input(id='colorPicker',type='color')
+	//				span C
+	//					input(id='colorPickerFont',type='color')
 			//.debugPannel__section.hidden
 			//	span#phone-upper-boundary= MEDIA.phoneBreakpoint
 			//	span#tablet-portrait-upper-boundary=MEDIA.tabletPortraitBreakpoint

@@ -90,6 +90,11 @@ script(role='scss').
 
 	session.setMode(new scssMode());
 	ace_snippets(editor, session, 'scss',myCustomSnippetText);
+script(role='data').
+	var editorData = ace.edit("editorData");
+		editorData.setTheme("ace/theme/twilight");
+		var dataMode = ace.require("ace/mode/javascript").Mode;
+		editorData.session.setMode(new dataMode());
 script(role='pug').
 	var editorPug = ace.edit("editorPug");
 	editorPug.setTheme("ace/theme/twilight");

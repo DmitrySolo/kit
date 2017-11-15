@@ -1,9 +1,9 @@
 mixin LEVEL-showCasePage(data)
 	-if (!className) className =''
 	.container
-		.showCasePage__content(class = 'showCasePage__content'+ data.class data-qcontent="level__showCasePage")
+		.showCasePage__content(class = 'showCasePage__content '+ data.class data-qcontent="level__showCasePage")
 			h2.showCasePage__title=data.title
-			h4.showCasePage__subtitle.text Icons:
+			h4.showCasePage__subtitle.text Icons:  
 			+I('box')
 			+I('search')
 			+I('eshop')
@@ -18,8 +18,7 @@ mixin LEVEL-showCasePage(data)
 			+I('toilet')
 			+I('bath')
 			h4.showCasePage__subtitle.text Headings:
-			h1.showCasePage__subtitle--red Headerq wqe qw  a  asd  sadsqdqwdwqdqwddsadasad asd         
-			h2 Header
+			h1.showCasePage__subtitle.showCasePage__subtitle--red Header. 
 			h3 Header
 			h4 Header
 			h5 Header
