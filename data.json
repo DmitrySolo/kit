@@ -48,11 +48,15 @@
 				"": ""
 			}
 		},
-		"quant-debug-ruller": {
+		"react": {
 			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
+				"react": {
+					"src": "node_modules/react/umd/react.production.min.js",
+					"container": "footer/libs"
+				},
+				"react-dom": {
+					"src": "node_modules/react-dom/umd/react-dom.production.min.js",
+					"container": "footer/libs"
 				}
 			},
 			"css": {
@@ -81,6 +85,17 @@
 				"": ""
 			}
 		},
+		"quant-debug-ruller": {
+			"js": {
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"flyPageFragment": {
 			"js": {
 				"lib1": {
@@ -89,6 +104,21 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/MODULES/flyPageFragment/flyPageFragment.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"reactTest": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/reactTest/reactTest.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -308,12 +338,23 @@
 		"confirmedOrderPage": "1"
 	},
 	"flyPageFragment": {
-		"flyPageFragment": "1"
+		"title": "Test Page for some Buttons1 x"
+	},
+	"reactTest": {
+		"reactTest": "1"
 	},
 	"showCasePage": {
-		"title": "Main show page:",
+		"self": "showCasePage",
+		"title": "Showcase:",
 		"class": "huray2",
-		"id": "tworwo",
-		"dataAtr": ""
+		"idName": "THIS IS HEADER BY ID GOT FROM DATA!",
+		"dataAtr": "   "
+	},
+	"showCasePageBottom": {
+		"self": "showCasePageBottom",
+		"title": "Showcase of Bottom:",
+		"class": "huray2",
+		"idName": "THIS IS HEADER BY ID Ok",
+		"dataAtr": "   "
 	}
 }

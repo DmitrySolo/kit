@@ -77,6 +77,15 @@ function editorsListner() {
 		}
 
 	})
+	editorData.on('change', function (e) {
+		dataChangeCounter++;
+		if (dataChangeCounter == 4) {
+			dataChanged = true;
+			$('#editorData').addClass('edited');
+
+		}
+
+	})
 
 
 }
@@ -84,9 +93,10 @@ function editorsListner() {
 var scssChangeCounter = 1;
 var pugChangeCounter = 1;
 var JSChangeCounter = 1;//  quant-debug script
+var dataChangeCounter =1;
 var pugChanged = false;
 var scssChanged = false;
-var jsChanged = false;
+var dataChanged = false;
 
 function addToBufer(content) {
 	let tmp = document.createElement('INPUT'), // Создаём новый текстовой input
@@ -147,9 +157,11 @@ function loadToQuant() {
 		e.stopPropagation();
 		$('#contentNavigator__type input,#contentNavigator__stype input,#contentNavigator__name input').val('');
 
-
-		var content1 = $(this).closest('*[data-qcontent]').data('qcontent');
-		ql(content1, 'QC');
+		var qContent1 = $(this).closest('*[data-qcontent]')
+		var content1 = qContent1.data('qcontent');
+		var dataTarget = qContent1.data('self');
+		console.log(dataTarget+'UUUUUUUU');
+		//ql(content1, 'QC');
 
 		var _this = this;
 		if (content1) {
@@ -199,35 +211,45 @@ function loadToQuant() {
 					else editorJs.insert('');
 					if (res.scss) editor.insert(res.scss);
 					else editor.insert('');
-                    if (res.data) editorData.insert(res.data);
-                    else editorData.insert('');
+					if (res.data) editorData.insert(res.data);
+					else editorData.insert('');
 					//$(".hud-bottom").css('display', 'block')
 					ql($(_this).attr('class'), 'ee');
 
 
 
-						var target = $(_this).attr('class');
+						var target = $(_this).attr('class').replace(/resizable /g, '').replace(/ resizable/g, '')
+						.replace(/debugElement/g, '')
+						.replace(/ui-resizable /g, '')
+						.replace(/ui-draggable-handle /g, '')
+						.replace(/ui-draggable /g, '')
+						.replace(/ui-/g, '').trimRight().trimLeft();
+						console.log(target);
+						console.log(target.length);
 						if(target.split(' ').length > 1){
+							console.log('>1');
 							for(var i in target.split(' ')){
 								var modify = false;
 								if(target.split(' ')[i].indexOf('--') !=-1 && target.split(' ')[i].indexOf('__') !=-1){
-                                    var tArr
-                                    editor.find(target.split(' ')[i].split('--')[target.split(' ')[i].split('--').length-1])
-                                    editorPug.find(target.split(' ')[i])
-                                    editorJs.find(target.split(' ')[i])
+									var tArr
+									editor.find(target.split(' ')[i].split('--')[target.split(' ')[i].split('--').length-1])
+									editorPug.find(target.split(' ')[i])
+									editorJs.find(target.split(' ')[i])
 								}else if(!modify && target.split(' ')[i].indexOf('__') !=-1){
-                                    editorPug.find(target.split(' ')[i])
-                                    editorJs.find(target.split(' ')[i])
-                                    editor.find(target.split(' ')[i].split('__')[target.split('__').length-1])
+									editorPug.find(target.split(' ')[i])
+									editorJs.find(target.split(' ')[i])
+									editor.find(target.split(' ')[i].split('__')[target.split('__').length-1])
 								}
 							}
 						}else{
-                            if (target.indexOf('--') !=-1) var tArr = target.split('--');
-                            else var tArr = target.split('__');
-                            editor.find(tArr[tArr.length-1]);
-                            editorPug.find(target);
-                            editorJs.find(target);
+							if (target.indexOf('--') !=-1) var tArr = target.split('--');
+							else var tArr = target.split('__');
+							editor.find(tArr[tArr.length-1]);
+							editorPug.find(target);
+							editorJs.find(target);
+
 						}
+						editorData.find(dataTarget)
 						//
 						//
 
@@ -242,12 +264,15 @@ function loadToQuant() {
 					scssChangeCounter = 1;
 					pugChangeCounter = 1;
 					JSChangeCounter = 1;//
+					dataChangeCounter =1;
 					$('#editorPug').removeClass('edited');
 					pugChanged = false;
 					scssChanged = false;
 					$('#editorScss').removeClass('edited');
 					jsChanged = false;
 					$('#editorJs').removeClass('edited');
+					dataChanged = false;
+					$('#editorData').removeClass('edited');
 
 
 				}
@@ -277,12 +302,15 @@ document.getElementById('index').onload = function () {
 	scssChangeCounter = 1;
 	pugChangeCounter = 1;
 	JSChangeCounter = 1;
+	dataChangeCounter = 1;
 	pugChanged = false;
 	$('#editorPug').removeClass('edited');
 	scssChanged = false;
 	$('#editorScss').removeClass('edited');
 	jsChanged = false;
 	$('#editorJs').removeClass('edited');
+	dataChanged = false;
+	$('#editorData').removeClass('edited');
 	editorsListner();
 	$('.hud-Button,.testButton').not('#editorSwitcher').filter($('.on')).trigger('mousedown').addClass('on');
 
@@ -1775,7 +1803,7 @@ $(document).ready(function () {
 		}
 	}
 	testServer();
-	setInterval(testServer, 200)
+	setInterval(testServer, 500)
 
 ///////////////// CREATE PROJECT
 
@@ -2047,6 +2075,7 @@ $(document).ready(function () {
 					editorPug.selectAll();
 					editorJs.selectAll();
 					editor.selectAll();
+					editorData.selectAll();
 					if (res.pug) {
 						editorPug.insert(res.pug);
 						if (savedCursors.hasOwnProperty('PugCursor')) {
@@ -2071,6 +2100,15 @@ $(document).ready(function () {
 						if (savedCursors.hasOwnProperty('scssCursor')) {
 							editor.gotoLine(savedCursors.scssCursor.row + 1, savedCursors.scssCursor.column,)
 							editor.scrollToRow(savedCursors.scssCursor.row + 5)
+						}
+
+					}
+					else editor.insert('');
+					if (res.data) {
+						editorData.insert(res.data);
+						if (savedCursors.hasOwnProperty('dataCursor')) {
+							editorData.gotoLine(savedCursors.dataCursor.row + 1, savedCursors.dataCursor.column,)
+							editorData.scrollToRow(savedCursors.dataCursor.row + 5)
 						}
 
 					}
@@ -2146,6 +2184,11 @@ $(document).ready(function () {
 				var JsContent = editorJs.getSession().getValue();
 				cursorsObj.JSCursor = editorJs.getCursorPosition();
 			} else var JsContent = 'notChanged';
+			if (dataChanged) {
+				var dataContent = editorData.getSession().getValue();
+				ql(dataContent);
+				cursorsObj.dataCursor = editorData.getCursorPosition();
+			} else var dataContent = 'notChanged';
 
 
 			//	editor.navigateTo(12,10);
@@ -2164,7 +2207,8 @@ $(document).ready(function () {
 				path: path,
 				scss: scssContent,
 				pug: PugContent,
-				js: JsContent
+				js: JsContent,
+				data1: dataContent
 			}
 
 

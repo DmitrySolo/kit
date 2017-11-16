@@ -1,8 +1,9 @@
-mixin MODULE-flyPageFragment()
+mixin MODULE-flyPageFragment(data)
 	<!-- split modules/flyPageFragment -->
 	.flyPageFragment__content(data-qcontent='module__flyPageFragment')
-		.flyPageFragment
-			button.toOrder.active.notEdit Добавить в заявку
+		.flyPageFragment 
+			h1=data.title 
+			button.toOrder.active.notEdit Добавить в заявку 
 			button.toOrder.succes.notEdit Get Element
 			table.flyPageFragment__table
 				tr.table_row
@@ -16,4 +17,4 @@ mixin MODULE-flyPageFragment()
 					td.mop_price 6 100 Р
 				tr
 					td.fragmentTitle Доступно:
-					td.stock 14 шт
+					td.stock 14  шт

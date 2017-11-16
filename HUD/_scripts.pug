@@ -31,6 +31,8 @@ script
 script
 	include ../node_modules/ace-builds/src/mode-jade.js
 script
+	include ../node_modules/ace-builds/src/mode-json.js
+script
 	include quant-debug.js
 script
 	include viewpr.min.js
@@ -94,8 +96,28 @@ script(role='scss').
 script(role='data').
 	var editorData = ace.edit("editorData");
 		editorData.setTheme("ace/theme/twilight");
-		var dataMode = ace.require("ace/mode/javascript").Mode;
+		var dataMode = ace.require("ace/mode/json").Mode;
 		editorData.session.setMode(new dataMode());
+		editorData.session.setOptions({ tabSize: 4, useSoftTabs: false });
+			ace.require("ace/ext/language_tools");
+				ace.require('ace/multi_select');
+			var staticWordCompleter = {
+				getCompletions: function(editorPug, session, pos, prefix, callback) {
+					var wordList = ["foo", "bar", "baz"];
+					callback(null, wordList.map(function(word) {
+						return {
+							caption: word,
+							value: word,
+							meta: "static"
+						};
+					}));
+				}
+			}
+			editorData.setOptions({
+				enableBasicAutocompletion: true,
+				enableSnippets: true,
+				enableLiveAutocompletion: true
+			});
 script(role='pug').
 	var editorPug = ace.edit("editorPug");
 	editorPug.setTheme("ace/theme/twilight");

@@ -274,7 +274,7 @@ gulp.task('VIEW-FINAL', function () {
 		'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
 	], function () {
 		gulp.start('views');
-        Qupdate = '1';
+		Qupdate = '1';
 	});
 });
 gulp.task('VIEW-SOURCE', function () {
@@ -351,7 +351,7 @@ gulp.task('VIEW-1-DATA', function () {
 		'!dev/scss/MASTER_OPTIONS/*.json',
 		'!dev/SOURCE_FABRIC/**/*.json',
 		'Projects/'+projectName+'/data/*.json',
-		'Projects/'+projectName+'/qContent/**/*.json',
+		'Projects/'+projectName+'/dev/qContent/**/**/*.json',
 		'Projects/'+projectName+'/dev/template/PAGESYSTEM/LEVELS/**/*.json',
 		'!Projects/'+projectName+'/data/currentPage.json'
 	], function () {
@@ -405,7 +405,7 @@ gulp.task('STYLES-FINAL', function () {
 	], function () {
 		gulp.start('styles');
 		gulp.start('sass-json');
-        Qupdate = '1';
+		Qupdate = '1';
 
 	});
 });
@@ -2201,6 +2201,7 @@ gulp.task('API-SERVER', function () {
 					var scssToSave = body.scss;
 					var pugToSave = body.pug;
 					var jsToSave = body.js;
+					var dataToSave = body.data1;
 
 
 
@@ -2242,6 +2243,8 @@ gulp.task('API-SERVER', function () {
 							fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/_mixin.scss', scssToSave)
 						if (jsToSave != 'notChanged' )
 							fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/' + elemPath['name'] + '.js', jsToSave)
+						if (dataToSave != 'notChanged' )
+							fs.writeFileSync(projectDevDir + 'qContent/MODULES/' + elemPath['name'] + '/data.json', dataToSave)
 
 
 					}
@@ -2284,6 +2287,12 @@ gulp.task('API-SERVER', function () {
 							})
 						if(jsToSave != 'notChanged' )
 							fs.writeFile(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + elemPath['name'] + '/level.js', jsToSave, function (err) {
+								if (err) {
+									return console.log(err);
+								}
+							})
+						if(dataToSave != 'notChanged' )
+							fs.writeFile(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + elemPath['name'] + '/data.json', dataToSave, function (err) {
 								if (err) {
 									return console.log(err);
 								}

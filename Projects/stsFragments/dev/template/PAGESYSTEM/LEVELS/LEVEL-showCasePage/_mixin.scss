@@ -10,18 +10,19 @@
         }
     }
     &__title {
-        margin-bottom: 20px;  
+        margin-bottom: 20px;
+        text-align: center;
     }
     &__subtitle{
         color: cs('succes-d');
         border-bottom: 2px solid;
         &--red{
+            margin-top:40px;
+            margin-bottom:35px;
             text-transform: uppercase;
-            text-align:left;
-            line-height:2.5em;  
-            color:violet;
+            text-align:center;
+            line-height:1.7em;   
+            color: darken(violet,25%);
         }
     }
-
-   
 }
