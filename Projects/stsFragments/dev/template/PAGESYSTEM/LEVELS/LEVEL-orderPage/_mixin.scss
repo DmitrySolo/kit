@@ -7,32 +7,32 @@
   padding: 70px 30px;
   @include for-size(phone-only){ 
        padding: 30px 15px; 
-  }
+  }  
   a {  
     color:#000;
    text-decoration: none; 
   }
   .order_confirmed, .tri{
-        
-     fill:cs('succes-d2');    
+         
+     fill:cs('succes-d2');     
   }
-} 
+}   
  
 .orderPage__title { 
   text-align: center;         
-  margin-bottom: 30px;   
+  margin-bottom: 12px;      
   margin-left: auto; 
   margin-right: auto;
   width:50%;
   color: cs('secondary-d'); 
   @include for-size(phone-only){
-      width:90%;
+      width:91%;   
   }
     
 }
 
 .orderPage__mainMessage {
-  font-size: 22px;  
+  font-size: 24px;  
   text-transform: uppercase; 
   font-weight: bold;
   text-align: center;
@@ -50,20 +50,20 @@
     @include for-size(tablet-p-up){
         width: 70%;
     }
-  color: cs('font-l');
+  color: cs('font-d');
   width: 50%;
   margin: 0 auto 15px;
   li {
-    list-style: circle;
+    list-style: circle;      
   }
- @include for-size(phone-only){
-      width: 100%;
+ @include for-size(phone-only){ 
+      width: 100%;   
   }
 
   }
   .buttonWrapper {
-      text-align: center;
-      margin-top: 17px;
+      text-align: center;  
+      margin-top: 17px;  
   }
 
 .orderPage__actions {

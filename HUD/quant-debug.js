@@ -1,5 +1,5 @@
-
-
+$('html')
+    .animate({'opacity':'1'})
 var loadProjectPath = function (path, placeTo) {
 
 	$.ajax({
@@ -284,9 +284,12 @@ function loadToQuant() {
 	})
 
 }
-document.getElementById('index').onload = function () {
 
-	$('button#savecode').removeClass('classLoading')
+var scroll=0;
+var Frame = document.getElementById('index');
+Frame.onload = function () {
+	$('button#savecode').removeClass('classLoading');
+    frameEl('html').scrollTop(scroll)
 	loadToQuant();
 	$('.fs__modules ul,.fs__p_modules ul,.fs__p_elements ul,.fs__pages ul,.fs__levels ul,.fs__options ul,.fs__layout ul,.fs__data ul').html('');
 	loadProjectPath('dev/MODULES/PROJECT_MODULES', '.fs__modules');
@@ -313,6 +316,9 @@ document.getElementById('index').onload = function () {
 	$('#editorData').removeClass('edited');
 	editorsListner();
 	$('.hud-Button,.testButton').not('#editorSwitcher').filter($('.on')).trigger('mousedown').addClass('on');
+    frameEl('html')
+        .animate({'opacity':'1'})
+
 
 };
 $(document).ready(function () {
@@ -1789,8 +1795,8 @@ $(document).ready(function () {
 				$('#apitest').css('background', '#25b14a');
 				ql(msg, 'DONE');
 				if (msg == '1') {
-					var iframe = document.getElementById('index');
-					iframe.src = iframe.src;
+
+                    Frame.src = Frame.src;
 
 				}
 			});
@@ -1803,7 +1809,7 @@ $(document).ready(function () {
 		}
 	}
 	testServer();
-	setInterval(testServer, 500)
+	setInterval(testServer, 400)
 
 ///////////////// CREATE PROJECT
 
@@ -2168,7 +2174,9 @@ $(document).ready(function () {
 	var saveCode = function () {
 		$('button#savecode').on('mousedown', function () {
 
-
+			scroll = frameEl('html').scrollTop();
+            frameEl('html').animate({'opacity':'0'})
+			//alert(scroll)
 			var cursorsObj = {};
 
 			ql(pugChanged, '||||');

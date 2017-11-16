@@ -909,15 +909,16 @@
     background-clip: content-box, padding-box;
   }
   #currentSelectorWay {
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     & > div {
 
     }
     span {
-      font-size: 1em;
+      font-size: 0.7em;
       background-color: #3d3f42;
       margin-right: 3px;
-      padding: 4px;
+      /* padding: 4px; */
+      line-height: 1;
       &:last-child i{
         color:#fff;
       }
@@ -1119,7 +1120,7 @@
     iframe {
       display: block;
       margin: 0 auto;
-      height: 80vh;
+      height: 55vh;
       border: none;
 
     }
@@ -1196,8 +1197,13 @@
   div[class*='Panel'] {
     background-color: $panel;
   }
+  html{
+    overflow-x: hidden;
+    opacity: 0;
+  }
   .window {
-    overflow: scroll;
+    //overflow: scroll;
+    overflow-x: hidden;
     margin: 0 auto;
     transition: width .8s linear;
     background-color: #333638;
@@ -1309,7 +1315,7 @@
   .rightPlTab {
     padding: 7px;
     background-color: #2b2b2b;
-    max-height: 90vh;
+    max-height: 53vh;
     overflow: auto;
 
   }
@@ -1522,6 +1528,7 @@
   .hud-content {
     position: relative;
     padding: 0px 6px;
+    line-height: 1;
   }
   .window {
     position: absolute;

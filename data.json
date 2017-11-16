@@ -11,6 +11,17 @@
 				"": ""
 			}
 		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-HUD-script": {
 			"js": {
 				"quant-HUD-script-script": {
@@ -37,11 +48,22 @@
 				}
 			}
 		},
-		"quant-debug-JsonCss": {
+		"quant-debug-ruller": {
 			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-lib": {
+			"js": {
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -63,32 +85,10 @@
 				"": ""
 			}
 		},
-		"quant-lib": {
-			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"xRayView": {
 			"js": {
 				"xRayView-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-debug-ruller": {
-			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
 					"container": "footer/init"
 				}
 			},
@@ -175,18 +175,18 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"//  'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\n//)"
+		"'HEADER'": "('Roboto Slab')\r\n//)"
 	},
 	"block_space": "4",
 	"module_space": "3",
 	"component_space": "2",
 	"element_space": "2",
 	"section_space": "4",
-	"container-styles": "(\n\n)",
+	"container-styles": "(\r\n\r\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\n)"
+		"min-height": "1px\r\n)"
 	},
 	"nr-colStyles": {
 		"float": "left"
@@ -328,17 +328,17 @@
 			"group": ""
 		}
 	},
-	"atest": {
-		"atest": "1"
-	},
 	"breadcrumbs": {
 		"1": "22"
+	},
+	"atest": {
+		"atest": "1"
 	},
 	"confirmedOrderPage": {
 		"confirmedOrderPage": "1"
 	},
 	"flyPageFragment": {
-		"title": "Test Page for some Buttons1 x"
+		"title": "Test Page"
 	},
 	"reactTest": {
 		"reactTest": "1"
@@ -347,14 +347,14 @@
 		"self": "showCasePage",
 		"title": "Showcase:",
 		"class": "huray2",
-		"idName": "THIS IS HEADER BY ID GOT FROM DATA!",
+		"idName": "Test Header",
 		"dataAtr": "   "
 	},
 	"showCasePageBottom": {
 		"self": "showCasePageBottom",
-		"title": "Showcase of Bottom:",
+		"title": "Showcase of Bottom!22",
 		"class": "huray2",
-		"idName": "THIS IS HEADER BY ID Ok",
+		"idName": "THIS IS HEADER",
 		"dataAtr": "   "
 	}
 }

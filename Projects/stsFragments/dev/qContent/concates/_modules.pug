@@ -55,13 +55,13 @@ mixin LEVEL-orderPage(title,className)
 			+B-b1('hello')
 		p.orderPage__mainMessage.text
 			| Ваша заявка
-			|  !{link} 
+			|  !{link} s  
 			| принята на обработку!!!    
 		ul.orderPage__subMess
 			li В настоящий момент заявка ожидаетd подтверждения м    енеджером.
 			li Ваш ответственный менеджер !{link2} автоматически оповещен.
 			li Отслеживать статус заявки вы можете в !{link1}.
-			li Электронная копия заявки отправлена на указанный вами email.
+			li Электронная копия заявки отправлена на указанный вами em.
 			
 		.orderPage__actions
 			a(href='/') &larr; В личный Кабинет!. 
@@ -71,41 +71,6 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
-mixin LEVEL-testOfSergConnectingSupport(title,className)
-	-if (!className) className =''
-	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
-		h2.testOfSergConnectingSupport__title=title
-		block testOfSergConnectingSupport
-mixin LEVEL-showCasePage(data)
-	-if (!className) className =''
-	.container
-		.showCasePage__content(class = 'showCasePage__content '+ data.class data-qcontent="level__showCasePage" data-self=""+data.self)
-			h1.showCasePage__title=data.title
-			h4.showCasePage__subtitle.text Icons:  
-			+I('box')
-			+I('search')
-			+I('eshop')
-			+I('cart','cart_Main')
-			+I('cart','cart_btn')
-			+I('truck')
-			+I('arrow')
-			+I('marker')
-			+I('clock')
-			+I('sale')
-			+I('star')
-			+I('toilet')
-			+I('bath')
-			h4.showCasePage__subtitle.text Headings
-			h1.showCasePage__subtitle.showCasePage__subtitle--red=data.idName
-			h2 Header
-			h3 Header
-			h4 Header
-			h5 Header
-			h6 Header
-			h4.showCasePage__subtitle.text Paragraph:
-			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
-			if block
-				block
 mixin LEVEL-showcase(title,className)
 	-if (!className) className =''
 	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
@@ -115,3 +80,38 @@ mixin LEVEL-showcase(title,className)
 			+holder('page__loader','100px300',colors.primary)
 			if block
 				block
+mixin LEVEL-showCasePage(data)
+	-if (!className) className =''
+	.container
+		section.showCasePage__content(class = 'showCasePage__content '+ data.class data-qcontent="level__showCasePage" data-self=""+data.self)
+			h1.showCasePage__title=data.title
+			h4.showCasePage__subtitle.text Icons:  
+			+I('box')
+			+I('search')
+			+I('eshop')
+			+I('cart','cart_Main')
+			+I('cart','cart_btn')
+			+I('truck')
+			+I('arrow')  
+			+I('marker')
+			+I('clock')
+			+I('sale')
+			+I('star')
+			+I('toilet')
+			+I('bath')
+			h4.showCasePage__subtitle.text Headings 
+			h1.showCasePage__subtitle.showCasePage__subtitle--red=data.idName
+			h2 Header
+			h3 Headera
+			h4 Header
+			h5 Header
+			h6 Header
+			h4.showCasePage__subtitle.text Paragraph:
+			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
+			if block
+				block
+mixin LEVEL-testOfSergConnectingSupport(title,className)
+	-if (!className) className =''
+	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
+		h2.testOfSergConnectingSupport__title=title
+		block testOfSergConnectingSupport

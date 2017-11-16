@@ -35,7 +35,7 @@
   .pb-colorBox{
 	width: 90px;
 	height: 90px;
-	@include space('element','','t');
+
   }
   @each $role,$value in $colors-map{
 	.pb-colorBox--#{$role}{

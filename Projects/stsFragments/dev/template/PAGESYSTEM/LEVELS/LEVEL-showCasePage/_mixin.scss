@@ -6,23 +6,23 @@
         background-color: cs('foreground');
         padding: 30px 20px;
          p{
-            color:cs('font-d');
+            color:cs('font-d');      
         }
     }
-    &__title {
-        margin-bottom: 20px;
-        text-align: center;
+    &__title {         
+        margin-bottom: 25px;  
+        text-align: center;  
     }
-    &__subtitle{
-        color: cs('succes-d');
-        border-bottom: 2px solid;
-        &--red{
-            margin-top:40px;
-            margin-bottom:35px;
-            text-transform: uppercase;
+    &__subtitle{         
+        color: cs('succes-d2');   
+        border-bottom: 5px solid;
+        &--red{                       
+            margin-top:21px;    
+            margin-bottom:32px; 
+            text-transform: uppercase;       
             text-align:center;
-            line-height:1.7em;   
-            color: darken(violet,25%);
+            line-height:2.7em;   
+            color: darken(violet,20%);
         }
     }
 }
