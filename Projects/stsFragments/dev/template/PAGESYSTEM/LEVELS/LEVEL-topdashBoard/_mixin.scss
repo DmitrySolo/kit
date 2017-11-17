@@ -1,0 +1,15 @@
+/* topdashBoard STYLE */
+
+.topdashBoard {
+    &__content {
+        background: cs('font');
+    }
+    &__title {
+
+    }
+    &__list{
+        font-size:0;
+        padding: 0;
+        margin: 0;
+    }
+}

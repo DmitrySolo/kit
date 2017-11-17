@@ -53,6 +53,11 @@ target.save = {
 
 function MakeEditable (elem) {
 
+
+	if(elem.attr('tagName')=='input') return
+
+
+
 	elem.on('click',function(e){
 
 		$('#selfProperties,#extendsSelectors,#context,#classSelector',window.parent.document).html('');
@@ -250,7 +255,7 @@ $(document).ready(function () {
 
 
 
-MakeEditable($('*,spacer block-i').not($('.notEdit,body,html,.ace_editor,.ace_editor *,.rg-overlay,.rg-overlay *')).not('.notEdit *'));
+MakeEditable($('*,spacer block-i').not($('.not,.not *,.notEdit,body,html,input,label,.ace_editor,.ace_editor *,.rg-overlay,.rg-overlay *')).not('.notEdit *'));
 
 
 var firstInTagsLine ='';

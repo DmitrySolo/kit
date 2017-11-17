@@ -1,29 +1,3 @@
-$bkgColor__b1:cs('accent');
-$bkgColor__b1-hover:cs('accent-l2');
-$color__b1-hover:cs('accent-d');
-$color__b1:cs('font-d2');   
- 
-.b1 {
-    display: inline-block;
-	position: relative;
-	background-color: $bkgColor__b1;
-	color: $color__b1;
-	text-transform: uppercase;
-	transition: background .2s linear;
-	border: 2px solid cs('accent-d1');
-	line-height: 1.7;
-	border-radius: 5px; 
-		&:hover, &:focus, &:active {      
-		background-color: $bkgColor__b1-hover;
-		border: 2px solid cs('accent-d1');
-		}
-		&:focus {
-			outline: none;
-		}
-		&:hover, &:active {
-			outline: none;
-	}
-}
 .icon{ 
   display: inline-block;
   vertical-align: middle;
@@ -51,3 +25,183 @@ $color__b1:cs('font-d2');
   
 
 
+
+.dashBoardElement{
+    vertical-align: top;
+    font-size:14px;
+    //position: relative;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid cs('font-d2');
+    cursor: pointer;
+    transition: background .15s linear;
+    display: inline-block;
+    @include for-size(tablet-p-up){
+        max-width:18%;
+        text-align: left;
+        border:none;
+        margin-right:4px;
+    }
+    width: 100%;
+    height: 4em;
+    background: cs('font-d');
+    color: #fff;
+    display: inline-block;
+    padding: .4em .7em;
+    text-align:left;
+    &:hover{
+        background: cs('font-d2');
+    }
+  .iconWrapper{
+      width:15%;
+      height: 100%;
+      
+      @include for-size(phone-only){
+          margin-right: 10%;
+      }
+      display: inline-block;
+      vertical-align:middle;
+      text-align:center;
+      float:left;
+      @include for-size(tablet-p-up){
+          width:10%;
+          float:none;
+          //margin-right: 5%;
+      }
+      @include for-size(tablet-l-up){
+          width:20%;
+          float:none;
+      }
+      svg{
+          fill: cs('accent');
+          width:70%;
+          height :100%;
+          
+      }
+     
+  }
+   &__title{
+       vertical-align: middle;
+        display:inline-block;
+        width:75%;
+        line-height:3.2em;
+        @include for-size(tablet-l-up){
+            line-height:$line_height_ratio;
+            text-align: center;
+          
+        }
+/*         line-height: 3.2em;
+@include for-size(tablet-l-up){
+    line-height:initial;
+} */
+      }
+    &__switcher {
+        text-align: center;
+    }
+    &--notice{
+        .iconWrapper{
+            position:relative;
+        }
+        .iconWrapper:after{
+            content: attr(data-notice);
+            position: absolute;
+            top:0;
+            right:-5px;
+            color:cs('accent-l');
+        }
+    }
+
+}
+$bkgColor__b1:cs('accent');
+$bkgColor__b1-hover:cs('accent-l2');
+$color__b1-hover:cs('accent-d');
+$color__b1:cs('font-d2');   
+ 
+.b1 {
+    display: inline-block;
+	position: relative;
+	background-color: $bkgColor__b1;
+	color: $color__b1;
+	text-transform: uppercase;
+	transition: background .2s linear;
+	border: 2px solid cs('accent-d1');
+	line-height: 1.7;
+	border-radius: 5px; 
+		&:hover, &:focus, &:active {      
+		background-color: $bkgColor__b1-hover;
+		border: 2px solid cs('accent-d1');
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+.switcher {
+    display: inline-block;
+    vertical-align:middle;
+    width:20%;
+    height:100%;
+    padding-top: .9em;
+    
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 43px;
+  height: 17px;
+  //vertical-align: middle;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: cs('accent');
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

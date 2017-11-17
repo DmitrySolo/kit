@@ -11,11 +11,48 @@
 				"": ""
 			}
 		},
+		"react": {
+			"js": {
+				"react": {
+					"src": "node_modules/react/umd/react.production.min.js",
+					"container": "footer/libs"
+				},
+				"react-dom": {
+					"src": "node_modules/react-dom/umd/react-dom.production.min.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-debug-JsonCss": {
 			"js": {
 				"quant-debug-JsonCss-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
 					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-debug-ruller": {
+			"js": {
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"xRayView": {
+			"js": {
+				"xRayView-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
+					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -48,48 +85,11 @@
 				}
 			}
 		},
-		"quant-debug-ruller": {
-			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"quant-lib": {
 			"js": {
 				"quant-lib-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
 					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"react": {
-			"js": {
-				"react": {
-					"src": "node_modules/react/umd/react.production.min.js",
-					"container": "footer/libs"
-				},
-				"react-dom": {
-					"src": "node_modules/react-dom/umd/react-dom.production.min.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"xRayView": {
-			"js": {
-				"xRayView-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -175,18 +175,18 @@
 	"background-color": "cs('bground')",
 	"LINKED_FONTS_MAP": {
 		"//  'MAIN'": "('Oswald')",
-		"'HEADER'": "('Roboto Slab')\r\n//)"
+		"'HEADER'": "('Roboto Slab')\n//)"
 	},
 	"block_space": "4",
 	"module_space": "3",
 	"component_space": "2",
 	"element_space": "2",
 	"section_space": "4",
-	"container-styles": "(\r\n\r\n)",
+	"container-styles": "(\n\n)",
 	"colStyles": {
 		"width": "100%",
 		"float": "left",
-		"min-height": "1px\r\n)"
+		"min-height": "1px\n)"
 	},
 	"nr-colStyles": {
 		"float": "left"
@@ -326,13 +326,21 @@
 			"dop_class": "",
 			"layout": "default",
 			"group": ""
+		},
+		"4": {
+			"title": "dashboard",
+			"slug": "dashboard",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "default",
+			"group": ""
 		}
-	},
-	"breadcrumbs": {
-		"1": "22"
 	},
 	"atest": {
 		"atest": "1"
+	},
+	"breadcrumbs": {
+		"1": "22"
 	},
 	"confirmedOrderPage": {
 		"confirmedOrderPage": "1"
@@ -356,5 +364,8 @@
 		"class": "huray2",
 		"idName": "THIS IS HEADER",
 		"dataAtr": "   "
+	},
+	"topdashBoard": {
+		"title": "Dashboard"
 	}
 }

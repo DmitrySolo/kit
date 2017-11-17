@@ -1,0 +1,10 @@
+mixin LEVEL-topdashBoard(data)
+	-if (!className) className =''
+	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
+		.container
+			ul.topdashBoard__list
+				+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
+				+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
+				+dashBoardElement('help','Помощь и настройки','dashBoardElement')
+				+dashBoardElement('help','Режим Заявки','dashBoardElement','switcher')
+			block topdashBoard

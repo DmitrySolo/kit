@@ -1,0 +1,86 @@
+.dashBoardElement{
+    vertical-align: top;
+    font-size:14px;
+    //position: relative;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid cs('font-d2');
+    cursor: pointer;
+    transition: background .15s linear;
+    display: inline-block;
+    @include for-size(tablet-p-up){
+        max-width:18%;
+        text-align: left;
+        border:none;
+        margin-right:4px;
+    }
+    width: 100%;
+    height: 4em;
+    background: cs('font-d');
+    color: #fff;
+    display: inline-block;
+    padding: .4em .7em;
+    text-align:left;
+    &:hover{
+        background: cs('font-d2');
+    }
+  .iconWrapper{
+      width:15%;
+      height: 100%;
+      
+      @include for-size(phone-only){
+          margin-right: 10%;
+      }
+      display: inline-block;
+      vertical-align:middle;
+      text-align:center;
+      float:left;
+      @include for-size(tablet-p-up){
+          width:10%;
+          float:none;
+          //margin-right: 5%;
+      }
+      @include for-size(tablet-l-up){
+          width:20%;
+          float:none;
+      }
+      svg{
+          fill: cs('accent');
+          width:70%;
+          height :100%;
+          
+      }
+     
+  }
+   &__title{
+       vertical-align: middle;
+        display:inline-block;
+        width:75%;
+        line-height:3.2em;
+        @include for-size(tablet-l-up){
+            line-height:$line_height_ratio;
+            text-align: center;
+          
+        }
+/*         line-height: 3.2em;
+@include for-size(tablet-l-up){
+    line-height:initial;
+} */
+      }
+    &__switcher {
+        text-align: center;
+    }
+    &--notice{
+        .iconWrapper{
+            position:relative;
+        }
+        .iconWrapper:after{
+            content: attr(data-notice);
+            position: absolute;
+            top:0;
+            right:-5px;
+            color:cs('accent-l');
+        }
+    }
+
+}
