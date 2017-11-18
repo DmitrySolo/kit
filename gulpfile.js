@@ -274,7 +274,7 @@ gulp.task('VIEW-FINAL', function () {
 		'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
 	], function () {
 		gulp.start('views');
-
+        Qupdate = '1';
 	});
 });
 gulp.task('VIEW-SOURCE', function () {
@@ -364,7 +364,7 @@ gulp.task('VIEW-1-DATA', function () {
 gulp.task('SERVER WATCHER', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([dist + "/index.html", dist + "/*.css", projectDevDir + "SCRIPTS/scriptMap.js"], function () {
-		Qupdate = '1';
+		//Qupdate = '1';
 
 	});
 });
@@ -404,8 +404,9 @@ gulp.task('STYLES-FINAL', function () {
 		'dev/MODULES/_modules.scss',
 	], function () {
 		gulp.start('styles');
+        Qupdate = '1';
 		gulp.start('sass-json');
-		//Qupdate = '1';
+
 
 	});
 });

@@ -2,21 +2,26 @@ $response:true;
 $vertical-rhythm:true;
 $siteWidth: 1170px;
 $colums: 12;
-$gutter-width: .5em;
+$gutter-width: .5em;  
+
 // BREAKPOINTS
-$phone-upper-boundary:600px;
-$tablet-portrait-upper-boundary:768px;
-$tablet-landscape-upper-boundary:994px;
-$desktop-upper-boundary:1200px;
-$desktopl-upper-boundary:1200px;
+$phone-upper-boundary: 600px;
+$tablet-portrait-upper-boundary: 900px;
+$tablet-landscape-upper-boundary: 1200px;
+$desktop-upper-boundary: 1800px;
+
+
+
+
 // CONTAINERS
-$tablet-p-container:690px;
+$tablet-p-container:100%;
 $tablet-l-container:900px;
-$siteMinWidth:$tablet-p-container;
+$siteMinWidth:$tablet-l-container;
 $desktop-container:1120px;
 $grid-map: (
 mobile:(prefix:m, container:100%, breakpoint:$phone-upper-boundary - 1),
 tablet-p :(prefix:tp, container:$tablet-p-container, breakpoint:$phone-upper-boundary),
 tablet-l     :(prefix:tl, container:$tablet-l-container, breakpoint:$tablet-portrait-upper-boundary),
 mediumScreen :(prefix:d, container:$desktop-container, breakpoint:$tablet-landscape-upper-boundary),
-largeScreen  :(prefix:dl, container:$siteWidth, breakpoint:$desktop-upper-boundary))
+largeScreen  :(prefix:dl, container:$siteWidth, breakpoint:$desktop-upper-boundary)
+)

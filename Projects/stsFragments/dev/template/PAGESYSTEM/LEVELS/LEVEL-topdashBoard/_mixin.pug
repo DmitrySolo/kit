@@ -6,5 +6,7 @@ mixin LEVEL-topdashBoard(data)
 				+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
 				+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
 				+dashBoardElement('help','Помощь и настройки','dashBoardElement')
-				+dashBoardElement('help','Режим Заявки','dashBoardElement','switcher')
-			block topdashBoard
+				+dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')
+				+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
+		if block
+			block 

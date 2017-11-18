@@ -14,5 +14,12 @@ mixin dashBoardElement(icon,text,className,type)
 				svg(class=' ' + classModifier)
 					use(xlink:href="#" + icon)
 			span.dashBoardElement__title=text 
+		-if(type=='orderList')
+			span.iconWrapper.iconWrapper--orderList(data-order='10')
+				svg(class=' ' + classModifier) 
+					use(xlink:href="#" + icon)
+			span.dashBoardElement__pricer='100 000р'
+			a(href'/').dashBoardElement__arr Оформить заявку
+			
 			
 

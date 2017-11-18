@@ -1,35 +1,17 @@
-@mixin media($breakPoint){
-  $mobileBreakpoint : map_get(map_get($grid-map,mobile),breakpoint);
-  $tabletBreakpointPortrait : map_get(map_get($grid-map,tablet-p),breakpoint);
-  $tabletBreakpointLandscape : map_get(map_get($grid-map,tablet-l),breakpoint);
-  $medBreakpoint : map_get(map_get($grid-map,mediumScreen),breakpoint);
-  $largeBreakpoint : map_get(map_get($grid-map,largeScreen),breakpoint);
-  @if($breakPoint == 'mobile') {
-    @media screen and (max-width: $tabletBreakpointPortrait) {
-      @content
-    }
-  }
-  @else if($breakPoint == 'tablet'){
-    @media screen and (max-width: $medBreakpoint) {
-      @content
-    }
-  }
-  @else if($breakPoint == 'md'){
-    @media screen and (max-width: $largeBreakpoint) {
-      @content
-    }
-  }
-}
-//////////////////////////////////////////////////////////////////
-@mixin for-size($range) {
+////////////////////////////////////////////////////////////////
 
+@mixin for-size($range) {
+  $phone-upper-boundary: 600px;
+  $tablet-portrait-upper-boundary: 900px;
+  $tablet-landscape-upper-boundary: 1200px;
+  $desktop-upper-boundary: 1800px;
 
   @if $range == phone-only {
     @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
   } @else if $range == tablet-p-up {
-    @media (min-width: $tablet-portrait-upper-boundary) { @content; }
+    @media (min-width: $phone-upper-boundary) { @content; }
   } @else if $range == tablet-l-up {
-    @media (min-width: $tablet-landscape-upper-boundary) { @content; }
+    @media (min-width: $tablet-portrait-upper-boundary) { @content; }
   } @else if $range == desktop-up {
     @media (min-width: $tablet-landscape-upper-boundary) { @content; }
   } @else if $range == big-desktop-up {

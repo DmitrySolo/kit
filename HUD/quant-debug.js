@@ -1,5 +1,4 @@
-$('html')
-    .animate({'opacity':'1'})
+
 var loadProjectPath = function (path, placeTo) {
 
 	$.ajax({
@@ -235,10 +234,18 @@ function loadToQuant() {
 									editor.find(target.split(' ')[i].split('--')[target.split(' ')[i].split('--').length-1])
 									editorPug.find(target.split(' ')[i])
 									editorJs.find(target.split(' ')[i])
-								}else if(!modify && target.split(' ')[i].indexOf('__') !=-1){
+                                    var modify = true;
+								}
+                                else if(!modify && target.split(' ')[i].indexOf('__') !=-1){
+                                    editorPug.find(target.split(' ')[i])
+                                    editorJs.find(target.split(' ')[i])
+									console.log(target.split(' ')[i])
+                                    editor.find(target.split(' ')[i].split('__')[target.split(' ')[i].split('__').length-1])
+                                }
+								else if(!modify && target.split(' ')[i].indexOf('--') !=-1){
 									editorPug.find(target.split(' ')[i])
 									editorJs.find(target.split(' ')[i])
-									editor.find(target.split(' ')[i].split('__')[target.split('__').length-1])
+									editor.find(target.split(' ')[i].split('--')[target.split('--').length-1])
 								}
 							}
 						}else{
@@ -316,8 +323,7 @@ Frame.onload = function () {
 	$('#editorData').removeClass('edited');
 	editorsListner();
 	$('.hud-Button,.testButton').not('#editorSwitcher').filter($('.on')).trigger('mousedown').addClass('on');
-    frameEl('html')
-        .animate({'opacity':'1'})
+
 
 
 };
@@ -1800,7 +1806,7 @@ $(document).ready(function () {
 
 				}
 			});
-
+z
 			request.fail(function (jqXHR, textStatus) {
 				$('#apitest').css('background', '#ff3300')
 			});
@@ -2175,7 +2181,7 @@ $(document).ready(function () {
 		$('button#savecode').on('mousedown', function () {
 
 			scroll = frameEl('html').scrollTop();
-            frameEl('html').animate({'opacity':'0'})
+
 			//alert(scroll)
 			var cursorsObj = {};
 
