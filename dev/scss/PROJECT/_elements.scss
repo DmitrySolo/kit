@@ -90,6 +90,34 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+.icon{ 
+  display: inline-block;
+  vertical-align: middle;
+  width:3em;
+  height: 3em;
+  fill: cs('primary');
+  
+      &--cart_Main{
+         width:5em;
+         height:5em;
+      }
+      &--cart_btn{
+         width:2em;
+         height:2em;
+      }
+      &--red {
+          fill:red;
+      }
+      &--rocket { 
+          fill:cs('succes-d2');
+           @include space-i('element','=','','l');
+      }
+    
+}
+  
+
+
+
 .dashBoardElement{
     vertical-align: top;
     font-size:13px;   
@@ -248,30 +276,3 @@ input:checked + .slider:before {
    }
 
 }
-.icon{ 
-  display: inline-block;
-  vertical-align: middle;
-  width:3em;
-  height: 3em;
-  fill: cs('primary');
-  
-      &--cart_Main{
-         width:5em;
-         height:5em;
-      }
-      &--cart_btn{
-         width:2em;
-         height:2em;
-      }
-      &--red {
-          fill:red;
-      }
-      &--rocket { 
-          fill:cs('succes-d2');
-           @include space-i('element','=','','l');
-      }
-    
-}
-  
-
-
