@@ -274,7 +274,7 @@ gulp.task('VIEW-FINAL', function () {
 		'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
 	], function () {
 		gulp.start('views');
-        Qupdate = '1';
+		Qupdate = '1';
 	});
 });
 gulp.task('VIEW-SOURCE', function () {
@@ -404,7 +404,7 @@ gulp.task('STYLES-FINAL', function () {
 		'dev/MODULES/_modules.scss',
 	], function () {
 		gulp.start('styles');
-        Qupdate = '1';
+		Qupdate = '1';
 		gulp.start('sass-json');
 
 
@@ -1044,7 +1044,7 @@ gulp.task('tests', [], function () {
 	}
 )
 
-gulp.task(dist + '-module', [], function () {
+gulp.task('dist-module', [], function () {
 	var str = "include ../../../template/PAGESYSTEM/INCLUDES/_includes\n";
 	gulp.src('dev/MODULES/PROJECT MODULES/--' + options.name + '/_include.pug').pipe(insert.prepend(str))
 		.pipe(pug({
@@ -1057,6 +1057,24 @@ gulp.task(dist + '-module', [], function () {
 			html: [dest]
 		}))
 		.pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--' + options.name + '/DIST/'));
+
+});
+
+gulp.task('dist-page', [], function () {
+	var dataProd = data;
+	dataProd.statement = 'Production';
+	var destProd = 'Projects/'+projectName+'/production/pages/dashboard/'
+	gulp.src(projectDevDir+'template/PAGESYSTEM/PAGES/dashboard.pug')
+		.pipe(pug({
+			data: data,
+			pretty: true,
+		})).pipe(gulp.dest(destProd));
+
+	gulp.src(dist + '/main.css')
+		.pipe(uncss({
+			html: [destProd+'dashboard.html']
+		}))
+		.pipe(gulp.dest(destProd));
 
 });
 gulp.task('testizmodul', [], function () {

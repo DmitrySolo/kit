@@ -7,7 +7,7 @@ mixin B-switcher(value,className)
 	-if (!className) className =''
 	.switcher.not(class=''+className data-qcontent='element__buttons__switcher')=value
 		label.switch 
-			input(type="checkbox")
+			input#js-switchShopState(type="checkbox")
 			span.slider.round
 
 

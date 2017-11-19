@@ -2264,10 +2264,11 @@ z
 		;
 	})
 
-	shortcut.add("Ctrl+Alt", function () {
+	shortcut.add("Ctrl+s", function () {
 		// alert("Hi there!q");
 		$('button#savecode').trigger('mousedown')
-	})
+	},{
+        'propagate':false})
 
 
 	// LOAD TO QUANT!

@@ -1,6 +1,6 @@
 .dashBoardElement{
     vertical-align: top;
-    font-size:13px;
+    font-size:13px;   
     //position: relative;
     padding: 0;
     border-bottom: 1px solid cs('font-d2');
@@ -113,6 +113,9 @@
     &__switcher {
       text-align:left;
       width:65%;
+      @include for-size(phone-only){
+          text-align: center;
+      }
     }
     &--notice{
         .iconWrapper{
@@ -146,6 +149,9 @@
        }
        &:active{
            background: darken(cs('succes-d2'),5%);
+       }
+       @include for-size(phone-only){
+           margin-top:.9em;
        }
    }
 

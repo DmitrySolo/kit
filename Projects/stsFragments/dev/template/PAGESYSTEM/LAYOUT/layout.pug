@@ -4,7 +4,7 @@ doctype html
 html(lang=''+head.lang)
 	head
 		include ../INCLUDES/_head
-	body(class=''+bodyClass, data-qcontent="layout__header")
+	body(class=''+bodyClass, data-qcontent="layout__layout")
 		.projectWrapper
 			<!-- HEADER -->
 			include _header
@@ -22,6 +22,7 @@ html(lang=''+head.lang)
 				<!-- split SVG SPRITE -->
 				.hidden
 					include ../../../../dist/source/icons/SVGSpriteIcons.svg
+		-if (statement != 'Production')
 			-if (OPTIONS.accessibilityTesting =='true')
 				script.
 					axe.run(function (err, results) {
@@ -80,5 +81,5 @@ html(lang=''+head.lang)
 
 					});
 
-
-	include ../INCLUDES/_debugPannel
+	-if (statement != 'Production')
+		include ../INCLUDES/_debugPannel

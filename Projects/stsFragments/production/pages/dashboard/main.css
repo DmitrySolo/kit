@@ -1,0 +1,210 @@
+
+/**
+* LAYOUT HELPERS
+*/
+
+.hidden {
+  display: none; }
+/**
+* PROJECT  STYLES
+*/
+
+/**
+Layout&Pages
+ **/
+
+/* topdashBoard STYLE */
+.topdashBoard__content {
+  background: #6f6c6c; }
+
+.topdashBoard__list {
+  font-size: 0;
+  padding: 0;
+  margin: 0; }
+
+
+/**
+Elements
+* */
+
+.switcher {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  padding-top: .9em; }
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 43px;
+  height: 17px; }
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none; }
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+input:checked + .slider {
+  background-color: #ff8502; }
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3; }
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px); }
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px; }
+
+.slider.round:before {
+  border-radius: 50%; }
+
+.dashBoardElement {
+  vertical-align: top;
+  font-size: 13px;
+  padding: 0;
+  border-bottom: 1px solid #3b3a3a;
+  margin: 0;
+  border-bottom: 1px solid #3b3a3a;
+  cursor: pointer;
+  transition: background .15s linear;
+  display: inline-block;
+  width: 100%;
+  width: 100%;
+  height: 4em;
+  background: #555353;
+  color: #fff;
+  display: inline-block;
+  padding: .4em .7em;
+  text-align: left; }
+  @media (min-width: 900px) {
+    .dashBoardElement {
+      max-width: 19.5%;
+      margin-right: 4px;
+      border: none; } }
+  .dashBoardElement:hover {
+    background: #3b3a3a; }
+  .dashBoardElement .iconWrapper {
+    width: 15%;
+    height: 100%;
+    margin-right: 5%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center; }
+    @media (max-width: 599px) {
+      .dashBoardElement .iconWrapper {
+        margin-right: 10%; } }
+    @media (min-width: 600px) {
+      .dashBoardElement .iconWrapper {
+        width: 10%; } }
+    @media (min-width: 900px) {
+      .dashBoardElement .iconWrapper {
+        width: 20%; } }
+    .dashBoardElement .iconWrapper svg {
+      fill: #ff8502;
+      width: 70%;
+      height: 100%; }
+      @media (min-width: 600px) {
+        .dashBoardElement .iconWrapper svg {
+          width: 40%; } }
+      @media (min-width: 900px) {
+        .dashBoardElement .iconWrapper svg {
+          width: 70%; } }
+    .dashBoardElement .iconWrapper--orderList {
+      position: relative;
+      margin-right: 0; }
+      .dashBoardElement .iconWrapper--orderList svg {
+        fill: #46bb90; }
+      .dashBoardElement .iconWrapper--orderList:after {
+        content: attr(data-order);
+        position: absolute;
+        top: 0;
+        right: -20px;
+        display: inline-block;
+        width: 21px;
+        height: 21px;
+        padding-top: 1px;
+        line-height: 21px;
+        text-align: center;
+        border-radius: 50%;
+        background: #2a7157; }
+      .dashBoardElement .iconWrapper--orderList:before {
+        content: attr(data-price);
+        position: absolute;
+        bottom: 0;
+        right: -160%;
+        display: inline-block;
+        line-height: 20px;
+        border-radius: 50%; }
+  .dashBoardElement__title {
+    vertical-align: middle;
+    display: inline-block;
+    width: 75%;
+    line-height: 3.2em;  }
+    @media (min-width: 900px) {
+      .dashBoardElement__title {
+        line-height: 1.7;
+        text-align: center; } }
+  .dashBoardElement__switcher {
+    text-align: left;
+    width: 65%; }
+    @media (max-width: 599px) {
+      .dashBoardElement__switcher {
+        text-align: center; } }
+  .dashBoardElement--notice .iconWrapper {
+    position: relative; }
+  .dashBoardElement--notice .iconWrapper:after {
+    content: attr(data-notice);
+    position: absolute;
+    top: 0;
+    right: -5px;
+    color: #ff9e35; }
+  .dashBoardElement__pricer {
+    vertical-align: bottom; }
+  .dashBoardElement__arr {
+    float: right;
+    width: 40%;
+    margin-top: .4em;
+    display: inline-block;
+    line-height: 1.1;
+    text-align: center;
+    background: #2a7157;
+    padding: 2px 2px;
+    vertical-align: middle;
+    border-radius: 5px;
+    border: solid 1px #46bb90; }
+    .dashBoardElement__arr:hover {
+      background: #6bc9a6; }
+    .dashBoardElement__arr:active {
+      background: #235f49; }
+    @media (max-width: 599px) {
+      .dashBoardElement__arr {
+        margin-top: .9em; } }
+
+
