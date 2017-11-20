@@ -1801,7 +1801,7 @@ $(document).ready(function () {
 			request.done(function (msg) {
 				$('#apitest').css('background', '#25b14a');
 				ql(msg, 'DONE');
-				if (msg == '1') {
+				if (msg == '1' ) {
 
                     Frame.src = Frame.src;
 

@@ -25,10 +25,13 @@
     &:hover{
         background: cs('font-d2');
     }
+    #test{
+        
+    }
   .iconWrapper{
       width:15%;
       height: 100%;
-      margin-right: 5%;
+      margin-right: 3%;
       @include for-size(phone-only){
           margin-right: 10%;
       }
@@ -134,7 +137,7 @@
    }
    &__arr{
        float:right;
-       width:40%;
+       width:40%; 
       margin-top:.4em;
       display:inline-block;
        line-height:1.1;
@@ -143,7 +146,7 @@
        padding: 2px 2px; 
        vertical-align:middle;
        border-radius: 5px;
-       border:solid 1px cs('succes');
+       border:solid 1px cs('succes-l2');
        &:hover{
            background: cs('succes-l');   
        }

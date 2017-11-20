@@ -203,14 +203,7 @@ gulp.task('views', function buildHTML() {
 		})).on('error', notify.onError(function (error) {
 		return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
 	})).pipe(gulp.dest(dist));
-	var str = "include ../template/PAGESYSTEM/INCLUDES/_includes\n";
-	gulp.src(projectDevDir + 'template/projectboard.pug').pipe(insert.prepend(str)).pipe(rename(function (path) {
-		path.basename = 'index';
-	}))
-		.pipe(pug({
-			data: data,
-			pretty: true,
-		})).pipe(gulp.dest('projectboard/'));
+    Qupdate = '1';
 });
 
 
@@ -273,8 +266,9 @@ gulp.task('VIEW-FINAL', function () {
 		'data.json',
 		'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
 	], function () {
+
 		gulp.start('views');
-		Qupdate = '1';
+        Qupdate = '1';
 	});
 });
 gulp.task('VIEW-SOURCE', function () {
@@ -404,7 +398,7 @@ gulp.task('STYLES-FINAL', function () {
 		'dev/MODULES/_modules.scss',
 	], function () {
 		gulp.start('styles');
-		Qupdate = '1';
+
 		gulp.start('sass-json');
 
 
@@ -844,7 +838,7 @@ gulp.task('styles', function () {
 			})))
 			.pipe(sourcemaps.write('maps/'))
 			.pipe(gulp.dest(dist))
-			.pipe(gulp.dest('projectboard'));
+        	Qupdate = '1';
 
 		gulp.src(['dev/scss/COLOR/_colors.scs'])
 			.pipe(sassJson())

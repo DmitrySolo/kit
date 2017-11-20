@@ -12,6 +12,11 @@ mixin B-switcher(value,className)
 
 
 
+mixin I(id,classModifier)
+	-if (!classModifier) classModifier =''
+	-else classModifier = 'icon--'+classModifier
+	svg(class='icon '+classModifier data-qcontent='element__ICONS__MAIN-SVG-use')
+		use(xlink:href="#"+id)
 mixin dashBoardElement(icon,text,className,type)
 	-if (!className) className =''
 	li(class=''+className  data-qcontent='element__ICON-TITLE-TEXTS__dashBoardElement')
@@ -29,17 +34,11 @@ mixin dashBoardElement(icon,text,className,type)
 					use(xlink:href="#" + icon)
 			span.dashBoardElement__title=text  
 		-if(type=='orderList')
-			span.iconWrapper.iconWrapper--orderList(data-order='11')  
+			span.iconWrapper.iconWrapper--orderList(data-order='15')  
 				svg(class=' ' + classModifier) 
 					use(xlink:href="#" + icon)
-			span.dashBoardElement__pricer='100 000р'
-			a(href'/').dashBoardElement__arr Оформить заявку
+			span.dashBoardElement__pricer='100 000р   '    
+			a(href'/').dashBoardElement__arr Оформить заzdre
 			
 			
 
-
-mixin I(id,classModifier)
-	-if (!classModifier) classModifier =''
-	-else classModifier = 'icon--'+classModifier
-	svg(class='icon '+classModifier data-qcontent='element__ICONS__MAIN-SVG-use')
-		use(xlink:href="#"+id)

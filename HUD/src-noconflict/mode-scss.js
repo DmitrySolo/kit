@@ -1,6 +1,5 @@
 ace.define("ace/mode/scss_highlight_rules",["require","exports","module","ace/lib/oop","ace/lib/lang","ace/mode/text_highlight_rules"], function(require, exports, module) {
 "use strict";
-
 var oop = require("../lib/oop");
 var lang = require("../lib/lang");
 var TextHighlightRules = require("./text_highlight_rules").TextHighlightRules;
@@ -188,6 +187,9 @@ var ScssHighlightRules = function() {
             }, {
                 token: "variable.language",
                 regex: "#[a-z0-9-_]+"
+            }, {
+                token : "maininner",
+                regex : "\\&__[a-z]"
             }, {
                 token: "variable.language",
                 regex: "\\.[a-z0-9-_]+"
