@@ -6,8 +6,8 @@ mixin B-b1(value,className)
 mixin B-switcher(value,className)
 	-if (!className) className =''
 	.switcher.not(class=''+className data-qcontent='element__buttons__switcher')=value
-		label.switch 
-			input#js-switchShopState(type="checkbox")
+		label.switch
+			input#js-switchShopState(type="checkbox") 
 			span.slider.round
 
 
@@ -27,9 +27,9 @@ mixin dashBoardElement(icon,text,className,type)
 			span.iconWrapper(data-notice='1')
 				svg(class=' ' + classModifier)
 					use(xlink:href="#" + icon)
-			span.dashBoardElement__title=text 
+			span.dashBoardElement__title=text  
 		-if(type=='orderList')
-			span.iconWrapper.iconWrapper--orderList(data-order='11')
+			span.iconWrapper.iconWrapper--orderList(data-order='11')  
 				svg(class=' ' + classModifier) 
 					use(xlink:href="#" + icon)
 			span.dashBoardElement__pricer='100 000р'

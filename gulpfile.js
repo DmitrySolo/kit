@@ -1387,6 +1387,7 @@ gulp.task('svgstore', function () {
 			}
 		}))
 		.pipe(svgstore())
+		.pipe(rename('SVGSpriteIcons.html'))
 		.pipe(gulp.dest(dist + '/source/icons/'));
 });
 gulp.task('svgstore-debug', function () {

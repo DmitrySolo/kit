@@ -20,8 +20,57 @@ html(lang=''+head.lang)
 			include ../SCRIPTS-STYLES/FOOTER/_footerScripts
 			-if (OPTIONS.useSVGSprite=="true")
 				<!-- split SVG SPRITE -->
-				.hidden
-					include ../../../../dist/source/icons/SVGSpriteIcons.svg
+				#svgContainer.hidden
+					//include ../../../../dist/source/icons/SVGSpriteIcons.html
+				script.
+					;( function (window, document) {
+						'use strict';
+
+						var file = 'source/icons/SVGSpriteIcons.html',
+							revision = 1;
+
+						if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
+							return true;
+
+						var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+							request,
+							data,
+							insertIT = function () {
+								var svgCtn = document.getElementById('svgContainer')
+								svgCtn.insertAdjacentHTML('afterbegin', data);
+							},
+							insert = function () {
+								if (document.body) insertIT();
+								else document.addEventListener('DOMContentLoaded', insertIT);
+							};
+
+						if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
+							data = localStorage.getItem('inlineSVGdata');
+							if (data) {
+								insert();
+								return true;
+							}
+						}
+
+						try {
+							request = new XMLHttpRequest();
+							request.open('GET', file, true);
+							request.onload = function () {
+								if (request.status >= 200 && request.status < 400) {
+									data = request.responseText;
+									insert();
+									if (isLocalStorage) {
+										localStorage.setItem('inlineSVGdata', data);
+										localStorage.setItem('inlineSVGrev', revision);
+									}
+								}
+							}
+							request.send();
+						}
+						catch (e) {
+						}
+
+					}(window, document) );
 		-if (statement != 'Production')
 			-if (OPTIONS.accessibilityTesting =='true')
 				script.

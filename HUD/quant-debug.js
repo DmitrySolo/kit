@@ -96,6 +96,7 @@ var dataChangeCounter =1;
 var pugChanged = false;
 var scssChanged = false;
 var dataChanged = false;
+var jsChanged = false;
 
 function addToBufer(content) {
 	let tmp = document.createElement('INPUT'), // Создаём новый текстовой input
@@ -374,7 +375,7 @@ $(document).ready(function () {
 
 	// $('.editor').draggable();
 	$('.step').draggable().resizable();
-
+	$('#editorJs').draggable();
 
 	var mediaMap = {
 		phoneBreakpoint: parseInt($('#phone-upper-boundary').text(), 10),
