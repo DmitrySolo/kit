@@ -1556,10 +1556,14 @@ $(document).ready(function () {
 
 		$(".debug-Dialog").dialog("open");
 	})
+
 	$('div#editorSwitcher').on('mousedown', function () {
 		$(this).toggleClass('on');
-		$(".hud-bottom").toggle();
+		if (!$(this).hasClass('on')) $('#index').css('height','91vh');
+		else $('#index').css('height','55vh');
+		$(".editorsContainer").toggle();
 	})
+
 	$('div#rulerSwitcher').on('mousedown', function () {
 		$(this).toggleClass('on');
 		$('.ruler.v,.ruler.h', window.frames['index'].contentDocument).toggle();
@@ -2274,6 +2278,22 @@ z
 		// alert("Hi there!q");
 		$('button#savecode').trigger('mousedown')
 	},{
+        'propagate':false})
+    shortcut.add("Ctrl+1", function () {
+        // alert("Hi there!q");
+        $('div#debugViewSwitcher').trigger('mousedown')
+    },{
+        'propagate':false})
+    shortcut.add("Alt+z", function () {
+        // alert("Hi there!q");
+        $('div#editorSwitcher').trigger('mousedown')
+    },{
+        'propagate':false})
+    shortcut.add("Ctrl+Alt", function () {
+       alert('hello')
+    	 frameEl('.debugElement').removeClass('debugElement');
+        $('.debugElement').removeClass('debugElement');
+    },{
         'propagate':false})
 
 

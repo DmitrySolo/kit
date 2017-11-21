@@ -1,7 +1,7 @@
 mixin LEVEL-topdashBoard(data)
 	-if (!className) className =''
 	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
-		.container
+		.container=data.title 
 			ul.topdashBoard__list
 				+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
 				+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')

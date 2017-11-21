@@ -1587,7 +1587,8 @@ Layout&Pages
 /* testOfSergConnectingSupport STYLE */
 /* topdashBoard STYLE */
 .topdashBoard__content {
-  background: #6f6c6c; }
+  background: #3b3a3a;
+  color: #fff; }
 
 .topdashBoard__list {
   font-size: 0;
@@ -1874,7 +1875,7 @@ input:checked + .slider:before {
     width: 40%;
     margin-top: .4em;
     display: inline-block;
-    line-height: 1.1;
+    line-height: 1.3;
     text-align: center;
     background: #2a7157;
     padding: 2px 2px;
@@ -1888,7 +1889,8 @@ input:checked + .slider:before {
       background: #235f49; }
     @media (max-width: 599px) {
       .dashBoardElement__arr {
-        margin-top: .9em; } }
+        padding: .9em;
+        margin-top: .25em; } }
 
 .pr {
   background-color: #3d255b !important; }
