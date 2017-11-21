@@ -967,6 +967,11 @@ $(document).ready(function () {
 		$(this).toggleClass('on');
 
 	})
+    $('div#blur').on('mousedown', function () {
+        frameEl('body').toggleClass('testBlur');
+        $(this).toggleClass('on');
+
+    })
 	$('div#rotate').on('mousedown', function () {
 		frameEl('body').toggleClass('testRotate');
 		$(this).toggleClass('on');

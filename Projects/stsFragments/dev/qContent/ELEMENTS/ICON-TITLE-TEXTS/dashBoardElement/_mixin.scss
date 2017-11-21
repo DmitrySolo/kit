@@ -116,6 +116,7 @@
     &__switcher {
       text-align:left;
       width:65%;
+      float:left;
       @include for-size(phone-only){
           text-align: center;
       }
@@ -147,6 +148,7 @@
        vertical-align:middle;
        border-radius: 5px;
        border:solid 1px cs('succes-l2');
+       font-size:smaller;
        &:hover{
            background: cs('succes-l');   
        }
