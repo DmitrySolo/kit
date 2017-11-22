@@ -30,6 +30,13 @@ $('.toOrder.active').on('mousedown',function () {
 	}
 
 })
+/**
+* MODULE: productInline script
+*
+*/
+$('.productInline__quantitySelector').on('focus', function () {
+    $(this).select();
+})
 // Element: b1 script.
 
 // Element: dashBoardElement script.

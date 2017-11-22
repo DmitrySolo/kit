@@ -27,9 +27,9 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </script>
         <div class="top-panel-content clearfix">
           <div class="quant hud">Q</div>
-          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">dashboard.html</span>
+          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">productList.html</span>
           </div>
-          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/dashboard.html" target="_blank" id="playhref">
+          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/productList.html" target="_blank" id="playhref">
               <div class="hud-Button f-left">
                         <svg class="icon playButston">
                           <use xlink:href="#play"></use>
@@ -269,7 +269,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </div>
         <div class="window" window="Viewport" style="z-index:5;">
           <div class="wrapperid" id="viewpr-content">
-            <iframe class="default-skin" id="index" src="dashboard.html" width="100%" align="center" name="viewport"></iframe>
+            <iframe class="default-skin" id="index" src="productList.html" width="100%" align="center" name="viewport"></iframe>
             <section class="pb-section clearfix hidden" id="ball"><span class="lh">Line height</span>
               <div class="spacer element-i"><span>Element i</span></div>
               <div class="spacer element-o"><span>Element o</span></div>
@@ -25454,14 +25454,14 @@ function loadToQuant() {
 									editor.find(target.split(' ')[i].split('--')[target.split(' ')[i].split('--').length-1])
 									editorPug.find(target.split(' ')[i])
 									editorJs.find(target.split(' ')[i])
-                                    var modify = true;
+									var modify = true;
 								}
-                                else if(!modify && target.split(' ')[i].indexOf('__') !=-1){
-                                    editorPug.find(target.split(' ')[i])
-                                    editorJs.find(target.split(' ')[i])
+								else if(!modify && target.split(' ')[i].indexOf('__') !=-1){
+									editorPug.find(target.split(' ')[i])
+									editorJs.find(target.split(' ')[i])
 									console.log(target.split(' ')[i])
-                                    editor.find(target.split(' ')[i].split('__')[target.split(' ')[i].split('__').length-1])
-                                }
+									editor.find(target.split(' ')[i].split('__')[target.split(' ')[i].split('__').length-1])
+								}
 								else if(!modify && target.split(' ')[i].indexOf('--') !=-1){
 									editorPug.find(target.split(' ')[i])
 									editorJs.find(target.split(' ')[i])
@@ -25516,7 +25516,7 @@ var scroll=0;
 var Frame = document.getElementById('index');
 Frame.onload = function () {
 	$('button#savecode').removeClass('classLoading');
-    frameEl('html').scrollTop(scroll)
+	frameEl('html').scrollTop(scroll)
 	loadToQuant();
 	$('.fs__modules ul,.fs__p_modules ul,.fs__p_elements ul,.fs__pages ul,.fs__levels ul,.fs__options ul,.fs__layout ul,.fs__data ul').html('');
 	loadProjectPath('dev/MODULES/PROJECT_MODULES', '.fs__modules');
@@ -26186,11 +26186,11 @@ $(document).ready(function () {
 		$(this).toggleClass('on');
 
 	})
-    $('div#blur').on('mousedown', function () {
-        frameEl('body').toggleClass('testBlur');
-        $(this).toggleClass('on');
+	$('div#blur').on('mousedown', function () {
+		frameEl('body').toggleClass('testBlur');
+		$(this).toggleClass('on');
 
-    })
+	})
 	$('div#rotate').on('mousedown', function () {
 		frameEl('body').toggleClass('testRotate');
 		$(this).toggleClass('on');
@@ -27031,7 +27031,7 @@ $(document).ready(function () {
 				ql(msg, 'DONE');
 				if (msg == '1' ) {
 
-                    Frame.src = Frame.src;
+					Frame.src = Frame.src;
 
 				}
 			});
@@ -27497,23 +27497,23 @@ z
 		// alert("Hi there!q");
 		$('button#savecode').trigger('mousedown')
 	},{
-        'propagate':false})
-    shortcut.add("Ctrl+1", function () {
-        // alert("Hi there!q");
-        $('div#debugViewSwitcher').trigger('mousedown')
-    },{
-        'propagate':false})
-    shortcut.add("Alt+z", function () {
-        // alert("Hi there!q");
-        $('div#editorSwitcher').trigger('mousedown')
-    },{
-        'propagate':false})
-    shortcut.add("Ctrl+Alt", function () {
-       alert('hello')
-    	 frameEl('.debugElement').removeClass('debugElement');
-        $('.debugElement').removeClass('debugElement');
-    },{
-        'propagate':false})
+		'propagate':false})
+	shortcut.add("Ctrl+1", function () {
+		// alert("Hi there!q");
+		$('div#debugViewSwitcher').trigger('mousedown')
+	},{
+		'propagate':false})
+	shortcut.add("Alt+z", function () {
+		// alert("Hi there!q");
+		$('div#editorSwitcher').trigger('mousedown')
+	},{
+		'propagate':false})
+	shortcut.add("Ctrl+Alt", function () {
+	   alert('hello')
+		 frameEl('.debugElement').removeClass('debugElement');
+		$('.debugElement').removeClass('debugElement');
+	},{
+		'propagate':false})
 
 
 	// LOAD TO QUANT!
@@ -27921,6 +27921,8 @@ var quantCon = [
     "	+holder('page__loader','100px100',colors.primary)",
 	"snippet +M-reactTest",
 	"	MODULE-reactTest()",
+	"snippet +M-productInline",
+	"	MODULE-productInline()",
 ].join(eol);
       </script>
       <script src="maps/main.css.map" type="text"></script>

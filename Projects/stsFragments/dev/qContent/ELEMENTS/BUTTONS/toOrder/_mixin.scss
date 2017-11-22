@@ -1,0 +1,30 @@
+
+    .toOrder {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        font-size:12px;
+        background: cs('accent'); 
+        border: solid 2px cs('accent-l');
+        width: 100%;
+        border-radius: 5px;
+        transition: background .2s ease;
+        text-decoration: none;
+        padding: 5px;
+        display:inline-block;
+        svg {
+            height: 12px;  
+        }
+        
+        &.succes {
+            background: cs('succes');
+            border-color: cs('succes-l');
+            &:hover{
+                background: cs('succes-l');
+            }
+        }
+        &:hover{
+            background: cs('accent-l');
+        
+        }
+    }

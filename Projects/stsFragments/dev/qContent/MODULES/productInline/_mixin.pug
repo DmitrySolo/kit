@@ -1,0 +1,16 @@
+mixin MODULE-productInline(data)
+	<!-- split modules/productInline -->
+	-var el ='.productInline';
+	li.productInline__content(data-qcontent='module__productInline')
+		a.productInline__link(href='#') 
+			span.productInline__section.productInline__section--sku=data.sku
+			span.productInline__section.productInline__section--img 
+			p.productInline__section.productInline__section--name=data.title
+			span.productInline__section.productInline__section--price=data.price+' руб.'
+			span.productInline__section.productInline__section--stock=data.stock +' из 1522'
+		span.productInline__section.productInline__section--quantity
+			input.productInline__quantitySelector(type=text value='1' size='3' )
+			.productInline__quantityButton.productInline__quantityButton--minus
+			.productInline__quantityButton.productInline__quantityButton--plus
+		span.productInline__section.productInline__section--order       
+			+B-toOrder()        

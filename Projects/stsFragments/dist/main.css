@@ -1487,6 +1487,7 @@ Layout&Pages
  **/
 /* orderPage STYLE */
 .orderPage__content {
+  background-image: url(/holder.js/200x200?theme=social);
   background-color: #fff;
   background-repeat: no-repeat;
   padding: 70px 30px; }
@@ -1658,6 +1659,96 @@ Modules
     color: green; }
 
 /**
+* productInline styles
+*/
+.productInline__content {
+  background-color: white;
+  width: 100%;
+  font-size: 0;
+  height: 3.4rem;
+  margin-top: 3px;
+  overflow: hidden; }
+  .productInline__content:hover {
+    background-color: #f2f2f2; }
+
+.productInline__section {
+  display: inline-block;
+  font-size: 1rem;
+  vertical-align: top;
+  padding: 5px 10px;
+  border-right: solid 1px #e6e6e6;
+  height: 100%;
+  line-height: 2.8rem; }
+  .productInline__section--sku {
+    width: 7%;
+    text-align: center;
+    font-size: .9rem; }
+  .productInline__section--name {
+    width: 40%;
+    line-height: 1.4rem;
+    padding-left: 15px; }
+  .productInline__section--price {
+    width: 12%;
+    text-align: center;
+    font-weight: bold;
+    color: #555353;
+    font-size: 1.1rem; }
+  .productInline__section--stock {
+    width: 10%;
+    color: #2a7157;
+    text-align: center;
+    background: #eef9f5;
+    font-size: .9rem; }
+    .productInline__section--stock.noStock {
+      background: #f7d4d2;
+      color: #971f1a; }
+  .productInline__section--order {
+    width: 11%;
+    text-align: center;
+    border-right: none; }
+  .productInline__section--img {
+    width: 10%;
+    background-color: white;
+    background-image: url("https://www.santehsmart.ru/upload/iblock/2ee/2ee1ca5fa8df10ec7e75f80c1e7edc22.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat; }
+  .productInline__section--quantity {
+    width: 10%;
+    text-align: center;
+    position: relative; }
+
+.productInline__link {
+  color: #555353; }
+
+.productInline__quantitySelector {
+  text-align: center;
+  font-size: 16px;
+  color: #6f6c6c;
+  padding: 4px 16px;
+  border: solid 1px #cccccc;
+  border-radius: 3px;
+  box-shadow: inset 0px 0px 9px silver; }
+
+.productInline__quantityButton {
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  bottom: 0;
+  border: solid 5px;
+  border-color: transparent;
+  height: 0;
+  line-height: 0;
+  padding: 0;
+  background: none; }
+  .productInline__quantityButton--plus {
+    right: 6px;
+    border-left-color: #898585; }
+  .productInline__quantityButton--minus {
+    left: 6px;
+    border-right-color: #898585; }
+
+/**
 * reactTest styles
 */
 .reactTest__content h1 {
@@ -1743,23 +1834,28 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%; }
 
-.icon {
-  display: inline-block;
-  vertical-align: middle;
-  width: 3em;
-  height: 3em;
-  fill: #3d255b; }
-  .icon--cart_Main {
-    width: 5em;
-    height: 5em; }
-  .icon--cart_btn {
-    width: 2em;
-    height: 2em; }
-  .icon--red {
-    fill: red; }
-  .icon--rocket {
-    fill: #2a7157;
-    margin-left: 1.19em; }
+.toOrder {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12px;
+  background: #ff8502;
+  border: solid 2px #ff9e35;
+  width: 100%;
+  border-radius: 5px;
+  transition: background .2s ease;
+  text-decoration: none;
+  padding: 5px;
+  display: inline-block; }
+  .toOrder svg {
+    height: 12px; }
+  .toOrder.succes {
+    background: #46bb90;
+    border-color: #6bc9a6; }
+    .toOrder.succes:hover {
+      background: #6bc9a6; }
+  .toOrder:hover {
+    background: #ff9e35; }
 
 .dashBoardElement {
   vertical-align: top;
@@ -1891,6 +1987,24 @@ input:checked + .slider:before {
       .dashBoardElement__arr {
         padding: .9em;
         margin-top: .25em; } }
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 3em;
+  height: 3em;
+  fill: #3d255b; }
+  .icon--cart_Main {
+    width: 5em;
+    height: 5em; }
+  .icon--cart_btn {
+    width: 2em;
+    height: 2em; }
+  .icon--red {
+    fill: red; }
+  .icon--rocket {
+    fill: #2a7157;
+    margin-left: 1.19em; }
 
 .pr {
   background-color: #3d255b !important; }

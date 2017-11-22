@@ -21,4 +21,6 @@ var quantCon = [
     "	+holder('page__loader','100px100',colors.primary)",
 	"snippet +M-reactTest",
 	"	MODULE-reactTest()",
+	"snippet +M-productInline",
+	"	MODULE-productInline()",
 ].join(eol);

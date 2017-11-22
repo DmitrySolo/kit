@@ -1,6 +1,6 @@
 ///////Holder js mark
 @function holder($size){
-  @return url(?holder.js/200x200?theme=social)
+  @return url(/holder.js/#{$size}?theme=social);
 }
 ///////LIST TO STRING
 @function to-string($list, $glue: '', $is-nested: false) {

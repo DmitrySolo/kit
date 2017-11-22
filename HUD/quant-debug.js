@@ -235,14 +235,14 @@ function loadToQuant() {
 									editor.find(target.split(' ')[i].split('--')[target.split(' ')[i].split('--').length-1])
 									editorPug.find(target.split(' ')[i])
 									editorJs.find(target.split(' ')[i])
-                                    var modify = true;
+									var modify = true;
 								}
-                                else if(!modify && target.split(' ')[i].indexOf('__') !=-1){
-                                    editorPug.find(target.split(' ')[i])
-                                    editorJs.find(target.split(' ')[i])
+								else if(!modify && target.split(' ')[i].indexOf('__') !=-1){
+									editorPug.find(target.split(' ')[i])
+									editorJs.find(target.split(' ')[i])
 									console.log(target.split(' ')[i])
-                                    editor.find(target.split(' ')[i].split('__')[target.split(' ')[i].split('__').length-1])
-                                }
+									editor.find(target.split(' ')[i].split('__')[target.split(' ')[i].split('__').length-1])
+								}
 								else if(!modify && target.split(' ')[i].indexOf('--') !=-1){
 									editorPug.find(target.split(' ')[i])
 									editorJs.find(target.split(' ')[i])
@@ -297,7 +297,7 @@ var scroll=0;
 var Frame = document.getElementById('index');
 Frame.onload = function () {
 	$('button#savecode').removeClass('classLoading');
-    frameEl('html').scrollTop(scroll)
+	frameEl('html').scrollTop(scroll)
 	loadToQuant();
 	$('.fs__modules ul,.fs__p_modules ul,.fs__p_elements ul,.fs__pages ul,.fs__levels ul,.fs__options ul,.fs__layout ul,.fs__data ul').html('');
 	loadProjectPath('dev/MODULES/PROJECT_MODULES', '.fs__modules');
@@ -967,11 +967,11 @@ $(document).ready(function () {
 		$(this).toggleClass('on');
 
 	})
-    $('div#blur').on('mousedown', function () {
-        frameEl('body').toggleClass('testBlur');
-        $(this).toggleClass('on');
+	$('div#blur').on('mousedown', function () {
+		frameEl('body').toggleClass('testBlur');
+		$(this).toggleClass('on');
 
-    })
+	})
 	$('div#rotate').on('mousedown', function () {
 		frameEl('body').toggleClass('testRotate');
 		$(this).toggleClass('on');
@@ -1812,7 +1812,7 @@ $(document).ready(function () {
 				ql(msg, 'DONE');
 				if (msg == '1' ) {
 
-                    Frame.src = Frame.src;
+					Frame.src = Frame.src;
 
 				}
 			});
@@ -2278,23 +2278,23 @@ z
 		// alert("Hi there!q");
 		$('button#savecode').trigger('mousedown')
 	},{
-        'propagate':false})
-    shortcut.add("Ctrl+1", function () {
-        // alert("Hi there!q");
-        $('div#debugViewSwitcher').trigger('mousedown')
-    },{
-        'propagate':false})
-    shortcut.add("Alt+z", function () {
-        // alert("Hi there!q");
-        $('div#editorSwitcher').trigger('mousedown')
-    },{
-        'propagate':false})
-    shortcut.add("Ctrl+Alt", function () {
-       alert('hello')
-    	 frameEl('.debugElement').removeClass('debugElement');
-        $('.debugElement').removeClass('debugElement');
-    },{
-        'propagate':false})
+		'propagate':false})
+	shortcut.add("Ctrl+1", function () {
+		// alert("Hi there!q");
+		$('div#debugViewSwitcher').trigger('mousedown')
+	},{
+		'propagate':false})
+	shortcut.add("Alt+z", function () {
+		// alert("Hi there!q");
+		$('div#editorSwitcher').trigger('mousedown')
+	},{
+		'propagate':false})
+	shortcut.add("Ctrl+Alt", function () {
+	   alert('hello')
+		 frameEl('.debugElement').removeClass('debugElement');
+		$('.debugElement').removeClass('debugElement');
+	},{
+		'propagate':false})
 
 
 	// LOAD TO QUANT!
