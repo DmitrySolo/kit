@@ -10,7 +10,7 @@
         background-color:cs('foreground-l2');
         width: 100%;
         font-size:0;
-        height: 3.4rem;
+        height: 3.45rem;
         margin-top: 3px;
         overflow:hidden;
         &:hover{
@@ -29,11 +29,10 @@
             width:7%;
             text-align:center;
             font-size:.9rem;
-            //font-weight: bold; 
         }
         &--name{
             width:40%;
-            line-height:1.4rem;
+            line-height:1.45rem;
             padding-left:15px;
         }
          &--price{
@@ -46,7 +45,7 @@
         }
         &--stock{
             width:10%;
-            color: cs('succes-d2');
+            color: cs('succes-d2'); 
             text-align: center;
             background: lighten(cs('succes-l2'),25%);
             font-size: .9rem;
@@ -84,25 +83,25 @@
         padding: 4px 16px ;
         border:solid 1px cs('foreground-d2');
         border-radius: 3px;
-        box-shadow: inset 0px 0px 9px silver;
+        box-shadow: inset 0px 0px 9px silver; 
+    }
+    &__quantityLabel{
+        position:relative;
     }
     &__quantityButton{
         position: absolute;
         top:50%;
-        margin-top:-5px;
-        bottom:0;
+        margin-top:-6px;
         border: solid 5px ;
         border-color: transparent;
-        height:0;
-        line-height:0;
         padding:0;
-        background: none;
+        background: none; 
         &--plus{
-            right:6px;
+            right:-5px;
             border-left-color: cs('font-l');
         }
         &--minus{
-            left:6px;
+            left:-5px;
             border-right-color: cs('font-l'); 
         }
     }

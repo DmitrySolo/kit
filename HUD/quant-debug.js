@@ -375,7 +375,7 @@ $(document).ready(function () {
 
 	// $('.editor').draggable();
 	$('.step').draggable().resizable();
-	$('#editorJs').draggable();
+	//$('#editorJs').draggable();
 
 	var mediaMap = {
 		phoneBreakpoint: parseInt($('#phone-upper-boundary').text(), 10),
@@ -1808,13 +1808,13 @@ $(document).ready(function () {
 			});
 
 			request.done(function (msg) {
-				$('#apitest').css('background', '#25b14a');
-				ql(msg, 'DONE');
+
 				if (msg == '1' ) {
 
 					Frame.src = Frame.src;
 
 				}
+                $('#apitest').css('background', '#25b14a');
 			});
 z
 			request.fail(function (jqXHR, textStatus) {
@@ -1825,7 +1825,7 @@ z
 		}
 	}
 	testServer();
-	setInterval(testServer, 400)
+	setInterval(testServer, 200)
 
 ///////////////// CREATE PROJECT
 

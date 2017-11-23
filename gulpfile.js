@@ -193,17 +193,37 @@ gulp.task('SCRIPTS', function () {
 
 gulp.task('views', function buildHTML() {
 	var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
-	gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/*.pug', 'HUD/HUD.pug'])
+	var viewProcess = gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/*.pug'])
 		.pipe(pug({
 			data: data,
 			pretty: true,
-			filters: {
-				php: pugPHPFilter
-			}
+			// filters: {
+			// 	php: pugPHPFilter
+			// }
 		})).on('error', notify.onError(function (error) {
 		return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
 	})).pipe(gulp.dest(dist));
-    Qupdate = '1';
+	 viewProcess.on('finish',function () {
+		Qupdate ='1';
+	 })
+
+});
+gulp.task('views-hud', function buildHTML() {
+	var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+	var viewProcess = gulp.src('HUD/HUD.pug')
+		.pipe(pug({
+			data: data,
+			pretty: true,
+			// filters: {
+			// 	php: pugPHPFilter
+			// }
+		})).on('error', notify.onError(function (error) {
+			return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
+		})).pipe(gulp.dest(dist));
+	viewProcess.on('finish',function () {
+		Qupdate ='1';
+	})
+
 });
 
 
@@ -243,8 +263,8 @@ gulp.task('SERVER', [], function () {
 		notify: false
 	});
 
-	gulp.watch([dist + "index.html", dist + "/*.css"]).on('change',function () {
-		//Qupdate = '1';
+	gulp.watch([dist + "*.html"]).on('change',function () {
+
 
 	});
 
@@ -267,8 +287,10 @@ gulp.task('VIEW-FINAL', function () {
 		'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
 	], function () {
 
-		gulp.start('views');
-        Qupdate = '1';
+		gulp.start('views')
+
+
+
 	});
 });
 gulp.task('VIEW-SOURCE', function () {
@@ -357,8 +379,7 @@ gulp.task('VIEW-1-DATA', function () {
 // SERVER WATCHER
 gulp.task('SERVER WATCHER', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-	return watch([dist + "/index.html", dist + "/*.css", projectDevDir + "SCRIPTS/scriptMap.js"], function () {
-		//Qupdate = '1';
+	return watch([dist + "/index.html"], function () {
 
 	});
 });
@@ -838,7 +859,7 @@ gulp.task('styles', function () {
 			})))
 			.pipe(sourcemaps.write('maps/'))
 			.pipe(gulp.dest(dist))
-        	Qupdate = '1';
+			Qupdate = '1';
 
 		gulp.src(['dev/scss/COLOR/_colors.scs'])
 			.pipe(sassJson())

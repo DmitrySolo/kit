@@ -11,6 +11,21 @@
 				"": ""
 			}
 		},
+		"react": {
+			"js": {
+				"react": {
+					"src": "node_modules/react/umd/react.production.min.js",
+					"container": "footer/libs"
+				},
+				"react-dom": {
+					"src": "node_modules/react-dom/umd/react-dom.production.min.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-HUD-script": {
 			"js": {
 				"quant-HUD-script-script": {
@@ -48,25 +63,10 @@
 				"": ""
 			}
 		},
-		"react": {
+		"quant-debug-ruller": {
 			"js": {
-				"react": {
-					"src": "node_modules/react/umd/react.production.min.js",
-					"container": "footer/libs"
-				},
-				"react-dom": {
-					"src": "node_modules/react-dom/umd/react-dom.production.min.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"xRayView": {
-			"js": {
-				"xRayView-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
+				"quant-debug-ruller-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
 					"container": "footer/init"
 				}
 			},
@@ -85,10 +85,10 @@
 				"": ""
 			}
 		},
-		"quant-debug-ruller": {
+		"xRayView": {
 			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+				"xRayView-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
 					"container": "footer/init"
 				}
 			},
@@ -118,7 +118,7 @@
 					"container": "footer/libs"
 				},
 				"init": {
-					"src": "Projects/stsFragments/dev/qContent/MODULES/productInline/productInline.js2",
+					"src": "Projects/stsFragments/dev/qContent/MODULES/productInline/productInline.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -372,15 +372,15 @@
 		"title": "Test Page"
 	},
 	"productInline": {
-		"sku": "34535",
-		"title": "Полка угловая ОНИКА ТРИО 20У 302001",
-		"price": "3 535",
+		"sku": "123456",
+		"title": "Полка угловая ОНИКА ТРИО 20У 302001qq-2",
+		"price": "9 535",
 		"stock": "1255"
 	},
 	"productInline1": {
 		"sku": "325335",
-		"title": "Шкаф-колонна Акватон Йорк 1A171103YOB4O Акватон Йорк 1A171103YOB4O",
-		"price": "4 765",
+		"title": "Шкаф-колонна Акватон Йорк 1A171103YOB4O Акватон Йорк 1A171103YOB4O каф-колонна Акватон Йорк 1A171103YOB4O",
+		"price": "5 700",
 		"stock": "1"
 	},
 	"productInline2": {
@@ -391,7 +391,7 @@
 	},
 	"productInline3": {
 		"sku": "94534",
-		"title": "Пенал VIGO MIRELLA",
+		"title": "Пенал VIGO MIRELLA !!!5",
 		"price": "13 235",
 		"stock": "26"
 	},

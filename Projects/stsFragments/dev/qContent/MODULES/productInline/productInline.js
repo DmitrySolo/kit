@@ -2,6 +2,9 @@
 * MODULE: productInline script
 *
 */
-$('.productInline__quantitySelector').on('focus', function () {
-    $(this).select();
-})
+var quantitySelectorArr = document.getElementsByClassName('productInline__quantitySelector');
+for(var i=0;i<quantitySelectorArr.length;i++){
+    quantitySelectorArr[i].addEventListener('focus',function () {
+        this.select();
+    },false)
+}
