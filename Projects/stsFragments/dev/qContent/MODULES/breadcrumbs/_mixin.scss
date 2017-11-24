@@ -1,28 +1,36 @@
 @mixin breadcrumbs(){
 	.breadCrumb {
-      @include space('component','tb','');
-      @include space('block','lr','');
-      background-color: cs('fground');
       text-transform: uppercase;
-      font-size: .9em;
-      a:link,a:visited {
-        color: cs('font-l');
+      font-size: .9rem;
+      a:link {
+        color: cs('font');
         text-decoration: none;
       }
-      a:hover{
-        color: cs('font-d');
-      }
+      
+      
     }
+    .breadCrumb__content { 
+          display: inline-block;
+          margin-right: 40px;
+      }
   .breadcrumb__section {
     display: inline-block;
-    @include space('element','','tbrl');
-    &:before {
-      content: '/rsssdssesss[[sshuray it workss';
-      margin-right: 20px;
-    }
+       padding: 0px 8px;
+       margin-right: 7px;
+        color: cs('font-l');
+        border-radius: 3px;
+        &:hover{
+        color: cs('font-d2');
+      }
   }
-  .breadCrumb__section--home {
-    font-weight: 600;
+  .breadCrumb__section--current {
+     border: solid 2px cs('accent-l');
+    font-weight: bold;
+    background: cs('accent');
+    color: #fff; 
+    &:hover{
+        color:#fff;
+    }
     &:before{
       content: '';
       margin-right:0;
@@ -30,3 +38,4 @@
     }
   }
 }
+@include breadcrumbs()

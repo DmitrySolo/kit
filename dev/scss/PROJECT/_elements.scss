@@ -307,6 +307,24 @@ input:checked + .slider:before {
           fill:cs('succes-d2');
            @include space-i('element','=','','l');
       }
+      &--productsLayout{
+          fill: cs('font-l2');
+          width: 1.7em;
+          height: 1.7em;
+          padding: 3px;
+          cursor:pointer;
+          &:hover{
+              fill:cs('font-d');
+          }
+          &--selected {
+            //  border: 1px solid cs('accent-l');
+              fill: cs('accent');
+               &:hover{
+              fill:cs('accent');
+          }
+          }
+      }
+      
     
 }
   

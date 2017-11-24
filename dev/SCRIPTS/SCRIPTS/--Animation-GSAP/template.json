@@ -1,0 +1,18 @@
+{
+  "LIBS": {
+	"Animation-GSAP": {
+	  "js": {
+		"TweenLite": {
+		  "src": "node_modules/gsap/src/minified/TweenLite.min.js",
+		  "container": "footer/libs"
+		},"TimelineLite": {
+			"src": "node_modules/gsap/src/minified/TimelineLite.min.js",
+			"container": "footer/libs"
+			}
+	  },
+	  "css": {
+		"": ""
+	  }
+	}
+  }
+}

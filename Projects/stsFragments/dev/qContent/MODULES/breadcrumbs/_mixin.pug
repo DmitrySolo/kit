@@ -1,6 +1,7 @@
 mixin breadcrumbs()
-	.breadcrumb__content(data-qcontent=modules_breadcrubs)
+	.breadCrumb__content(data-qcontent='module__breadcrumbs')
 		nav.breadCrumb.visible-l
-			a(href='/').breadcrumb__section.breadCrumb__section--home Главная
+			a(href='/').breadcrumb__section.breadCrumb__section--current 1
+			-var page1 = 1
 			+loop(9)
-				a(href='/').breadcrumb__section Другая страница12
+				a(href='/').not.breadcrumb__section #{page1 +=1}

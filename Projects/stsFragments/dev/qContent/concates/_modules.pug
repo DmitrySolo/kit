@@ -3,11 +3,12 @@ mixin MODULE-atest()
 	.atest__content(data-qcontent='module__atest')
 		.atest
 mixin breadcrumbs()
-	.breadcrumb__content(data-qcontent=modules_breadcrubs)
+	.breadCrumb__content(data-qcontent='module__breadcrumbs')
 		nav.breadCrumb.visible-l
-			a(href='/').breadcrumb__section.breadCrumb__section--home Главная
+			a(href='/').breadcrumb__section.breadCrumb__section--current 1
+			-var page1 = 1
 			+loop(9)
-				a(href='/').breadcrumb__section Другая страница12
+				a(href='/').not.breadcrumb__section #{page1 +=1}
 
 mixin confirmedOrderPage()
 	<!-- split modules/confirmedOrderPage -->
@@ -46,15 +47,52 @@ mixin MODULE-productInline(data)
 			span.productInline__section.productInline__section--stock=data.stock +' из 1522'
 		span.productInline__section.productInline__section--quantity    
 			label.productInline__quantityLabel
-				input.productInline__quantitySelector(type=text value='31'  size='3' )
+				input.productInline__quantitySelector#yogo(type=text value='1'  size='3' )
 				.productInline__quantityButton.productInline__quantityButton--minus
 				.productInline__quantityButton.productInline__quantityButton--plus
 		span.productInline__section.productInline__section--order       
-			+B-toOrder()         
+			+B-toOrder()          
 mixin MODULE-reactTest()
 	<!-- split modules/reactTest -->
 	.reactTest__content(data-qcontent='module__reactTest')
 		#reactTest1
+//
+mixin LEVEL-productSection(title,className)
+	.productSection__content(data-qcontent="level__productSection")
+		header.productSection__header.clearfix
+			.productSection__pager.f-left 
+				span.productSection__subTitle Страницы:
+				+breadcrumbs()
+			.productSection__filter.f-left 
+				span.productSection__subTitle Cортировать по:
+				a.productSection__sortBy.productSection__sortBy--selected Цене
+				| |
+				a.productSection__sortBy Производителю
+			.productSection__layoutChoiser.f-right
+				span.productSection__subTitle Вид каталога:
+				a(href='/')
+					+I('layout','productsLayout icon--productsLayout--selected')
+				a(href='/')
+					+I('layout1','productsLayout') 
+		if block
+			block
+mixin LEVEL-testOfSergConnectingSupport(title,className)
+	-if (!className) className =''
+	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
+		h2.testOfSergConnectingSupport__title=title
+		block testOfSergConnectingSupport
+mixin LEVEL-topdashBoard(data)
+	-if (!className) className =''
+	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
+		.container=data.title 
+			ul.topdashBoard__list
+				+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
+				+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
+				+dashBoardElement('help','Помощь и настройки','dashBoardElement')
+				+dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')
+				+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
+		if block
+			block 
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = " <a href='/'>N 1231238</a>"
@@ -127,20 +165,3 @@ mixin LEVEL-showcase(title,className)
 			+holder('page__loader','100px300',colors.primary)
 			if block
 				block
-mixin LEVEL-testOfSergConnectingSupport(title,className)
-	-if (!className) className =''
-	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
-		h2.testOfSergConnectingSupport__title=title
-		block testOfSergConnectingSupport
-mixin LEVEL-topdashBoard(data)
-	-if (!className) className =''
-	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
-		.container=data.title 
-			ul.topdashBoard__list
-				+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
-				+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
-				+dashBoardElement('help','Помощь и настройки','dashBoardElement')
-				+dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')
-				+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
-		if block
-			block 

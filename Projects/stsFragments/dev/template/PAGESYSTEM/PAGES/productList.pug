@@ -6,11 +6,13 @@ block title
 block page
 	h1 productList
 	.container
-		ul.productList__list  
-			+MODULE-productInline(productInline)
-			+MODULE-productInline(productInline1)
-			+MODULE-productInline(productInline2)
-			+MODULE-productInline(productInline3)
-			+MODULE-productInline(productInline4)
-			+MODULE-productInline(productInline5)
-			+MODULE-productInline(productInline6)
+		+LEVEL-productSection()
+			span#opa  Hurray
+			ul.productList__list 
+				+MODULE-productInline(productInline)
+				+MODULE-productInline(productInline1)
+				+MODULE-productInline(productInline2) 
+				+MODULE-productInline(productInline3)
+				+MODULE-productInline(productInline4)
+				+MODULE-productInline(productInline5)
+				+MODULE-productInline(productInline6)

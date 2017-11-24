@@ -1,0 +1,20 @@
+//
+mixin LEVEL-productSection(title,className)
+	.productSection__content(data-qcontent="level__productSection")
+		header.productSection__header.clearfix
+			.productSection__pager.f-left 
+				span.productSection__subTitle Страницы:
+				+breadcrumbs()
+			.productSection__filter.f-left 
+				span.productSection__subTitle Cортировать по:
+				a.productSection__sortBy.productSection__sortBy--selected Цене
+				| |
+				a.productSection__sortBy Производителю
+			.productSection__layoutChoiser.f-right
+				span.productSection__subTitle Вид каталога:
+				a(href='/')
+					+I('layout','productsLayout icon--productsLayout--selected')
+				a(href='/')
+					+I('layout1','productsLayout') 
+		if block
+			block

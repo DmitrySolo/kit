@@ -11,21 +11,6 @@
 				"": ""
 			}
 		},
-		"react": {
-			"js": {
-				"react": {
-					"src": "node_modules/react/umd/react.production.min.js",
-					"container": "footer/libs"
-				},
-				"react-dom": {
-					"src": "node_modules/react-dom/umd/react-dom.production.min.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"quant-HUD-script": {
 			"js": {
 				"quant-HUD-script-script": {
@@ -63,10 +48,36 @@
 				"": ""
 			}
 		},
+		"Animation-GSAP": {
+			"js": {
+				"TweenLite": {
+					"src": "node_modules/gsap/src/minified/TweenLite.min.js",
+					"container": "footer/libs"
+				},
+				"TimelineLite": {
+					"src": "node_modules/gsap/src/minified/TimelineLite.min.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-debug-ruller": {
 			"js": {
 				"quant-debug-ruller-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
+					"container": "footer/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"xRayView": {
+			"js": {
+				"xRayView-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
 					"container": "footer/init"
 				}
 			},
@@ -79,17 +90,6 @@
 				"quant-lib-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
 					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"xRayView": {
-			"js": {
-				"xRayView-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
 				}
 			},
 			"css": {
@@ -163,7 +163,7 @@
 		"secondary": "#1989AC",
 		"foreground": "#fff",
 		"background": "#E8F1F5",
-		"accent": "#ff8502",
+		"accent": "orangered",
 		"font": "#6f6c6c",
 		"succes": "#46bb90",
 		"erorr": "#DD403A",
