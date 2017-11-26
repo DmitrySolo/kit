@@ -35,23 +35,42 @@ mixin MODULE-flyPageFragment(data)
 				tr
 					td.fragmentTitle Доступно:
 					td.stock 14  шт
+mixin MODULE-productCol(data)
+	<!-- split modules/productCol -->
+	li.productCol__content.col-3-d(data-qcontent='module__productCol') 
+		.productCol__card 
+			span.productSection__subTitle='Артикул: '
+			span.productCol__sku=data.sku
+			a.productCol__link(href="#")
+				.productCol__img
+				h6.productCol__name=data.title
+			.clearfix.productCol__priceStock
+				span.productCol__price.f-left=data.price+' руб.' 
+				span.productCol__stock.f-right='В наличии: '+data.stock
+			label.productInline__quantityLabel
+				input.productInline__quantitySelector(type=text value='1'  size='3' )
+				.productInline__quantityButton.productInline__quantityButton--minus
+				.productInline__quantityButton.productInline__quantityButton--plus
+			+B-toOrder('В корзину','colList')
+			
+				
 mixin MODULE-productInline(data)
 	<!-- split modules/productInline -->
 	-var el ='.productInline';
 	li.productInline__content(data-qcontent='module__productInline')
-		a.productInline__link(href='#') 
+		a.productInline__link(href='#')  
 			span.productInline__section.productInline__section--sku=data.sku
 			span.productInline__section.productInline__section--img 
-			p.productInline__section.productInline__section--name=data.title
+			h6.productInline__section.productInline__section--name=data.title
 			span.productInline__section.productInline__section--price=data.price+' руб.'
 			span.productInline__section.productInline__section--stock=data.stock +' из 1522'
 		span.productInline__section.productInline__section--quantity    
 			label.productInline__quantityLabel
-				input.productInline__quantitySelector#yogo(type=text value='1'  size='3' )
+				input.productInline__quantitySelector(type=text value='1'  size='3' )
 				.productInline__quantityButton.productInline__quantityButton--minus
 				.productInline__quantityButton.productInline__quantityButton--plus
 		span.productInline__section.productInline__section--order       
-			+B-toOrder()          
+			+B-toOrder('В заявку')          
 mixin MODULE-reactTest()
 	<!-- split modules/reactTest -->
 	.reactTest__content(data-qcontent='module__reactTest')
@@ -76,23 +95,15 @@ mixin LEVEL-productSection(title,className)
 					+I('layout1','productsLayout') 
 		if block
 			block
-mixin LEVEL-testOfSergConnectingSupport(title,className)
+mixin LEVEL-showcase(title,className)
 	-if (!className) className =''
-	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
-		h2.testOfSergConnectingSupport__title=title
-		block testOfSergConnectingSupport
-mixin LEVEL-topdashBoard(data)
-	-if (!className) className =''
-	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
-		.container=data.title 
-			ul.topdashBoard__list
-				+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
-				+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
-				+dashBoardElement('help','Помощь и настройки','dashBoardElement')
-				+dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')
-				+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
-		if block
-			block 
+	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
+		h1.showcase__title=title
+		.container
+			p.showcase__subtytle.text Hello its Showcase Content
+			+holder('page__loader','100px300',colors.primary)
+			if block
+				block
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = " <a href='/'>N 1231238</a>"
@@ -126,6 +137,23 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
+mixin LEVEL-testOfSergConnectingSupport(title,className)
+	-if (!className) className =''
+	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
+		h2.testOfSergConnectingSupport__title=title
+		block testOfSergConnectingSupport
+mixin LEVEL-topdashBoard(data)
+	-if (!className) className =''
+	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
+		.container=data.title 
+			ul.topdashBoard__list
+				+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
+				+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
+				+dashBoardElement('help','Помощь и настройки','dashBoardElement')
+				+dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')
+				+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
+		if block
+			block 
 mixin LEVEL-showCasePage(data)
 	-if (!className) className =''
 	.container
@@ -154,14 +182,5 @@ mixin LEVEL-showCasePage(data)
 			h6 Header
 			h4.showCasePage__subtitle.text Paragraph:
 			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
-			if block
-				block
-mixin LEVEL-showcase(title,className)
-	-if (!className) className =''
-	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
-		h1.showcase__title=title
-		.container
-			p.showcase__subtytle.text Hello its Showcase Content
-			+holder('page__loader','100px300',colors.primary)
 			if block
 				block

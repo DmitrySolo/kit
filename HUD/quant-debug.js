@@ -150,8 +150,9 @@ function loadToQuant() {
 
 
 	ql('LOAD  TRIGGERED');
-	$('*', window.frames['index'].contentDocument).on('mousedown', function (e) {
-
+	$('*', window.frames['index'].contentDocument).not('html').on('mousedown', function (e) {
+			console.log(this);
+			console.log('AHA!!!')
 		//editorsListner();
 		ql(JSChangeCounter, 'qwweqrwqrwqr!!!');
 		e.stopPropagation();
@@ -1814,7 +1815,7 @@ $(document).ready(function () {
 					Frame.src = Frame.src;
 
 				}
-                $('#apitest').css('background', '#25b14a');
+				$('#apitest').css('background', '#25b14a');
 			});
 z
 			request.fail(function (jqXHR, textStatus) {

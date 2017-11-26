@@ -34,6 +34,7 @@
             width:40%;
             line-height:1.45rem;
             padding-left:15px;
+            font-weight:normal;
         }
          &--price{
             width:12%;
@@ -70,7 +71,7 @@
         &--quantity{
             width: 10%;
             text-align:center;
-            position: relative;
+            //position: relative;
         }
     }
     &__link{

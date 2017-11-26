@@ -23,4 +23,6 @@ var quantCon = [
 	"	MODULE-reactTest()",
 	"snippet +M-productInline",
 	"	MODULE-productInline()",
+	"snippet +M-productCol",
+	"	MODULE-productCol()",
 ].join(eol);

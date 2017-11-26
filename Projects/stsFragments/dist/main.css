@@ -1485,38 +1485,6 @@ PROJECT STYLES
 /**
 Layout&Pages
  **/
-/* productSection STYLE */
-.productSection__content {
-  background: #e6e6e6; }
-
-.productSection__header {
-  background: #fff;
-  padding: 15px 20px;
-  margin-bottom: 10px;
-  box-shadow: 0px 2px 3px silver; }
-
-.productSection__layoutChoiser a {
-  text-decoration: none; }
-
-.productSection__subTitle {
-  padding-right: 10px;
-  color: #555353;
-  font-size: 1em;
-  font-weight: bold; }
-
-.productSection__sortBy {
-  font-size: .95rem;
-  color: #555353;
-  padding: 0 5px;
-  color: #898585; }
-  .productSection__sortBy:hover {
-    color: #555353; }
-  .productSection__sortBy--selected {
-    color: orangered; }
-    .productSection__sortBy--selected:hover {
-      color: orangered; }
-
-/* testOfSergConnectingSupport STYLE */
 /* orderPage STYLE */
 .orderPage__content {
   background-image: url(/holder.js/200x200?theme=social);
@@ -1579,31 +1547,36 @@ Layout&Pages
 .page__loader {
   vertical-align: top; }
 
-/* showcase STYLE */
-.showcase__content {
-  background-color: #fff;
-  padding: 40px 22px; }
+/* productSection STYLE */
+.productSection__content {
+  background: #e6e6e6; }
 
-.showcase__title {
-  color: #3d255b;
-  text-align: center;
-  line-height: 2.55;
-  width: 60%;
-  margin: 0 auto 35px;
-  border-bottom: solid 1px #e6e6e6; }
+.productSection__header {
+  background: #fff;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 3px silver; }
 
-.showcase__subtytle {
-  color: #555353; }
+.productSection__layoutChoiser a {
+  text-decoration: none; }
 
-/* topdashBoard STYLE */
-.topdashBoard__content {
-  background: #3b3a3a;
-  color: #fff; }
+.productSection__subTitle {
+  padding-right: 10px;
+  color: #555353;
+  font-size: 1em;
+  font-weight: bold; }
 
-.topdashBoard__list {
-  font-size: 0;
-  padding: 0;
-  margin: 0; }
+.productSection__sortBy {
+  font-size: .95rem;
+  color: #555353;
+  padding: 0 5px;
+  color: #898585; }
+  .productSection__sortBy:hover {
+    color: #555353; }
+  .productSection__sortBy--selected {
+    color: orangered; }
+    .productSection__sortBy--selected:hover {
+      color: orangered; }
 
 /* showCasePage STYLE */
 .showCasePage__content {
@@ -1626,6 +1599,33 @@ Layout&Pages
     text-align: center;
     line-height: 2.7em;
     color: #e228e2; }
+
+/* showcase STYLE */
+.showcase__content {
+  background-color: #fff;
+  padding: 40px 22px; }
+
+.showcase__title {
+  color: #3d255b;
+  text-align: center;
+  line-height: 2.55;
+  width: 60%;
+  margin: 0 auto 35px;
+  border-bottom: solid 1px #e6e6e6; }
+
+.showcase__subtytle {
+  color: #555353; }
+
+/* testOfSergConnectingSupport STYLE */
+/* topdashBoard STYLE */
+.topdashBoard__content {
+  background: #3b3a3a;
+  color: #fff; }
+
+.topdashBoard__list {
+  font-size: 0;
+  padding: 0;
+  margin: 0; }
 
 /**
 Modules
@@ -1654,10 +1654,23 @@ Modules
     color: #3b3a3a; }
 
 .breadCrumb__section--current {
-  border: solid 2px #ff6a33;
+  animation-name: dance;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
   font-weight: bold;
   background: orangered;
   color: #fff; }
+
+@keyframes dance {
+  20% {
+    left: 200px; }
+  50% {
+    top: 200px; }
+  100% {
+    bottom: -300px; } }
   .breadCrumb__section--current:hover {
     color: #fff; }
   .breadCrumb__section--current:before {
@@ -1721,6 +1734,68 @@ Modules
     color: green; }
 
 /**
+* productCol styles
+*/
+.productCol__list {
+  background: #e6e6e6; }
+
+.productCol__content .productInline__quantityLabel {
+  width: 40%;
+  text-align: center;
+  position: relative;
+  display: inline-block; }
+
+.productCol__link {
+  text-decoration: none; }
+  .productCol__link:hover {
+    color: #3b3a3a; }
+
+.productCol__card {
+  background: #fff;
+  padding: .4em .8em 1em;
+  margin-bottom: .5em;
+  transition: box-shadow .15s linear; }
+  .productCol__card:hover {
+    box-shadow: 0px 1px 8px 1px #ccc; }
+
+.productCol__sku {
+  display: inline-block;
+  margin-bottom: 5px; }
+
+.productCol__img {
+  width: 100%;
+  height: 180px;
+  background-image: url("https://www.santehsmart.ru/upload/iblock/2ee/2ee1ca5fa8df10ec7e75f80c1e7edc22.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 5px; }
+
+.productCol__name {
+  height: 5.1em;
+  font-weight: normal;
+  color: #6f6c6c;
+  overflow: hidden;
+  margin-bottom: .5em; }
+
+.productCol__priceStock {
+  margin-bottom: .8em; }
+
+.productCol__stock {
+  color: #379774;
+  width: 50%;
+  text-align: center; }
+  .productCol__stock--off {
+    color: #971f1a; }
+
+.productCol__price {
+  font-size: 1.2em;
+  font-weight: bold;
+  position: relative;
+  width: 50%;
+  text-align: center; }
+
+/**
 * productInline styles
 */
 .productInline__content {
@@ -1748,7 +1823,8 @@ Modules
   .productInline__section--name {
     width: 40%;
     line-height: 1.45rem;
-    padding-left: 15px; }
+    padding-left: 15px;
+    font-weight: normal; }
   .productInline__section--price {
     width: 12%;
     text-align: center;
@@ -1777,8 +1853,7 @@ Modules
     background-repeat: no-repeat; }
   .productInline__section--quantity {
     width: 10%;
-    text-align: center;
-    position: relative; }
+    text-align: center; }
 
 .productInline__link {
   color: #555353; }
@@ -1819,106 +1894,6 @@ Modules
 /**
 Elements
 * */
-.b1 {
-  display: inline-block;
-  position: relative;
-  background-color: orangered;
-  color: #3b3a3a;
-  text-transform: uppercase;
-  transition: background .2s linear;
-  border: 2px solid;
-  line-height: 1.7;
-  border-radius: 5px; }
-  .b1:hover, .b1:focus, .b1:active {
-    background-color: #ff8f66;
-    border: 2px solid; }
-  .b1:focus {
-    outline: none; }
-  .b1:hover, .b1:active {
-    outline: none; }
-
-.switcher {
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-  padding-top: .9em;
-  float: right; }
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 43px;
-  height: 17px; }
-
-/* Hide default HTML checkbox */
-.switch input {
-  display: none; }
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s; }
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 1px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s; }
-
-input:checked + .slider {
-  background-color: orangered; }
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3; }
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px); }
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px; }
-
-.slider.round:before {
-  border-radius: 50%; }
-
-.toOrder {
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 12px;
-  background: orangered;
-  border: solid 2px #ff6a33;
-  width: 100%;
-  border-radius: 5px;
-  transition: background .2s ease;
-  text-decoration: none;
-  padding: 5px;
-  display: inline-block; }
-  .toOrder svg {
-    height: 12px; }
-  .toOrder.succes {
-    background: #46bb90;
-    border-color: #6bc9a6; }
-    .toOrder.succes:hover {
-      background: #6bc9a6; }
-  .toOrder:hover {
-    background: #ff6a33; }
-
 .dashBoardElement {
   vertical-align: top;
   font-size: 13px;
@@ -2026,6 +2001,16 @@ input:checked + .slider:before {
     top: 0;
     right: -5px;
     color: #ff6a33; }
+
+@keyframes bouncing {
+  0% {
+    bottom: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+  100% {
+    bottom: 50px;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1); } }
+  .dashBoardElement .loading-button {
+    animation: bouncing 0.5s cubic-bezier(0.1, 0.25, 0.1, 1) 0s infinite alternate both; }
   .dashBoardElement__pricer {
     vertical-align: bottom; }
   .dashBoardElement__arr {
@@ -2079,6 +2064,110 @@ input:checked + .slider:before {
       fill: orangered; }
       .icon--productsLayout--selected:hover {
         fill: orangered; }
+
+.switcher {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  padding-top: .9em;
+  float: right; }
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 43px;
+  height: 17px; }
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none; }
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+input:checked + .slider {
+  background-color: orangered; }
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3; }
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px); }
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px; }
+
+.slider.round:before {
+  border-radius: 50%; }
+
+.toOrder {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12px;
+  background: orangered;
+  border: solid 2px #ff6a33;
+  width: 100%;
+  border-radius: 5px;
+  transition: background .2s ease;
+  text-decoration: none;
+  padding: 5px;
+  display: inline-block; }
+  .toOrder svg {
+    height: 12px; }
+  .toOrder.succes {
+    background: #46bb90;
+    border-color: #6bc9a6; }
+    .toOrder.succes:hover {
+      background: #6bc9a6; }
+  .toOrder:hover {
+    background: #ff6a33; }
+
+.colList {
+  width: 50%;
+  float: right; }
+
+.b1 {
+  display: inline-block;
+  position: relative;
+  background-color: orangered;
+  color: #3b3a3a;
+  text-transform: uppercase;
+  transition: background .2s linear;
+  border: 2px solid;
+  line-height: 1.7;
+  border-radius: 5px; }
+  .b1:hover, .b1:focus, .b1:active {
+    background-color: #ff8f66;
+    border: 2px solid; }
+  .b1:focus {
+    outline: none; }
+  .b1:hover, .b1:active {
+    outline: none; }
 
 .pr {
   background-color: #3d255b !important; }

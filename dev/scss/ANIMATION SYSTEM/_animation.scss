@@ -7,55 +7,55 @@ $animationData : ();
 
 
 @mixin a-hover($property,$points:(from:0,to:0),$time:$allAnimationTime,$func:$allAnimationFunc){
-    @if(map-get($points,'from') != 0){
-      #{$property}: map-get($points,'from');
-    }
-    transition-property: #{$property};
-    transition-duration: $time;
-    transition-timing-function: $func;
+	@if(map-get($points,'from') != 0){
+	  #{$property}: map-get($points,'from');
+	}
+	transition-property: #{$property};
+	transition-duration: $time;
+	transition-timing-function: $func;
   @if(map-get($points,'to') != 0){
-    &:hover{
-      #{$property}:map_get($points,'to');
-    }
+	&:hover{
+	  #{$property}:map_get($points,'to');
+	}
   }
 }
 @mixin a-trigger($trigger,$property,$points:(from:false,to:false),$time:$allAnimationTime,$func:$allAnimationFunc,$event:'click'){
 
   @if(map-get($points,'from') != false){
-    #{$property}: map-get($points,'from');}
-    transition-property: #{$property};
-    transition-duration: $time;
-    transition-timing-function: $func;
-    $target: "#{&}";
+	#{$property}: map-get($points,'from');}
+	transition-property: #{$property};
+	transition-duration: $time;
+	transition-timing-function: $func;
+	$target: "#{&}";
 
   @if(map-get($points,'to') != false){
-    @at-root {
-      #{$target}--active{
-        #{$property}:map_get($points,'to');
-      }
-    }
+	@at-root {
+	  #{$target}--active{
+		#{$property}:map_get($points,'to');
+	  }
+	}
   }
   $rtrt:(target: $target,trigger:$trigger,changer:'#{$target}--active');
   $animationData : append($animationData ,$rtrt) !global;
 }
 $frames: (
-            0  :(opacity:1,font-size:22px),
-            .5 :(opacity:0),
-        1 :(opacity:1)
+			0  :(opacity:1,font-size:22px),
+			.5 :(opacity:0),
+		1 :(opacity:1)
 );
 //
 @mixin a-set-frame($name,$time,$delay,$iterations,$function,$frames:$frames){
   @at-root {  @keyframes #{$name} {
-                @each $frame, $vals in $frames{
-                  #{percentage($frame)}{
-                    @each $val, $prop in $vals  {
-                      #{$val}:#{$prop}
-                    }
-                  }
+				@each $frame, $vals in $frames{
+				  #{percentage($frame)}{
+					@each $val, $prop in $vals  {
+					  #{$val}:#{$prop}
+					}
+				  }
 
-                }
+				}
 
-              }}
+			  }}
 
   animation-name: $name;
   animation-duration: $time;

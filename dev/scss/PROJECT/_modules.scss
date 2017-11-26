@@ -41,9 +41,14 @@
       }
   }
   .breadCrumb__section--current {
-     border: solid 2px cs('accent-l');
+     //border: solid 2px cs('accent');
+      @include a-set-frame(dance,5s/*time*/,1s/*delay*/,1,linear,
+        (   .2   :(left:200px),
+            .5    :(top:200px),
+             1    :(bottom:-300px)    )
+             )
     font-weight: bold;
-    background: cs('accent');
+    background: cs('accent'); 
     color: #fff; 
     &:hover{
         color:#fff;
@@ -146,6 +151,94 @@
 ////////////////////////////////////////
 @include flyPageFragment();
 /**
+* productCol styles
+*/
+
+@mixin productCol(){
+
+  .productCol {
+    &__list{
+        background:cs('foreground-d')
+    }
+    &__content {
+         .productInline__quantityLabel {
+            width: 40%;
+            text-align: center;
+            position: relative;
+            display:inline-block;
+              }
+      
+    }
+    &__link{
+        text-decoration: none;
+        &:hover{
+            color:cs('font-d2');
+        }
+    }
+    &__card{
+        background: cs('foreground');
+        padding: .4em .8em 1em;
+        margin-bottom: .5em;
+        transition: box-shadow .15s linear;
+         &:hover{
+            //transform: scale(1.02);
+            box-shadow: 0px 1px 8px 1px #ccc;
+        }
+    }
+    &__sku{
+        //padding-left: 11px;
+        display: inline-block;
+        margin-bottom:5px;
+    }
+    &__img{
+        width:100%;
+        height: 180px;
+       // background-color: #ededed;
+        background-image:url("https://www.santehsmart.ru/upload/iblock/2ee/2ee1ca5fa8df10ec7e75f80c1e7edc22.jpg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        //border-bottom: 1px solid cs('foreground-d');
+        margin-bottom: 5px;
+    }
+    &__name {
+        height: 3*$line_height_ratio#{em};
+        font-weight:normal;
+        color:cs('font');
+        overflow:hidden;
+        margin-bottom: .5em;
+    }
+    &__priceStock{
+        margin-bottom:.8em;
+        
+    }
+    &__stock{
+        color: cs('succes-d');
+        width:50%;
+        text-align: center;
+        &--off{
+            color:cs('erorr-d2'); 
+        }
+    }
+    &__price{
+        font-size:1.2em;
+        font-weight: bold;
+        position:relative;
+        width:50%;
+        text-align: center; 
+          
+    }
+    
+    
+  }
+  
+
+}
+
+
+////////////////////////////////////////
+@include productCol();
+/**
 * productInline styles
 */
 
@@ -181,6 +274,7 @@
             width:40%;
             line-height:1.45rem;
             padding-left:15px;
+            font-weight:normal;
         }
          &--price{
             width:12%;
@@ -217,7 +311,7 @@
         &--quantity{
             width: 10%;
             text-align:center;
-            position: relative;
+            //position: relative;
         }
     }
     &__link{

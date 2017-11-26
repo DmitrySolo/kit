@@ -7,7 +7,6 @@ block page
 	h1 productList
 	.container
 		+LEVEL-productSection()
-			span#opa  Hurray
 			ul.productList__list 
 				+MODULE-productInline(productInline)
 				+MODULE-productInline(productInline1)
@@ -16,3 +15,12 @@ block page
 				+MODULE-productInline(productInline4)
 				+MODULE-productInline(productInline5)
 				+MODULE-productInline(productInline6)
+		+LEVEL-productSection()
+			ul.productCol__list.clearfix
+				+MODULE-productCol(productInline)
+				+MODULE-productCol(productInline1)
+				+MODULE-productCol(productInline2) 
+				+MODULE-productCol(productInline3)
+				+MODULE-productCol(productInline4)
+				+MODULE-productCol(productInline5)
+				+MODULE-productCol(productInline6)

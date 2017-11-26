@@ -25369,8 +25369,9 @@ function loadToQuant() {
 
 
 	ql('LOAD  TRIGGERED');
-	$('*', window.frames['index'].contentDocument).on('mousedown', function (e) {
-
+	$('*', window.frames['index'].contentDocument).not('html').on('mousedown', function (e) {
+			console.log(this);
+			console.log('AHA!!!')
 		//editorsListner();
 		ql(JSChangeCounter, 'qwweqrwqrwqr!!!');
 		e.stopPropagation();
@@ -27033,7 +27034,7 @@ $(document).ready(function () {
 					Frame.src = Frame.src;
 
 				}
-                $('#apitest').css('background', '#25b14a');
+				$('#apitest').css('background', '#25b14a');
 			});
 z
 			request.fail(function (jqXHR, textStatus) {
@@ -27859,39 +27860,45 @@ var quantScss = [
 	"	@include for-size(desktop-up){${0:${SELECTED_TEXT:/* code */}}}",
 	"snippet -for-fullHd-and-up",
 	"	@include for-size(big-desktop-up){${0:${SELECTED_TEXT:/* code */}}}",
+	"snippet -animate",
+	"	@include a-set-frame(/*name*/,/*time*/,/*delay*/,/*iterations*/,/*function*/"+
+			"(	0	:()," +
+	"			.5	:()," +
+	"			1	:()	)" +
+	"		)"
 ].join(eol);
 
 var quantCon = [
-    "snippet axcc",
-    "	cs('accent${1:type}')",
-    "snippet pri",
-    "	cs('primary{1:type}')",
-    "snippet sec",
-    "	cs('secondary${1:type}')",
-    "snippet fon",
-    "	cs('font${1:type}')",
-    "snippet back",
-    "	cs('background${1:type}')",
-    "snippet fore",
-    "	cs('foreground${1:type}')",
-    "snippet -e",
-    "	@include space-i('element','=','','')",
-    "snippet -c",
-    "	@include space-i('component','=','','')",
-    "snippet -m",
-    "	@include space-i('module','=','','')",
-    "snippet -b",
-    "	@include space-i('block','=','','')",
-    "snippet -for-phone-only",
-    "	@include for-size(phone-only){${0:${SELECTED_TEXT:/* code */}}}",
-    "snippet -for-tablet-portrait-and-up",
-    "	@include for-size(tablet-p-up){${0:${SELECTED_TEXT:/* code */}}}",
-    "snippet --for-tablet-landscape-and-up",
-    "	@include for-size(tablet-l-up){${0:${SELECTED_TEXT:/* code */}}}",
-    "snippet -for-laptop-and-up",
-    "	@include for-size(desktop-up){${0:${SELECTED_TEXT:/* code */}}}",
-    "snippet -for-fullHd-and-up",
-    "	@include for-size(big-desktop-up){${0:${SELECTED_TEXT:/* code */}}}",
+	"snippet acc",
+	"	cs('accent${1:type}')",
+	"snippet pri",
+	"	cs('primary{1:type}')",
+	"snippet sec",
+	"	cs('secondary${1:type}')",
+	"snippet fon",
+	"	cs('font${1:type}')",
+	"snippet back",
+	"	cs('background${1:type}')",
+	"snippet fore",
+	"	cs('foreground${1:type}')",
+	"snippet -e",
+	"	@include space-i('element','=','','')",
+	"snippet -c",
+	"	@include space-i('component','=','','')",
+	"snippet -m",
+	"	@include space-i('module','=','','')",
+	"snippet -b",
+	"	@include space-i('block','=','','')",
+	"snippet -for-phone-only",
+	"	@include for-size(phone-only){${0:${SELECTED_TEXT:/* code */}}}",
+	"snippet -for-tablet-portrait-and-up",
+	"	@include for-size(tablet-p-up){${0:${SELECTED_TEXT:/* code */}}}",
+	"snippet --for-tablet-landscape-and-up",
+	"	@include for-size(tablet-l-up){${0:${SELECTED_TEXT:/* code */}}}",
+	"snippet -for-laptop-and-up",
+	"	@include for-size(desktop-up){${0:${SELECTED_TEXT:/* code */}}}",
+	"snippet -for-fullHd-and-up",
+	"	@include for-size(big-desktop-up){${0:${SELECTED_TEXT:/* code */}}}",
 ].join(eol);
 
 
@@ -27923,6 +27930,8 @@ var quantCon = [
 	"	MODULE-reactTest()",
 	"snippet +M-productInline",
 	"	MODULE-productInline()",
+	"snippet +M-productCol",
+	"	MODULE-productCol()",
 ].join(eol);
       </script>
       <script src="maps/main.css.map" type="text"></script>

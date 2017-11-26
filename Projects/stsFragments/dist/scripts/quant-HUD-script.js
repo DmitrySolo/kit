@@ -52,9 +52,10 @@ target.save = {
 
 
 function MakeEditable (elem) {
-
-
-	if(elem.attr('tagName')=='input') return
+	console.log(elem);
+    console.log('elem was');
+	if (elem == window.scrollbars) return;
+	if(elem.attr('tagName')=='input') return;
 
 
 
@@ -255,7 +256,7 @@ $(document).ready(function () {
 
 
 
-MakeEditable($('*,spacer block-i').not($('.not,.not *,.notEdit,body,html,input,label,.ace_editor,.ace_editor *,.rg-overlay,.rg-overlay *')).not('.notEdit *'));
+MakeEditable($('*,spacer block-i').not(window.scrollbars).not($('.not,.not *,.notEdit,body,html,input,label,.ace_editor,.ace_editor *,.rg-overlay,.rg-overlay *')).not('.notEdit *'));
 
 
 var firstInTagsLine ='';

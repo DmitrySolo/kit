@@ -10,7 +10,7 @@ mixin dashBoardElement(icon,text,className,type)
 			span.dashBoardElement__title.dashBoardElement__switcher=text
 			+B-switcher()
 		-if(type=='noticer')
-			span.iconWrapper(data-notice='12')
+			span.iconWrapper.loading-button(data-notice='12')
 				svg(class=' ' + classModifier)
 					use(xlink:href="#" + icon)
 			span.dashBoardElement__title=text  
