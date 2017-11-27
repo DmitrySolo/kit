@@ -1,3 +1,135 @@
+$bkgColor__b1:cs('accent');
+$bkgColor__b1-hover:cs('accent-l2');
+$color__b1-hover:cs('accent-d');
+$color__b1:cs('font-d2');   
+ 
+.b1 {
+    display: inline-block;
+	position: relative;
+	background-color: $bkgColor__b1;
+	color: $color__b1;
+	text-transform: uppercase;
+	transition: background .2s linear;
+	border: 2px solid cs('accent-d1');
+	line-height: 1.7;
+	border-radius: 5px; 
+		&:hover, &:focus, &:active {      
+		background-color: $bkgColor__b1-hover;
+		border: 2px solid cs('accent-d1');
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}
+.switcher {
+    display: inline-block;
+    vertical-align:middle;
+    height:100%;
+    padding-top: .9em;
+    float:right;
+    
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 43px;
+  height: 17px;
+  //vertical-align: middle;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: cs('accent');
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+    .toOrder {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        font-size:12px;
+        background: cs('accent'); 
+        border: solid 2px cs('accent-l');
+        width: 100%;
+        border-radius: 5px;
+        transition: background .2s ease;
+        text-decoration: none;
+        padding: 5px;
+        display:inline-block;
+        svg {
+            height: 12px;  
+        }
+        
+        &.succes {
+            background: cs('succes');
+            border-color: cs('succes-l');
+            &:hover{
+                background: cs('succes-l');
+            }
+        }
+        &:hover{
+            background: cs('accent-l');
+        
+        }
+    }
+    .colList{
+        width: 50%;
+        float: right;
+    }
+    
+    
+    
+    
+    
 .dashBoardElement{
     vertical-align: top;
     font-size:13px;   
@@ -123,7 +255,11 @@
     }
     &--notice{
         .iconWrapper{
-            position:relative;
+            position:absolute;
+            @include a-set-frame(dance,2s,0s,infinity,cubic-bezier(.19,.92,.06,-0.76),( 
+            0    :(top:-20),            
+            .5    :(left:-40),           
+            1    :(bottom:0)    )  ) 
         }
         .iconWrapper:after{
             content: attr(data-notice);
@@ -133,14 +269,7 @@
             color:cs('accent-l');
         }
     }
-    @keyframes bouncing{
-  0%  { bottom: 0; box-shadow: 0 0 5px rgba(0,0,0,0.5); }
-  100% { bottom: 50px; box-shadow: 0 50px 50px rgba(0,0,0,0.1); }
-}
-  
-.loading-button { 
- animation: bouncing 0.5s cubic-bezier(0.1,0.25,0.1,1) 0s infinite alternate both; 
-}
+
    &__pricer{
        vertical-align:bottom;
    }
@@ -158,15 +287,21 @@
        border:solid 1px cs('succes-l2');
        font-size:smaller;
        &:hover{
-           background: cs('succes-l');   
+           background: cs('succes-l');     
        }
        &:active{
            background: darken(cs('succes-d2'),5%);
-       }
+       } 
        @include for-size(phone-only){
            padding:.9em;  
-           margin-top:.25em;
+           margin-top:.25em;  
        }
+       @include a-set-frame(heart, 1.5s,  3s,infinity,linear,$frames:( 
+            0:(transform:translate(0px,0px)),
+            .3:(transform:translate(100px,50px)),
+            .6:(transform:translateX(-100px)),
+            1:(transform:translateX(0px)) 
+    ));
    }
 
 }
@@ -215,136 +350,3 @@
   
 
 
-
-.switcher {
-    display: inline-block;
-    vertical-align:middle;
-    height:100%;
-    padding-top: .9em;
-    float:right;
-    
-}
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 43px;
-  height: 17px;
-  //vertical-align: middle;
-}
-
-/* Hide default HTML checkbox */
-.switch input {display:none;}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 1px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: cs('accent');
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-    .toOrder {
-        color: #fff;
-        text-transform: uppercase;
-        text-align: center;
-        font-size:12px;
-        background: cs('accent'); 
-        border: solid 2px cs('accent-l');
-        width: 100%;
-        border-radius: 5px;
-        transition: background .2s ease;
-        text-decoration: none;
-        padding: 5px;
-        display:inline-block;
-        svg {
-            height: 12px;  
-        }
-        
-        &.succes {
-            background: cs('succes');
-            border-color: cs('succes-l');
-            &:hover{
-                background: cs('succes-l');
-            }
-        }
-        &:hover{
-            background: cs('accent-l');
-        
-        }
-    }
-    .colList{
-        width: 50%;
-        float: right;
-    }
-    
-    
-    
-    
-    
-$bkgColor__b1:cs('accent');
-$bkgColor__b1-hover:cs('accent-l2');
-$color__b1-hover:cs('accent-d');
-$color__b1:cs('font-d2');   
- 
-.b1 {
-    display: inline-block;
-	position: relative;
-	background-color: $bkgColor__b1;
-	color: $color__b1;
-	text-transform: uppercase;
-	transition: background .2s linear;
-	border: 2px solid cs('accent-d1');
-	line-height: 1.7;
-	border-radius: 5px; 
-		&:hover, &:focus, &:active {      
-		background-color: $bkgColor__b1-hover;
-		border: 2px solid cs('accent-d1');
-		}
-		&:focus {
-			outline: none;
-		}
-		&:hover, &:active {
-			outline: none;
-	}
-}

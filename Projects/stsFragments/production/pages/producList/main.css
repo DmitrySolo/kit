@@ -1,0 +1,735 @@
+@charset "UTF-8";
+.container {
+  padding: 0 5px; }
+
+/*
+ *  Owl Carousel - Core
+ */
+
+/* No Js */
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+
+/*
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+
+/*
+ * 	Owl Carousel - Video Plugin
+ */
+
+@font-face {
+  font-family: "Icons";
+  src: url("fonts/icons/Icons.eot");
+  src: url("fonts/icons/Icons.eot?#iefix") format("eot"), url("fonts/icons/Icons.woff2") format("woff2"), url("fonts/icons/Icons.woff") format("woff"), url("fonts/icons/Icons.ttf") format("truetype"), url("fonts/icons/Icons.svg#Icons") format("svg"); }
+
+/*
+ * NORMALIZE
+ */
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default fonts family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of fonts size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* Document
+   ========================================================================== */
+html {
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+footer,
+header,
+nav {
+  display: block; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+/**
+ * 1. Correct the inheritance and scaling of fonts size in all browsers.
+ * 2. Correct the odd `em` fonts sizing in all browsers.
+ */
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+a:active,
+a:hover {
+  outline-width: 0; }
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+/**
+ * Add the correct fonts weight in Chrome, Edge, and Safari.
+ */
+
+/**
+ * 1. Correct the inheritance and scaling of fonts size in all browsers.
+ * 2. Correct the odd `em` fonts sizing in all browsers.
+ */
+
+/**
+ * Add the correct fonts style in Android 4.3-.
+ */
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+/**
+ * Add the correct fonts size in all browsers.
+ */
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+/**
+ * Remove the border on not_opt_images inside links in IE 10-.
+ */
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change fonts properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+
+/**
+ * Add the correct display in IE.
+ */
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+
+/*
+ * BASE STYLES
+ */
+* {
+  box-sizing: border-box; }
+
+/**
+ * TYPOGRAPHY
+ */
+html {
+  font-family: "Fira Sans", Serif;
+  font-weight: normal;
+  color: #6f6c6c;
+  font-size: 14px;
+  line-height: 1.7; }
+  @media (min-width: 900px) {
+	html {
+	  font-size: calc( 14px + (16 - 14) * ((100vw - 900px) / (1170 - 900))); } }
+  @media (min-width: 1170px) {
+	html {
+	  font-size: 16px; } }
+
+h1, h6, a, ul, li, label {
+  margin: 0;
+  padding: 0; }
+
+h1, h6 {
+  color: #555353;
+  clear: both; }
+
+h1 {
+  font-size: 32.49679px; }
+  @media (min-width: 900px) {
+	h1 {
+	  font-size: calc(32.49679px + (37.13919 - 32.49679) * ((100vw - 900px) / (1170 - 900))); } }
+  @media (min-width: 1170px) {
+	h1 {
+	  font-size: 37.13919px; } }
+
+h6 {
+  font-size: 14px; }
+  @media (min-width: 900px) {
+	h6 {
+	  font-size: calc(14px + (16 - 14) * ((100vw - 900px) / (1170 - 900))); } }
+  @media (min-width: 1170px) {
+	h6 {
+	  font-size: 16px; } }
+
+button {
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0.425em 1.7em;
+  margin-bottom: 1.11562em; }
+  @media (min-width: 900px) {
+	button {
+	  font-size: calc(14px + (16 - 14) * ((100vw - 900px) / (1170 - 900))); } }
+  @media (min-width: 1170px) {
+	button {
+	  font-size: 16px;
+	  margin-bottom: 1.275em; } }
+
+label {
+  display: block;
+  padding-bottom: 0.2125em;
+  margin-bottom: -0.15937em; }
+
+/**
+  * ICONFONT
+  *
+  */
+@font-face {
+  font-family: "Icons";
+  src: url("fonts/icons/Icons.eot");
+  src: url("fonts/icons/Icons.eot?#iefix") format("eot"), url("fonts/icons/Icons.woff2") format("woff2"), url("fonts/icons/Icons.woff") format("woff"), url("fonts/icons/Icons.ttf") format("truetype"), url("fonts/icons/Icons.svg#Icons") format("svg"); }
+
+/*
+   * RESET
+   */
+ul {
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+/**
+ * HIERARCHY
+ */
+
+/**
+ * GRID
+ */
+.col-3-d {
+  width: 100%;
+  float: left;
+  min-height: 1px;
+  padding-left: 0.25em;
+  padding-right: 0.25em; }
+
+
+
+.container {
+  display: block;
+  margin: 0 auto; }
+  .container:before, .container:after {
+	content: "";
+	display: table;
+	clear: both; }
+
+/**
+* LAYOUT HELPERS
+*/
+
+.hidden {
+  display: none; }
+
+.f-left {
+  float: left; }
+
+.f-right {
+  float: right; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+/**
+* CONSTRUCTION STYLES
+*/
+
+/**
+* MIXES  STYLES
+*/
+
+/**
+* PROJECT  STYLES
+*/
+/***
+PROJECT STYLES
+***/
+/**
+Layout&Pages
+ **/
+/* orderPage STYLE */
+
+/* productSection STYLE */
+.productSection__content {
+  background: #e6e6e6; }
+
+.productSection__header {
+  background: #fff;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 3px silver; }
+
+.productSection__layoutChoiser a {
+  text-decoration: none; }
+
+.productSection__subTitle {
+  padding-right: 10px;
+  color: #555353;
+  font-size: 1em;
+  font-weight: bold; }
+
+.productSection__sortBy {
+  font-size: .95rem;
+  color: #555353;
+  padding: 0 5px;
+  color: #898585; }
+  .productSection__sortBy:hover {
+	color: #555353; }
+  .productSection__sortBy--selected {
+	color: orangered; }
+	.productSection__sortBy--selected:hover {
+	  color: orangered; }
+
+/* showCasePage STYLE */
+
+/* showcase STYLE */
+
+/* testOfSergConnectingSupport STYLE */
+/* topdashBoard STYLE */
+
+/**
+Modules
+* */
+/**
+* atest styles
+*/
+.breadCrumb {
+  text-transform: uppercase;
+  font-size: .9rem; }
+  .breadCrumb a:link {
+	color: #6f6c6c;
+	text-decoration: none; }
+
+.breadCrumb__content {
+  display: inline-block;
+  margin-right: 40px; }
+
+.breadcrumb__section {
+  display: inline-block;
+  padding: 0px 8px;
+  margin-right: 7px;
+  color: #898585;
+  border-radius: 3px; }
+  .breadcrumb__section:hover {
+	color: #3b3a3a; }
+
+.breadCrumb__section--current {
+  animation-name: dance;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  font-weight: bold;
+  background: orangered;
+  color: #fff; }
+
+@keyframes dance {
+  20% {
+	left: 200px; }
+  50% {
+	top: 200px; }
+  100% {
+	bottom: -300px; } }
+  .breadCrumb__section--current:hover {
+	color: #fff; }
+  .breadCrumb__section--current:before {
+	content: '';
+	margin-right: 0; }
+
+/**
+* confirmedOrderPage styles
+*/
+
+/**
+* flyPageFragment styles
+*/
+
+/**
+* productCol styles
+*/
+.productCol__list {
+  background: #e6e6e6; }
+
+.productCol__content .productInline__quantityLabel {
+  width: 40%;
+  text-align: center;
+  position: relative;
+  display: inline-block; }
+
+.productCol__link {
+  text-decoration: none; }
+  .productCol__link:hover {
+	color: #3b3a3a; }
+
+.productCol__card {
+  background: #fff;
+  padding: .4em .8em 1em;
+  margin-bottom: .5em;
+  transition: box-shadow .15s linear; }
+  .productCol__card:hover {
+	box-shadow: 0px 1px 8px 1px #ccc; }
+
+.productCol__sku {
+  display: inline-block;
+  margin-bottom: 5px; }
+
+.productCol__img {
+  width: 100%;
+  height: 180px;
+  /*background-image: url("https://www.santehsmart.ru/upload/iblock/2ee/2ee1ca5fa8df10ec7e75f80c1e7edc22.jpg");*/
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 5px; }
+
+.productCol__name {
+  height: 5.1em;
+  font-weight: normal;
+  color: #6f6c6c;
+  overflow: hidden;
+  margin-bottom: .5em; }
+
+.productCol__priceStock {
+  margin-bottom: .8em; }
+
+.productCol__stock {
+  color: #379774;
+  width: 50%;
+  text-align: center;
+  height: 3.06em;
+  display: inline-block;
+  overflow: hidden; }
+  .productCol__stock--last {
+	font-size: .8em;
+	color: #ff6a33; }
+
+.productCol__price {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 50%;
+  text-align: center; }
+  .productCol__price--opt {
+	color: #898585;
+	font-size: 1rem;
+	text-align: left;
+	line-height: 1.5; }
+	.productCol__price--opt-moc {
+	  color: #6f6c6c; }
+
+/**
+* productInline styles
+*/
+.productInline__content {
+  background-color: white;
+  width: 100%;
+  font-size: 0;
+  height: 3.45rem;
+  margin-top: 3px;
+  overflow: hidden; }
+  .productInline__content:hover {
+	background-color: #f2f2f2; }
+
+.productInline__section {
+  display: inline-block;
+  font-size: 1rem;
+  vertical-align: top;
+  padding: 5px 10px;
+  border-right: solid 1px #e6e6e6;
+  height: 100%;
+  line-height: 2.8rem; }
+  .productInline__section--sku {
+	width: 7%;
+	text-align: center;
+	font-size: .9rem; }
+  .productInline__section--name {
+	width: 40%;
+	line-height: 1.45rem;
+	padding-left: 15px;
+	font-weight: normal; }
+  .productInline__section--price {
+	width: 12%;
+	text-align: center;
+	font-weight: bold;
+	color: #6f6c6c;
+	font-size: 1.1rem; }
+	.productInline__section--price-moc {
+	  font-size: .9rem; }
+  .productInline__section--stock {
+	width: 10%;
+	color: #2a7157;
+	text-align: center;
+	background: #eef9f5;
+	font-size: .9rem; }
+  .productInline__section--order {
+	width: 11%;
+	text-align: center;
+	border-right: none; }
+  .productInline__section--img {
+	width: 10%;
+	background-color: white;
+	background-image: url("https://www.santehsmart.ru/upload/iblock/2ee/2ee1ca5fa8df10ec7e75f80c1e7edc22.jpg");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat; }
+  .productInline__section--quantity {
+	width: 10%;
+	text-align: center; }
+
+.productInline__link {
+  color: #555353; }
+
+.productInline__quantitySelector {
+  text-align: center;
+  font-size: 16px;
+  color: #6f6c6c;
+  padding: 4px 16px;
+  border: solid 1px #cccccc;
+  border-radius: 3px;
+  box-shadow: inset 0px 0px 9px silver; }
+
+.productInline__quantityLabel {
+  position: relative; }
+
+.productInline__quantityButton {
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+  border: solid 5px;
+  border-color: transparent;
+  padding: 0;
+  background: none; }
+  .productInline__quantityButton--plus {
+	right: -5px;
+	border-left-color: #898585; }
+  .productInline__quantityButton--minus {
+	left: -5px;
+	border-right-color: #898585; }
+
+/**
+* reactTest styles
+*/
+
+/**
+Elements
+* */
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 3em;
+  height: 3em;
+  fill: #3d255b; }
+  .icon--productsLayout {
+	fill: #a29f9f;
+	width: 1.7em;
+	height: 1.7em;
+	padding: 3px;
+	cursor: pointer; }
+	.icon--productsLayout:hover {
+	  fill: #555353; }
+	.icon--productsLayout--selected {
+	  fill: orangered; }
+	  .icon--productsLayout--selected:hover {
+		fill: orangered; }
+
+/* The switch - the box around the slider */
+
+/* Hide default HTML checkbox */
+
+/* The slider */
+
+/* Rounded sliders */
+
+.toOrder {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12px;
+  background: orangered;
+  border: solid 2px #ff6a33;
+  width: 100%;
+  border-radius: 5px;
+  transition: background .2s ease;
+  text-decoration: none;
+  padding: 5px;
+  display: inline-block; }
+  .toOrder:hover {
+	background: #ff6a33; }
+
+.colList {
+  width: 50%;
+  float: right; }
+

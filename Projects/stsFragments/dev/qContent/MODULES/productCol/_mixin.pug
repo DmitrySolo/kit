@@ -8,8 +8,16 @@ mixin MODULE-productCol(data)
 				.productCol__img
 				h6.productCol__name=data.title
 			.clearfix.productCol__priceStock
-				span.productCol__price.f-left=data.price+' руб.' 
-				span.productCol__stock.f-right='В наличии: '+data.stock
+				-if(data.opt)
+						span.productCol__price.productCol__price--opt.productCol__price--opt Мрц: 1#{data.price} руб.#[br]
+							span.productCol__price--opt.productCol__price--opt-moc Моц: #{data.price} руб.
+				-else
+					span.productCol__price.f-left=data.price+' руб.'
+				-if(data.opt)
+					span.productCol__stock.f-right Доступно:#[br]#{data.stock} из 223
+				-else 
+					span.productCol__stock.f-right В наличии:#[br] 
+						span.productCol__stock--last Скоро закончится
 			label.productInline__quantityLabel
 				input.productInline__quantitySelector(type=text value='1'  size='3' )
 				.productInline__quantityButton.productInline__quantityButton--minus

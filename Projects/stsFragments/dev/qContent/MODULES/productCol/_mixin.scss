@@ -38,7 +38,7 @@
         display: inline-block;
         margin-bottom:5px;
     }
-    &__img{
+    &__img{   
         width:100%;
         height: 180px;
        // background-color: #ededed;
@@ -57,23 +57,43 @@
         margin-bottom: .5em;
     }
     &__priceStock{
-        margin-bottom:.8em;
+        margin-bottom:.8em; 
+        
+       
         
     }
     &__stock{
         color: cs('succes-d');
         width:50%;
         text-align: center;
+        height: 1.8*$line_height_ratio#{em};
+        display:inline-block;
+        overflow:hidden;
         &--off{
             color:cs('erorr-d2'); 
         }
+        &--last{
+            font-size: .8em;
+            color: cs('accent-l');
+        }
     }
     &__price{
+        display:inline-block;
+        vertical-align: top;
         font-size:1.2em;
         font-weight: bold;
-        position:relative;
         width:50%;
-        text-align: center; 
+        text-align: center;
+        &--opt{
+            color: cs('font-l');
+            font-size:1rem;
+            text-align: left;
+            line-height: 1.5;
+            &-moc{
+                color: cs('font');
+            }
+        }
+        
           
     }
     

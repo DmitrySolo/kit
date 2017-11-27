@@ -1078,16 +1078,22 @@ gulp.task('dist-module', [], function () {
 gulp.task('dist-page', [], function () {
 	var dataProd = data;
 	dataProd.statement = 'Production';
-	var destProd = 'Projects/'+projectName+'/production/pages/dashboard/'
-	gulp.src(projectDevDir+'template/PAGESYSTEM/PAGES/dashboard.pug')
+	var destProd = 'Projects/'+projectName+'/production/pages/producList/'
+	gulp.src(projectDevDir+'template/PAGESYSTEM/PAGES/productList.pug')
 		.pipe(pug({
 			data: data,
 			pretty: true,
-		})).pipe(gulp.dest(destProd));
+		}))
+        .pipe(cheerio(function ($, file) {
+
+            $('*').removeAttr('data-qcontent');
+
+        }))
+		.pipe(gulp.dest(destProd));
 
 	gulp.src(dist + '/main.css')
 		.pipe(uncss({
-			html: [destProd+'dashboard.html']
+			html: [destProd+'productList.html']
 		}))
 		.pipe(gulp.dest(destProd));
 

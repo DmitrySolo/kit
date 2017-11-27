@@ -2087,6 +2087,19 @@
   .testBlur {
     filter: blur(5px)
   }
+  .ace-twilight .ace_marker-layer .ace_selection {
+
+    &:before{
+      content:'';
+      display: block;
+      border: 7px solid transparent;
+      border-left-color:orange;
+      position: absolute;
+      left:-20px;
+      z-index:25;
+      outline: 1px #fff;
+    }
+  }
 }
 
 

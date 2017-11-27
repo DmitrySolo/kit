@@ -1,5 +1,20 @@
 {
 	"LIBS": {
+		"Animation-GSAP": {
+			"js": {
+				"TweenLite": {
+					"src": "node_modules/gsap/src/minified/TweenLite.min.js",
+					"container": "footer/libs"
+				},
+				"TimelineLite": {
+					"src": "node_modules/gsap/src/minified/TimelineLite.min.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"JQ": {
 			"js": {
 				"jquery": {
@@ -41,21 +56,6 @@
 			"js": {
 				"quant-debug-JsonCss-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"Animation-GSAP": {
-			"js": {
-				"TweenLite": {
-					"src": "node_modules/gsap/src/minified/TweenLite.min.js",
-					"container": "footer/libs"
-				},
-				"TimelineLite": {
-					"src": "node_modules/gsap/src/minified/TimelineLite.min.js",
 					"container": "footer/libs"
 				}
 			},
@@ -126,21 +126,6 @@
 				"": ""
 			}
 		},
-		"dashBoardElement": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"b1": {
 			"js": {
 				"lib1": {
@@ -149,6 +134,21 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"dashBoardElement": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -371,6 +371,9 @@
 	"flyPageFragment": {
 		"title": "Test Page"
 	},
+	"productCol": {
+		"productCol": "1"
+	},
 	"productInline": {
 		"sku": "123456",
 		"title": "Полка угловая ОНИКА ТРИО 20У 302001qq-2",
@@ -379,9 +382,10 @@
 	},
 	"productInline1": {
 		"sku": "325335",
-		"title": "Шкаф-колонна Акватон Йорк 1A171103YOB4O Акватон Йорк 1A171103YOB4O каф-колонна Акватон Йорк 1A171103YOB4O",
+		"title": "Шкаф-колонна Акватон Йорк 1A171103YOB4O А",
 		"price": "5 700",
-		"stock": "1"
+		"stock": "1",
+		"opt": "true"
 	},
 	"productInline2": {
 		"sku": "89358",
@@ -415,9 +419,6 @@
 	},
 	"reactTest": {
 		"reactTest": "1"
-	},
-	"productCol": {
-		"productCol": "1"
 	},
 	"showCasePage": {
 		"self": "showCasePage",
