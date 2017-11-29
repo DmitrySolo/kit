@@ -132,7 +132,7 @@ input:checked + .slider:before {
     
 .dashBoardElement{
     vertical-align: top;
-    font-size:13px;   
+    font-size:16px;   
     //position: relative;
     padding: 0;
     border-bottom: 1px solid cs('font-d2');
@@ -255,11 +255,7 @@ input:checked + .slider:before {
     }
     &--notice{
         .iconWrapper{
-            position:absolute;
-            @include a-set-frame(dance,2s,0s,infinity,cubic-bezier(.19,.92,.06,-0.76),( 
-            0    :(top:-20),            
-            .5    :(left:-40),           
-            1    :(bottom:0)    )  ) 
+            //position:absolute;
         }
         .iconWrapper:after{
             content: attr(data-notice);

@@ -1,0 +1,6 @@
+mixin LEVEL-page(title,className)
+	-if (!className) className =''
+	.page__content(class = 'page__content'+ className data-qcontent="level__page")
+		h2.page__title=title
+		if block 
+			block

@@ -1,0 +1,33 @@
+/**
+* noticeList styles
+*/
+
+@mixin noticeList(){
+
+  .noticeList {
+      max-width:80%;
+    &__content {
+    
+    }
+    &__element{
+        padding-left:35px;
+        border-left: 3px solid transparent;
+        margin-bottom: 20px;
+       // border-bottom:1px solid #eee;
+        &--unread{
+            border-left-color: cs('succes-l2');
+        }
+    }
+    &__publicTime{
+        color:cs('font-d');
+    }
+    &__elementHeader{
+        color:cs('secondary');
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include noticeList();

@@ -1,0 +1,9 @@
+//- notice.pug
+extends ../LAYOUT/layout.pug
+block title
+	-var page={slug:'notice',title:'notice'};
+	title notice
+block page
+	h1 notice
+	+LEVEL-page('Уведомления')
+		+MODULE-noticeList()

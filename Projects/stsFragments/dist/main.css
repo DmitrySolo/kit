@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/* body{
+    background: cs('background') !important;  
+} */
 .container {
   padding: 0 5px; }
 
@@ -672,6 +675,9 @@ template {
  */
 * {
   box-sizing: border-box; }
+
+body {
+  background-color: #fff; }
 
 /**
  * TYPOGRAPHY
@@ -1485,37 +1491,6 @@ PROJECT STYLES
 /**
 Layout&Pages
  **/
-/* productSection STYLE */
-.productSection__content {
-  background: #e6e6e6; }
-
-.productSection__header {
-  background: #fff;
-  padding: 15px 20px;
-  margin-bottom: 10px;
-  box-shadow: 0px 2px 3px silver; }
-
-.productSection__layoutChoiser a {
-  text-decoration: none; }
-
-.productSection__subTitle {
-  padding-right: 10px;
-  color: #555353;
-  font-size: 1em;
-  font-weight: bold; }
-
-.productSection__sortBy {
-  font-size: .95rem;
-  color: #555353;
-  padding: 0 5px;
-  color: #898585; }
-  .productSection__sortBy:hover {
-    color: #555353; }
-  .productSection__sortBy--selected {
-    color: orangered; }
-    .productSection__sortBy--selected:hover {
-      color: orangered; }
-
 /* orderPage STYLE */
 .orderPage__content {
   background-image: url(/holder.js/200x200?theme=social);
@@ -1578,7 +1553,44 @@ Layout&Pages
 .page__loader {
   vertical-align: top; }
 
-/* testOfSergConnectingSupport STYLE */
+/* page STYLE */
+.page__content {
+  padding: 60px 80px; }
+
+.page__title {
+  margin-bottom: 30px; }
+
+/* productSection STYLE */
+.productSection__content {
+  background: #e6e6e6; }
+
+.productSection__header {
+  background: #fff;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 3px silver; }
+
+.productSection__layoutChoiser a {
+  text-decoration: none; }
+
+.productSection__subTitle {
+  padding-right: 10px;
+  color: #555353;
+  font-size: 1em;
+  font-weight: bold; }
+
+.productSection__sortBy {
+  font-size: .95rem;
+  color: #555353;
+  padding: 0 5px;
+  color: #898585; }
+  .productSection__sortBy:hover {
+    color: #555353; }
+  .productSection__sortBy--selected {
+    color: orangered; }
+    .productSection__sortBy--selected:hover {
+      color: orangered; }
+
 /* showCasePage STYLE */
 .showCasePage__content {
   background-color: #fff;
@@ -1617,6 +1629,7 @@ Layout&Pages
 .showcase__subtytle {
   color: #555353; }
 
+/* testOfSergConnectingSupport STYLE */
 /* topdashBoard STYLE */
 .topdashBoard__content {
   background: #3b3a3a;
@@ -1735,6 +1748,22 @@ Modules
     color: green; }
 
 /**
+* noticeList styles
+*/
+.noticeList {
+  max-width: 80%; }
+  .noticeList__element {
+    padding-left: 35px;
+    border-left: 3px solid transparent;
+    margin-bottom: 20px; }
+    .noticeList__element--unread {
+      border-left-color: #91d6bd; }
+  .noticeList__publicTime {
+    color: #555353; }
+  .noticeList__elementHeader {
+    color: #1989AC; }
+
+/**
 * productCol styles
 */
 .productCol__list {
@@ -1818,7 +1847,7 @@ Modules
   width: 100%;
   font-size: 0;
   height: 3.45rem;
-  margin-top: 3px;
+  margin-top: 1px;
   overflow: hidden; }
   .productInline__content:hover {
     background-color: #f2f2f2; }
@@ -2017,7 +2046,7 @@ input:checked + .slider:before {
 
 .dashBoardElement {
   vertical-align: top;
-  font-size: 13px;
+  font-size: 16px;
   padding: 0;
   border-bottom: 1px solid #3b3a3a;
   margin: 0;
@@ -2114,23 +2143,6 @@ input:checked + .slider:before {
     @media (max-width: 599px) {
       .dashBoardElement__switcher {
         text-align: center; } }
-  .dashBoardElement--notice .iconWrapper {
-    position: absolute;
-    animation-name: dance;
-    animation-duration: 2s;
-    animation-iteration-count: infinity;
-    animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0.19, 0.92, 0.06, -0.76);
-    animation-fill-mode: both;
-    animation-delay: 0s; }
-
-@keyframes dance {
-  0% {
-    top: -20; }
-  50% {
-    left: -40; }
-  100% {
-    bottom: 0; } }
   .dashBoardElement--notice .iconWrapper:after {
     content: attr(data-notice);
     position: absolute;
@@ -2683,6 +2695,9 @@ body.blueprint {
   top: 0;
   left: 0;
   width: 100%; }
+
+.debug .ibb {
+  background-color: #55ff29 !important; }
 
 .debugElement {
   z-index: 10;

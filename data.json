@@ -1,20 +1,5 @@
 {
 	"LIBS": {
-		"Animation-GSAP": {
-			"js": {
-				"TweenLite": {
-					"src": "node_modules/gsap/src/minified/TweenLite.min.js",
-					"container": "footer/libs"
-				},
-				"TimelineLite": {
-					"src": "node_modules/gsap/src/minified/TimelineLite.min.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"JQ": {
 			"js": {
 				"jquery": {
@@ -63,63 +48,11 @@
 				"": ""
 			}
 		},
-		"quant-debug-ruller": {
-			"js": {
-				"quant-debug-ruller-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-ruller/quant-debug-ruller.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"quant-lib": {
 			"js": {
 				"quant-lib-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
 					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"xRayView": {
-			"js": {
-				"xRayView-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--xRayView/xRayView.js",
-					"container": "footer/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"flyPageFragment": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/MODULES/flyPageFragment/flyPageFragment.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"productInline": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/MODULES/productInline/productInline.js",
-					"container": "footer/init/init"
 				}
 			},
 			"css": {
@@ -149,6 +82,36 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"flyPageFragment": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/flyPageFragment/flyPageFragment.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"productInline": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/productInline/productInline.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -187,7 +150,7 @@
 	"icon-font": "false",
 	"body-color": "cs('font')",
 	"header-color": "cs('font-d')",
-	"background-color": "cs('bground')",
+	"background-color": "#fff",
 	"LINKED_FONTS_MAP": {
 		"//  'MAIN'": "('Oswald')",
 		"'HEADER'": "('Roboto Slab')\n//)"
@@ -357,6 +320,14 @@
 			"dop_class": "",
 			"layout": "default",
 			"group": ""
+		},
+		"6": {
+			"title": "notice",
+			"slug": "notice",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "default",
+			"group": ""
 		}
 	},
 	"atest": {
@@ -370,6 +341,9 @@
 	},
 	"flyPageFragment": {
 		"title": "Test Page"
+	},
+	"noticeList": {
+		"noticeList": "1"
 	},
 	"productCol": {
 		"productCol": "1"

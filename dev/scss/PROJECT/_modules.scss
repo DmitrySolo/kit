@@ -151,6 +151,39 @@
 ////////////////////////////////////////
 @include flyPageFragment();
 /**
+* noticeList styles
+*/
+
+@mixin noticeList(){
+
+  .noticeList {
+      max-width:80%;
+    &__content {
+    
+    }
+    &__element{
+        padding-left:35px;
+        border-left: 3px solid transparent;
+        margin-bottom: 20px;
+       // border-bottom:1px solid #eee;
+        &--unread{
+            border-left-color: cs('succes-l2');
+        }
+    }
+    &__publicTime{
+        color:cs('font-d');
+    }
+    &__elementHeader{
+        color:cs('secondary');
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include noticeList();
+/**
 * productCol styles
 */
 
@@ -209,10 +242,7 @@
         margin-bottom: .5em;
     }
     &__priceStock{
-        margin-bottom:.8em; 
-        
-       
-        
+        margin-bottom:.8em;
     }
     &__stock{
         color: cs('succes-d');
@@ -271,7 +301,7 @@
         width: 100%;
         font-size:0;
         height: 3.45rem;
-        margin-top: 3px;
+        margin-top: 1px;
         overflow:hidden;
         &:hover{
             background-color:lighten(cs('foreground-d'),5%);

@@ -22,8 +22,10 @@ $icon-font: false;
 @import "../COLOR/_color";
 $body-color         : cs('font'); // OF FONT
 $header-color       : cs('font-d'); // OF FONT
-$background-color   : cs('bground');
-
+$background-color   : #fff;  
+/* body{
+    background: cs('background') !important;  
+} */
 
 // FONTS ////////////////////////////////////////////////
 //// Register link fonts

@@ -25472,11 +25472,11 @@ function loadToQuant() {
 						}else{
 							if (target.indexOf('--') !=-1){
 								var tArr = target.split('--');
-                                editor.find('&--'+tArr[tArr.length-1]);
+								editor.find('&--'+tArr[tArr.length-1]);
 							}
 							else{
-                                var tArr = target.split('__');
-                                editor.find('&__'+tArr[tArr.length-1]);
+								var tArr = target.split('__');
+								editor.find('&__'+tArr[tArr.length-1]);
 							}
 
 							editorPug.find(target);
@@ -26185,6 +26185,14 @@ $(document).ready(function () {
 	$('#debugViewSwitcher').on('mousedown', function () {
 		frameEl('body').toggleClass('debug');
 		$(this).toggleClass('on');
+		frameEl('body *').each(function( index ) {
+			var $disp = $(this).css('display');
+			if ($disp == 'inline-block'){
+                $(this).addClass('ibb');
+				}
+
+
+		});
 
 	})
 

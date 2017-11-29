@@ -108,9 +108,18 @@
     left: 0;
     width: 100%;
   }
+  .debug .ibb{
+
+    background-color: #55ff29 !important;
+
+  }
   .debug main * {
     //background: none;
   }
+
+
+
+
   .debugElement {
     z-index: $zElement;
     opacity: .8;
