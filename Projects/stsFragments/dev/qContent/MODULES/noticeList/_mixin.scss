@@ -15,14 +15,17 @@
         margin-bottom: 20px;
        // border-bottom:1px solid #eee;
         &--unread{
-            border-left-color: cs('succes-l2');
+            border-left-color: cs('succes');
         }
+    }
+    &__noticeContent {
+        font-size:18px; 
     }
     &__publicTime{
         color:cs('font-d');
     }
     &__elementHeader{
-        color:cs('secondary');
+        color:cs('secondary-d');
     }
   }
 

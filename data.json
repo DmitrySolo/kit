@@ -59,36 +59,6 @@
 				"": ""
 			}
 		},
-		"b1": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"dashBoardElement": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"flyPageFragment": {
 			"js": {
 				"lib1": {
@@ -112,6 +82,36 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/MODULES/productInline/productInline.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"b1": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"dashBoardElement": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -328,6 +328,14 @@
 			"dop_class": "",
 			"layout": "default",
 			"group": ""
+		},
+		"7": {
+			"title": "support",
+			"slug": "support",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "default",
+			"group": ""
 		}
 	},
 	"atest": {
@@ -393,6 +401,9 @@
 	},
 	"reactTest": {
 		"reactTest": "1"
+	},
+	"support": {
+		"support": "1"
 	},
 	"showCasePage": {
 		"self": "showCasePage",

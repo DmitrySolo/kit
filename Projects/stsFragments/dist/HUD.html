@@ -27,9 +27,9 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </script>
         <div class="top-panel-content clearfix">
           <div class="quant hud">Q</div>
-          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">productList.html</span>
+          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">notice.html</span>
           </div>
-          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/productList.html" target="_blank" id="playhref">
+          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/notice.html" target="_blank" id="playhref">
               <div class="hud-Button f-left">
                         <svg class="icon playButston">
                           <use xlink:href="#play"></use>
@@ -269,7 +269,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </div>
         <div class="window" window="Viewport" style="z-index:5;">
           <div class="wrapperid" id="viewpr-content">
-            <iframe class="default-skin" id="index" src="productList.html" width="100%" align="center" name="viewport"></iframe>
+            <iframe class="default-skin" id="index" src="notice.html" width="100%" align="center" name="viewport"></iframe>
             <section class="pb-section clearfix hidden" id="ball"><span class="lh">Line height</span>
               <div class="spacer element-i"><span>Element i</span></div>
               <div class="spacer element-o"><span>Element o</span></div>
@@ -25521,11 +25521,12 @@ function loadToQuant() {
 
 var scroll=0;
 var Frame = document.getElementById('index');
+var  contentLibs = $('.fs__modules ul,.fs__p_modules ul,.fs__p_elements ul,.fs__pages ul,.fs__levels ul,.fs__options ul,.fs__layout ul,.fs__data ul,.fs__modules ul,.fs__mixes ul');
 Frame.onload = function () {
 	$('button#savecode').removeClass('classLoading');
 	frameEl('html').scrollTop(scroll)
 	loadToQuant();
-	$('.fs__modules ul,.fs__p_modules ul,.fs__p_elements ul,.fs__pages ul,.fs__levels ul,.fs__options ul,.fs__layout ul,.fs__data ul').html('');
+    contentLibs.html('');
 	loadProjectPath('dev/MODULES/PROJECT_MODULES', '.fs__modules');
 	loadProjectPath('dev/ELEMENTS', '.fs__elements');
 	loadProjectPath('dev/MIXES', '.fs__mixes');
@@ -26188,7 +26189,7 @@ $(document).ready(function () {
 		frameEl('body *').each(function( index ) {
 			var $disp = $(this).css('display');
 			if ($disp == 'inline-block'){
-                $(this).addClass('ibb');
+				$(this).addClass('ibb');
 				}
 
 
@@ -27946,6 +27947,8 @@ var quantCon = [
 	"	MODULE-productInline()",
 	"snippet +M-productCol",
 	"	MODULE-productCol()",
+	"snippet +M-noticeList",
+	"	MODULE-noticeList()",
 ].join(eol);
       </script>
       <script src="maps/main.css.map" type="text"></script>

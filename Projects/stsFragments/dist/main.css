@@ -1757,11 +1757,13 @@ Modules
     border-left: 3px solid transparent;
     margin-bottom: 20px; }
     .noticeList__element--unread {
-      border-left-color: #91d6bd; }
+      border-left-color: #46bb90; }
+  .noticeList__noticeContent {
+    font-size: 18px; }
   .noticeList__publicTime {
     color: #555353; }
   .noticeList__elementHeader {
-    color: #1989AC; }
+    color: #13667f; }
 
 /**
 * productCol styles
@@ -1936,6 +1938,26 @@ Modules
 */
 .reactTest__content h1 {
   color: #471a6f; }
+
+/**
+* support styles
+*/
+.support__content {
+  width: 100%;
+  font-size: 0; }
+
+.support__section {
+  font-size: 1rem;
+  width: 33.3333%;
+  display: inline-block;
+  padding: 30px 20px;
+  border-right: 1px solid #e6e6e6;
+  min-height: 500px; }
+  .support__section:last-child {
+    border: none; }
+
+.support__sectionTitle {
+  text-align: center; }
 
 /**
 Elements

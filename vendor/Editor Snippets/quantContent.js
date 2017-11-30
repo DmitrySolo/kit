@@ -27,4 +27,6 @@ var quantCon = [
 	"	MODULE-productCol()",
 	"snippet +M-noticeList",
 	"	MODULE-noticeList()",
+	"snippet +M-support",
+	"	MODULE-support()",
 ].join(eol);

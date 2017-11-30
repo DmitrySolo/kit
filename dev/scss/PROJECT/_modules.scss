@@ -167,14 +167,17 @@
         margin-bottom: 20px;
        // border-bottom:1px solid #eee;
         &--unread{
-            border-left-color: cs('succes-l2');
+            border-left-color: cs('succes');
         }
+    }
+    &__noticeContent {
+        font-size:18px; 
     }
     &__publicTime{
         color:cs('font-d');
     }
     &__elementHeader{
-        color:cs('secondary');
+        color:cs('secondary-d');
     }
   }
 
@@ -427,3 +430,34 @@
 
 ////////////////////////////////////////
 @include reactTest();
+/**
+* support styles
+*/
+
+@mixin support(){
+
+  .support {
+    &__content {
+        width:100%;
+        font-size:0;
+    }
+    &__section {
+        font-size: 1rem;
+        width: 33.3333%;
+        display:inline-block;
+        padding: 30px 20px;
+        border-right: 1px solid lighten(silver,15%);
+        min-height: 500px;
+        &:last-child{ 
+            border:none};
+    }
+    &__sectionTitle{
+        text-align: center;
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include support();

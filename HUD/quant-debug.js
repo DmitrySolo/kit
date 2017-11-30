@@ -302,11 +302,12 @@ function loadToQuant() {
 
 var scroll=0;
 var Frame = document.getElementById('index');
+var  contentLibs = $('.fs__modules ul,.fs__p_modules ul,.fs__p_elements ul,.fs__pages ul,.fs__levels ul,.fs__options ul,.fs__layout ul,.fs__data ul,.fs__modules ul,.fs__mixes ul');
 Frame.onload = function () {
 	$('button#savecode').removeClass('classLoading');
 	frameEl('html').scrollTop(scroll)
 	loadToQuant();
-	$('.fs__modules ul,.fs__p_modules ul,.fs__p_elements ul,.fs__pages ul,.fs__levels ul,.fs__options ul,.fs__layout ul,.fs__data ul').html('');
+    contentLibs.html('');
 	loadProjectPath('dev/MODULES/PROJECT_MODULES', '.fs__modules');
 	loadProjectPath('dev/ELEMENTS', '.fs__elements');
 	loadProjectPath('dev/MIXES', '.fs__mixes');
@@ -969,7 +970,7 @@ $(document).ready(function () {
 		frameEl('body *').each(function( index ) {
 			var $disp = $(this).css('display');
 			if ($disp == 'inline-block'){
-                $(this).addClass('ibb');
+				$(this).addClass('ibb');
 				}
 
 

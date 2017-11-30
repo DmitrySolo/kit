@@ -1,0 +1,9 @@
+//- support.pug
+extends ../LAYOUT/layout.pug
+block title
+	-var page={slug:'support',title:'support'};
+	title support
+block page
+	+LEVEL-page('Support')
+		+MODULE-support()
+	
