@@ -1,0 +1,17 @@
+/**
+* module styles
+*/
+
+@mixin module(){
+
+  .module {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include module();

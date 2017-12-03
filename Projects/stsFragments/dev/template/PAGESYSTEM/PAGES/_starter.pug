@@ -1,0 +1,66 @@
+//- _starter.pug
+extends ../LAYOUT/layout.pug
+block title
+	-var page={slug:'_starter',title:'_starter'};
+	title _starter
+block page
+	-if(head.lang =="en")
+		-var heading = 'Heading'
+		-var paragraph = 'Flyingfish rock cod bluntnose knifefish silver driftfish tarpon snipe eel carpetshark European eel. Limia sawfish goldeye flounder Blobfish, catalufa, crappie, torpedo freshwater shark. Silver dollar atka mackerel, Quillfish pike characid cobbler paperbone salmon, snoek cusk-eel, Sevan trout. Snipefish shortnose greeneye crucian carp; temperate bass beluga sturgeon.'
+	-if(head.lang =="ru")
+		-var heading = 'Заголовок'
+		-var paragraph = 'Генерация рыбатекста происходит довольно просто: есть несколько фиксированных наборов фраз и словочетаний, из которых в определенном порядке формируются предложения. Предложения складываются в абзацы – и вы наслаждетесь очередным бредошедевром.'
+	+LEVEL-page('STARTER PAGE')
+		+LEVEL-starter('Headings')
+			.l_ib__c
+				.l_ib__e
+					h1=heading
+					h2=heading
+					h3=heading
+					h4=heading
+					h5=heading
+					h6=heading
+				.l_ib__e
+					h1.text=heading
+					h2.text=heading
+					h3.text=heading
+					h4.text=heading
+					h5.text=heading
+					h6.text=heading
+		+LEVEL-starter('Paragraph')
+			.l_ib__c
+				.l_ib__e
+					p=paragraph
+				.l_ib__e
+					h2.text=heading
+					p.text=paragraph
+		+LEVEL-starter('Inputs')
+			label Text
+				input(type='text')
+			label Pass
+				input(type='password')
+			label Radio
+				input(type='radio')
+			label Radio
+				input(type='checkbox')
+			label Select
+				select
+					option 1 option
+					option 2 option
+					option 3 option
+		+LEVEL-starter('Button')
+			button button
+		+LEVEL-starter('Link')
+			a(href="/ty") This is the link
+			+MODULE-module1()
+		+LEVEL-level2('LEVEL2',level2)
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					

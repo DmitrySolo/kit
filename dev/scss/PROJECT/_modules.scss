@@ -151,6 +151,40 @@
 ////////////////////////////////////////
 @include flyPageFragment();
 /**
+* module styles
+*/
+
+@mixin module(){
+
+  .module {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include module();
+/**
+* module1 styles
+*/
+
+@mixin module1(){
+
+  .module1 {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include module1();
+/**
 * noticeList styles
 */
 
@@ -461,3 +495,35 @@
 
 ////////////////////////////////////////
 @include support();
+/**
+* topMenu styles
+*/
+
+@mixin topMenu(){
+
+  .topMenu {
+    &__wrapper {
+        background: cs('background-d');
+
+    }
+    &__content { 
+       
+        @include space-i('element','|','t','')
+        
+        @include for-size(phone-only){
+           display:none;
+       }
+    }
+    &__element{
+        
+        display: inline-block;
+        @include space-i('component','=','','r') 
+        
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include topMenu();

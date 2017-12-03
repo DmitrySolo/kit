@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <link href="main.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet">
@@ -27,9 +27,9 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </script>
         <div class="top-panel-content clearfix">
           <div class="quant hud">Q</div>
-          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">notice.html</span>
+          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">main.html</span>
           </div>
-          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/notice.html" target="_blank" id="playhref">
+          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/main.html" target="_blank" id="playhref">
               <div class="hud-Button f-left">
                         <svg class="icon playButston">
                           <use xlink:href="#play"></use>
@@ -269,7 +269,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </div>
         <div class="window" window="Viewport" style="z-index:5;">
           <div class="wrapperid" id="viewpr-content">
-            <iframe class="default-skin" id="index" src="notice.html" width="100%" align="center" name="viewport"></iframe>
+            <iframe class="default-skin" id="index" src="main.html" width="100%" align="center" name="viewport"></iframe>
             <section class="pb-section clearfix hidden" id="ball"><span class="lh">Line height</span>
               <div class="spacer element-i"><span>Element i</span></div>
               <div class="spacer element-o"><span>Element o</span></div>
@@ -25526,7 +25526,7 @@ Frame.onload = function () {
 	$('button#savecode').removeClass('classLoading');
 	frameEl('html').scrollTop(scroll)
 	loadToQuant();
-    contentLibs.html('');
+	contentLibs.html('');
 	loadProjectPath('dev/MODULES/PROJECT_MODULES', '.fs__modules');
 	loadProjectPath('dev/ELEMENTS', '.fs__elements');
 	loadProjectPath('dev/MIXES', '.fs__mixes');
@@ -26522,7 +26522,12 @@ $(document).ready(function () {
 		$('.viewportSwitch').on('mousedown', function () {
 
 			var vP = qntGetThisData(this, 'viewport');
+
 			$('#viewpr-content').css('width', viewports[vP] + 'px');
+			if (viewports[vP] > 1900) $('#viewpr-content').css('left','-20%');
+			else  $('#viewpr-content').css('left','0');
+
+
 			qntSetCookie('viewport', viewports[vP] + 'px', 1);
 			$('.viewportSwitch').css('background', 'initial');
 			$('.icon', '.viewportSwitch').css('fill', '#00b3ee')
@@ -27920,35 +27925,9 @@ var quantCon = [
 
 
       </script>
-      <script>var quantCon = [
-	"snippet +M-confirmedOrderPage",
-	"	+MODULE-confirmedOrderPage()",
-	"snippet +M-confirmedOrderPage",
-	"	MODULE-confirmedOrderPage()",
-	"snippet +M-confirmedOrderPage",
-	"	MODULE-confirmedOrderPage()",
-	"snippet +M-testSnippetModule",
-	"	MODULE-testSnippetModule()",
-	"snippet +M-test",
-	"	MODULE-test()",
-	"snippet +M-anotherTest",
-	"	MODULE-anotherTest()",
-	"snippet +M-testOfParent",
-	"	MODULE-testOfParent()",
-	"snippet +M-testModuleSergeConnectPeopleareStranged",
-	"	MODULE-testModuleSergeConnectPeopleareStranged()",
-	"snippet +M-atest",
-	"	MODULE-atest()",
-	"snippet +holder",
-	"	+holder('page__loader','100px100',colors.primary)",
-	"snippet +M-reactTest",
-	"	MODULE-reactTest()",
-	"snippet +M-productInline",
-	"	MODULE-productInline()",
-	"snippet +M-productCol",
-	"	MODULE-productCol()",
-	"snippet +M-noticeList",
-	"	MODULE-noticeList()",
+      <script>
+	"snippet +M-module1",
+	"	MODULE-module1()",
 ].join(eol);
       </script>
       <script src="maps/main.css.map" type="text"></script>

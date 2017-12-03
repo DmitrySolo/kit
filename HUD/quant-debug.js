@@ -307,7 +307,7 @@ Frame.onload = function () {
 	$('button#savecode').removeClass('classLoading');
 	frameEl('html').scrollTop(scroll)
 	loadToQuant();
-    contentLibs.html('');
+	contentLibs.html('');
 	loadProjectPath('dev/MODULES/PROJECT_MODULES', '.fs__modules');
 	loadProjectPath('dev/ELEMENTS', '.fs__elements');
 	loadProjectPath('dev/MIXES', '.fs__mixes');
@@ -1303,7 +1303,12 @@ $(document).ready(function () {
 		$('.viewportSwitch').on('mousedown', function () {
 
 			var vP = qntGetThisData(this, 'viewport');
+
 			$('#viewpr-content').css('width', viewports[vP] + 'px');
+			if (viewports[vP] > 1900) $('#viewpr-content').css('left','-20%');
+			else  $('#viewpr-content').css('left','0');
+
+
 			qntSetCookie('viewport', viewports[vP] + 'px', 1);
 			$('.viewportSwitch').css('background', 'initial');
 			$('.icon', '.viewportSwitch').css('fill', '#00b3ee')

@@ -1084,11 +1084,11 @@ gulp.task('dist-page', [], function () {
 			data: data,
 			pretty: true,
 		}))
-        .pipe(cheerio(function ($, file) {
+		.pipe(cheerio(function ($, file) {
 
-            $('*').removeAttr('data-qcontent');
+			$('*').removeAttr('data-qcontent');
 
-        }))
+		}))
 		.pipe(gulp.dest(destProd));
 
 	gulp.src(dist + '/main.css')
@@ -1848,7 +1848,7 @@ gulp.task('API-SERVER', function () {
 							save = url_parts.query.saveToGlobal;
 
 
-						console.log(contentType+' HHHHHHHHHHHHHHHHHHHHHHHHH');
+
 
 						switch (contentType) {
 							case 'element': {
@@ -1909,7 +1909,8 @@ gulp.task('API-SERVER', function () {
 							case 'module' :
 								var moduleName = name_cr,
 									elemData = {
-										moduleName: moduleName
+										moduleName: moduleName,
+										projectName: projectName
 									},
 
 									moduleTemplates = fs.readdirSync('vendor/file_templates/MODULES/_templates/');

@@ -74,6 +74,21 @@
 				"": ""
 			}
 		},
+		"module1": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/module1/module1.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"productInline": {
 			"js": {
 				"lib1": {
@@ -125,7 +140,7 @@
 		"primary": "#3d255b",
 		"secondary": "#1989AC",
 		"foreground": "#fff",
-		"background": "#E8F1F5",
+		"background": "#e6e6e6",
 		"accent": "orangered",
 		"font": "#6f6c6c",
 		"succes": "#46bb90",
@@ -148,9 +163,9 @@
 	"debug": "true",
 	"production": "false",
 	"icon-font": "false",
-	"body-color": "cs('font')",
-	"header-color": "cs('font-d')",
-	"background-color": "#fff",
+	"body-color": "cs('font-d2')",
+	"header-color": "cs('secondary')",
+	"background-color": "cs('background')",
 	"LINKED_FONTS_MAP": {
 		"//  'MAIN'": "('Oswald')",
 		"'HEADER'": "('Roboto Slab')\n//)"
@@ -233,7 +248,7 @@
 		"accessibilityTesting": "true"
 	},
 	"head": {
-		"lang": "en",
+		"lang": "ru",
 		"title": "stsFragments",
 		"desc": "This is starter description",
 		"kw": "starter application , hurray!!!",
@@ -336,6 +351,22 @@
 			"dop_class": "",
 			"layout": "default",
 			"group": ""
+		},
+		"8": {
+			"title": "_starter",
+			"slug": "_starter",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "default",
+			"group": ""
+		},
+		"9": {
+			"title": "MAIN",
+			"slug": "main",
+			"MainMenu": "true",
+			"dop_class": "",
+			"layout": "default",
+			"group": ""
 		}
 	},
 	"atest": {
@@ -349,6 +380,12 @@
 	},
 	"flyPageFragment": {
 		"title": "Test Page"
+	},
+	"module": {
+		"module": "1"
+	},
+	"module1": {
+		"module1": "1"
 	},
 	"noticeList": {
 		"noticeList": "1"
@@ -404,6 +441,20 @@
 	},
 	"support": {
 		"support": "1"
+	},
+	"topMenu": {
+		"topMenu": "1"
+	},
+	"inner": {
+		"title": {}
+	},
+	"level2": {
+		"title": {
+			"ZOPA": "OPA"
+		}
+	},
+	"outer": {
+		"title": {}
 	},
 	"showCasePage": {
 		"self": "showCasePage",

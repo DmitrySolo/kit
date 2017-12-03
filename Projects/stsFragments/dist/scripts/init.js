@@ -31,6 +31,10 @@ $('.toOrder.active').on('mousedown',function () {
 
 })
 /**
+* MODULE: module1 script
+*/
+
+/**
 * MODULE: productInline script
 *
 */

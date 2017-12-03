@@ -1,6 +1,6 @@
 
 <!----><!-- split header.html --><!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>support</title>
@@ -15,22 +15,43 @@
   </head>
   <body class="project" data-qcontent="layout__layout">
     <div class="projectWrapper"><!-- HEADER --><!-- split header.html -->
-      <header class="mainHeader" data-qcontent="layout__header">HEADER :<!-- split support.html --></header><!-- MAIN -->
-      <div class="page__content page__content" data-qcontent="level__page">
-        <h2 class="page__title">Support</h2><!-- split modules/support -->
-        <div class="support__content" data-qcontent="module__support">
-          <section class="support__section">
-            <h3 class="support__sectionTitle">Ваш менеджер</h3>
-          </section>
-          <section class="support__section">
-            <h3 class="support__sectionTitle">Тех поддержка</h3>
-          </section>
-          <section class="support__section">
-            <h3 class="support__sectionTitle">Настройки</h3>
-          </section>
+      <header class="mainHeader" data-qcontent="layout__header">
+        <div class="outer">
+          <div class="outer__content outer__contentundefined" data-qcontent="level__outer">
+            <div class="topMenu__wrapper">
+              <div class="container">
+                <div class="row"></div><!-- split modules/topMenu -->
+                <div class="topMenu__content" data-qcontent="module__topMenu">
+                  <nav class="topMenu">
+                    <ul class="topMenu__list">
+                      <li class="topMenu__element"><a href="/dsf">Розничным Клиентам</a></li>
+                      <li class="topMenu__element"><a href="/dsf">Оптовым Клиентам</a></li>
+                      <li class="topMenu__element"><a href="/dsf">Контакты</a></li>
+                    </ul>
+                  </nav>
+                </div><!-- split support.html -->
+              </div>
+            </div>
+          </div>
         </div>
-      </div><!-- FOOTER --><!-- split footer.html -->
-      <footer data-qcontent="layout__footer">FOOTER</footer><!-- SCRIPTS -->
+      </header><!-- MAIN -->
+      <main> 
+        <div class="page__content page__content" data-qcontent="level__page">
+          <h2 class="page__title">Support</h2><!-- split modules/support -->
+          <div class="support__content" data-qcontent="module__support">
+            <section class="support__section">
+              <h3 class="support__sectionTitle">Ваш менеджер</h3>
+            </section>
+            <section class="support__section">
+              <h3 class="support__sectionTitle">Тех поддержка</h3>
+            </section>
+            <section class="support__section">
+              <h3 class="support__sectionTitle">Настройки</h3>
+            </section>
+          </div>
+        </div>
+      </main><!-- FOOTER --><!-- split footer.html -->
+      <footer data-qcontent="layout__footer"></footer><!-- SCRIPTS -->
 <!-- split footer-scripts.html -->
       <script src="scripts/jquery.min.js" type="text/javascript"></script>
       <script src="scripts/quant-debug-JsonCss.js" type="text/javascript"></script>

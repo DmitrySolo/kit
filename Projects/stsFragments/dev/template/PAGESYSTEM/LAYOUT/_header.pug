@@ -1,3 +1,6 @@
 <!-- split header.html -->
-header(data-qcontent="layout__header" class="mainHeader") HEADER :
-
+header(data-qcontent="layout__header" class="mainHeader")
+	+LEVEL-outer()
+		.topMenu__wrapper
+			+LEVEL-inner()
+				+MODULE-topMenu()

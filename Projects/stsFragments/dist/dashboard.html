@@ -1,6 +1,6 @@
 
 <!----><!-- split header.html --><!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>dashboard</title>
@@ -15,43 +15,64 @@
   </head>
   <body class="project" data-qcontent="layout__layout">
     <div class="projectWrapper"><!-- HEADER --><!-- split header.html -->
-      <header class="mainHeader" data-qcontent="layout__header">HEADER :<!-- split dashboard.html --></header><!-- MAIN -->
-      <h1>dashboard
-        <div class="topdashBoard__content topdashBoard__content" data-qcontent="level__topdashBoard">
-          <div class="container">Dashboard.
-            <ul class="topdashBoard__list">
-              <li class="dashBoardElement" data-qcontent="element__ICON-TITLE-TEXTS__dashBoardElement"><span class="iconWrapper">
-                  <svg class=" undefined">
-                    <use xlink:href="#tie"></use>
-                  </svg></span><span class="dashBoardElement__title">Личный Кабинет   </span>
-              </li>
-              <li class="dashBoardElement dashBoardElement--notice" data-qcontent="element__ICON-TITLE-TEXTS__dashBoardElement"><span class="iconWrapper loading-button" data-notice="12">
-                  <svg class=" undefined">
-                    <use xlink:href="#notification"></use>
-                  </svg></span><span class="dashBoardElement__title">Уведомления</span>
-              </li>
-              <li class="dashBoardElement" data-qcontent="element__ICON-TITLE-TEXTS__dashBoardElement"><span class="iconWrapper">
-                  <svg class=" undefined">
-                    <use xlink:href="#help"></use>
-                  </svg></span><span class="dashBoardElement__title">Помощь и настройки</span>
-              </li>
-              <li class="dashBoardElement" data-qcontent="element__ICON-TITLE-TEXTS__dashBoardElement"><span class="iconWrapper iconWrapper--orderList" data-order="15"> 
-                  <svg class=" undefined"> 
-                    <use xlink:href="#orderlist"></use>
-                  </svg></span><span class="dashBoardElement__pricer">100 000р   </span><a class="dashBoardElement__arr" href'/="href'/">Оформить заявку</a>
-              </li>
-              <li class="dashBoardElement" data-qcontent="element__ICON-TITLE-TEXTS__dashBoardElement"><span class="dashBoardElement__title dashBoardElement__switcher">Режим Торгового Зала</span>
-                <div class="switcher not" data-qcontent="element__buttons__switcher">
-                  <label class="switch">
-                    <input id="js-switchShopState" type="checkbox"/><span class="slider round"></span>
-                  </label>
-                </div>
-              </li>
-            </ul>
+      <header class="mainHeader" data-qcontent="layout__header">
+        <div class="outer">
+          <div class="outer__content outer__contentundefined" data-qcontent="level__outer">
+            <div class="topMenu__wrapper">
+              <div class="container">
+                <div class="row"></div><!-- split modules/topMenu -->
+                <div class="topMenu__content" data-qcontent="module__topMenu">
+                  <nav class="topMenu">
+                    <ul class="topMenu__list">
+                      <li class="topMenu__element"><a href="/dsf">Розничным Клиентам</a></li>
+                      <li class="topMenu__element"><a href="/dsf">Оптовым Клиентам</a></li>
+                      <li class="topMenu__element"><a href="/dsf">Контакты</a></li>
+                    </ul>
+                  </nav>
+                </div><!-- split dashboard.html -->
+              </div>
+            </div>
           </div>
         </div>
-      </h1><!-- FOOTER --><!-- split footer.html -->
-      <footer data-qcontent="layout__footer">FOOTER</footer><!-- SCRIPTS -->
+      </header><!-- MAIN -->
+      <main> 
+        <h1>dashboard
+          <div class="topdashBoard__content topdashBoard__content" data-qcontent="level__topdashBoard">
+            <div class="container">Dashboard.
+              <ul class="topdashBoard__list">
+                <li class="dashBoardElement" data-qcontent="element__ICON-TITLE-TEXTS__dashBoardElement"><span class="iconWrapper">
+                    <svg class=" undefined">
+                      <use xlink:href="#tie"></use>
+                    </svg></span><span class="dashBoardElement__title">Личный Кабинет   </span>
+                </li>
+                <li class="dashBoardElement dashBoardElement--notice" data-qcontent="element__ICON-TITLE-TEXTS__dashBoardElement"><span class="iconWrapper loading-button" data-notice="12">
+                    <svg class=" undefined">
+                      <use xlink:href="#notification"></use>
+                    </svg></span><span class="dashBoardElement__title">Уведомления</span>
+                </li>
+                <li class="dashBoardElement" data-qcontent="element__ICON-TITLE-TEXTS__dashBoardElement"><span class="iconWrapper">
+                    <svg class=" undefined">
+                      <use xlink:href="#help"></use>
+                    </svg></span><span class="dashBoardElement__title">Помощь и настройки</span>
+                </li>
+                <li class="dashBoardElement" data-qcontent="element__ICON-TITLE-TEXTS__dashBoardElement"><span class="iconWrapper iconWrapper--orderList" data-order="15"> 
+                    <svg class=" undefined"> 
+                      <use xlink:href="#orderlist"></use>
+                    </svg></span><span class="dashBoardElement__pricer">100 000р   </span><a class="dashBoardElement__arr" href'/="href'/">Оформить заявку</a>
+                </li>
+                <li class="dashBoardElement" data-qcontent="element__ICON-TITLE-TEXTS__dashBoardElement"><span class="dashBoardElement__title dashBoardElement__switcher">Режим Торгового Зала</span>
+                  <div class="switcher not" data-qcontent="element__buttons__switcher">
+                    <label class="switch">
+                      <input id="js-switchShopState" type="checkbox"/><span class="slider round"></span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </h1>
+      </main><!-- FOOTER --><!-- split footer.html -->
+      <footer data-qcontent="layout__footer"></footer><!-- SCRIPTS -->
 <!-- split footer-scripts.html -->
       <script src="scripts/jquery.min.js" type="text/javascript"></script>
       <script src="scripts/quant-debug-JsonCss.js" type="text/javascript"></script>

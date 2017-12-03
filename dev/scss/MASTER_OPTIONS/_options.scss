@@ -20,9 +20,9 @@ $icon-font: false;
 // COLORS ///////////////////////////////////////////////
 @import "colors";
 @import "../COLOR/_color";
-$body-color         : cs('font'); // OF FONT
-$header-color       : cs('font-d'); // OF FONT
-$background-color   : #fff;  
+$body-color         : cs('font-d2'); // OF FONT
+$header-color       : cs('secondary'); // OF FONT
+$background-color   : cs('background');  
 /* body{
     background: cs('background') !important;  
 } */
@@ -57,7 +57,7 @@ $container-styles:(
 // IF RESPONSE ////////////////////////////////////////
 
 $colStyles:(
-          width: 100%,
+          
           float: left,
           min-height: 1px
 );

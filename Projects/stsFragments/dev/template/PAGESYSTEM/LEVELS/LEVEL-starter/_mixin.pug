@@ -1,0 +1,6 @@
+mixin LEVEL-starter(title,className)
+	-if (!className) className =''
+	.starter__content(class = 'starter__content'+ className data-qcontent="level__starter")
+		h5.starter__title=title
+		if block
+			block
