@@ -42,13 +42,8 @@
   }
   .breadCrumb__section--current {
      //border: solid 2px cs('accent');
-      @include a-set-frame(dance,5s/*time*/,1s/*delay*/,1,linear,
-        (   .2   :(left:200px),
-            .5    :(top:200px),
-             1    :(bottom:-300px)    )
-             )
     font-weight: bold;
-    background: cs('accent'); 
+    background: cs('accent');
     color: #fff; 
     &:hover{
         color:#fff;
@@ -150,6 +145,68 @@
 
 ////////////////////////////////////////
 @include flyPageFragment();
+/**
+* geoTarget styles
+*/
+
+@mixin geoTarget(){
+
+  .geoTarget {
+    &__content {
+    
+    }
+    &__city{
+        font-weight: bold;
+        @include space-i('element','-','','b');
+        /* &:before{
+            content:'';
+            width: 15px;
+            height: 15px;
+            display:inline-block;
+            background: cs('accent'); 
+        } */
+    }
+    &__points{   
+        border-bottom: solid 2px  cs('primary');
+    }
+    &__pointsCount {
+        display:inline-block; 
+        text-align: center;
+        font-size:.8em;
+        border-radius: 2px;
+        //font-weight: bold;    
+        //color: cs('accent');  
+        color: #fff;
+        background: cs('primary');
+        @include space-i('element','-','rl','r');
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include geoTarget();
+/**
+* mainInfo styles
+*/
+
+@mixin mainInfo(){
+
+  .mainInfo {
+    &__content {
+        @include space-i('component','|','','b')
+    }
+    &__block{
+        @include space-i('module','=','','r')
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include mainInfo();
 /**
 * module styles
 */
@@ -341,7 +398,7 @@
         margin-top: 1px;
         overflow:hidden;
         &:hover{
-            background-color:lighten(cs('foreground-d'),5%);
+            background-color:lighten(cs('foreground-d'),7%);
         }
     }
     &__section {
@@ -362,6 +419,7 @@
             line-height:1.45rem;
             padding-left:15px;
             font-weight:normal;
+            color:cs('font');
         }
          &--price{
             width:12%;
@@ -496,6 +554,32 @@
 ////////////////////////////////////////
 @include support();
 /**
+* topBar styles
+*/
+
+@mixin topBar(){
+    .logo{
+        color:cs('primary');
+    }
+  .topBar {  
+    &__wrapper {
+        background: cs('primary');
+        border-bottom: solid 3px darken(cs('primary'),2%);
+        //box-shadow: 0px 2px 8px 0px lighten(#000,60%);
+        //@include space-i('element','-','','t')
+    }
+    &__content {
+        padding:10px 0px;
+        height: 50px;
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include topBar();
+/**
 * topMenu styles
 */
 
@@ -503,21 +587,21 @@
 
   .topMenu {
     &__wrapper {
-        background: cs('background-d');
+        background: cs('foreground-d');
+       @include space-i('component','|','','b');
 
     }
     &__content { 
        
-        @include space-i('element','|','t','')
+        @include space-i('element','-','tb','');
         
         @include for-size(phone-only){
            display:none;
        }
     }
     &__element{
-        
         display: inline-block;
-        @include space-i('component','=','','r') 
+        @include space-i('component','=','','r')  
         
     }
   }

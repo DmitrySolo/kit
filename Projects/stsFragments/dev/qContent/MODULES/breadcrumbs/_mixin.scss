@@ -25,13 +25,8 @@
   }
   .breadCrumb__section--current {
      //border: solid 2px cs('accent');
-      @include a-set-frame(dance,5s/*time*/,1s/*delay*/,1,linear,
-        (   .2   :(left:200px),
-            .5    :(top:200px),
-             1    :(bottom:-300px)    )
-             )
     font-weight: bold;
-    background: cs('accent'); 
+    background: cs('accent');
     color: #fff; 
     &:hover{
         color:#fff;

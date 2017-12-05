@@ -6,21 +6,21 @@
 
   .topMenu {
     &__wrapper {
-        background: cs('background-d');
+        background: cs('foreground-d');
+       @include space-i('component','|','','b');
 
     }
     &__content { 
        
-        @include space-i('element','|','t','')
+        @include space-i('element','-','tb','');
         
         @include for-size(phone-only){
            display:none;
        }
     }
     &__element{
-        
         display: inline-block;
-        @include space-i('component','=','','r') 
+        @include space-i('component','=','','r')  
         
     }
   }

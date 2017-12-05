@@ -1465,7 +1465,7 @@ gulp.task('deploycss', function () {
 var fontName = 'Icons';
 
 gulp.task('iconfont', function () {
-	gulp.src(['dev/SOURCE_FABRIC/ICONFONT/*.svg'])
+	gulp.src(['Projects/'+projectName+'/source_fabric/ICONFONT/*.svg'])
 		.pipe(iconfontCss({
 			fontName: fontName,
 			path: 'dev/scss/_iconFont.tmp',

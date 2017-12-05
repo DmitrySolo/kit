@@ -35,6 +35,24 @@ mixin MODULE-flyPageFragment(data)
 				tr
 					td.fragmentTitle Доступно:
 					td.stock 14  шт
+mixin MODULE-geoTarget()
+	<!-- split modules/geoTarget -->
+	.geoTarget__content(data-qcontent='module__geoTarget')
+		.geoTarget__city
+			+I('placeholder','map')
+			span Воронеж
+		.geoTarget__points
+			span.geoTarget__pointsCount 3 
+			span.geoTarget__pointsDesc Пункта выдачи
+mixin MODULE-mainInfo()
+	<!-- split modules/mainInfo -->
+	.mainInfo__content(data-qcontent='module__mainInfo')
+		.l_ib__c
+			.l_ib__e.mainInfo__block 
+				h1.logo Santehsmart
+			.l_ib__e.mainInfo__block
+				+MODULE-geoTarget()
+			.l_ib__e.mainInfo__block  8 800 500 12 34  
 mixin MODULE-module()
 	<!-- split modules/module -->
 	.module__content(data-qcontent='module__module')
@@ -114,50 +132,25 @@ mixin MODULE-support()
 			h3.support__sectionTitle Тех поддержка
 		section.support__section
 			h3.support__sectionTitle Настройки
+mixin MODULE-topBar()
+	<!-- split modules/topBar -->
+	.topBar__content(data-qcontent='module__topBar')
+		.topBar
+			.search
 mixin MODULE-topMenu()
 	<!-- split modules/topMenu -->
 	.topMenu__content(data-qcontent='module__topMenu')
 		nav.topMenu
 			ul.topMenu__list
 				li.topMenu__element
-					a(href='/dsf') Розничным Клиентам
+					+A-material('Розничным Клиентам') 
 				li.topMenu__element
-					a(href='/dsf') Оптовым Клиентам
+					+A-material('Оптовым Клиентам')
 				li.topMenu__element
-					a(href='/dsf') Контакты
-mixin LEVEL-testOfSergConnectingSupport(title,className)
-	-if (!className) className =''
-	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
-		h2.testOfSergConnectingSupport__title=title
-		block testOfSergConnectingSupport
-mixin LEVEL-showCasePage(data)
-	-if (!className) className =''
-	.container
-		section.showCasePage__content(class = 'showCasePage__content '+ data.class data-qcontent="level__showCasePage" data-self=""+data.self)
-			h1.showCasePage__title=data.title
-			h4.showCasePage__subtitle.text Icons:  
-			+I('box')
-			+I('search')
-			+I('eshop')
-			+I('cart','cart_Main')
-			+I('cart','cart_btn')
-			+I('truck')
-			+I('arrow')  
-			+I('marker')
-			+I('clock')
-			+I('sale')
-			+I('star')
-			+I('toilet')
-			+I('bath')
-			h4.showCasePage__subtitle.text Headings 
-			h1.showCasePage__subtitle.showCasePage__subtitle--red=data.idName
-			h2 Header
-			h3 Headera
-			h4 Header
-			h5 Header
-			h6 Header
-			h4.showCasePage__subtitle.text Paragraph:
-			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
+					+A-material('Контакты')
+mixin LEVEL-inner(data)
+	.level__inner
+		.container
 			if block
 				block
 mixin LEVEL-level(title,className)
@@ -177,36 +170,6 @@ mixin LEVEL-level2(title,data)
 			h2.level2__title=data.title.ZOPA
 			if block
 				block
-mixin LEVEL-outer(data)
-	.outer
-		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
-			if block
-				block
-mixin LEVEL-inner(data)
-	.container
-		.row
-		if block
-			block
-//
-mixin LEVEL-productSection(title,className)
-	.productSection__content(data-qcontent="level__productSection")
-		header.productSection__header.clearfix
-			.productSection__pager.f-left 
-				span.productSection__subTitle Страницы:
-				+breadcrumbs()
-			.productSection__filter.f-left 
-				span.productSection__subTitle Cортировать по:
-				a.productSection__sortBy.productSection__sortBy--selected Цене
-				| |
-				a.productSection__sortBy Производителю
-			.productSection__layoutChoiser.f-right
-				span.productSection__subTitle Вид каталога:
-				a(href='/')
-					+I('layout','productsLayout icon--productsLayout--selected')
-				a(href='/')
-					+I('layout1','productsLayout') 
-		if block
-			block
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = " <a href='/'>N 1231238</a>"
@@ -240,6 +203,67 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
+mixin LEVEL-outer(data)
+	.outer
+		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
+			if block
+				block  
+mixin LEVEL-page(title,className)
+	-if (!className) className =''
+	.page__content(class = 'page__content'+ className data-qcontent="level__page")
+		h2.page__title=title
+		if block 
+			block
+//
+mixin LEVEL-productSection(title,className)
+	.productSection__content(data-qcontent="level__productSection")
+		header.productSection__header.clearfix
+			.productSection__pager.f-left 
+				span.productSection__subTitle Страницы:
+				+breadcrumbs()
+			.productSection__filter.f-left 
+				span.productSection__subTitle Cортировать по:
+				a.productSection__sortBy.productSection__sortBy--selected Цене
+				| |
+				a.productSection__sortBy Производителю
+			.productSection__layoutChoiser.f-right
+				span.productSection__subTitle Вид каталога:
+				a(href='/')
+					+I('layout','productsLayout icon--productsLayout--selected')
+				a(href='/')
+					+I('layout1','productsLayout') 
+		if block
+			block
+mixin LEVEL-showCasePage(data)
+	-if (!className) className =''
+	.container
+		section.showCasePage__content(class = 'showCasePage__content '+ data.class data-qcontent="level__showCasePage" data-self=""+data.self)
+			h1.showCasePage__title=data.title
+			h4.showCasePage__subtitle.text Icons:  
+			+I('box')
+			+I('search')
+			+I('eshop')
+			+I('cart','cart_Main')
+			+I('cart','cart_btn')
+			+I('truck')
+			+I('arrow')  
+			+I('marker')
+			+I('clock')
+			+I('sale')
+			+I('star')
+			+I('toilet')
+			+I('bath')
+			h4.showCasePage__subtitle.text Headings 
+			h1.showCasePage__subtitle.showCasePage__subtitle--red=data.idName
+			h2 Header
+			h3 Headera
+			h4 Header
+			h5 Header
+			h6 Header
+			h4.showCasePage__subtitle.text Paragraph:
+			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
+			if block
+				block
 mixin LEVEL-showcase(title,className)
 	-if (!className) className =''
 	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
@@ -249,18 +273,17 @@ mixin LEVEL-showcase(title,className)
 			+holder('page__loader','100px300',colors.primary)
 			if block
 				block
-mixin LEVEL-page(title,className)
-	-if (!className) className =''
-	.page__content(class = 'page__content'+ className data-qcontent="level__page")
-		h2.page__title=title
-		if block 
-			block
 mixin LEVEL-starter(title,className)
 	-if (!className) className =''
 	.starter__content(class = 'starter__content'+ className data-qcontent="level__starter")
 		h5.starter__title=title
 		if block
 			block
+mixin LEVEL-testOfSergConnectingSupport(title,className)
+	-if (!className) className =''
+	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
+		h2.testOfSergConnectingSupport__title=title
+		block testOfSergConnectingSupport
 mixin LEVEL-topdashBoard(data)
 	-if (!className) className =''
 	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")

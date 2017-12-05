@@ -35,8 +35,15 @@
                &:hover{
               fill:cs('accent');
           }
+         
           }
+          
       }
+       &--map{
+              width:1.4em;
+              height: 1.4em; 
+              fill:cs('accent');
+          }
       
     
 }
