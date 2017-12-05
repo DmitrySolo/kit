@@ -1,0 +1,26 @@
+/**
+* topBar styles
+*/
+
+@mixin topBar(){
+    .logo{
+        color:cs('primary');
+    }
+  .topBar {  
+    &__wrapper {
+        background: cs('primary');
+        border-bottom: solid 3px darken(cs('primary'),2%);
+        //box-shadow: 0px 2px 8px 0px lighten(#000,60%);
+        //@include space-i('element','-','','t')
+    }
+    &__content {
+        padding:10px 0px;
+        height: 50px;
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include topBar();

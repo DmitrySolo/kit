@@ -1,0 +1,42 @@
+/**
+* geoTarget styles
+*/
+
+@mixin geoTarget(){
+
+  .geoTarget {
+    &__content {
+    
+    }
+    &__city{
+        font-weight: bold;
+        @include space-i('element','-','','b');
+        /* &:before{
+            content:'';
+            width: 15px;
+            height: 15px;
+            display:inline-block;
+            background: cs('accent'); 
+        } */
+    }
+    &__points{   
+        border-bottom: solid 2px  cs('primary');
+    }
+    &__pointsCount {
+        display:inline-block; 
+        text-align: center;
+        font-size:.8em;
+        border-radius: 2px;
+        //font-weight: bold;    
+        //color: cs('accent');  
+        color: #fff;
+        background: cs('primary');
+        @include space-i('element','-','rl','r');
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include geoTarget();

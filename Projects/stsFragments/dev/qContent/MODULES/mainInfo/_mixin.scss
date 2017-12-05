@@ -1,0 +1,20 @@
+/**
+* mainInfo styles
+*/
+
+@mixin mainInfo(){
+
+  .mainInfo {
+    &__content {
+        @include space-i('component','|','','b')
+    }
+    &__block{
+        @include space-i('module','=','','r')
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include mainInfo();
