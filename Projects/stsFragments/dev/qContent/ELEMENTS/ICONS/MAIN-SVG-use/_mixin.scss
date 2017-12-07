@@ -44,6 +44,18 @@
               height: 1.4em; 
               fill:cs('accent');
           }
+      &--mainSearch{
+          height: 100%;
+          width: .9em;
+          fill: cs('font-l');
+          &:hover {
+              fill: cs('accent');
+          }
+      }
+      &--topBar{
+          width: 1.7em;
+          height:2.5em;
+      }
       
     
 }

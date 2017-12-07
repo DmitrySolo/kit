@@ -1,0 +1,47 @@
+/**
+* catalog styles
+*/
+
+@mixin catalog(){
+  .catalog {
+    &__content {
+        height: 100%;
+        .icon--to-right{
+             width: 1em;
+             height:60px;
+             fill:#fff;
+             vertical-align:top;
+             margin-left:.2em;
+             transition: transform .2s ease;
+        }
+    }
+    &__by{
+        display:inline-block;
+        color:#fff;
+        text-transform: uppercase;
+        margin: -10px 0;
+        padding: 0 .8em; 
+        line-height: 60px;  
+        cursor: pointer;
+        &:hover{ 
+            background:cs('primary-l');
+            .icon--to-right{
+            transform: rotate(90deg);
+            color:red;
+            }
+        }
+        &--category{
+            margin-right: 1.2em; 
+        }
+        &:hover .icon-to-right{
+            transform: rotate('90deg');
+        }
+       
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include catalog();

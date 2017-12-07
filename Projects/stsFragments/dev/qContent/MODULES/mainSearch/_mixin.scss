@@ -1,0 +1,52 @@
+/**
+* mainSearch styles
+*/
+
+@mixin mainSearch(){
+
+  .mainSearch {
+    &__content {
+        height:100%;
+        width:90%;
+        margin:0 auto;
+        position:relative;
+        @include space-i('element','=','trlb',''); 
+        border-radius: 3px;
+        background: cs('foreground');
+    }
+    &__input[type=text]{
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        width:91%;
+        border:none;
+        outline: none;
+        font-size:0.8em;
+        color: darken(cs('font-l'),8%);
+        border-right: solid 1px silver; 
+    }  
+    &__submit[type=submit]{
+        display: inline-block;
+        border:none;
+        background:none;
+        margin: 0;
+        padding: 0;
+        width:8%;
+        height:$line_height_ratio; 
+        border-left: solid 1px; 
+        opacity:0;
+    }
+    &__icon{
+        position: absolute;
+        width:9%;
+        text-align: center;  
+        top:0;
+        height:100%;
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include mainSearch();

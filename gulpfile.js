@@ -601,7 +601,7 @@ gulp.task('concat-mixes-pug', function () {
 gulp.task('concat-mixes-scss', function () {
 
 
-	gulp.src('dev/MIXES/**/_style.scss')
+	gulp.src('dev/MIXES/**/*.scss')
 		.pipe(concat('_mixes.scss'))
 		.pipe(gulp.dest('dev/MIXES/'));
 });
@@ -1469,11 +1469,13 @@ gulp.task('iconfont', function () {
 		.pipe(iconfontCss({
 			fontName: fontName,
 			path: 'dev/scss/_iconFont.tmp',
-			targetPath: '../scss/_iconFont.scss',
+			targetPath: '../../../../../dev/scss/_iconFont.scss',
 			fontPath: 'fonts/icons/'
 		}))
 		.pipe(iconfont({
-			fontName: fontName
+			fontName: fontName,
+            normalize:true,
+			fontHeight:'16'
 		}))
 		.pipe(gulp.dest(dist + '/fonts/icons/'));
 });
@@ -1681,6 +1683,13 @@ gulp.task('API-SERVER', function () {
 
 
 							}
+						else if (path1.indexOf('MIXES')> -1  ){
+
+							var pug = fs.readFileSync(path1+'/_mixin.pug', 'utf8');
+							var scss = fs.readFileSync(path1+'/_mixin.scss', 'utf8');
+
+
+						}
 
 							var codeRes = {
 

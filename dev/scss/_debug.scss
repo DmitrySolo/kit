@@ -176,7 +176,7 @@
     position: absolute;
   }
 
-  .debug div:not(.colors div) {
+  .debug .projectWrapper div {
     @include debug-elem($db-div-color);
   }
 

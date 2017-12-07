@@ -6,16 +6,47 @@
     .logo{
         color:cs('primary');
     }
+    .l_ib__ev{
+        display:inline-block;
+        font-size:1rem;
+        height:100%;
+        vertical-align: middle;
+        
+    }
   .topBar {  
     &__wrapper {
         background: cs('primary');
-        border-bottom: solid 3px darken(cs('primary'),2%);
+        //border-bottom: solid 3px darken(cs('primary'),2%);
+        @include space-i('module','-','','b');
         //box-shadow: 0px 2px 8px 0px lighten(#000,60%);
         //@include space-i('element','-','','t')
     }
     &__content {
         padding:10px 0px;
-        height: 50px;
+        //height: 60px; 
+        
+        
+    }
+    &__catalog{
+        width:100%;
+        @include for-size(desktop-up){
+            width:23%;
+        }
+    }
+    &__search{
+        width:54%;
+        display:none;
+        @include for-size(desktop-up){
+            display:inline-block;
+        }
+    }
+    &__cart{
+        display:none;
+        @include for-size(desktop-up){
+            display:inline-block;
+            width:23%;
+        }
+        
     }
   }
 

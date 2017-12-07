@@ -11,6 +11,17 @@
 				"": ""
 			}
 		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-HUD-script": {
 			"js": {
 				"quant-HUD-script-script": {
@@ -35,17 +46,6 @@
 					"src": "node_modules/jquery-ui-dist/jquery-ui.min.css",
 					"container": "head/libs"
 				}
-			}
-		},
-		"quant-debug-JsonCss": {
-			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
 			}
 		},
 		"quant-lib": {
@@ -141,7 +141,7 @@
 		"secondary": "#1989AC",
 		"foreground": "#fff",
 		"background": "#e6e6e6",
-		"accent": "#ff6600",
+		"accent": "rgb(255",
 		"font": "#6f6c6c",
 		"succes": "#46bb90",
 		"erorr": "#DD403A",
@@ -375,6 +375,12 @@
 	"breadcrumbs": {
 		"1": "22"
 	},
+	"cart": {
+		"cart": "1"
+	},
+	"catalog": {
+		"catalog": "1"
+	},
 	"confirmedOrderPage": {
 		"confirmedOrderPage": "1"
 	},
@@ -386,6 +392,9 @@
 	},
 	"mainInfo": {
 		"mainInfo": "1"
+	},
+	"mainSearch": {
+		"mainSearch": "1"
 	},
 	"module": {
 		"module": "1"

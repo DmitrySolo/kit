@@ -75,9 +75,7 @@
 @import "debug";
 @if($production == false){
   @include projectBoard();
-  @include draft();
   @include toJSMap();
-  @include blueprint();
   //DEBUG
   @if($debug){
     @include debug();

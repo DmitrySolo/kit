@@ -4,4 +4,4 @@ mixin breadcrumbs()
 			a(href='/').breadcrumb__section.breadCrumb__section--current 1
 			-var page1 = 1
 			+loop(9)
-				a(href='/').not.breadcrumb__section #{page1 +=1}
+				a(href='/').not.breadcrumb__section #{page1 +=1} 

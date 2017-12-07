@@ -1,5 +1,12 @@
 mixin MODULE-topBar()
 	<!-- split modules/topBar -->
 	.topBar__content(data-qcontent='module__topBar')
-		.topBar
-			.search
+		.topBar.l_ib__c 
+			.l_ib__ev.topBar__catalog
+				+MODULE-catalog() 
+			.l_ib__ev.topBar__search
+				+MODULE-mainSearch()
+			.l_ib__ev.topBar__cart
+				+MODULE-cart()
+			 
+				

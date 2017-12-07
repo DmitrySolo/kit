@@ -1,0 +1,9 @@
+mixin MODULE-mainSearch()
+	<!-- split modules/mainSearch -->
+	.mainSearch__content(data-qcontent='module__mainSearch')
+		form.mainSearch__form
+			input.mainSearch__input(type='text',placeholder="Поиск среди 20 000 товаров")
+			span.mainSearch__icon
+				+I('search','mainSearch') 
+			input.mainSearch__submit(type='submit' value="Искать") 
+   

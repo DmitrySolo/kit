@@ -2,8 +2,14 @@ mixin MODULE-mainInfo()
 	<!-- split modules/mainInfo -->
 	.mainInfo__content(data-qcontent='module__mainInfo')
 		.l_ib__c
-			.l_ib__e.mainInfo__block 
-				h1.logo Santehsmart
-			.l_ib__e.mainInfo__block
+			.l_ib__e.mainInfo__block.mainInfo__logo
+				h1.logo SantehSmart
+			.l_ib__e.mainInfo__block.mainInfo__geotarget
 				+MODULE-geoTarget()
-			.l_ib__e.mainInfo__block  8 800 500 12 34  
+			.l_ib__e.mainInfo__block.mainInfo__cart_search--mobile
+				span Корзина 
+				span Поиск
+			.l_ib__e.mainInfo__block.mainInfo__logo--mobile
+				h1.logo SantehSmart
+			.l_ib__e.mainInfo__block.f-right  
+				span.mainInfo__phone 8 800 500 13 84

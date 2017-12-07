@@ -6,21 +6,36 @@
 
   .geoTarget {
     &__content {
-    
-    }
+        @include for-size(phone-only){
+            float: left;
+            display: block;
+            
+        }
+    }  
     &__city{
+        //@include icon('placeholder',before,true);
         font-weight: bold;
-        @include space-i('element','-','','b');
-        /* &:before{
-            content:'';
-            width: 15px;
-            height: 15px;
-            display:inline-block;
-            background: cs('accent'); 
-        } */
+        .icon-placeholder{
+            font-size: 1em;
+            color: cs('accent');
+             @include space-i('element','-','','r');
+         
+        }
     }
+    
+    &__link{
+        color: cs('font-d');
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+
     &__points{   
         border-bottom: solid 2px  cs('primary');
+        @include for-size(phone-only){
+            display:none;
+        }
     }
     &__pointsCount {
         display:inline-block; 
@@ -29,10 +44,14 @@
         border-radius: 2px;
         //font-weight: bold;    
         //color: cs('accent');  
-        color: #fff;
+        color: #fff;  
         background: cs('primary');
         @include space-i('element','-','rl','r');
     }
+    &__pointsDesc{
+        text-decoration: none;
+        color: cs('font-d2');
+    } 
   }
 
 }

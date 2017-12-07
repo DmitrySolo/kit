@@ -9,4 +9,10 @@
 	"	MODULE-mainInfo()",
 	"snippet +M-geoTarget",
 	"	MODULE-geoTarget()",
+	"snippet +M-mainSearch",
+	"	MODULE-mainSearch()",
+	"snippet +M-catalog",
+	"	MODULE-catalog()",
+	"snippet +M-cart",
+	"	MODULE-cart()",
 ].join(eol);
