@@ -30,11 +30,11 @@
     &__catalog{
         width:100%;
         @include for-size(desktop-up){
-            width:23%;
+            width:25%;
         }
     }
     &__search{
-        width:54%;
+        width:50%;
         display:none;
         @include for-size(desktop-up){
             display:inline-block;
@@ -44,7 +44,7 @@
         display:none;
         @include for-size(desktop-up){
             display:inline-block;
-            width:23%;
+            width:25%;
         }
         
     }

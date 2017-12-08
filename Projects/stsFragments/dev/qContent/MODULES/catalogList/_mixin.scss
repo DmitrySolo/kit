@@ -1,0 +1,62 @@
+/**
+* catalogList styles
+*/
+
+@mixin catalogList(){
+
+  .catalogList {
+    &__outerWrapper{
+        position:relative;
+        width:100%;
+    }
+    
+    &__outer{
+        display:none;
+        opacity:0;
+        transition: opacity 2s ease; 
+        position:absolute;
+        top:0;
+        height: 1000px; 
+        width:100%;
+        background:rgba(0,0,0,0.4);
+        //filter: blur(5px)
+    }
+    &__content {
+        position:relative;
+        height:0;
+        width:100%; 
+    }
+    &__wrapper{
+        display:none;
+        opacity:0;  
+        position:absolute;
+        top:0;
+        width:100%;  
+       // border-top: solid 3px cs('primary-l2'); 
+        min-height: 200px;
+       
+          
+    }
+    &__categoryNavigation{
+        background: cs('foreground');
+        width:100%;
+        @include for-size(tablet-l-up){
+            width: 25%;
+        }
+    }
+    &__categoryItem {
+        padding:.4em .8em;
+        border-bottom:solid 1px lighten(cs('font-l2'),30%);
+    }
+    &__brands {
+         padding: 1.6em 2.4em;
+        background: cs('foreground');
+        
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include catalogList();

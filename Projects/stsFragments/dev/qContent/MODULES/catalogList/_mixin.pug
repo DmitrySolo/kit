@@ -1,0 +1,22 @@
+mixin MODULE-catalogList()
+	<!-- split modules/catalogList -->
+	.catalogList__outerWrapper
+		.catalogList__outer#js_catShadow
+		+LEVEL-inner()
+			.catalogList__content(data-qcontent='module__catalogList') 
+				.catalogList__wrapper.catalogList__category#js_categories
+					nav(role='catalog').catalogList__categoryNavigation
+						ul.catalogList__categoryList
+							+loop(11)
+								li.catalogList__categoryItem Ванны
+					
+				.catalogList__wrapper.catalogList__brands#js_brands
+					nav(role='brands').catalogList__brandNavigation
+						ul.catalogList__brandList.l_ib__c
+							+loop(11)
+								li.catalogList__barandLitera.l_ib__e A
+									ul.catalogList__barandList
+										li.catalogList__barandItem
+											a(href='asdsad') Alpen
+					
+				

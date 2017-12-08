@@ -19,10 +19,32 @@ mixin MODULE-cart()
 mixin MODULE-catalog()
 	<!-- split modules/catalog -->
 	.catalog__content(data-qcontent='module__catalog')
-		span.catalog__by.catalog__by--category Категории 
+		span.catalog__by.catalog__by--category#js-CatChoiser Категории 
 			+I('to-right','to-right')
-		span.catalog__by.catalog__by--brand Бренды 
+		span.catalog__by.catalog__by--brand#js-BrandChoiser Бренды 
 			+I('to-right','to-right')
+mixin MODULE-catalogList()
+	<!-- split modules/catalogList -->
+	.catalogList__outerWrapper
+		.catalogList__outer#js_catShadow
+		+LEVEL-inner()
+			.catalogList__content(data-qcontent='module__catalogList') 
+				.catalogList__wrapper.catalogList__category#js_categories
+					nav(role='catalog').catalogList__categoryNavigation
+						ul.catalogList__categoryList
+							+loop(11)
+								li.catalogList__categoryItem Ванны
+					
+				.catalogList__wrapper.catalogList__brands#js_brands
+					nav(role='brands').catalogList__brandNavigation
+						ul.catalogList__brandList.l_ib__c
+							+loop(11)
+								li.catalogList__barandLitera.l_ib__e A
+									ul.catalogList__barandList
+										li.catalogList__barandItem
+											a(href='asdsad') Alpen
+					
+				
 mixin confirmedOrderPage()
 	<!-- split modules/confirmedOrderPage -->
 	.confirmedOrderPage__content(data-qcontent='module__confirmedOrderPage')
@@ -183,38 +205,27 @@ mixin MODULE-topMenu()
 					+A-material('Оптовым Клиентам')
 				li.topMenu__element
 					+A-material('Контакты')
-mixin LEVEL-starter(title,className)
+mixin LEVEL-level(title,className)
 	-if (!className) className =''
-	.starter__content(class = 'starter__content'+ className data-qcontent="level__starter")
-		h5.starter__title=title
-		if block
-			block
-mixin LEVEL-testOfSergConnectingSupport(title,className)
-	-if (!className) className =''
-	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
-		h2.testOfSergConnectingSupport__title=title
-		block testOfSergConnectingSupport
-mixin LEVEL-inner(data)
-	.level__inner
-		.container
-			if block
-				block
+	.level__content(class = 'level__content'+ className data-qcontent="level__level")
+		h2.level__title=title
+		block level
 mixin LEVEL-level1(data)
 	.level1
 		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
 			h2.level1__title=title
 			if block
 				block
-mixin LEVEL-level(title,className)
-	-if (!className) className =''
-	.level__content(class = 'level__content'+ className data-qcontent="level__level")
-		h2.level__title=title
-		block level
 mixin LEVEL-outer(data)
 	.outer
 		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
 			if block
 				block    
+mixin LEVEL-inner(data)
+	.level__inner
+		.container
+			if block
+				block
 //
 mixin LEVEL-productSection(title,className)
 	.productSection__content(data-qcontent="level__productSection")
@@ -234,6 +245,27 @@ mixin LEVEL-productSection(title,className)
 				a(href='/')
 					+I('layout1','productsLayout') 
 		if block
+			block
+mixin LEVEL-level2(title,data)
+	.level2
+		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
+			h2.level2__title=data.title.ZOPA
+			if block
+				block
+mixin LEVEL-showcase(title,className)
+	-if (!className) className =''
+	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
+		h1.showcase__title=title
+		.container
+			p.showcase__subtytle.text Hello its Showcase Content
+			+holder('page__loader','100px300',colors.primary)
+			if block
+				block
+mixin LEVEL-page(title,className)
+	-if (!className) className =''
+	.page__content(class = 'page__content'+ className data-qcontent="level__page")
+		h2.page__title=title
+		if block 
 			block
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
@@ -268,27 +300,29 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
-mixin LEVEL-showcase(title,className)
+mixin LEVEL-topdashBoard(data)
 	-if (!className) className =''
-	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
-		h1.showcase__title=title
-		.container
-			p.showcase__subtytle.text Hello its Showcase Content
-			+holder('page__loader','100px300',colors.primary)
-			if block
-				block
-mixin LEVEL-page(title,className)
+	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
+		.container=data.title 
+			ul.topdashBoard__list
+				+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
+				+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
+				+dashBoardElement('help','Помощь и настройки','dashBoardElement')
+				+dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')
+				+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
+		if block
+			block 
+mixin LEVEL-testOfSergConnectingSupport(title,className)
 	-if (!className) className =''
-	.page__content(class = 'page__content'+ className data-qcontent="level__page")
-		h2.page__title=title
-		if block 
+	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
+		h2.testOfSergConnectingSupport__title=title
+		block testOfSergConnectingSupport
+mixin LEVEL-starter(title,className)
+	-if (!className) className =''
+	.starter__content(class = 'starter__content'+ className data-qcontent="level__starter")
+		h5.starter__title=title
+		if block
 			block
-mixin LEVEL-level2(title,data)
-	.level2
-		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
-			h2.level2__title=data.title.ZOPA
-			if block
-				block
 mixin LEVEL-showCasePage(data)
 	-if (!className) className =''
 	.container
@@ -319,15 +353,3 @@ mixin LEVEL-showCasePage(data)
 			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
 			if block
 				block
-mixin LEVEL-topdashBoard(data)
-	-if (!className) className =''
-	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
-		.container=data.title 
-			ul.topdashBoard__list
-				+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
-				+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
-				+dashBoardElement('help','Помощь и настройки','dashBoardElement')
-				+dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')
-				+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
-		if block
-			block 

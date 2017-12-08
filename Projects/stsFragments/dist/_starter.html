@@ -70,10 +70,10 @@
                   <div class="topBar__content" data-qcontent="module__topBar">
                     <div class="topBar l_ib__c"> 
                       <div class="l_ib__ev topBar__catalog"><!-- split modules/catalog -->
-                        <div class="catalog__content" data-qcontent="module__catalog"><span class="catalog__by catalog__by--category">Категории 
+                        <div class="catalog__content" data-qcontent="module__catalog"><span class="catalog__by catalog__by--category" id="js-CatChoiser">Категории 
                             <svg class="icon icon--to-right" data-qcontent="element__ICONS__MAIN-SVG-use">
                               <use xlink:href="#to-right">        </use>
-                            </svg></span><span class="catalog__by catalog__by--brand">Бренды 
+                            </svg></span><span class="catalog__by catalog__by--brand" id="js-BrandChoiser">Бренды 
                             <svg class="icon icon--to-right" data-qcontent="element__ICONS__MAIN-SVG-use">
                               <use xlink:href="#to-right">        </use>
                             </svg></span></div>
@@ -98,22 +98,93 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="level__inner">
-              <div class="container"><!-- split modules/topMenu -->
-                <div class="topMenu__content" data-qcontent="module__topMenu">
-                  <nav class="topMenu">
-                    <ul class="topMenu__list">
-                      <li class="topMenu__element"><a class="material " href="/sdsd" data-qcontent="element__LINKS__material">Розничным Клиентам</a>
-                      </li>
-                      <li class="topMenu__element"><a class="material " href="/sdsd" data-qcontent="element__LINKS__material">Оптовым Клиентам</a>
-                      </li>
-                      <li class="topMenu__element"><a class="material " href="/sdsd" data-qcontent="element__LINKS__material">Контакты</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div><!-- split _starter.html -->
+              </div><!-- split modules/catalogList -->
+              <div class="catalogList__outerWrapper">
+                <div class="catalogList__outer" id="js_catShadow"></div>
+                <div class="level__inner">
+                  <div class="container">
+                    <div class="catalogList__content" data-qcontent="module__catalogList"> 
+                      <div class="catalogList__wrapper catalogList__category" id="js_categories">
+                        <nav class="catalogList__categoryNavigation" role="catalog">
+                          <ul class="catalogList__categoryList">
+                            <li class="catalogList__categoryItem">Ванны</li>
+                            <li class="catalogList__categoryItem">Ванны</li>
+                            <li class="catalogList__categoryItem">Ванны</li>
+                            <li class="catalogList__categoryItem">Ванны</li>
+                            <li class="catalogList__categoryItem">Ванны</li>
+                            <li class="catalogList__categoryItem">Ванны</li>
+                            <li class="catalogList__categoryItem">Ванны</li>
+                            <li class="catalogList__categoryItem">Ванны</li>
+                            <li class="catalogList__categoryItem">Ванны</li>
+                            <li class="catalogList__categoryItem">Ванны</li>
+                            <li class="catalogList__categoryItem">Ванны</li>
+                          </ul>
+                        </nav>
+                      </div>
+                      <div class="catalogList__wrapper catalogList__brands" id="js_brands">
+                        <nav class="catalogList__brandNavigation" role="brands">
+                          <ul class="catalogList__brandList l_ib__c">
+                            <li class="catalogList__barandLitera l_ib__e">A
+                              <ul class="catalogList__barandList">
+                                <li class="catalogList__barandItem"><a href="asdsad">Alpen</a></li>
+                              </ul>
+                            </li>
+                            <li class="catalogList__barandLitera l_ib__e">A
+                              <ul class="catalogList__barandList">
+                                <li class="catalogList__barandItem"><a href="asdsad">Alpen</a></li>
+                              </ul>
+                            </li>
+                            <li class="catalogList__barandLitera l_ib__e">A
+                              <ul class="catalogList__barandList">
+                                <li class="catalogList__barandItem"><a href="asdsad">Alpen</a></li>
+                              </ul>
+                            </li>
+                            <li class="catalogList__barandLitera l_ib__e">A
+                              <ul class="catalogList__barandList">
+                                <li class="catalogList__barandItem"><a href="asdsad">Alpen</a></li>
+                              </ul>
+                            </li>
+                            <li class="catalogList__barandLitera l_ib__e">A
+                              <ul class="catalogList__barandList">
+                                <li class="catalogList__barandItem"><a href="asdsad">Alpen</a></li>
+                              </ul>
+                            </li>
+                            <li class="catalogList__barandLitera l_ib__e">A
+                              <ul class="catalogList__barandList">
+                                <li class="catalogList__barandItem"><a href="asdsad">Alpen</a></li>
+                              </ul>
+                            </li>
+                            <li class="catalogList__barandLitera l_ib__e">A
+                              <ul class="catalogList__barandList">
+                                <li class="catalogList__barandItem"><a href="asdsad">Alpen</a></li>
+                              </ul>
+                            </li>
+                            <li class="catalogList__barandLitera l_ib__e">A
+                              <ul class="catalogList__barandList">
+                                <li class="catalogList__barandItem"><a href="asdsad">Alpen</a></li>
+                              </ul>
+                            </li>
+                            <li class="catalogList__barandLitera l_ib__e">A
+                              <ul class="catalogList__barandList">
+                                <li class="catalogList__barandItem"><a href="asdsad">Alpen</a></li>
+                              </ul>
+                            </li>
+                            <li class="catalogList__barandLitera l_ib__e">A
+                              <ul class="catalogList__barandList">
+                                <li class="catalogList__barandItem"><a href="asdsad">Alpen</a></li>
+                              </ul>
+                            </li>
+                            <li class="catalogList__barandLitera l_ib__e">A
+                              <ul class="catalogList__barandList">
+                                <li class="catalogList__barandItem"><a href="asdsad">Alpen</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

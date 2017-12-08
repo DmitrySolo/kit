@@ -5,33 +5,41 @@
 @mixin catalog(){
   .catalog {
     &__content {
-        height: 100%;
+        //height: 100%;
         .icon--to-right{
-             width: 1em;
+             width: .8em;
              height:60px;
              fill:#fff;
+             float:right;
              vertical-align:top;
-             margin-left:.2em;
+             //margin-left:.2em;
              transition: transform .2s ease;
-        }
+        } 
     }
     &__by{
         display:inline-block;
         color:#fff;
         text-transform: uppercase;
+        text-align: center;
         margin: -10px 0;
         padding: 0 .8em; 
         line-height: 60px;  
         cursor: pointer;
+        width:50%;
+        &--hovered{ 
+            background:cs('primary-l');
+            .icon--to-right{
+            transform: rotate(90deg);
+            }
+        }
         &:hover{ 
             background:cs('primary-l');
             .icon--to-right{
             transform: rotate(90deg);
-            color:red;
             }
         }
         &--category{
-            margin-right: 1.2em; 
+            
         }
         &:hover .icon-to-right{
             transform: rotate('90deg');

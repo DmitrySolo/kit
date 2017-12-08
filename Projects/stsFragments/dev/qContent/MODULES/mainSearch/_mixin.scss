@@ -6,8 +6,8 @@
 
   .mainSearch {
     &__content {
-        height:100%;
-        width:90%;
+        //height:100%;
+        width:95%;
         margin:0 auto;
         position:relative;
         @include space-i('element','=','trlb',''); 
@@ -38,7 +38,7 @@
     }
     &__icon{
         position: absolute;
-        width:9%;
+        width:8%;
         text-align: center;  
         top:0;
         height:100%;

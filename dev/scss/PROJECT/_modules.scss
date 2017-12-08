@@ -1,3 +1,20 @@
+/**
+* atest styles
+*/
+
+@mixin atest(){
+
+  .atest {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include atest();
 @mixin breadcrumbs(){
 	.breadCrumb {
       text-transform: uppercase;
@@ -27,7 +44,7 @@
      //border: solid 2px cs('accent');
     font-weight: bold;
     background: cs('accent');
-    color: #fff; 
+    color: #fff;   
     &:hover{
         color:#fff;
     }
@@ -40,23 +57,6 @@
 }
 @include breadcrumbs()
 
-/**
-* atest styles
-*/
-
-@mixin atest(){
-
-  .atest {
-    &__content {
-
-    }
-  }
-
-}
-
-
-////////////////////////////////////////
-@include atest();
 /**
 * cart styles
 */
@@ -96,33 +96,41 @@
 @mixin catalog(){
   .catalog {
     &__content {
-        height: 100%;
+        //height: 100%;
         .icon--to-right{
-             width: 1em;
+             width: .8em;
              height:60px;
              fill:#fff;
+             float:right;
              vertical-align:top;
-             margin-left:.2em;
+             //margin-left:.2em;
              transition: transform .2s ease;
-        }
+        } 
     }
     &__by{
         display:inline-block;
         color:#fff;
         text-transform: uppercase;
+        text-align: center;
         margin: -10px 0;
         padding: 0 .8em; 
         line-height: 60px;  
         cursor: pointer;
+        width:50%;
+        &--hovered{ 
+            background:cs('primary-l');
+            .icon--to-right{
+            transform: rotate(90deg);
+            }
+        }
         &:hover{ 
             background:cs('primary-l');
             .icon--to-right{
             transform: rotate(90deg);
-            color:red;
             }
         }
         &--category{
-            margin-right: 1.2em; 
+            
         }
         &:hover .icon-to-right{
             transform: rotate('90deg');
@@ -136,6 +144,68 @@
 
 ////////////////////////////////////////
 @include catalog();
+/**
+* catalogList styles
+*/
+
+@mixin catalogList(){
+
+  .catalogList {
+    &__outerWrapper{
+        position:relative;
+        width:100%;
+    }
+    
+    &__outer{
+        display:none;
+        opacity:0;
+        transition: opacity 2s ease; 
+        position:absolute;
+        top:0;
+        height: 1000px; 
+        width:100%;
+        background:rgba(0,0,0,0.4);
+        //filter: blur(5px)
+    }
+    &__content {
+        position:relative;
+        height:0;
+        width:100%; 
+    }
+    &__wrapper{
+        display:none;
+        opacity:0;  
+        position:absolute;
+        top:0;
+        width:100%;  
+       // border-top: solid 3px cs('primary-l2'); 
+        min-height: 200px;
+       
+          
+    }
+    &__categoryNavigation{
+        background: cs('foreground');
+        width:100%;
+        @include for-size(tablet-l-up){
+            width: 25%;
+        }
+    }
+    &__categoryItem {
+        padding:.4em .8em;
+        border-bottom:solid 1px lighten(cs('font-l2'),30%);
+    }
+    &__brands {
+         padding: 1.6em 2.4em;
+        background: cs('foreground');
+        
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include catalogList();
 /**
 * confirmedOrderPage styles
 */
@@ -341,8 +411,8 @@
 
   .mainSearch {
     &__content {
-        height:100%;
-        width:90%;
+        //height:100%;
+        width:95%;
         margin:0 auto;
         position:relative;
         @include space-i('element','=','trlb',''); 
@@ -373,7 +443,7 @@
     }
     &__icon{
         position: absolute;
-        width:9%;
+        width:8%;
         text-align: center;  
         top:0;
         height:100%;
@@ -496,7 +566,7 @@
         margin-bottom:5px;
     }
     &__img{   
-        width:100%;
+        width:100%;  
         height: 180px;
        // background-color: #ededed;
         background-image:url("https://www.santehsmart.ru/upload/iblock/2ee/2ee1ca5fa8df10ec7e75f80c1e7edc22.jpg");
@@ -763,11 +833,11 @@
     &__catalog{
         width:100%;
         @include for-size(desktop-up){
-            width:23%;
+            width:25%;
         }
     }
     &__search{
-        width:54%;
+        width:50%;
         display:none;
         @include for-size(desktop-up){
             display:inline-block;
@@ -777,7 +847,7 @@
         display:none;
         @include for-size(desktop-up){
             display:inline-block;
-            width:23%;
+            width:25%;
         }
         
     }
