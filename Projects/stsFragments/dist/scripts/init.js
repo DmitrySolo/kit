@@ -123,6 +123,8 @@ for(var i=0;i<quantitySelectorArr.length;i++){
     },false)
 }
 
+// Element: b1 script.
+
 // Element: dashBoardElement script.
 
  $(document).ready(      
@@ -138,5 +140,3 @@ for(var i=0;i<quantitySelectorArr.length;i++){
  })
      }
      )
-
-// Element: b1 script.

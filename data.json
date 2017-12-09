@@ -1,20 +1,9 @@
 {
 	"LIBS": {
-		"quant-lib": {
+		"JQ": {
 			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-debug-JsonCss": {
-			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+				"jquery": {
+					"src": "node_modules/jquery/dist/jquery.min.js",
 					"container": "footer/libs"
 				}
 			},
@@ -48,11 +37,22 @@
 				}
 			}
 		},
-		"JQ": {
+		"quant-debug-JsonCss": {
 			"js": {
-				"jquery": {
-					"src": "node_modules/jquery/dist/jquery.min.js",
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
 					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-lib": {
+			"js": {
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -399,11 +399,11 @@
 	"catalogList": {
 		"catalogList": "1"
 	},
-	"flyPageFragment": {
-		"title": "Test Page"
-	},
 	"confirmedOrderPage": {
 		"confirmedOrderPage": "1"
+	},
+	"flyPageFragment": {
+		"title": "Test Page"
 	},
 	"geoTarget": {
 		"geoTarget": "1"
@@ -414,11 +414,11 @@
 	"mainSearch": {
 		"mainSearch": "1"
 	},
-	"module1": {
-		"module1": "1"
-	},
 	"module": {
 		"module": "1"
+	},
+	"module1": {
+		"module1": "1"
 	},
 	"noticeList": {
 		"noticeList": "1"
@@ -472,11 +472,11 @@
 	"reactTest": {
 		"reactTest": "1"
 	},
-	"topBar": {
-		"topBar": "1"
-	},
 	"support": {
 		"support": "1"
+	},
+	"topBar": {
+		"topBar": "1"
 	},
 	"topMenu": {
 		"topMenu": "1"

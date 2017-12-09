@@ -45,7 +45,8 @@
         }
     }
     &__categoryItem {
-        padding:.4em .8em;
+        text-transform: uppercase;
+        padding:.4em 0 .4em .8em;
         border-bottom:solid 1px lighten(cs('font-l2'),30%);
     }
     &__brands {

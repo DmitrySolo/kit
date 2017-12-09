@@ -56,6 +56,20 @@
           width: 1.7em;
           height:2.5em;
       }
+      &--asset{
+         width: 2.4em;
+         height: 2.4em;
+         margin-right:1em;
+      }
+      &--catalog{
+         width: .9em;
+         
+         fill:lighten(cs('font-l2'),30%);
+         margin-top: -2%;
+         vertical-align:middle; 
+         float:right;
+         margin-right:.5em;
+      }
       
     
 }

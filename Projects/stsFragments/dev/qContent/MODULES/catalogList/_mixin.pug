@@ -8,11 +8,39 @@ mixin MODULE-catalogList()
 					nav(role='catalog').catalogList__categoryNavigation
 						ul.catalogList__categoryList
 							+loop(11)
-								li.catalogList__categoryItem Ванны
+								li.catalogList__categoryItem
+									+I('bathm','asset')  
+									span Ванны
+									+I('to-right','catalog')
+								li.catalogList__categoryItem
+									+I('mebelm','asset')   
+									span Мебель для ванной
+									+I('to-right','catalog')
+								li.catalogList__categoryItem    
+									+I('smes','asset')           
+									span Смесители
+									+I('to-right','catalog')
+								li.catalogList__categoryItem
+									+I('dkm','asset')  
+									span Душ Кабины и уголки
+									+I('to-right','catalog')
+								li.catalogList__categoryItem  
+									+I('ogpo','asset')          
+									span Ограждения и поддоны
+									+I('to-right','catalog')
+								li.catalogList__categoryItem
+									+I('shower','asset')           
+									span Все для душа 
+									+I('to-right','catalog')
+								li.catalogList__categoryItem  
+									+I('toiletm','asset')           
+									span Унитазы и Биде 
+									+I('to-right','catalog')
+									
 					
 				.catalogList__wrapper.catalogList__brands#js_brands
 					nav(role='brands').catalogList__brandNavigation
-						ul.catalogList__brandList.l_ib__c
+						ul.catalogList__brandList.l_ib__c 
 							+loop(11)
 								li.catalogList__barandLitera.l_ib__e A
 									ul.catalogList__barandList
