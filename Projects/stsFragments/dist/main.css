@@ -2025,15 +2025,37 @@ Modules
 
 .catalogList__categoryNavigation {
   background: #fff;
-  width: 100%; }
+  width: 100%;
+  display: inline-block; }
   @media (min-width: 900px) {
     .catalogList__categoryNavigation {
       width: 25%; } }
 
 .catalogList__categoryItem {
+  cursor: pointer;
+  position: relative;
   text-transform: uppercase;
   padding: .4em 0 .4em .8em;
   border-bottom: solid 1px #ededed; }
+  .catalogList__categoryItem:hover {
+    background: #f2edf8; }
+  .catalogList__categoryItem:hover .icon--catalog {
+    fill: #ffb066; }
+
+.catalogList__categorySublist {
+  margin-left: 1%;
+  display: inline-block;
+  position: relative;
+  width: 74%; }
+
+.catalogList__SublistItem {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 400px;
+  background: #fff;
+  padding: 1.6em 2.4em; }
 
 .catalogList__brands {
   padding: 1.6em 2.4em;
@@ -2491,6 +2513,110 @@ Modules
 /**
 Elements
 * */
+.b1 {
+  display: inline-block;
+  position: relative;
+  background-color: #ff7b00;
+  color: #3b3a3a;
+  text-transform: uppercase;
+  transition: background .2s linear;
+  border: 2px solid;
+  line-height: 1.7;
+  border-radius: 5px; }
+  .b1:hover, .b1:focus, .b1:active {
+    background-color: #ffb066;
+    border: 2px solid; }
+  .b1:focus {
+    outline: none; }
+  .b1:hover, .b1:active {
+    outline: none; }
+
+.toOrder {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12px;
+  background: #ff7b00;
+  border: solid 1px #ff9533;
+  width: 100%;
+  border-radius: 3px;
+  transition: background .2s ease;
+  text-decoration: none;
+  padding: 5px;
+  display: inline-block; }
+  .toOrder svg {
+    height: 12px; }
+  .toOrder.succes {
+    background: #46bb90;
+    border-color: #6bc9a6; }
+    .toOrder.succes:hover {
+      background: #6bc9a6; }
+  .toOrder:hover {
+    background: #ff9533; }
+
+.colList {
+  width: 50%;
+  float: right; }
+
+.switcher {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  padding-top: .9em;
+  float: right; }
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 43px;
+  height: 17px; }
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none; }
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+input:checked + .slider {
+  background-color: #ff7b00; }
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3; }
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px); }
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px; }
+
+.slider.round:before {
+  border-radius: 50%; }
+
 .dashBoardElement {
   vertical-align: top;
   font-size: 16px;
@@ -2680,102 +2806,16 @@ Elements
     width: 1.7em;
     height: 2.5em; }
   .icon--asset {
-    width: 2.4em;
-    height: 2.4em;
-    margin-right: 1em; }
+    fill: red;
+    width: 2.2em;
+    height: 2.2em;
+    margin-right: .7em; }
   .icon--catalog {
     width: .9em;
     fill: #ededed;
-    margin-top: -2%;
-    vertical-align: middle;
-    float: right;
-    margin-right: .5em; }
-
-.switcher {
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-  padding-top: .9em;
-  float: right; }
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 43px;
-  height: 17px; }
-
-/* Hide default HTML checkbox */
-.switch input {
-  display: none; }
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s; }
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 1px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s; }
-
-input:checked + .slider {
-  background-color: #ff7b00; }
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3; }
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px); }
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px; }
-
-.slider.round:before {
-  border-radius: 50%; }
-
-.toOrder {
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 12px;
-  background: #ff7b00;
-  border: solid 1px #ff9533;
-  width: 100%;
-  border-radius: 3px;
-  transition: background .2s ease;
-  text-decoration: none;
-  padding: 5px;
-  display: inline-block; }
-  .toOrder svg {
-    height: 12px; }
-  .toOrder.succes {
-    background: #46bb90;
-    border-color: #6bc9a6; }
-    .toOrder.succes:hover {
-      background: #6bc9a6; }
-  .toOrder:hover {
-    background: #ff9533; }
-
-.colList {
-  width: 50%;
-  float: right; }
+    top: -2%;
+    position: absolute;
+    right: .5em; }
 
 a.material {
   color: #3d255b;
@@ -2789,24 +2829,6 @@ a.material {
   a.material:focus {
     outline: none; }
   a.material:hover, a.material:active {
-    outline: none; }
-
-.b1 {
-  display: inline-block;
-  position: relative;
-  background-color: #ff7b00;
-  color: #3b3a3a;
-  text-transform: uppercase;
-  transition: background .2s linear;
-  border: 2px solid;
-  line-height: 1.7;
-  border-radius: 5px; }
-  .b1:hover, .b1:focus, .b1:active {
-    background-color: #ffb066;
-    border: 2px solid; }
-  .b1:focus {
-    outline: none; }
-  .b1:hover, .b1:active {
     outline: none; }
 
 .pr {

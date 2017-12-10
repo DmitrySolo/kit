@@ -40,14 +40,39 @@
     &__categoryNavigation{
         background: cs('foreground');
         width:100%;
+        display: inline-block;
         @include for-size(tablet-l-up){
             width: 25%;
         }
     }
     &__categoryItem {
+        cursor:pointer;
+        position:relative;
         text-transform: uppercase;
         padding:.4em 0 .4em .8em;
         border-bottom:solid 1px lighten(cs('font-l2'),30%);
+        &:hover{
+            background: lighten(cs('primary-l2'),50%);
+        }
+        &:hover .icon--catalog {
+            fill: cs('accent-l2');
+        } 
+    }
+    &__categorySublist{
+        margin-left:1%;
+        display:inline-block;
+        position:relative;
+        width:74%;
+        
+    }
+    &__SublistItem {
+        display:none; 
+        position: absolute;
+        top:0;
+        width:100%;
+        min-height: 400px;
+        background: cs('foreground');
+         padding: 1.6em 2.4em;
     }
     &__brands {
          padding: 1.6em 2.4em;

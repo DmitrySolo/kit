@@ -29,40 +29,55 @@ mixin MODULE-catalogList()
 		.catalogList__outer#js_catShadow
 		+LEVEL-inner()
 			.catalogList__content(data-qcontent='module__catalogList') 
-				.catalogList__wrapper.catalogList__category#js_categories
-					nav(role='catalog').catalogList__categoryNavigation
+				.catalogList__wrapper.catalogList__category.l_ib__c#js_categories
+					nav(role='catalog').catalogList__categoryNavigation.l_ib__e
 						ul.catalogList__categoryList
-							+loop(11)
-								li.catalogList__categoryItem
-									+I('bathm','asset')  
+								li.catalogList__categoryItem#js_showSub__1     
+									+I('bathm','asset')    
 									span Ванны
-									+I('to-right','catalog')
-								li.catalogList__categoryItem
+									+I('to-right','catalog') 
+								li.catalogList__categoryItem#js_showSub__2
 									+I('mebelm','asset')   
 									span Мебель для ванной
 									+I('to-right','catalog')
-								li.catalogList__categoryItem    
+								li.catalogList__categoryItem#js_showSub__3   
 									+I('smes','asset')           
 									span Смесители
 									+I('to-right','catalog')
-								li.catalogList__categoryItem
+								li.catalogList__categoryItem#js_showSub__4
 									+I('dkm','asset')  
 									span Душ Кабины и уголки
 									+I('to-right','catalog')
-								li.catalogList__categoryItem  
+								li.catalogList__categoryItem#js_showSub__5
 									+I('ogpo','asset')          
-									span Ограждения и поддоны
+									span Ограждения, поддоны
 									+I('to-right','catalog')
-								li.catalogList__categoryItem
-									+I('shower','asset')           
+								li.catalogList__categoryItem#js_showSub__6
+									+I('showerm','asset')            
 									span Все для душа 
 									+I('to-right','catalog')
-								li.catalogList__categoryItem  
+								li.catalogList__categoryItem#js_showSub__7 
 									+I('toiletm','asset')           
 									span Унитазы и Биде 
 									+I('to-right','catalog')
-									
-					
+								li.catalogList__categoryItem#js_showSub__8  
+									+I('susm2','asset')           
+									span Полотенцесушители 
+									+I('to-right','catalog')
+								li.catalogList__categoryItem#js_showSub__9  
+									+I('accm','asset')              
+									span Аксессуары 
+									+I('to-right','catalog')
+					ul.catalogList__categorySublist.l_ib__e
+						li.catalogList__SublistItem#js_sub__1 1
+						li.catalogList__SublistItem#js_sub__2 2
+						li.catalogList__SublistItem#js_sub__3 3
+						li.catalogList__SublistItem#js_sub__4 4
+						li.catalogList__SublistItem#js_sub__5 5
+						li.catalogList__SublistItem#js_sub__6 6
+						li.catalogList__SublistItem#js_sub__7 7
+						li.catalogList__SublistItem#js_sub__8 8
+						li.catalogList__SublistItem#js_sub__9 9
 				.catalogList__wrapper.catalogList__brands#js_brands
 					nav(role='brands').catalogList__brandNavigation
 						ul.catalogList__brandList.l_ib__c 
@@ -243,16 +258,16 @@ mixin LEVEL-level(title,className)
 	.level__content(class = 'level__content'+ className data-qcontent="level__level")
 		h2.level__title=title
 		block level
-mixin LEVEL-level1(data)
-	.level1
-		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
-			h2.level1__title=title
-			if block
-				block
 mixin LEVEL-level2(title,data)
 	.level2
 		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
 			h2.level2__title=data.title.ZOPA
+			if block
+				block
+mixin LEVEL-level1(data)
+	.level1
+		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
+			h2.level1__title=title
 			if block
 				block
 mixin LEVEL-orderPage(title,className)
