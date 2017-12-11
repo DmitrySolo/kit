@@ -134,6 +134,21 @@
 				"": ""
 			}
 		},
+		"topBar": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/topBar/topBar.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"b1": {
 			"js": {
 				"lib1": {
@@ -422,6 +437,9 @@
 	},
 	"geoTarget": {
 		"geoTarget": "1"
+	},
+	"layout": {
+		"layout": "1"
 	},
 	"mainInfo": {
 		"mainInfo": "1"

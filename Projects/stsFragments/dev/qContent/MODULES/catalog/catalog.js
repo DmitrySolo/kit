@@ -11,6 +11,7 @@
     brands = document.querySelector('#js_brands'),
     categories = document.querySelector('#js_categories'),
     topBar = document.querySelector('.topBar'),
+    catalogLists = document.querySelectorAll('.catalogList__SublistItem'),
     hideMenu = function(){
         categories.style.display = 'none';
         categories.style.opacity = '0';
@@ -18,8 +19,13 @@
         brands.style.opacity = '0';
         catShadow.style.display = 'none';
         catShadow.style.opacity = '0';
+        
         for(var i=0; i<catHeader.length; i++){
         catHeader[i].classList.remove('catalog__by--hovered');
+         }
+         
+         for(var i=0; i<catalogLists.length; i++){
+        catalogLists[i].style.display = 'none';
          }
     };
 
@@ -73,4 +79,4 @@
 
     
     
-}())
+}());

@@ -97,9 +97,10 @@
   .catalog {
     &__content {
         //height: 100%;
-        .icon--to-right{
-             width: .8em;
-             height:60px;
+        .icon--to-right{ 
+             height: 100%;
+             width: 1em;
+             //height:59px;
              fill:#fff;
              float:right;
              vertical-align:top;
@@ -108,11 +109,14 @@
         } 
     }
     &__by{
+       
         display:inline-block;
+        vertical-align:middle;
         color:#fff;
+        height: 60px;
         text-transform: uppercase;
         text-align: center;
-        margin: -10px 0;
+        //margin: -10px 0;
         padding: 0 .8em; 
         line-height: 60px;  
         cursor: pointer;
@@ -195,8 +199,14 @@
         cursor:pointer;
         position:relative;
         text-transform: uppercase;
-        padding:.4em 0 .4em .8em;
+        padding:.4em 0 .4em .4em;
         border-bottom:solid 1px lighten(cs('font-l2'),30%);
+        &--hovered{
+            background: lighten(cs('primary-l2'),50%);
+            .icon--catalog {
+            fill: cs('accent-l2');
+        } 
+        }
         &:hover{
             background: lighten(cs('primary-l2'),50%);
         }
@@ -205,13 +215,14 @@
         } 
     }
     &__categorySublist{
-        margin-left:1%;
+        
         display:inline-block;
         position:relative;
-        width:74%;
+        width:75%;
         
     }
     &__SublistItem {
+        border-left:2px solid cs('primary'); 
         display:none; 
         position: absolute;
         top:0;
@@ -382,6 +393,31 @@
 ////////////////////////////////////////
 @include geoTarget();
 /**
+* layout styles
+*/
+
+@mixin layout(){
+
+  .mainHeader{
+        @include space-i('module','-','','b');
+    }
+    
+    .logo{
+        color:cs('primary');
+    }
+    .l_ib__ev{
+        display: inline-block;
+        font-size: 1rem;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+}
+
+
+////////////////////////////////////////
+@include layout();
+/**
 * mainInfo styles
 */
 
@@ -441,7 +477,7 @@
         width:95%;
         margin:0 auto;
         position:relative;
-        @include space-i('element','=','trlb',''); 
+        padding:5px; 
         border-radius: 3px;
         background: cs('foreground');
     }
@@ -832,27 +868,30 @@
 */
 
 @mixin topBar(){
-    .logo{
-        color:cs('primary');
-    }
-    .l_ib__ev{
-        display:inline-block;
-        font-size:1rem;
-        height:100%;
-        vertical-align: middle;
-        
-    }
-  .topBar {  
+    
+  .topBar {
+  
+  
+    &--fixed{
+        z-index: 10;
+        position:fixed; 
+        top: 0;
+        left:0;
+        width:100%;
+        //margin-bottom: 60px;
+        box-shadow: 0px 2px 5px  5px rgba(0,0,0,0.5);
+    }          
     &__wrapper {
         background: cs('primary');
         //border-bottom: solid 3px darken(cs('primary'),2%);
-        @include space-i('module','-','','b');
+        //@include space-i('module','-','','b');
         //box-shadow: 0px 2px 8px 0px lighten(#000,60%);
         //@include space-i('element','-','','t')
+       // height: 2.4*$line_height_ratio#{em};    
     }
     &__content {
-        padding:10px 0px;
-        //height: 60px; 
+       
+        height: 60px;   
         
         
     }
@@ -866,7 +905,7 @@
         width:50%;
         display:none;
         @include for-size(desktop-up){
-            display:inline-block;
+            display:inline-block; 
         }
     }
     &__cart{

@@ -49,8 +49,14 @@
         cursor:pointer;
         position:relative;
         text-transform: uppercase;
-        padding:.4em 0 .4em .8em;
+        padding:.4em 0 .4em .4em;
         border-bottom:solid 1px lighten(cs('font-l2'),30%);
+        &--hovered{
+            background: lighten(cs('primary-l2'),50%);
+            .icon--catalog {
+            fill: cs('accent-l2');
+        } 
+        }
         &:hover{
             background: lighten(cs('primary-l2'),50%);
         }
@@ -59,13 +65,14 @@
         } 
     }
     &__categorySublist{
-        margin-left:1%;
+        
         display:inline-block;
         position:relative;
-        width:74%;
+        width:75%;
         
     }
     &__SublistItem {
+        border-left:2px solid cs('primary'); 
         display:none; 
         position: absolute;
         top:0;

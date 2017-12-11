@@ -17,4 +17,6 @@
 	"	MODULE-cart()",
 	"snippet +M-catalogList",
 	"	MODULE-catalogList()",
+	"snippet +M-layout",
+	"	MODULE-layout()",
 ].join(eol);

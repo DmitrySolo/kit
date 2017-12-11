@@ -122,6 +122,10 @@ mixin MODULE-geoTarget()
 		.geoTarget__points
 			span.geoTarget__pointsCount 3 
 			a(href='fdgg').geoTarget__pointsDesc Пункта выдачи 
+mixin MODULE-layout()
+	<!-- split modules/layout -->
+	.layout__content(data-qcontent='module__layout')
+		.layout
 mixin MODULE-mainInfo()
 	<!-- split modules/mainInfo -->
 	.mainInfo__content(data-qcontent='module__mainInfo')
@@ -248,20 +252,65 @@ mixin MODULE-topMenu()
 					+A-material('Оптовым Клиентам')
 				li.topMenu__element
 					+A-material('Контакты')
+//
+mixin LEVEL-productSection(title,className)
+	.productSection__content(data-qcontent="level__productSection")
+		header.productSection__header.clearfix
+			.productSection__pager.f-left 
+				span.productSection__subTitle Страницы:
+				+breadcrumbs()
+			.productSection__filter.f-left 
+				span.productSection__subTitle Cортировать по:
+				a.productSection__sortBy.productSection__sortBy--selected Цене
+				| |
+				a.productSection__sortBy Производителю
+			.productSection__layoutChoiser.f-right
+				span.productSection__subTitle Вид каталога:
+				a(href='/')
+					+I('layout','productsLayout icon--productsLayout--selected')
+				a(href='/')
+					+I('layout1','productsLayout') 
+		if block
+			block
+mixin LEVEL-starter(title,className)
+	-if (!className) className =''
+	.starter__content(class = 'starter__content'+ className data-qcontent="level__starter")
+		h5.starter__title=title
+		if block
+			block
+mixin LEVEL-showCasePage(data)
+	-if (!className) className =''
+	.container
+		section.showCasePage__content(class = 'showCasePage__content '+ data.class data-qcontent="level__showCasePage" data-self=""+data.self)
+			h1.showCasePage__title=data.title
+			h4.showCasePage__subtitle.text Icons:  
+			+I('box')
+			+I('search')
+			+I('eshop')
+			+I('cart','cart_Main')
+			+I('cart','cart_btn')
+			+I('truck')
+			+I('arrow')  
+			+I('marker')
+			+I('clock')
+			+I('sale')
+			+I('star')
+			+I('toilet')
+			+I('bath')
+			h4.showCasePage__subtitle.text Headings 
+			h1.showCasePage__subtitle.showCasePage__subtitle--red=data.idName
+			h2 Header
+			h3 Headera
+			h4 Header
+			h5 Header
+			h6 Header
+			h4.showCasePage__subtitle.text Paragraph:
+			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
+			if block
+				block
 mixin LEVEL-inner(data)
 	.level__inner
 		.container
-			if block
-				block
-mixin LEVEL-level(title,className)
-	-if (!className) className =''
-	.level__content(class = 'level__content'+ className data-qcontent="level__level")
-		h2.level__title=title
-		block level
-mixin LEVEL-level2(title,data)
-	.level2
-		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
-			h2.level2__title=data.title.ZOPA
 			if block
 				block
 mixin LEVEL-level1(data)
@@ -270,6 +319,16 @@ mixin LEVEL-level1(data)
 			h2.level1__title=title
 			if block
 				block
+mixin LEVEL-level(title,className)
+	-if (!className) className =''
+	.level__content(class = 'level__content'+ className data-qcontent="level__level")
+		h2.level__title=title
+		block level
+mixin LEVEL-outer(data)
+	.outer
+		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
+			if block
+				block    
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = " <a href='/'>N 1231238</a>"
@@ -303,67 +362,12 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
-mixin LEVEL-outer(data)
-	.outer
-		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
-			if block
-				block    
 mixin LEVEL-page(title,className)
 	-if (!className) className =''
 	.page__content(class = 'page__content'+ className data-qcontent="level__page")
 		h2.page__title=title
 		if block 
 			block
-//
-mixin LEVEL-productSection(title,className)
-	.productSection__content(data-qcontent="level__productSection")
-		header.productSection__header.clearfix
-			.productSection__pager.f-left 
-				span.productSection__subTitle Страницы:
-				+breadcrumbs()
-			.productSection__filter.f-left 
-				span.productSection__subTitle Cортировать по:
-				a.productSection__sortBy.productSection__sortBy--selected Цене
-				| |
-				a.productSection__sortBy Производителю
-			.productSection__layoutChoiser.f-right
-				span.productSection__subTitle Вид каталога:
-				a(href='/')
-					+I('layout','productsLayout icon--productsLayout--selected')
-				a(href='/')
-					+I('layout1','productsLayout') 
-		if block
-			block
-mixin LEVEL-showCasePage(data)
-	-if (!className) className =''
-	.container
-		section.showCasePage__content(class = 'showCasePage__content '+ data.class data-qcontent="level__showCasePage" data-self=""+data.self)
-			h1.showCasePage__title=data.title
-			h4.showCasePage__subtitle.text Icons:  
-			+I('box')
-			+I('search')
-			+I('eshop')
-			+I('cart','cart_Main')
-			+I('cart','cart_btn')
-			+I('truck')
-			+I('arrow')  
-			+I('marker')
-			+I('clock')
-			+I('sale')
-			+I('star')
-			+I('toilet')
-			+I('bath')
-			h4.showCasePage__subtitle.text Headings 
-			h1.showCasePage__subtitle.showCasePage__subtitle--red=data.idName
-			h2 Header
-			h3 Headera
-			h4 Header
-			h5 Header
-			h6 Header
-			h4.showCasePage__subtitle.text Paragraph:
-			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
-			if block
-				block
 mixin LEVEL-showcase(title,className)
 	-if (!className) className =''
 	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
@@ -373,12 +377,12 @@ mixin LEVEL-showcase(title,className)
 			+holder('page__loader','100px300',colors.primary)
 			if block
 				block
-mixin LEVEL-starter(title,className)
-	-if (!className) className =''
-	.starter__content(class = 'starter__content'+ className data-qcontent="level__starter")
-		h5.starter__title=title
-		if block
-			block
+mixin LEVEL-level2(title,data)
+	.level2
+		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
+			h2.level2__title=data.title.ZOPA
+			if block
+				block
 mixin LEVEL-testOfSergConnectingSupport(title,className)
 	-if (!className) className =''
 	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")

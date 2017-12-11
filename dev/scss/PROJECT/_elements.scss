@@ -24,45 +24,84 @@ $color__b1:cs('font-d2');
 			outline: none;
 	}
 }
+.icon{ 
+  display: inline-block;
+  vertical-align: middle;
+  width:3em;
+  height: 3em;
+  fill: cs('primary');
+  
+      &--cart_Main{
+         width:5em;
+         height:5em;
+      }
+      &--cart_btn{
+         width:2em;
+         height:2em;
+      }
+      &--red {
+          fill:red;
+      }
+      &--rocket { 
+          fill:cs('succes-d2');
+           @include space-i('element','=','','l');
+      }
+      &--productsLayout{
+          fill: cs('font-l2');
+          width: 1.7em;
+          height: 1.7em;
+          padding: 3px;
+          cursor:pointer;
+          &:hover{
+              fill:cs('font-d');
+          }
+          &--selected {
+            //  border: 1px solid cs('accent-l');
+              fill: cs('accent');
+               &:hover{
+              fill:cs('accent');
+          }
+         
+          }
+          
+      }
+       &--map{
+              width:1.4em;
+              height: 1.4em; 
+              fill:cs('accent');
+          }
+      &--mainSearch{
+          height: 100%;
+          width: .9em;
+          fill: cs('font-l');
+          &:hover {
+              fill: cs('accent');
+          }
+      }
+      &--topBar{
+          width: 1.7em;
+          height:2.5em;
+      }
+      &--asset{
+          fill:red;
+         height: 2em;
+         margin-right:.4em;  
+      }
+      &--catalog{
+         width: .9em;
+         
+         fill:lighten(cs('font-l2'),30%);
+         top: -2%;
+         position:absolute;
+         right:.5em;
+      }
+      
+    
+}
+  
 
-    .toOrder {
-        color: #fff;
-        text-transform: uppercase;
-        text-align: center;
-        font-size:12px;
-        background: cs('accent'); 
-        border: solid 1px cs('accent-l');
-        width: 100%;
-        border-radius: 3px;
-        transition: background .2s ease;
-        text-decoration: none;
-        padding: 5px;
-        display:inline-block;
-        svg {
-            height: 12px;  
-        }
-        
-        &.succes {
-            background: cs('succes');
-            border-color: cs('succes-l');
-            &:hover{
-                background: cs('succes-l');
-            }
-        }
-        &:hover{
-            background: cs('accent-l');
-        
-        }
-    }
-    .colList{
-        width: 50%;
-        float: right;
-    }
-    
-    
-    
-    
-    
+
+
 .switcher {
     display: inline-block;
     vertical-align:middle;
@@ -129,6 +168,71 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+    .toOrder {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        font-size:12px;
+        background: cs('accent'); 
+        border: solid 1px cs('accent-l');
+        width: 100%;
+        border-radius: 3px;
+        transition: background .2s ease;
+        text-decoration: none;
+        padding: 5px;
+        display:inline-block;
+        svg {
+            height: 12px;  
+        }
+        
+        &.succes {
+            background: cs('succes');
+            border-color: cs('succes-l');
+            &:hover{
+                background: cs('succes-l');
+            }
+        }
+        &:hover{
+            background: cs('accent-l');
+        
+        }
+    }
+    .colList{
+        width: 50%;
+        float: right;
+    }
+    
+    
+    
+    
+    
+$color__material:cs('primary');
+$color__material-visited:#fff;
+$color__material-hover:cs('primary-l2');
+
+a.material {
+	color: $color__material;  
+	text-decoration: none;
+	font-size: .9em;
+
+	&:visited {
+		color: $color__material-visited;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__material-hover;
+	    border-bottom: solid 1px ;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover,
+	&:active {
+	outline: none;
+	}
 }
 .dashBoardElement{
     vertical-align: top;
@@ -300,109 +404,4 @@ input:checked + .slider:before {
     ));
    }
 
-}
-.icon{ 
-  display: inline-block;
-  vertical-align: middle;
-  width:3em;
-  height: 3em;
-  fill: cs('primary');
-  
-      &--cart_Main{
-         width:5em;
-         height:5em;
-      }
-      &--cart_btn{
-         width:2em;
-         height:2em;
-      }
-      &--red {
-          fill:red;
-      }
-      &--rocket { 
-          fill:cs('succes-d2');
-           @include space-i('element','=','','l');
-      }
-      &--productsLayout{
-          fill: cs('font-l2');
-          width: 1.7em;
-          height: 1.7em;
-          padding: 3px;
-          cursor:pointer;
-          &:hover{
-              fill:cs('font-d');
-          }
-          &--selected {
-            //  border: 1px solid cs('accent-l');
-              fill: cs('accent');
-               &:hover{
-              fill:cs('accent');
-          }
-         
-          }
-          
-      }
-       &--map{
-              width:1.4em;
-              height: 1.4em; 
-              fill:cs('accent');
-          }
-      &--mainSearch{
-          height: 100%;
-          width: .9em;
-          fill: cs('font-l');
-          &:hover {
-              fill: cs('accent');
-          }
-      }
-      &--topBar{
-          width: 1.7em;
-          height:2.5em;
-      }
-      &--asset{
-          fill:red;
-         width: 2.2em;
-         height: 2.2em;
-         margin-right:.7em;  
-      }
-      &--catalog{
-         width: .9em;
-         
-         fill:lighten(cs('font-l2'),30%);
-         top: -2%;
-         position:absolute;
-         right:.5em;
-      }
-      
-    
-}
-  
-
-
-
-$color__material:cs('primary');
-$color__material-visited:#fff;
-$color__material-hover:cs('primary-l2');
-
-a.material {
-	color: $color__material;  
-	text-decoration: none;
-	font-size: .9em;
-
-	&:visited {
-		color: $color__material-visited;
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__material-hover;
-	    border-bottom: solid 1px ;
-	}
-	&:focus {
-		outline: none;
-	}
-	&:hover,
-	&:active {
-	outline: none;
-	}
 }

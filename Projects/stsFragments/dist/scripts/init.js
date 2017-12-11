@@ -11,6 +11,7 @@
     brands = document.querySelector('#js_brands'),
     categories = document.querySelector('#js_categories'),
     topBar = document.querySelector('.topBar'),
+    catalogLists = document.querySelectorAll('.catalogList__SublistItem'),
     hideMenu = function(){
         categories.style.display = 'none';
         categories.style.opacity = '0';
@@ -18,8 +19,13 @@
         brands.style.opacity = '0';
         catShadow.style.display = 'none';
         catShadow.style.opacity = '0';
+        
         for(var i=0; i<catHeader.length; i++){
         catHeader[i].classList.remove('catalog__by--hovered');
+         }
+         
+         for(var i=0; i<catalogLists.length; i++){
+        catalogLists[i].style.display = 'none';
          }
     };
 
@@ -73,23 +79,23 @@
 
     
     
-}())
+}());
 
 /**
 * MODULE: catalogList script
 */
 
 (function(){
-	var
-	selectorIdPrefix = 'js_showSub',
+	var selectorIdPrefix = 'js_showSub',
 	selectorsArr = document.querySelectorAll('.catalogList__categoryItem'),
 	targetsArr = document.querySelectorAll('.catalogList__SublistItem'),
 	lastTarget = false,
 	target,
+	selectedBy,
 	gogo;   
 
  
-	for(var i = 0; i<=selectorsArr.length; i++ ){
+	for(var i = 0; i<selectorsArr.length; i++ ){ 
         
 		selectorsArr[i].addEventListener('mouseenter',function (e) {
 			var _this = this;
@@ -118,8 +124,20 @@
 		selectorsArr[i].addEventListener('mouseleave',function (e) {
 			clearTimeout(gogo);
 		})
+	} 
+	for(var i = 0; i<targetsArr.length; i++ ){
+	    
+	    targetsArr[i].addEventListener('mouseenter',function (e) {
+            var selectNum = this.getAttribute('id').split('__')[1];
+		     selectedBy = document.getElementById('js_showSub__'+selectNum);
+	            selectedBy.classList.add('catalogList__categoryItem--hovered');
+	    });
+	    targetsArr[i].addEventListener('mouseleave',function (e) {
+	        selectedBy.classList.remove('catalogList__categoryItem--hovered');
+	        //this.style.display = 'none';
+	    });
 	}
-}())
+}());
 
 /**
 * MODULE: flyPageFragment script
@@ -169,6 +187,28 @@ for(var i=0;i<quantitySelectorArr.length;i++){
     },false)
 }
 
+/**
+* MODULE: topBar script
+*/
+
+    var header = document.querySelector('.mainHeader'),
+    headerHeight = header.offsetHeight,
+    topBar = document.querySelector('.topBar__wrapper');
+
+window.onscroll = function(e){
+
+    var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+ 
+    if(scrolled > 126){
+        header.style.height = headerHeight+'px';
+        topBar.classList.add('topBar--fixed');
+        
+    }else{
+         topBar.classList.remove('topBar--fixed');
+    }
+
+    
+} 
 // Element: b1 script.
 
 // Element: dashBoardElement script.

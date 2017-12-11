@@ -6,9 +6,10 @@
   .catalog {
     &__content {
         //height: 100%;
-        .icon--to-right{
-             width: .8em;
-             height:60px;
+        .icon--to-right{ 
+             height: 100%;
+             width: 1em;
+             //height:59px;
              fill:#fff;
              float:right;
              vertical-align:top;
@@ -17,11 +18,14 @@
         } 
     }
     &__by{
+       
         display:inline-block;
+        vertical-align:middle;
         color:#fff;
+        height: 60px;
         text-transform: uppercase;
         text-align: center;
-        margin: -10px 0;
+        //margin: -10px 0;
         padding: 0 .8em; 
         line-height: 60px;  
         cursor: pointer;
