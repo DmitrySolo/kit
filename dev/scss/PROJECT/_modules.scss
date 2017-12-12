@@ -124,7 +124,7 @@
         &--hovered{ 
             background:cs('primary-l');
             .icon--to-right{
-            transform: rotate(90deg);
+            transform: rotate(90deg);  
             }
         }
         &:hover{ 
@@ -936,7 +936,10 @@
             @include space-i('component','|','','b');
        }
       
-
+    &__list{
+        
+        
+    }
     }
     &__content { 
        
@@ -949,7 +952,11 @@
     &__element{
         display: inline-block;
         @include space-i('component','=','','r')  
-        
+        &:hover{
+            .popup{
+	                  display:block;
+	              }
+        }
     }
   }
 

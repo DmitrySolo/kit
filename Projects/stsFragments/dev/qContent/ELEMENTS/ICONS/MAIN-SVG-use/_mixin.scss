@@ -69,6 +69,18 @@
          position:absolute;
          right:.5em;
       }
+      &--close{
+          height: 100%;
+          width: 100%;
+      }
+      &--popup{
+          transform: rotate(90deg);
+          position: absolute;
+          width:.4em;
+          right:.3em;
+          height: $line_height_ratio#{em};
+          margin-top: -$line_height_ratio#{em};
+      }
       
     
 }

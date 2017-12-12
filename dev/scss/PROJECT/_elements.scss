@@ -24,84 +24,6 @@ $color__b1:cs('font-d2');
 			outline: none;
 	}
 }
-.icon{ 
-  display: inline-block;
-  vertical-align: middle;
-  width:3em;
-  height: 3em;
-  fill: cs('primary');
-  
-      &--cart_Main{
-         width:5em;
-         height:5em;
-      }
-      &--cart_btn{
-         width:2em;
-         height:2em;
-      }
-      &--red {
-          fill:red;
-      }
-      &--rocket { 
-          fill:cs('succes-d2');
-           @include space-i('element','=','','l');
-      }
-      &--productsLayout{
-          fill: cs('font-l2');
-          width: 1.7em;
-          height: 1.7em;
-          padding: 3px;
-          cursor:pointer;
-          &:hover{
-              fill:cs('font-d');
-          }
-          &--selected {
-            //  border: 1px solid cs('accent-l');
-              fill: cs('accent');
-               &:hover{
-              fill:cs('accent');
-          }
-         
-          }
-          
-      }
-       &--map{
-              width:1.4em;
-              height: 1.4em; 
-              fill:cs('accent');
-          }
-      &--mainSearch{
-          height: 100%;
-          width: .9em;
-          fill: cs('font-l');
-          &:hover {
-              fill: cs('accent');
-          }
-      }
-      &--topBar{
-          width: 1.7em;
-          height:2.5em;
-      }
-      &--asset{
-          fill:red;
-         height: 2em;
-         margin-right:.4em;  
-      }
-      &--catalog{
-         width: .9em;
-         
-         fill:lighten(cs('font-l2'),30%);
-         top: -2%;
-         position:absolute;
-         right:.5em;
-      }
-      
-    
-}
-  
-
-
-
 .switcher {
     display: inline-block;
     vertical-align:middle;
@@ -208,32 +130,6 @@ input:checked + .slider:before {
     
     
     
-$color__material:cs('primary');
-$color__material-visited:#fff;
-$color__material-hover:cs('primary-l2');
-
-a.material {
-	color: $color__material;  
-	text-decoration: none;
-	font-size: .9em;
-
-	&:visited {
-		color: $color__material-visited;
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__material-hover;
-	    border-bottom: solid 1px ;
-	}
-	&:focus {
-		outline: none;
-	}
-	&:hover,
-	&:active {
-	outline: none;
-	}
-}
 .dashBoardElement{
     vertical-align: top;
     font-size:16px;   
@@ -404,4 +300,120 @@ a.material {
     ));
    }
 
+}
+.icon{ 
+  display: inline-block;
+  vertical-align: middle;
+  width:3em;
+  height: 3em;
+  fill: cs('primary');
+  
+      &--cart_Main{
+         width:5em;
+         height:5em;
+      }
+      &--cart_btn{
+         width:2em;
+         height:2em;
+      }
+      &--red {
+          fill:red;
+      }
+      &--rocket { 
+          fill:cs('succes-d2');
+           @include space-i('element','=','','l');
+      }
+      &--productsLayout{
+          fill: cs('font-l2');
+          width: 1.7em;
+          height: 1.7em;
+          padding: 3px;
+          cursor:pointer;
+          &:hover{
+              fill:cs('font-d');
+          }
+          &--selected {
+            //  border: 1px solid cs('accent-l');
+              fill: cs('accent');
+               &:hover{
+              fill:cs('accent');
+          }
+         
+          }
+          
+      }
+       &--map{
+              width:1.4em;
+              height: 1.4em; 
+              fill:cs('accent');
+          }
+      &--mainSearch{
+          height: 100%;
+          width: .9em;
+          fill: cs('font-l');
+          &:hover {
+              fill: cs('accent');
+          }
+      }
+      &--topBar{
+          width: 1.7em;
+          height:2.5em;
+      }
+      &--asset{
+          fill:red;
+         height: 2em;
+         margin-right:.4em;  
+      }
+      &--catalog{
+         width: .9em;
+         
+         fill:lighten(cs('font-l2'),30%);
+         top: -2%;
+         position:absolute;
+         right:.5em;
+      }
+      &--close{
+          height: 100%;
+          width: 100%;
+      }
+      &--popup{
+          transform: rotate(90deg);
+          position: absolute;
+          width:.4em;
+          right:.3em;
+          height: $line_height_ratio#{em};
+          margin-top: -$line_height_ratio#{em};
+      }
+      
+    
+}
+  
+
+
+
+$color__material:cs('primary');
+$color__material-visited:cs('primary');
+$color__material-hover:cs('primary-l2');
+
+a.material {
+	color: $color__material;  
+	text-decoration: none;
+	font-size: .9em;
+
+	&:visited {
+		color: $color__material-visited;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__material-hover;
+	    border-bottom: solid 1px ;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover,
+	&:active {
+	outline: none;
+	}
 }

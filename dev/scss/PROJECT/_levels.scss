@@ -1,14 +1,4 @@
 
-/* level STYLE */
-
-.level {
-    &__content {
-
-    }
-    &__title {
-
-    }
-}
 /* level1 STYLE */
 
 .level1 {
@@ -27,6 +17,48 @@
     }
     &__title {
 
+    }
+}
+/* modalWindow STYLE */
+
+.modalWindow {
+    transition: all 2s ease;
+    &__content {
+        width:100%;
+        top:30px; 
+        @include for-size(tablet-l-up){
+             width: 40%;
+             top:126px; 
+            left:50%;
+            margin-left:-20%;
+        }
+        position: fixed;
+        
+        background: cs('foreground');
+        padding: 2.4em; 
+  
+    }
+    &--hide{
+        display:none;
+        opacity:0;
+    }
+    &--show{
+        display:block;
+        opacity:01;
+    } 
+    &--hidden{
+        display:none;
+        opacity:0;
+    }
+    
+    
+    &__close {
+        cursor: pointer;
+        position:absolute;
+        top:1em;
+        right:1em;
+        width: 1.4em;
+        height: 1.4em;
     }
 }
 /* orderPage STYLE */
@@ -103,25 +135,55 @@
 .page__loader {
     vertical-align: top;
 }
-/* outer STYLE */
+/* level STYLE */
 
-.outer {
-    
+.level {
     &__content {
-        width:100%;
-        background:cs('foreground');
-    }
-   
-}
-/* page STYLE */
 
-.page {
-    &__content {
-        padding: 60px 80px; 
     }
     &__title {
-        margin-bottom: 30px;
+
     }
+}
+/* popup STYLE */
+
+.popup {
+    position:relative;
+    display:none;
+   &__trigger{
+       position:relative;
+       padding-right: 1em;
+   }
+    &__content {
+        z-index:20;
+        position:absolute;
+        left:50%;
+        width: 180px;
+        margin-left: -90px;
+        padding: 0.4em 0;
+        
+        &:before {
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 0px; 
+            top:-11px;
+            left:50%;
+            margin-left: -0.5em; 
+            border: solid 10px transparent;
+            border-bottom-color: cs('foreground');
+            //box-shadow: 0px 2px 5px 3px silver;
+        }
+
+    }
+            &__body{
+            padding: 1.2em;
+            background: cs('foreground');
+            box-shadow: 0px 0px 2px 1px #999;
+            border-radius: 3px;
+            //border: 1px solid silver;
+        }
+        
 }
 /* productSection STYLE */
 
@@ -268,3 +330,23 @@
         margin: 0;
     }
 }     
+/* outer STYLE */
+
+.outer {
+    
+    &__content {
+        width:100%;
+        background:cs('foreground');
+    }
+   
+} 
+/* page STYLE */
+
+.page {
+    &__content {
+        padding: 60px 80px; 
+    }
+    &__title {
+        margin-bottom: 30px;
+    }
+}

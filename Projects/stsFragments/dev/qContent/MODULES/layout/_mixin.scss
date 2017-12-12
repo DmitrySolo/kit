@@ -1,0 +1,25 @@
+/**
+* layout styles
+*/
+
+@mixin layout(){
+
+  .mainHeader{
+        @include space-i('module','-','','b');
+    }
+    
+    .logo{
+        color:cs('primary');
+    }
+    .l_ib__ev{
+        display: inline-block;
+        font-size: 1rem;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+}
+
+
+////////////////////////////////////////
+@include layout();

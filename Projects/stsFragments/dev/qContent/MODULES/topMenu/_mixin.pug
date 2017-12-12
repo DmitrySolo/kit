@@ -3,9 +3,27 @@ mixin MODULE-topMenu()
 	.topMenu__content(data-qcontent='module__topMenu')
 		nav.topMenu
 			ul.topMenu__list
-				li.topMenu__element
-					+A-material('Розничным Клиентам') 
-				li.topMenu__element
+				li.topMenu__element.popup__trigger
+					+A-material('Розничным Клиентам')
+					+LEVEL-popup()
+						ul
+							li
+								+A-material('Оплата и доставка')
+							li
+								+A-material('Возврат и обмен')
+							li
+								+A-material('Оплата и доставка')
+							li
+								+A-material('Возврат и обмен')
+							li
+								+A-material('Оплата и доставка')
+							li 
+								+A-material('Возврат и обмен')
+				li.topMenu__element.popup__trigger
 					+A-material('Оптовым Клиентам')
+					+LEVEL-popup()
+						ul
+							li 3
+							li 4
 				li.topMenu__element
 					+A-material('Контакты')

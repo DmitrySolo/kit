@@ -1,0 +1,40 @@
+/* popup STYLE */
+
+.popup {
+    position:relative;
+    display:none;
+   &__trigger{
+       position:relative;
+       padding-right: 1em;
+   }
+    &__content {
+        z-index:20;
+        position:absolute;
+        left:50%;
+        width: 180px;
+        margin-left: -90px;
+        padding: 0.4em 0;
+        
+        &:before {
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 0px; 
+            top:-11px;
+            left:50%;
+            margin-left: -0.5em; 
+            border: solid 10px transparent;
+            border-bottom-color: cs('foreground');
+            //box-shadow: 0px 2px 5px 3px silver;
+        }
+
+    }
+            &__body{
+            padding: 1.2em;
+            background: cs('foreground');
+            box-shadow: 0px 0px 2px 1px #999;
+            border-radius: 3px;
+            //border: 1px solid silver;
+        }
+        
+}

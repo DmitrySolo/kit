@@ -1,3 +1,5 @@
 mixin A-material(content,href,className)
 	-if (!className) className =''
 	a(class='material '+className,href='/sdsd' data-qcontent='element__LINKS__material')=content
+	if block
+		block

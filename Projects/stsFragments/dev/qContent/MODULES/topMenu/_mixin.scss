@@ -11,7 +11,10 @@
             @include space-i('component','|','','b');
        }
       
-
+    &__list{
+        
+        
+    }
     }
     &__content { 
        
@@ -24,7 +27,11 @@
     &__element{
         display: inline-block;
         @include space-i('component','=','','r')  
-        
+        &:hover{
+            .popup{
+	                  display:block;
+	              }
+        }
     }
   }
 

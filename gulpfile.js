@@ -479,7 +479,7 @@ gulp.task('STYLES-1-LEVELS', function () {
 //SCRIPTS
 gulp.task('SCRIPTS-FINAL', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-	return watch(['dev/**/*.js','!dev/**/quant-debug-JsonCss.js',projectDevDir+'qContent/**/*.js']
+	return watch(['dev/**/*.js','!dev/**/quant-debug-JsonCss.js',projectDevDir+'qContent/**/*.js',projectDevDir+'template/PAGESYSTEM/LEVELS/**/*.js']
 		, function () {
 			gulp.start('SCRIPTS');
 		});
@@ -1474,7 +1474,7 @@ gulp.task('iconfont', function () {
 		}))
 		.pipe(iconfont({
 			fontName: fontName,
-            normalize:true,
+			normalize:true,
 			fontHeight:'16'
 		}))
 		.pipe(gulp.dest(dist + '/fonts/icons/'));
@@ -1645,7 +1645,7 @@ gulp.task('API-SERVER', function () {
 
 								var pug = fs.readFileSync(path1+'/_mixin.pug', 'utf8');
 								var scss = fs.readFileSync(path1+'/_mixin.scss', 'utf8');
-
+								var js = fs.readFileSync(path1+'/level.js', 'utf8');
 
 							}else if (path1.indexOf('MASTER_OPTIONS') > -1){
 

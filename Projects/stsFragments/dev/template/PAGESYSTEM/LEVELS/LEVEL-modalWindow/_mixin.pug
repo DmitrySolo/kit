@@ -1,0 +1,9 @@
+mixin LEVEL-modalWindow(id, title)
+	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id)
+		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
+			a.modalWindow__close
+				+I('close','close')
+			h3.modalWindow__title=title
+			.modalWindow__body
+				if block
+					block       
