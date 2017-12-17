@@ -1,7 +1,3 @@
-mixin MODULE-atest()
-	<!-- split modules/atest -->
-	.atest__content(data-qcontent='module__atest')
-		.atest
 mixin breadcrumbs()
 	.breadCrumb__content(data-qcontent='module__breadcrumbs')
 		nav.breadCrumb.visible-l
@@ -18,11 +14,15 @@ mixin MODULE-cart()
 		span Корзина
 mixin MODULE-catalog()
 	<!-- split modules/catalog -->
-	.catalog__content(data-qcontent='module__catalog')
-		span.catalog__by.catalog__by--category#js-CatChoiser Категории 
-			+I('to-right','to-right')
-		span.catalog__by.catalog__by--brand#js-BrandChoiser Бренды 
-			+I('to-right','to-right')      
+	ul.catalog__content(data-qcontent='module__catalog')
+		li.catalog__by.catalog__by--category.clearfix#js-CatChoiser 
+			+I('menu-alt','categories')
+			span.catalog__elemTitle Категории 
+			+I('to-right','to-right f-right')
+		li.catalog__by.catalog__by--brand.clearfix#js-BrandChoiser
+			+I('star','categories ')
+			span.catalog__elemTitle Бренды
+			+I('to-right','to-right f-right')
 mixin MODULE-catalogList()
 	<!-- split modules/catalogList -->
 	.catalogList__outerWrapper
@@ -130,21 +130,22 @@ mixin MODULE-mainInfo()
 	<!-- split modules/mainInfo -->
 	.mainInfo__content(data-qcontent='module__mainInfo')
 		.l_ib__c
-			.l_ib__e.mainInfo__block.mainInfo__logo
-				h1.logo SantehSmart
+			.l_ib__e.mainInfo__block.mainInfo__logo 
+				+logo-img('logo.svg')
+				|Онлайн Сантехмаркет
 			.l_ib__e.mainInfo__block.mainInfo__geotarget
-				+MODULE-geoTarget()
-			.l_ib__e.mainInfo__block.mainInfo__cart_search--mobile
+				+MODULE-geoTarget() 
+			.l_ib__e.mainInfo__block.mainInfo__cart_search--mobile 
 				span Корзина 
 				span Поиск
-			.l_ib__e.mainInfo__block.mainInfo__logo--mobile
+			.l_ib__e.mainInfo__block.mainInfo__logo--mobile 
 				h1.logo SantehSmart
 			.l_ib__e.mainInfo__block.f-right  
 				span.mainInfo__phone.js_modal_trigger(id = 'js_modal_trigger__login') 8 800 500 13 84
 mixin MODULE-mainSearch()
 	<!-- split modules/mainSearch -->
 	.mainSearch__content(data-qcontent='module__mainSearch')
-		form.mainSearch__form
+		form.mainSearch__form 
 			input.mainSearch__input(type='text',placeholder="Поиск среди 20 000 товаров")
 			span.mainSearch__icon
 				+I('search','mainSearch') 
@@ -169,6 +170,13 @@ mixin MODULE-noticeList()
 					h5.noticeList__elementHeader Тестовое уведомление
 					p.noticeList__noticeContent.text Следует отметить, что повышение уровня гражданского сознания обеспечивает широкому кругу (специалистов) участие в формировании форм воздействия. Таким образом, дальнейшее развитие различных форм деятельности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для поэтапного и последовательного развития общества. Независимые государства, превозмогая сложившуюся непростую экономическую ситуацию, объявлены нарушающими общечеловеческие нормы этики и морали.
 							 
+mixin owlSlider()
+	<!-- split modules/owlSlider -->
+	.owlSlider
+		.ove-mainSlider.owl-carousel
+			+holder('carousel','300x500')
+			+holder('carousel','300x500')
+			+holder('carousel','300x500')
 mixin MODULE-productCol(data)
 	<!-- split modules/productCol -->
 	li.productCol__content.col-3-d(data-qcontent='module__productCol') 
@@ -249,18 +257,18 @@ mixin MODULE-topMenu()
 				li.topMenu__element.popup__trigger
 					+A-material('Розничным Клиентам')
 					+LEVEL-popup()
-						ul
-							li
+						ul.popup__menu
+							li.popup__menuItem
 								+A-material('Оплата и доставка')
-							li
+							li.popup__menuItem
 								+A-material('Возврат и обмен')
-							li
+							li.popup__menuItem
 								+A-material('Оплата и доставка')
-							li
+							li.popup__menuItem
 								+A-material('Возврат и обмен')
-							li
+							li.popup__menuItem
 								+A-material('Оплата и доставка')
-							li 
+							li.popup__menuItem
 								+A-material('Возврат и обмен')
 				li.topMenu__element.popup__trigger
 					+A-material('Оптовым Клиентам')
@@ -270,22 +278,37 @@ mixin MODULE-topMenu()
 							li 4
 				li.topMenu__element
 					+A-material('Контакты')
-mixin LEVEL-level(title,className)
-	-if (!className) className =''
-	.level__content(class = 'level__content'+ className data-qcontent="level__level")
-		h2.level__title=title
-		block level
 mixin LEVEL-inner(data)
 	.level__inner
 		.container
 			if block
 				block
+mixin LEVEL-level(title,className)
+	-if (!className) className =''
+	.level__content(class = 'level__content'+ className data-qcontent="level__level")
+		h2.level__title=title
+		block level
 mixin LEVEL-level1(data)
 	.level1
 		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
 			h2.level1__title=title
 			if block
 				block
+mixin LEVEL-level2(title,data)
+	.level2
+		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
+			h2.level2__title=data.title.ZOPA
+			if block
+				block
+mixin LEVEL-modalWindow(id, title)
+	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id)
+		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
+			a.modalWindow__close
+				+I('close','close')
+			h3.modalWindow__title=title
+			.modalWindow__body
+				if block
+					block       
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = " <a href='/'>N 1231238</a>"
@@ -330,6 +353,14 @@ mixin LEVEL-page(title,className)
 		h2.page__title=title
 		if block 
 			block
+mixin LEVEL-popup(data)
+	.popup__angle
+		+I('to-right','popup')
+	.popup
+		.popup__content(class = 'popup__content'+ className data-qcontent="level__popup")
+			.popup__body
+				if block
+					block
 //
 mixin LEVEL-productSection(title,className)
 	.productSection__content(data-qcontent="level__productSection")
@@ -412,26 +443,3 @@ mixin LEVEL-topdashBoard(data)
 				+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
 		if block
 			block 
-mixin LEVEL-modalWindow(id, title)
-	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id)
-		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
-			a.modalWindow__close
-				+I('close','close')
-			h3.modalWindow__title=title
-			.modalWindow__body
-				if block
-					block       
-mixin LEVEL-popup(data)
-	.popup__angle
-		+I('to-right','popup')
-	.popup
-		.popup__content(class = 'popup__content'+ className data-qcontent="level__popup")
-			.popup__body
-				if block
-					block
-mixin LEVEL-level2(title,data)
-	.level2
-		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
-			h2.level2__title=data.title.ZOPA
-			if block
-				block

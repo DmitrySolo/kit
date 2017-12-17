@@ -119,6 +119,21 @@
 				"": ""
 			}
 		},
+		"owlSlider": {
+			"js": {
+				"lib": {
+					"src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
+					"container": "footer/libsExts"
+				},
+				"init": {
+					"src": "dev/MODULES/PROJECT MODULES/--owlSlider/owlSlider.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"productInline": {
 			"js": {
 				"lib1": {
@@ -429,9 +444,6 @@
 			"group": ""
 		}
 	},
-	"atest": {
-		"atest": "1"
-	},
 	"breadcrumbs": {
 		"1": "22"
 	},
@@ -470,6 +482,9 @@
 	},
 	"noticeList": {
 		"noticeList": "1"
+	},
+	"owlSlider": {
+		"owlSlider": "1"
 	},
 	"productCol": {
 		"productCol": "1"

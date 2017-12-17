@@ -384,6 +384,17 @@ input:checked + .slider:before {
           height: $line_height_ratio#{em};
           margin-top: -$line_height_ratio#{em};
       }
+      &--categories{
+          width: 1.2em;
+          height:100%;
+          fill:#fff;
+          display:inline;
+          margin-right:0.7em;
+          @include for-size(desktop-up){
+              display: none;
+          }
+          
+      }
       
     
 }
@@ -407,7 +418,7 @@ a.material {
 	&:focus,
 	&:active {
 		color: $color__material-hover;
-	    border-bottom: solid 1px ;
+	     
 	}
 	&:focus {
 		outline: none;

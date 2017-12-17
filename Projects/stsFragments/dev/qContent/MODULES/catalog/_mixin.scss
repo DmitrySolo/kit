@@ -5,7 +5,7 @@
 @mixin catalog(){
   .catalog {
     &__content {
-        //height: 100%;
+        font-size:0;
         .icon--to-right{ 
              height: 100%;
              width: 1em;
@@ -18,18 +18,17 @@
         } 
     }
     &__by{
-       
+        font-size: 1rem;
         display:inline-block;
         vertical-align:middle;
         color:#fff;
         height: 60px;
         text-transform: uppercase;
         text-align: center;
-        //margin: -10px 0;
-        padding: 0 .8em; 
+        padding:0 .8em;
         line-height: 60px;  
         cursor: pointer;
-        width:50%;
+        width:50%; 
         &--hovered{ 
             background:cs('primary-l');
             .icon--to-right{

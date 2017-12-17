@@ -1,23 +1,23 @@
 //VARIABLES
-$logo-max-height: 110px;
+$logo-max-height: 210px;
 
 .logo__container {
   h1{
-      font-size: 0;
-      line-height:0;
-      text-align: center;
+	  font-size: 0;
+	  line-height:0;
+	  text-align: center;
   }
 }
 
 .logo__link{
 
   img {
-    margin-top: -3px;//
-    border:none;
-    max-width: 100%;
-    max-height: $logo-max-height;
-    vertical-align: middle;
-    height: auto;
+	width:100%;
+	margin-top: -3px;//
+	border:none;
+	max-height: $logo-max-height;
+	vertical-align: middle;
+	height: auto;
   }
 
 }

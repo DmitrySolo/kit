@@ -5,44 +5,40 @@
 @mixin mainInfo(){
 
   .mainInfo {
-    &__content {
-        @include space-i('component','-','','b')
-    }
-    &__block{
-        @include space-i('module','=','','r')
-    }
-    &__geotarget{
-    
-    }
-    &__logo{
-            @include for-size(phone-only){
-            display:none;
-        }
-        &--mobile{
-                width:100%; 
-                text-align: center;
-                margin: 0;
-                @include for-size('tablet-p-up'){   
-                    display: none;
-                }
-            }
-    }
-    &__cart_search--mobile{
-        @include for-size(tablet-p-up){
-            display:none;
-        }
-    }
-    
-    &__phone {
-        font-size: 23px;
-        @include for-size(phone-only){
-            display:none;
-        }
-    }
+	&__content {
+		@include space-i('component','-','','b')
+	}
+	&__block{
+		@include space-i('module','=','','r') 
+	}
+	&__geotarget{
+ 
+	}
+	&__logo{
+			@include for-size(phone-only){
+			display:none;
+		}
+		&--mobile{
+				width:100%;
+				text-align: center;
+				margin: 0;
+				@include for-size('tablet-p-up'){ 
+					display: none;
+				}
+			}
+	}
+	&__cart_search--mobile{
+		@include for-size(tablet-p-up){
+			display:none;
+		}
+	}
+
+	&__phone {
+		font-size: 23px;
+		@include for-size(phone-only){
+			display:none;
+		}
+	}
   }
 
-}
-
-
-////////////////////////////////////////
-@include mainInfo();
+} @include mainInfo()

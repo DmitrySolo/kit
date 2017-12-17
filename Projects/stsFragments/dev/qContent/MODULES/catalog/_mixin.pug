@@ -1,7 +1,11 @@
 mixin MODULE-catalog()
 	<!-- split modules/catalog -->
-	.catalog__content(data-qcontent='module__catalog')
-		span.catalog__by.catalog__by--category#js-CatChoiser Категории 
-			+I('to-right','to-right')
-		span.catalog__by.catalog__by--brand#js-BrandChoiser Бренды 
-			+I('to-right','to-right')      
+	ul.catalog__content(data-qcontent='module__catalog')
+		li.catalog__by.catalog__by--category.clearfix#js-CatChoiser 
+			+I('menu-alt','categories')
+			span.catalog__elemTitle Категории 
+			+I('to-right','to-right f-right')
+		li.catalog__by.catalog__by--brand.clearfix#js-BrandChoiser
+			+I('star','categories ')
+			span.catalog__elemTitle Бренды
+			+I('to-right','to-right f-right')

@@ -2,14 +2,15 @@ mixin MODULE-mainInfo()
 	<!-- split modules/mainInfo -->
 	.mainInfo__content(data-qcontent='module__mainInfo')
 		.l_ib__c
-			.l_ib__e.mainInfo__block.mainInfo__logo
-				h1.logo SantehSmart
+			.l_ib__e.mainInfo__block.mainInfo__logo 
+				+logo-img('logo.svg')
+				|Онлайн Сантехмаркет
 			.l_ib__e.mainInfo__block.mainInfo__geotarget
-				+MODULE-geoTarget()
-			.l_ib__e.mainInfo__block.mainInfo__cart_search--mobile
+				+MODULE-geoTarget() 
+			.l_ib__e.mainInfo__block.mainInfo__cart_search--mobile 
 				span Корзина 
 				span Поиск
-			.l_ib__e.mainInfo__block.mainInfo__logo--mobile
+			.l_ib__e.mainInfo__block.mainInfo__logo--mobile 
 				h1.logo SantehSmart
 			.l_ib__e.mainInfo__block.f-right  
 				span.mainInfo__phone.js_modal_trigger(id = 'js_modal_trigger__login') 8 800 500 13 84
