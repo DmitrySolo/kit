@@ -3,7 +3,6 @@
 */
 
 (function(){
-    
     var catHeader = document.getElementsByClassName('catalog__by'),
     catChoiser = document.querySelector('#js-CatChoiser'),
     brandChoiser = document.querySelector('#js-BrandChoiser'),
@@ -14,7 +13,7 @@
     catalogLists = document.querySelectorAll('.catalogList__SublistItem'),
     hideMenu = function(){
         categories.style.display = 'none';
-        categories.style.opacity = '0';
+        categories.style.opacity = '0'; 
         brands.style.display = 'none';
         brands.style.opacity = '0';
         catShadow.style.display = 'none';

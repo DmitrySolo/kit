@@ -65,6 +65,9 @@ var htmllint = require('gulp-htmllint')
 var gutil = require('gulp-util');
 // QUANT PLUGINS&FUNCTIONS
 var Qupdate = false;
+var updateQ = function () {
+	return Qupdate = '1';
+}
 
 var qp_path = "./gulp plugins/";
 var OS = require(qp_path + 'OS');
@@ -78,7 +81,7 @@ else{
 	var delimetr = '/';
 	var sys = 'mac'
 }
-
+var loadForPug = 'main.pug';
 //// Load Project
 var globalData = JSON.parse(fs.readFileSync('globalData.json', 'utf8'));
 var projectName = globalData.currentProject;
@@ -191,15 +194,15 @@ gulp.task('SCRIPTS', function () {
 		.pipe(scriptThrower({dist: dist, dev: projectDevDir}));
 })
 
-gulp.task('views', function buildHTML() {
+
+
+gulp.task('views-current', function buildHTML() {
 	var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
-	var viewProcess = gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/*.pug'])
+	var viewProcess = gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/'+loadForPug])
 		.pipe(pug({
 			data: data,
 			pretty: true,
-			// filters: {
-			// 	php: pugPHPFilter
-			// }
+			cache: true
 		})).on('error', notify.onError(function (error) {
 		return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
 	})).pipe(gulp.dest(dist));
@@ -208,6 +211,22 @@ gulp.task('views', function buildHTML() {
 	 })
 
 });
+gulp.task('views', function buildHTML() {
+    var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+    var viewProcess = gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/*.pug','!'+projectDevDir + 'template/PAGESYSTEM/PAGES/'+loadForPug])
+        .pipe(pug({
+            data: data,
+            pretty: true,
+            cache: true
+        })).on('error', notify.onError(function (error) {
+            return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
+        })).pipe(gulp.dest(dist));
+});
+
+
+
+
+
 gulp.task('views-hud', function buildHTML() {
 	var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 	var viewProcess = gulp.src('HUD/HUD.pug')
@@ -264,7 +283,7 @@ gulp.task('SERVER', [], function () {
 	});
 
 	gulp.watch([dist + "*.html"]).on('change',function () {
-
+		//updateQ();
 
 	});
 
@@ -275,7 +294,6 @@ gulp.task('SERVER', [], function () {
 gulp.task('VIEW-FINAL', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([
-		'dev/ELEMENTS/_elements.pug',
 		'HUD/*.pug',
 		'HUD/*.js',
 		'!HUD/_currentPage.pug',
@@ -284,10 +302,10 @@ gulp.task('VIEW-FINAL', function () {
 		projectDevDir + 'qContent/concates/_elements.pug',
 		projectDevDir + 'template/PAGESYSTEM/{INCLUDES,LAYOUT,PAGES}/**/*.pug',
 		'data.json',
-		'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
+		//'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
 	], function () {
-
-		gulp.start('views')
+        gulp.start('views-current');
+		gulp.start('views'); //
 
 
 
@@ -299,6 +317,7 @@ gulp.task('VIEW-SOURCE', function () {
 		'Projects/'+projectName+'/source_fabric/SVGSpriteIcons',
 	], function () {
 		gulp.start('svgstore');
+        gulp.start('views-current');
 		gulp.start('views');
 	});
 });
@@ -380,7 +399,6 @@ gulp.task('VIEW-1-DATA', function () {
 gulp.task('SERVER WATCHER', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([dist + "/index.html"], function () {
-
 	});
 });
 gulp.task('WATCH-MODULE-FOLDERS', function () {
@@ -509,6 +527,7 @@ gulp.task('BUILDUP'
 			'concat-modules-pug',
 
 			'views',
+			'views-current',
 			'concat-mixes-scss',
 			'concat-elements-scss',
 			'concat-modules-scss',
@@ -1435,7 +1454,7 @@ gulp.task('START_QUANT', function () {
 });
 gulp.task('RELOAD QUANT', function () {
 	runSequence('WATCHER:NEW', 'WATCHCSSTOPARSEIT','mergeJson',
-	'views',
+	'views','views-current',
 	'styles')
 });
 
@@ -1668,7 +1687,7 @@ gulp.task('API-SERVER', function () {
 								 var pageNameArr = path1.split(delimetr);
 
 								var pageName = pageNameArr[pageNameArr.length -1].slice(0,-3)+'html'
-
+								loadForPug = pageNameArr[pageNameArr.length -1];
 								var curStr = '-var currentPage = "'+pageName+'"';
 								fs.writeFileSync('HUD/_currentPage.pug',curStr);
 

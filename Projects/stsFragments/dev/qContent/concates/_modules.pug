@@ -17,8 +17,8 @@ mixin MODULE-catalog()
 	ul.catalog__content(data-qcontent='module__catalog')
 		li.catalog__by.catalog__by--category.clearfix#js-CatChoiser 
 			+I('menu-alt','categories')
-			span.catalog__elemTitle Категории 
-			+I('to-right','to-right f-right')
+			span.catalog__elemTitle Кaталог
+			+I('to-right','to-right f-right') 
 		li.catalog__by.catalog__by--brand.clearfix#js-BrandChoiser
 			+I('star','categories ')
 			span.catalog__elemTitle Бренды
@@ -118,10 +118,10 @@ mixin MODULE-geoTarget()
 	.geoTarget__content(data-qcontent='module__geoTarget')
 		.geoTarget__city
 			span.icon-placeholder
-			a(href='df').geoTarget__link.js_modal_trigger(id = 'js_modal_trigger__geo') Воронеж
+			a.geoTarget__link.js_modal_trigger(href='df' id = 'js_modal_trigger__geo') Воронеж
 		.geoTarget__points
 			span.geoTarget__pointsCount 3 
-			a(href='fdgg').geoTarget__pointsDesc Пункта выдачи 
+			a(href='fdgg').geoTarget__pointsDesc Пункта выдачи
 mixin MODULE-layout()
 	<!-- split modules/layout -->
 	.layout__content(data-qcontent='module__layout')
@@ -198,7 +198,7 @@ mixin MODULE-productCol(data)
 					span.productCol__stock.f-right В наличии:#[br] 
 						span.productCol__stock--last Скоро закончится
 			label.productInline__quantityLabel
-				input.productInline__quantitySelector(type=text value='1'  size='3' )
+				input.productInline__quantitySelector(type=text value='1'  size='2' )
 				.productInline__quantityButton.productInline__quantityButton--minus
 				.productInline__quantityButton.productInline__quantityButton--plus
 			+B-toOrder('В корзину','colList')
@@ -300,15 +300,6 @@ mixin LEVEL-level2(title,data)
 			h2.level2__title=data.title.ZOPA
 			if block
 				block
-mixin LEVEL-modalWindow(id, title)
-	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id)
-		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
-			a.modalWindow__close
-				+I('close','close')
-			h3.modalWindow__title=title
-			.modalWindow__body
-				if block
-					block       
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = " <a href='/'>N 1231238</a>"
@@ -342,6 +333,15 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
+mixin LEVEL-modalWindow(id, title)
+	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id)
+		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
+			a.modalWindow__close
+				+I('close','close')
+			h3.modalWindow__title=title
+			.modalWindow__body
+				if block
+					block       
 mixin LEVEL-outer(data)
 	.outer
 		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
@@ -361,26 +361,6 @@ mixin LEVEL-popup(data)
 			.popup__body
 				if block
 					block
-//
-mixin LEVEL-productSection(title,className)
-	.productSection__content(data-qcontent="level__productSection")
-		header.productSection__header.clearfix
-			.productSection__pager.f-left 
-				span.productSection__subTitle Страницы:
-				+breadcrumbs()
-			.productSection__filter.f-left 
-				span.productSection__subTitle Cортировать по:
-				a.productSection__sortBy.productSection__sortBy--selected Цене
-				| |
-				a.productSection__sortBy Производителю
-			.productSection__layoutChoiser.f-right
-				span.productSection__subTitle Вид каталога:
-				a(href='/')
-					+I('layout','productsLayout icon--productsLayout--selected')
-				a(href='/')
-					+I('layout1','productsLayout') 
-		if block
-			block
 mixin LEVEL-showCasePage(data)
 	-if (!className) className =''
 	.container
@@ -411,6 +391,26 @@ mixin LEVEL-showCasePage(data)
 			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
 			if block
 				block
+//
+mixin LEVEL-productSection(title,className)
+	.productSection__content(data-qcontent="level__productSection")
+		header.productSection__header.clearfix
+			.productSection__pager.f-left 
+				span.productSection__subTitle Страницы:
+				+breadcrumbs()
+			.productSection__filter.f-left 
+				span.productSection__subTitle Cортировать по:
+				a.productSection__sortBy.productSection__sortBy--selected Цене
+				| |
+				a.productSection__sortBy Производителю
+			.productSection__layoutChoiser.f-right
+				span.productSection__subTitle Вид каталога:
+				a(href='/')
+					+I('layout','productsLayout icon--productsLayout--selected')
+				a(href='/')
+					+I('layout1','productsLayout') 
+		if block
+			block
 mixin LEVEL-showcase(title,className)
 	-if (!className) className =''
 	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
