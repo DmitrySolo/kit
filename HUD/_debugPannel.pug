@@ -18,16 +18,7 @@ section.pb-section.clearfix#ball.hidden
             span block o
 section.pb-section.clearfix.grid.grid--debug.hidden#grid
     .container
-        .row
-            .col-1-m.col-1-tp 1
-            .col-1-m.col-1-tp 2
-            .col-1-m.col-1-tp 3
-            .col-1-m.col-1-tp 4
-            .col-1-m.col-1-tp 5
-            .col-1-m.col-1-tp 6
-            .col-1-m.col-1-tp 7
-            .col-1-m.col-1-tp 8
-            .col-1-m.col-1-tp 9
-            .col-1-m.col-1-tp 10
-            .col-1-m.col-1-tp 11
-            .col-1-m.col-1-tp 12
+        .group.group--md.debug
+            -var i
+            +loop(colums,i)
+                .col-1-m.col-1-tp #{i}

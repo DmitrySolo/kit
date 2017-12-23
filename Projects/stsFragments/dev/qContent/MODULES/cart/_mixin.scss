@@ -9,11 +9,11 @@
         margin:0;
         padding:0;
         background: cs('foreground');
-        width:60%;
+        width:160px;
         //margin: 0 auto;
         //max-height: 100%;  
         //line-height:40px;
-        border-radius :3px; 
+        border-radius :3px;
         box-shadow: inset 0px -2px lighten(cs('font-l2'),10%);
         &:hover{
             box-shadow:none;

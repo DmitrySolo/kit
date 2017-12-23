@@ -1,8 +1,6 @@
 $response:true;
 $vertical-rhythm:true;
-$siteWidth: 1200px;
-$colums: 12;
-$gutter-width: .5em;  
+
 
 // BREAKPOINTS
 $phone-upper-boundary: 600px;
@@ -14,6 +12,7 @@ $desktop-upper-boundary: 1800px;
 
 
 // CONTAINERS
+$siteWidth: 1240px;
 $tablet-p-container:100%;
 $tablet-l-container:900px;
 $siteMinWidth:$tablet-l-container;

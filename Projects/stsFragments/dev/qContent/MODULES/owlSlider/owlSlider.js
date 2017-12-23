@@ -2,9 +2,10 @@
 $(document).ready(function(){
     $(".ove-mainSlider").owlCarousel(
         {
-            "items":45,
+            "items":1, 
             "lazyLoad":true,
-            "autoplay":true
+            "autoplay":true,
+            "dots":true
         }
     );
 });

@@ -31,8 +31,9 @@
     }
 
 
-    &__points{   
-        border-bottom: solid 2px  cs('primary');
+    &__points{ 
+        
+        
         @include for-size(phone-only){
             display:none;
         }
@@ -43,7 +44,7 @@
         font-size:.8em;
         border-radius: 2px;
         //font-weight: bold;    
-        //color: cs('accent');  
+        //color: cs('accent');   
         color: #fff;  
         background: cs('primary');
         @include space-i('element','-','rl','r');
@@ -51,6 +52,7 @@
     &__pointsDesc{
         text-decoration: none;
         color: cs('font-d2');
+        border-bottom: solid 2px  cs('primary'); 
     } 
   }
 

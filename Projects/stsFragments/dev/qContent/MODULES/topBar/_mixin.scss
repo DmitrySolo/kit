@@ -14,7 +14,6 @@
         left:0;
         width:100%;
         //margin-bottom: 60px;
-        box-shadow: 0px 2px 5px  5px rgba(0,0,0,0.5);
     }          
     &__wrapper {
         background: cs('primary');
@@ -31,24 +30,13 @@
         
     }
     &__catalog{
-        width:100%;
-        @include for-size(desktop-up){
-            width:25%;
-        }
+      
     }
     &__search{
-        width:50%;
-        display:none;
-        @include for-size(desktop-up){
-            display:inline-block; 
-        }
+
     }
     &__cart{
-        display:none;
-        @include for-size(desktop-up){
-            display:inline-block;
-            width:25%;
-        }
+        float: right;
         
     }
   }

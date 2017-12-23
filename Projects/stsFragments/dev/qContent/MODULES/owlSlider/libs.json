@@ -3,15 +3,19 @@
     "owlSlider": {
       "js": {
         "lib": {
-          "src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
-          "container": "footer/libsExts"
+          "src": "node_modules/owl.carousel/dist/owl.carousel.min.js",
+          "container": "footer/libs+"
         },"init": {
-          "src": "dev/MODULES/PROJECT MODULES/--owlSlider/owlSlider.js",
+          "src": "Projects/stsFragments/dev/qContent/MODULES/owlSlider/owlSlider.js",
           "container": "footer/init/init"
         }
       },
       "css": {
-        "": ""
+        "owl":{
+          "src":"node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
+          "container": "head/libs"
+        }
+
       }
     }
   }

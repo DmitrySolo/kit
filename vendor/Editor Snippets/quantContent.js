@@ -19,4 +19,8 @@
 	"	MODULE-catalogList()",
 	"snippet +M-layout",
 	"	MODULE-layout()",
+	"snippet +M-IBGrid",
+	"	MODULE-IBGrid()",
+	"snippet +M-catalogMain",
+	"	MODULE-catalogMain()",
 ].join(eol);

@@ -6,10 +6,8 @@
 
   .mainInfo {
 	&__content {
-		@include space-i('component','-','','b')
-	}
-	&__block{
-		@include space-i('module','=','','r') 
+	//padding-bottom: vr-block(.4);
+	 padding-bottom:$line-height-ratio/2#{em};
 	}
 	&__geotarget{
  
@@ -24,7 +22,7 @@
 				margin: 0;
 				@include for-size('tablet-p-up'){ 
 					display: none;
-				}
+				} 
 			}
 	}
 	&__cart_search--mobile{
@@ -34,6 +32,7 @@
 	}
 
 	&__phone {
+	    float:right;
 		font-size: 23px;
 		@include for-size(phone-only){
 			display:none;

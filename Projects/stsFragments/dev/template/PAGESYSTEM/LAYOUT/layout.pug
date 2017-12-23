@@ -7,12 +7,12 @@ html(lang=''+head.lang)
 	body(class=''+bodyClass, data-qcontent="layout__layout")
 		.projectWrapper 
 			<!-- HEADER --> 
-			include _header
+			include _header 
 
 				<!-- split #{page.slug}.html -->
 			<!-- MAIN -->
 			+LEVEL-inner()
-				main 
+				main
 					block page
 		<!-- FOOTER -->
 		include _footer

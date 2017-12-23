@@ -1,6 +1,7 @@
-mixin loop( count )
+mixin loop( count,i )
     - var n = 0
     while n < count
         block
         - n++
+        - i++
 

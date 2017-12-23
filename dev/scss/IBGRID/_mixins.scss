@@ -1,0 +1,57 @@
+
+@mixin iBgridBuilder($prefix,$colums) {
+  @for $i from 1 through $colums {
+    .col-#{$i}-#{$prefix} {
+      width: percentage($i/$colums);
+    }
+    .push-#{$i}-#{$prefix} {
+      margin-left: percentage($i/$colums);
+    }
+  }
+}
+@mixin hideIb($hidePrefix,$prefixes) {
+  @each $prefix in $prefixes {
+
+    @if $hidePrefix == $prefix {
+      .col.hideFrom-#{$hidePrefix} {
+        display: none;
+      }
+
+    }
+    @else{
+      @if(index($prefixes, $hidePrefix)<index($prefixes, $prefix)){
+        .col.hideFrom-#{$prefix} {
+          display: inline-block;
+        }
+      }@else{
+        .col.hideFrom-#{$prefix} {
+          display: none;
+        }
+      }
+    }
+
+  }
+}
+@mixin visibleIb($hidePrefix,$prefixes) {
+  @each $prefix in $prefixes {
+
+    @if $hidePrefix == $prefix {
+      .col.showFrom-#{$hidePrefix} {
+        display: inline-block;
+      }
+
+    }
+    @else{
+      @if(index($prefixes, $hidePrefix)<index($prefixes, $prefix)){
+        .col.showFrom-#{$prefix} {
+          display: none;
+        }
+      }@else{
+        .col.showFrom-#{$prefix} {
+          display: inline-block;
+        }
+      }
+    }
+
+  }
+}

@@ -1,10 +1,14 @@
+//FONT OPTIONS
 $body-font:false;
 $hero-font:false;
 $header-font:false;
+$header-font-weight:false;
+
 $LINKED_FONTS_MAP:(
-	Body:('Fira Sans' , Serif)
+	Body:('Fira Sans' , Sans-Serif)
 	);
-$body-font: fs("Body");$body-font-weight: normal;
+$body-font: fs("Body"); $body-font-weight: normal;
+$header-font: fs("Body"); $body-font-weight: normal;
 $mobile-font :14px;
 $screen-font  :16px;
 $line-height-ratio :1.7;

@@ -1,20 +1,24 @@
-mixin MODULE-catalogList()
+mixin MODULE-catalogList(param)
+	if(page.slug=='main')
+		-var classN = 'catalogList--onMain'
+	else 
+		-var classN = '' 
 	<!-- split modules/catalogList -->
-	.catalogList__outerWrapper
+	.catalogList__outerWrapper  
 		.catalogList__outer#js_catShadow
 		+LEVEL-inner()
 			.catalogList__content(data-qcontent='module__catalogList') 
-				.catalogList__wrapper.catalogList__category.l_ib__c#js_categories
+				.catalogList__wrapper.catalogList__category.l_ib__c(class=' '+ classN)#js_categories
 					nav(role='catalog').catalogList__categoryNavigation.l_ib__e
 						ul.catalogList__categoryList
 								li.catalogList__categoryItem#js_showSub__1     
-									+I('bathm','asset')    
+									+I('bathm','asset')      
 									span Ванны
 									+I('to-right','catalog') 
 								li.catalogList__categoryItem#js_showSub__2
 									+I('mebelm','asset')   
 									span Мебель для ванной
-									+I('to-right','catalog')
+									+I('to-right','catalog')  
 								li.catalogList__categoryItem#js_showSub__3   
 									+I('smes','asset')           
 									span Смесители
@@ -43,6 +47,19 @@ mixin MODULE-catalogList()
 									+I('accm','asset')              
 									span Аксессуары 
 									+I('to-right','catalog')
+								li.catalogList__categoryItem#js_showSub__3   
+									+I('smes','asset')           
+									span Смесители
+									+I('to-right','catalog')
+								li.catalogList__categoryItem#js_showSub__4
+									+I('dkm','asset')  
+									span Душ Кабины и уголки
+									+I('to-right','catalog')
+								li.catalogList__categoryItem#js_showSub__5
+									+I('ogpo','asset')          
+									span Ограждения, поддоны
+									+I('to-right','catalog')
+								li.catalogList__categoryItem#js_showSub__6
 					ul.catalogList__categorySublist.l_ib__e
 						li.catalogList__SublistItem#js_sub__1 1
 						li.catalogList__SublistItem#js_sub__2 2
@@ -61,5 +78,6 @@ mixin MODULE-catalogList()
 									ul.catalogList__barandList
 										li.catalogList__barandItem
 											a(href='asdsad') Alpen
+	
 					
 				

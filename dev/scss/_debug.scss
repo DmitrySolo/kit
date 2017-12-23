@@ -334,7 +334,7 @@
   .notEdit .figcaption {
     background: $db-figcaption-color !important;
   }
-  .debug *[class^="col-"] {
+  .debug .col {
     @include debug-elem($db-col-color);
   }
 
@@ -572,7 +572,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: $zGrid;
+    z-index: 300000;
     opacity: .5;
     .container, .row, div[class^='col-'] {
       height: 100%;
@@ -1303,7 +1303,7 @@
   }
   .saveToServer {
     button {
-      width: 200px;
+      width: 172px;
       margin: 5px 37px 5px 0px;
       border: solid 2px darken(#fc9627, 5%);
       background: #fc9627;

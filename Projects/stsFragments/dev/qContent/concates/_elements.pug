@@ -1,3 +1,32 @@
+mixin B-b1(value,className)
+	-if (!className) className =''
+	button.b1(class=''+className data-qcontent='element__buttons__b1')=value	
+
+
+mixin I(id,classModifier)
+	-if (!classModifier) classModifier =''
+	-else classModifier = 'icon--'+classModifier
+	svg(class='icon '+classModifier data-qcontent='element__ICONS__MAIN-SVG-use')
+		use(xlink:href="#"+id)           
+mixin B-toOrder(value,className)
+	-if (!className) className =''
+	button.toOrder.active.notEdit(class=''+className data-qcontent='element__buttons__toOrder')=value
+  
+
+mixin A-material(content,href,className)
+	-if (!className) className =''
+	a(class='material '+className,href='/sdsd' data-qcontent='element__LINKS__material')=content
+	if block      
+		block
+mixin B-switcher(value,className)
+	-if (!className) className =''
+	.switcher.not(class=''+className data-qcontent='element__buttons__switcher')=value
+		label.switch
+			input#js-switchShopState(type="checkbox") 
+			span.slider.round
+
+
+
 mixin dashBoardElement(icon,text,className,type)
 	-if (!className) className =''
 	li(class=''+className  data-qcontent='element__ICON-TITLE-TEXTS__dashBoardElement')
@@ -23,33 +52,3 @@ mixin dashBoardElement(icon,text,className,type)
 			
 			
 
-
-mixin B-switcher(value,className)
-	-if (!className) className =''
-	.switcher.not(class=''+className data-qcontent='element__buttons__switcher')=value
-		label.switch
-			input#js-switchShopState(type="checkbox") 
-			span.slider.round
-
-
-
-mixin B-b1(value,className)
-	-if (!className) className =''
-	button.b1(class=''+className data-qcontent='element__buttons__b1')=value	
-
-
-mixin B-toOrder(value,className)
-	-if (!className) className =''
-	button.toOrder.active.notEdit(class=''+className data-qcontent='element__buttons__toOrder')=value
-  
-
-mixin I(id,classModifier)
-	-if (!classModifier) classModifier =''
-	-else classModifier = 'icon--'+classModifier
-	svg(class='icon '+classModifier data-qcontent='element__ICONS__MAIN-SVG-use')
-		use(xlink:href="#"+id)           
-mixin A-material(content,href,className)
-	-if (!className) className =''
-	a(class='material '+className,href='/sdsd' data-qcontent='element__LINKS__material')=content
-	if block
-		block

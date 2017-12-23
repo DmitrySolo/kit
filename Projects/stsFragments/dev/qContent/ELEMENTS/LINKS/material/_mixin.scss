@@ -2,18 +2,18 @@ $color__material:cs('primary');
 $color__material-visited:cs('primary');
 $color__material-hover:cs('primary-l2');
 
-a.material {
+a.material {    
 	color: $color__material;  
 	text-decoration: none;
-	font-size: .9em;
+	font-size: .9em; 
 
 	&:visited {
 		color: $color__material-visited;
 	}
 	&:hover,
-	&:focus,
+	&:focus,  
 	&:active {
-		color: $color__material-hover;
+		color: $color__material-hover; 
 	     
 	}
 	&:focus {

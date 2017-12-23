@@ -1,12 +1,4 @@
-@mixin colStyle($prefixes,$colums){
-  @each $prefix in $prefixes{
-    @for $i from 1 through $colums {
-      .col-#{$i}-#{$prefix} {
-        @extend %col-styles;
-      }
-    }
-  }
-}
+
 @mixin gridBuilder($prefix,$colums) {
   @for $i from 1 through $colums {
     .col-#{$i}-#{$prefix} {

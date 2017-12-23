@@ -1,11 +1,16 @@
 mixin MODULE-catalog()
+	if(page.slug == 'main')
+		-var classN = 'catalog__by--hovered'
+	else 
+		-var classN = ''
+		
 	<!-- split modules/catalog -->
-	ul.catalog__content(data-qcontent='module__catalog')
-		li.catalog__by.catalog__by--category.clearfix#js-CatChoiser 
+	ul.catalog__content(data-qcontent='module__catalog')    
+		li.catalog__by.catalog__by--category.clearfix#js-CatChoiser(class=' ' + classN)
 			+I('menu-alt','categories')
-			span.catalog__elemTitle Кaталог
+			span.catalog__elemTitle Кaталог      
 			+I('to-right','to-right f-right') 
 		li.catalog__by.catalog__by--brand.clearfix#js-BrandChoiser
 			+I('star','categories ')
-			span.catalog__elemTitle Бренды
-			+I('to-right','to-right f-right')
+			span.catalog__elemTitle Бренды    
+			+I('to-right','to-right f-right')   

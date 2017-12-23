@@ -21,7 +21,7 @@ $icon-font: false;
 @import "colors";
 @import "../COLOR/_color";
 $body-color         : cs('font-d2'); // OF FONT
-$header-color       : cs('secondary'); // OF FONT
+$header-color       : cs('primary-d'); // OF FONT
 $background-color   : cs('background');  
 /* body{
     background: cs('background') !important;  
@@ -48,19 +48,9 @@ $section_space:4;
 
 
 // LAYOUT ///////////////////////////////////////////////
+@import "gridOptions";
 @import "mediaOption";
 
-$container-styles:(
-
-);
-
-// IF RESPONSE ////////////////////////////////////////
-
-$colStyles:(
-          
-          float: left,
-          min-height: 1px
-);
 
 
 
@@ -70,11 +60,3 @@ $colStyles:(
 $nr-colStyles:(
         float: left,
 );
-.container {
-  padding: 0 5px;//TODO
- // width: 100%;
-}
-.container-fluid {
-  padding: 0 .5em;//TODO
-  // width: 100%;
-}

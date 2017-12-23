@@ -3,6 +3,7 @@
 */
 
 (function(){
+
     var catHeader = document.getElementsByClassName('catalog__by'),
     catChoiser = document.querySelector('#js-CatChoiser'),
     brandChoiser = document.querySelector('#js-BrandChoiser'),
@@ -174,6 +175,17 @@ $('.toOrder.active').on('mousedown',function () {
 * MODULE: module1 script
 */
 
+//owlSlider Script
+$(document).ready(function(){
+    $(".ove-mainSlider").owlCarousel(
+        {
+            "items":1, 
+            "lazyLoad":true,
+            "autoplay":true,
+            "dots":true
+        }
+    );
+});
 /**
 * MODULE: productInline script
 *
@@ -208,8 +220,6 @@ window.onscroll = function(e){
 
     
 } 
-// Element: b1 script.
-
 // Element: dashBoardElement script.
 
  $(document).ready(      
@@ -225,6 +235,8 @@ window.onscroll = function(e){
  })
      }
      )
+
+// Element: b1 script.
 
 // modalWindows
 

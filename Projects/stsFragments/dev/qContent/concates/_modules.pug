@@ -13,33 +13,42 @@ mixin MODULE-cart()
 			+I('cart-s','topBar')
 		span Корзина
 mixin MODULE-catalog()
+	if(page.slug == 'main')
+		-var classN = 'catalog__by--hovered'
+	else 
+		-var classN = ''
+		
 	<!-- split modules/catalog -->
-	ul.catalog__content(data-qcontent='module__catalog')
-		li.catalog__by.catalog__by--category.clearfix#js-CatChoiser 
+	ul.catalog__content(data-qcontent='module__catalog')    
+		li.catalog__by.catalog__by--category.clearfix#js-CatChoiser(class=' ' + classN)
 			+I('menu-alt','categories')
-			span.catalog__elemTitle Кaталог
+			span.catalog__elemTitle Кaталог      
 			+I('to-right','to-right f-right') 
 		li.catalog__by.catalog__by--brand.clearfix#js-BrandChoiser
 			+I('star','categories ')
-			span.catalog__elemTitle Бренды
-			+I('to-right','to-right f-right')
-mixin MODULE-catalogList()
+			span.catalog__elemTitle Бренды    
+			+I('to-right','to-right f-right')   
+mixin MODULE-catalogList(param)
+	if(page.slug=='main')
+		-var classN = 'catalogList--onMain'
+	else 
+		-var classN = '' 
 	<!-- split modules/catalogList -->
-	.catalogList__outerWrapper
+	.catalogList__outerWrapper  
 		.catalogList__outer#js_catShadow
 		+LEVEL-inner()
 			.catalogList__content(data-qcontent='module__catalogList') 
-				.catalogList__wrapper.catalogList__category.l_ib__c#js_categories
+				.catalogList__wrapper.catalogList__category.l_ib__c(class=' '+ classN)#js_categories
 					nav(role='catalog').catalogList__categoryNavigation.l_ib__e
 						ul.catalogList__categoryList
 								li.catalogList__categoryItem#js_showSub__1     
-									+I('bathm','asset')    
+									+I('bathm','asset')      
 									span Ванны
 									+I('to-right','catalog') 
 								li.catalogList__categoryItem#js_showSub__2
 									+I('mebelm','asset')   
 									span Мебель для ванной
-									+I('to-right','catalog')
+									+I('to-right','catalog')  
 								li.catalogList__categoryItem#js_showSub__3   
 									+I('smes','asset')           
 									span Смесители
@@ -68,6 +77,19 @@ mixin MODULE-catalogList()
 									+I('accm','asset')              
 									span Аксессуары 
 									+I('to-right','catalog')
+								li.catalogList__categoryItem#js_showSub__3   
+									+I('smes','asset')           
+									span Смесители
+									+I('to-right','catalog')
+								li.catalogList__categoryItem#js_showSub__4
+									+I('dkm','asset')  
+									span Душ Кабины и уголки
+									+I('to-right','catalog')
+								li.catalogList__categoryItem#js_showSub__5
+									+I('ogpo','asset')          
+									span Ограждения, поддоны
+									+I('to-right','catalog')
+								li.catalogList__categoryItem#js_showSub__6
 					ul.catalogList__categorySublist.l_ib__e
 						li.catalogList__SublistItem#js_sub__1 1
 						li.catalogList__SublistItem#js_sub__2 2
@@ -86,8 +108,74 @@ mixin MODULE-catalogList()
 									ul.catalogList__barandList
 										li.catalogList__barandItem
 											a(href='asdsad') Alpen
+	
 					
 				
+mixin MODULE-catalogMain()
+	<!-- split modules/catalogMain -->
+	.catalogMain__content(data-qcontent='module__catalogMain')
+		.catalogList__category.l_ib__c(class=' '+ classN)#js_categories
+			nav(role='catalog').l_ib__e
+				ul.catalogList__categoryList
+						li.catalogList__categoryItem#js_showSub__1     
+							+I('bathm','asset')      
+							span Ванны
+							+I('to-right','catalog') 
+						li.catalogList__categoryItem#js_showSub__2
+							+I('mebelm','asset')   
+							span Мебель для ванной
+							+I('to-right','catalog')  
+						li.catalogList__categoryItem#js_showSub__3   
+							+I('smes','asset')           
+							span Смесители
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__4
+							+I('dkm','asset')  
+							span Душ Кабины и уголки
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__5
+							+I('ogpo','asset')          
+							span Ограждения, поддоны
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__6
+							+I('showerm','asset')            
+							span Все для душа 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__7 
+							+I('toiletm','asset')           
+							span Унитазы и Биде 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__8  
+							+I('susm2','asset')           
+							span Полотенцесушители 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__9  
+							+I('accm','asset')              
+							span Аксессуары 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__3   
+							+I('smes','asset')           
+							span Смесители
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__4
+							+I('dkm','asset')  
+							span Душ Кабины и уголки
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__5
+							+I('ogpo','asset')          
+							span Ограждения, поддоны
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__6
+			ul.catalogList__categorySublist.l_ib__e
+				li.catalogList__SublistItem#js_sub__1 1
+				li.catalogList__SublistItem#js_sub__2 2
+				li.catalogList__SublistItem#js_sub__3 3
+				li.catalogList__SublistItem#js_sub__4 4
+				li.catalogList__SublistItem#js_sub__5 5
+				li.catalogList__SublistItem#js_sub__6 6
+				li.catalogList__SublistItem#js_sub__7 7
+				li.catalogList__SublistItem#js_sub__8 8
+				li.catalogList__SublistItem#js_sub__9 9
 mixin confirmedOrderPage()
 	<!-- split modules/confirmedOrderPage -->
 	.confirmedOrderPage__content(data-qcontent='module__confirmedOrderPage')
@@ -122,6 +210,14 @@ mixin MODULE-geoTarget()
 		.geoTarget__points
 			span.geoTarget__pointsCount 3 
 			a(href='fdgg').geoTarget__pointsDesc Пункта выдачи
+mixin MODULE-IBGrid()
+	<!-- split modules/IBGrid -->
+	.IBGrid__content(data-qcontent='module__IBGrid')
+		.group.group--el.group--v-el
+			+loop(12) 
+				.col.col-6-tp.hideFrom-tl   
+					.testgrid 1      
+
 mixin MODULE-layout()
 	<!-- split modules/layout -->
 	.layout__content(data-qcontent='module__layout')
@@ -129,19 +225,25 @@ mixin MODULE-layout()
 mixin MODULE-mainInfo()
 	<!-- split modules/mainInfo -->
 	.mainInfo__content(data-qcontent='module__mainInfo')
-		.l_ib__c
-			.l_ib__e.mainInfo__block.mainInfo__logo 
-				+logo-img('logo.svg')
-				|Онлайн Сантехмаркет
-			.l_ib__e.mainInfo__block.mainInfo__geotarget
-				+MODULE-geoTarget() 
-			.l_ib__e.mainInfo__block.mainInfo__cart_search--mobile 
-				span Корзина 
-				span Поиск
-			.l_ib__e.mainInfo__block.mainInfo__logo--mobile 
-				h1.logo SantehSmart
-			.l_ib__e.mainInfo__block.f-right  
-				span.mainInfo__phone.js_modal_trigger(id = 'js_modal_trigger__login') 8 800 500 13 84
+		.group.group--md
+			.col.col-4-tl  
+				.mainInfo__logo
+					h1 Santehsmart
+				//	+logo-img('logo1.svg') 
+			.col.col-3-tl.showFrom-tl
+				.mainInfo__block.mainInfo__geotarget
+					+MODULE-geoTarget() 
+			.col.col-8-tl.hideFrom-tl
+				.mainInfo__cart_search--mobile 
+					span Корзина 
+					span Поиск
+			.col.col-8-tl.hideFrom-m 
+				.mainInfo__logo--mobile 
+					h1.logo SantehSmart
+			.col.col-4-tl
+			.col.col-5-tl.showFrom-tl
+					span.mainInfo__phone.js_modal_trigger(id = 'js_modal_trigger__login') 
+						|8 800 500 13 84 
 mixin MODULE-mainSearch()
 	<!-- split modules/mainSearch -->
 	.mainSearch__content(data-qcontent='module__mainSearch')
@@ -174,12 +276,12 @@ mixin owlSlider()
 	<!-- split modules/owlSlider -->
 	.owlSlider
 		.ove-mainSlider.owl-carousel
-			+holder('carousel','300x500')
-			+holder('carousel','300x500')
-			+holder('carousel','300x500')
+			+holder('carousel','100px300')  
+			+holder('carousel','100px300')  
+			+holder('carousel','100px300')  
 mixin MODULE-productCol(data)
 	<!-- split modules/productCol -->
-	li.productCol__content.col-3-d(data-qcontent='module__productCol') 
+	li.productCol__content.col-4-tl(data-qcontent='module__productCol')  
 		.productCol__card 
 			span.productSection__subTitle='Артикул: '
 			span.productCol__sku=data.sku
@@ -240,13 +342,17 @@ mixin MODULE-support()
 mixin MODULE-topBar()
 	<!-- split modules/topBar -->
 	.topBar__content(data-qcontent='module__topBar')
-		.topBar.l_ib__c 
-			.l_ib__ev.topBar__catalog
-				+MODULE-catalog() 
-			.l_ib__ev.topBar__search
-				+MODULE-mainSearch()
-			.l_ib__ev.topBar__cart
-				+MODULE-cart()
+		.group.group--md.group--v-md.group--va-middle    
+			.topBar
+				.col.col-4-tl.col-16-m
+					.topBar__catalog
+						+MODULE-catalog() 
+				.col.col-8-tl
+					.topBar__search
+						+MODULE-mainSearch()   
+				.col.col-4-tl.showFrom-tl
+					.topBar__cart 
+						+MODULE-cart() 
 			 
 				
 mixin MODULE-topMenu()
@@ -288,18 +394,27 @@ mixin LEVEL-level(title,className)
 	.level__content(class = 'level__content'+ className data-qcontent="level__level")
 		h2.level__title=title
 		block level
-mixin LEVEL-level1(data)
-	.level1
-		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
-			h2.level1__title=title
-			if block
-				block
 mixin LEVEL-level2(title,data)
 	.level2
 		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
 			h2.level2__title=data.title.ZOPA
 			if block
 				block
+mixin LEVEL-level1(data)
+	.level1
+		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
+			h2.level1__title=title
+			if block
+				block
+mixin LEVEL-modalWindow(id, title)
+	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id)
+		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
+			a.modalWindow__close
+				+I('close','close')
+			h3.modalWindow__title=title
+			.modalWindow__body
+				if block
+					block       
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = " <a href='/'>N 1231238</a>"
@@ -333,20 +448,11 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
-mixin LEVEL-modalWindow(id, title)
-	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id)
-		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
-			a.modalWindow__close
-				+I('close','close')
-			h3.modalWindow__title=title
-			.modalWindow__body
-				if block
-					block       
 mixin LEVEL-outer(data)
 	.outer
 		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
-			if block
-				block    
+			if block    
+				block        
 mixin LEVEL-page(title,className)
 	-if (!className) className =''
 	.page__content(class = 'page__content'+ className data-qcontent="level__page")
@@ -361,36 +467,6 @@ mixin LEVEL-popup(data)
 			.popup__body
 				if block
 					block
-mixin LEVEL-showCasePage(data)
-	-if (!className) className =''
-	.container
-		section.showCasePage__content(class = 'showCasePage__content '+ data.class data-qcontent="level__showCasePage" data-self=""+data.self)
-			h1.showCasePage__title=data.title
-			h4.showCasePage__subtitle.text Icons:  
-			+I('box')
-			+I('search')
-			+I('eshop')
-			+I('cart','cart_Main')
-			+I('cart','cart_btn')
-			+I('truck')
-			+I('arrow')  
-			+I('marker')
-			+I('clock')
-			+I('sale')
-			+I('star')
-			+I('toilet')
-			+I('bath')
-			h4.showCasePage__subtitle.text Headings 
-			h1.showCasePage__subtitle.showCasePage__subtitle--red=data.idName
-			h2 Header
-			h3 Headera
-			h4 Header
-			h5 Header
-			h6 Header
-			h4.showCasePage__subtitle.text Paragraph:
-			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
-			if block
-				block
 //
 mixin LEVEL-productSection(title,className)
 	.productSection__content(data-qcontent="level__productSection")
@@ -398,7 +474,7 @@ mixin LEVEL-productSection(title,className)
 			.productSection__pager.f-left 
 				span.productSection__subTitle Страницы:
 				+breadcrumbs()
-			.productSection__filter.f-left 
+			.productSection__filter.f-left   
 				span.productSection__subTitle Cортировать по:
 				a.productSection__sortBy.productSection__sortBy--selected Цене
 				| |
@@ -418,6 +494,36 @@ mixin LEVEL-showcase(title,className)
 		.container
 			p.showcase__subtytle.text Hello its Showcase Content
 			+holder('page__loader','100px300',colors.primary)
+			if block
+				block
+mixin LEVEL-showCasePage(data)
+	-if (!className) className =''
+	.container
+		section.showCasePage__content(class = 'showCasePage__content '+ data.class data-qcontent="level__showCasePage" data-self=""+data.self)
+			h1.showCasePage__title=data.title
+			h4.showCasePage__subtitle.text Icons:  
+			+I('box')
+			+I('search')
+			+I('eshop')
+			+I('cart','cart_Main')
+			+I('cart','cart_btn')
+			+I('truck')
+			+I('arrow')  
+			+I('marker')
+			+I('clock')
+			+I('sale') 
+			+I('star')
+			+I('toilet')
+			+I('bath')
+			h4.showCasePage__subtitle.text Headings 
+			h1.showCasePage__subtitle.showCasePage__subtitle--red=data.idName
+			h2 Header
+			h3 Headera
+			h4 Header
+			h5 Header
+			h6 Header
+			h4.showCasePage__subtitle.text Paragraph:
+			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
 			if block
 				block
 mixin LEVEL-starter(title,className)

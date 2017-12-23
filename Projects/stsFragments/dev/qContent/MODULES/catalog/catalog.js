@@ -3,6 +3,7 @@
 */
 
 (function(){
+
     var catHeader = document.getElementsByClassName('catalog__by'),
     catChoiser = document.querySelector('#js-CatChoiser'),
     brandChoiser = document.querySelector('#js-BrandChoiser'),

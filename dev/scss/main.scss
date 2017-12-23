@@ -41,23 +41,22 @@
 /**
  * GRID
  */
- @if($response){
-  @include drawGrid($grid-map, $options);
-}@else {
-  @include nr-drawGrid($nr-options);
- }
+  @if($gridType == 'inline-block'){
+    @include drawIBGrid($grid-map,$options);
+  }@else{
+    @if($response){
+      @include drawGrid($grid-map, $options);
+    }@else {
+      @include nr-drawGrid($nr-options);
+    }
+  }
+
 
 
 /**
 * LAYOUT HELPERS
 */
 @include helpers();
-
-/////////////////////////////////////////////////////
-/**
-* CONSTRUCTION STYLES
-*/
-@import "CONSTRUCTION/construction";
 
 /**
 * MIXES  STYLES
@@ -73,6 +72,7 @@
 
 //NO PRODUCTION
 @import "debug";
+@import "PROJECTBOARD/projectboard";
 @if($production == false){
   @include projectBoard();
   @include toJSMap();

@@ -82,14 +82,13 @@
           margin-top: -$line_height_ratio#{em};
       }
       &--categories{
-          width: 1.2em;
+          width: .6em;
           height:100%;
           fill:#fff;
           display:inline;
           margin-right:0.7em;
-          @include for-size(desktop-up){
-              display: none;
-          }
+          display:none;
+         
           
       }
       

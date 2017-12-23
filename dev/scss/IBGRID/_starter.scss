@@ -1,0 +1,96 @@
+@mixin drawIBGrid($grid-map, $options){
+  $prefixes:();
+  @each $label,$map in $grid-map {
+    $prefixes :append($prefixes,map_get($map,prefix));
+  }
+
+  $gutterWidth: map-get($options, gutterWidth);
+  $colums: map-get($options, colums);
+
+
+
+  @each $label,$map in $grid-map{
+    $prop:min-width;
+    @if($label == mobile){$prop:max-width;}
+    @media screen and ($prop : map_get($map,breakpoint)) {
+      @include iBgridBuilder(map_get($map,prefix),$colums);
+      @include hideIb(map_get($map,prefix),$prefixes);
+      @include visibleIb(map_get($map,prefix),$prefixes);
+      .container {
+        width: map_get($map,container);
+        margin: 0 auto;
+      }
+    }
+  }
+  .group{
+    letter-spacing: -.65em;
+    text-align: left;
+    display: block;
+    &--m-el{
+      .col{
+        margin-bottom: $line-height-ratio/4#{em}
+      }
+    }
+    &--el{
+      margin-right:-.2em;
+      margin-left:-.2em;
+      .col{
+        padding-left:.2em;
+        padding-right: .2em;
+      }
+    }
+    &--m-cm{
+      .col{
+        margin-bottom: $line-height-ratio/2#{em}
+      }
+    }
+    &--cm{
+      margin-right:-.4em;
+      margin-left:-.4em;
+      .col{
+        padding-left:.4em;
+        padding-right:.4em;
+      }
+    }
+    &--m-md{
+      .col{
+        margin-bottom: $line-height-ratio#{em}
+      }
+    }
+    &--md{
+      margin-right:-.8em;
+      margin-left:-.8em;
+      .col{
+        padding-left:.8em;
+        padding-right:.8em;
+      }
+    }
+    &--m-bl{
+      .col{
+        margin-bottom: 1.5*$line-height-ratio#{em}
+      }
+    }
+    &--bl{
+      margin-right:-1.6em;
+      margin-left:-1.6em;
+      .col{
+        padding-left:1.6em;
+        padding-right:1.6em;
+      }
+    }
+    &--va-middle{
+      .col{
+        vertical-align: middle;
+      }
+    }
+  }
+  .col {
+    letter-spacing: normal;
+    display: inline-block;
+    position: relative;
+    float: none;
+    text-align: left;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+}

@@ -8,10 +8,11 @@
         font-size:0;
         .icon--to-right{ 
              height: 100%;
-             width: 1em;
+             width:.8em;
              //height:59px;
              fill:#fff;
              float:right;
+             margin-right: vr-block(.4);
              vertical-align:top;
              //margin-left:.2em;
              transition: transform .2s ease;
@@ -19,21 +20,31 @@
     }
     &__by{
         font-size: 1rem;
-        display:inline-block;
+        font-weight: bold;
+        display:inline-block; 
         vertical-align:middle;
         color:#fff;
         height: 60px;
         text-transform: uppercase;
         text-align: center;
-        padding:0 .8em;
+        //padding:0 .8em;
         line-height: 60px;  
         cursor: pointer;
-        width:50%; 
+        width:50%;  
         &--hovered{ 
             background:cs('primary-l');
             .icon--to-right{
             transform: rotate(90deg);  
             }
+        }
+        &--category{
+                    &--onMain{ 
+                        background:cs('primary-l') !important;
+                        .icon--to-right{
+                        transform: rotate(90deg) !important;   
+            }
+        }
+
         }
         &:hover{ 
             background:cs('primary-l');
@@ -41,7 +52,7 @@
             transform: rotate(90deg);
             }
         }
-        &--category{
+        &--category{    
             
         }
         &:hover .icon-to-right{  

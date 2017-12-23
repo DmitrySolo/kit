@@ -122,16 +122,19 @@
 		"owlSlider": {
 			"js": {
 				"lib": {
-					"src": "bower_components/owl.carousel/dist/owl.carousel.min.js",
-					"container": "footer/libsExts"
+					"src": "node_modules/owl.carousel/dist/owl.carousel.min.js",
+					"container": "footer/libs+"
 				},
 				"init": {
-					"src": "dev/MODULES/PROJECT MODULES/--owlSlider/owlSlider.js",
+					"src": "Projects/stsFragments/dev/qContent/MODULES/owlSlider/owlSlider.js",
 					"container": "footer/init/init"
 				}
 			},
 			"css": {
-				"": ""
+				"owl": {
+					"src": "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
+					"container": "head/libs"
+				}
 			}
 		},
 		"productInline": {
@@ -164,21 +167,6 @@
 				"": ""
 			}
 		},
-		"b1": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"dashBoardElement": {
 			"js": {
 				"lib1": {
@@ -187,6 +175,21 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"b1": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -239,7 +242,7 @@
 	"production": "false",
 	"icon-font": "false",
 	"body-color": "cs('font-d2')",
-	"header-color": "cs('secondary')",
+	"header-color": "cs('primary-d')",
 	"background-color": "cs('background')",
 	"LINKED_FONTS_MAP": {
 		"//  'MAIN'": "('Oswald')",
@@ -250,11 +253,8 @@
 	"component_space": "2",
 	"element_space": "2",
 	"section_space": "4",
-	"container-styles": "(\r\n\r\n)",
-	"colStyles": {
-		"float": "left",
-		"min-height": "1px\r\n)"
-	},
+	"container-styles": "(\n\n)",
+	"colStyles": "()",
 	"nr-colStyles": {
 		"float": "left"
 	},
@@ -316,6 +316,9 @@
 		"b_o": ".7"
 	},
 	"type": "create",
+	"colums": "16",
+	"gutter-width": ".5em",
+	"gridType": "'inline-block'",
 	"OPTIONS": {
 		"useSVGSprite": "true",
 		"DEBUG MODE": "on",
@@ -464,14 +467,17 @@
 	"geoTarget": {
 		"geoTarget": "1"
 	},
+	"IBGrid": {
+		"IBGrid": "1"
+	},
 	"layout": {
 		"layout": "1"
 	},
-	"mainInfo": {
-		"mainInfo": "1"
-	},
 	"mainSearch": {
 		"mainSearch": "1"
+	},
+	"mainInfo": {
+		"mainInfo": "1"
 	},
 	"module": {
 		"module": "1"

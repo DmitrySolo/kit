@@ -1,12 +1,16 @@
 mixin MODULE-topBar()
 	<!-- split modules/topBar -->
 	.topBar__content(data-qcontent='module__topBar')
-		.topBar.l_ib__c 
-			.l_ib__ev.topBar__catalog
-				+MODULE-catalog() 
-			.l_ib__ev.topBar__search
-				+MODULE-mainSearch()
-			.l_ib__ev.topBar__cart
-				+MODULE-cart()
+		.group.group--md.group--v-md.group--va-middle    
+			.topBar
+				.col.col-4-tl.col-16-m
+					.topBar__catalog
+						+MODULE-catalog() 
+				.col.col-8-tl
+					.topBar__search
+						+MODULE-mainSearch()   
+				.col.col-4-tl.showFrom-tl
+					.topBar__cart 
+						+MODULE-cart() 
 			 
 				

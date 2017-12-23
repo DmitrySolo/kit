@@ -198,7 +198,7 @@ gulp.task('SCRIPTS', function () {
 
 gulp.task('views-current', function buildHTML() {
 	var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
-	var viewProcess = gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/'+loadForPug])
+	var viewProcesscur = gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/'+loadForPug])
 		.pipe(pug({
 			data: data,
 			pretty: true,
@@ -206,9 +206,10 @@ gulp.task('views-current', function buildHTML() {
 		})).on('error', notify.onError(function (error) {
 		return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
 	})).pipe(gulp.dest(dist));
-	 viewProcess.on('finish',function () {
-		Qupdate ='1';
-	 })
+	viewProcesscur.on('finish', function () {
+		Qupdate= '1';
+    })
+
 
 });
 gulp.task('views', function buildHTML() {
@@ -620,7 +621,7 @@ gulp.task('concat-mixes-pug', function () {
 gulp.task('concat-mixes-scss', function () {
 
 
-	gulp.src('dev/MIXES/**/*.scss')
+	gulp.src(['dev/MIXES/**/*.scss','!dev/MIXES/_mixes.scss'])
 		.pipe(concat('_mixes.scss'))
 		.pipe(gulp.dest('dev/MIXES/'));
 });
@@ -1384,7 +1385,7 @@ gulp.task('buildfonts2', function () {
 //SASS VARIABLES TO JSON
 gulp.task('sass-json', function () {
 	return gulp
-		.src(['dev/scss/MASTER_OPTIONS/_options.scss','dev/scss/MASTER_OPTIONS/_colors.scss'])
+		.src(['dev/scss/MASTER_OPTIONS/_options.scss','dev/scss/MASTER_OPTIONS/_colors.scss','dev/scss/MASTER_OPTIONS/_gridOptions.scss'])
 		.pipe(sassJson())
 		.pipe(gulp.dest('Projects/'+projectName+'/settings/'));
 });
