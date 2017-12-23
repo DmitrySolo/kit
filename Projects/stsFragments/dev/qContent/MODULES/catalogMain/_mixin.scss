@@ -1,0 +1,20 @@
+/**
+* catalogMain styles
+*/
+
+@mixin catalogMain(){
+
+  .catalogMain {  
+    &__content {
+        .catalogList__categoryItem{
+            width:100%;
+            background: cs('foreground');
+        }
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include catalogMain();

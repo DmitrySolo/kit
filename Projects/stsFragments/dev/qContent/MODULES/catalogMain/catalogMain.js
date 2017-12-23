@@ -1,0 +1,3 @@
+/**
+* MODULE: catalogMain script
+*/
