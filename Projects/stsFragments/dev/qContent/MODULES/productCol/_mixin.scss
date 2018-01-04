@@ -9,6 +9,7 @@
         background:cs('foreground-d')
     }
     &__content {
+        font-size: 1rem;
          .productInline__quantityLabel {
             width: 40%;
             text-align: center;
@@ -38,29 +39,32 @@
         display: inline-block;
         margin-bottom:5px;
     }
-    &__img{   
+    &__img{  
         width:100%;  
         height: 180px;
        // background-color: #ededed;
-        background-image:url("https://www.santehsmart.ru/upload/iblock/2ee/2ee1ca5fa8df10ec7e75f80c1e7edc22.jpg");
+        background-image:url("https://www.santehsmart.ru/upload/iblock/f10/f10f3f7ea3703fc6cac09eca3b96bf6f.jpg");
         background-position: center;
-        background-size: contain;
+        background-size: contain; 
         background-repeat: no-repeat;
         //border-bottom: 1px solid cs('foreground-d');
         margin-bottom: 5px;
+
     }
     &__name {
+        font-size: .9em;
         height: 3*$line_height_ratio#{em};
         font-weight:normal;
-        color:cs('font');
+        color:cs('font-d2');
         overflow:hidden;
         margin-bottom: .5em;
     }
     &__priceStock{
+         font-size: .9em;
         margin-bottom:.8em;
     }
     &__stock{
-        color: cs('succes-d');
+        color: cs('succes-d');  
         width:50%;
         text-align: center;
         height: 1.8*$line_height_ratio#{em};
@@ -71,7 +75,7 @@
         }
         &--last{
             font-size: .8em;
-            color: cs('accent-l');
+            color: cs('accent-d');
         }
     }
     &__price{
@@ -87,16 +91,20 @@
             text-align: left;
             line-height: 1.5;
             &-moc{
-                color: cs('font');
+                color: cs('font');  
             }
         }
         
           
     }
-    
+      
     
   }
-  
+  label.productInline__quantityLabel{
+      @include for-size(tablet-l-up){
+          display:none;
+      }
+  }
 
 }
 

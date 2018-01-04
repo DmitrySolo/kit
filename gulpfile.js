@@ -1656,7 +1656,8 @@ gulp.task('API-SERVER', function () {
 								var pug = fs.readFileSync(path1 + '/_mixin.pug', 'utf8');
 								var scss = fs.readFileSync(path1 + '/_mixin.scss', 'utf8');
 								var js = fs.readFileSync(path1 + '/' + name + '.js', 'utf8');
-
+                               if(path1.indexOf('ELEMENTS') == -1)
+                                    var data = fs.readFileSync(path1 + '/data.json', 'utf8');
 
 
 							}else if (path1.indexOf('LEVELS') > -1){
@@ -1666,6 +1667,7 @@ gulp.task('API-SERVER', function () {
 								var pug = fs.readFileSync(path1+'/_mixin.pug', 'utf8');
 								var scss = fs.readFileSync(path1+'/_mixin.scss', 'utf8');
 								var js = fs.readFileSync(path1+'/level.js', 'utf8');
+                                var data = fs.readFileSync(path1 + '/data.json', 'utf8');
 
 							}else if (path1.indexOf('MASTER_OPTIONS') > -1){
 
@@ -1715,7 +1717,8 @@ gulp.task('API-SERVER', function () {
 
 								pug: pug,
 								scss: scss,
-								js: js
+								js: js,
+                                data: data
 
 							};
 

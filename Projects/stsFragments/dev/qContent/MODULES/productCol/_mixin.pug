@@ -1,27 +1,25 @@
 mixin MODULE-productCol(data)
 	<!-- split modules/productCol -->
-	li.productCol__content.col-4-tl(data-qcontent='module__productCol')  
-		.productCol__card 
-			span.productSection__subTitle='Артикул: '
-			span.productCol__sku=data.sku
-			a.productCol__link(href="#")
-				.productCol__img
-				h6.productCol__name=data.title
-			.clearfix.productCol__priceStock
-				-if(data.opt)
-						span.productCol__price.productCol__price--opt.productCol__price--opt Мрц: 1#{data.price} руб.#[br]
-							span.productCol__price--opt.productCol__price--opt-moc Моц: #{data.price} руб.
-				-else
-					span.productCol__price.f-left=data.price+' руб.'
-				-if(data.opt)
-					span.productCol__stock.f-right Доступно:#[br]#{data.stock} из 223
-				-else 
-					span.productCol__stock.f-right В наличии:#[br] 
-						span.productCol__stock--last Скоро закончится
-			label.productInline__quantityLabel
-				input.productInline__quantitySelector(type=text value='1'  size='2' )
-				.productInline__quantityButton.productInline__quantityButton--minus
-				.productInline__quantityButton.productInline__quantityButton--plus
-			+B-toOrder('В корзину','colList')
-			
-				
+		li.productCol__content(data-qcontent='module__productCol')  
+			.productCol__card 
+				span.productSection__subTitle='Артикул: '
+				span.productCol__sku=data.sku
+				a.productCol__link(href="#")
+					.productCol__img
+					h6.productCol__name=data.title
+				.clearfix.productCol__priceStock
+					-if(data.opt)
+							span.productCol__price.productCol__price--opt.productCol__price--opt Мрц: 1#{data.price} руб.#[br]
+								span.productCol__price--opt.productCol__price--opt-moc Моц: #{data.price} руб.
+					-else
+						span.productCol__price.f-left=data.price+' руб.'
+					-if(data.opt)
+						span.productCol__stock.f-right Доступно:#[br]#{data.stock} из 223
+					-else 
+						span.productCol__stock.f-right В наличии:#[br] 
+							span.productCol__stock--last Скоро закончится
+				label.productInline__quantityLabel.showFrom-d   
+					input.productInline__quantitySelector(type=text value='1'  size='2' )
+					.productInline__quantityButton.productInline__quantityButton--minus
+					.productInline__quantityButton.productInline__quantityButton--plus
+				+B-toOrder('В корзину','colList')

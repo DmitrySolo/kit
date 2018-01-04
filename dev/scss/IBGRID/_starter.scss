@@ -34,7 +34,7 @@
     &--el{
       margin-right:-.2em;
       margin-left:-.2em;
-      .col{
+     &> .col{
         padding-left:.2em;
         padding-right: .2em;
       }
@@ -53,14 +53,14 @@
       }
     }
     &--m-md{
-      .col{
+     &> .col{
         margin-bottom: $line-height-ratio#{em}
       }
     }
     &--md{
       margin-right:-.8em;
       margin-left:-.8em;
-      .col{
+      &> .col{
         padding-left:.8em;
         padding-right:.8em;
       }

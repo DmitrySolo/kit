@@ -3,5 +3,5 @@ mixin breadcrumbs()
 		nav.breadCrumb.visible-l
 			a(href='/').breadcrumb__section.breadCrumb__section--current 1
 			-var page1 = 1
-			+loop(9)
-				a(href='/').not.breadcrumb__section #{page1 +=1} 
+			+loop(7)
+				a(href='/').not.breadcrumb__section #{page1 +=1}

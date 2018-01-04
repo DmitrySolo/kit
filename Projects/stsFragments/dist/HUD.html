@@ -27,9 +27,9 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </script>
         <div class="top-panel-content clearfix">
           <div class="quant hud">Q</div>
-          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">example.html</span>
+          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">main.html</span>
           </div>
-          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/example.html" target="_blank" id="playhref">
+          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/main.html" target="_blank" id="playhref">
               <div class="hud-Button f-left">
                         <svg class="icon playButston">
                           <use xlink:href="#play"></use>
@@ -269,7 +269,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </div>
         <div class="window" window="Viewport" style="z-index:5;">
           <div class="wrapperid" id="viewpr-content">
-            <iframe class="default-skin" id="index" src="example.html" width="100%" align="center" name="viewport"></iframe>
+            <iframe class="default-skin" id="index" src="main.html" width="100%" align="center" name="viewport"></iframe>
             <section class="pb-section clearfix hidden" id="ball"><span class="lh">Line height</span>
               <div class="spacer element-i"><span>Element i</span></div>
               <div class="spacer element-o"><span>Element o</span></div>
@@ -282,15 +282,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
             </section>
             <section class="pb-section clearfix grid grid--debug hidden" id="grid">
               <div class="container">
-                <div class="group group--md">
-                          <div class="col-1-m col-1-tp"></div>
-                          <div class="col-1-m col-1-tp"></div>
-                          <div class="col-1-m col-1-tp"></div>
-                          <div class="col-1-m col-1-tp"></div>
-                          <div class="col-1-m col-1-tp"></div>
-                          <div class="col-1-m col-1-tp"></div>
-                          <div class="col-1-m col-1-tp"></div>
-                          <div class="col-1-m col-1-tp"></div>
+                <div class="group group--md debug">
                           <div class="col-1-m col-1-tp"></div>
                           <div class="col-1-m col-1-tp"></div>
                           <div class="col-1-m col-1-tp"></div>
@@ -27995,12 +27987,15 @@ z
 				editorPug.selectAll();
 				editorJs.selectAll();
 				editor.selectAll();
+                editorData.selectAll();
 				if (res.pug) editorPug.insert(res.pug);
 				else editorPug.insert('');
 				if (res.js) editorJs.insert(res.js);
 				else editorJs.insert('');
 				if (res.scss) editor.insert(res.scss);
-				else editor.insert('');
+                else editor.insert('');
+                if (res.data) editorData.insert(res.data);
+                else editorData.insert('');
 				$(".hud-bottom").css('display', 'block');
 
 
@@ -28656,6 +28651,14 @@ var quantCon = [
 	"	MODULE-layout()",
 	"snippet +M-IBGrid",
 	"	MODULE-IBGrid()",
+	"snippet +M-catalogMain",
+	"	MODULE-catalogMain()",
+	"snippet +M-featuresList",
+	"	MODULE-featuresList()",
+	"snippet +M-topFeatures",
+	"	MODULE-topFeatures()",
+	"snippet +M-accordion",
+	"	MODULE-accordion()",
 ].join(eol);
       </script>
       <script src="maps/main.css.map" type="text"></script>

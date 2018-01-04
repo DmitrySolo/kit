@@ -1,4 +1,47 @@
 /**
+ * MODULE: accordion script
+ */
+(function(){
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+            // console.log()
+            /* Toggle between hiding and showing the active panel */
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block" || !this.classList.contains('active')) {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+
+    //checkboxCount
+    var filterCheckArr = $('.productFilter__checkbox');
+    filterCheckArr.each(function(){
+        $(this).on('change',function(){
+        var sib = $(this).closest('.accordion__checkBox');
+        var count =$('input[type=checkbox]',sib).filter(':checked').length;
+        var display = (count == 0)? 'none':'inline-block';
+       
+        var target = sib.parent('.accordion__panel').prev('.accordion').addClass('accordion--choice').children('.accordion__checkMarker').css('display',display).html(count);
+         if(count == 0) sib.parent('.accordion__panel').prev('.accordion').removeClass('accordion--choice');
+           
+    
+        });
+
+    });
+
+
+
+}());
+
+/**
 * MODULE: catalog script
 */
 
@@ -176,7 +219,7 @@ $('.toOrder.active').on('mousedown',function () {
 */
 
 //owlSlider Script
-$(document).ready(function(){
+
     $(".ove-mainSlider").owlCarousel(
         {
             "items":1, 
@@ -185,7 +228,7 @@ $(document).ready(function(){
             "dots":true
         }
     );
-});
+
 /**
 * MODULE: productInline script
 *
@@ -220,6 +263,10 @@ window.onscroll = function(e){
 
     
 } 
+// Element: b1 script.
+
+// Element: slider script.
+;$("#sl_id_1,#sl_id_2").ionRangeSlider();
 // Element: dashBoardElement script.
 
  $(document).ready(      
@@ -236,11 +283,9 @@ window.onscroll = function(e){
      }
      )
 
-// Element: b1 script.
-
 // modalWindows
 
-(function(){  
+;(function(){  
 
     var modalTriggers = document.querySelectorAll('.js_modal_trigger'),
         closers = document.querySelectorAll('.modalWindow__close'),

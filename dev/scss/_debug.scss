@@ -2039,7 +2039,7 @@
   .testRotate{
     transform: rotate(180deg);
   }
-  .testingErr{
+  .testingErr_{
     &:after{
       background: red;
       display: inline-block;

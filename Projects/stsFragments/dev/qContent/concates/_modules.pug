@@ -1,11 +1,29 @@
+mixin MODULE-accordion(data)
+	<!-- split modules/accordion -->
+	.accordion__content(data-qcontent='module__accordion')
+		-for(var i in data)
+			-var active = ''
+			-if(data[i].active)
+				-active = 'active'
+			button.accordion.icon-down.notEdit(class=' '+active)=data[i].title
+				span.accordion__checkMarker
+			.accordion__panel
+				-if(data[i].content['type'] == 'checkBox')
+					.accordion__checkBox
+						-var cnt = data[i].content['in'].trim().split(' ')
+						-for(var z in cnt )
+							+B-checkBox(cnt[z])
+				-if(data[i].content['type'] == 'slider')
+					.accordion__slider
+						+B-slider(data[i].content['id'])
+
 mixin breadcrumbs()
 	.breadCrumb__content(data-qcontent='module__breadcrumbs')
 		nav.breadCrumb.visible-l
 			a(href='/').breadcrumb__section.breadCrumb__section--current 1
 			-var page1 = 1
-			+loop(9)
-				a(href='/').not.breadcrumb__section #{page1 +=1} 
-
+			+loop(7)
+				a(href='/').not.breadcrumb__section #{page1 +=1}
 mixin MODULE-cart()
 	<!-- split modules/cart -->
 	button.cart__content(data-qcontent='module__cart')
@@ -108,8 +126,6 @@ mixin MODULE-catalogList(param)
 									ul.catalogList__barandList
 										li.catalogList__barandItem
 											a(href='asdsad') Alpen
-	
-					
 				
 mixin MODULE-catalogMain()
 	<!-- split modules/catalogMain -->
@@ -181,6 +197,31 @@ mixin confirmedOrderPage()
 	.confirmedOrderPage__content(data-qcontent='module__confirmedOrderPage')
 		.confirmedOrderPage 
 			span hello Dude!!!
+mixin MODULE-featuresList()
+	<!-- split modules/featuresList -->
+	.featuresList__content(data-qcontent='module__featuresList')
+		ul.featuresList
+			li.featuresList__item.l_ib__e
+				.featuresList__mark-ctn
+					span.featuresList__mark 1
+				+I('eshop','feature')
+				span.featuresList__desc.l_ib__e Выбираете продукцию на сайте
+				+I('right-chevron','feature__arrow')
+			li.featuresList__item.l_ib__e
+				.featuresList__mark-ctn
+					span.featuresList__mark 2
+				+I('truck','feature')
+				span.featuresList__desc.l_ib__e Выбираете продукцию на сайте
+				+I('right-chevron','feature__arrow')
+			li.featuresList__item.l_ib__e
+				.featuresList__mark-ctn
+					span.featuresList__mark 3
+				+I('box','feature')
+				span.featuresList__desc.l_ib__e Выбираете продукцию на сайте
+				
+				
+				
+		
 mixin MODULE-flyPageFragment(data)
 	<!-- split modules/flyPageFragment -->
 	.flyPageFragment__content(data-qcontent='module__flyPageFragment')
@@ -220,12 +261,12 @@ mixin MODULE-IBGrid()
 
 mixin MODULE-layout()
 	<!-- split modules/layout -->
-	.layout__content(data-qcontent='module__layout')
+	.layout__content(data-qcontent='module__layout')  
 		.layout
 mixin MODULE-mainInfo()
 	<!-- split modules/mainInfo -->
 	.mainInfo__content(data-qcontent='module__mainInfo')
-		.group.group--md
+		.group.group--md.group--va-middle
 			.col.col-4-tl  
 				.mainInfo__logo
 					h1 Santehsmart
@@ -240,10 +281,15 @@ mixin MODULE-mainInfo()
 			.col.col-8-tl.hideFrom-m 
 				.mainInfo__logo--mobile 
 					h1.logo SantehSmart
-			.col.col-4-tl
-			.col.col-5-tl.showFrom-tl
-					span.mainInfo__phone.js_modal_trigger(id = 'js_modal_trigger__login') 
-						|8 800 500 13 84 
+			.col.col-6-tl
+				+MODULE-topFeatures()
+			.col.col-3-tl.showFrom-tl
+					span.mainInfo__phone
+						span.mainInfo__phone-number
+							|8 800 500 13 84
+						span.mainInfo__phone-time.icon-clock1
+							| Ежедневно  с 9 до 19ч
+							//| ПН-ПТ 9 - 19ч
 mixin MODULE-mainSearch()
 	<!-- split modules/mainSearch -->
 	.mainSearch__content(data-qcontent='module__mainSearch')
@@ -251,8 +297,8 @@ mixin MODULE-mainSearch()
 			input.mainSearch__input(type='text',placeholder="Поиск среди 20 000 товаров")
 			span.mainSearch__icon
 				+I('search','mainSearch') 
-			input.mainSearch__submit(type='submit' value="Искать") 
-   
+				input.mainSearch__submit(type='submit' value="Искать")
+
 mixin MODULE-module()
 	<!-- split modules/module -->
 	.module__content(data-qcontent='module__module')
@@ -271,41 +317,38 @@ mixin MODULE-noticeList()
 						b 29.11.2017 11:18:56 
 					h5.noticeList__elementHeader Тестовое уведомление
 					p.noticeList__noticeContent.text Следует отметить, что повышение уровня гражданского сознания обеспечивает широкому кругу (специалистов) участие в формировании форм воздействия. Таким образом, дальнейшее развитие различных форм деятельности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для поэтапного и последовательного развития общества. Независимые государства, превозмогая сложившуюся непростую экономическую ситуацию, объявлены нарушающими общечеловеческие нормы этики и морали.
-							 
 mixin owlSlider()
 	<!-- split modules/owlSlider -->
-	.owlSlider
+	.owlSlider(data-qcontent='module__owlSlider')
 		.ove-mainSlider.owl-carousel
-			+holder('carousel','100px300')  
-			+holder('carousel','100px300')  
-			+holder('carousel','100px300')  
+			img(src='https://c.dns-shop.ru/original/st4/22163a4b24330492b9600e2cbc425e9f/6e2e2fad9eb49310bcdc204532ea30a3efb48a426896b3f26455636cc1e8e918.jpg')  
+			img(src='https://c.dns-shop.ru/original/st4/8a1ec680aaa82691fd08a30930c5e100/7f6b5d80c2d0e14cdd42e2e4ebe39949cb113f3d5a7edbaf682bcfc4576eddcf.jpg')    
+			img(src='https://c.dns-shop.ru/original/st4/b0409b63bd07c058211ec0ca2e217442/24b3088fe64f65c3755f2ce79afe7a6e3ea9278e25830ba58af2a1c4218732fa.jpg')    
 mixin MODULE-productCol(data)
 	<!-- split modules/productCol -->
-	li.productCol__content.col-4-tl(data-qcontent='module__productCol')  
-		.productCol__card 
-			span.productSection__subTitle='Артикул: '
-			span.productCol__sku=data.sku
-			a.productCol__link(href="#")
-				.productCol__img
-				h6.productCol__name=data.title
-			.clearfix.productCol__priceStock
-				-if(data.opt)
-						span.productCol__price.productCol__price--opt.productCol__price--opt Мрц: 1#{data.price} руб.#[br]
-							span.productCol__price--opt.productCol__price--opt-moc Моц: #{data.price} руб.
-				-else
-					span.productCol__price.f-left=data.price+' руб.'
-				-if(data.opt)
-					span.productCol__stock.f-right Доступно:#[br]#{data.stock} из 223
-				-else 
-					span.productCol__stock.f-right В наличии:#[br] 
-						span.productCol__stock--last Скоро закончится
-			label.productInline__quantityLabel
-				input.productInline__quantitySelector(type=text value='1'  size='2' )
-				.productInline__quantityButton.productInline__quantityButton--minus
-				.productInline__quantityButton.productInline__quantityButton--plus
-			+B-toOrder('В корзину','colList')
-			
-				
+		li.productCol__content(data-qcontent='module__productCol')  
+			.productCol__card 
+				span.productSection__subTitle='Артикул: '
+				span.productCol__sku=data.sku
+				a.productCol__link(href="#")
+					.productCol__img
+					h6.productCol__name=data.title
+				.clearfix.productCol__priceStock
+					-if(data.opt)
+							span.productCol__price.productCol__price--opt.productCol__price--opt Мрц: 1#{data.price} руб.#[br]
+								span.productCol__price--opt.productCol__price--opt-moc Моц: #{data.price} руб.
+					-else
+						span.productCol__price.f-left=data.price+' руб.'
+					-if(data.opt)
+						span.productCol__stock.f-right Доступно:#[br]#{data.stock} из 223
+					-else 
+						span.productCol__stock.f-right В наличии:#[br] 
+							span.productCol__stock--last Скоро закончится
+				label.productInline__quantityLabel.showFrom-d   
+					input.productInline__quantitySelector(type=text value='1'  size='2' )
+					.productInline__quantityButton.productInline__quantityButton--minus
+					.productInline__quantityButton.productInline__quantityButton--plus
+				+B-toOrder('В корзину','colList')
 mixin MODULE-productInline(data)
 	<!-- split modules/productInline -->
 	-var el ='.productInline';
@@ -325,7 +368,7 @@ mixin MODULE-productInline(data)
 				.productInline__quantityButton.productInline__quantityButton--minus
 				.productInline__quantityButton.productInline__quantityButton--plus
 		span.productInline__section.productInline__section--order       
-			+B-toOrder('В заявку')          
+			+B-toOrder('В заявку')
 mixin MODULE-reactTest()
 	<!-- split modules/reactTest -->
 	.reactTest__content(data-qcontent='module__reactTest')
@@ -342,51 +385,63 @@ mixin MODULE-support()
 mixin MODULE-topBar()
 	<!-- split modules/topBar -->
 	.topBar__content(data-qcontent='module__topBar')
-		.group.group--md.group--v-md.group--va-middle    
-			.topBar
+		.group.group--md.group--v-md.group--va-middle.topBar    
 				.col.col-4-tl.col-16-m
-					.topBar__catalog
+					.topBar__catalog 
 						+MODULE-catalog() 
 				.col.col-8-tl
 					.topBar__search
 						+MODULE-mainSearch()   
 				.col.col-4-tl.showFrom-tl
 					.topBar__cart 
-						+MODULE-cart() 
-			 
-				
+						+MODULE-cart()
+mixin MODULE-topFeatures()
+	<!-- split modules/topFeatures -->
+	.topFeatures__content(data-qcontent='module__topFeatures')
+		span.topFeatures__element
+			+I('housePin')
+			span.topFeatures__title Пункты выдачи в 170 городах
+		span.topFeatures__element
+			+I('housePin')
+			span.topFeatures__title Пункты выдачи в 170 городах
 mixin MODULE-topMenu()
 	<!-- split modules/topMenu -->
-	.topMenu__content(data-qcontent='module__topMenu')
-		nav.topMenu
-			ul.topMenu__list
-				li.topMenu__element.popup__trigger
-					+A-material('Розничным Клиентам')
-					+LEVEL-popup()
-						ul.popup__menu
-							li.popup__menuItem
-								+A-material('Оплата и доставка')
-							li.popup__menuItem
-								+A-material('Возврат и обмен')
-							li.popup__menuItem
-								+A-material('Оплата и доставка')
-							li.popup__menuItem
-								+A-material('Возврат и обмен')
-							li.popup__menuItem
-								+A-material('Оплата и доставка')
-							li.popup__menuItem
-								+A-material('Возврат и обмен')
-				li.topMenu__element.popup__trigger
-					+A-material('Оптовым Клиентам')
-					+LEVEL-popup()
-						ul
-							li 3
-							li 4
-				li.topMenu__element
-					+A-material('Контакты')
-mixin LEVEL-inner(data)
-	.level__inner
-		.container
+	.group.group--md
+		.col.col-16-tl
+			.topMenu__content(data-qcontent='module__topMenu')
+				nav.topMenu
+					ul.topMenu__list
+						li.topMenu__element.popup__trigger
+							+A-material('Розничным Клиентам')
+							+LEVEL-popup()
+								ul.popup__menu
+									li.popup__menuItem
+										+A-material('Оплата и доставка')
+									li.popup__menuItem
+										+A-material('Возврат и обмен')
+									li.popup__menuItem
+										+A-material('Оплата и доставка')
+									li.popup__menuItem
+										+A-material('Возврат и обмен')
+									li.popup__menuItem
+										+A-material('Оплата и доставка')
+									li.popup__menuItem
+										+A-material('Возврат и обмен')
+						li.topMenu__element.popup__trigger
+							+A-material('Оптовым Клиентам')
+							+LEVEL-popup()
+								ul
+									li 3
+									li 4
+						li.topMenu__element
+							+A-material('Контакты')
+						li.topMenu__element.topMenu__element--login
+							+A-actionLink('Вход','','login js_modal_trigger', 'js_modal_trigger__login','icon-login')
+							+A-actionLink('Регистрация','','registration')
+mixin LEVEL-level1(data)
+	.level1
+		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
+			h2.level1__title=title
 			if block
 				block
 mixin LEVEL-level(title,className)
@@ -400,10 +455,15 @@ mixin LEVEL-level2(title,data)
 			h2.level2__title=data.title.ZOPA
 			if block
 				block
-mixin LEVEL-level1(data)
-	.level1
-		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
-			h2.level1__title=title
+mixin LEVEL-inner(data)
+	.level__inner
+		.container
+			if block
+				block
+mixin LEVEL-mainPageSection(title)
+	section.mainPageSection
+		.mainPageSection__content(class = 'mainPageSection__content'+ className data-qcontent="level__mainPageSection")
+			h2.mainPageSection__title=title
 			if block
 				block
 mixin LEVEL-modalWindow(id, title)
@@ -415,6 +475,17 @@ mixin LEVEL-modalWindow(id, title)
 			.modalWindow__body
 				if block
 					block       
+mixin LEVEL-newtest(data)
+	.newtest
+		.newtest__content(class = 'newtest__content'+ className data-qcontent="level__newtest")
+			h2.newtest__title=title
+			if block
+				block
+mixin LEVEL-outer(data)
+	.outer
+		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
+			if block    
+				block        
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = " <a href='/'>N 1231238</a>"
@@ -448,31 +519,27 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
-mixin LEVEL-outer(data)
-	.outer
-		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
-			if block    
-				block        
 mixin LEVEL-page(title,className)
 	-if (!className) className =''
 	.page__content(class = 'page__content'+ className data-qcontent="level__page")
 		h2.page__title=title
 		if block 
 			block
-mixin LEVEL-popup(data)
-	.popup__angle
-		+I('to-right','popup')
-	.popup
-		.popup__content(class = 'popup__content'+ className data-qcontent="level__popup")
-			.popup__body
-				if block
-					block
+mixin LEVEL-showcase(title,className)
+	-if (!className) className =''
+	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
+		h1.showcase__title=title
+		.container
+			p.showcase__subtytle.text Hello its Showcase Content
+			+holder('page__loader','100px300',colors.primary)
+			if block
+				block
 //
 mixin LEVEL-productSection(title,className)
 	.productSection__content(data-qcontent="level__productSection")
 		header.productSection__header.clearfix
 			.productSection__pager.f-left 
-				span.productSection__subTitle Страницы:
+				//span.productSection__subTitle Страницы:
 				+breadcrumbs()
 			.productSection__filter.f-left   
 				span.productSection__subTitle Cортировать по:
@@ -487,15 +554,14 @@ mixin LEVEL-productSection(title,className)
 					+I('layout1','productsLayout') 
 		if block
 			block
-mixin LEVEL-showcase(title,className)
-	-if (!className) className =''
-	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
-		h1.showcase__title=title
-		.container
-			p.showcase__subtytle.text Hello its Showcase Content
-			+holder('page__loader','100px300',colors.primary)
-			if block
-				block
+mixin LEVEL-popup(data)
+	.popup__angle
+		+I('to-right','popup')
+	.popup
+		.popup__content(class = 'popup__content'+ className data-qcontent="level__popup")
+			.popup__body
+				if block
+					block
 mixin LEVEL-showCasePage(data)
 	-if (!className) className =''
 	.container

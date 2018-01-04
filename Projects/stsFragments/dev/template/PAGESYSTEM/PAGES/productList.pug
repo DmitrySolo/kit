@@ -3,15 +3,25 @@ extends ../LAYOUT/layout.pug
 block title
 	-var page={slug:'productList',title:'productList'};
 	title productList
+block aside
+		+MODULE-accordion(accordion.filter)
 block page
-	.container
 		+LEVEL-productSection()
 				ul.productCol__list.clearfix
-					.group-component
-						+MODULE-productCol(productInline)
-						+MODULE-productCol(productInline1)
-						+MODULE-productCol(productInline2) 
-						+MODULE-productCol(productInline3)
-						+MODULE-productCol(productInline4)
-						+MODULE-productCol(productInline5)
-						+MODULE-productCol(productInline6)  
+					.group.group--el
+						.col.col-4-tl
+							+MODULE-productCol(productInline)
+						.col.col-4-tl
+							+MODULE-productCol(productInline1)
+						.col.col-4-tl
+							+MODULE-productCol(productInline2)
+						.col.col-4-tl
+							+MODULE-productCol(productInline3)
+						.col.col-4-tl
+							+MODULE-productCol(productInline4)
+						.col.col-4-tl
+							+MODULE-productCol(productInline5)
+						.col.col-4-tl
+							+MODULE-productCol(productInline5)
+						.col.col-4-tl
+							+MODULE-productCol(productInline6)  

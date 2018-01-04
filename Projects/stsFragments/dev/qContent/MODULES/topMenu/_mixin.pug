@@ -1,29 +1,34 @@
 mixin MODULE-topMenu()
 	<!-- split modules/topMenu -->
-	.topMenu__content(data-qcontent='module__topMenu')
-		nav.topMenu
-			ul.topMenu__list
-				li.topMenu__element.popup__trigger
-					+A-material('Розничным Клиентам')
-					+LEVEL-popup()
-						ul.popup__menu
-							li.popup__menuItem
-								+A-material('Оплата и доставка')
-							li.popup__menuItem
-								+A-material('Возврат и обмен')
-							li.popup__menuItem
-								+A-material('Оплата и доставка')
-							li.popup__menuItem
-								+A-material('Возврат и обмен')
-							li.popup__menuItem
-								+A-material('Оплата и доставка')
-							li.popup__menuItem
-								+A-material('Возврат и обмен')
-				li.topMenu__element.popup__trigger
-					+A-material('Оптовым Клиентам')
-					+LEVEL-popup()
-						ul
-							li 3
-							li 4
-				li.topMenu__element
-					+A-material('Контакты')
+	.group.group--md
+		.col.col-16-tl
+			.topMenu__content(data-qcontent='module__topMenu')
+				nav.topMenu
+					ul.topMenu__list
+						li.topMenu__element.popup__trigger
+							+A-material('Розничным Клиентам')
+							+LEVEL-popup()
+								ul.popup__menu
+									li.popup__menuItem
+										+A-material('Оплата и доставка')
+									li.popup__menuItem
+										+A-material('Возврат и обмен')
+									li.popup__menuItem
+										+A-material('Оплата и доставка')
+									li.popup__menuItem
+										+A-material('Возврат и обмен')
+									li.popup__menuItem
+										+A-material('Оплата и доставка')
+									li.popup__menuItem
+										+A-material('Возврат и обмен')
+						li.topMenu__element.popup__trigger
+							+A-material('Оптовым Клиентам')
+							+LEVEL-popup()
+								ul
+									li 3
+									li 4
+						li.topMenu__element
+							+A-material('Контакты')
+						li.topMenu__element.topMenu__element--login
+							+A-actionLink('Вход','','login js_modal_trigger', 'js_modal_trigger__login','icon-login')
+							+A-actionLink('Регистрация','','registration')

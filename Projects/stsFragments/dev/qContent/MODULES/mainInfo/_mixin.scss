@@ -32,10 +32,25 @@
 	}
 
 	&__phone {
+	    line-height: 1.1;
 	    float:right;
-		font-size: 23px;
+		font-size: 1.3em;
 		@include for-size(phone-only){
 			display:none;
+		}
+		&-number{
+		    display:block;
+		    font-weight: bold;
+		}
+		&-time{
+		   
+		    font-size: .6em;
+		     
+		     &:before{
+	            color: cs('font-l2');
+        	    font-weight:bold;
+	            padding-right: vr-block(.2);
+	        }
 		}
 	}
   }

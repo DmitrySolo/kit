@@ -11,28 +11,6 @@
 				"": ""
 			}
 		},
-		"quant-debug-JsonCss": {
-			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-lib": {
-			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"quant-HUD-script": {
 			"js": {
 				"quant-HUD-script-script": {
@@ -57,6 +35,43 @@
 					"src": "node_modules/jquery-ui-dist/jquery-ui.min.css",
 					"container": "head/libs"
 				}
+			}
+		},
+		"quant-lib": {
+			"js": {
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"accordion": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/accordion/accordion.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
 			}
 		},
 		"catalog": {
@@ -167,21 +182,6 @@
 				"": ""
 			}
 		},
-		"dashBoardElement": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"b1": {
 			"js": {
 				"lib1": {
@@ -190,6 +190,43 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"slider": {
+			"js": {
+				"lib1": {
+					"src": "node_modules/ion-rangeslider/js/ion.rangeSlider.min.js",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/slider/slider.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"1": {
+					"src": "node_modules/ion-rangeslider/css/ion.rangeSlider.css",
+					"container": "head/libs"
+				},
+				"2": {
+					"src": "node_modules/ion-rangeslider/css/ion.rangeSlider.skinFlat.css",
+					"container": "head/libs"
+				}
+			}
+		},
+		"dashBoardElement": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -446,6 +483,49 @@
 			"group": ""
 		}
 	},
+	"accordion": {
+		"filter": {
+			"1": {
+				"title": "Производитель",
+				"content": {
+					"type": "checkBox",
+					"in": "Grohe Aquaton Vivo Polaris Smartika Vifu Polis Dron Samsung "
+				},
+				"active": "true"
+			},
+			"2": {
+				"title": "Цвет",
+				"content": {
+					"type": "checkBox",
+					"in": "Красный Белый Синий Зеленый"
+				},
+				"active": "true"
+			},
+			"3": {
+				"title": "Длинна",
+				"content": {
+					"type": "slider",
+					"id": "sl_id_1"
+				},
+				"active": "true"
+			},
+			"4": {
+				"title": "Ширина",
+				"content": {
+					"type": "slider",
+					"id": "sl_id_2"
+				}
+			},
+			"5": {
+				"title": "Глубина",
+				"content": "5"
+			},
+			"6": {
+				"title": "Страна производитель",
+				"content": "6"
+			}
+		}
+	},
 	"breadcrumbs": {
 		"1": "22"
 	},
@@ -463,6 +543,9 @@
 	},
 	"flyPageFragment": {
 		"title": "Test Page"
+	},
+	"featuresList": {
+		"featuresList": "1"
 	},
 	"geoTarget": {
 		"geoTarget": "1"
@@ -498,14 +581,15 @@
 		"sku": "123456",
 		"title": "Полка угловая ОНИКА ТРИО 20У 302001qq-2",
 		"price": "9 535",
-		"stock": "1255"
+		"stock": "1255",
+		"sale": "true",
+		"superSale": "true"
 	},
 	"productInline1": {
 		"sku": "325335",
-		"title": "Шкаф-колонна Акватон Йорк 1A171103YOB4O А",
+		"title": "Шкаф-колонна Акватон Йорк 1A171103YOB4O 2А",
 		"price": "5 700",
-		"stock": "1",
-		"opt": "true"
+		"stock": "1"
 	},
 	"productInline2": {
 		"sku": "89358",
@@ -546,6 +630,9 @@
 	"topBar": {
 		"topBar": "1"
 	},
+	"topFeatures": {
+		"topFeatures": "1"
+	},
 	"topMenu": {
 		"topMenu": "1"
 	},
@@ -556,6 +643,9 @@
 		"title": {
 			"ZOPA": "OPA"
 		}
+	},
+	"newtest": {
+		"title": {}
 	},
 	"outer": {
 		"title": {}

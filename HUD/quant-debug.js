@@ -2068,12 +2068,15 @@ z
 				editorPug.selectAll();
 				editorJs.selectAll();
 				editor.selectAll();
+                editorData.selectAll();
 				if (res.pug) editorPug.insert(res.pug);
 				else editorPug.insert('');
 				if (res.js) editorJs.insert(res.js);
 				else editorJs.insert('');
 				if (res.scss) editor.insert(res.scss);
-				else editor.insert('');
+                else editor.insert('');
+                if (res.data) editorData.insert(res.data);
+                else editorData.insert('');
 				$(".hud-bottom").css('display', 'block');
 
 

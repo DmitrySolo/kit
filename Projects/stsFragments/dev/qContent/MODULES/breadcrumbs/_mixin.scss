@@ -16,12 +16,12 @@
   .breadcrumb__section {
     display: inline-block;
        padding: 0px 8px;
-       margin-right: 7px;
+       margin-right: 2px; 
         color: cs('font-l');
         border-radius: 3px;
         &:hover{
         color: cs('font-d2');
-      }
+      }  
   }
   .breadCrumb__section--current {
      //border: solid 2px cs('accent');

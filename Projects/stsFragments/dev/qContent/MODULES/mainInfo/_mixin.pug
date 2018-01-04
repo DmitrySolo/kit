@@ -1,7 +1,7 @@
 mixin MODULE-mainInfo()
 	<!-- split modules/mainInfo -->
 	.mainInfo__content(data-qcontent='module__mainInfo')
-		.group.group--md
+		.group.group--md.group--va-middle
 			.col.col-4-tl  
 				.mainInfo__logo
 					h1 Santehsmart
@@ -16,7 +16,12 @@ mixin MODULE-mainInfo()
 			.col.col-8-tl.hideFrom-m 
 				.mainInfo__logo--mobile 
 					h1.logo SantehSmart
-			.col.col-4-tl
-			.col.col-5-tl.showFrom-tl
-					span.mainInfo__phone.js_modal_trigger(id = 'js_modal_trigger__login') 
-						|8 800 500 13 84 
+			.col.col-6-tl
+				+MODULE-topFeatures()
+			.col.col-3-tl.showFrom-tl
+					span.mainInfo__phone
+						span.mainInfo__phone-number
+							|8 800 500 13 84
+						span.mainInfo__phone-time.icon-clock1
+							| Ежедневно  с 9 до 19ч
+							//| ПН-ПТ 9 - 19ч

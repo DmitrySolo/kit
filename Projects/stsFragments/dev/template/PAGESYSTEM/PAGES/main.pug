@@ -2,9 +2,36 @@
 extends ../LAYOUT/layout.pug
 block title 
 	-var page={slug:'main',title:'MAIN'};
-	title MAIN  
+	title MAIN
+block aside
 block page 
-	.group.group--md 
-		.col.col-4-tl
-		.col.col-12-tl
-			+owlSlider()
+	+owlSlider()
+	+MODULE-featuresList()
+	+LEVEL-mainPageSection('Лучшие предложения')  
+		ul.productCol__list
+			.group.group--el.group--v-el
+					.col.col-8-tl  
+						+MODULE-productCol(productInline)
+					.col.col-4-tl
+						+MODULE-productCol(productInline1)
+					.col.col-4-tl
+						+MODULE-productCol(productInline2) 
+					.col.col-4-tl
+						+MODULE-productCol(productInline3)
+					.col.col-4-tl
+						+MODULE-productCol(productInline4)
+					.col.col-4-tl
+						+MODULE-productCol(productInline5)
+					.col.col-4-tl
+						+MODULE-productCol(productInline6)
+	+LEVEL-mainPageSection('Новинки')
+		ul.productCol__list
+			.group.group--el.group--v-el
+					.col.col-4-tl  
+						+MODULE-productCol(productInline)
+					.col.col-4-tl
+						+MODULE-productCol(productInline1)
+					.col.col-4-tl
+						+MODULE-productCol(productInline2) 
+					.col.col-4-tl
+						+MODULE-productCol(productInline2)

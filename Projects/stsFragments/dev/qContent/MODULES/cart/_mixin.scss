@@ -6,10 +6,10 @@
 
   .cart {
     &__content {
-        margin:0;
+        margin:0;  
         padding:0;
         background: cs('foreground');
-        width:160px;
+        min-width:160px;
         //margin: 0 auto;
         //max-height: 100%;  
         //line-height:40px;

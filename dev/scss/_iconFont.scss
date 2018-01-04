@@ -27,17 +27,29 @@
 @function icon-char($filename) {
   $char: "";
 
-  @if $filename == left {
+  @if $filename == clock {
   $char: "\E001";
 }
-  @if $filename == placeholder {
+  @if $filename == clock1 {
   $char: "\E002";
 }
-  @if $filename == right {
+  @if $filename == down {
   $char: "\E003";
 }
-  @if $filename == to-right {
+  @if $filename == left {
   $char: "\E004";
+}
+  @if $filename == login {
+  $char: "\E005";
+}
+  @if $filename == placeholder {
+  $char: "\E006";
+}
+  @if $filename == right {
+  $char: "\E007";
+}
+  @if $filename == to-right {
+  $char: "\E008";
 }
 
 @return $char;
@@ -54,8 +66,20 @@
 }
 }
 
+.icon-clock {
+  @include icon(clock);
+}
+.icon-clock1 {
+  @include icon(clock1);
+}
+.icon-down {
+  @include icon(down);
+}
 .icon-left {
   @include icon(left);
+}
+.icon-login {
+  @include icon(login);
 }
 .icon-placeholder {
   @include icon(placeholder);

@@ -1,6 +1,6 @@
 // modalWindows
 
-(function(){  
+;(function(){  
 
     var modalTriggers = document.querySelectorAll('.js_modal_trigger'),
         closers = document.querySelectorAll('.modalWindow__close'),

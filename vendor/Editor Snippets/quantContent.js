@@ -23,4 +23,10 @@
 	"	MODULE-IBGrid()",
 	"snippet +M-catalogMain",
 	"	MODULE-catalogMain()",
+	"snippet +M-featuresList",
+	"	MODULE-featuresList()",
+	"snippet +M-topFeatures",
+	"	MODULE-topFeatures()",
+	"snippet +M-accordion",
+	"	MODULE-accordion()",
 ].join(eol);
