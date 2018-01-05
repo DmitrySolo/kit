@@ -1,0 +1,38 @@
+$color__actionLink:cs('primary');
+$color__actionLink-visited:cs('primary');
+$color__actionLink-hover:cs('primary-l');
+
+a.actionLink {
+    font-size: .9rem;
+    font-weight: bold;
+	color: $color__actionLink;
+	text-decoration: none;
+	&:visited {
+		color: $color__actionLink-visited;
+	}  
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__actionLink-hover;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover,
+	&:active {
+	outline: none;
+	}
+	&.login{
+	    margin-right: vr-block(.8);
+
+	}
+	&.registration{
+	    
+	}
+	&:before{
+	    line-height: $line_height_ratio;
+	    font-weight:bold;
+	    vertical-align: middle;
+	    padding-right: vr-block(.4);
+	}
+}

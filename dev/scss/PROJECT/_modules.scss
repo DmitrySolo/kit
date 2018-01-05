@@ -10,7 +10,7 @@
     margin-top: -1px;
     background-color: cs('foreground');
     border: none;
-    border-top:  1px  solid cs('background');
+    border-top:  4px  solid cs('background');
     &:first-child{
         border-top:none;
         margin-top: 0px;
@@ -26,6 +26,7 @@
     transition: 0.4s;
     font-weight: bold;
     font-size:.9rem;
+    line-height: $line-height-ratio#{rem};
     &:hover {
         color: cs('font-d2');   
     }
@@ -36,12 +37,22 @@
         color: cs('font-l');
     }
     &--choice{
-        border-left: solid 4px cs('accent');
+        &:after{
+            content:'';
+            display:block;
+            position:absolute;
+            top: 0;
+            bottom: 0;
+            left:0;
+            width: 4px ;
+            background: cs('accent');
+            
+        }
+       // border-left: solid 4px c
     }
     &.active{
-        border-bottom-style: dashed;
-        border-bottom-color: cs('background-d');
-        //border-top:none;
+        border-bottom: 1px dashed cs('background-d2');
+       
         &+.accordion__panel{
             display:block;
         }
@@ -72,7 +83,6 @@
         &::-webkit-scrollbar-thumb {  
             background-color: cs('primary');     
             outline: 1px solid #f3f6ff;
-            margin-left: .5em;
             pointer-events: none;} 
     }
     &__slider{
@@ -81,8 +91,8 @@
    & &__checkMarker{
         font-weight: normal;  
         vertical-align: middle;
-        width:1em;
-        height: 1em;
+        width:1rem;
+        height: 1rem;
         line-height: 1em;
         text-align:center;
         background-color: cs('primary-d');
@@ -91,6 +101,51 @@
         margin-left: vr-block(.4);
         display:none;
     }
+  }
+  .productFilterRes__link{
+      line-height: 3rem;
+      text-align:center;
+      display:inline-block;
+      position:absolute;
+      width: 11em;
+      top:0%;
+      //margin-top:-2rem;
+      right: -11em;
+      z-index: 10000;
+      color: #fff;
+      font-weight: bold;
+      background-color: cs('primary-d');
+      box-shadow:3px 10px 11px 0px rgba(0,0,0,.7s);
+      &:after{
+          content:'';
+          position:absolute;
+          display:block;
+          border-style: solid;
+          border-width: .5em;
+          border-color: transparent;
+          border-top-color: darken(cs('primary-d'),2%);
+          border-left-color: darken(cs('primary-d'),2%);
+          bottom: -1rem;
+      }
+      &:before {
+          
+           padding-right: vr-block(.2);
+          // padding-top: vr-block(.2);
+           font-size:1.4rem;
+           line-height: $line-height-ratio;
+           vertical-align: top;
+      }
+      
+  }
+  .filter__buttons_ctn{
+      font-size:0;
+      &>button.button{
+          width:49%;
+          &:first-child{
+              margin-right: 2%;
+          }
+          
+      }
   }
 
 }
@@ -242,6 +297,44 @@
 ////////////////////////////////////////
 @include catalog();
 /**
+* catalogMain styles
+*/
+
+@mixin catalogMain(){
+
+  .catalogMain {  
+    &__content {
+        .catalogList__categoryItem{
+            width:100%;
+            background: cs('foreground');
+        }
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include catalogMain();
+/**
+* confirmedOrderPage styles
+*/
+
+@mixin confirmedOrderPage(){
+
+  .confirmedOrderPage__content{
+        color: red;
+  }
+  .confirmedOrderPage{
+        color:red;
+  }
+
+}
+
+
+////////////////////////////////////////
+@include confirmedOrderPage();
+/**
 * catalogList styles
 */
 
@@ -343,44 +436,6 @@
 
 ////////////////////////////////////////
 @include catalogList();
-/**
-* catalogMain styles
-*/
-
-@mixin catalogMain(){
-
-  .catalogMain {  
-    &__content {
-        .catalogList__categoryItem{
-            width:100%;
-            background: cs('foreground');
-        }
-    }
-  }
-
-}
-
-
-////////////////////////////////////////
-@include catalogMain();
-/**
-* confirmedOrderPage styles
-*/
-
-@mixin confirmedOrderPage(){
-
-  .confirmedOrderPage__content{
-        color: red;
-  }
-  .confirmedOrderPage{
-        color:red;
-  }
-
-}
-
-
-////////////////////////////////////////
-@include confirmedOrderPage();
 /**
 * featuresList styles
 */

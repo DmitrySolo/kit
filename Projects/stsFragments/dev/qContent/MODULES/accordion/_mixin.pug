@@ -1,0 +1,22 @@
+mixin MODULE-accordion(data)
+	<!-- split modules/accordion -->
+	.accordion__content(data-qcontent='module__accordion')
+		-for(var i in data)
+			-var active = ''
+			-if(data[i].active)
+				-active = 'active'
+			button.accordion.icon-down.notEdit(class=' '+active)=data[i].title
+				span.accordion__checkMarker
+			.accordion__panel
+				-if(data[i].content['type'] == 'checkBox')
+					.accordion__checkBox
+						-var cnt = data[i].content['in'].trim().split(' ')
+						-for(var z in cnt )
+							+B-checkBox(cnt[z])
+				-if(data[i].content['type'] == 'slider')
+					.accordion__slider
+						+B-slider(data[i].content['id'])
+				.productFilterRes__ctn
+	footer.filter__buttons_ctn
+		+B-button('Смотреть')
+		+B-button('Сбросить','default')

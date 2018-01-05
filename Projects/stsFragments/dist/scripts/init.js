@@ -1,6 +1,6 @@
 /**
  * MODULE: accordion script
- */
+ */ 
 (function(){
     var acc = document.getElementsByClassName("accordion");
     var i;
@@ -23,6 +23,7 @@
 
     //checkboxCount
     var filterCheckArr = $('.productFilter__checkbox');
+    var filterLink = $("<a class='productFilterRes__link icon-eye'></a>");
     filterCheckArr.each(function(){
         $(this).on('change',function(){
         var sib = $(this).closest('.accordion__checkBox');
@@ -30,7 +31,8 @@
         var display = (count == 0)? 'none':'inline-block';
        
         var target = sib.parent('.accordion__panel').prev('.accordion').addClass('accordion--choice').children('.accordion__checkMarker').css('display',display).html(count);
-         if(count == 0) sib.parent('.accordion__panel').prev('.accordion').removeClass('accordion--choice');
+        sib.parent('.accordion__panel').find('.productFilterRes__ctn').append(filterLink.text('Смотреть (5439)'));
+        if(count == 0) sib.parent('.accordion__panel').prev('.accordion').removeClass('accordion--choice');
            
     
         });

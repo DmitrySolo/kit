@@ -1,0 +1,26 @@
+{
+  "LIBS": {
+    "slider": {
+      "js": {
+        "lib1": {
+          "src": "node_modules/ion-rangeslider/js/ion.rangeSlider.min.js",
+          "container": "footer/libs"
+        },
+        "init": {
+          "src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/slider/slider.js",
+          "container": "footer/init/init"
+        }
+      },
+      "css": {
+        "1": {
+          "src": "node_modules/ion-rangeslider/css/ion.rangeSlider.css",
+          "container": "head/libs"
+        },
+        "2": {
+          "src": "node_modules/ion-rangeslider/css/ion.rangeSlider.skinFlat.css",
+          "container": "head/libs"
+        }
+      }
+    }
+  }
+}

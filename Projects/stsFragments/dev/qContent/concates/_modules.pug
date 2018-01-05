@@ -16,6 +16,10 @@ mixin MODULE-accordion(data)
 				-if(data[i].content['type'] == 'slider')
 					.accordion__slider
 						+B-slider(data[i].content['id'])
+				.productFilterRes__ctn
+	footer.filter__buttons_ctn
+		+B-button('Смотреть')
+		+B-button('Сбросить','default')
 
 mixin breadcrumbs()
 	.breadCrumb__content(data-qcontent='module__breadcrumbs')
@@ -438,10 +442,9 @@ mixin MODULE-topMenu()
 						li.topMenu__element.topMenu__element--login
 							+A-actionLink('Вход','','login js_modal_trigger', 'js_modal_trigger__login','icon-login')
 							+A-actionLink('Регистрация','','registration')
-mixin LEVEL-level1(data)
-	.level1
-		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
-			h2.level1__title=title
+mixin LEVEL-inner(data)
+	.level__inner
+		.container
 			if block
 				block
 mixin LEVEL-level(title,className)
@@ -449,21 +452,22 @@ mixin LEVEL-level(title,className)
 	.level__content(class = 'level__content'+ className data-qcontent="level__level")
 		h2.level__title=title
 		block level
-mixin LEVEL-level2(title,data)
-	.level2
-		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
-			h2.level2__title=data.title.ZOPA
-			if block
-				block
-mixin LEVEL-inner(data)
-	.level__inner
-		.container
+mixin LEVEL-level1(data)
+	.level1
+		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
+			h2.level1__title=title
 			if block
 				block
 mixin LEVEL-mainPageSection(title)
 	section.mainPageSection
 		.mainPageSection__content(class = 'mainPageSection__content'+ className data-qcontent="level__mainPageSection")
 			h2.mainPageSection__title=title
+			if block
+				block
+mixin LEVEL-level2(title,data)
+	.level2
+		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
+			h2.level2__title=data.title.ZOPA
 			if block
 				block
 mixin LEVEL-modalWindow(id, title)
@@ -475,17 +479,6 @@ mixin LEVEL-modalWindow(id, title)
 			.modalWindow__body
 				if block
 					block       
-mixin LEVEL-newtest(data)
-	.newtest
-		.newtest__content(class = 'newtest__content'+ className data-qcontent="level__newtest")
-			h2.newtest__title=title
-			if block
-				block
-mixin LEVEL-outer(data)
-	.outer
-		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
-			if block    
-				block        
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = " <a href='/'>N 1231238</a>"
@@ -519,21 +512,31 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
+mixin LEVEL-newtest(data)
+	.newtest
+		.newtest__content(class = 'newtest__content'+ className data-qcontent="level__newtest")
+			h2.newtest__title=title
+			if block
+				block
+mixin LEVEL-outer(data)
+	.outer
+		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
+			if block    
+				block        
+mixin LEVEL-popup(data)
+	.popup__angle
+		+I('to-right','popup')
+	.popup
+		.popup__content(class = 'popup__content'+ className data-qcontent="level__popup")
+			.popup__body
+				if block
+					block
 mixin LEVEL-page(title,className)
 	-if (!className) className =''
 	.page__content(class = 'page__content'+ className data-qcontent="level__page")
 		h2.page__title=title
 		if block 
 			block
-mixin LEVEL-showcase(title,className)
-	-if (!className) className =''
-	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
-		h1.showcase__title=title
-		.container
-			p.showcase__subtytle.text Hello its Showcase Content
-			+holder('page__loader','100px300',colors.primary)
-			if block
-				block
 //
 mixin LEVEL-productSection(title,className)
 	.productSection__content(data-qcontent="level__productSection")
@@ -554,14 +557,15 @@ mixin LEVEL-productSection(title,className)
 					+I('layout1','productsLayout') 
 		if block
 			block
-mixin LEVEL-popup(data)
-	.popup__angle
-		+I('to-right','popup')
-	.popup
-		.popup__content(class = 'popup__content'+ className data-qcontent="level__popup")
-			.popup__body
-				if block
-					block
+mixin LEVEL-showcase(title,className)
+	-if (!className) className =''
+	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
+		h1.showcase__title=title
+		.container
+			p.showcase__subtytle.text Hello its Showcase Content
+			+holder('page__loader','100px300',colors.primary)
+			if block
+				block
 mixin LEVEL-showCasePage(data)
 	-if (!className) className =''
 	.container

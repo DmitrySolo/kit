@@ -1,0 +1,11 @@
+/* mainPageSection STYLE */
+
+.mainPageSection {
+    &__content {
+        margin-bottom: vr-block(.8);
+    }
+    &__title {
+        padding-left:vr-block(.4);;
+        margin-bottom: vr-block(.2);
+    }
+}

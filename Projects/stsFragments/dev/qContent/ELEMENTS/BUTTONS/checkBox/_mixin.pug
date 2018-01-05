@@ -1,0 +1,5 @@
+mixin B-checkBox(label,className)
+	-if (!className) className =''
+	.checkBox(class=''+className data-qcontent='element__buttons__checkBox')=value
+		input.checkBox__input.productFilter__checkbox(type='checkbox',id="id_"+label)
+		label.checkBox__label(type='checkbox',for="id_"+label)=label

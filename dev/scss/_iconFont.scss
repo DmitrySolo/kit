@@ -36,20 +36,23 @@
   @if $filename == down {
   $char: "\E003";
 }
-  @if $filename == left {
+  @if $filename == eye {
   $char: "\E004";
 }
-  @if $filename == login {
+  @if $filename == left {
   $char: "\E005";
 }
-  @if $filename == placeholder {
+  @if $filename == login {
   $char: "\E006";
 }
-  @if $filename == right {
+  @if $filename == placeholder {
   $char: "\E007";
 }
-  @if $filename == to-right {
+  @if $filename == right {
   $char: "\E008";
+}
+  @if $filename == to-right {
+  $char: "\E009";
 }
 
 @return $char;
@@ -74,6 +77,9 @@
 }
 .icon-down {
   @include icon(down);
+}
+.icon-eye {
+  @include icon(eye);
 }
 .icon-left {
   @include icon(left);

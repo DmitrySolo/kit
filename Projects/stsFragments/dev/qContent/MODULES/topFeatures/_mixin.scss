@@ -1,0 +1,31 @@
+/**
+* topFeatures styles
+*/
+
+@mixin topFeatures(){
+
+  .topFeatures {
+    &__content {
+        
+    }
+    &__element{
+        display: inline-block;
+        width: 50%;
+    }
+    &__title{
+        vertical-align: middle;
+       @include for-size(desktop-up){
+           vertical-align:top;
+       }
+        display: inline-block;
+        width:70%;
+        font-size: 0.9em;
+        padding: vr-block(.2) vr-block(.4);
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include topFeatures();

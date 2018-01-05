@@ -1,0 +1,47 @@
+$bkgColor__button:cs('primary');
+$bkgColor__button-hover:cs('primary-d');
+$color__button-hover:#fff;
+$color__button:#fff;
+
+.button {
+    font-weight: bold;
+    display: inline-block;
+    margin-top: vr-block(.4);
+    line-height: 1.4*$line-height-ratio#{em};
+    border: none;
+	position: relative;
+	background-color: $bkgColor__button;
+	color: $color__button;
+		&:hover, &:focus,  {
+		color: $color__button-hover;
+		background-color: $bkgColor__button-hover;
+		}
+		&:active{
+		    background-color: cs('primary');
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+	
+	
+	
+	&--default{
+	    	background-color: darken(cs('background-d2'),25%);
+	    	&:hover, &:focus,  {
+		color: $color__button-hover;
+		background-color: darken(cs('background-d2'),35%);
+		}
+		&:active{
+		    background-color: cs('background-d2');
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+	}
+}

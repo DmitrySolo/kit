@@ -11,6 +11,17 @@
 				"": ""
 			}
 		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"quant-HUD-script": {
 			"js": {
 				"quant-HUD-script-script": {
@@ -42,17 +53,6 @@
 				"quant-lib-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
 					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-debug-JsonCss": {
-			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
 				}
 			},
 			"css": {
@@ -541,14 +541,14 @@
 	"confirmedOrderPage": {
 		"confirmedOrderPage": "1"
 	},
-	"flyPageFragment": {
-		"title": "Test Page"
-	},
 	"featuresList": {
 		"featuresList": "1"
 	},
 	"geoTarget": {
 		"geoTarget": "1"
+	},
+	"flyPageFragment": {
+		"title": "Test Page"
 	},
 	"IBGrid": {
 		"IBGrid": "1"
@@ -556,11 +556,11 @@
 	"layout": {
 		"layout": "1"
 	},
-	"mainSearch": {
-		"mainSearch": "1"
-	},
 	"mainInfo": {
 		"mainInfo": "1"
+	},
+	"mainSearch": {
+		"mainSearch": "1"
 	},
 	"module": {
 		"module": "1"
@@ -576,6 +576,9 @@
 	},
 	"productCol": {
 		"productCol": "1"
+	},
+	"reactTest": {
+		"reactTest": "1"
 	},
 	"productInline": {
 		"sku": "123456",
@@ -620,9 +623,6 @@
 		"title": "Ванна акриловая BAS Kameron 120х70 Стандарт",
 		"price": "11 000",
 		"stock": "8"
-	},
-	"reactTest": {
-		"reactTest": "1"
 	},
 	"support": {
 		"support": "1"

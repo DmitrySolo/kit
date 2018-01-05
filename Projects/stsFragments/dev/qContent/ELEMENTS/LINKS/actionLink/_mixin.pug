@@ -1,0 +1,4 @@
+mixin A-actionLink(content,href,className,id,fontIcon)
+	-if (!className) className =''
+	-if (!fontIcon) fontIcon = ''
+	a(class='actionLink '+className + ' '+fontIcon,href=href data-qcontent='element__LINKS__actionLink' id =id)=content

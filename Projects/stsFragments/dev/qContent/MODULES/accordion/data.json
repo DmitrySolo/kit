@@ -1,0 +1,46 @@
+{
+  "accordion" : {
+    "filter" : {
+    	"1":{
+    		"title":"Производитель",
+    		"content":{
+    			"type":"checkBox",
+    			"in" : "Grohe Aquaton Vivo Polaris Smartika Vifu Polis Dron Samsung "
+    		},
+    		"active":"true"
+    	},
+    	"2":{
+    		"title":"Цвет",
+    		"content":{
+    				"type":"checkBox",
+    			"in" : "Красный Белый Синий Зеленый"
+    			},
+    			"active":"true"
+    		
+    	},
+    	"3":{
+    		"title":"Длинна",
+    		"content":{
+    			"type":"slider",
+    			"id":"sl_id_1"
+    		},
+    			"active":"true"
+    	},
+    	"4":{
+    		"title":"Ширина",
+    		"content":{
+    			"type":"slider",
+    			"id":"sl_id_2"
+    		}
+    	},
+    	"5":{
+    		"title":"Глубина",
+    		"content":"5"
+    	},
+    	"6":{
+    		"title":"Страна производитель",
+    		"content":"6"
+    	}
+    }
+  }
+}
