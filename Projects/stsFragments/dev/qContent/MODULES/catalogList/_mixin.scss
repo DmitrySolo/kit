@@ -40,19 +40,19 @@
             opacity: 1 !important;;
         }        
        
-          
+              
     }   
     &__categoryNavigation{
         background: cs('foreground');
         width:100%;
-        display: inline-block;
+        display: inline-block;   
         @include for-size(tablet-l-up){
-            width: 23.5%;
+            width: 23.5%;  
         }
     }
     &__categoryItem {   
         cursor:pointer;
-        font-size:.9em;
+        //font-size:em;
         font-weight: bold;
         position:relative;
         text-transform: uppercase;
@@ -61,7 +61,7 @@
         &--hovered{
             background: lighten(cs('primary-l2'),50%);
             .icon--catalog {
-            fill: cs('accent-l2');
+            fill: cs('accent-l2');  
         } 
         }
         &:hover{

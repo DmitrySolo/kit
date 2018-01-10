@@ -19,6 +19,16 @@
 
     }
 }
+/* level2 STYLE */
+
+.level2 {
+    &__content {
+
+    }
+    &__title {
+
+    }
+}
 /* mainPageSection STYLE */
 
 .mainPageSection {
@@ -28,16 +38,6 @@
     &__title {
         padding-left:vr-block(.4);;
         margin-bottom: vr-block(.2);
-    }
-}
-/* level2 STYLE */
-
-.level2 {
-    &__content {
-
-    }
-    &__title {
-
     }
 }
 /* modalWindow STYLE */
@@ -174,6 +174,31 @@
     }
    
 } 
+/* page STYLE */
+
+.page {  
+
+    &__content {
+
+    }
+    &__title {
+        font-size: 1.7rem;
+        margin-bottom: vr-block(.2);
+        //line-height: 1;
+    }
+    
+        &--product{
+        .page__content {
+  
+        }
+        .page__title {
+            font-size: 1.7rem;  
+            margin-top: vr-block(.4);
+            margin-bottom:vr-block(.8);;
+            //line-height: 1;
+        }
+    }
+}
 /* popup STYLE */
 
 .popup {
@@ -231,22 +256,71 @@
         }
         
 }
-/* page STYLE */
+/* productInfo STYLE */
 
-.page {
+.productInfo {
+    .toOrder{
+        margin-bottom: vr-block(.1);
+    }
     &__content {
-        padding: 60px 80px; 
+        background:#fff;
+        position: relative;
+        padding-bottom:1rem;
+        margin-bottom:1rem;
+        .productCol__price{
+             display: inline-block;
+             width: 100%;
+             font-size: 2.8rem;
+             text-align: left;
+        }
+        .productCol__stock{
+            width:100%;
+            text-align:left;
+            font-size: 1.1rem;
+        }
+        
+    }
+    &__section{
+        padding-top: vr-block(1);
     }
     &__title {
-        margin-bottom: 20px;
+
     }
+    &__priceStock{
+        padding-bottom: vr-block(.4);
+        
+    }
+      .productLogo {
+      position:absolute;
+      z-index: 1200;
+      left:0;
+      top:-2rem; 
+      background: cs('foreground');
+      width: 9rem;
+      height: 4.5rem;  
+      padding: vr-block(.4);
+      border: solid 2px cs('background-d');
+      box-shadow: 4px 4px silver;
+        &>IMG{
+            position: absolute;
+            width: 85%;
+            margin:auto;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            
+        }
+        
+      
+  } 
 }
 /* productSection STYLE */
 
 .productSection {
     
     &__content {
-        background: cs('foreground-d');
+        background: cs('background');
     }
     &__header{
         background: cs('foreground');   
@@ -369,6 +443,69 @@
     }
     &__title {
 
+    }
+}
+/* subProductInfo STYLE */
+
+.subProductInfo {
+    &__content {
+        background: cs('foreground');
+    }
+    &__title {  
+
+    }
+    &__tabber {
+        &-list{
+            border-bottom: solid 3px cs('primary');
+        }
+        &-item{
+            text-align:center;
+            position: relative;
+            width: 14rem;
+            padding: vr-block(.8);
+            //padding-left: vr-block(1);
+            display: inline-block;
+            height: 6rem;
+            vertical-align: top;
+            border-right: solid 1px cs('background-d');
+            color: cs('font-l');
+            text-decoration: underline;
+            &:hover{
+                color: cs('font-d2');
+            }
+          //  text-decoration-style: dashed;
+            &--active{
+                font-weight: bold;
+                color: cs('font-d2');
+                text-decoration: none;
+               // border-top: solid 2px cs('primary');
+                &:before {
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 0px; 
+            bottom:-30px;
+            left:50%;
+            margin-left: -1em; 
+            border: solid 15px transparent;
+            border-top-color: cs('primary');
+
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 0px; 
+            bottom:-25px; 
+            left:50%;
+            margin-left: -1em; 
+            border: solid 15px transparent;
+            border-top-color: cs('foreground');
+
+        }
+            }
+            
+        }
     }
 }
 /* topdashBoard STYLE */

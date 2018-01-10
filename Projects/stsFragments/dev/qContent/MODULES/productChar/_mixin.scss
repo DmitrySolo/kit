@@ -1,0 +1,44 @@
+/**
+* productChar styles
+*/
+
+@mixin productChar(){
+
+  .productChar {
+    &__content {
+        padding: vr-block(.2);
+        background: cs('foreground');
+        font-size: .9em;
+        dt,dd{
+            display: inline-block;
+            vertical-align: middle;
+            
+            
+        }
+    }
+    & dt{
+
+        width:59%;
+    }
+    & dd{
+     //   text-align: center;
+        width:39%;
+        padding-left: vr-block(.8);
+    }
+    &__title{
+        margin-bottom: vr-block(.4);
+        color: gray;
+    }
+    &__terminDesc{
+        border-bottom: solid 1px silver;
+        margin-bottom: vr-block(.2);
+    }
+  }
+ 
+  
+
+}
+
+
+////////////////////////////////////////
+@include productChar();

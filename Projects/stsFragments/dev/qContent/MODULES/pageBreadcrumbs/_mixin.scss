@@ -1,0 +1,52 @@
+/**
+* pageBreadcrumbs styles
+*/
+
+@mixin pageBreadcrumbs(){
+
+  .pageBreadcrumbs {
+    &__content {
+        width: 100%;
+        background: cs('background-d');
+    }
+    &__list{
+        // padding-top: vr-block(.4);
+         //background: #fff;
+       // border-bottom-left-radius:3px;
+        //border-bottom-right-radius:3px;
+    }
+    &__item{
+        position:relative;
+        display: inline-block;
+        margin: 0 vr-block(.1);
+        font-size: .9rem;
+        //padding-right:vr-block(.2);   
+       
+        color: darken(cs('background-d2'),45%);
+        &:after{
+            content: "\2192";
+            
+        }
+        &:first-child{
+            
+            font-weight: bold;
+        }
+        &:last-child{
+            //color: cs('background-d2');
+           color: darken(cs('background-d2'),35%);
+            &:after{
+                
+                  content: "\2193";
+                  color: cs('background-d2');
+
+            }
+        }
+       
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include pageBreadcrumbs();

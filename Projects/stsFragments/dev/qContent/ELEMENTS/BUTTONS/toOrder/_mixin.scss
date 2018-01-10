@@ -1,17 +1,21 @@
 
     .toOrder {
         color: #fff;
-        text-transform: uppercase;
+       // text-transform: uppercase;
         text-align: center;
-        font-size:12px;
-        background: cs('accent'); 
-        border: solid 1px cs('accent-l');
+       // font-size:12px;
+       // line-height: 2rem;
+        background: cs('primary');
+        line-height: 1.8em;
+        border: none;
         width: 100%;
-        border-radius: 3px;
+        //border-radius: 3px;
         transition: background .2s ease;
         text-decoration: none;
         padding: 5px;
         display:inline-block;
+        border-bottom: solid 4px darken(cs('primary'),3%);
+        border-radius: 3px;
         svg {
             height: 12px;  
         }
@@ -25,6 +29,7 @@
         }
         &:hover{
             background: cs('accent-l');
+            border-color: cs('accent');  
         
         }
     }

@@ -1,27 +1,27 @@
 //- productList.pug
 extends ../LAYOUT/layout.pug
 block title
-	-var page={slug:'productList',title:'productList'};
+	-var page={slug:'productList',title:'Душевые кабины'};
 	title productList
 block aside
-		+MODULE-accordion(accordion.filter)
+		+MODULE-accordion(accordion.filter)  
 block page
-		+LEVEL-productSection()
+		+LEVEL-productSection()  
 				ul.productCol__list.clearfix
 					.group.group--el
-						.col.col-4-tl
+						.col.col-4-tl.col-6-tp
 							+MODULE-productCol(productInline)
-						.col.col-4-tl
+						.col.col-4-tl.col-6-tp
 							+MODULE-productCol(productInline1)
-						.col.col-4-tl
+						.col.col-4-tl.col-6-tp
 							+MODULE-productCol(productInline2)
-						.col.col-4-tl
+						.col.col-4-tl.col-6-tp
 							+MODULE-productCol(productInline3)
-						.col.col-4-tl
+						.col.col-4-tl.col-6-tp
 							+MODULE-productCol(productInline4)
-						.col.col-4-tl
+						.col.col-4-tl.col-6-tp
 							+MODULE-productCol(productInline5)
-						.col.col-4-tl
+						.col.col-4-tl.col-6-tp
 							+MODULE-productCol(productInline5)
-						.col.col-4-tl
+						.col.col-4-tl.col-6-tp
 							+MODULE-productCol(productInline6)  

@@ -152,6 +152,21 @@
 				}
 			}
 		},
+		"productImageSlider": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/productImageSlider/productImageSlider.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"productInline": {
 			"js": {
 				"lib1": {
@@ -255,7 +270,7 @@
 		"primary": "#3d255b",
 		"secondary": "#1989AC",
 		"foreground": "#fff",
-		"background": "#e6e6e6",
+		"background": "#f3f3f3",
 		"accent": "rgb(255",
 		"font": "#6f6c6c",
 		"succes": "#46bb90",
@@ -353,7 +368,7 @@
 		"b_o": ".7"
 	},
 	"type": "create",
-	"colums": "16",
+	"colums": "12",
 	"gutter-width": ".5em",
 	"gridType": "'inline-block'",
 	"OPTIONS": {
@@ -443,7 +458,7 @@
 			"group": ""
 		},
 		"5": {
-			"title": "productList",
+			"title": "Душевые кабины",
 			"slug": "productList",
 			"MainMenu": "false",
 			"dop_class": "",
@@ -480,6 +495,14 @@
 			"MainMenu": "true",
 			"dop_class": "",
 			"layout": "default",
+			"group": ""
+		},
+		"10": {
+			"title": "product",
+			"slug": "product",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "noSidebar",
 			"group": ""
 		}
 	},
@@ -526,6 +549,9 @@
 			}
 		}
 	},
+	"additionalProducts": {
+		"additionalProducts": "1"
+	},
 	"breadcrumbs": {
 		"1": "22"
 	},
@@ -541,14 +567,17 @@
 	"confirmedOrderPage": {
 		"confirmedOrderPage": "1"
 	},
+	"deliverySection": {
+		"deliverySection": "1"
+	},
 	"featuresList": {
 		"featuresList": "1"
 	},
-	"geoTarget": {
-		"geoTarget": "1"
-	},
 	"flyPageFragment": {
 		"title": "Test Page"
+	},
+	"geoTarget": {
+		"geoTarget": "1"
 	},
 	"IBGrid": {
 		"IBGrid": "1"
@@ -574,11 +603,14 @@
 	"owlSlider": {
 		"owlSlider": "1"
 	},
+	"pageBreadcrumbs": {
+		"pageBreadcrumbs": "1"
+	},
+	"productChar": {
+		"productChar": "1"
+	},
 	"productCol": {
 		"productCol": "1"
-	},
-	"reactTest": {
-		"reactTest": "1"
 	},
 	"productInline": {
 		"sku": "123456",
@@ -624,6 +656,12 @@
 		"price": "11 000",
 		"stock": "8"
 	},
+	"productImageSlider": {
+		"productImageSlider": "1"
+	},
+	"reactTest": {
+		"reactTest": "1"
+	},
 	"support": {
 		"support": "1"
 	},
@@ -650,7 +688,13 @@
 	"outer": {
 		"title": {}
 	},
+	"page": {
+		"title": {}
+	},
 	"popup": {
+		"title": {}
+	},
+	"productInfo": {
 		"title": {}
 	},
 	"showCasePage": {
@@ -666,6 +710,9 @@
 		"class": "huray2",
 		"idName": "THIS IS HEADER",
 		"dataAtr": "   "
+	},
+	"subProductInfo": {
+		"title": {}
 	},
 	"topdashBoard": {
 		"title": "Dashboard."

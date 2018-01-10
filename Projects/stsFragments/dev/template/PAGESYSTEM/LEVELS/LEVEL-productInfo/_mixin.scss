@@ -1,0 +1,59 @@
+/* productInfo STYLE */
+
+.productInfo {
+    .toOrder{
+        margin-bottom: vr-block(.1);
+    }
+    &__content {
+        background:#fff;
+        position: relative;
+        padding-bottom:1rem;
+        margin-bottom:1rem;
+        .productCol__price{
+             display: inline-block;
+             width: 100%;
+             font-size: 2.8rem;
+             text-align: left;
+        }
+        .productCol__stock{
+            width:100%;
+            text-align:left;
+            font-size: 1.1rem;
+        }
+        
+    }
+    &__section{
+        padding-top: vr-block(1);
+    }
+    &__title {
+
+    }
+    &__priceStock{
+        padding-bottom: vr-block(.4);
+        
+    }
+      .productLogo {
+      position:absolute;
+      z-index: 1200;
+      left:0;
+      top:-2rem; 
+      background: cs('foreground');
+      width: 9rem;
+      height: 4.5rem;  
+      padding: vr-block(.4);
+      border: solid 2px cs('background-d');
+      box-shadow: 4px 4px silver;
+        &>IMG{
+            position: absolute;
+            width: 85%;
+            margin:auto;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            
+        }
+        
+      
+  } 
+}

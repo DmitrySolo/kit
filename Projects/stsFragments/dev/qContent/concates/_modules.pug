@@ -10,9 +10,10 @@ mixin MODULE-accordion(data)
 			.accordion__panel
 				-if(data[i].content['type'] == 'checkBox')
 					.accordion__checkBox
-						-var cnt = data[i].content['in'].trim().split(' ')
-						-for(var z in cnt )
-							+B-checkBox(cnt[z])
+						.group.group-el
+							-var cnt = data[i].content['in'].trim().split(' ')
+							-for(var z in cnt )
+								+B-checkBox(cnt[z])
 				-if(data[i].content['type'] == 'slider')
 					.accordion__slider
 						+B-slider(data[i].content['id'])
@@ -21,6 +22,10 @@ mixin MODULE-accordion(data)
 		+B-button('Смотреть')
 		+B-button('Сбросить','default')
 
+mixin MODULE-additionalProducts()
+	<!-- split modules/additionalProducts -->
+	.additionalProducts__content(data-qcontent='module__additionalProducts')
+		.additionalProducts
 mixin breadcrumbs()
 	.breadCrumb__content(data-qcontent='module__breadcrumbs')
 		nav.breadCrumb.visible-l
@@ -201,6 +206,27 @@ mixin confirmedOrderPage()
 	.confirmedOrderPage__content(data-qcontent='module__confirmedOrderPage')
 		.confirmedOrderPage 
 			span hello Dude!!!
+mixin MODULE-deliverySection()
+	<!-- split modules/deliverySection -->
+	.deliverySection__content(data-qcontent='module__deliverySection')
+		h5.deliverySection__title Доставка в город 
+			a.geoTarget__link.js_modal_trigger(href='df' id = 'js_modal_trigger__geo') Воронеж:
+		.deliverySection__type
+			dl.deliverySection__to
+				dt До пункта Выдачи:
+				dd 300р 2-3 дня
+			a.deliverySection__pointsLink Пункты выдачи 
+		.deliverySection__type
+			dl.deliverySection__to
+				dt Курьерская доставка:
+				dd 500р 2-3 дня
+		.deliverySection__type
+			dl.deliverySection__to
+				dt Можно забрать:
+				dd Сегодня из офиса
+			
+			
+			
 mixin MODULE-featuresList()
 	<!-- split modules/featuresList -->
 	.featuresList__content(data-qcontent='module__featuresList')
@@ -271,23 +297,23 @@ mixin MODULE-mainInfo()
 	<!-- split modules/mainInfo -->
 	.mainInfo__content(data-qcontent='module__mainInfo')
 		.group.group--md.group--va-middle
-			.col.col-4-tl  
+			.col.col-3-tl.showFrom-tl  
 				.mainInfo__logo
 					h1 Santehsmart
 				//	+logo-img('logo1.svg') 
-			.col.col-3-tl.showFrom-tl
+			.col.col-2-tl.showFrom-tl
 				.mainInfo__block.mainInfo__geotarget
 					+MODULE-geoTarget() 
-			.col.col-8-tl.hideFrom-tl
+			.col.col-8-tp.hideFrom-tl
 				.mainInfo__cart_search--mobile 
 					span Корзина 
-					span Поиск
-			.col.col-8-tl.hideFrom-m 
+					span Логин
+			.col.col-8-tl.hideFrom-tl
 				.mainInfo__logo--mobile 
 					h1.logo SantehSmart
-			.col.col-6-tl
+			.col.col-5-tl.showFrom-tl
 				+MODULE-topFeatures()
-			.col.col-3-tl.showFrom-tl
+			.col.col-2-tl.showFrom-tl
 					span.mainInfo__phone
 						span.mainInfo__phone-number
 							|8 800 500 13 84
@@ -328,6 +354,21 @@ mixin owlSlider()
 			img(src='https://c.dns-shop.ru/original/st4/22163a4b24330492b9600e2cbc425e9f/6e2e2fad9eb49310bcdc204532ea30a3efb48a426896b3f26455636cc1e8e918.jpg')  
 			img(src='https://c.dns-shop.ru/original/st4/8a1ec680aaa82691fd08a30930c5e100/7f6b5d80c2d0e14cdd42e2e4ebe39949cb113f3d5a7edbaf682bcfc4576eddcf.jpg')    
 			img(src='https://c.dns-shop.ru/original/st4/b0409b63bd07c058211ec0ca2e217442/24b3088fe64f65c3755f2ce79afe7a6e3ea9278e25830ba58af2a1c4218732fa.jpg')    
+mixin MODULE-pageBreadcrumbs()
+	-if(page.slug!='main')
+		<!-- split modules/pageBreadcrumbs -->
+		.pageBreadcrumbs__content(data-qcontent='module__pageBreadcrumbs')
+			.container
+				nav.pageBreadcrumbs
+					ul.pageBreadcrumbs__list
+						li.pageBreadcrumbs__item
+							a Главная 
+						li.pageBreadcrumbs__item
+							a Каталог
+						li.pageBreadcrumbs__item
+							a Сантехника
+						li.pageBreadcrumbs__item
+							a Душевые кабины
 mixin MODULE-productCol(data)
 	<!-- split modules/productCol -->
 		li.productCol__content(data-qcontent='module__productCol')  
@@ -340,19 +381,53 @@ mixin MODULE-productCol(data)
 				.clearfix.productCol__priceStock
 					-if(data.opt)
 							span.productCol__price.productCol__price--opt.productCol__price--opt Мрц: 1#{data.price} руб.#[br]
-								span.productCol__price--opt.productCol__price--opt-moc Моц: #{data.price} руб.
+								span.productCol__price--opt.productCol__price--opt-moc Моц: #{data.price} 
+								span.icon-ruble р
 					-else
-						span.productCol__price.f-left=data.price+' руб.'
+						span.productCol__price.f-left=data.price
+							span.icon-ruble
 					-if(data.opt)
-						span.productCol__stock.f-right Доступно:#[br]#{data.stock} из 223
+						span.productCol__stock.f-right.icon-tick Доступно:#[br]#{data.stock} из 223
 					-else 
-						span.productCol__stock.f-right В наличии:#[br] 
-							span.productCol__stock--last Скоро закончится
-				label.productInline__quantityLabel.showFrom-d   
+						span.productCol__stock.f-right.icon-tick В наличии:#[br] 
+							//span.productCol__stock--last Скоро закончится
+				//label.productInline__quantityLabel.showFrom-d   
 					input.productInline__quantitySelector(type=text value='1'  size='2' )
 					.productInline__quantityButton.productInline__quantityButton--minus
 					.productInline__quantityButton.productInline__quantityButton--plus
-				+B-toOrder('В корзину','colList')
+				+B-toOrder('В корзину')
+mixin MODULE-productChar()
+	<!-- split modules/productChar -->
+	.productChar__content(data-qcontent='module__productChar')
+		h5.productChar__title Основные Характеристики:
+		dl.productChar
+			.productChar__terminDesc
+				dt Заводской артикул:
+				dd LE15	
+			.productChar__terminDesc
+				dt Производитель:
+				dd РМС	
+			.productChar__terminDesc
+				dt Материал:
+				dd Пластик
+			.productChar__terminDesc
+				dt Гарантия:
+				dd год	
+			.productChar__terminDesc
+				dt Страна-производитель:
+				dd Россия
+mixin MODULE-productImageSlider()
+	<!-- split modules/productImageSlider -->
+	.productImageSlider.productImageSlider__content(data-qcontent='module__productImageSlider')
+		.productImageSlider__mainCarousel#js-productImageSlider
+			ul.productImageSlider__imageList.owl-carousel
+				+loop(2)
+						img.productImageSlider__image(src='https://ove-cfo.ru/upload/iblock/44d/44d26668abf8db8ad511e0e4aba9c374.jpg')
+						img.productImageSlider__image(src='https://santehsmart.ru/upload/iblock/dc6/dc63e36b2080c2a4cc34950482a0b7d5.png')
+						img.productImageSlider__image(src='https://santehsmart.ru/upload/iblock/563/563c31fc3c70a30ce51f608728a60eea.jpg')
+	.productImageSlider__fullWindow
+		+I('close','slider-close','js-slider-close')
+			
 mixin MODULE-productInline(data)
 	<!-- split modules/productInline -->
 	-var el ='.productInline';
@@ -377,6 +452,19 @@ mixin MODULE-reactTest()
 	<!-- split modules/reactTest -->
 	.reactTest__content(data-qcontent='module__reactTest')
 		#reactTest1
+mixin MODULE-topBar()
+	<!-- split modules/topBar -->
+	.topBar__content(data-qcontent='module__topBar')
+		.group.group--md.group--v-md.group--va-middle.topBar    
+				.col.col-3-tl.col-12-m
+					.topBar__catalog 
+						+MODULE-catalog() 
+				.col.col-7-tl.showFrom-tl
+					.topBar__search
+						+MODULE-mainSearch()   
+				.col.col-2-tl.showFrom-tl
+					.topBar__cart 
+						+MODULE-cart()
 mixin MODULE-support()
 	<!-- split modules/support -->
 	.support__content(data-qcontent='module__support')
@@ -386,19 +474,6 @@ mixin MODULE-support()
 			h3.support__sectionTitle Тех поддержка
 		section.support__section
 			h3.support__sectionTitle Настройки
-mixin MODULE-topBar()
-	<!-- split modules/topBar -->
-	.topBar__content(data-qcontent='module__topBar')
-		.group.group--md.group--v-md.group--va-middle.topBar    
-				.col.col-4-tl.col-16-m
-					.topBar__catalog 
-						+MODULE-catalog() 
-				.col.col-8-tl
-					.topBar__search
-						+MODULE-mainSearch()   
-				.col.col-4-tl.showFrom-tl
-					.topBar__cart 
-						+MODULE-cart()
 mixin MODULE-topFeatures()
 	<!-- split modules/topFeatures -->
 	.topFeatures__content(data-qcontent='module__topFeatures')
@@ -411,7 +486,7 @@ mixin MODULE-topFeatures()
 mixin MODULE-topMenu()
 	<!-- split modules/topMenu -->
 	.group.group--md
-		.col.col-16-tl
+		.col.col-16-tl.showFrom-tl
 			.topMenu__content(data-qcontent='module__topMenu')
 				nav.topMenu
 					ul.topMenu__list
@@ -442,32 +517,32 @@ mixin MODULE-topMenu()
 						li.topMenu__element.topMenu__element--login
 							+A-actionLink('Вход','','login js_modal_trigger', 'js_modal_trigger__login','icon-login')
 							+A-actionLink('Регистрация','','registration')
-mixin LEVEL-inner(data)
-	.level__inner
-		.container
-			if block
-				block
 mixin LEVEL-level(title,className)
 	-if (!className) className =''
 	.level__content(class = 'level__content'+ className data-qcontent="level__level")
 		h2.level__title=title
 		block level
+mixin LEVEL-inner(data)
+	.level__inner
+		.container
+			if block
+				block
 mixin LEVEL-level1(data)
 	.level1
 		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
 			h2.level1__title=title
 			if block
 				block
-mixin LEVEL-mainPageSection(title)
-	section.mainPageSection
-		.mainPageSection__content(class = 'mainPageSection__content'+ className data-qcontent="level__mainPageSection")
-			h2.mainPageSection__title=title
-			if block
-				block
 mixin LEVEL-level2(title,data)
 	.level2
 		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
 			h2.level2__title=data.title.ZOPA
+			if block
+				block
+mixin LEVEL-mainPageSection(title)
+	section.mainPageSection
+		.mainPageSection__content(class = 'mainPageSection__content'+ className data-qcontent="level__mainPageSection")
+			h2.mainPageSection__title=title
 			if block
 				block
 mixin LEVEL-modalWindow(id, title)
@@ -479,6 +554,17 @@ mixin LEVEL-modalWindow(id, title)
 			.modalWindow__body
 				if block
 					block       
+mixin LEVEL-newtest(data)
+	.newtest
+		.newtest__content(class = 'newtest__content'+ className data-qcontent="level__newtest")
+			h2.newtest__title=title
+			if block
+				block
+mixin LEVEL-outer(data)
+	.outer
+		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
+			if block    
+				block        
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = " <a href='/'>N 1231238</a>"
@@ -512,17 +598,13 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
-mixin LEVEL-newtest(data)
-	.newtest
-		.newtest__content(class = 'newtest__content'+ className data-qcontent="level__newtest")
-			h2.newtest__title=title
-			if block
-				block
-mixin LEVEL-outer(data)
-	.outer
-		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
-			if block    
-				block        
+mixin LEVEL-page(title)
+		.page(class = 'page--'+page.slug)
+			.page__content(class = 'page__content'+ className data-qcontent="level__page")
+				-if(page.slug != 'main')
+					h1.page__title=title
+				if block
+					block
 mixin LEVEL-popup(data)
 	.popup__angle
 		+I('to-right','popup')
@@ -531,12 +613,28 @@ mixin LEVEL-popup(data)
 			.popup__body
 				if block
 					block
-mixin LEVEL-page(title,className)
-	-if (!className) className =''
-	.page__content(class = 'page__content'+ className data-qcontent="level__page")
-		h2.page__title=title
-		if block 
-			block
+mixin LEVEL-productInfo(data)
+	.productInfo
+		.productInfo__content(class = 'productInfo__content'+ className data-qcontent="level__productInfo")
+			.productMain
+				.group.group--md
+					.col.col-5-tl
+						+MODULE-productImageSlider()
+					.col.col-3-tl.col-6-tp
+						.productInfo__section
+							.productInfo__priceStock
+								span.productCol__price 14 300
+									span.icon-ruble
+								span.productCol__stock.icon-tick В наличии:
+							+B-toOrder('В корзину')
+							+B-button('Оформить без регистрации','fastBuy')
+							+MODULE-productChar()
+					.col.col-4-tl.col-6-tp
+						.productInfo__section
+							+MODULE-deliverySection()
+						
+			.productLogo
+				img(src='https://santehsmart.ru/upload/resize_cache/uf/663/120_40_1/663573ea5278ca044fad90b0a4f2346d.png')
 //
 mixin LEVEL-productSection(title,className)
 	.productSection__content(data-qcontent="level__productSection")
@@ -602,6 +700,20 @@ mixin LEVEL-starter(title,className)
 		h5.starter__title=title
 		if block
 			block
+mixin LEVEL-subProductInfo(data)
+	.subProductInfo
+		.subProductInfo__content(class = 'subProductInfo__content'+ className data-qcontent="level__subProductInfo")
+			.subProductInfo__tabber
+				ul.subProductInfo__tabber-list
+					li.subProductInfo__tabber-item.subProductInfo__tabber-item--active
+						span Дополнительное Оборудование
+					li.subProductInfo__tabber-item
+						span Характеристики и Описание
+					li.subProductInfo__tabber-item.ibb
+						span Товары из этой серии коллекции
+					li.subProductInfo__tabber-item.ibb
+						span Пункты выдачи в Воронеже
+				.subProductInfo__contents
 mixin LEVEL-testOfSergConnectingSupport(title,className)
 	-if (!className) className =''
 	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")

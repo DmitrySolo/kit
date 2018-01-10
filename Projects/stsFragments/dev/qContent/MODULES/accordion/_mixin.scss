@@ -74,14 +74,14 @@
         border-bottom: 8px solid cs('background');
         
     }
-    &__checkBox{
+    &__checkBox{  
         max-height: vr-block(6.5);
-        padding-left: vr-block(1.5);
+        padding: 0 vr-block(.5);
         padding-bottom: vr-block(.5);   
         overflow-y: auto;
         overflow-x: hidden;
         &::-webkit-scrollbar-thumb {  
-            background-color: cs('primary');     
+            background-color: cs('primary');        
             outline: 1px solid #f3f6ff;
             pointer-events: none;} 
     }
@@ -110,11 +110,11 @@
       width: 11em;
       top:0%;
       //margin-top:-2rem;
-      right: -11em;
+      right: -10em;
       z-index: 10000;
       color: #fff;
       font-weight: bold;
-      background-color: cs('primary-d');
+      background-color: cs('accent');
       box-shadow:3px 10px 11px 0px rgba(0,0,0,.7s);
       &:after{
           content:'';
@@ -123,9 +123,10 @@
           border-style: solid;
           border-width: .5em;
           border-color: transparent;
-          border-top-color: darken(cs('primary-d'),2%);
-          border-left-color: darken(cs('primary-d'),2%);
+          border-top-color: darken(cs('accent'),2%);
+          border-left-color: darken(cs('accent'),2%);
           bottom: -1rem;
+          left: 1em;
       }
       &:before {
           

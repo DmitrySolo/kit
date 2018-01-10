@@ -1,0 +1,89 @@
+/**
+* productImageSlider styles
+*/
+
+@mixin productImageSlider(){
+    .owl-nav{
+       position: absolute;
+        top: 50%;
+        width: 100%;
+        margin-top: -1.35rem;
+        &>div{
+            font-size: 2rem;
+            position: absolute;
+            color:darken(cs('background-d2'),10%);
+            &.disabled{
+                color:cs('background-d');
+            }
+        }
+    }
+    .owl-next{
+        right: -1.5rem;
+    }
+        .owl-prev{
+       left: -1.5rem;
+    }
+
+  .productImageSlider {  
+    &__content {
+        padding: vr-block(1) vr-block(1.6);
+        text-align: center;
+        position:relative;
+        background: cs('foreground');
+        
+    }
+   .productImageSlider__mainCarousel .productImageSlider__imageList.owl-carousel .owl-item{
+        display: inline-block;
+        vertical-align: middle;  
+        float:none;
+        height:100%; 
+    }
+   .productImageSlider__imageList.owl-carousel &__image{
+        cursor: pointer;
+        display: inline;
+        width:auto;
+        max-width: 100%;
+        max-height: 370px; 
+        //   
+    }
+    &__dot{
+        border: solid 1px cs('background-d2');
+        width: 3rem;
+        height: 3rem;
+        display:inline-block;
+        margin-right: vr-block(.4);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+            &.active{
+                border-color: cs('accent');
+            }
+        
+    }
+    &__fullWindow{    
+        display:none;
+        position: fixed;
+        background: cs('background');
+        left:0;
+        right:0;
+        top:0;  
+        bottom:0;
+        z-index: 1000000;
+        padding: vr-block(2) vr-block(4);
+        .productImageSlider__imageList.owl-carousel .productImageSlider__image{
+            
+        }
+        .icon--slider-close{
+            position:absolute;
+            right:10%;
+            top:5px;
+        }
+    }
+   
+  }
+
+}
+
+
+////////////////////////////////////////
+@include productImageSlider();

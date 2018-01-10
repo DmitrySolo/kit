@@ -1,0 +1,136 @@
+include ../../INCLUDES/_includes
+<!-- split header.html -->
+doctype html
+html(lang=''+head.lang)
+	head
+		include ../../INCLUDES/_head
+	body(class=''+bodyClass, data-qcontent="layout__noSidebar")
+		.projectWrapper 
+			<!-- HEADER --> 
+			include ../_header   
+			<!-- split #{page.slug}.html -->
+			<!-- MAIN -->
+			+LEVEL-inner()
+				+LEVEL-page(page.title)
+					main
+						block page
+		<!-- FOOTER -->
+		include ../_footer
+
+			<!-- SCRIPTS -->
+				<!-- split footer-scripts.html -->
+			include ../../SCRIPTS-STYLES/FOOTER/_footerScripts
+			-if (OPTIONS.useSVGSprite=="true")
+				<!-- split SVG SPRITE -->
+				#svgContainer.hidden
+					include ../../../../../dist/source/icons/SVGSpriteIcons.html
+				script.
+					;( function (window, document) {
+						'use strict';
+
+						var file = 'source/icons/SVGSpriteIcons.html',
+							revision = 1;
+
+						if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
+							return true;
+
+						var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+							request,
+							data,
+							insertIT = function () {
+								var svgCtn = document.getElementById('svgContainer')
+								svgCtn.insertAdjacentHTML('afterbegin', data);
+							},
+							insert = function () {
+								if (document.body) insertIT();
+								else document.addEventListener('DOMContentLoaded', insertIT);
+							};
+
+						if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
+							data = localStorage.getItem('inlineSVGdata');
+							if (data) {
+								insert();
+								return true;
+							}
+						}
+
+						try {
+							request = new XMLHttpRequest();
+							request.open('GET', file, true);
+							request.onload = function () {
+								if (request.status >= 200 && request.status < 400) {
+									data = request.responseText;
+									insert();
+									if (isLocalStorage) {
+										localStorage.setItem('inlineSVGdata', data);
+										localStorage.setItem('inlineSVGrev', revision);
+									}
+								}
+							}
+							request.send();
+						}
+						catch (e) {
+						}
+
+					}(window, document) );
+		-if (statement != 'Production')
+			-if (OPTIONS.accessibilityTesting =='true')
+				script.
+					axe.run(function (err, results) {
+					var errAcc =false;
+					console.log(results);
+					var viol =$('#violations span',window.parent.document).text(results.violations.length)
+						if (results.violations.length == 0) viol.css('color','green')
+						else{
+							viol.css('color','red');
+							errAcc = true;
+						$(''+results.violations[0].nodes[0].target).css({
+							'outline':'1px dotted red',
+							'outline-offset':'15px'
+						});
+						console.log(results.violations[0].nodes[0].target);
+						}
+					viol =$('#inapplicable span',window.parent.document).text(results.inapplicable.length)
+					if (results.inapplicable.length == 0) viol.css('color', 'green')
+						else{
+						viol.css('color', 'red')
+						errAcc = true}
+					viol =$('#incomplete span',window.parent.document).text(results.incomplete.length)
+						if (results.incomplete.length == 0) viol.css('color', 'green')
+						else {viol.css('color', 'red')
+							errAcc = true
+						}
+					$('#passes span',window.parent.document).text(results.passes.length).css('color','green')
+						if (errAcc){
+							$('div#testing',window.parent.document).addClass('testingErr')
+						}else{
+							$('div#testing',window.parent.document).removeClass('testingErr')
+						}
+					$('.testLabel',window.parent.document).on('mousedown',function () {
+
+						var testtype = $(this).attr('id');
+						$('.testLabel',window.parent.document).css('border','none');
+						$(this).css('border','solid 1px ');
+						$('.testDesc ul',window.parent.document).html('');
+						console.log(testtype);
+						var testInfoArr = results[testtype.toLowerCase()];
+						for (var i in testInfoArr){
+							var t_id = testInfoArr[i].id;
+							var t_impact = '<span style="color:red">'+testInfoArr[i].impact.toUpperCase()+' > '+t_id+'</span>';
+							var t_desc ='<p>'+testInfoArr[i].description.replace('<','')+'</p>'
+							var t_help ="<p>"+testInfoArr[i].help+" <a href='"+testInfoArr[i].helpUrl+"' target='_blank'>Help Link</a></p>"
+							var t_nodes = '<ul>';
+							for(var i1 in testInfoArr[i].nodes){
+								t_nodes+='<li>'+testInfoArr[i].nodes[i1].html+'</li>'
+							}
+							t_nodes+='</ul>';
+
+							$('.testDesc ul',window.parent.document).append("<li style='background:#2b2b2b;padding:20px;border-bottom:solid 3px #fff'>"+t_impact+t_desc+t_help+t_nodes+"</li>");
+						}
+
+					})
+
+					});
+
+	-if (statement != 'Production')
+		include ../../INCLUDES/_debugPannel

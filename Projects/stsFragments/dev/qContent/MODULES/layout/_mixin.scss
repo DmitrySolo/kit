@@ -16,11 +16,15 @@
         
     }
     .mainHeader{
-        margin-bottom: vr-block(.8);
+        margin-bottom: vr-block(.2); 
     }
     .mainFooter{
         background : cs('background-d2');
     }
+    .productMain{
+        background: cs('foreground');
+    }
+   
 }
 
 

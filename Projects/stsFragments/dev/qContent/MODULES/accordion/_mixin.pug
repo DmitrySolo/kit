@@ -10,9 +10,10 @@ mixin MODULE-accordion(data)
 			.accordion__panel
 				-if(data[i].content['type'] == 'checkBox')
 					.accordion__checkBox
-						-var cnt = data[i].content['in'].trim().split(' ')
-						-for(var z in cnt )
-							+B-checkBox(cnt[z])
+						.group.group-el
+							-var cnt = data[i].content['in'].trim().split(' ')
+							-for(var z in cnt )
+								+B-checkBox(cnt[z])
 				-if(data[i].content['type'] == 'slider')
 					.accordion__slider
 						+B-slider(data[i].content['id'])

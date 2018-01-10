@@ -1,0 +1,28 @@
+/**
+* deliverySection styles
+*/
+
+@mixin deliverySection(){
+
+  .deliverySection {
+    &__content {
+       float:right;
+       padding-right:vr-block(2);
+    }
+    &__title{
+        margin-bottom: vr-block(.4);
+    }
+    &__pointsLink{
+        color: cs('succes-d');
+        text-decoration: underline;
+    }
+    &__type {
+        margin-bottom: vr-block(.6);
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include deliverySection();

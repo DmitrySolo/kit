@@ -1,10 +1,25 @@
 /* page STYLE */
 
-.page {
+.page {  
+
     &__content {
-        padding: 60px 80px; 
+
     }
     &__title {
-        margin-bottom: 20px;
+        font-size: 1.7rem;
+        margin-bottom: vr-block(.2);
+        //line-height: 1;
+    }
+    
+        &--product{
+        .page__content {
+  
+        }
+        .page__title {
+            font-size: 1.7rem;  
+            margin-top: vr-block(.4);
+            margin-bottom:vr-block(.8);;
+            //line-height: 1;
+        }
     }
 }

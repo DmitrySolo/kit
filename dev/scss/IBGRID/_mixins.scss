@@ -1,7 +1,7 @@
 
 @mixin iBgridBuilder($prefix,$colums) {
   @for $i from 1 through $colums {
-    .col-#{$i}-#{$prefix} {
+    .col.col-#{$i}-#{$prefix} {
       width: percentage($i/$colums);
     }
     .push-#{$i}-#{$prefix} {

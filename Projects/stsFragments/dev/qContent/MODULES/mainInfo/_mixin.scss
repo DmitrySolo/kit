@@ -20,29 +20,20 @@
 				width:100%;
 				text-align: center;
 				margin: 0;
-				@include for-size('tablet-p-up'){ 
-					display: none;
-				} 
 			}
 	}
-	&__cart_search--mobile{
-		@include for-size(tablet-p-up){
-			display:none;
-		}
-	}
-
 	&__phone {
 	    line-height: 1.1;
 	    float:right;
-		font-size: 1.3em;
-		@include for-size(phone-only){
-			display:none;
+		font-size: 1.2em;
+		@include for-size(desktop-up){
+		      font-size: 1.3em;
 		}
 		&-number{
 		    display:block;
 		    font-weight: bold;
 		}
-		&-time{
+		&-time{  
 		   
 		    font-size: .6em;
 		     

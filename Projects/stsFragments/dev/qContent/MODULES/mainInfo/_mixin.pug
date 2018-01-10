@@ -2,23 +2,23 @@ mixin MODULE-mainInfo()
 	<!-- split modules/mainInfo -->
 	.mainInfo__content(data-qcontent='module__mainInfo')
 		.group.group--md.group--va-middle
-			.col.col-4-tl  
+			.col.col-3-tl.showFrom-tl  
 				.mainInfo__logo
 					h1 Santehsmart
 				//	+logo-img('logo1.svg') 
-			.col.col-3-tl.showFrom-tl
+			.col.col-2-tl.showFrom-tl
 				.mainInfo__block.mainInfo__geotarget
 					+MODULE-geoTarget() 
-			.col.col-8-tl.hideFrom-tl
+			.col.col-8-tp.hideFrom-tl
 				.mainInfo__cart_search--mobile 
 					span Корзина 
-					span Поиск
-			.col.col-8-tl.hideFrom-m 
+					span Логин
+			.col.col-8-tl.hideFrom-tl
 				.mainInfo__logo--mobile 
 					h1.logo SantehSmart
-			.col.col-6-tl
+			.col.col-5-tl.showFrom-tl
 				+MODULE-topFeatures()
-			.col.col-3-tl.showFrom-tl
+			.col.col-2-tl.showFrom-tl
 					span.mainInfo__phone
 						span.mainInfo__phone-number
 							|8 800 500 13 84

@@ -44,4 +44,28 @@ $color__button:#fff;
 			outline: none;
 	}
 	}
+	
+	
+		&--fastBuy{
+		    width: 100%;
+	    color: cs('primary');
+	    font-size: .9rem;
+	    font-weight: normal;
+	    border-bottom: dashed 1px ;
+	    line-height: 1;
+	    	background-color: #fff;
+	    	&:hover, &:focus,  {
+		color: cs('primary-d');
+		background-color: #fff;
+		}
+		&:active{
+		    background-color: cs('background-d2');
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+	}
 }

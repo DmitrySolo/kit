@@ -1,0 +1,17 @@
+/**
+* additionalProducts styles
+*/
+
+@mixin additionalProducts(){
+
+  .additionalProducts {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include additionalProducts();

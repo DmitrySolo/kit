@@ -51,8 +51,17 @@
   @if $filename == right {
   $char: "\E008";
 }
-  @if $filename == to-right {
+  @if $filename == ruble {
   $char: "\E009";
+}
+  @if $filename == tick {
+  $char: "\E00A";
+}
+  @if $filename == to-left {
+  $char: "\E00B";
+}
+  @if $filename == to-right {
+  $char: "\E00C";
 }
 
 @return $char;
@@ -92,6 +101,15 @@
 }
 .icon-right {
   @include icon(right);
+}
+.icon-ruble {
+  @include icon(ruble);
+}
+.icon-tick {
+  @include icon(tick);
+}
+.icon-to-left {
+  @include icon(to-left);
 }
 .icon-to-right {
   @include icon(to-right);

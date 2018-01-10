@@ -6,7 +6,7 @@
 
   .topMenu {
     &__wrapper {
-        background: cs('foreground-d');
+        background: cs('background');
        @include for-size(tablet-p-up){
             @include space-i('component','|','','b');
        }

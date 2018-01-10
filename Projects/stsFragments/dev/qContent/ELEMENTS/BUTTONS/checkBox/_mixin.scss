@@ -5,8 +5,9 @@
 .checkBox__input {
   float: left;
   height: 1.7em;
-  line-height: 1.7em;
-  margin-right: 0.85em;
+  line-height: 1.7em;  
+  margin: 0;
+  margin-right: .8em;
 }
 .checkBox__input:checked + label {
   font-weight: bold;

@@ -6,7 +6,7 @@
 
   .productCol {
     &__list{
-        background:cs('foreground-d')
+       // background:cs('foreground-d')
     }
     &__content {
         font-size: 1rem;
@@ -43,7 +43,7 @@
         width:100%;  
         height: 180px;
        // background-color: #ededed;
-        background-image:url("https://www.santehsmart.ru/upload/iblock/f10/f10f3f7ea3703fc6cac09eca3b96bf6f.jpg");
+        background-image:url("https://santehsmart.ru/upload/iblock/0ff/0ff39d9eca03992f6e17ee7c16cf8ed2.png");
         background-position: center;
         background-size: contain; 
         background-repeat: no-repeat;
@@ -51,25 +51,31 @@
         margin-bottom: 5px;
 
     }
-    &__name {
-        font-size: .9em;
+    &__name {  
+       
         height: 3*$line_height_ratio#{em};
-        font-weight:normal;
+        font-weight:bold;
         color:cs('font-d2');
         overflow:hidden;
         margin-bottom: .5em;
     }
     &__priceStock{
-         font-size: .9em;
+        vertical-align:middle;
+         //font-size: .9em;
         margin-bottom:.8em;
     }
     &__stock{
+        vertical-align: middle;
         color: cs('succes-d');  
         width:50%;
+        font-weight: bold;
         text-align: center;
-        height: 1.8*$line_height_ratio#{em};
+       // height: 1.8*$line_height_ratio#{em};
         display:inline-block;
         overflow:hidden;
+        &:before{
+            margin-right: vr-block(.2);
+        }
         &--off{
             color:cs('erorr-d2'); 
         }
@@ -80,17 +86,18 @@
     }
     &__price{
         display:inline-block;
-        vertical-align: top;
-        font-size:1.2em;
+        vertical-align: middle;
+        font-size:1.6em;
         font-weight: bold;
         width:50%;
+        color: cs('primary-d');
         text-align: center;
         &--opt{
             color: cs('font-l');
             font-size:1rem;
             text-align: left;
             line-height: 1.5;
-            &-moc{
+            &-moc{  
                 color: cs('font');  
             }
         }
@@ -104,6 +111,11 @@
       @include for-size(tablet-l-up){
           display:none;
       }
+  }
+  .icon-ruble{
+      font-size: .6em;
+      margin-left: vr-block(.2);
+     // color: gray;
   }
 
 }

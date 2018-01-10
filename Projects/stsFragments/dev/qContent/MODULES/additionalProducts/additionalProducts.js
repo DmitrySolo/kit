@@ -1,0 +1,3 @@
+/**
+* MODULE: additionalProducts script
+*/

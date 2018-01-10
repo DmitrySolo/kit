@@ -1701,7 +1701,8 @@ gulp.task('API-SERVER', function () {
 
 						}else if (path1.indexOf('LAYOUT')> -1  ){
 
-								var pug = fs.readFileSync(path1, 'utf8');
+                                if (path1.indexOf('.')> -1 ) var pug = fs.readFileSync(path1, 'utf8');
+                                else var pug = fs.readFileSync(path1+delimetr+'layout.pug', 'utf8');
 
 
 							}
@@ -1781,7 +1782,10 @@ gulp.task('API-SERVER', function () {
 
 							else if (type == 'layout') {
 
-								var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LAYOUT/' + name, 'utf8');
+								if(name.indexOf('.')>-1)
+									var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LAYOUT/' + name, 'utf8');
+								else
+                                    var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LAYOUT/' + name+delimetr+'layout.pug', 'utf8');
 								var ScssContent = '';
 								var JsContent = '';
 								var dataContent ='';
@@ -2300,8 +2304,9 @@ gulp.task('API-SERVER', function () {
 					}
 					if (elemPath['type'] == 'layout') {
 						if (pugToSave != 'notChanged' ){
-
+							if(elemPath['name'].indexOf('.')>-1)
 							fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/LAYOUT/'+elemPath['name'], pugToSave);
+							else fs.writeFileSync( projectDevDir+'template/PAGESYSTEM/LAYOUT/'+elemPath['name']+delimetr+'layout.pug', pugToSave);
 						}
 
 
