@@ -7,7 +7,7 @@
   .pageBreadcrumbs {
     &__content {
         width: 100%;
-        background: cs('background-d');
+        background: cs('background-d2');
     }
     &__list{
         // padding-top: vr-block(.4);
@@ -20,6 +20,7 @@
         display: inline-block;
         margin: 0 vr-block(.1);
         font-size: .9rem;
+        font-weight:bold;
         //padding-right:vr-block(.2);   
        
         color: darken(cs('background-d2'),45%);

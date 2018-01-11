@@ -23,6 +23,24 @@
         margin-right: .4em;
         
     }
+    &__count{
+        text-align: center;  
+        color: #fff;
+        background: cs('accent');
+        margin-left: -.4em;
+        margin-right: .2em;
+        //padding:0 vr-block(.1);
+        display: inline-block;
+        width:1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: .9em;
+        line-height: 1.2rem;
+    }
+    &__summ{
+        font-weight: bold;
+    }
   }
 
 }

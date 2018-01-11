@@ -8,11 +8,11 @@ mixin B-b1(value,className)
 	button.b1(class=''+className data-qcontent='element__buttons__b1')=value	
 
 
-mixin B-checkBox(label,className)
-	-if (!className) className =''
-	.checkBox.col.col-12-tl.col-6-tp.col-6-m(class=''+className data-qcontent='element__buttons__checkBox')=value
-		input.checkBox__input.productFilter__checkbox(type='checkbox',id="id_"+label)
-		label.checkBox__label(type='checkbox',for="id_"+label)=label
+mixin B-productBadge(value,className)
+	-var className=className || ''
+	span.productBadge(class='productBadge--'+className data-qcontent='element__buttons__productBadge')=value
+		
+
 mixin B-slider(id)
 	-if (!className) className =''
 	input(type="text" id=id data-type="double" data-min="15" data-grid="true" name="example_name" value="" data-qcontent='element__buttons__slider')
@@ -28,6 +28,11 @@ mixin B-switcher(value,className)
 
 
 
+mixin B-checkBox(label,className)
+	-if (!className) className =''
+	.checkBox.col.col-12-tl.col-6-tp.col-6-m(class=''+className data-qcontent='element__buttons__checkBox')=value
+		input.checkBox__input.productFilter__checkbox(type='checkbox',id="id_"+label)
+		label.checkBox__label(type='checkbox',for="id_"+label)=label     
 mixin B-toOrder(value,className)
 	-if (!className) className =''
 	button.toOrder.active.notEdit(class=''+className data-qcontent='element__buttons__toOrder')=value
@@ -59,15 +64,15 @@ mixin dashBoardElement(icon,text,className,type)
 			
 
 
+mixin A-actionLink(content,href,className,id,fontIcon)
+	-if (!className) className =''
+	-if (!fontIcon) fontIcon = ''
+	a(class='actionLink '+className + ' '+fontIcon,href=href data-qcontent='element__LINKS__actionLink' id =id)=content
 mixin I(id,classModifier,elId)
 	-if (!classModifier) classModifier =''
 	-else classModifier = 'icon--'+classModifier
 	svg(class='icon '+classModifier data-qcontent='element__ICONS__MAIN-SVG-use',id=elId)
 		use(xlink:href="#"+id)           
-mixin A-actionLink(content,href,className,id,fontIcon)
-	-if (!className) className =''
-	-if (!fontIcon) fontIcon = ''
-	a(class='actionLink '+className + ' '+fontIcon,href=href data-qcontent='element__LINKS__actionLink' id =id)=content
 mixin A-material(content,href,className)
 	-if (!className) className =''
 	a(class='material '+className,href='/sdsd' data-qcontent='element__LINKS__material')=content

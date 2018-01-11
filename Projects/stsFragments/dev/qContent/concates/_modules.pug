@@ -25,7 +25,6 @@ mixin MODULE-accordion(data)
 mixin MODULE-additionalProducts()
 	<!-- split modules/additionalProducts -->
 	.additionalProducts__content(data-qcontent='module__additionalProducts')
-		.additionalProducts
 mixin breadcrumbs()
 	.breadCrumb__content(data-qcontent='module__breadcrumbs')
 		nav.breadCrumb.visible-l
@@ -35,10 +34,18 @@ mixin breadcrumbs()
 				a(href='/').not.breadcrumb__section #{page1 +=1}
 mixin MODULE-cart()
 	<!-- split modules/cart -->
-	button.cart__content(data-qcontent='module__cart')
-		span.cart__icon
-			+I('cart-s','topBar')
-		span Корзина
+	-var empty = false
+	if(empty)
+		button.cart__content(data-qcontent='module__cart')
+			span.cart__icon
+				+I('cart-s','topBar')
+			span Корзина
+	-else
+		button.cart__content(data-qcontent='module__cart')
+			span.cart__icon
+				+I('cart-s','topBar')
+			span.cart__count 2    
+			span.cart__summ на 100 000р
 mixin MODULE-catalog()
 	if(page.slug == 'main')
 		-var classN = 'catalog__by--hovered'
@@ -369,33 +376,6 @@ mixin MODULE-pageBreadcrumbs()
 							a Сантехника
 						li.pageBreadcrumbs__item
 							a Душевые кабины
-mixin MODULE-productCol(data)
-	<!-- split modules/productCol -->
-		li.productCol__content(data-qcontent='module__productCol')  
-			.productCol__card 
-				span.productSection__subTitle='Артикул: '
-				span.productCol__sku=data.sku
-				a.productCol__link(href="#")
-					.productCol__img
-					h6.productCol__name=data.title
-				.clearfix.productCol__priceStock
-					-if(data.opt)
-							span.productCol__price.productCol__price--opt.productCol__price--opt Мрц: 1#{data.price} руб.#[br]
-								span.productCol__price--opt.productCol__price--opt-moc Моц: #{data.price} 
-								span.icon-ruble р
-					-else
-						span.productCol__price.f-left=data.price
-							span.icon-ruble
-					-if(data.opt)
-						span.productCol__stock.f-right.icon-tick Доступно:#[br]#{data.stock} из 223
-					-else 
-						span.productCol__stock.f-right.icon-tick В наличии:#[br] 
-							//span.productCol__stock--last Скоро закончится
-				//label.productInline__quantityLabel.showFrom-d   
-					input.productInline__quantitySelector(type=text value='1'  size='2' )
-					.productInline__quantityButton.productInline__quantityButton--minus
-					.productInline__quantityButton.productInline__quantityButton--plus
-				+B-toOrder('В корзину')
 mixin MODULE-productChar()
 	<!-- split modules/productChar -->
 	.productChar__content(data-qcontent='module__productChar')
@@ -416,6 +396,39 @@ mixin MODULE-productChar()
 			.productChar__terminDesc
 				dt Страна-производитель:
 				dd Россия
+mixin MODULE-productCol(data)
+	<!-- split modules/productCol -->
+		li.productCol__content(data-qcontent='module__productCol')  
+			.productCol__card 
+				span.productSection__subTitle='Артикул: '
+				span.productCol__sku=data.sku
+				-if(data.new)
+					+B-productBadge('Новинка','new')
+				-if(data.sale)
+					+B-productBadge('Распродажа','sale') 
+				-if(data.hit)
+					+B-productBadge('Хит продаж','hit') 
+				a.productCol__link(href="#")
+					.productCol__img
+					h6.productCol__name=data.title 
+				.clearfix.productCol__priceStock
+					-if(data.opt)
+							span.productCol__price.productCol__price--opt.productCol__price--opt Мрц: 1#{data.price} руб.#[br]
+								span.productCol__price--opt.productCol__price--opt-moc Моц: #{data.price} 
+								span.icon-ruble р
+					-else
+						span.productCol__price.f-left=data.price
+							span.icon-ruble
+					-if(data.opt)
+						span.productCol__stock.f-right.icon-tick Доступно:#[br]#{data.stock} из 223
+					-else 
+						span.productCol__stock.f-right.icon-tick В наличии:#[br] 
+							//span.productCol__stock--last Скоро закончится
+				//label.productInline__quantityLabel.showFrom-d   
+					input.productInline__quantitySelector(type=text value='1'  size='2' )
+					.productInline__quantityButton.productInline__quantityButton--minus
+					.productInline__quantityButton.productInline__quantityButton--plus
+				+B-toOrder('В корзину')
 mixin MODULE-productImageSlider()
 	<!-- split modules/productImageSlider -->
 	.productImageSlider.productImageSlider__content(data-qcontent='module__productImageSlider')
@@ -452,6 +465,15 @@ mixin MODULE-reactTest()
 	<!-- split modules/reactTest -->
 	.reactTest__content(data-qcontent='module__reactTest')
 		#reactTest1
+mixin MODULE-support()
+	<!-- split modules/support -->
+	.support__content(data-qcontent='module__support')
+		section.support__section
+			h3.support__sectionTitle Ваш менеджер
+		section.support__section
+			h3.support__sectionTitle Тех поддержка
+		section.support__section
+			h3.support__sectionTitle Настройки
 mixin MODULE-topBar()
 	<!-- split modules/topBar -->
 	.topBar__content(data-qcontent='module__topBar')
@@ -465,15 +487,6 @@ mixin MODULE-topBar()
 				.col.col-2-tl.showFrom-tl
 					.topBar__cart 
 						+MODULE-cart()
-mixin MODULE-support()
-	<!-- split modules/support -->
-	.support__content(data-qcontent='module__support')
-		section.support__section
-			h3.support__sectionTitle Ваш менеджер
-		section.support__section
-			h3.support__sectionTitle Тех поддержка
-		section.support__section
-			h3.support__sectionTitle Настройки
 mixin MODULE-topFeatures()
 	<!-- split modules/topFeatures -->
 	.topFeatures__content(data-qcontent='module__topFeatures')
@@ -517,16 +530,16 @@ mixin MODULE-topMenu()
 						li.topMenu__element.topMenu__element--login
 							+A-actionLink('Вход','','login js_modal_trigger', 'js_modal_trigger__login','icon-login')
 							+A-actionLink('Регистрация','','registration')
-mixin LEVEL-level(title,className)
-	-if (!className) className =''
-	.level__content(class = 'level__content'+ className data-qcontent="level__level")
-		h2.level__title=title
-		block level
 mixin LEVEL-inner(data)
 	.level__inner
 		.container
 			if block
 				block
+mixin LEVEL-level(title,className)
+	-if (!className) className =''
+	.level__content(class = 'level__content'+ className data-qcontent="level__level")
+		h2.level__title=title
+		block level
 mixin LEVEL-level1(data)
 	.level1
 		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
@@ -605,14 +618,6 @@ mixin LEVEL-page(title)
 					h1.page__title=title
 				if block
 					block
-mixin LEVEL-popup(data)
-	.popup__angle
-		+I('to-right','popup')
-	.popup
-		.popup__content(class = 'popup__content'+ className data-qcontent="level__popup")
-			.popup__body
-				if block
-					block
 mixin LEVEL-productInfo(data)
 	.productInfo
 		.productInfo__content(class = 'productInfo__content'+ className data-qcontent="level__productInfo")
@@ -622,6 +627,7 @@ mixin LEVEL-productInfo(data)
 						+MODULE-productImageSlider()
 					.col.col-3-tl.col-6-tp
 						.productInfo__section
+							+B-productBadge('Новинка','new')
 							.productInfo__priceStock
 								span.productCol__price 14 300
 									span.icon-ruble
@@ -635,6 +641,14 @@ mixin LEVEL-productInfo(data)
 						
 			.productLogo
 				img(src='https://santehsmart.ru/upload/resize_cache/uf/663/120_40_1/663573ea5278ca044fad90b0a4f2346d.png')
+mixin LEVEL-popup(data)
+	.popup__angle
+		+I('to-right','popup')
+	.popup
+		.popup__content(class = 'popup__content'+ className data-qcontent="level__popup")
+			.popup__body
+				if block
+					block
 //
 mixin LEVEL-productSection(title,className)
 	.productSection__content(data-qcontent="level__productSection")
@@ -714,6 +728,11 @@ mixin LEVEL-subProductInfo(data)
 					li.subProductInfo__tabber-item.ibb
 						span Пункты выдачи в Воронеже
 				.subProductInfo__contents
+					.subProductInfo__tabContent
+						+MODULE-additionalProducts()
+					.subProductInfo__tabContent
+					.subProductInfo__tabContent
+					.subProductInfo__tabContent
 mixin LEVEL-testOfSergConnectingSupport(title,className)
 	-if (!className) className =''
 	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")

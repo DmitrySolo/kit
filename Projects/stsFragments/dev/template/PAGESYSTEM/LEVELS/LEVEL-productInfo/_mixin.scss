@@ -9,6 +9,7 @@
         position: relative;
         padding-bottom:1rem;
         margin-bottom:1rem;
+        border-bottom: solid 2px cs('background-d');
         .productCol__price{
              display: inline-block;
              width: 100%;
@@ -41,7 +42,7 @@
       width: 9rem;
       height: 4.5rem;  
       padding: vr-block(.4);
-      border: solid 2px cs('background-d');
+      border: solid 2px cs('background-d'); 
       box-shadow: 4px 4px silver;
         &>IMG{
             position: absolute;

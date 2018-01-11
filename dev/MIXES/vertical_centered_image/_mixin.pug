@@ -1,5 +1,6 @@
 mixin vertical_centered_image(src,className)
+    -var className = className || ''
     .img_container--align_v(class=''+className)
-        img(src='images/'+src)
+        img(src=''+src)
 
 

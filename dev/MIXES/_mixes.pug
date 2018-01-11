@@ -1,23 +1,28 @@
-mixin hamburger()
-	.menu-hamburger
-		.menu-hamburger__partsWrap
-			span.menu-hamburger__part.menu-hamburger--top
-			span.menu-hamburger__part.menu-hamburger--middle
-			span.menu-hamburger__part.menu-hamburger--bottom
 mixin hero-title-center(title)
-	.heroTitle-ctn
-		h1.heroTitle=title
+    .heroTitle-ctn
+        h1.heroTitle=title
+mixin hamburger()
+    .menu-hamburger
+        .menu-hamburger__partsWrap
+            span.menu-hamburger__part.menu-hamburger--top
+            span.menu-hamburger__part.menu-hamburger--middle
+            span.menu-hamburger__part.menu-hamburger--bottom
 mixin logo-img(src,className)
-	-if (!className) className =''
-	h1
-		a.logo__link(class=''+className,href="/",)
-			img(src='source/images/'+src, title='PROJECT TITLE' alt="This is theme title")
+    -if (!className) className =''
+    h1
+        a.logo__link(class=''+className,href="/",)
+            img(src='source/images/'+src, title='PROJECT TITLE' alt="This is theme title")
 mixin logo-svg(className,src)
-	a.logo__link(class=''+className)
-		.logo__container
-			include ../../dist/images/logo.svg
+    a.logo__link(class=''+className)
+        .logo__container
+            include ../../dist/images/logo.svg
+//
+   Created by admin on 07/12/17.
+
+
 mixin vertical_centered_image(src,className)
-	.img_container--align_v(class=''+className)
-		img(src='images/'+src)
+    -var className = className || ''
+    .img_container--align_v(class=''+className)
+        img(src=''+src)
 
 

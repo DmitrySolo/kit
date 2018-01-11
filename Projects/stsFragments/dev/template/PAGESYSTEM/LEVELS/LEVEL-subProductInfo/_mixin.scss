@@ -3,6 +3,7 @@
 .subProductInfo {
     &__content {
         background: cs('foreground');
+        border-bottom: solid 2px cs('background-d');
     }
     &__title {  
 
@@ -15,10 +16,10 @@
             text-align:center;
             position: relative;
             width: 14rem;
-            padding: vr-block(.8);
+            padding: vr-block(.4);
             //padding-left: vr-block(1);
             display: inline-block;
-            height: 6rem;
+            //height: 6rem;
             vertical-align: top;
             border-right: solid 1px cs('background-d');
             color: cs('font-l');
@@ -29,7 +30,8 @@
           //  text-decoration-style: dashed;
             &--active{
                 font-weight: bold;
-                color: cs('font-d2');
+                color: #fff;
+                background: cs('primary');
                 text-decoration: none;
                // border-top: solid 2px cs('primary');
                 &:before {
@@ -41,23 +43,17 @@
             left:50%;
             margin-left: -1em; 
             border: solid 15px transparent;
-            border-top-color: cs('primary');
+            border-top-color: cs('primary');    
 
         }
-        &:after {
-            content: '';
-            position: absolute;
-            width: 0px;
-            height: 0px; 
-            bottom:-25px; 
-            left:50%;
-            margin-left: -1em; 
-            border: solid 15px transparent;
-            border-top-color: cs('foreground');
-
-        }
+ 
             }
             
         }
+    }
+    &__contents{
+        background: #fff;
+        min-height: 200px;
+        padding: vr-block(.8);
     }
 }

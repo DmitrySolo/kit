@@ -4,9 +4,15 @@ mixin MODULE-productCol(data)
 			.productCol__card 
 				span.productSection__subTitle='Артикул: '
 				span.productCol__sku=data.sku
+				-if(data.new)
+					+B-productBadge('Новинка','new')
+				-if(data.sale)
+					+B-productBadge('Распродажа','sale') 
+				-if(data.hit)
+					+B-productBadge('Хит продаж','hit') 
 				a.productCol__link(href="#")
 					.productCol__img
-					h6.productCol__name=data.title
+					h6.productCol__name=data.title 
 				.clearfix.productCol__priceStock
 					-if(data.opt)
 							span.productCol__price.productCol__price--opt.productCol__price--opt Мрц: 1#{data.price} руб.#[br]

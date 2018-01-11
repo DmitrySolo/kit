@@ -1,5 +1,10 @@
 
-<!----><!-- split header.html --><!DOCTYPE html>
+<!---->
+<!--
+Created by admin on 07/12/17.
+
+
+--><!-- split header.html --><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -178,7 +183,7 @@
                           <button class="cart__content" data-qcontent="module__cart"><span class="cart__icon">
                               <svg class="icon icon--topBar" data-qcontent="element__ICONS__MAIN-SVG-use">
                                 <use xlink:href="#cart-s">          </use>
-                              </svg></span><span>Корзина</span></button>
+                              </svg></span><span class="cart__count">2    </span><span class="cart__summ">на 100 000р</span></button>
                         </div>
                       </div>
                     </div>
@@ -414,7 +419,7 @@
                           </div>
                         </div>
                         <div class="col col-3-tl col-6-tp">
-                          <div class="productInfo__section">
+                          <div class="productInfo__section"><span class="productBadge productBadge--new" data-qcontent="element__buttons__productBadge">Новинка</span>
                             <div class="productInfo__priceStock"><span class="productCol__price">14 300<span class="icon-ruble"></span></span><span class="productCol__stock icon-tick">В наличии:</span></div>
                             <button class="toOrder active notEdit" data-qcontent="element__buttons__toOrder">В корзину</button>
                             <button class="button button--fastBuy" data-qcontent="element__buttons__button">Оформить без регистрации</button><!-- split modules/productChar -->
@@ -484,7 +489,14 @@
                         <li class="subProductInfo__tabber-item ibb"><span>Товары из этой серии коллекции</span></li>
                         <li class="subProductInfo__tabber-item ibb"><span>Пункты выдачи в Воронеже</span></li>
                       </ul>
-                      <div class="subProductInfo__contents"></div>
+                      <div class="subProductInfo__contents">
+                        <div class="subProductInfo__tabContent"><!-- split modules/additionalProducts -->
+                          <div class="additionalProducts__content" data-qcontent="module__additionalProducts"></div>
+                        </div>
+                        <div class="subProductInfo__tabContent"></div>
+                        <div class="subProductInfo__tabContent"></div>
+                        <div class="subProductInfo__tabContent"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -516,8 +528,8 @@
         </div>
       </div><!-- SCRIPTS -->
 <!-- split footer-scripts.html -->
-      <script src="scripts/quant-debug-JsonCss.js" type="text/javascript"></script>
       <script src="scripts/jquery.min.js" type="text/javascript"></script>
+      <script src="scripts/quant-debug-JsonCss.js" type="text/javascript"></script>
       <script src="scripts/ion.rangeSlider.min.js" type="text/javascript"></script>
       <script src="scripts/jquery-ui.min.js" type="text/javascript"></script>
       <script src="scripts/axe.min.js" type="text/javascript"></script>

@@ -16,6 +16,13 @@
             position: relative;
             display:inline-block;
               }
+      .productBadge{
+          float: left;
+           @include for-size(desktop-up){
+          float: right;
+          }
+      }
+     
       
     }
     &__link{
@@ -31,7 +38,7 @@
         transition: box-shadow .15s linear;
          &:hover{
             //transform: scale(1.02);
-            box-shadow: 0px 1px 8px 1px #ccc;
+            box-shadow: 0px 1px 8px 1px #ccc;  
         }
     }
     &__sku{

@@ -154,6 +154,17 @@
 
 ////////////////////////////////////////
 @include accordion();
+.img_container--align_v{
+  position: relative;
+}
+.img_container--align_v img {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
 @mixin breadcrumbs(){
 	.breadCrumb {
       text-transform: uppercase;
@@ -197,23 +208,6 @@
 @include breadcrumbs()
 
 /**
-* additionalProducts styles
-*/
-
-@mixin additionalProducts(){
-
-  .additionalProducts {
-    &__content {
-
-    }
-  }
-
-}
-
-
-////////////////////////////////////////
-@include additionalProducts();
-/**
 * cart styles
 */
 
@@ -237,6 +231,24 @@
     &__icon{
         margin-right: .4em;
         
+    }
+    &__count{
+        text-align: center;  
+        color: #fff;
+        background: cs('accent');
+        margin-left: -.4em;
+        margin-right: .2em;
+        //padding:0 vr-block(.1);
+        display: inline-block;
+        width:1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: .9em;
+        line-height: 1.2rem;
+    }
+    &__summ{
+        font-weight: bold;
     }
   }
 
@@ -392,7 +404,7 @@
         display:inline-block;
         position:relative;
         width:76.5%;
-        
+            
     }
     &__SublistItem {
         border-left:2px solid cs('primary'); 
@@ -942,7 +954,7 @@
   .pageBreadcrumbs {
     &__content {
         width: 100%;
-        background: cs('background-d');
+        background: cs('background-d2');
     }
     &__list{
         // padding-top: vr-block(.4);
@@ -955,6 +967,7 @@
         display: inline-block;
         margin: 0 vr-block(.1);
         font-size: .9rem;
+        font-weight:bold;
         //padding-right:vr-block(.2);   
        
         color: darken(cs('background-d2'),45%);
@@ -1047,6 +1060,13 @@
             position: relative;
             display:inline-block;
               }
+      .productBadge{
+          float: left;
+           @include for-size(desktop-up){
+          float: right;
+          }
+      }
+     
       
     }
     &__link{
@@ -1062,7 +1082,7 @@
         transition: box-shadow .15s linear;
          &:hover{
             //transform: scale(1.02);
-            box-shadow: 0px 1px 8px 1px #ccc;
+            box-shadow: 0px 1px 8px 1px #ccc;  
         }
     }
     &__sku{
