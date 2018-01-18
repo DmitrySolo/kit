@@ -1,5 +1,7 @@
-mixin LEVEL-modalWindow(id, title)
-	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id)
+mixin LEVEL-modalWindow(id, title, className)
+	-if(!className) className = ''
+	-else className= 'modalWindow--'+className
+	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id class=''+className)
 		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
 			a.modalWindow__close
 				+I('close','close')

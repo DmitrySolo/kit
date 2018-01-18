@@ -31,9 +31,9 @@
           }
           &--selected {
             //  border: 1px solid cs('accent-l');
-              fill: cs('accent');
+              fill: cs('primary');
                &:hover{
-              fill:cs('accent');
+              fill:cs('primary');
           }
          
           }
@@ -99,6 +99,10 @@
       }
       &--feature{
           width:12%;
+      }
+      &--delete{
+          height:1.5em;
+          width: 1.5em;
       }
       
     

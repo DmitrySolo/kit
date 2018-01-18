@@ -371,6 +371,7 @@ gulp.task('VIEW-1-MODULES', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([
 		projectDevDir + 'qContent/MODULES/**/_mixin.pug',
+        projectDevDir + 'qContent/COMPONENTS/**/_mixin.pug',
 		projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.pug',
 
 	], function () {
@@ -481,6 +482,7 @@ gulp.task('STYLES-1-MODULES', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([
 			projectDevDir + 'qContent/MODULES/**/_mixin.scss',
+            projectDevDir + 'qContent/COMPONENTS/**/_mixin.scss'
 		]
 		, function () {
 			gulp.start('concat-modules-scss');
@@ -564,7 +566,7 @@ gulp.task('image_resize', [], function () {
 ///////////////// CONCATS
 
 gulp.task('concat-modules-and-mixes', function () {
-	gulp.src(['dev/MODULES/MENUS/--*/*.scss', 'dev/MODULES/PROJECT MODULES/--*/*.scss'])
+	gulp.src(['dev/MODULES/MENUS/--*/*.scss', 'dev/MODULES/PROJECT MODULES/--*/*.scss',])
 		.pipe(concat('_modules.scss'))
 		.pipe(gulp.dest('dev/MODULES/'));
 	gulp.src(['dev/MIXES/**/_style.scss'])
@@ -630,7 +632,7 @@ gulp.task('concat-mixes-scss', function () {
 gulp.task('concat-modules-scss', function () {
 
 
-	gulp.src([projectDevDir + 'qContent/MODULES/**/_mixin.scss'])
+	gulp.src([projectDevDir + 'qContent/MODULES/**/_mixin.scss',projectDevDir + 'qContent/COMPONENTS/**/_mixin.scss'])
 		.pipe(concat('_modules.scss'))
 		.pipe(gulp.dest('dev/scss/PROJECT'));
 
@@ -647,7 +649,7 @@ gulp.task('concat-levels-scss', function () {
 gulp.task('concat-modules-pug', function (done) {
 
 
-	gulp.src([projectDevDir + 'qContent/MODULES/**/_mixin.pug',projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.pug'])
+	gulp.src([projectDevDir + 'qContent/MODULES/**/_mixin.pug',projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.pug',projectDevDir + 'qContent/COMPONENTS/**/_mixin.pug'])
 		.pipe(concat('_modules.pug'))
 		.pipe(gulp.dest(projectDevDir + 'qContent/concates/'));
 	done();
@@ -1644,7 +1646,7 @@ gulp.task('API-SERVER', function () {
 						}
 						else if (editor == 'quant') {
 
-							if (path1.indexOf('MODULES') > -1 || path1.indexOf('ELEMENTS') > -1) {
+							if (path1.indexOf('MODULES') > -1 || path1.indexOf('ELEMENTS') > -1 || path1.indexOf('COMPONENTS') > -1) {
 
 								console.log('It is  quant content')
 
@@ -1755,7 +1757,17 @@ gulp.task('API-SERVER', function () {
 								var JsContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/' + name + '.js', 'utf8');
 								var dataContent =fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/data.json', 'utf8');;
 
-							} else if (type == 'element') {
+							}
+                            if (type == 'component') {
+                                var PugContent = fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/_mixin.pug', 'utf8');
+                                var ScssContent = fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/_mixin.scss', 'utf8');
+                                var JsContent = fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/' + name + '.js', 'utf8');
+                                var dataContent =fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/data.json', 'utf8');;
+
+                            }
+
+
+							else if (type == 'element') {
 
 								var PugContent = fs.readFileSync(projectDevDir+'qContent/ELEMENTS/' + stype + '/' + name + '/_mixin.pug', 'utf8');
 								var ScssContent = fs.readFileSync(projectDevDir+'qContent/ELEMENTS/' + stype + '/' + name + '/_mixin.scss', 'utf8');
@@ -1876,12 +1888,15 @@ gulp.task('API-SERVER', function () {
 					/// CREATE MODULES AND OTHER
 					case 'creator' :
 						var contentType = url_parts.query.element;
+							qM.ok(contentType);
 
 						var name_cr = url_parts.query.title,
 							type_cr = url_parts.query.elementType,
 							extnds = url_parts.query.extends,
 							prnt = url_parts.query.parent,
 							save = url_parts.query.saveToGlobal;
+                        qM.ok(name_cr);
+                        qM.ok(type_cr);
 
 
 
@@ -1969,6 +1984,35 @@ gulp.task('API-SERVER', function () {
 								setContentSnippet('pug','module',moduleName)
 								qM.ok('Module added!');
 								break;
+                            case 'component' :
+                            	qM.ok('IN')
+                                var componentName = name_cr,
+                                    elemData = {
+                            			moduleName:"huy",
+                                        componentName: componentName,
+                                        projectName: projectName
+                                    },
+
+                                    cTemplates = fs.readdirSync('vendor/file_templates/COMPONENTS/_templates/');
+                                try {
+                                    for (var key in cTemplates) {
+
+                                        var file = cTemplates[key].slice(1, -4);
+                                        if (file == 'moduleScript.js') file = componentName+ '.js';
+
+                                        gulp.src('vendor/file_templates/COMPONENTS/_templates/' + cTemplates[key])
+                                            .pipe(rename(file))
+                                            .pipe(template(elemData))
+                                            .pipe(gulp.dest(projectDevDir + 'qContent/COMPONENTS/' + componentName + '/'))
+                                    }
+                                } catch (e) {
+
+                                    qM.err(e.name + ' ' + e.message);
+
+                                }
+                                	setContentSnippet('pug','component',componentName)
+                                qM.ok('Component added!');
+                                break;
 							case 'level':
 								if (!fs.existsSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + name_cr + '.pug')) {
 
@@ -2327,6 +2371,19 @@ gulp.task('API-SERVER', function () {
 
 
 					}
+                    if (elemPath['type'] == 'component') {
+
+                        if (pugToSave != 'notChanged' )
+                            fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/_mixin.pug', pugToSave)
+                        if (scssToSave != 'notChanged' )
+                            fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/_mixin.scss', scssToSave)
+                        if (jsToSave != 'notChanged' )
+                            fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/' + elemPath['name'] + '.js', jsToSave)
+                        if (dataToSave != 'notChanged' )
+                            fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/data.json', dataToSave)
+
+
+                    }
 					if (elemPath['type'] == 'element') {
 
 						if(pugToSave != 'notChanged' )

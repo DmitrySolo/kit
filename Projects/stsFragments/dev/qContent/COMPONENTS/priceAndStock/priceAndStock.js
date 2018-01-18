@@ -1,0 +1,3 @@
+/**
+* MODULE: priceAndStock script
+*/

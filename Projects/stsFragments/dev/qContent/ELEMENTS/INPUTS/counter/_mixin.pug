@@ -1,0 +1,6 @@
+mixin In-counter(name,classModifier)
+	-var classModifier = (classModifier)? 'counter--' + classModifier : ''
+	.counter__ctn
+		button.counter__btn.counter__btn--minus -
+		input(name=name class='counter '+classModifier type='text' value="1" data-qcontent='element__INPUTS__counter')
+		button.counter__btn.counter__btn--plus +

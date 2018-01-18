@@ -314,6 +314,7 @@ Frame.onload = function () {
 	loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/LAYOUT', '.fs__layout');
 	loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/MODULES', '.fs__p_modules');
 	loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/ELEMENTS', '.fs__p_elements');
+    loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/COMPONENTS', '.fs__p_components');
 	loadProjectPath('dev/scss/MASTER_OPTIONS', '.fs__options');
 	loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/PAGES', '.fs__pages');
 	loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/LEVELS', '.fs__levels');
@@ -1736,6 +1737,7 @@ $(document).ready(function () {
 					loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/template/PAGESYSTEM/LAYOUT', '.fs__layout');
 					loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/MODULES', '.fs__p_modules');
 					loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/ELEMENTS', '.fs__p_elements');
+                    loadProjectPath('Projects/' + $("span.projectTitle").text() + '/dev/qContent/COMPONENTS', '.fs__p_components');
 					console.log('ok')
 					editorPug.insert(data)
 
@@ -2049,6 +2051,18 @@ z
 					$('#contentNavigator__name input').val(name)
 
 				}
+                else if (arr.indexOf('COMPONENTS') != -1) {
+
+                    var name = arr[arr.length - 1];
+                    var stype = "";
+                    var type = 'component';
+
+                    ql(name, stype, type, 'OOOOOOO')
+                    $('#contentNavigator__type input').val(type)
+                    $('#contentNavigator__stype input').val(stype)
+                    $('#contentNavigator__name input').val(name)
+
+                }
 
 
 				else if (arr.indexOf('MODULES') != -1) {
@@ -2369,7 +2383,7 @@ z
 		}
 
 
-		if (elementType == 'Module' || elementType == 'Page') {
+		if (elementType == 'Module' || elementType == 'Page' || elementType == 'Component') {
 
 			$('label:contains(TYPE),' +
 				'label:contains(EXTENDS),' +

@@ -1,0 +1,49 @@
+/**
+* cartPage styles
+*/
+
+@mixin cartPage(){
+
+  .cartPage {
+    &__content {
+       
+    }
+    &__cartHeader {
+        padding: vr-block(.2) vr-block(.8) vr-block(.4);
+        font-weight: bold;
+        & .col {text-align: center};
+        &__title{
+            
+        }
+    }
+    
+    &__cartCheck {
+         padding:vr-block(.4);
+        width: 100%;
+        background: #fff;
+        border-bottom: solid 2px cs('background-d');
+    }
+    
+    &__summtitle {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.6em;
+        
+    }
+    &__summ{
+        color: cs('primary-d');
+        font-size: 1.9em;
+        font-weight: bold;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-top: vr-block(.2);
+        margin-bottom: vr-block(.4);
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include cartPage();

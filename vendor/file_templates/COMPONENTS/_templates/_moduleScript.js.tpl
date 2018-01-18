@@ -1,0 +1,3 @@
+/**
+* MODULE: <%= componentName %> script
+*/

@@ -1,0 +1,252 @@
+/**
+* order styles
+*/
+
+@mixin order(){
+    .underlined{
+        border-bottom: solid 1px cs('primary');
+    }
+  .order {
+    &__content {
+       
+        .button--fastBuy{
+            padding: vr-block(.2) 0;
+            font-size: .9rem;
+            display: inline-block;
+            margin: vr-block(.2) auto;
+
+            &:hover{
+             color: cs('primary-d2');  
+            }
+        }
+        .toOrder{
+            position: relative;
+            width: 200px;
+            float: right;
+            font-weight: bold;
+            margin-top: vr-block(1.5);
+            &:before{
+                position: absolute;
+                vertical-align: middle;
+                right: 10%;
+            }
+        }
+        .radio{
+            font-size: 1.4rem;
+            border: solid 1px cs('background-d');
+            border-radius: 6px;
+            padding: vr-block(.4);
+            &__label{
+                text-align: center;
+            }
+            &__input:checked + .radio__label{
+                color: cs('accent');
+            }
+            &:hover {
+                border-color: cs('primary');
+            }
+        }
+        margin-top: vr-block(1);
+        
+    }
+    &__info{  
+        background: #fff;
+         padding: vr-block(1);
+         border-bottom: solid 2px cs('background-d2');
+          border-radius: 6px;
+        
+    }
+     &__infoTitle{
+         margin-bottom: vr-block(.4);
+     }
+    &__infoItem{
+        display: block;
+        margin-bottom: vr-block(.2);
+        font-weight: bold;
+    }
+     &__infoSumm{
+         font-size: 1.2em;
+         padding-top: vr-block(.2);
+         margin-top: vr-block(.4);
+         border-top: dashed 1px ;
+        color: cs('accent');
+    }
+    &__steps{
+         background: #fff;
+         padding: vr-block(1) 0;
+         border-bottom: solid 2px cs('background-d2');
+          border-top-left-radius: 6px;
+          border-top-right-radius: 6px;
+       width: 100%;
+       text-align:center;
+       
+    }
+    &__checkPoint{
+        position: relative;
+        display: inline-block;
+        vertical-align:top;
+        width: 18%;
+        text-align: center;
+            &--active{
+                & .order__checkPointNum {
+                    background: cs('primary');
+                    color: #fff;
+                    
+                }
+                & .order__checkPointTitle {
+                    color:cs('primary');
+                    font-weight: bold;
+                    
+                }
+            }
+            &--gone{
+                & .order__checkPointNum {
+                    background-color: cs('succes');
+                    color: #fff;
+                    background-image: url(source/images/catalog/correct.svg);
+                    background-repeat: no-repeat;
+                    background-size: 70%;
+                    background-position: 50%;
+                    
+                }
+                & .order__checkPointTitle {
+                    color:cs('succes');
+                    font-weight: bold;
+                    
+                }
+            }
+        
+    }
+    &__way{
+        &:after{
+            content:'';
+            width: 50%;
+            height: 2px;
+            background: cs('background-d');
+            position: absolute;     
+            top:30%;
+            right: -25%;
+            margin-top: -2px;
+           
+        }
+         &--gone:after{
+                 background: cs('primary');
+            }
+    }
+    &__checkPointNum{ 
+        width: 2rem;
+        height: 2rem;
+        font-weight:bold;
+        font-size: 1em;
+        margin: 0 auto;
+        line-height: 2rem;
+        background: cs('background-d');
+        border-radius: 50%;
+        margin-bottom: vr-block(.4);
+        
+
+      }
+      &__checkPointTitle{
+          color: darken(cs('background-d2'),20%);
+          font-size: .9em;
+      }
+      &__form{
+          border-radius: 3px;
+          margin-top: vr-block(.4);  
+          background: #fff;
+          padding: vr-block(1);
+          border-bottom: solid 2px cs('background-d2');  
+          &--delivery{
+             
+              .radio{
+                  font-size: 1em;
+                  border-bottom: none;
+                  border-bottom-left-radius:0;
+                  border-bottom-right-radius:0;
+                  margin:0;
+                 // height:$line-height-ratio *4#{em};
+                  &__label{
+                      text-align: left;
+                      padding-left: vr-block(1.4);
+                      height: $line-height-ratio*2#{em};
+                      
+                  }
+                  &--selected{
+                          border-color: cs('primary');
+                         border-bottom: 1px solid #fff;
+                        z-index: 222;
+                        margin-bottom: -1px;
+                  }
+              }
+          }
+          
+           & .input__ctn{
+               margin: 0 auto;
+                width:90%;
+           }
+          @include for-size(phone-only){
+              & .input__ctn{
+                  border-bottom: dashed 1px silver;
+              }  
+          }
+        
+      }
+      &__points{
+          margin-top: vr-block(1);
+          .radio{
+              font-size: .9rem;
+              border-radius: 0;
+              border: solid 1px cs('background-d2');
+              margin-bottom:2px;
+              &__label{  
+                  height: auto;
+              }
+              //margin-top: -1px;
+              //height: auto;
+              &--selected{
+                  border-color: cs('primary');
+                  .radio__input:checked + .radio__label{
+                      color: cs('primary-d');
+                  }
+              }
+          }
+      }
+      &__pointsList{
+          &__ctn{
+              padding: vr-block(.2);
+              background: cs('background');
+          }
+          max-height: 400px;
+          overflow-y: auto;
+           padding:  vr-block(.1);
+          &::-webkit-scrollbar-thumb {  
+            background-color: cs('primary');        
+            outline: 1px solid #f3f6ff;
+            pointer-events: none;} 
+    
+      }
+      &__form--confirmed {
+          width: 100%;
+          .text{
+              font-weight: bold;
+              text-align: center;
+          }
+          .order__checkPointNum {
+              width: 4em;
+              height: 4em;
+          }
+      }
+      &__fsuccesTitle{
+          text-align: center;
+          color: cs('succes-d');
+      }
+      &__number{
+          color: cs('accent');
+          font-size: 1.2em;
+      }
+
+}
+}
+
+////////////////////////////////////////
+@include order();

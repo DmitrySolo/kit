@@ -1,6 +1,17 @@
 <!-- split footer.html -->
 footer.mainFooter(data-qcontent="layout__footer") Footer
-	+LEVEL-modalWindow('login','Вход регистрация')
+	+LEVEL-modalWindow('login','Войти','login')
+		+In-textInput("mail","Электронная почта","Электронная почта:")
+		+In-textInput("mail","Пароль","пароль:")
+		+B-toOrder('Войти')
+		+B-checkBox('Запомнить меня','checked')
+		+B-button('Забыли пароль?','fastBuy')
+	+LEVEL-modalWindow('signUp','Регистрация','signUp')
+		+In-textInput("mail","Электронная почта","Электронная почта:")
+		+In-textInput("mail","Пароль","пароль:")
+		+In-textInput("mail","Повтоите пароль","Повторите пароль:")
+		+B-checkBox('Запомнить меня для последующего входа','checked')
+		+B-toOrder('Зарегистрироваться и войти')
 	+LEVEL-modalWindow('geo','Выбор городов')
 
 

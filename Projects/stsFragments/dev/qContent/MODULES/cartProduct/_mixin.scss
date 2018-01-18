@@ -1,0 +1,27 @@
+/**
+* cartProduct styles
+*/
+
+@mixin cartProduct(){
+
+  .cartProduct {
+    &__content {
+        padding: vr-block(.8);
+        border-bottom: solid 1px cs('background');
+        &:first-child{
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+        &:last-child{
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            border-bottom: 2px solid cs('background-d');
+        }
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include cartProduct();

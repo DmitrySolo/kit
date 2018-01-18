@@ -1,0 +1,7 @@
+mixin In-textInput(name,placeholder,label,classModifier)  
+	-var classModifier = (classModifier)? 'textInput--' + classModifier : ''
+	-var placeholder = (placeholder)? placeholder : ''
+	-var label = (label)? label : ''
+	.input__ctn
+		label.textInput__label=label
+		input(name=name class='textInput '+classModifier placeholder=''+placeholder type='text' data-qcontent='element__INPUTS__textInput')

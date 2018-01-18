@@ -1,21 +1,26 @@
 /* modalWindow STYLE */
 
 .modalWindow {
-
+     .toOrder{
+            margin-top: vr-block(.8);
+        }
     &__content {
-        width:100%;
         top:30px; 
         @include for-size(tablet-l-up){
-             width: 40%;
+             width: 30%;
              top:126px; 
             left:50%;
-            margin-left:-20%;
+            margin-left:-15%;
         }
         position: fixed;
         
         background: cs('foreground'); 
         padding: 2.4em; 
   
+    }
+    &__title{ 
+        margin-bottom: vr-block(.4);
+        border-bottom: dashed 1px cs('background-d2')
     }
     &--hide{
         display:none;
@@ -26,6 +31,27 @@
     &--hidden{
         display:none;
         opacity:0;
+    }
+    &--login{
+        .modalWindow__content{  
+           // border: solid 9px cs('primary-d'); 
+            width: 20%;
+            margin-left: -10%;
+        }
+          
+            input{
+           
+                width: 100%;
+        }
+       
+    }
+        &--signUp{
+
+            input{
+           
+                width: 90%;  
+        }
+       
     }
     
     

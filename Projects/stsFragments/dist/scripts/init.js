@@ -239,7 +239,7 @@ var pImgs = $('.productImageSlider__image','.productImageSlider');
 
 var rNav = '<span class="icon-to-right notEdit"></span>';
 var lNav = '<span class="icon-to-left notEdit"></span>';
-var owl =$('.productImageSlider__imageList').owlCarousel(
+$('.productImageSlider__imageList').owlCarousel(
         {
             "items":1, 
             "lazyLoad":false,
@@ -261,9 +261,9 @@ pImgs.on('click',function () {
    // owl.trigger('to.owl.carousel',i);
     // 
    
-    $('#js-productImageSlider').appendTo('.productImageSlider__fullWindow')
+    //$('#js-productImageSlider').appendTo('.productImageSlider__fullWindow')
      $('.productImageSlider__fullWindow').show();
-     owl.trigger('refresh.owl.carousel');
+    // owl.trigger('refresh.owl.carousel');
 })
 $('.icon--slider-close').on('click',function () {
     $('#js-productImageSlider').prependTo('.productImageSlider__content')

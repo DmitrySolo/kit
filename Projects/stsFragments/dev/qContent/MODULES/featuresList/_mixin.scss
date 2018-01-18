@@ -12,13 +12,15 @@
         background: cs('foreground');
         padding: vr-block(1)  vr-block(.2);
         margin-bottom: vr-block(.8);
+        border-bottom: solid 2px cs('background-d');
+        border-radius: 3px;
     }
     &__item{
         letter-spacing: normal;
         width: 32%;
         position:relative;
         margin-right: 1%;
-        &:last-child{
+        &:last-child{   
             margin-right:0;
         }
 

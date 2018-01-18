@@ -7,7 +7,8 @@
   .pageBreadcrumbs {
     &__content {
         width: 100%;
-        background: cs('background-d2');
+        background: cs('background');
+        margin-top: 20px;
     }
     &__list{
         // padding-top: vr-block(.4);
@@ -23,15 +24,16 @@
         font-weight:bold;
         //padding-right:vr-block(.2);   
        
-        color: darken(cs('background-d2'),45%);
-        &:after{
-            content: "\2192";
-            
+        color:cs('primary');
+        &:before{
+            font-size: .6em;
+            margin-right: (vr-block(.6));
         }
-        &:first-child{
-            
-            font-weight: bold;
-        }
+       /*  &:after{
+           content: "\2192";
+           
+       } */
+
         &:last-child{
             //color: cs('background-d2');
            color: darken(cs('background-d2'),35%);

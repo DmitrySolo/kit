@@ -3,7 +3,20 @@
 */
 
 @mixin productCol(){
-
+    .col-3-tl .productCol__card{
+        font-size: .75rem;
+    }
+    .col-8-tl .productCol__card{
+        font-size: 1.2rem;
+        .productCol__img{
+            //height: 185px;
+        }
+        .productCol__name{
+            text-align: center;
+            font-size: 1.1em;
+            height: 2em;
+        }
+    }
   .productCol {
     &__list{
        // background:cs('foreground-d')
@@ -15,6 +28,10 @@
             text-align: center;
             position: relative;
             display:inline-block;
+              }
+              .priceAndStock{
+                  margin-bottom: vr-block(.4);
+                  font-size: 1.1em;
               }
       .productBadge{
           float: left;
@@ -36,6 +53,8 @@
         padding: .4em .8em 1em;
         margin-bottom: .5em;
         transition: box-shadow .15s linear;
+        border-bottom: solid 3px cs('background-d');
+        border-radius: 6px;
          &:hover{
             //transform: scale(1.02);
             box-shadow: 0px 1px 8px 1px #ccc;  
@@ -43,14 +62,14 @@
     }
     &__sku{
         //padding-left: 11px;
-        display: inline-block;
+        display: inline-block;   
         margin-bottom:5px;
     }
     &__img{  
         width:100%;  
         height: 180px;
        // background-color: #ededed;
-        background-image:url("https://santehsmart.ru/upload/iblock/0ff/0ff39d9eca03992f6e17ee7c16cf8ed2.png");
+        background-image:url("https://santehsmart.ru/upload/iblock/eee/eeed92819b3562e5890f856594531070.jpg");
         background-position: center;
         background-size: contain; 
         background-repeat: no-repeat;
@@ -67,9 +86,10 @@
         margin-bottom: .5em;
     }
     &__priceStock{
-        vertical-align:middle;
+        vertical-align:top;
          //font-size: .9em;
         margin-bottom:.8em;
+        font-size: 1.1em;
     }
     &__stock{
         vertical-align: middle;
@@ -88,7 +108,7 @@
         }
         &--last{
             font-size: .8em;
-            color: cs('accent-d');
+            color: cs('accent-d');   
         }
     }
     &__price{
@@ -107,7 +127,7 @@
             &-moc{  
                 color: cs('font');  
             }
-        }
+        }   
         
           
     }
@@ -115,7 +135,7 @@
     
   }
   label.productInline__quantityLabel{
-      @include for-size(tablet-l-up){
+      @include for-size(tablet-l-up){  
           display:none;
       }
   }

@@ -9,9 +9,7 @@ mixin LEVEL-productInfo(data)
 						.productInfo__section
 							+B-productBadge('Новинка','new')
 							.productInfo__priceStock
-								span.productCol__price 14 300
-									span.icon-ruble
-								span.productCol__stock.icon-tick В наличии:
+								+C-priceAndStock()
 							+B-toOrder('В корзину')
 							+B-button('Оформить без регистрации','fastBuy')
 							+MODULE-productChar()

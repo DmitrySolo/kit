@@ -1,0 +1,96 @@
+mixin MODULE-order()
+	<!-- split modules/order -->
+	.order__content(data-qcontent='module__order')
+		.group.group--md
+			.col.col-9-tl.hidden
+				ul.order__steps
+					li.order__checkPoint.order__way.order__way--gone.order__checkPoint--gone
+						.order__checkPointNum 
+						span.order__checkPointTitle Тип плательщика
+					li.order__checkPoint.order__way.order__checkPoint--active
+						.order__checkPointNum 2
+						span.order__checkPointTitle Способ доставки      
+					li.order__checkPoint.order__way
+						.order__checkPointNum 3
+						span.order__checkPointTitle Способ оплаты
+					li.order__checkPoint.order__way
+						.order__checkPointNum 4
+						span.order__checkPointTitle Контактные данные
+					li.order__checkPoint
+						.order__checkPointNum 5
+						span.order__checkPointTitle Завершение покупки
+				section.order__form.order__form--personal.clearfix.hidden
+					.group.group--el
+						.col.col-4-tp
+							+In-textInput('txt','ФИО','ФИО')
+						.col.col-4-tp
+							+In-textInput('txt','Email','Email')
+						.col.col-4-tp
+							+In-textInput('txt','Номер телефона','Номер телефона')
+						.col.col-4-tp
+							+In-textInput('txt','Город','Город')
+					+B-toOrder('Далее','icon-to-right')
+				section.order__form.order__form--client.clearfix.hidden
+					form
+						.group.group--el 
+							.col.col-6-tl
+								+B-radio('Физическое лицо','','checked')
+							.col.col-6-tl
+								+B-radio('Юридическое лицо')
+						+B-toOrder('Далее','icon-to-right')
+				section.order__form.clearfix.order__form--delivery.hidden  
+					form
+						.group.group--el.underlined  
+							.col.col-4-tl  
+								+B-radio('Доставка до пункта выдачи ТК СДЭК','radio--selected','checked')
+							.col.col-4-tl
+								+B-radio('Забрать самостоятельно из офиса')
+							.col.col-4-tl
+								+B-radio('Курьерская доставка') 
+
+					.order__points
+						.group.group--el
+							.col.col-4-tl
+								ul.order__pointsList__ctn
+									ul.order__pointsList
+										li
+											+B-radio('г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)','radio--selected','true')
+										li
+											+B-radio('г. Воронеж, ул. Генерала Лизюкова, 17А, ТЦ «Калинка» (только мелкий габаритный груз)')
+										li
+											+B-radio('г. Воронеж, ул. Остужева 28 (только мелкий габаритный груз)')
+										li
+											+B-radio('г. Воронеж, ул. Пушкинская, 42 (только мелкий габаритный груз)')
+										li
+											+B-radio('г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)')
+							.col.col-8-tl
+								iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3Ao-BDfF8mwUhzu4w4BXJHX8ENv4xcrB0A&amp;source=constructor" width="100%" height="414" frameborder="0")
+						
+						+B-toOrder('Далее','icon-to-right')
+			.col.col-12-tp
+				section.order__form.clearfix.order__form--confirmed
+					.order__checkPoint--gone
+						.order__checkPointNum 
+						h3.order__fsuccesTitle Заказ оформлен    
+						p.order__fsuccesTitle.text Ваш заказ 
+							span.order__number №1111519  
+							| от 17.01.2018 15:48:54 успешно создан.
+						p.text Вы можете следить за выполнением своего заказа в Персональном разделе сайта. Обратите внимание, что для входа в этот раздел вам необходимо будет ввести логин и пароль пользователя сайта.
+
+					
+							
+			.col.col-3-tl.hidden  
+				section.order__info  
+					h5.order__infoTitle Состав заказа:
+					span.order__infoItem Товаров: 1 шт
+					span.order__infoItem На сумму: 123 000 р 
+					span.order__infoItem Доставка: 1 000 р
+					h6.order__infoSumm Итого: 124 000 р
+					+B-button('Изменить cостав заказа','fastBuy')
+						
+						
+						
+						
+						
+						
+			

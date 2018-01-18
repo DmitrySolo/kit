@@ -1,10 +1,3 @@
-mixin <%= elementName %>(icon,title,text,classModifier)
-    -if (!className) className =''
-    li(class='<%elementName%>' data-qcontent='element__ICON-TITLE-TEXTS__<%= elementName %>')
-        .iconWrapper
-            svg(class='<%elementName%> ' + classModifier)
-                use(xlink:href="#" + icon)
-        h5=title+':'
-        span=text
-
-
+mixin In-<%= elementName %>(name,classModifier)
+	-var classModifier = (classModifier)? '<%= elementName %>--' + classModifier : ''
+Name%> '+classModifier type='text' data-qcontent='element__INPUTS__<%= elementName %>')	input(name=name class='<%element

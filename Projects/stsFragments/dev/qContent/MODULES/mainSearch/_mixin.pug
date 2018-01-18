@@ -1,4 +1,4 @@
-mixin MODULE-mainSearch()
+mixin MODULE-mainSearch(data)
 	<!-- split modules/mainSearch -->
 	.mainSearch__content(data-qcontent='module__mainSearch')
 		form.mainSearch__form 
@@ -6,3 +6,5 @@ mixin MODULE-mainSearch()
 			span.mainSearch__icon
 				+I('search','mainSearch') 
 				input.mainSearch__submit(type='submit' value="Искать")
+	//	.mainSearch__result.clearfix
+		//	+C-productInline(productInline1)

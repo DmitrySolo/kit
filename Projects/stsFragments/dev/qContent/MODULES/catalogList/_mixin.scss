@@ -46,22 +46,22 @@
         background: cs('foreground');
         width:100%;
         display: inline-block;   
-        @include for-size(tablet-l-up){
+        @include for-size(tablet-l-up){   
             width: 23.5%;  
         }
     }
     &__categoryItem {   
         cursor:pointer;
-        //font-size:em;
+        font-size: .9rem;
         font-weight: bold;
         position:relative;
-        text-transform: uppercase;
+        text-transform: uppercase;  
         padding:.4em 0 .4em .4em;
         border-bottom:solid 1px lighten(cs('font-l2'),30%);
         &--hovered{
-            background: lighten(cs('primary-l2'),50%);
+            background: lighten(cs('primary-l2'),50%);  
             .icon--catalog {
-            fill: cs('accent-l2');  
+            fill: cs('accent-l2');     
         } 
         }
         &:hover{
@@ -70,11 +70,14 @@
         &:hover .icon--catalog {
             fill: cs('accent-l2');
         } 
+        @include for-size(tablet-p-up){
+            font-size: .8rem;
+        }
     }
     &__categorySublist{
         
         display:inline-block;
-        position:relative;
+        position:relative;   
         width:76.5%;
             
     }

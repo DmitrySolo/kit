@@ -1,0 +1,6 @@
+mixin B-radio(label,className,checked)
+	-if (!className) className =''
+	-if (!checked) checked = false
+	.radio(class=''+className data-qcontent='element__buttons__radio' )=value
+		input.radio__input(value=label type='radio',id="id_"+label name='radio' checked=checked)
+		label.radio__label(,for="id_"+label)=label

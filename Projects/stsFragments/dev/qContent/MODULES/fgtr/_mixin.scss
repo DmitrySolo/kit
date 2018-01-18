@@ -1,0 +1,17 @@
+/**
+* fgtr styles
+*/
+
+@mixin fgtr(){
+
+  .fgtr {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include fgtr();

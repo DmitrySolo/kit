@@ -1,0 +1,17 @@
+mixin MODULE-cartPage()
+	<!-- split modules/cartPage -->
+	.cartPage__content(data-qcontent='module__cartPage')
+		.cartPage
+			.group.group--md
+				.col.col-9-tl
+					+MODULE-cartProduct()
+					+MODULE-cartProduct()
+					+MODULE-cartProduct()
+					+MODULE-cartProduct()
+				.col.col-3-tl
+					.cartPage__cartCheck
+						span.cartPage__summtitle Итого:
+						br
+						span.cartPage__summ 113 400 Руб.
+						+B-toOrder('Заказать','makeOrder')
+					

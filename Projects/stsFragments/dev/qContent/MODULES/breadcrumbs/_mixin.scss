@@ -15,18 +15,23 @@
       }
   .breadcrumb__section {
     display: inline-block;
-       padding: 0px 6px;
+       height: 1.4rem;
+       width: 1.4rem;
+       text-align: center;
+       border-radius: 3px;
        margin-right: 2px; 
         color: cs('font-l');
        // border-radius: 3px;
         &:hover{
         color: cs('font-d2');
+         background: cs('primary-l2');
+         color: #fff;
       }  
   }
   .breadCrumb__section--current {
      //border: solid 2px cs('accent');
     font-weight: bold;
-    background: cs('accent');
+    background: cs('primary');
     color: #fff;   
     &:hover{
         color:#fff;

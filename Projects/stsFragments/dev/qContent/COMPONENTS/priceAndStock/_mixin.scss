@@ -1,0 +1,51 @@
+/**
+* priceAndStock styles
+*/
+
+@mixin priceAndStock(){
+
+  .priceAndStock {
+      .productCol__card &{
+           height: vr-block(2);
+      }
+      .productCol__stock{
+          &--out{
+              color: cs('erorr');
+          }
+      }
+     
+    &__content {
+        
+    }
+    &--sale{
+        .productCol__price {
+            line-height: 1.3;
+        }
+        .productCol__oldPrice{
+            font-weight: normal;
+            //text-align: left;
+            line-height: 1;
+           
+            color: cs('font');  
+            display: block;
+            font-size: .8em;
+            text-decoration: line-through;
+        }
+    }
+    .productInfo &--sale{
+        .productCol__price {
+            line-height: 1.7;
+        }
+         .productCol__oldPrice{
+              margin-top: vr-block(.4);
+              font-size: .7em;
+         }
+        
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include priceAndStock();

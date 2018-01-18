@@ -1,0 +1,31 @@
+$bkgColor__delete:#fff;
+$bkgColor__delete-hover: cs('background-d');
+$color__delete-hover: cs('font-d');
+$color__delete: cs('font-');
+.delete {
+	position: relative;
+	margin: 0;
+	padding:vr-block(.15);
+	border: solid 1px cs('background-d');
+	border-bottom: solid 2px cs('background-d2');;
+	border-radius: 3px;
+	background-color: $bkgColor__delete;
+	color: $color__delete;
+		&:hover, &:focus, &:active {
+		color: $color__delete-hover;
+		background-color: $bkgColor__delete-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+			border-bottom-width:1px ;
+			.icon{
+	    fill: cs('erorr-l')
+	}
+	}
+	.icon{
+	    fill: cs('font-l2')
+	}
+}

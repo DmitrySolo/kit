@@ -1,0 +1,3 @@
+/**
+* MODULE: productCatInline script
+*/

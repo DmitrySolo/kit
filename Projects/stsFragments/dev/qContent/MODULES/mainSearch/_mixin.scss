@@ -5,9 +5,12 @@
 @mixin mainSearch(){
 
   .mainSearch {
+      &__form{
+         
+      }
     &__content {
-        //height:100%;
-        position:relative;
+        height:100%;
+        //position:relative;
         padding:7px; 
         border-radius: 3px;
         background: cs('foreground');
@@ -40,6 +43,23 @@
         text-align: center;  
         top:0;
         height:100%;
+    }
+    &__result{
+        position:absolute;
+        left:0;
+        right:0;
+        top:100%;
+        width: 100%;
+        z-index: 33333;
+        background: #fff;
+        border: solid 1px cs('primary');
+        border-top-color: cs('background-d');
+        margin-top: -1px;
+       // margin: -2px -1px 0 -1px;
+        padding: vr-block(.2);
+        .productInline{
+         
+        }
     }
   }
 

@@ -1,0 +1,5 @@
+mixin B-delete(value,className)
+	-if (!className) className =''
+	button.delete(class=''+className data-qcontent='element__buttons__delete')=value
+		+I('delete','delete')
+

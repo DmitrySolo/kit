@@ -4,9 +4,13 @@ mixin MODULE-productImageSlider()
 		.productImageSlider__mainCarousel#js-productImageSlider
 			ul.productImageSlider__imageList.owl-carousel
 				+loop(2)
-						img.productImageSlider__image(src='https://ove-cfo.ru/upload/iblock/44d/44d26668abf8db8ad511e0e4aba9c374.jpg')
+						img.productImageSlider__image(src='https://ove-cfo.ru/upload/iblock/da7/da764b5e04732093b812064f137d7b92.jpg')
 						img.productImageSlider__image(src='https://santehsmart.ru/upload/iblock/dc6/dc63e36b2080c2a4cc34950482a0b7d5.png')
 						img.productImageSlider__image(src='https://santehsmart.ru/upload/iblock/563/563c31fc3c70a30ce51f608728a60eea.jpg')
 	.productImageSlider__fullWindow
 		+I('close','slider-close','js-slider-close')
-			
+		ul.productImageSlider__imageList.owl-carousel  
+			+loop(2)
+				img.productImageSlider__image(src='https://ove-cfo.ru/upload/iblock/44d/44d26668abf8db8ad511e0e4aba9c374.jpg')
+				img.productImageSlider__image(src='https://santehsmart.ru/upload/iblock/dc6/dc63e36b2080c2a4cc34950482a0b7d5.png')
+				img.productImageSlider__image(src='https://santehsmart.ru/upload/iblock/563/563c31fc3c70a30ce51f608728a60eea.jpg')

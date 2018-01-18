@@ -1,0 +1,24 @@
+/**
+* productCatInline styles
+*/
+
+@mixin productCatInline(){
+
+  .productCatInline {
+      .productInline__content{  
+          padding: vr-block(.8);
+          border-radius: 6px;
+          border-bottom: 2px solid cs('background-d');
+      }
+    &__content {
+            .toOrder{
+                margin: 0;
+            }
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include productCatInline();

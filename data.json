@@ -11,17 +11,6 @@
 				"": ""
 			}
 		},
-		"JQ": {
-			"js": {
-				"jquery": {
-					"src": "node_modules/jquery/dist/jquery.min.js",
-					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"quant-HUD-script": {
 			"js": {
 				"quant-HUD-script-script": {
@@ -46,6 +35,17 @@
 					"src": "node_modules/jquery-ui-dist/jquery-ui.min.css",
 					"container": "head/libs"
 				}
+			}
+		},
+		"JQ": {
+			"js": {
+				"jquery": {
+					"src": "node_modules/jquery/dist/jquery.min.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
 			}
 		},
 		"quant-lib": {
@@ -152,21 +152,6 @@
 				}
 			}
 		},
-		"productInline": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/MODULES/productInline/productInline.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"productImageSlider": {
 			"js": {
 				"lib1": {
@@ -175,6 +160,21 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/MODULES/productImageSlider/productImageSlider.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"productInline": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/productInline/productInline.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -504,7 +504,35 @@
 			"dop_class": "",
 			"layout": "noSidebar",
 			"group": ""
+		},
+		"11": {
+			"title": "Корзина",
+			"slug": "Cart",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "noSidebar",
+			"group": ""
+		},
+		"12": {
+			"title": "Оформление заказа",
+			"slug": "order",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "noSidebar",
+			"group": ""
 		}
+	},
+	"priceAndStock": {
+		"priceAndStock": "1"
+	},
+	"productInline": {
+		"productInline": "1",
+		"sku": "123456",
+		"title": "Полка угловая ОНИКА ТРИО 20У 302001qq-2",
+		"price": "9 535",
+		"stock": "1255",
+		"sale": "true",
+		"superSale": "true"
 	},
 	"accordion": {
 		"filter": {
@@ -555,11 +583,18 @@
 	"cart": {
 		"cart": "1"
 	},
-	"catalogList": {
-		"catalogList": "1"
+	"cartPage": {
+		"cartPage": "1"
+	},
+	"cartProduct": {
+		"cartProduct": "1",
+		"title": {}
 	},
 	"catalog": {
 		"catalog": "1"
+	},
+	"catalogList": {
+		"catalogList": "1"
 	},
 	"confirmedOrderPage": {
 		"confirmedOrderPage": "1"
@@ -570,20 +605,23 @@
 	"featuresList": {
 		"featuresList": "1"
 	},
-	"geoTarget": {
-		"geoTarget": "1"
+	"fgtr": {
+		"fgtr": "1"
 	},
 	"flyPageFragment": {
 		"title": "Test Page"
 	},
+	"geoTarget": {
+		"geoTarget": "1"
+	},
 	"IBGrid": {
 		"IBGrid": "1"
 	},
-	"mainInfo": {
-		"mainInfo": "1"
-	},
 	"layout": {
 		"layout": "1"
+	},
+	"mainInfo": {
+		"mainInfo": "1"
 	},
 	"mainSearch": {
 		"mainSearch": "1"
@@ -594,34 +632,29 @@
 	"module1": {
 		"module1": "1"
 	},
+	"noticeList": {
+		"noticeList": "1"
+	},
 	"owlSlider": {
 		"owlSlider": "1"
+	},
+	"order": {
+		"order": "1"
 	},
 	"pageBreadcrumbs": {
 		"pageBreadcrumbs": "1"
 	},
-	"noticeList": {
-		"noticeList": "1"
+	"productCatInline": {
+		"productCatInline": "1"
 	},
 	"productChar": {
 		"productChar": "1"
 	},
-	"productImageSlider": {
-		"productImageSlider": "1"
-	},
 	"productCol": {
 		"productCol": "1"
 	},
-	"reactTest": {
-		"reactTest": "1"
-	},
-	"productInline": {
-		"sku": "123456",
-		"title": "Полка угловая ОНИКА ТРИО 20У 302001qq-2",
-		"price": "9 535",
-		"stock": "1255",
-		"sale": "true",
-		"superSale": "true"
+	"productImageSlider": {
+		"productImageSlider": "1"
 	},
 	"productInline1": {
 		"sku": "325335",
@@ -663,17 +696,23 @@
 		"price": "11 000",
 		"stock": "8"
 	},
+	"reactTest": {
+		"reactTest": "1"
+	},
 	"support": {
 		"support": "1"
+	},
+	"swe": {
+		"swe": "1"
+	},
+	"topBar": {
+		"topBar": "1"
 	},
 	"topFeatures": {
 		"topFeatures": "1"
 	},
 	"topMenu": {
 		"topMenu": "1"
-	},
-	"topBar": {
-		"topBar": "1"
 	},
 	"inner": {
 		"title": {}

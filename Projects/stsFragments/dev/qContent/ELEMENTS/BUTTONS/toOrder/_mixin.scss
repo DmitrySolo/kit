@@ -19,7 +19,9 @@
         svg {
             height: 12px;  
         }
-        
+        &:active{
+            border:none;
+        }
         &.succes {
             background: cs('succes');
             border-color: cs('succes-l');
@@ -27,6 +29,16 @@
                 background: cs('succes-l');
             }
         }
+        &.makeOrder {
+            font-weight: bold;
+            font-size: 1.2rem;
+            background: cs('accent');
+            border-bottom: solid 4px darken(cs('accent'),3%);
+            &:hover{
+                background: cs('accent-l');
+            }
+        }
+        
         &:hover{
             background: cs('accent-l');
             border-color: cs('accent');  

@@ -63,10 +63,10 @@
     &__fullWindow{    
         display:none;
         position: fixed;
-        background: cs('background');
+        background: cs('background');  
         left:0;
         right:0;
-        top:0;  
+        top:0;     
         bottom:0;
         z-index: 1000000;
         padding: vr-block(2) vr-block(4);

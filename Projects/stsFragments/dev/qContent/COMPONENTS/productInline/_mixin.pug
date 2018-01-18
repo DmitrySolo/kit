@@ -1,0 +1,22 @@
+mixin C-productInline(data,type)
+	-if(!type) type= false
+	.productInline__content(data-qcontent='component__productInline')
+		a.productInline__link(href='#')
+			.group.group--el.group--va-middle
+				.col.col-2-tl
+					+vertical_centered_image('https://www.santehsmart.ru/upload/iblock/f10/f10f3f7ea3703fc6cac09eca3b96bf6f.jpg','productInline__section--img')
+				.col.col-4-tl
+					span.productInline__section--sku='Код товара: '+data.sku
+					h6.productInline__section--name=data.title
+				.col.col-2-tl
+					.productInline__section--price
+						+C-priceAndStock('sale')
+				.col.col-2-tl  
+					+In-counter()
+				if(type=='cart')
+					.col.col-2-tl
+						+B-delete()
+				if(type=='cat')
+					.col.col-2-tl
+						+B-toOrder('В корзину')
+					
