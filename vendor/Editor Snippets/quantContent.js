@@ -15,4 +15,5 @@
 	"	MODULE-productInline()",
 	"snippet +M-productCatInline",
 	"	MODULE-productCatInline()",
-].join(eol);
+	"snippet +M-mobileMenu",
+	"	MODULE-mobileMenu()",undefined

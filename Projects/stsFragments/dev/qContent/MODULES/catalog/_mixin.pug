@@ -4,13 +4,17 @@ mixin MODULE-catalog()
 	else 
 		-var classN = ''
 		
-	<!-- split modules/catalog -->
+	<!-- split modules/catalog -->  
 	ul.catalog__content(data-qcontent='module__catalog')    
-		li.catalog__by.catalog__by--category.clearfix#js-CatChoiser(class=' ' + classN)
-			+I('menu-alt','categories')
-			span.catalog__elemTitle Кaталог      
-			+I('to-right','to-right f-right') 
+		li.catalog__by.catalog__by--category.clearfix.col.showFrom-tl#js-CatChoiser(class=' ' + classN)
+			+I('menu','categories') 
+			span.catalog__elemTitle Кaталог  
+			+I('to-right','to-right f-right')
+		li.catalog__mobile.col.hideFrom-tl#mm-button
+			+I('menu','categories')  
+			span.catalog__elemTitle Кaталог        
 		li.catalog__by.catalog__by--brand.clearfix#js-BrandChoiser
-			+I('star','categories ')
+			+I('star1','categories ')
 			span.catalog__elemTitle Бренды    
-			+I('to-right','to-right f-right')   
+			+I('to-right','to-right f-right')
+  

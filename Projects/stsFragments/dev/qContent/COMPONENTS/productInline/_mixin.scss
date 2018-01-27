@@ -7,13 +7,37 @@
   .productInline {
      
     &__content {
-        
-       // padding:.1rem 0px;
+        .productChar{
+            padding-top: vr-block(.4);
+            border-top: dashed 1px cs('background-d2');
+            &__title{
+                display:none;
+            }
+            dd,dt {
+                width:auto;
+                //color: darken(cs('background-d2'),30%);
+                color: cs('font');
+                margin:0;
+                padding-left: vr-block(.2);
+            }
+            .productChar__terminDesc{
+                display: inline-block;
+                border: none;
+                padding:none;
+                margin:none;
+                margin-right: vr-block(.2);
+                &:after{
+                    content:';';
+                }
+            }
+            
+        }
+       
         background-color:#fff;
         //border-bottom: solid 1px cs('background-d');
         width: 100%;
        // height: 6rem;
-        margin-top: 1px;
+        margin-top: 1px;  
         overflow:hidden;
         .productCol__price,.productCol__stock{
             width:100%;
@@ -84,10 +108,13 @@
             width: 100%;
             height: 6rem;
             IMG{
-            height:100%;
-            width:auto;
+            height:auto;
+            width:100%;
             background-size: contain;
             background-repeat: no-repeat;
+                .mainSearch__result &{
+                    width:80%;
+                }
         } 
         }
         &--quantity{
@@ -113,7 +140,7 @@
         box-shadow: inset 0px 0px 9px silver; 
     }
     &__quantityLabel{
-        position:relative;
+        position:relative;  
     }
     &__quantityButton{
         position: absolute;

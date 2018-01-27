@@ -32,9 +32,9 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </script>
         <div class="top-panel-content clearfix">
           <div class="quant hud">Q</div>
-          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">notice.html</span>
+          <div class="projecttitleCtn f-left"><span class="projectTitle">stsFragments</span><span class="projectPage">main.html</span>
           </div>
-          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/notice.html" target="_blank" id="playhref">
+          <div class="buttonsSection f-left clearfix"><a class="tabAnchr" href="/main.html" target="_blank" id="playhref">
               <div class="hud-Button f-left">
                         <svg class="icon playButston">
                           <use xlink:href="#play"></use>
@@ -278,7 +278,7 @@ this._delay(function(){n===this.counter&&this.refreshPositions(!s)})},_clear:fun
         </div>
         <div class="window" window="Viewport" style="z-index:5;">
           <div class="wrapperid" id="viewpr-content">
-            <iframe class="default-skin" id="index" src="notice.html" width="100%" align="center" name="viewport"></iframe>
+            <iframe class="default-skin" id="index" src="main.html" width="100%" align="center" name="viewport"></iframe>
             <section class="pb-section clearfix hidden" id="ball"><span class="lh">Line height</span>
               <div class="spacer element-i"><span>Element i</span></div>
               <div class="spacer element-o"><span>Element o</span></div>
@@ -27788,7 +27788,7 @@ z
 		}
 	}
 	testServer();
-	setInterval(testServer, 200)
+	setInterval(testServer, 500)
 
 ///////////////// CREATE PROJECT
 
@@ -28212,6 +28212,7 @@ z
 				js: JsContent,
 				data1: dataContent
 			}
+			//console.log(data);
 
 
 			// $.ajax({
@@ -28222,11 +28223,14 @@ z
 
 			qntSetCookie('lastCode', codeForCookies, 1);
 			qntSetCookie('cursors', cursors, 1);
-
+			var dataT = JSON.stringify(data);
+			console.log(dataT);
+			var dataC = JSON.parse(dataT);
+			console.log(dataC)
 			$.ajax({
 				url: "http://localhost:8181"
 				, type: 'POST'
-				, data: JSON.stringify(data)
+				, data: dataT
 				, success: function (res) {
 					$('button#savecode ').addClass('classLoading');
 				}
@@ -28674,6 +28678,14 @@ var quantCon = [
 	"	MODULE-swe()",
 	"snippet +M-fgtr",
 	"	MODULE-fgtr()",
+	"snippet +M-order",
+	"	MODULE-order()",
+	"snippet +M-productInline",
+	"	MODULE-productInline()",
+	"snippet +M-productCatInline",
+	"	MODULE-productCatInline()",
+	"snippet +M-mobileMenu",
+	"	MODULE-mobileMenu()",
 ].join(eol);
       </script>
       <script src="maps/main.css.map" type="text"></script>

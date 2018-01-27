@@ -1,0 +1,66 @@
+/**
+* footer styles
+*/
+
+@mixin footer(){
+
+  .footer {
+    &__section{
+       // margin-bottom: vr-block(1);
+       
+    }
+     &__signature{
+            padding: vr-block(.4);
+            background: #1d0e2f;
+            color: #fff;
+        }
+    &__content {  
+        //padding: vr-block(1.4) 0;
+        color: #fff;
+        line-height: 1.7;
+        font-size: 0.9;
+         .footer__subMenus .col{
+             text-align: center;
+            
+            padding-top: vr-block(1);
+           
+            padding-bottom: vr-block(1);
+            &:nth-child(1){
+            background-color: cs('primary-d');
+                    }
+            &:nth-child(2){
+            background-color: lighten(cs('primary-d'),2%);
+                    }
+            &:nth-child(3){
+              background-color: lighten(cs('primary-d'),4%);
+                    }
+                    &:nth-child(4){
+              background-color: lighten(cs('primary-d'),6%);
+                    }
+                    @include for-size(tablet-l-up){
+                        padding-left: vr-block(1);
+                        text-align: left;
+                         min-height: 250px;
+                    }
+        }
+    }
+    &__list{
+        
+    }
+    &__listTitle{
+        color: #fff;
+        margin-bottom: vr-block(.2);
+    }
+    &__listItem{
+      
+    }
+   
+        
+    
+  }
+
+}
+
+
+////////////////////////////////////////
+@include footer();

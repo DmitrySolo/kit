@@ -5,7 +5,7 @@ html(lang=''+head.lang)
 	head
 		include ../INCLUDES/_head
 	body(class=''+bodyClass, data-qcontent="layout__layout")
-		.projectWrapper 
+		.projectWrapper#js-wrapper
 			<!-- HEADER --> 
 			include _header   
 			<!-- split #{page.slug}.html -->
@@ -15,6 +15,8 @@ html(lang=''+head.lang)
 					.group.group--md 
 						.col.col-3-tl
 							aside
+								+MODULE-mobileMenu()
+								+MODULE-catalogList('main')
 								block aside
 						.col.col-9-tl
 							main
@@ -113,14 +115,14 @@ html(lang=''+head.lang)
 						}
 					$('.testLabel',window.parent.document).on('mousedown',function () {
 
-						var testtype = $(this).attr('id');
+						var testtype = $(this).attr('id');   
 						$('.testLabel',window.parent.document).css('border','none');
 						$(this).css('border','solid 1px ');
-						$('.testDesc ul',window.parent.document).html('');
+						$('.testDesc ul',window.parent.document).html('');     
 						console.log(testtype);
-						var testInfoArr = results[testtype.toLowerCase()];
+						var testInfoArr = results[testtype.toLowerCase()];     
 						for (var i in testInfoArr){
-							var t_id = testInfoArr[i].id;
+							var t_id = testInfoArr[i].id;  
 							var t_impact = '<span style="color:red">'+testInfoArr[i].impact.toUpperCase()+' > '+t_id+'</span>';
 							var t_desc ='<p>'+testInfoArr[i].description.replace('<','')+'</p>'
 							var t_help ="<p>"+testInfoArr[i].help+" <a href='"+testInfoArr[i].helpUrl+"' target='_blank'>Help Link</a></p>"

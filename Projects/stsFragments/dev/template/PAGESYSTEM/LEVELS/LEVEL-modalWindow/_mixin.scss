@@ -5,12 +5,13 @@
             margin-top: vr-block(.8);
         }
     &__content {
-        top:30px; 
+        width:100%;
         @include for-size(tablet-l-up){
-             width: 30%;
+             margin: 0 auto;
+             width: 400px;
              top:126px; 
-            left:50%;
-            margin-left:-15%;
+            left:0;
+            right:0;
         }
         position: fixed;
         
@@ -34,9 +35,8 @@
     }
     &--login{
         .modalWindow__content{  
-           // border: solid 9px cs('primary-d'); 
-            width: 20%;
-            margin-left: -10%;
+
+            
         }
           
             input{

@@ -12,13 +12,17 @@ mixin MODULE-mainInfo()
 			.col.col-2-tl.showFrom-tl
 				.mainInfo__block.mainInfo__geotarget
 					+MODULE-geoTarget() 
-			.col.col-8-tp.hideFrom-tl
-				.mainInfo__cart_search--mobile 
-					span Корзина 
-					span Логин
+			.col.col-12-tp.hideFrom-tl
+				.mainInfo__cartLogin--mobile
+					a
+						+I('user','mobile user')
+					a
+						+I('cart','mobile')
 			.col.col-8-tl.hideFrom-tl
 				.mainInfo__logo--mobile 
-					h1.logo SantehSmart
+					h1.logo
+						span.subLogo S  
+						|Santehsmart
 			.col.col-5-tl.showFrom-tl
 				+MODULE-topFeatures()
 			.col.col-2-tl.showFrom-tl

@@ -8,11 +8,13 @@
   
   
     &--fixed{
+       @include for-size(tablet-l-up){
         z-index: 100000;
         position:fixed; 
         top: 0;
         left:0;
         width:100%;
+       }
         //margin-bottom: 60px;
     }          
     &__wrapper {

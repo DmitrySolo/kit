@@ -17,7 +17,7 @@
     border-radius: 6px;
     }
 
-  .mainInfo {
+  .mainInfo {   
 	&__content {
 	//padding-bottom: vr-block(.4);
 	 padding-bottom:$line-height-ratio/2#{em};
@@ -26,14 +26,32 @@
  
 	}
 	&__logo{
+	   
 			@include for-size(phone-only){
 			display:none;
+			
 		}
 		&--mobile{
+		     line-height:1;
 				width:100%;
 				text-align: center;
 				margin: 0;
-			}
+			}  
+	}
+	&__cartLogin--mobile{
+	   padding-top: vr-block(.2);
+	   padding-bottom: vr-block(.2);
+	   padding-right: 1em;
+	   margin-bottom: vr-block(.6);
+	   margin-right:-.8em;
+	   margin-left: -.8em;
+	   border-bottom: solid 1px cs('background'); 
+	  // background: cs('primary');
+	   a{
+	       margin: vr-block(.4);
+	   }
+	    text-align:right;
+	    
 	}
 	&__phone {
 	    line-height: 1.3;

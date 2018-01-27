@@ -1,8 +1,17 @@
 @mixin owlSlider(){
 	
 .owlSlider{
+    @include for-size(phone-only){
+        margin-left: -1rem;
+        margin-right: -1rem;  
+    }
     margin-bottom: vr-block(.8);
     position: relative;
+    margin-top: -1.2rem;
+    @include for-size(tablet-l-up){
+        padding-top: vr-block(.8);
+        margin-top: 0;
+    }
     
 } 
   .owl-dots{
@@ -10,11 +19,14 @@
     z-index:10000;
     bottom:0;
     left: vr-block(.8);
-    text-align: center;
+    text-align: center;  
     background-color: rgba(255,255,255,.5);
     padding: 0 vr-block(.2);
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
+    @include for-size(phone-only){  
+        display:none;
+    }
     .owl-dot{   
       display: inline-block;
       width: .9em;

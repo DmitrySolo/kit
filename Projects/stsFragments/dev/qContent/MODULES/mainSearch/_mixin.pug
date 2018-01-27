@@ -6,5 +6,9 @@ mixin MODULE-mainSearch(data)
 			span.mainSearch__icon
 				+I('search','mainSearch') 
 				input.mainSearch__submit(type='submit' value="Искать")
-	//	.mainSearch__result.clearfix
-		//	+C-productInline(productInline1)
+	if(data=='fired')
+		.mainSearch__result.clearfix
+			+C-productInline(productInline1,'search') 
+			+C-productInline(productInline1,'search')
+			+C-productInline(productInline1,'search')
+			+C-productInline(productInline1,'search')

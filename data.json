@@ -1,9 +1,9 @@
 {
 	"LIBS": {
-		"quant-debug-JsonCss": {
+		"JQ": {
 			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+				"jquery": {
+					"src": "node_modules/jquery/dist/jquery.min.js",
 					"container": "footer/libs"
 				}
 			},
@@ -11,36 +11,10 @@
 				"": ""
 			}
 		},
-		"quant-HUD-script": {
+		"quant-debug-JsonCss": {
 			"js": {
-				"quant-HUD-script-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
-					"container": "footer/libs+"
-				},
-				"AXE": {
-					"src": "node_modules/axe-core/axe.min.js",
-					"container": "footer/libs+"
-				},
-				"holder": {
-					"src": "node_modules/holderjs/holder.min.js",
-					"container": "head/top"
-				}
-			},
-			"css": {
-				"uicss": {
-					"src": "node_modules/jquery-ui-dist/jquery-ui.min.css",
-					"container": "head/libs"
-				}
-			}
-		},
-		"JQ": {
-			"js": {
-				"jquery": {
-					"src": "node_modules/jquery/dist/jquery.min.js",
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
 					"container": "footer/libs"
 				}
 			},
@@ -117,6 +91,24 @@
 			},
 			"css": {
 				"": ""
+			}
+		},
+		"mobileMenu": {
+			"js": {
+				"lib": {
+					"src": "node_modules/jquery.mmenu/dist/jquery.mmenu.all.js",
+					"container": "footer/libs+"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/mobileMenu/mobileMenu.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"owl": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/mobileMenu/jquery.mmenu.all.css",
+					"container": "head/libs"
+				}
 			}
 		},
 		"module1": {
@@ -197,21 +189,6 @@
 				"": ""
 			}
 		},
-		"dashBoardElement": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"b1": {
 			"js": {
 				"lib1": {
@@ -247,6 +224,21 @@
 					"src": "node_modules/ion-rangeslider/css/ion.rangeSlider.skinFlat.css",
 					"container": "head/libs"
 				}
+			}
+		},
+		"dashBoardElement": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
 			}
 		},
 		"mainInfo": {
@@ -522,6 +514,9 @@
 			"group": ""
 		}
 	},
+	"footer": {
+		"footer": "1"
+	},
 	"priceAndStock": {
 		"priceAndStock": "1"
 	},
@@ -611,11 +606,11 @@
 	"flyPageFragment": {
 		"title": "Test Page"
 	},
-	"geoTarget": {
-		"geoTarget": "1"
-	},
 	"IBGrid": {
 		"IBGrid": "1"
+	},
+	"geoTarget": {
+		"geoTarget": "1"
 	},
 	"layout": {
 		"layout": "1"
@@ -626,6 +621,9 @@
 	"mainSearch": {
 		"mainSearch": "1"
 	},
+	"mobileMenu": {
+		"mobileMenu": "1"
+	},
 	"module": {
 		"module": "1"
 	},
@@ -635,11 +633,11 @@
 	"noticeList": {
 		"noticeList": "1"
 	},
-	"owlSlider": {
-		"owlSlider": "1"
-	},
 	"order": {
 		"order": "1"
+	},
+	"owlSlider": {
+		"owlSlider": "1"
 	},
 	"pageBreadcrumbs": {
 		"pageBreadcrumbs": "1"
@@ -731,10 +729,10 @@
 	"page": {
 		"title": {}
 	},
-	"popup": {
+	"productInfo": {
 		"title": {}
 	},
-	"productInfo": {
+	"popup": {
 		"title": {}
 	},
 	"showCasePage": {

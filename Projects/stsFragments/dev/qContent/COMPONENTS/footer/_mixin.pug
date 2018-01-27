@@ -1,0 +1,57 @@
+mixin C-footer()
+	.footer__content(data-qcontent='component__footer')
+		.footer__section
+			.container
+				.footer__subMenus
+					.group.group--md
+						.col.col-3-tl
+							h5.footer__listTitle Клиентам
+							ul.footer__list
+									li.footer__listItem Доставка и оплата
+									li.footer__listItem Возврат и обмен
+									li.footer__listItem Новости и Акции
+									li.footer__listItem О магазине
+									li.footer__listItem Узнать статус заказа 
+						.col.col-3-tl
+							h5.footer__listTitle Другой заголовок
+							ul.footer__list
+									li.footer__listItem Доставка и оплата  
+									li.footer__listItem Возврат и обен
+									li.footer__listItem Новости и Акции
+									li.footer__listItem О магазине
+									li.footer__listItem Узнать статус заказа
+						.col.col-3-tl
+							h5.footer__listTitle Способы оплаты
+							ul.footer__list
+									li.footer__listItem
+										+I('ruble','footer')
+										+I('mir-logo2','footer')
+										+I('mastercard-logo','footer')
+										+I('maestro-logo','footer')
+										+I('visa-logo','footer')
+										
+										
+
+						.col.col-3-tl
+							h5.footer__listTitle Мы в соцсетях
+							ul.footer__list
+									li.footer__listItem
+										a.footer__link
+											+I('vk','footer social')
+										a.footer__link
+											+I('facebook','footer social')
+										a.footer__link
+											+I('twitter','footer social')
+										a.footer__link
+											+I('pinterest','footer social')
+										a.footer__link
+											+I('telegram','footer social')
+		.footer__signature
+			.container
+				.group.group--md
+					.col.col-12-tl
+						p ООО "САНТЕХCМАРТ" 2014-2018  
+			
+			
+			
+			

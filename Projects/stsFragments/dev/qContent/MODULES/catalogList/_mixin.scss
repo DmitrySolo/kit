@@ -4,6 +4,15 @@
 
 @mixin catalogList(){
 
+   .catalogList__categoryList.catalogList--onMain{
+       dispalay: none;
+       @include for-size(tablet-l-up){  
+           display:inline-block;
+           opacity:1 ;
+       }
+            
+           
+        } 
   .catalogList {
     &__outerWrapper{
         position:relative;
@@ -19,40 +28,57 @@
         height: 1000px; 
         width:100%;
         background:rgba(0,0,0,0.4);
-        //filter: blur(5px)
+        z-index: 3000;
     }
     &__content {
         position:relative;
         height:0;
         width:100%;
         z-index:1000000;
+        &.catalogList--onMain{
+            z-index:10;
+        }
+        dispaly:none;
     }
     &__wrapper{
         display:none;
         opacity:0;  
         position:absolute;
         top:0;
-        width:100%;  
+        width:100%;   
        // border-top: solid 3px cs('primary-l2'); 
         min-height: 200px;
-        &.catalogList__category.catalogList--onMain{
-            display: inline !important;
-            opacity: 1 !important;;
-        }        
+               
        
               
-    }   
+    }
+
+   .catalogList__categoryList .catalogList--onMain{
+            display:none !important;
+            opacity: 1 !important;
+        } 
     &__categoryNavigation{
         background: cs('foreground');
+        position:relative;
         width:100%;
-        display: inline-block;   
-        @include for-size(tablet-l-up){   
-            width: 23.5%;  
-        }
+           
+         @include for-size(tablet-l-up){   
+           width: 23.5%;  
+           .catalogList--onMain &{
+               width: 100%;  
+           }
+       } 
     }
-    &__categoryItem {   
+    &__categoryItem { 
+        
+        .catalogList--onMain &{
+            width: 100%;
+        }
+        @include for-size(tablet-l-up){
+           
+        }
         cursor:pointer;
-        font-size: .9rem;
+        font-size: 1rem;
         font-weight: bold;
         position:relative;
         text-transform: uppercase;  
@@ -71,27 +97,38 @@
             fill: cs('accent-l2');
         } 
         @include for-size(tablet-p-up){
-            font-size: .8rem;
+            font-size: .9rem;
         }
+    }
+    &__categoryList{
+        display: none;
+        width: 100%;
     }
     &__categorySublist{
         
-        display:inline-block;
-        position:relative;   
-        width:76.5%;
+            display:inline-block;
+        position:absolute;
+        right:-330%;
+        top:0;
+        width:331%;
+        z-index: 10000000;
+        
+        
             
     }
-    &__SublistItem {
+    &__SublistItem { 
         border-left:2px solid cs('primary'); 
         display:none;  
-        position: absolute;
-        top:0;
-        width:100%;
-        min-height: 400px;
-        background: cs('foreground');
-         padding: 1.6em 2.4em;
+        position: absolute;    
+        top:0; 
+        width:100%;  
+        min-height: 400px;  
+        background: cs('foreground'); 
+         padding: 1.6em 2.4em; 
+         
     }
     &__brands {
+        width: 400%;
          padding: 1.6em 2.4em;
         background: cs('foreground');
         

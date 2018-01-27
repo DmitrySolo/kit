@@ -1,81 +1,156 @@
 mixin MODULE-catalogList(param)
-	if(page.slug=='main')
+	if(page.slug=='main' && param =='main')
 		-var classN = 'catalogList--onMain'
+		<!-- split modules/catalogList -->
+					.catalogList__content(data-qcontent='module__catalogList' class=''+classN)
+						nav(role='catalog').catalogList__categoryNavigation
+							ul.catalogList__categoryList(class=''+classN)#js_categories
+									li.catalogList__categoryItem#js_showSub__1     
+										+I('bathm','asset')      
+										span Ванны Main  
+										+I('to-right','catalog') 
+									li.catalogList__categoryItem#js_showSub__2
+										+I('mebelm','asset')   
+										span Мебель для ванной
+										+I('to-right','catalog')  
+									li.catalogList__categoryItem#js_showSub__3   
+										+I('smes','asset')           
+										span Смесители
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__4
+										+I('dkm','asset')  
+										span Душ Кабины и уголки
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__5
+										+I('ogpo','asset')          
+										span Ограждения, поддоны
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__6
+										+I('showerm','asset')            
+										span Все для душа 
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__7 
+										+I('toiletm','asset')           
+										span Унитазы и Биде 
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__8  
+										+I('susm2','asset')           
+										span Полотенцесушители 
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__9  
+										+I('accm','asset')              
+										span Аксессуары 
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__3   
+										+I('smes','asset')           
+										span Смесители
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__4
+										+I('dkm','asset')  
+										span Душ Кабины и уголки
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__5
+										+I('ogpo','asset')          
+										span Ограждения, поддоны
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__6
+							ul.catalogList__categorySublist
+								li.catalogList__SublistItem#js_sub__1 Ванны 
+									ul.sub__list
+										li.sub__item Ванны Акриловые
+										li.sub__item Ванны Стальные 
+										li.sub__item Ванны Чугунные 
+								li.catalogList__SublistItem#js_sub__2 2
+								li.catalogList__SublistItem#js_sub__3 3
+								li.catalogList__SublistItem#js_sub__4 4
+								li.catalogList__SublistItem#js_sub__5 5
+								li.catalogList__SublistItem#js_sub__6 6
+								li.catalogList__SublistItem#js_sub__7 7
+								li.catalogList__SublistItem#js_sub__8 8
+								li.catalogList__SublistItem#js_sub__9 9
+						.catalogList__wrapper.catalogList__brands#js_brands
+							nav(role='brands').catalogList__brandNavigation
+								ul.catalogList__brandList.l_ib__c 
+									+loop(11)
+										li.catalogList__barandLitera.l_ib__e A
+											ul.catalogList__barandList
+												li.catalogList__barandItem
+													a(href='asdsad') Alpen
+							
 	else 
-		-var classN = '' 
-	<!-- split modules/catalogList -->
-	.catalogList__outerWrapper  
-		.catalogList__outer#js_catShadow
-		+LEVEL-inner()
-			.catalogList__content(data-qcontent='module__catalogList') 
-				.catalogList__wrapper.catalogList__category.l_ib__c(class=' '+ classN)#js_categories
-					nav(role='catalog').catalogList__categoryNavigation.l_ib__e
-						ul.catalogList__categoryList
-								li.catalogList__categoryItem#js_showSub__1     
-									+I('bathm','asset')      
-									span Ванны
-									+I('to-right','catalog') 
-								li.catalogList__categoryItem#js_showSub__2
-									+I('mebelm','asset')   
-									span Мебель для ванной
-									+I('to-right','catalog')  
-								li.catalogList__categoryItem#js_showSub__3   
-									+I('smes','asset')           
-									span Смесители
-									+I('to-right','catalog')
-								li.catalogList__categoryItem#js_showSub__4
-									+I('dkm','asset')  
-									span Душ Кабины и уголки
-									+I('to-right','catalog')
-								li.catalogList__categoryItem#js_showSub__5
-									+I('ogpo','asset')          
-									span Ограждения, поддоны
-									+I('to-right','catalog')
-								li.catalogList__categoryItem#js_showSub__6
-									+I('showerm','asset')            
-									span Все для душа 
-									+I('to-right','catalog')
-								li.catalogList__categoryItem#js_showSub__7 
-									+I('toiletm','asset')           
-									span Унитазы и Биде 
-									+I('to-right','catalog')
-								li.catalogList__categoryItem#js_showSub__8  
-									+I('susm2','asset')           
-									span Полотенцесушители 
-									+I('to-right','catalog')
-								li.catalogList__categoryItem#js_showSub__9  
-									+I('accm','asset')              
-									span Аксессуары 
-									+I('to-right','catalog')
-								li.catalogList__categoryItem#js_showSub__3   
-									+I('smes','asset')           
-									span Смесители
-									+I('to-right','catalog')
-								li.catalogList__categoryItem#js_showSub__4
-									+I('dkm','asset')  
-									span Душ Кабины и уголки
-									+I('to-right','catalog')
-								li.catalogList__categoryItem#js_showSub__5
-									+I('ogpo','asset')          
-									span Ограждения, поддоны
-									+I('to-right','catalog')
-								li.catalogList__categoryItem#js_showSub__6
-					ul.catalogList__categorySublist.l_ib__e
-						li.catalogList__SublistItem#js_sub__1 1
-						li.catalogList__SublistItem#js_sub__2 2
-						li.catalogList__SublistItem#js_sub__3 3
-						li.catalogList__SublistItem#js_sub__4 4
-						li.catalogList__SublistItem#js_sub__5 5
-						li.catalogList__SublistItem#js_sub__6 6
-						li.catalogList__SublistItem#js_sub__7 7
-						li.catalogList__SublistItem#js_sub__8 8
-						li.catalogList__SublistItem#js_sub__9 9
-				.catalogList__wrapper.catalogList__brands#js_brands
-					nav(role='brands').catalogList__brandNavigation
-						ul.catalogList__brandList.l_ib__c 
-							+loop(11)
-								li.catalogList__barandLitera.l_ib__e A
-									ul.catalogList__barandList
-										li.catalogList__barandItem
-											a(href='asdsad') Alpen
-				
+		if(page.slug != 'main')
+			<!-- split modules/catalogList -->
+			.catalogList__outerWrapper  
+				.catalogList__outer#js_catShadow
+				+LEVEL-inner()
+					.catalogList__content(data-qcontent='module__catalogList')
+						nav(role='catalog').catalogList__categoryNavigation
+							ul.catalogList__categoryList#js_categories
+									li.catalogList__categoryItem#js_showSub__1     
+										+I('bathm','asset')      
+										span Ванны
+										+I('to-right','catalog') 
+									li.catalogList__categoryItem#js_showSub__2
+										+I('mebelm','asset')   
+										span Мебель для ванной
+										+I('to-right','catalog')  
+									li.catalogList__categoryItem#js_showSub__3   
+										+I('smes','asset')           
+										span Смесители
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__4
+										+I('dkm','asset')  
+										span Душ Кабины и уголки
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__5
+										+I('ogpo','asset')          
+										span Ограждения, поддоны
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__6
+										+I('showerm','asset')            
+										span Все для душа 
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__7 
+										+I('toiletm','asset')           
+										span Унитазы и Биде 
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__8  
+										+I('susm2','asset')           
+										span Полотенцесушители 
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__9  
+										+I('accm','asset')              
+										span Аксессуары 
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__3   
+										+I('smes','asset')           
+										span Смесители
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__4
+										+I('dkm','asset')  
+										span Душ Кабины и уголки  
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__5
+										+I('ogpo','asset')          
+										span Ограждения, поддоны
+										+I('to-right','catalog')
+									li.catalogList__categoryItem#js_showSub__6
+							ul.catalogList__categorySublist
+								li.catalogList__SublistItem#js_sub__1 111   
+								li.catalogList__SublistItem#js_sub__2 2
+								li.catalogList__SublistItem#js_sub__3 3
+								li.catalogList__SublistItem#js_sub__4 4
+								li.catalogList__SublistItem#js_sub__5 5
+								li.catalogList__SublistItem#js_sub__6 6
+								li.catalogList__SublistItem#js_sub__7 7
+								li.catalogList__SublistItem#js_sub__8 8
+								li.catalogList__SublistItem#js_sub__9 9
+						.catalogList__wrapper.catalogList__brands#js_brands
+							nav(role='brands').catalogList__brandNavigation
+								ul.catalogList__brandList.l_ib__c 
+									+loop(11)
+										li.catalogList__barandLitera.l_ib__e A
+											ul.catalogList__barandList
+												li.catalogList__barandItem
+													a(href='asdsad') Alpen
+						

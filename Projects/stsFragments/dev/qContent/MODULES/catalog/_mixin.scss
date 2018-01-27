@@ -3,6 +3,9 @@
 */
 
 @mixin catalog(){
+        .catalog__mobile{
+        background: cs('primary-l');
+    }
   .catalog {
     &__content {
         font-size:0;
@@ -11,18 +14,20 @@
              width:.8em;  
              //height:59px;
              fill:#fff;
-             float:right;
+             float:right;   
              margin-right: vr-block(.6);
              vertical-align:top;
              //margin-left:.2em;
              transition: transform .2s ease;
         } 
     }
-    &__by{
+
+    &__by,&__mobile{
         font-size: 1rem;
         font-weight: bold;
         display:inline-block; 
         vertical-align:middle;
+        
         color:#fff;
         
         height: 60px;
@@ -34,11 +39,11 @@
         width:50%;  
         &--hovered{
             background:cs('primary-l');
-            .icon--to-right{
-            transform: rotate(90deg);  
+            .icon--to-right{  
+            transform: rotate(90deg);      
             }
         }
-        &--category{
+        &--category, .catalog__mobile{
             background: darken(cs('primary-l'),4%);
                     &--onMain{ 
                         background:cs('primary-l') !important;
@@ -48,10 +53,10 @@
         }
 
         }
-        &:hover{ 
-            background:cs('primary-l');    
+        &:hover{      
+            background:cs('primary-l');      
             .icon--to-right{
-            transform: rotate(90deg);
+            transform: rotate(90deg);   
             }
         }
         &--category{    

@@ -256,7 +256,7 @@ $(document).ready(function () {
 
 
 
-MakeEditable($('*,spacer block-i').not(window.scrollbars).not($('.not,.not *,.notEdit,body,html,input,label,.ace_editor,.ace_editor *,.rg-overlay,.rg-overlay *')).not('.notEdit *'));
+MakeEditable($('*,spacer block-i').not(window.scrollbars).not($('.not,.not *,.notEdit,.mm-btn_next,body,html,input,label,.ace_editor,.ace_editor *,.rg-overlay,.rg-overlay *')).not('.notEdit *'));
 
 
 var firstInTagsLine ='';

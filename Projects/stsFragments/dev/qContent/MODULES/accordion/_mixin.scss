@@ -106,11 +106,20 @@
       line-height: 3rem;
       text-align:center;
       display:inline-block;
-      position:absolute;
-      width: 11em;
-      top:0%;
+     @include for-size(tablet-l-up){
+          position:absolute;
+          width: 11em;
+          top:0%;
+          right: -10em;
+          padding:0;
+     }
+     padding: vr-block(.4);
+     width:100%;
+     position: fixed;
+     bottom:0;
+     left:0;
       //margin-top:-2rem;
-      right: -10em;
+      
       z-index: 10000;
       color: #fff;
       font-weight: bold;

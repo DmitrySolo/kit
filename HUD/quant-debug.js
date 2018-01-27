@@ -1848,7 +1848,7 @@ z
 		}
 	}
 	testServer();
-	setInterval(testServer, 200)
+	setInterval(testServer, 500)
 
 ///////////////// CREATE PROJECT
 
@@ -2272,6 +2272,7 @@ z
 				js: JsContent,
 				data1: dataContent
 			}
+			//console.log(data);
 
 
 			// $.ajax({
@@ -2282,11 +2283,14 @@ z
 
 			qntSetCookie('lastCode', codeForCookies, 1);
 			qntSetCookie('cursors', cursors, 1);
-
+			var dataT = JSON.stringify(data);
+			console.log(dataT);
+			var dataC = JSON.parse(dataT);
+			console.log(dataC)
 			$.ajax({
 				url: "http://localhost:8181"
 				, type: 'POST'
-				, data: JSON.stringify(data)
+				, data: dataT
 				, success: function (res) {
 					$('button#savecode ').addClass('classLoading');
 				}

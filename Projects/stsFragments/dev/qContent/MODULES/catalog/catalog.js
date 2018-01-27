@@ -12,7 +12,9 @@
     categories = document.querySelector('#js_categories'),
     topBar = document.querySelector('.topBar'),
     catalogLists = document.querySelectorAll('.catalogList__SublistItem'),
+    targetsArr = document.querySelectorAll('.catalogList__SublistItem'),
     hideMenu = function(){
+        console.log('hide')
         categories.style.display = 'none';
         categories.style.opacity = '0'; 
         brands.style.display = 'none';
@@ -25,6 +27,9 @@
          }
          
          for(var i=0; i<catalogLists.length; i++){
+        catalogLists[i].style.display = 'none';
+         }
+          for(var i=0; i<catalogLists.length; i++){
         catalogLists[i].style.display = 'none';
          }
     };
@@ -66,7 +71,7 @@
     
     
     categories.addEventListener('mouseout',function (e) {
-       if(!this.contains(e.relatedTarget)){
+       if(!e.relatedTarget.classList.contains('catalogList__SublistItem') && !this.contains(e.relatedTarget)){
                 hideMenu();
             };
     })
@@ -76,7 +81,43 @@
             };
        
     })
+    	for(var i = 0; i<targetsArr.length; i++ ){
+	    
+	    targetsArr[i].addEventListener('mouseenter',function (e) {
+	        console.log('sfdsfds3')
+            var selectNum = this.getAttribute('id').split('__')[1];
+		     selectedBy = document.getElementById('js_showSub__'+selectNum);
+	            selectedBy.classList.add('catalogList__categoryItem--hovered');
+	    });
+	    targetsArr[i].addEventListener('mouseleave',function (e) {
+	        selectedBy.classList.remove('catalogList__categoryItem--hovered');
+	           
+       if( !e.relatedTarget.classList.contains('catalogList__categoryItem')){
+              hideMenu();
+            };
+       
+	    });
+	}
 
-    
+    var menuObj = {
+        hideMenu:function(){
+        console.log('hide')
+        categories.style.display = 'none';
+        categories.style.opacity = '0'; 
+        brands.style.display = 'none';
+        brands.style.opacity = '0';
+        catShadow.style.display = 'none';
+        catShadow.style.opacity = '0';
+        
+        for(var i=0; i<catHeader.length; i++){
+        catHeader[i].classList.remove('catalog__by--hovered');
+         }
+         
+         for(var i=0; i<catalogLists.length; i++){
+        catalogLists[i].style.display = 'none';
+         }
+    }
+    } 
+    return menuObj;
     
 }());

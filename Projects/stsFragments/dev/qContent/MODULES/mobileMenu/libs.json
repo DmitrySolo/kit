@@ -1,0 +1,22 @@
+{
+	"LIBS": {
+		"mobileMenu": {
+			"js": {
+				"lib": {
+					"src": "node_modules/jquery.mmenu/dist/jquery.mmenu.all.js",
+					"container": "footer/libs+"
+				},"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/mobileMenu/mobileMenu.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"owl":{
+					"src":"Projects/stsFragments/dev/qContent/MODULES/mobileMenu/jquery.mmenu.all.css",
+					"container": "head/libs"
+				}
+
+			}
+		}
+	}
+}

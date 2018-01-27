@@ -81,12 +81,12 @@
           margin-top: -$line_height_ratio#{em};
       }
       &--categories{  
-          width: .6em;
+          width: 1em;
           height:100%;
           fill:#fff;   
           display:inline;     
-          margin-right:0.7em;
-          display:none;
+          margin-right:0.5em;
+        //  display:none;
            
           
       }
@@ -104,9 +104,28 @@
           height:1.5em;
           width: 1.5em;
       }
+      &--footer{
+          fill:#fff;
+          
+          &.social{
+              margin: vr-block(.08);
+              width:2em;
+              height: 2em;
+          }
+      } 
+      &--mobile{
+              width:2.5em;
+              height: 2.5em;
+              //fill:#fff;
+              &.user{
+                  width: 2.2em;
+                  height: 2.2em;
+              }
+      }
       
     
 }
-  
 
 
+////////////////////////////////////////
+@include mainSearch();

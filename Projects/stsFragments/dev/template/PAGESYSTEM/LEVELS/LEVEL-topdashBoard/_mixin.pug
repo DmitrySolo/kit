@@ -1,12 +1,11 @@
 mixin LEVEL-topdashBoard(data)
 	-if (!className) className =''
 	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
-		.container=data.title 
-			ul.topdashBoard__list
-				+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
-				+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
-				+dashBoardElement('help','Помощь и настройки','dashBoardElement')
-				+dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')
-				+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
-		if block
-			block 
+		ul.topdashBoard__list
+			+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
+			+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
+			+dashBoardElement('help','Помощь и настройки','dashBoardElement')
+			+dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')
+			+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
+	if block
+		block 

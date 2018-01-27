@@ -19,7 +19,7 @@ mixin MODULE-order()
 					li.order__checkPoint
 						.order__checkPointNum 5
 						span.order__checkPointTitle Завершение покупки
-				section.order__form.order__form--personal.clearfix.hidden
+				section.order__form.order__form--personal.clearfix
 					.group.group--el
 						.col.col-4-tp
 							+In-textInput('txt','ФИО','ФИО')
@@ -30,7 +30,7 @@ mixin MODULE-order()
 						.col.col-4-tp
 							+In-textInput('txt','Город','Город')
 					+B-toOrder('Далее','icon-to-right')
-				section.order__form.order__form--client.clearfix.hidden
+				section.order__form.order__form--client.clearfix
 					form
 						.group.group--el 
 							.col.col-6-tl
@@ -38,7 +38,7 @@ mixin MODULE-order()
 							.col.col-6-tl
 								+B-radio('Юридическое лицо')
 						+B-toOrder('Далее','icon-to-right')
-				section.order__form.clearfix.order__form--delivery.hidden  
+				section.order__form.clearfix.order__form--delivery 
 					form
 						.group.group--el.underlined  
 							.col.col-4-tl  
@@ -79,7 +79,7 @@ mixin MODULE-order()
 
 					
 							
-			.col.col-3-tl.hidden  
+			.col.col-3-tl 
 				section.order__info  
 					h5.order__infoTitle Состав заказа:
 					span.order__infoItem Товаров: 1 шт

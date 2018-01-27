@@ -1,0 +1,21 @@
+/**
+* mobileMenu styles
+*/
+    
+@mixin mobileMenu() {
+
+  .mobileMenu {  
+      display:none; 
+      
+    }
+    &___categoryNavigation{
+        position:fixed;}
+    &__content {
+
+    }
+  }
+
+
+
+////////////////////////////////////////
+@include mobileMenu();
