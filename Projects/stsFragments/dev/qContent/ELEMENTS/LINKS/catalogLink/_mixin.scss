@@ -1,0 +1,33 @@
+$color__catalogLink:cs('primary-d');
+$color__catalogLink-visited:cs('primary-d');
+$color__catalogLink-hover:cs('primary-l');
+
+a.catalogLink {
+	color: $color__catalogLink;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.2em;
+	&.sub{
+	    font-size:1em;
+	    font-weight: normal;
+	    color: cs('primary');
+	}
+
+	&:visited {
+		color: $color__catalogLink-visited;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+	    margin-bottom: vr-block(.5);
+	    //text-decoration: underline;
+		color: $color__catalogLink-hover;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover,
+	&:active {
+	outline: none;
+	}
+}

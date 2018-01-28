@@ -7,7 +7,7 @@ mixin MODULE-catalogList(param)
 							ul.catalogList__categoryList(class=''+classN)#js_categories
 									li.catalogList__categoryItem#js_showSub__1     
 										+I('bathm','asset')      
-										span Ванны Main  
+										span Ванны  
 										+I('to-right','catalog') 
 									li.catalogList__categoryItem#js_showSub__2
 										+I('mebelm','asset')   
@@ -55,11 +55,26 @@ mixin MODULE-catalogList(param)
 										+I('to-right','catalog')
 									li.catalogList__categoryItem#js_showSub__6
 							ul.catalogList__categorySublist
-								li.catalogList__SublistItem#js_sub__1 Ванны 
+								li.catalogList__SublistItem#js_sub__1
 									ul.sub__list
-										li.sub__item Ванны Акриловые
-										li.sub__item Ванны Стальные 
-										li.sub__item Ванны Чугунные 
+										.group.group-md
+											.col.col-4-tl
+												li.sub__item
+													+A-catalogLink('Акриловые ванны')
+													ul.sub__subList
+														li
+															+A-catalogLink('Прямые ванны','','sub')
+														li
+															+A-catalogLink('Угловые ассиметричные ванны','','sub')
+														li
+															+A-catalogLink('Угловые симметричные ванны','','sub')
+											.col.col-4-tl
+												li.sub__item 
+													+A-catalogLink('Чугунные ванны')
+											.col.col-4-tl
+												li.sub__item 
+													+A-catalogLink('Стальные ванны')
+										li.sub__item
 								li.catalogList__SublistItem#js_sub__2 2
 								li.catalogList__SublistItem#js_sub__3 3
 								li.catalogList__SublistItem#js_sub__4 4

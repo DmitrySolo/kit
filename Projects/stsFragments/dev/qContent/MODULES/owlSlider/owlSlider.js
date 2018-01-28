@@ -5,6 +5,6 @@
             "items":1, 
             "lazyLoad":true,
             "autoplay":true,
-            "dots":true
+            //"dots":true
         }
     );

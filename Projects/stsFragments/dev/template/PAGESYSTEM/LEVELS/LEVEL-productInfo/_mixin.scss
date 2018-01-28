@@ -5,6 +5,13 @@
         margin-bottom: vr-block(.1);
     }
     &__content {
+        .productBadge{
+            @include for-size(phone-only){
+                position: absolute;
+                top:0;
+                
+            }
+        }
         background:#fff;
         position: relative;
         padding-bottom:1rem;
@@ -15,11 +22,17 @@
              width: 100%;
              font-size: 2.8rem;
              text-align: left;
+             @include for-size(phone-only){
+                 text-align: center;
+             }
         }
         .productCol__stock{
             width:100%;
             text-align:left;
             font-size: 1.1rem;
+            @include for-size(phone-only){
+                 text-align: center;
+             }
         }
         
     }
@@ -31,6 +44,10 @@
     }
     &__priceStock{
         padding-bottom: vr-block(.4);
+        .priceAndStock{
+            text-align: center;
+        }
+        
         
     }
       .productLogo {

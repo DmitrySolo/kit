@@ -14,7 +14,7 @@ mixin MODULE-productCol(data)
 					.productCol__img
 					h6.productCol__name=data.title
 					-if(data.sale)
-						+C-priceAndStock('sale')
+						+C-priceAndStock('part')
 					-else
 						+C-priceAndStock()
 					-if(data.opt)

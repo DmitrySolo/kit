@@ -59,7 +59,7 @@
         } 
     &__categoryNavigation{
         background: cs('foreground');
-        position:relative;
+        position:relative;  
         width:100%;
            
          @include for-size(tablet-l-up){   
@@ -85,16 +85,19 @@
         padding:.4em 0 .4em .4em;
         border-bottom:solid 1px lighten(cs('font-l2'),30%);
         &--hovered{
-            background: lighten(cs('primary-l2'),50%);  
-            .icon--catalog {
-            fill: cs('accent-l2');     
+            background: cs('primary-l');
+            color:#fff;
+            .icon--catalog,.icon--asset {
+             fill:#fff;
+             
         } 
         }
         &:hover{
-            background: lighten(cs('primary-l2'),50%);
+            background: cs('primary-l');
+            color:#fff;
         }
         &:hover .icon--catalog {
-            fill: cs('accent-l2');
+            fill: #fff;
         } 
         @include for-size(tablet-p-up){
             font-size: .9rem;
@@ -110,7 +113,7 @@
         position:absolute;
         right:-330%;
         top:0;
-        width:331%;
+        width:330%;
         z-index: 10000000;
         
         

@@ -2097,12 +2097,17 @@ gulp.task('API-SERVER', function () {
 
 		} else if (req.method == 'POST') { /////// POST
 
-			var body = '';
+
 			req.on('data', function (data) {
-				body += data;
-				console.log(body);
-				body = JSON.parse(body);
-				console.log(body.typography);
+			var	body = data;
+
+				try{
+                    body = JSON.parse(body);
+				}
+				catch(e){
+                    Qupdate= '1';
+					console.log(e);
+				}
 
 ///////////////////////////////////////////////////////////////////////CREATE PROJECT
 				if (body.mainOpt) {

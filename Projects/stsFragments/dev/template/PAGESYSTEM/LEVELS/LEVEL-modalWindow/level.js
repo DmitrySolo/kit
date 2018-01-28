@@ -16,7 +16,7 @@
             target = document.getElementById('js_modall__'+targetNum);
             target.classList.remove('modalWindow--hide');
             target.addEventListener('click',function () {
-                this.classList.add('modalWindow--hide');
+               // this.classList.add('modalWindow--hide');
             })
 
         })

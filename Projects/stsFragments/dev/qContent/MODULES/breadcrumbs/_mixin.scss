@@ -10,8 +10,12 @@
       
     }
     .breadCrumb__content { 
-          display: inline-block;
-          margin-right: 40px;
+          display:none;
+          @include for-size(tablet-l-up){
+            display: inline-block;
+            margin-right: 40px;
+          }
+         
       }
   .breadcrumb__section {
     display: inline-block;
@@ -25,7 +29,7 @@
         &:hover{
         color: cs('font-d2');
          background: cs('primary-l2');
-         color: #fff;
+         color: #fff;  
       }  
   }
   .breadCrumb__section--current {

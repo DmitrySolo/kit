@@ -1,6 +1,9 @@
 mixin MODULE-accordion(data)
 	<!-- split modules/accordion -->
-	.accordion__content(data-qcontent='module__accordion')
+	button.filter__mobileSwitcher.icon-down#mobFilSwitcher
+		+I('funnel','filterSwitcher')
+		span Подобрать по фильтру
+	.accordion__content#filter(data-qcontent='module__accordion')
 		-for(var i in data)
 			-var active = ''
 			-if(data[i].active)
@@ -18,6 +21,6 @@ mixin MODULE-accordion(data)
 					.accordion__slider
 						+B-slider(data[i].content['id'])
 				.productFilterRes__ctn
-	footer.filter__buttons_ctn
-		+B-button('Смотреть')
-		+B-button('Сбросить','default')
+		footer.filter__buttons_ctn
+			+B-button('Смотреть')
+			+B-button('Сбросить','default')

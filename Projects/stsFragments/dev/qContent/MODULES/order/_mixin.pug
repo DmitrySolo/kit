@@ -2,7 +2,7 @@ mixin MODULE-order()
 	<!-- split modules/order -->
 	.order__content(data-qcontent='module__order')
 		.group.group--md
-			.col.col-9-tl.hidden
+			.col.col-9-tl
 				ul.order__steps
 					li.order__checkPoint.order__way.order__way--gone.order__checkPoint--gone
 						.order__checkPointNum 
@@ -67,7 +67,7 @@ mixin MODULE-order()
 								iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3Ao-BDfF8mwUhzu4w4BXJHX8ENv4xcrB0A&amp;source=constructor" width="100%" height="414" frameborder="0")
 						
 						+B-toOrder('Далее','icon-to-right')
-			.col.col-12-tp
+			.col.col-12-tp.hidden
 				section.order__form.clearfix.order__form--confirmed
 					.order__checkPoint--gone
 						.order__checkPointNum 

@@ -4,37 +4,37 @@ mixin C-productInline(data,type)
 		a.productInline__link(href='#')
 			.group.group--md.group--va-middle 
 				if(type != 'search')
-					.col.col-2-tl
+					.col.col-2-tp
 						+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
 				else 
-					.col.col-3-tl
+					.col.col-3-tp
 						+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
 				if(type != 'search')
-					.col.col-4-tl
+					.col.col-4-tp
 						span.productInline__section--sku='Код товара: '+data.sku
 						h6.productInline__section--name=data.title
 				else
-					.col.col-6-tl
+					.col.col-6-tp
 						span.productInline__section--sku='Код товара: '+data.sku
 						h6.productInline__section--name=data.title
 				if(type != 'search')
-					.col.col-2-tl
+					.col.col-2-tp
 						.productInline__section--price
-							+C-priceAndStock('sale')
+							+C-priceAndStock('part')
 				else
-					.col.col-3-tl
+					.col.col-3-tp
 							.productInline__section--price
-								+C-priceAndStock('sale')
+								+C-priceAndStock('part')
 				if(type != 'search')
-					.col.col-2-tl  
+					.col.col-2-tp.col-8-m.push-2-m
 						+In-counter()
 				if(type=='cart')
-					.col.col-2-tl
+					.col.col-2-tp.dltCtn
 						+B-delete()
 				if(type=='cat')
-					.col.col-2-tl
+					.col.col-2-tp
 						+B-toOrder('В корзину') 
-					.col.col-12tl
+					.col.col-12-tp
 						+MODULE-productChar()  
 				if block 
 					block 

@@ -1,0 +1,3 @@
+mixin A-catalogLink(content,href,className)
+	-if (!className) className =''
+	a(class='catalogLink '+className,href=href data-qcontent='element__LINKS__catalogLink')=content

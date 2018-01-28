@@ -16,6 +16,10 @@
         
     }
     &__layoutChoiser{
+        display:none;
+        @include for-size(tablet-p-up){
+            display: block;
+        }
         a{
             text-decoration:none;
         }

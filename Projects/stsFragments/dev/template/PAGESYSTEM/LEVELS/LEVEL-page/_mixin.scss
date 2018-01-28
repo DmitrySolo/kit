@@ -8,9 +8,10 @@
     &__title {
         font-size: 1.7rem;  
         margin-bottom: vr-block(.2);
-        padding-left: vr-block(.5);   
+       // padding-left: vr-block(.5);   
         //line-height: 1;
        // margin-top: vr-block(1);
+       
         @include for-size(phone-only){
             text-align: center;
         }
@@ -22,7 +23,12 @@
         }
         .page__title {
             font-size: 1.7rem;  
-            //margin-top: vr-block(.4);
+            @include for-size(phone-only){
+                   padding: 0;
+                   text-align: left;
+                   font-size: 1.4em;
+                   margin-bottom: vr-block(1)
+               }
             margin-bottom:vr-block(.8);
             //line-height: 1;
         }

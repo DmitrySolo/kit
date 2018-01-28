@@ -58,7 +58,8 @@
       }
       &--asset{
          height: 2em;
-         margin-right:.4em;  
+         margin-right:.4em;
+        
       }
       &--catalog{
          width: .9em;
@@ -107,13 +108,13 @@
       &--footer{
           fill:#fff;
           
-          &.social{
-              margin: vr-block(.08);
+          &.social{ 
+              margin: vr-block(.08);        
               width:2em;
               height: 2em;
           }
       } 
-      &--mobile{
+      &--mobile{  
               width:2.5em;
               height: 2.5em;
               //fill:#fff;
@@ -121,6 +122,14 @@
                   width: 2.2em;
                   height: 2.2em;
               }
+      }
+      &--filterSwitcher{
+          position:absolute;
+          left:5%;
+          width: 1.5em;
+          height: 1.5em;
+          fill: cs('accent');
+          margin-right: vr-block(.4);
       }
       
     

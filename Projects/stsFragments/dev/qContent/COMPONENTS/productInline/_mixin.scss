@@ -6,8 +6,29 @@
 
   .productInline {
      
-    &__content {
+    &__content {  
+        position:relative;
+        .productCol__mrcPrice{
+            font-size: 1rem;
+        }
+        .dltCtn{
+            @include for-size(phone-only){
+                width: 30px;
+                position: absolute;
+                right: 5%;
+                top:0;
+            }
+        }
+        
+        .priceAndStock{
+            @include for-size(phone-only){
+                margin-bottom: vr-block(.4);
+            }
+        }
         .productChar{
+            @include for-size(phone-only){
+                display: none;
+            }
             padding-top: vr-block(.4);
             border-top: dashed 1px cs('background-d2');
             &__title{
@@ -52,6 +73,9 @@
          .counter__ctn{
           width: 80%;
           margin: 0 auto;
+          @include for-size(phone-only){
+              margin-bottom: vr-block(.8);
+          }
       }
       .delete{
           margin: 0 auto; 
@@ -66,7 +90,10 @@
         height:100%;
        // line-height:2.8rem;
         &--sku{
-  
+            @include for-size(phone-only){
+                display:block;
+                margin-bottom: vr-block(.2);
+            }  
             text-align:center;
             font-size:.9rem;
         }
@@ -79,6 +106,10 @@
             font-size: 1.2em;
             font-weight:bold;
             //color:cs('font-d2');
+            @include for-size(phone-only){
+                text-align: center;
+                margin-bottom: vr-block(.8);
+            }
         }
          &--price{
             text-align: center;
@@ -106,12 +137,24 @@
         }
         &--img{
             width: 100%;
+            @include for-size(phone-only){
+                width: 80%;
+                margin: 0 auto;
+                margin-top: vr-block(.8);
+                margin-bottom:vr-block(.8);
+
+                
+            }
             height: 6rem;
             IMG{
             height:auto;
             width:100%;
             background-size: contain;
             background-repeat: no-repeat;
+            @include for-size(phone-only){
+                height: 100% ;
+                    width: auto;
+            }
                 .mainSearch__result &{
                     width:80%;
                 }
@@ -120,6 +163,7 @@
         &--quantity{
   
             text-align:center;
+            margin-bottom: vr-block(.8);
             //position: relative;
         }
     }
@@ -140,7 +184,7 @@
         box-shadow: inset 0px 0px 9px silver; 
     }
     &__quantityLabel{
-        position:relative;  
+        //position:relative;  
     }
     &__quantityButton{
         position: absolute;
@@ -149,7 +193,7 @@
         border: solid 5px ;
         border-color: transparent;
         padding:0;
-        background: none; 
+        background: none;   
         &--plus{
             right:-5px;
             border-left-color: cs('font-l');

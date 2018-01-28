@@ -4,7 +4,15 @@
 (function(){
     var acc = document.getElementsByClassName("accordion");
     var i;
-
+    var switcher = $('#mobFilSwitcher');
+    var filter = $('#filter')    
+    switcher.on('click',function(){
+        filter.toggle();
+        $(this).toggleClass('active');
+        if($(this).children('span').text() == 'Подобрать по фильтру') $(this).children('span').text('Закрыть фильтр');
+        else $(this).children('span').text('Подобрать по фильтру');
+    })
+    
     for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function() {
             /* Toggle between adding and removing the "active" class,

@@ -26,7 +26,7 @@
             //text-align: left;
             line-height: 1;
            
-            color: cs('font');  
+            color: cs('font');
             display: block;
             font-size: .8em;
             text-decoration: line-through;
@@ -42,6 +42,17 @@
          }
         
     }
+  }
+  .productCol__mrcPrice{
+      display:block;
+      font-size: 1.4rem;
+      color: cs('succes-d2');
+      &:before{
+          content: 'Мрц:';
+          color: cs('font');
+          font-size: .8em;
+          margin-right: .65em;
+      }
   }
 
 }

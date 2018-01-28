@@ -3,8 +3,39 @@
 */
 
 @mixin accordion(){
-
+    .filter__mobileSwitcher{
+        outline: none;
+        position:relative;
+        width: 100%;
+        max-width: 420px;
+        margin: vr-block(.2) auto  vr-block(.4);
+        font-size:1.2rem;
+        background: #fff;
+        border-radius: 6px;
+        border:none;
+        padding: vr-block(.4);
+        border-bottom: solid 4px cs('background-d'); 
+        @include for-size(tablet-l-up){
+            display:none;
+        }
+        &:before{
+            position:absolute;
+            top:25%;
+            right: 5%;
+        }
+        &.active{
+            border-bottom: dashed 2px cs('background-d');
+            border-bottom-left-radius:0;
+            border-bottom-right-radius:0;
+            &:before{
+            transition: .4s;    
+            color: cs('accent');
+            transform: rotate(180deg);  
+        }
+        }
+    }
   .accordion {
+     
     position:relative;
     margin: 0;
     margin-top: -1px;
@@ -64,7 +95,8 @@
     }  
     &__content {
         background-color: #fff;
-        
+         display:none;
+         @include for-size(tablet-l-up){display: block;}
     }
     &__panel{
         position: relative;
