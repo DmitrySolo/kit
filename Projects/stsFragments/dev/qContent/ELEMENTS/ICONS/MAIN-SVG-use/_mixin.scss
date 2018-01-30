@@ -131,6 +131,11 @@
           fill: cs('accent');
           margin-right: vr-block(.4);
       }
+      &--sliderTitle{
+          width: 15%;
+          vertical-align: middle;
+          fill: #fff;  
+      }
       
     
 }
@@ -138,3 +143,25 @@
 
 ////////////////////////////////////////
 @include mainSearch();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

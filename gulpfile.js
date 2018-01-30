@@ -1497,7 +1497,6 @@ gulp.task('iconfont', function () {
 		.pipe(iconfont({
 			fontName: fontName,
 			normalize:true,
-			fontHeight:'16'
 		}))
 		.pipe(gulp.dest(dist + '/fonts/icons/'));
 });

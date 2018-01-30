@@ -41,6 +41,7 @@
     margin-top: -1px;
     background-color: cs('foreground');
     border: none;
+    z-index:1;
     border-top:  4px  solid cs('background');
     &:first-child{
         border-top:none;
@@ -94,7 +95,7 @@
         }
     }  
     &__content {
-        background-color: #fff;
+        //background-color: #fff;
          display:none;
          @include for-size(tablet-l-up){display: block;}
     }
@@ -142,8 +143,10 @@
           position:absolute;
           width: 11em;
           top:0%;
+          bottom:auto;
           right: -10em;
           padding:0;
+          left:auto;
      }
      padding: vr-block(.4);
      width:100%;
@@ -152,7 +155,7 @@
      left:0;
       //margin-top:-2rem;
       
-      z-index: 10000;
+     z-index: 10;
       color: #fff;
       font-weight: bold;
       background-color: cs('accent');
@@ -476,21 +479,24 @@
            
         } 
   .catalogList {
-    &__outerWrapper{
-        position:relative;
+    &__outerWrapper{  
+        position:relative;  
         width:100%;
+        
     }
     
     &__outer{
-        display:none;
-        opacity:0;
+        display:none;  
+        opacity:0;    
         transition: opacity 2s ease; 
-        position:absolute;
-        top:0;
-        height: 1000px; 
-        width:100%;
-        background:rgba(0,0,0,0.4);
-        z-index: 3000;
+        position:fixed;
+       top:0;
+        left:0;
+        bottom:0;          
+        right:0;     
+        background:rgba(0,0,0,0.5);
+        z-index:2;
+          
     }
     &__content {
         position:relative;
@@ -498,7 +504,7 @@
         width:100%;
         z-index:1000000;
         &.catalogList--onMain{
-            z-index:10;
+            z-index:2;
         }
         dispaly:none;
     }
@@ -523,6 +529,7 @@
         background: cs('foreground');
         position:relative;  
         width:100%;
+       
            
          @include for-size(tablet-l-up){   
            width: 23.5%;  
@@ -533,7 +540,7 @@
     }
     &__categoryItem { 
         
-        .catalogList--onMain &{
+        .catalogList--onMain &{  
             width: 100%;
         }
         @include for-size(tablet-l-up){
@@ -566,12 +573,14 @@
         }
     }
     &__categoryList{
+        position:relative;
         display: none;
         width: 100%;
+        z-index: 2;  
     }
     &__categorySublist{
         
-            display:inline-block;
+        display:inline-block;
         position:absolute;
         right:-330%;
         top:0;
@@ -593,10 +602,28 @@
          
     }
     &__brands {
-        width: 400%;
+        position: absolute;
          padding: 1.6em 2.4em;
         background: cs('foreground');
+        z-index:5;
         
+        .catalogList--onMain &{
+            width: 437%;
+        }
+        
+    }
+    &__brandList{ 
+        margin: 0 auto;
+    }
+    &__brandLitera {
+        
+        padding: vr-block(.4) vr-block(.8);
+        border-bottom: dashed 1px cs('background-d');
+        span{ 
+        font-weight: bold;
+        color: cs('primary');
+        font-size: 1.2rem;
+        }
     }
   }
 
@@ -923,11 +950,19 @@
         font-size: 2.2rem;
         
     }
+    .ib{
+        display: inline-block;
+    }
+    .vam{
+        vertical-align: middle;
+    }
     .mainHeader{
-      
+      z-index:1000;
+      position:relative;
     }
     .mainFooter{
-        background : darken(cs('primary'),9%);  
+        background : darken(cs('primary'),9%);
+        z-index: 0;
     }
     .productMain{
         background: cs('foreground');
@@ -1467,6 +1502,7 @@
 @mixin owlSlider(){
 	
 .owlSlider{
+    //background: cs('background-d2');
     @include for-size(phone-only){
         margin-left: -1rem;
         margin-right: -1rem;  
@@ -1492,7 +1528,7 @@
     border-top-left-radius: 3px;
     @include for-size(phone-only){  
         display:none;
-    }
+    }   
     .owl-dot{   
       display: none;
       width: .9em;
@@ -1511,6 +1547,65 @@
     }
 
   }
+    
+    .sliderTitles{
+        &__list {
+            
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+        &__item{
+            background-color: cs('primary');
+            //border-right: solid 1px cs('background-d');
+            margin-right: 1px;
+            padding: vr-block(.4) vr-block(.4);
+            height: vr-block(2.80);
+            //overflow: hidden;
+            .icon{
+                fill: #fff;
+            }
+            &.active{
+                position:relative;
+                background: #fff;
+                border-bottom: solid 4px cs('background-d2');
+                border-bottom-left-radius:6px;
+                border-bottom-right-radius: 6px;
+                & .icon{
+                    fill:cs('primary');
+                }
+                /* &:before{
+                    content:'';
+                    width: 100%;  
+                    display:block;
+                    background: #fff;
+                    height:4px;
+                    position:absolute;
+                    top:-4px;
+                    left:0;
+                    z-index: 10;
+                    border-bottom-left-radius: 25%;
+                    border-bottom-right-radius: 25%;
+                } */
+                
+            }
+        }
+        &__title{
+            cursor:pointer;
+            color: #fff;  
+            width: 73%;
+            margin-left: 5%;
+            vertical-align:middle;
+            .active &{
+                color: cs('primary');
+            }
+        }
+    }
+
+
+
+
+
+
 
 }
 @include owlSlider()
@@ -1521,7 +1616,9 @@
 @mixin pageBreadcrumbs(){
 
   .pageBreadcrumbs {
+     
     &__content {
+        z-index:0;
         width: 100%;
         background: cs('background');
         @include for-size(tablet-l-up){
@@ -1665,161 +1762,6 @@
 ////////////////////////////////////////
 @include productChar();
 /**
-* productCol styles
-*/
-
-@mixin productCol(){
-    @include for-size(tablet-l-up){
-         .col-3-tl .productCol__card{
-        font-size: .75rem;
-    }
-    }
-   
-    .col-8-tl .productCol__card{
-        font-size: 1.2rem;
-        .productCol__img{
-            //height: 185px;
-        }
-        .productCol__name{
-            text-align: center;
-            font-size: 1.1em;
-            height: 2em;
-        }
-    }
-  .productCol {
-    &__list{
-       // background:cs('foreground-d')
-    }
-    &__content {
-        font-size: 1rem;
-         .productInline__quantityLabel {
-            width: 40%;
-            text-align: center;
-            position: relative;
-            display:inline-block;
-              }
-              .priceAndStock{
-                  margin-bottom: vr-block(.4);
-                  font-size: 1.1em;
-              }
-      .productBadge{
-          //float: left;
-          
-          float: right;
-          
-      }
-     
-      
-    }
-    &__link{
-        text-decoration: none;
-        &:hover{
-            color:cs('font-d2');
-        }
-    }
-    &__card{
-        background: cs('foreground');
-        padding: .4em .8em 1em;
-        margin-bottom: .5em;
-        transition: box-shadow .15s linear;
-        border-bottom: solid 3px cs('background-d');
-        border-radius: 6px;
-         &:hover{
-            //transform: scale(1.02);
-            box-shadow: 0px 1px 8px 1px #ccc;  
-        }
-    }
-    &__sku{
-        //padding-left: 11px;
-        display: inline-block;   
-        margin-bottom:5px;
-    }
-    &__img{  
-        width:100%;  
-        height: 180px;
-       // background-color: #ededed;  
-        background-image:url("https://santehsmart.ru/upload/iblock/eee/eeed92819b3562e5890f856594531070.jpg");
-        background-position: center;
-        background-size: contain; 
-        background-repeat: no-repeat;
-        //border-bottom: 1px solid cs('foreground-d');
-        margin-bottom: 5px;
-
-    }
-    &__name {  
-       
-        height: 3*$line_height_ratio#{em};
-        font-weight:bold;
-        color:cs('font-d2');
-        overflow:hidden;
-        margin-bottom: .5em;
-    }
-    &__priceStock{
-        vertical-align:top;
-         //font-size: .9em;
-        margin-bottom:.8em;
-        font-size: 1.1em;
-    }
-    &__stock{
-        vertical-align: middle;
-        color: cs('succes-d');  
-        width:50%;
-        font-weight: bold;
-        text-align: center;
-       // height: 1.8*$line_height_ratio#{em};
-        display:inline-block;
-        overflow:hidden;
-        &:before{
-            margin-right: vr-block(.2);
-        }
-        &--off{
-            color:cs('erorr-d2'); 
-        }
-        &--last{
-            font-size: .8em;
-            color: cs('accent-d');   
-        }
-    }
-    &__price{
-        display:inline-block;
-        vertical-align: middle;
-        font-size:1.6em;
-        font-weight: bold;
-        width:50%;
-        color: cs('primary-d');
-        text-align: center;
-        &--opt{
-            color: cs('font-l');
-            font-size:1rem;
-            text-align: left;
-            line-height: 1.5;
-            &-moc{  
-                color: cs('font');  
-            }
-        }   
-        
-          
-    }
-      
-    
-  }
-  label.productInline__quantityLabel{
-      @include for-size(tablet-l-up){  
-          display:none;
-      }
-  }
-  .icon-ruble{
-      font-size: .6em;
-      margin-left: vr-block(.2);
-     // color: gray;
-  }
-
-}
-
-
-////////////////////////////////////////
-@include productCol();
-/**
 * productImageSlider styles
 */
 
@@ -1908,6 +1850,190 @@
 
 ////////////////////////////////////////
 @include productImageSlider();
+/**
+* productCol styles
+*/
+
+@mixin productCol(){
+    @include for-size(tablet-l-up){
+         .col-3-tl .productCol__card{
+        font-size: .75rem;
+    }
+    }
+   
+    .col-8-tl .productCol__card{
+        font-size: 1.2rem;
+        .productCol__img{
+            //height: 185px;
+        }
+        .productCol__name{
+            text-align: center;
+            font-size: 1.1em;
+            height: 2em;
+        }
+    }
+  .productCol {
+    &__list{
+       // background:cs('foreground-d')
+    }
+    &__content {
+        .priceAndStock--part{
+              margin-bottom: vr-block(.4);
+              height: auto;
+            .productCol__price{
+                font-size: 1.2em;
+                line-height: 1.5;
+                  text-align:left;
+                  width:45%;
+            }
+        }
+        .productCol__mrcPrice{
+            font-weight: 1rem;
+              text-align:left;
+        }
+        
+        .partStock{
+            width: 55%;
+            display:inline-block;
+            vertical-align:top;
+            & .productCol__stock, & .productCol__lock{  
+                width:100%;
+                display:inline-block;
+                text-align: right; 
+                font-weight:normal;
+                font-size: .9rem;
+                line-height:1.7;
+            }
+        }
+        font-size: 1rem;
+         .productInline__quantityLabel {
+            width: 40%;
+            text-align: center;
+            position: relative;
+            display:inline-block;
+              }
+              .priceAndStock{
+                  margin-bottom: vr-block(.4);
+                  font-size: 1.1em;
+              }
+      .productBadge{
+          //float: left;
+          
+          float: right;
+          
+      }
+     
+      
+    }
+    &__link{
+        text-decoration: none;
+        &:hover{
+            color:cs('font-d2');
+        }
+    }
+    &__card{
+        background: cs('foreground');
+        padding: .4em .8em 1em;
+        margin-bottom: .5em;
+        transition: box-shadow .15s linear;
+        border-bottom: solid 3px cs('background-d');
+        border-radius: 6px;
+         &:hover{
+            //transform: scale(1.02);
+            box-shadow: 0px 1px 8px 1px #ccc;  
+        }
+    }
+    &__sku{
+        //padding-left: 11px;
+        display: inline-block;   
+        margin-bottom:5px;
+    }
+    &__img{  
+        width:100%;  
+        height: 180px;
+       // background-color: #ededed;  
+        background-image:url("https://santehsmart.ru/upload/iblock/eee/eeed92819b3562e5890f856594531070.jpg");
+        background-position: center;
+        background-size: contain; 
+        background-repeat: no-repeat;
+        //border-bottom: 1px solid cs('foreground-d');
+        margin-bottom: 5px;
+
+    }
+    &__name {  
+       
+        height: 3*$line_height_ratio#{em};
+        font-weight:bold;
+        color:cs('font-d2');
+        overflow:hidden;
+        margin-bottom: .5em;
+    }
+    &__priceStock{
+        vertical-align:top;
+         //font-size: .9em;
+        margin-bottom:.8em;
+        font-size: 1.1em;
+    }
+    &__stock{  
+        vertical-align: middle;
+        color: cs('succes-d');  
+        
+        width:50%;  
+        font-weight: bold;
+        text-align: center;
+       // height: 1.8*$line_height_ratio#{em};  
+        display:inline-block;
+        overflow:hidden;
+        &:before{
+            margin-right: vr-block(.2);
+        }
+        &--off{
+            color:cs('erorr-d2'); 
+        }
+        &--last{
+            font-size: .8em;
+            color: cs('accent-d');   
+        }
+    }
+    &__price{
+        display:inline-block;
+        vertical-align: middle;
+        font-size:1.6em;
+        font-weight: bold;
+        width:50%;
+        color: cs('primary-d');
+        text-align: center;
+        &--opt{
+            color: cs('font-l');
+            font-size:1rem;
+            text-align: left;
+            line-height: 1.5;
+            &-moc{  
+                color: cs('font');  
+            }
+        }   
+        
+          
+    }
+      
+    
+  }
+  label.productInline__quantityLabel{
+      @include for-size(tablet-l-up){  
+          display:none;
+      }
+  }
+  .icon-ruble{
+      font-size: .6em;
+     // margin-left: vr-block(.2);
+     // color: gray;
+  }
+
+}
+
+
+////////////////////////////////////////
+@include productCol();
 
 /**
 * reactTest styles
@@ -1962,23 +2088,6 @@
 ////////////////////////////////////////
 @include support();
 /**
-* swe styles
-*/
-
-@mixin swe(){
-
-  .swe {
-    &__content {
-
-    }
-  }
-
-}
-
-
-////////////////////////////////////////
-@include swe();
-/**
 * topBar styles
 */
 
@@ -1989,7 +2098,7 @@
   
     &--fixed{
        @include for-size(tablet-l-up){
-        z-index: 100000;
+        z-index: 99999999;
         position:fixed; 
         top: 0;
         left:0;
@@ -2005,8 +2114,9 @@
         //@include space-i('element','-','','t')
        // height: 2.4*$line_height_ratio#{em};    
     }
-    &__content { 
-          
+    &__content {
+        position:relative;
+        
         height: 60px;   
          
         
@@ -2028,6 +2138,23 @@
 
 ////////////////////////////////////////
 @include topBar();
+/**
+* swe styles
+*/
+
+@mixin swe(){
+
+  .swe {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include swe();
 /**
 * topFeatures styles
 */
@@ -2185,7 +2312,10 @@
               color: cs('erorr');
           }
       }
-     
+      .productCol__lock{
+          color: cs('erorr-d');
+          font-weight: normal;
+      }
     &__content {
         
     }
@@ -2204,26 +2334,29 @@
             text-decoration: line-through;
         }
     }
+    &--part{
+        line-height: 1.2;
+    }
     .productInfo &--sale{
         .productCol__price {
             line-height: 1.7;
         }
          .productCol__oldPrice{
-              margin-top: vr-block(.4);
-              font-size: .7em;
+              margin-top: vr-block(.4);      
+              font-size: .7em;  
          }
         
     }
-  }
-  .productCol__mrcPrice{
+  }    
+  .productCol__mrcPrice{  
       display:block;
-      font-size: 1.4rem;
-      color: cs('succes-d2');
+      font-size: 1rem;    
+      color: cs('font-d');
       &:before{
           content: 'Мрц:';
           color: cs('font');
           font-size: .8em;
-          margin-right: .65em;
+          margin-right: .2em;
       }
   }
 
@@ -2244,6 +2377,9 @@
         position:relative;
         .productCol__mrcPrice{
             font-size: 1rem;
+        }
+        .productCol__lock{
+            width:100%;
         }
         .dltCtn{
             @include for-size(phone-only){

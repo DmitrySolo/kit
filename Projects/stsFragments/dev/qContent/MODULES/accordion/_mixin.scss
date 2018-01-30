@@ -41,6 +41,7 @@
     margin-top: -1px;
     background-color: cs('foreground');
     border: none;
+    z-index:1;
     border-top:  4px  solid cs('background');
     &:first-child{
         border-top:none;
@@ -94,7 +95,7 @@
         }
     }  
     &__content {
-        background-color: #fff;
+        //background-color: #fff;
          display:none;
          @include for-size(tablet-l-up){display: block;}
     }
@@ -142,8 +143,10 @@
           position:absolute;
           width: 11em;
           top:0%;
+          bottom:auto;
           right: -10em;
           padding:0;
+          left:auto;
      }
      padding: vr-block(.4);
      width:100%;
@@ -152,7 +155,7 @@
      left:0;
       //margin-top:-2rem;
       
-      z-index: 10000;
+     z-index: 10;
       color: #fff;
       font-weight: bold;
       background-color: cs('accent');

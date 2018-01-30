@@ -11,6 +11,9 @@
         .productCol__mrcPrice{
             font-size: 1rem;
         }
+        .productCol__lock{
+            width:100%;
+        }
         .dltCtn{
             @include for-size(phone-only){
                 width: 30px;

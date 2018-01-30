@@ -14,21 +14,24 @@
            
         } 
   .catalogList {
-    &__outerWrapper{
-        position:relative;
+    &__outerWrapper{  
+        position:relative;  
         width:100%;
+        
     }
     
     &__outer{
-        display:none;
-        opacity:0;
+        display:none;  
+        opacity:0;    
         transition: opacity 2s ease; 
-        position:absolute;
-        top:0;
-        height: 1000px; 
-        width:100%;
-        background:rgba(0,0,0,0.4);
-        z-index: 3000;
+        position:fixed;
+       top:0;
+        left:0;
+        bottom:0;          
+        right:0;     
+        background:rgba(0,0,0,0.5);
+        z-index:2;
+          
     }
     &__content {
         position:relative;
@@ -36,7 +39,7 @@
         width:100%;
         z-index:1000000;
         &.catalogList--onMain{
-            z-index:10;
+            z-index:2;
         }
         dispaly:none;
     }
@@ -61,6 +64,7 @@
         background: cs('foreground');
         position:relative;  
         width:100%;
+       
            
          @include for-size(tablet-l-up){   
            width: 23.5%;  
@@ -71,7 +75,7 @@
     }
     &__categoryItem { 
         
-        .catalogList--onMain &{
+        .catalogList--onMain &{  
             width: 100%;
         }
         @include for-size(tablet-l-up){
@@ -104,12 +108,14 @@
         }
     }
     &__categoryList{
+        position:relative;
         display: none;
         width: 100%;
+        z-index: 2;  
     }
     &__categorySublist{
         
-            display:inline-block;
+        display:inline-block;
         position:absolute;
         right:-330%;
         top:0;
@@ -131,10 +137,28 @@
          
     }
     &__brands {
-        width: 400%;
+        position: absolute;
          padding: 1.6em 2.4em;
         background: cs('foreground');
+        z-index:5;
         
+        .catalogList--onMain &{
+            width: 437%;
+        }
+        
+    }
+    &__brandList{ 
+        margin: 0 auto;
+    }
+    &__brandLitera {
+        
+        padding: vr-block(.4) vr-block(.8);
+        border-bottom: dashed 1px cs('background-d');
+        span{ 
+        font-weight: bold;
+        color: cs('primary');
+        font-size: 1.2rem;
+        }
     }
   }
 

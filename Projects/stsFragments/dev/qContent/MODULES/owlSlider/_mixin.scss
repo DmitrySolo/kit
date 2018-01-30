@@ -1,6 +1,7 @@
 @mixin owlSlider(){
 	
 .owlSlider{
+    //background: cs('background-d2');
     @include for-size(phone-only){
         margin-left: -1rem;
         margin-right: -1rem;  
@@ -26,7 +27,7 @@
     border-top-left-radius: 3px;
     @include for-size(phone-only){  
         display:none;
-    }
+    }   
     .owl-dot{   
       display: none;
       width: .9em;
@@ -45,6 +46,65 @@
     }
 
   }
+    
+    .sliderTitles{
+        &__list {
+            
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+        &__item{
+            background-color: cs('primary');
+            //border-right: solid 1px cs('background-d');
+            margin-right: 1px;
+            padding: vr-block(.4) vr-block(.4);
+            height: vr-block(2.80);
+            //overflow: hidden;
+            .icon{
+                fill: #fff;
+            }
+            &.active{
+                position:relative;
+                background: #fff;
+                border-bottom: solid 4px cs('background-d2');
+                border-bottom-left-radius:6px;
+                border-bottom-right-radius: 6px;
+                & .icon{
+                    fill:cs('primary');
+                }
+                /* &:before{
+                    content:'';
+                    width: 100%;  
+                    display:block;
+                    background: #fff;
+                    height:4px;
+                    position:absolute;
+                    top:-4px;
+                    left:0;
+                    z-index: 10;
+                    border-bottom-left-radius: 25%;
+                    border-bottom-right-radius: 25%;
+                } */
+                
+            }
+        }
+        &__title{
+            cursor:pointer;
+            color: #fff;  
+            width: 73%;
+            margin-left: 5%;
+            vertical-align:middle;
+            .active &{
+                color: cs('primary');
+            }
+        }
+    }
+
+
+
+
+
+
 
 }
 @include owlSlider()

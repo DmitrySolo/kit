@@ -13,7 +13,10 @@
               color: cs('erorr');
           }
       }
-     
+      .productCol__lock{
+          color: cs('erorr-d');
+          font-weight: normal;
+      }
     &__content {
         
     }
@@ -32,26 +35,29 @@
             text-decoration: line-through;
         }
     }
+    &--part{
+        line-height: 1.2;
+    }
     .productInfo &--sale{
         .productCol__price {
             line-height: 1.7;
         }
          .productCol__oldPrice{
-              margin-top: vr-block(.4);
-              font-size: .7em;
+              margin-top: vr-block(.4);      
+              font-size: .7em;  
          }
         
     }
-  }
-  .productCol__mrcPrice{
+  }    
+  .productCol__mrcPrice{  
       display:block;
-      font-size: 1.4rem;
-      color: cs('succes-d2');
+      font-size: 1rem;    
+      color: cs('font-d');
       &:before{
           content: 'Мрц:';
           color: cs('font');
           font-size: .8em;
-          margin-right: .65em;
+          margin-right: .2em;
       }
   }
 

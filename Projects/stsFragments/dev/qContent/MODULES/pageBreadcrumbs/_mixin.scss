@@ -5,7 +5,9 @@
 @mixin pageBreadcrumbs(){
 
   .pageBreadcrumbs {
+     
     &__content {
+        z-index:0;
         width: 100%;
         background: cs('background');
         @include for-size(tablet-l-up){

@@ -9,7 +9,7 @@
   
     &--fixed{
        @include for-size(tablet-l-up){
-        z-index: 100000;
+        z-index: 99999999;
         position:fixed; 
         top: 0;
         left:0;
@@ -25,8 +25,9 @@
         //@include space-i('element','-','','t')
        // height: 2.4*$line_height_ratio#{em};    
     }
-    &__content { 
-          
+    &__content {
+        position:relative;
+        
         height: 60px;   
          
         

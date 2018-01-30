@@ -14,18 +14,20 @@ mixin C-priceAndStock(type,empty)
 					span.icon-ruble
 				| 14 300
 				span.icon-ruble
-			-if(!empty)
+			-if(!empty)  
 				span.productCol__stock.icon-tick В наличии
 			-else
 				span.productCol__stock.productCol__stock--out Нет В наличии
 	-if(type == 'part')
-		.priceAndStock.priceAndStock--sale(data-qcontent='component__priceAndStock')
-			span.productCol__price
-				span.productCol__mrcPrice 17 300
-					span.icon-ruble
-				| 14 300
-				span.icon-ruble
-			-if(!empty)
-				span.productCol__stock.icon-tick В наличии
-			-else
-				span.productCol__stock.productCol__stock--out Нет В наличии
+		.priceAndStock.priceAndStock--part(data-qcontent='component__priceAndStock')
+				span.productCol__price
+					span.productCol__mrcPrice 17 300   
+						span.icon-ruble        
+					| 14 300     
+					span.icon-ruble  
+				-if(!empty)
+					span.partStock
+						span.productCol.productCol__stock.icon-tick Доступно: 299шт   
+						span.productCol.productCol__lock.icon-padlock Резерв: 389шт
+				-else
+					span.productCol__stock.productCol__stock--out Нет В наличии

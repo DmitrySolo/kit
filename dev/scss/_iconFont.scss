@@ -42,26 +42,32 @@
   @if $filename == left {
   $char: "\E005";
 }
-  @if $filename == login {
+  @if $filename == locked {
   $char: "\E006";
 }
-  @if $filename == placeholder {
+  @if $filename == login {
   $char: "\E007";
 }
-  @if $filename == right {
+  @if $filename == padlock {
   $char: "\E008";
 }
-  @if $filename == ruble {
+  @if $filename == placeholder {
   $char: "\E009";
 }
-  @if $filename == tick {
+  @if $filename == right {
   $char: "\E00A";
 }
-  @if $filename == to-left {
+  @if $filename == ruble {
   $char: "\E00B";
 }
-  @if $filename == to-right {
+  @if $filename == tick {
   $char: "\E00C";
+}
+  @if $filename == to-left {
+  $char: "\E00D";
+}
+  @if $filename == to-right {
+  $char: "\E00E";
 }
 
 @return $char;
@@ -93,8 +99,14 @@
 .icon-left {
   @include icon(left);
 }
+.icon-locked {
+  @include icon(locked);
+}
 .icon-login {
   @include icon(login);
+}
+.icon-padlock {
+  @include icon(padlock);
 }
 .icon-placeholder {
   @include icon(placeholder);

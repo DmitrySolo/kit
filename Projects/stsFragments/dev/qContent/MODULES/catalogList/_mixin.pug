@@ -1,7 +1,7 @@
 mixin MODULE-catalogList(param)
 	if(page.slug=='main' && param =='main')
 		-var classN = 'catalogList--onMain'
-		<!-- split modules/catalogList -->
+		<!-- split modules/catalogList -->  
 					.catalogList__content(data-qcontent='module__catalogList' class=''+classN)
 						nav(role='catalog').catalogList__categoryNavigation
 							ul.catalogList__categoryList(class=''+classN)#js_categories
@@ -85,18 +85,46 @@ mixin MODULE-catalogList(param)
 								li.catalogList__SublistItem#js_sub__9 9
 						.catalogList__wrapper.catalogList__brands#js_brands
 							nav(role='brands').catalogList__brandNavigation
-								ul.catalogList__brandList.l_ib__c 
-									+loop(11)
-										li.catalogList__barandLitera.l_ib__e A
+								ul.catalogList__brandList.group.group--md
+									+loop(5)
+										li.catalogList__brandLitera.col.col-3-tl 
+											span A
 											ul.catalogList__barandList
 												li.catalogList__barandItem
-													a(href='asdsad') Alpen
+															+A-catalogLink('ALPEN','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Armodillo','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Ananas','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Aquatika','','sub')
+										li.catalogList__brandLitera.col.col-3-tl 
+											span B
+											ul.catalogList__barandList
+												li.catalogList__barandItem
+															+A-catalogLink('ALPEN','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Armodillo','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Ananas','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Aquatika','','sub')
+										li.catalogList__brandLitera.col.col-3-tl 
+											span B
+											ul.catalogList__barandList
+												li.catalogList__barandItem
+															+A-catalogLink('ALPEN','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Armodillo','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Ananas','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Aquatika','','sub')
 							
 	else 
 		if(page.slug != 'main')
 			<!-- split modules/catalogList -->
 			.catalogList__outerWrapper  
-				.catalogList__outer#js_catShadow
 				+LEVEL-inner()
 					.catalogList__content(data-qcontent='module__catalogList')
 						nav(role='catalog').catalogList__categoryNavigation
@@ -162,10 +190,38 @@ mixin MODULE-catalogList(param)
 								li.catalogList__SublistItem#js_sub__9 9
 						.catalogList__wrapper.catalogList__brands#js_brands
 							nav(role='brands').catalogList__brandNavigation
-								ul.catalogList__brandList.l_ib__c 
-									+loop(11)
-										li.catalogList__barandLitera.l_ib__e A
+								ul.catalogList__brandList.group.group--md
+									+loop(5)
+										li.catalogList__brandLitera.col.col-3-tl 
+											span A
 											ul.catalogList__barandList
 												li.catalogList__barandItem
-													a(href='asdsad') Alpen
-						
+															+A-catalogLink('ALPEN','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Armodillo','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Ananas','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Aquatika','','sub')
+										li.catalogList__brandLitera.col.col-3-tl 
+											span B
+											ul.catalogList__barandList
+												li.catalogList__barandItem
+															+A-catalogLink('ALPEN','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Armodillo','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Ananas','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Aquatika','','sub')
+										li.catalogList__brandLitera.col.col-3-tl 
+											span B
+											ul.catalogList__barandList
+												li.catalogList__barandItem
+															+A-catalogLink('ALPEN','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Armodillo','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Ananas','','sub')
+												li.catalogList__barandItem
+															+A-catalogLink('Aquatika','','sub')

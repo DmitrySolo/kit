@@ -5,6 +5,12 @@
         margin-bottom: vr-block(.1);
     }
     &__content {
+        .productCol__lock{
+            text-align:left;
+            width: 100%;
+            display: inline-block;
+            line-height: 1.7;
+        }
         .productBadge{
             @include for-size(phone-only){
                 position: absolute;

@@ -12,7 +12,7 @@
         //line-height: 1;
        // margin-top: vr-block(1);
        
-        @include for-size(phone-only){
+        @include for-size(phone-only){   
             text-align: center;
         }
     }  
@@ -22,7 +22,8 @@
   
         }
         .page__title {
-            font-size: 1.7rem;  
+            font-size: 1.7rem; 
+            color:cs('primary');
             @include for-size(phone-only){
                    padding: 0;
                    text-align: left;
