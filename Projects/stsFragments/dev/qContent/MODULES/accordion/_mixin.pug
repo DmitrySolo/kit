@@ -8,7 +8,7 @@ mixin MODULE-accordion(data)
 			-var active = ''
 			-if(data[i].active)
 				-active = 'active'
-			button.accordion.icon-down.notEdit(class=' '+active)=data[i].title
+			button.accordion.icon-down(class=' '+active)=data[i].title
 				span.accordion__checkMarker
 			.accordion__panel
 				-if(data[i].content['type'] == 'checkBox')

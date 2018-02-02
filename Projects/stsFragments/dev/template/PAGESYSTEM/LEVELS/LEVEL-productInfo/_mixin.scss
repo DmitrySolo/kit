@@ -2,7 +2,12 @@
 
 .productInfo {
     .toOrder{
-        margin-bottom: vr-block(.1);
+        width:80%;
+        margin: vr-block(.4) auto vr-block(.1);
+        display: block;
+        @include for-size(tablet-l-up){
+            width: 100%;
+        }
     }
     &__content {
         .productCol__lock{
@@ -13,8 +18,10 @@
         }
         .productBadge{
             @include for-size(phone-only){
-                position: absolute;
-                top:0;
+                margin:0 auto;  
+                display: block;
+                width: 40%;
+                margin-bottom: vr-block(.4);
                 
             }
         }
@@ -28,11 +35,18 @@
              width: 100%;
              font-size: 2.8rem;
              text-align: left;
+             
              @include for-size(phone-only){
                  text-align: center;
              }
         }
-        .productCol__stock{
+        .productCol__mrcPrice{
+            font-size: 1.5rem;
+        }
+        .fastBuy{
+            margin: vr-block(2) auto vr-block(1);
+        }
+        .productCol__stock,.productCol__lock{
             width:100%;
             text-align:left;
             font-size: 1.1rem;
@@ -58,12 +72,16 @@
     }
       .productLogo {
       position:absolute;
-      z-index: 1200;
-      left:0;
+      z-index: 1;
+      left:0;  
       top:-2rem;  
       background: cs('foreground');
       width: 9rem;
-      height: 4.5rem;  
+      height: 4.5rem;
+      @include for-size(phone-only){
+          width:5rem;
+          height:3rem;
+      }
       padding: vr-block(.4);
       border: solid 2px cs('background-d'); 
       box-shadow: 4px 4px silver;

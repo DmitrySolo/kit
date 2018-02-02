@@ -1,15 +1,16 @@
 mixin MODULE-pageBreadcrumbs()
 	-if(page.slug!='main')
 		<!-- split modules/pageBreadcrumbs -->
-		.pageBreadcrumbs__content(data-qcontent='module__pageBreadcrumbs')
-			.container
-				nav.pageBreadcrumbs
-					ul.pageBreadcrumbs__list
-						li.pageBreadcrumbs__item
-							a Главная 
-						li.pageBreadcrumbs__item.icon-to-right
-							a Каталог
-						li.pageBreadcrumbs__item.icon-to-right
-							a Сантехника
-						li.pageBreadcrumbs__item.icon-to-right  
-							a Душевые кабины
+		.group.group-md
+			.col.col-12-tp
+				.pageBreadcrumbs__content(data-qcontent='module__pageBreadcrumbs')
+						nav.pageBreadcrumbs
+							ul.pageBreadcrumbs__list
+								li.pageBreadcrumbs__item
+									a Главная 
+								li.pageBreadcrumbs__item.icon-to-right
+									a Каталог
+								li.pageBreadcrumbs__item.icon-to-right
+									a Сантехника
+								li.pageBreadcrumbs__item.icon-to-right  
+									a Душевые кабины

@@ -2,7 +2,7 @@
 
 .subProductInfo {
     &__content {
-        background: cs('foreground');
+        //background: cs('foreground');
         border-bottom: solid 2px cs('background-d');
     }
     &__title {  
@@ -13,29 +13,47 @@
             border-bottom: solid 3px cs('primary');
         }
         &-item{
+            background: #fff;
             text-align:center;
             position: relative;
-            width: 14rem;
+            border: solid 1px cs('background-d2');
+            border-bottom-width: 4px;
+            margin-bottom: vr-block(.2);
+            border-radius: 3px;
+              padding: vr-block(.4);
+            @include for-size(tablet-l-up){
+                margin-bottom:0;
+                border-radius:0;
+                text-decoration: underline;
+                width: 14rem;
             padding: vr-block(.4);
             //padding-left: vr-block(1);
             display: inline-block;
             //height: 6rem;
+            cursor:pointer;
             vertical-align: top;
+            border: none;
             border-right: solid 1px cs('background-d');
-            color: cs('font-l');
-            text-decoration: underline;
+            }
+            
+            color: cs('font');
             &:hover{
                 color: cs('font-d2');
             }
           //  text-decoration-style: dashed;
             &--active{
+                
                 font-weight: bold;
                 color: #fff;
                 background: cs('primary');
                 text-decoration: none;
+                 &:hover{
+                color: #fff;
+            }
                // border-top: solid 2px cs('primary');
                 &:before {
-            content: '';
+                    @include for-size(tablet-l-up){
+                        content: '';
             position: absolute;
             width: 0px;
             height: 0px; 
@@ -44,6 +62,8 @@
             margin-left: -1em; 
             border: solid 15px transparent;
             border-top-color: cs('primary');    
+                    }
+            
 
         }
  

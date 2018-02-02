@@ -40,6 +40,8 @@
         z-index:1000000;
         &.catalogList--onMain{
             z-index:2;
+            height: auto;
+            margin-bottom: vr-block(1);
         }
         dispaly:none;
     }
@@ -140,7 +142,7 @@
         position: absolute;
          padding: 1.6em 2.4em;
         background: cs('foreground');
-        z-index:5;
+        z-index:11000000;
         
         .catalogList--onMain &{
             width: 437%;

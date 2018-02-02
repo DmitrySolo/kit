@@ -53,7 +53,6 @@ mixin MODULE-catalogList(param)
 										+I('ogpo','asset')          
 										span Ограждения, поддоны
 										+I('to-right','catalog')
-									li.catalogList__categoryItem#js_showSub__6
 							ul.catalogList__categorySublist
 								li.catalogList__SublistItem#js_sub__1
 									ul.sub__list
@@ -74,7 +73,6 @@ mixin MODULE-catalogList(param)
 											.col.col-4-tl
 												li.sub__item 
 													+A-catalogLink('Стальные ванны')
-										li.sub__item
 								li.catalogList__SublistItem#js_sub__2 2
 								li.catalogList__SublistItem#js_sub__3 3
 								li.catalogList__SublistItem#js_sub__4 4
@@ -87,7 +85,7 @@ mixin MODULE-catalogList(param)
 							nav(role='brands').catalogList__brandNavigation
 								ul.catalogList__brandList.group.group--md
 									+loop(5)
-										li.catalogList__brandLitera.col.col-3-tl 
+										li.catalogList__brandLitera.col.col-3-tl.col-6-m
 											span A
 											ul.catalogList__barandList
 												li.catalogList__barandItem
@@ -98,7 +96,7 @@ mixin MODULE-catalogList(param)
 															+A-catalogLink('Ananas','','sub')
 												li.catalogList__barandItem
 															+A-catalogLink('Aquatika','','sub')
-										li.catalogList__brandLitera.col.col-3-tl 
+										li.catalogList__brandLitera.col.col-3-tl.col-6-m 
 											span B
 											ul.catalogList__barandList
 												li.catalogList__barandItem
@@ -109,7 +107,7 @@ mixin MODULE-catalogList(param)
 															+A-catalogLink('Ananas','','sub')
 												li.catalogList__barandItem
 															+A-catalogLink('Aquatika','','sub')
-										li.catalogList__brandLitera.col.col-3-tl 
+										li.catalogList__brandLitera.col.col-3-tl.col-6-m 
 											span B
 											ul.catalogList__barandList
 												li.catalogList__barandItem

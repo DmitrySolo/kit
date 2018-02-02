@@ -3,8 +3,12 @@
         color: #fff;
        // text-transform: uppercase;
         text-align: center;
+        height: vr-block(1.5);
        // font-size:12px;
        // line-height: 2rem;
+       img{
+           width: 2.4em;
+       }
         background: cs('primary');
         line-height: 1.8em;
         border: none;
@@ -20,7 +24,7 @@
             height: 12px;  
         }
         &:active{
-            border:none;
+            border:none; 
         }
         &.succes {
             background: cs('succes');
@@ -40,7 +44,7 @@
         }
         
         &:hover{
-            background: cs('accent-l');
+            background: cs('accent-l');  
             border-color: cs('accent');  
         
         }

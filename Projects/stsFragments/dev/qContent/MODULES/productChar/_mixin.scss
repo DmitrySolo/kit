@@ -9,6 +9,10 @@
         padding: vr-block(.2);
         background: cs('foreground');
         font-size: .9em;
+        padding-left: vr-block(1);
+        @include for-size(tablet-l-up){
+            padding-left: 0;
+        }
         dt,dd{
             display: inline-block;
             vertical-align: middle;

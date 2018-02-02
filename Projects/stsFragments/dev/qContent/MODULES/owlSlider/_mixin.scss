@@ -52,50 +52,56 @@
             
             border-bottom-left-radius: 3px;
             border-bottom-right-radius: 3px;
+              border-bottom: solid 4px cs('background-d2');
         }
         &__item{
             background-color: cs('primary');
-            //border-right: solid 1px cs('background-d');
-            margin-right: 1px;
+            border-right: solid 1px cs('background-d');
             padding: vr-block(.4) vr-block(.4);
             height: vr-block(2.80);
+          
             //overflow: hidden;
+            &:last-child{
+                border-right: none;
+            }
             .icon{
                 fill: #fff;
             }
             &.active{
                 position:relative;
                 background: #fff;
-                border-bottom: solid 4px cs('background-d2');
+              
                 border-bottom-left-radius:6px;
                 border-bottom-right-radius: 6px;
                 & .icon{
                     fill:cs('primary');
                 }
-                /* &:before{
+                 &:before{
                     content:'';
-                    width: 100%;  
+                    //width: 100%;  
                     display:block;
-                    background: #fff;
-                    height:4px;
+                    background: #9481ad;
+                    height:6px;
                     position:absolute;
-                    top:-4px;
-                    left:0;
-                    z-index: 10;
-                    border-bottom-left-radius: 25%;
-                    border-bottom-right-radius: 25%;
-                } */
-                
+                    top:-6px;      
+                    right:-1px;  
+                    left:-1px;
+                    z-index: 1;  
+                    
+                } 
+                  
             }
         }
         &__title{
             cursor:pointer;
             color: #fff;  
             width: 73%;
+              font-weight: normal;
             margin-left: 5%;
             vertical-align:middle;
             .active &{
                 color: cs('primary');
+                  font-weight: bold; 
             }
         }
     }

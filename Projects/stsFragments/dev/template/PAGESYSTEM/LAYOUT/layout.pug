@@ -13,8 +13,8 @@ html(lang=''+head.lang)
 			<!-- split #{page.slug}.html -->
 			<!-- MAIN -->
 			+LEVEL-inner()
+				+MODULE-pageBreadcrumbs()
 				+LEVEL-page(page.title)
-					+MODULE-pageBreadcrumbs()  
 					.group.group--md 
 						.col.col-3-tl
 							aside

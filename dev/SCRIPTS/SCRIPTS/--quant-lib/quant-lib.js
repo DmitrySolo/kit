@@ -149,4 +149,20 @@ function qntDeleteAllCookies() {
 		document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
 	}
 }
+function  qntTab(triggerObj,contentObj,activeTriggerClassName){
+
+    if(triggerObj && contentObj && activeTriggerClassName){
+        contentObj.not(":first").hide();
+        contentObj.filter(":first").addClass(activeTriggerClassName);
+        triggerObj.on('click',function(){
+            contentObj.hide();
+            triggerObj.removeClass(activeTriggerClassName);
+            $(this).addClass(activeTriggerClassName);
+            $(contentObj.get(triggerObj.index( this ))).show();
+        });
+	} else return console.error('error arguments in qntTab');
+
+
+
+};
 ////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -126,6 +126,21 @@
 				"": ""
 			}
 		},
+		"order": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/order/order.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"owlSlider": {
 			"js": {
 				"lib": {
@@ -189,6 +204,21 @@
 				"": ""
 			}
 		},
+		"dashBoardElement": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"b1": {
 			"js": {
 				"lib1": {
@@ -226,14 +256,14 @@
 				}
 			}
 		},
-		"dashBoardElement": {
+		"toOrder": {
 			"js": {
 				"lib1": {
 					"src": "",
 					"container": "footer/libs"
 				},
 				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/toOrder/toOrder.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -254,6 +284,17 @@
 			},
 			"css": {
 				"": " "
+			}
+		},
+		"subProduct": {
+			"js": {
+				"init": {
+					"src": "Projects/stsFragments/dev/template/PAGESYSTEM/LEVELS/LEVEL-subProductInfo/level.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
 			}
 		}
 	},
@@ -572,11 +613,11 @@
 			}
 		}
 	},
-	"breadcrumbs": {
-		"1": "22"
-	},
 	"cart": {
 		"cart": "1"
+	},
+	"breadcrumbs": {
+		"1": "22"
 	},
 	"cartPage": {
 		"cartPage": "1"
@@ -609,11 +650,11 @@
 	"geoTarget": {
 		"geoTarget": "1"
 	},
-	"layout": {
-		"layout": "1"
-	},
 	"IBGrid": {
 		"IBGrid": "1"
+	},
+	"layout": {
+		"layout": "1"
 	},
 	"mainInfo": {
 		"mainInfo": "1"
@@ -627,11 +668,11 @@
 	"module": {
 		"module": "1"
 	},
-	"noticeList": {
-		"noticeList": "1"
-	},
 	"module1": {
 		"module1": "1"
+	},
+	"noticeList": {
+		"noticeList": "1"
 	},
 	"order": {
 		"order": "1"

@@ -6,6 +6,7 @@
     font-weight: bold;
     border-radius: 3px;
     color: #fff;
+    text-align: center;
     text-shadow: 0px 0px 1px #000;
     
     &--new {
@@ -16,13 +17,13 @@
     }
     &--sale {
        
-        background: cs('erorr-l2');
+        background: #fd7a76;
         border-color: cs('erorr-l');
     }
     &--hit {
        
-        background: cs('accent-l');
-        border-color: cs('accent');
+        background: cs('accent');
+        border-color: cs('accent-d');
     }
     
 }

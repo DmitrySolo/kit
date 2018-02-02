@@ -19,9 +19,15 @@
     }
     .owl-next{
         right: -1.5rem;
+        @include for-size(phone-only){
+            right:-2.5rem;
+        }
     }
         .owl-prev{
        left: -1.5rem;
+          @include for-size(phone-only){
+              left: -2.5rem;
+          }
     }
 
   .productImageSlider {  
@@ -47,6 +53,9 @@
         //   
     }
     &__dot{
+        @include for-size(phone-only){
+            display:none;
+        }
         border: solid 1px cs('background-d2');
         width: 3rem;
         height: 3rem;

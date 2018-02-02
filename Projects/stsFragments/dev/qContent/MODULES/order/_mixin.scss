@@ -3,10 +3,40 @@
 */
 
 @mixin order(){
-    .underlined{
-        border-bottom: solid 1px cs('primary');
+    .deliveryCost{
+        color: cs('primary');
+        font-weight: bold;
+        font-size: .9;
+        position: absolute;
+        bottom: 1px;
+        padding: vr-block(.1);
+        display: inline-block;
+        left:10%;
+        border-radius: 3px;
+        &--free{
+           color: cs('succes-d');  
+        }
     }
+    .underlined{
+        border-bottom: dashed 3px cs('primary');
+       @include for-size(tablet-l-up){
+            border-bottom: solid 3px cs('primary');
+       }
+    }   
   .order {
+    &__pointsTitle{
+        display: none;
+        @include for-size(phone-only){
+            display: block;
+            text-align: center;
+        }
+    }
+    &__map{
+        display:none;
+        @include for-size(tablet-l-up){
+            display:block;
+        }
+    }
     &__content {
         input.textInput{
             @include for-size(phone-only){
@@ -37,7 +67,7 @@
         }
         .radio{
             font-size: 1.4rem;
-            border: solid 1px cs('background-d');
+            border: solid 3px cs('background-d');
             border-radius: 6px;
             padding: vr-block(.4);
             &__label{
@@ -47,7 +77,10 @@
                 color: cs('accent');
             }
             &:hover {
-                border-color: cs('primary');
+                @include for-size(tablet-l-up){
+                    border-color: cs('primary');
+                }
+                
             }
         }
         margin-top: vr-block(1);
@@ -151,7 +184,7 @@
 
       }
       &__checkPointTitle{
-          @include for-size(phone-only){
+          @include for-size(phone-only){     
               display:none;
           }
           color: darken(cs('background-d2'),20%);
@@ -166,11 +199,43 @@
           &--delivery{
              
               .radio{
-                  font-size: 1em;
-                  border-bottom: none;
-                  border-bottom-left-radius:0;
-                  border-bottom-right-radius:0;
-                  margin:0;
+                  @include for-size(tablet-l-up){
+                      
+                          border-bottom: none;
+                      margin-top:4px;
+                      margin-bottom: 0;
+                    border-bottom-left-radius:0;
+                      border-bottom-right-radius:0;
+                  }
+                  font-size: .9em;
+                  margin-bottom:vr-block(.4);
+                  &.trig_del_cont{
+                      border-width: 3px;
+                      height: vr-block(3.5);
+                      &.radio--selected{
+                          @include for-size(tablet-l-up){
+                               margin-top: -4px;
+                               margin-bottom: -4px;
+                          }
+                        height: vr-block(4);
+                        border-color: cs('primary'); 
+                        
+                        z-index: 3;
+                       
+                        .deliveryCost{
+                           @include for-size(tablet-l-up){
+                               borser: solid 1px;
+                           }
+                        }
+                               
+                          &:hover{
+                              @include for-size(tablet-l-up){
+                                  border-bottom: none;
+                              }
+                              
+                          }
+                      }
+                  }
                  // height:$line-height-ratio *4#{em};
                   &__label{
                       text-align: left;
@@ -179,11 +244,10 @@
                       
                   }
                   &--selected{
-                          border-color: cs('primary');
-                         border-bottom: 1px solid #fff;
-                        z-index: 222;
-                        margin-bottom: -1px;
+                         //
+                       
                   }
+                  
               }
           }
           
@@ -222,9 +286,12 @@
           &__ctn{
               padding: vr-block(.2);
               background: cs('background');
+              border-radius:3px;
           }
-          max-height: 400px;
-          overflow-y: auto;
+             @include for-size(tablet-l-up){
+              max-height: 400px;
+              overflow-y: auto;
+             }
            padding:  vr-block(.1);
           &::-webkit-scrollbar-thumb {  
             background-color: cs('primary');        
@@ -232,13 +299,13 @@
             pointer-events: none;} 
     
       }
-      &__form--confirmed {
+      &__form--confirmed {  
           width: 100%;
           .text{
               font-weight: bold;
-              text-align: center;
+              text-align: center;  
           }
-          .order__checkPointNum {
+          .order__checkPointNum {    
               width: 4em;
               height: 4em;
           }

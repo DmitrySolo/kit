@@ -10,6 +10,11 @@
        
     }
      &__signature{
+        p {text-align:center;
+            @include for-size(tablet-l-up){
+                text-align:left;
+            }
+        }
             padding: vr-block(.4);
             background: #1d0e2f;
             color: #fff;

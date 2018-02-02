@@ -13,6 +13,14 @@
         }
         .productCol__lock{
             width:100%;
+            font-size: .9rem;
+        }
+        .productBadge{
+            @include for-size(phone-only){
+                display: block;
+                width: 45%;
+                margin: 0 auto;    
+            }
         }
         .dltCtn{
             @include for-size(phone-only){

@@ -136,6 +136,12 @@
           vertical-align: middle;
           fill: #fff;  
       }
+       &--boxTop{
+          width: 2.75em;
+      }
+      &--bomb{
+          fill:cs('primary-l2');       
+      }
       
     
 }

@@ -6,8 +6,13 @@
   
   .deliverySection {
     &__content {
-       float:right;
-       padding-right:vr-block(2);
+       @include for-size(tablet-l-up){
+                  float:right;
+          padding-right:vr-block(2);
+          text-align:left;
+
+       }
+       text-align: center;
     }
     &__title{
         margin-bottom: vr-block(.4);

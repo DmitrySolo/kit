@@ -8,7 +8,7 @@ mixin MODULE-accordion(data)
 			-var active = ''
 			-if(data[i].active)
 				-active = 'active'
-			button.accordion.icon-down.notEdit(class=' '+active)=data[i].title
+			button.accordion.icon-down(class=' '+active)=data[i].title
 				span.accordion__checkMarker
 			.accordion__panel
 				-if(data[i].content['type'] == 'checkBox')
@@ -28,9 +28,33 @@ mixin MODULE-accordion(data)
 mixin MODULE-additionalProducts()
 	<!-- split modules/additionalProducts -->
 	.additionalProducts__content(data-qcontent='module__additionalProducts')
+mixin breadcrumbs()
+	.breadCrumb__content(data-qcontent='module__breadcrumbs')
+		nav.breadCrumb.visible-l
+			a(href='/').breadcrumb__section.breadCrumb__section--current 1
+			-var page1 = 1
+			+loop(7)
+				a(href='/').not.breadcrumb__section #{page1 +=1}
+mixin MODULE-cartPage()
+	<!-- split modules/cartPage -->
+	.cartPage__content(data-qcontent='module__cartPage')
+		.cartPage
+			.group.group--md
+				.col.col-9-tl
+					+MODULE-cartProduct()
+					+MODULE-cartProduct()
+					+MODULE-cartProduct()
+					+MODULE-cartProduct()
+				.col.col-3-tl
+					.cartPage__cartCheck
+						span.cartPage__summtitle Итого:
+						br
+						span.cartPage__summ 113 400 Руб.
+						+B-toOrder('Заказать','makeOrder')
+					
 mixin MODULE-cart()
 	<!-- split modules/cart -->
-	-var empty = true
+	-var empty = false
 	if(empty)
 		button.cart__content(data-qcontent='module__cart')
 			span.cart__icon
@@ -42,13 +66,6 @@ mixin MODULE-cart()
 				+I('cart-s','topBar')
 			span.cart__count 2    
 			span.cart__summ на 1000 000р
-mixin breadcrumbs()
-	.breadCrumb__content(data-qcontent='module__breadcrumbs')
-		nav.breadCrumb.visible-l
-			a(href='/').breadcrumb__section.breadCrumb__section--current 1
-			-var page1 = 1
-			+loop(7)
-				a(href='/').not.breadcrumb__section #{page1 +=1}
 mixin MODULE-cartProduct()
 	<!-- split modules/cartProduct -->
 	.cartProduct__content(data-qcontent='module__cartProduct')
@@ -130,7 +147,6 @@ mixin MODULE-catalogList(param)
 										+I('ogpo','asset')          
 										span Ограждения, поддоны
 										+I('to-right','catalog')
-									li.catalogList__categoryItem#js_showSub__6
 							ul.catalogList__categorySublist
 								li.catalogList__SublistItem#js_sub__1
 									ul.sub__list
@@ -151,7 +167,6 @@ mixin MODULE-catalogList(param)
 											.col.col-4-tl
 												li.sub__item 
 													+A-catalogLink('Стальные ванны')
-										li.sub__item
 								li.catalogList__SublistItem#js_sub__2 2
 								li.catalogList__SublistItem#js_sub__3 3
 								li.catalogList__SublistItem#js_sub__4 4
@@ -164,7 +179,7 @@ mixin MODULE-catalogList(param)
 							nav(role='brands').catalogList__brandNavigation
 								ul.catalogList__brandList.group.group--md
 									+loop(5)
-										li.catalogList__brandLitera.col.col-3-tl 
+										li.catalogList__brandLitera.col.col-3-tl.col-6-m
 											span A
 											ul.catalogList__barandList
 												li.catalogList__barandItem
@@ -175,7 +190,7 @@ mixin MODULE-catalogList(param)
 															+A-catalogLink('Ananas','','sub')
 												li.catalogList__barandItem
 															+A-catalogLink('Aquatika','','sub')
-										li.catalogList__brandLitera.col.col-3-tl 
+										li.catalogList__brandLitera.col.col-3-tl.col-6-m 
 											span B
 											ul.catalogList__barandList
 												li.catalogList__barandItem
@@ -186,7 +201,7 @@ mixin MODULE-catalogList(param)
 															+A-catalogLink('Ananas','','sub')
 												li.catalogList__barandItem
 															+A-catalogLink('Aquatika','','sub')
-										li.catalogList__brandLitera.col.col-3-tl 
+										li.catalogList__brandLitera.col.col-3-tl.col-6-m 
 											span B
 											ul.catalogList__barandList
 												li.catalogList__barandItem
@@ -393,10 +408,6 @@ mixin MODULE-deliverySection()
 			
 			
 			
-mixin MODULE-fgtr()
-	<!-- split modules/fgtr -->
-	.fgtr__content(data-qcontent='module__fgtr')
-		.fgtr
 mixin MODULE-featuresList()
 	<!-- split modules/featuresList -->
 	.featuresList__content(data-qcontent='module__featuresList')
@@ -422,23 +433,10 @@ mixin MODULE-featuresList()
 				
 				
 		
-mixin MODULE-cartPage()
-	<!-- split modules/cartPage -->
-	.cartPage__content(data-qcontent='module__cartPage')
-		.cartPage
-			.group.group--md
-				.col.col-9-tl
-					+MODULE-cartProduct()
-					+MODULE-cartProduct()
-					+MODULE-cartProduct()
-					+MODULE-cartProduct()
-				.col.col-3-tl
-					.cartPage__cartCheck
-						span.cartPage__summtitle Итого:
-						br
-						span.cartPage__summ 113 400 Руб.
-						+B-toOrder('Заказать','makeOrder')
-					
+mixin MODULE-fgtr()
+	<!-- split modules/fgtr -->
+	.fgtr__content(data-qcontent='module__fgtr')
+		.fgtr
 mixin MODULE-flyPageFragment(data)
 	<!-- split modules/flyPageFragment -->
 	.flyPageFragment__content(data-qcontent='module__flyPageFragment')
@@ -514,6 +512,25 @@ mixin MODULE-mainInfo()
 						span.mainInfo__phone-time.icon-clock1
 							| Ежедневно  с 9 до 19ч
 							//| ПН-ПТ 9 - 19ч
+mixin MODULE-mainSearch(data)
+	<!-- split modules/mainSearch -->
+	.mainSearch__content(data-qcontent='module__mainSearch')
+		form.mainSearch__form 
+			input.mainSearch__input(type='text',placeholder="Поиск среди 20 000 товаров")
+			span.mainSearch__icon
+				+I('search','mainSearch') 
+				input.mainSearch__submit(type='submit' value="Искать")
+	if(data=='fired')
+		.mainSearch__result.clearfix
+			+C-productInline(productInline1,'search') 
+			+C-productInline(productInline1,'search')
+			+C-productInline(productInline1,'search')
+			+C-productInline(productInline1,'search')
+
+mixin MODULE-module()
+	<!-- split modules/module -->
+	.module__content(data-qcontent='module__module')
+		.module
 mixin MODULE-mobileMenu(param)
 	.mobileMenu
 		.mobileMenu__content(data-qcontent='module__mobileMenu')
@@ -535,25 +552,6 @@ mixin MODULE-mobileMenu(param)
 								li
 									a(href="/") Кабины
 
-mixin MODULE-mainSearch(data)
-	<!-- split modules/mainSearch -->
-	.mainSearch__content(data-qcontent='module__mainSearch')
-		form.mainSearch__form 
-			input.mainSearch__input(type='text',placeholder="Поиск среди 20 000 товаров")
-			span.mainSearch__icon
-				+I('search','mainSearch') 
-				input.mainSearch__submit(type='submit' value="Искать")
-	if(data=='fired')
-		.mainSearch__result.clearfix
-			+C-productInline(productInline1,'search') 
-			+C-productInline(productInline1,'search')
-			+C-productInline(productInline1,'search')
-			+C-productInline(productInline1,'search')
-
-mixin MODULE-module()
-	<!-- split modules/module -->
-	.module__content(data-qcontent='module__module')
-		.module
 mixin MODULE-module1()
 	<!-- split modules/module1 -->
 	.module1__content(data-qcontent='module__module1')
@@ -572,7 +570,7 @@ mixin MODULE-order()
 	<!-- split modules/order -->
 	.order__content(data-qcontent='module__order')
 		.group.group--md
-			.col.col-9-tl
+			.col.col-9-tl  
 				ul.order__steps
 					li.order__checkPoint.order__way.order__way--gone.order__checkPoint--gone
 						.order__checkPointNum 
@@ -608,20 +606,26 @@ mixin MODULE-order()
 							.col.col-6-tl
 								+B-radio('Юридическое лицо')
 						+B-toOrder('Далее','icon-to-right')
-				section.order__form.clearfix.order__form--delivery 
+				section.order__form.clearfix.order__form--delivery   
 					form
 						.group.group--el.underlined  
 							.col.col-4-tl  
-								+B-radio('Доставка до пункта выдачи ТК СДЭК','radio--selected','checked')
+								+B-radio('Доставка до пункта выдачи ТК СДЭК','radio--selected trig_del_cont','checked')
+									br
+									span.deliveryCost='Cтоимость: 230 руб.'  
 							.col.col-4-tl
-								+B-radio('Забрать самостоятельно из офиса')
+								+B-radio('Забрать самостоятельно из офиса фирмы-партнера','trig_del_cont')
+									br
+									span.deliveryCost.deliveryCost--free='Cтоимость: Бесплатно'
 							.col.col-4-tl
-								+B-radio('Курьерская доставка') 
-
+								+B-radio('Курьерская доставка','trig_del_cont')
+									br
+									span.deliveryCost='Cтоимость: 550 руб.'
 					.order__points
 						.group.group--el
 							.col.col-4-tl
-								ul.order__pointsList__ctn
+								.order__pointsList__ctn.delivery
+									h5.order__pointsTitle Выберите пункт выдачи
 									ul.order__pointsList
 										li
 											+B-radio('г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)','radio--selected','true')
@@ -634,10 +638,42 @@ mixin MODULE-order()
 										li
 											+B-radio('г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)')
 							.col.col-8-tl
-								iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3Ao-BDfF8mwUhzu4w4BXJHX8ENv4xcrB0A&amp;source=constructor" width="100%" height="414" frameborder="0")
-						
-						+B-toOrder('Далее','icon-to-right')
-			.col.col-12-tp.hidden
+								.order__map
+									iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3Ao-BDfF8mwUhzu4w4BXJHX8ENv4xcrB0A&amp;source=constructor" width="100%" height="414" frameborder="0")
+					.order__points
+						.group.group--el
+							.col.col-4-tl
+								.order__pointsList__ctn.delivery
+									h5.order__pointsTitle Выберите партнерский офис
+									ul.order__pointsList
+										li
+											+B-radio('г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)','radio--selected','true')
+										li
+											+B-radio('г. Воронеж, ул. Генерала Лизюкова, 17А, ТЦ «Калинка» (только мелкий габаритный груз)')
+										li
+											+B-radio('г. Воронеж, ул. Остужева 28 (только мелкий габаритный груз)')
+										li
+											+B-radio('г. Воронеж, ул. Пушкинская, 42 (только мелкий габаритный груз)')
+										li
+											+B-radio('г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)')
+							.col.col-8-tl
+								.order__map
+									iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3Ao-BDfF8mwUhzu4w4BXJHX8ENv4xcrB0A&amp;source=constructor" width="100%" height="414" frameborder="0")
+					.order__points
+						.group.group--el
+							.col.col-4-tp
+								+In-textInput('txt','ФИО','ФИО')
+							.col.col-4-tp
+								+In-textInput('txt','Email','Email')
+							.col.col-4-tp
+								+In-textInput('txt','Номер телефона','Номер телефона')
+							.col.col-4-tp
+								+In-textInput('txt','Город','Город')
+
+									
+							
+					+B-toOrder('Далее','icon-to-right')
+			.col.col-12-tp
 				section.order__form.clearfix.order__form--confirmed
 					.order__checkPoint--gone
 						.order__checkPointNum 
@@ -669,7 +705,9 @@ mixin owlSlider()
 	.owlSlider(data-qcontent='module__owlSlider')
 		.ove-mainSlider.owl-carousel
 			+loop(3)
-				img(src='https://www.onlinetrade.ru/img/actions/honor_894x293px_v3_894.jpg')
+				img(src='https://fast.ulmart.ru/ns/Shvidkova/800%D1%85250_credit10218.jpg')
+				img(src='https://fast.ulmart.ru/ns/Shvidkova/Smartphone_maraphone_800%D1%85250.jpg')
+				img(src='https://fast.ulmart.ru/ns/Content/cybersale_800%D1%85250_21.gif')
 	.sliderTitles
 		ul.sliderTitles__list.group#js_sliderTitles
 				li.sliderTitles__item.active.col.col-4-tl
@@ -684,23 +722,44 @@ mixin owlSlider()
 mixin MODULE-pageBreadcrumbs()
 	-if(page.slug!='main')
 		<!-- split modules/pageBreadcrumbs -->
-		.pageBreadcrumbs__content(data-qcontent='module__pageBreadcrumbs')
-			.container
-				nav.pageBreadcrumbs
-					ul.pageBreadcrumbs__list
-						li.pageBreadcrumbs__item
-							a Главная 
-						li.pageBreadcrumbs__item.icon-to-right
-							a Каталог
-						li.pageBreadcrumbs__item.icon-to-right
-							a Сантехника
-						li.pageBreadcrumbs__item.icon-to-right  
-							a Душевые кабины
+		.group.group-md
+			.col.col-12-tp
+				.pageBreadcrumbs__content(data-qcontent='module__pageBreadcrumbs')
+						nav.pageBreadcrumbs
+							ul.pageBreadcrumbs__list
+								li.pageBreadcrumbs__item
+									a Главная 
+								li.pageBreadcrumbs__item.icon-to-right
+									a Каталог
+								li.pageBreadcrumbs__item.icon-to-right
+									a Сантехника
+								li.pageBreadcrumbs__item.icon-to-right  
+									a Душевые кабины
 mixin MODULE-productCatInline(data)
 	<!-- split modules/productCatInline -->
 	.productCatInline__content(data-qcontent='module__productCatInline')
 		.productCatInline
 			+C-productInline(data,'cat')
+mixin MODULE-productChar()
+	<!-- split modules/productChar -->
+	.productChar__content(data-qcontent='module__productChar')
+		h5.productChar__title Основные Характеристики:
+		dl.productChar
+			.productChar__terminDesc
+				dt Заводской артикул:
+				dd LE15	
+			.productChar__terminDesc
+				dt Производитель:
+				dd РМС	
+			.productChar__terminDesc
+				dt Материал:
+				dd Пластик
+			.productChar__terminDesc
+				dt Гарантия:
+				dd год	
+			.productChar__terminDesc
+				dt Страна-производитель:
+				dd Россия
 mixin MODULE-productCol(data)
 	<!-- split modules/productCol -->
 		li.productCol__content(data-qcontent='module__productCol')  
@@ -728,26 +787,6 @@ mixin MODULE-productCol(data)
 					.productInline__quantityButton.productInline__quantityButton--minus
 					.productInline__quantityButton.productInline__quantityButton--plus
 				+B-toOrder('В корзину')
-mixin MODULE-productChar()
-	<!-- split modules/productChar -->
-	.productChar__content(data-qcontent='module__productChar')
-		h5.productChar__title Основные Характеристики:
-		dl.productChar
-			.productChar__terminDesc
-				dt Заводской артикул:
-				dd LE15	
-			.productChar__terminDesc
-				dt Производитель:
-				dd РМС	
-			.productChar__terminDesc
-				dt Материал:
-				dd Пластик
-			.productChar__terminDesc
-				dt Гарантия:
-				dd год	
-			.productChar__terminDesc
-				dt Страна-производитель:
-				dd Россия
 mixin MODULE-productImageSlider()
 	<!-- split modules/productImageSlider -->
 	.productImageSlider.productImageSlider__content(data-qcontent='module__productImageSlider')
@@ -768,7 +807,6 @@ mixin MODULE-reactTest()
 	<!-- split modules/reactTest -->
 	.reactTest__content(data-qcontent='module__reactTest')
 		#reactTest1
-
 mixin MODULE-support()
 	<!-- split modules/support -->
 	.support__content(data-qcontent='module__support')
@@ -782,6 +820,16 @@ mixin MODULE-swe()
 	<!-- split modules/swe -->
 	.swe__content(data-qcontent='module__swe')
 		.swe
+
+mixin MODULE-topFeatures()
+	<!-- split modules/topFeatures -->
+	.topFeatures__content(data-qcontent='module__topFeatures')
+		span.topFeatures__element
+			+I('housePin')
+			span.topFeatures__title Пункты выдачи в 170 городах
+		span.topFeatures__element
+			+I('box','boxTop')
+			span.topFeatures__title Оплачивайте заказы после проверки
 mixin MODULE-topBar()
 	<!-- split modules/topBar -->
 	.topBar__content(data-qcontent='module__topBar')
@@ -795,15 +843,6 @@ mixin MODULE-topBar()
 				.col.col-3-tl.showFrom-tl
 					.topBar__cart 
 						+MODULE-cart()
-mixin MODULE-topFeatures()
-	<!-- split modules/topFeatures -->
-	.topFeatures__content(data-qcontent='module__topFeatures')
-		span.topFeatures__element
-			+I('housePin')
-			span.topFeatures__title Пункты выдачи в 170 городах
-		span.topFeatures__element
-			+I('housePin')
-			span.topFeatures__title Пункты выдачи в 170 городах
 mixin MODULE-topMenu()
 	<!-- split modules/topMenu -->
 	.group.group--md
@@ -838,10 +877,6 @@ mixin MODULE-topMenu()
 						li.topMenu__element.topMenu__element--login
 							+A-actionLink('Вход','','login js_modal_trigger', 'js_modal_trigger__login','icon-login')
 							+A-actionLink('Регистрация','','signUp js_modal_trigger','js_modal_trigger__signUp')
-mixin LEVEL-cartProduct(data)
-	.cartProduct
-		.cartProduct__content(class = 'cartProduct__content'+ className data-qcontent="level__cartProduct")
-
 mixin LEVEL-inner(data)
 	.level__inner
 		.container
@@ -852,6 +887,10 @@ mixin LEVEL-level(title,className)
 	.level__content(class = 'level__content'+ className data-qcontent="level__level")
 		h2.level__title=title
 		block level
+mixin LEVEL-cartProduct(data)
+	.cartProduct
+		.cartProduct__content(class = 'cartProduct__content'+ className data-qcontent="level__cartProduct")
+
 mixin LEVEL-level1(data)
 	.level1
 		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
@@ -870,28 +909,12 @@ mixin LEVEL-mainPageSection(title)
 			h2.mainPageSection__title=title
 			if block
 				block
-mixin LEVEL-modalWindow(id, title, className)
-	-if(!className) className = ''
-	-else className= 'modalWindow--'+className
-	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id class=''+className)
-		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
-			a.modalWindow__close
-				+I('close','close')
-			h3.modalWindow__title=title
-			.modalWindow__body
-				if block
-					block       
 mixin LEVEL-newtest(data)
 	.newtest
 		.newtest__content(class = 'newtest__content'+ className data-qcontent="level__newtest")
 			h2.newtest__title=title
 			if block
 				block
-mixin LEVEL-outer(data)
-	.outer
-		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
-			if block    
-				block        
 mixin LEVEL-orderPage(title,className)
 	-if (!className) className =''
 	-var link = " <a href='/'>N 1231238</a>"
@@ -925,6 +948,22 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
+mixin LEVEL-modalWindow(id, title, className)
+	-if(!className) className = ''
+	-else className= 'modalWindow--'+className
+	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id class=''+className)
+		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
+			a.modalWindow__close
+				+I('close','close')
+			h3.modalWindow__title=title
+			.modalWindow__body
+				if block
+					block       
+mixin LEVEL-outer(data)
+	.outer
+		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
+			if block    
+				block        
 mixin LEVEL-page(title)
 		.page(class = 'page--'+page.slug)
 			.page__content(class = 'page__content'+ className data-qcontent="level__page")
@@ -962,15 +1001,6 @@ mixin LEVEL-productSection(title,className)
 					+I('layout1','productsLayout') 
 		if block
 			block
-mixin LEVEL-showcase(title,className)
-	-if (!className) className =''
-	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
-		h1.showcase__title=title
-		.container
-			p.showcase__subtytle.text Hello its Showcase Content
-			+holder('page__loader','100px300',colors.primary)
-			if block
-				block
 mixin LEVEL-productInfo(data)
 	.productInfo
 		.productInfo__content(class = 'productInfo__content'+ className data-qcontent="level__productInfo")
@@ -992,6 +1022,15 @@ mixin LEVEL-productInfo(data)
 						
 			.productLogo
 				img(src='https://santehsmart.ru/upload/resize_cache/uf/663/120_40_1/663573ea5278ca044fad90b0a4f2346d.png')
+mixin LEVEL-showcase(title,className)
+	-if (!className) className =''
+	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
+		h1.showcase__title=title
+		.container
+			p.showcase__subtytle.text Hello its Showcase Content
+			+holder('page__loader','100px300',colors.primary)
+			if block
+				block
 mixin LEVEL-showCasePage(data)
 	-if (!className) className =''
 	.container
@@ -1028,6 +1067,11 @@ mixin LEVEL-starter(title,className)
 		h5.starter__title=title
 		if block
 			block
+mixin LEVEL-testOfSergConnectingSupport(title,className)
+	-if (!className) className =''
+	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
+		h2.testOfSergConnectingSupport__title=title
+		block testOfSergConnectingSupport
 mixin LEVEL-subProductInfo(data)
 	.subProductInfo
 		.subProductInfo__content(class = 'subProductInfo__content'+ className data-qcontent="level__subProductInfo")
@@ -1042,11 +1086,11 @@ mixin LEVEL-subProductInfo(data)
 					li.subProductInfo__tabber-item.ibb
 						span Пункты выдачи в Воронеже
 				.subProductInfo__contents
-					.subProductInfo__tabContent
+					.subProductInfo__tabContent 1
 						+MODULE-additionalProducts()
-					.subProductInfo__tabContent
-					.subProductInfo__tabContent
-					.subProductInfo__tabContent
+					.subProductInfo__tabContent 2
+					.subProductInfo__tabContent 3
+					.subProductInfo__tabContent 4
 mixin LEVEL-topdashBoard(data)
 	-if (!className) className =''
 	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
@@ -1058,11 +1102,6 @@ mixin LEVEL-topdashBoard(data)
 			+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
 	if block
 		block 
-mixin LEVEL-testOfSergConnectingSupport(title,className)
-	-if (!className) className =''
-	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
-		h2.testOfSergConnectingSupport__title=title
-		block testOfSergConnectingSupport
 mixin C-footer()
 	.footer__content(data-qcontent='component__footer')
 		.footer__section
@@ -1156,22 +1195,27 @@ mixin C-priceAndStock(type,empty)
 mixin C-productInline(data,type)
 	-if(!type) type= false
 	.productInline__content(data-qcontent='component__productInline')
-		a.productInline__link(href='#')
 			.group.group--md.group--va-middle 
 				if(type != 'search')
 					.col.col-2-tp
-						+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
+						a.productInline__link(href='#')
+							+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
 				else 
 					.col.col-3-tp
-						+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
+						a.productInline__link(href='#')
+							+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
 				if(type != 'search')
 					.col.col-4-tp
-						span.productInline__section--sku='Код товара: '+data.sku
-						h6.productInline__section--name=data.title
+						+B-productBadge('Распродажа','sale')
+						br
+						a.productInline__link(href='#')
+							span.productInline__section--sku='Код товара: '+data.sku
+							h6.productInline__section--name=data.title
 				else
 					.col.col-6-tp
-						span.productInline__section--sku='Код товара: '+data.sku
-						h6.productInline__section--name=data.title
+						a.productInline__link(href='#')
+							span.productInline__section--sku='Код товара: '+data.sku
+							h6.productInline__section--name=data.title
 				if(type != 'search')
 					.col.col-2-tp
 						.productInline__section--price

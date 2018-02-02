@@ -2,7 +2,7 @@ mixin MODULE-order()
 	<!-- split modules/order -->
 	.order__content(data-qcontent='module__order')
 		.group.group--md
-			.col.col-9-tl
+			.col.col-9-tl  
 				ul.order__steps
 					li.order__checkPoint.order__way.order__way--gone.order__checkPoint--gone
 						.order__checkPointNum 
@@ -38,20 +38,26 @@ mixin MODULE-order()
 							.col.col-6-tl
 								+B-radio('Юридическое лицо')
 						+B-toOrder('Далее','icon-to-right')
-				section.order__form.clearfix.order__form--delivery 
+				section.order__form.clearfix.order__form--delivery   
 					form
 						.group.group--el.underlined  
 							.col.col-4-tl  
-								+B-radio('Доставка до пункта выдачи ТК СДЭК','radio--selected','checked')
+								+B-radio('Доставка до пункта выдачи ТК СДЭК','radio--selected trig_del_cont','checked')
+									br
+									span.deliveryCost='Cтоимость: 230 руб.'  
 							.col.col-4-tl
-								+B-radio('Забрать самостоятельно из офиса')
+								+B-radio('Забрать самостоятельно из офиса фирмы-партнера','trig_del_cont')
+									br
+									span.deliveryCost.deliveryCost--free='Cтоимость: Бесплатно'
 							.col.col-4-tl
-								+B-radio('Курьерская доставка') 
-
+								+B-radio('Курьерская доставка','trig_del_cont')
+									br
+									span.deliveryCost='Cтоимость: 550 руб.'
 					.order__points
 						.group.group--el
 							.col.col-4-tl
-								ul.order__pointsList__ctn
+								.order__pointsList__ctn.delivery
+									h5.order__pointsTitle Выберите пункт выдачи
 									ul.order__pointsList
 										li
 											+B-radio('г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)','radio--selected','true')
@@ -64,10 +70,42 @@ mixin MODULE-order()
 										li
 											+B-radio('г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)')
 							.col.col-8-tl
-								iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3Ao-BDfF8mwUhzu4w4BXJHX8ENv4xcrB0A&amp;source=constructor" width="100%" height="414" frameborder="0")
-						
-						+B-toOrder('Далее','icon-to-right')
-			.col.col-12-tp.hidden
+								.order__map
+									iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3Ao-BDfF8mwUhzu4w4BXJHX8ENv4xcrB0A&amp;source=constructor" width="100%" height="414" frameborder="0")
+					.order__points
+						.group.group--el
+							.col.col-4-tl
+								.order__pointsList__ctn.delivery
+									h5.order__pointsTitle Выберите партнерский офис
+									ul.order__pointsList
+										li
+											+B-radio('г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)','radio--selected','true')
+										li
+											+B-radio('г. Воронеж, ул. Генерала Лизюкова, 17А, ТЦ «Калинка» (только мелкий габаритный груз)')
+										li
+											+B-radio('г. Воронеж, ул. Остужева 28 (только мелкий габаритный груз)')
+										li
+											+B-radio('г. Воронеж, ул. Пушкинская, 42 (только мелкий габаритный груз)')
+										li
+											+B-radio('г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)')
+							.col.col-8-tl
+								.order__map
+									iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3Ao-BDfF8mwUhzu4w4BXJHX8ENv4xcrB0A&amp;source=constructor" width="100%" height="414" frameborder="0")
+					.order__points
+						.group.group--el
+							.col.col-4-tp
+								+In-textInput('txt','ФИО','ФИО')
+							.col.col-4-tp
+								+In-textInput('txt','Email','Email')
+							.col.col-4-tp
+								+In-textInput('txt','Номер телефона','Номер телефона')
+							.col.col-4-tp
+								+In-textInput('txt','Город','Город')
+
+									
+							
+					+B-toOrder('Далее','icon-to-right')
+			.col.col-12-tp
 				section.order__form.clearfix.order__form--confirmed
 					.order__checkPoint--gone
 						.order__checkPointNum 

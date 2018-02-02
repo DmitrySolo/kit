@@ -14,11 +14,12 @@
     }
     &__title{
         vertical-align: middle;
+        color: cs('primary');
        @include for-size(desktop-up){
            vertical-align:top;
        }
         display: inline-block;
-        width:70%;
+        width:75%;
         font-size: 0.9em;
         padding: vr-block(.2) vr-block(.4);
     }

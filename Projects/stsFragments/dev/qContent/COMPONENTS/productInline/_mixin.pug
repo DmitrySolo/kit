@@ -1,22 +1,27 @@
 mixin C-productInline(data,type)
 	-if(!type) type= false
 	.productInline__content(data-qcontent='component__productInline')
-		a.productInline__link(href='#')
 			.group.group--md.group--va-middle 
 				if(type != 'search')
 					.col.col-2-tp
-						+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
+						a.productInline__link(href='#')
+							+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
 				else 
 					.col.col-3-tp
-						+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
+						a.productInline__link(href='#')
+							+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
 				if(type != 'search')
 					.col.col-4-tp
-						span.productInline__section--sku='Код товара: '+data.sku
-						h6.productInline__section--name=data.title
+						+B-productBadge('Распродажа','sale')
+						br
+						a.productInline__link(href='#')
+							span.productInline__section--sku='Код товара: '+data.sku
+							h6.productInline__section--name=data.title
 				else
 					.col.col-6-tp
-						span.productInline__section--sku='Код товара: '+data.sku
-						h6.productInline__section--name=data.title
+						a.productInline__link(href='#')
+							span.productInline__section--sku='Код товара: '+data.sku
+							h6.productInline__section--name=data.title
 				if(type != 'search')
 					.col.col-2-tp
 						.productInline__section--price

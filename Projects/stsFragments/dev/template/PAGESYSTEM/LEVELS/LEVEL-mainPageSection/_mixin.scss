@@ -2,10 +2,12 @@
 
 .mainPageSection {
     &__content {
-        margin-bottom: vr-block(.8);
+        margin-top: vr-block(1);
+        margin-bottom: vr-block(1);
     }
     &__title {
         padding-left:vr-block(.4);;
-        margin-bottom: vr-block(.2);
+        margin-bottom: vr-block(.4);
+        border-bottom: dashed 1px cs('background-d2');
     }
 }
