@@ -1,9 +1,13 @@
-mixin MODULE-topFeatures()
+mixin MODULE-topFeatures(modificier)
 	<!-- split modules/topFeatures -->
-	.topFeatures__content(data-qcontent='module__topFeatures')
-		span.topFeatures__element
+	if(modificier)
+		-var className ='topFeatures--'+modificier
+	else
+		-var className = ''
+	.topFeatures__content(data-qcontent='module__topFeatures' class=''+className)
+		span.topFeatures__element  
 			+I('housePin')
-			span.topFeatures__title Пункты выдачи в 170 городах
+			span.topFeatures__title Пункты выдачи в 170 городах.
 		span.topFeatures__element
 			+I('box','boxTop')
-			span.topFeatures__title Оплачивайте заказы после проверки
+			span.topFeatures__title Оплачивайте заказы после проверки.

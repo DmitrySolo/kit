@@ -1115,7 +1115,7 @@ gulp.task('dist-page', [], function () {
 
 	gulp.src(dist + '/main.css')
 		.pipe(uncss({
-			html: [destProd+'productList.html']
+			html: [destProd+'productList-sale.html']
 		}))
 		.pipe(gulp.dest(destProd));
 
@@ -1470,13 +1470,22 @@ gulp.task('u-h2p', function () {
 });
 gulp.task('deploycss', function () {
 	return gulp.src(dist + '/main.css')
-		.pipe(rename('template_styles2.css'))
+		.pipe(rename('template_styles.css'))
 		.pipe(sftp({
-			host: '10.0.1.190',
-			user: 'inadmin',
-			pass: 'sudoudo',
-			remotePath: '/home/inadmin/nodejs'
+			host: 'santehsmart.ru',
+			user: 'west',
+			pass: '5D2g4U9c',
+			remotePath: '/var/www/west/data/www/partner.santehsmart.ru/bitrix/templates/STS2/'
 		}));
+});
+gulp.task('deployjs', function () {
+    return gulp.src(dist + '/scripts/init.js')
+        .pipe(sftp({
+            host: 'santehsmart.ru',
+            user: 'west',
+            pass: '5D2g4U9c',
+            remotePath: '/var/www/west/data/www/partner.santehsmart.ru/bitrix/templates/STS2/scripts/'
+        }));
 });
 	gulp.task('deploycssToFR', function () {
 		return gulp.src(dist + '/main.css')

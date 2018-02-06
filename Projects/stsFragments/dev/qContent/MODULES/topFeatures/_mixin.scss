@@ -6,8 +6,44 @@
 
   .topFeatures {
     &__content {
+
+    }
+    
+    &--mobile{
+                @include for-size(tablet-l-up){
+            display:none;
+            margin-top: vr-block(1);
+            
+            }
+        .topFeatures{
+                   &__element{
+                       border-radius: 3px;
+                       font-size: 1.2rem;
+                        width:100%;
+                        padding: vr-block(.2);
+                        background: cs('primary');
+                        margin-bottom: vr-block(.2); 
+                        height: vr-block(2.5);
+                        .icon{
+                            fill:#fff;
+                            height: 100%;
+                            padding-left: vr-block(.4);
+                        }
+                        }
+
+                        &__title{
+                            color: #fff;
+                            float:right;
+                        }
+
+        }
+
         
     }
+
+    
+    
+    
     &__element{
         display: inline-block;
         width: 50%;

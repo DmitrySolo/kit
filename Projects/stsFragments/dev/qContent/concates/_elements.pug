@@ -19,6 +19,29 @@ mixin B-delete(value,className)
 		+I('delete','delete')
 
 
+mixin B-marketButton(value,className)
+	-if (!className) className =''
+	button.marketButton(class=''+className data-qcontent='element__buttons__marketButton')=value
+		//	+I('bomb','bomb')
+
+mixin B-moreButton(value,className)
+	-if (!className) className =''
+	button.moreButton(class=''+className data-qcontent='element__buttons__moreButton')=value
+		span 	
+			+I('more','moreButton') 
+			| Смотреть еще 30 товаров
+
+mixin B-productBadge(value,className)
+	-var className=className || ''
+	span.productBadge(class='productBadge--'+className data-qcontent='element__buttons__productBadge')=value
+		
+
+mixin B-slider(id)
+	-if (!className) className =''
+	input(type="text" id=id data-type="double" data-min="15" data-grid="true" name="example_name" value="" data-qcontent='element__buttons__slider')
+
+
+
 mixin B-radio(label,className,checked)
 	-if (!className) className =''
 	-if (!checked) checked = false
@@ -27,27 +50,6 @@ mixin B-radio(label,className,checked)
 		label.radio__label(,for="id_"+label)=label
 		-if(block)
 			block
-mixin B-productBadge(value,className)
-	-var className=className || ''
-	span.productBadge(class='productBadge--'+className data-qcontent='element__buttons__productBadge')=value
-		
-
-mixin B-marketButton(value,className)
-	-if (!className) className =''
-	button.marketButton(class=''+className data-qcontent='element__buttons__marketButton')=value
-		+I('bomb','bomb')
-
-mixin B-slider(id)
-	-if (!className) className =''
-	input(type="text" id=id data-type="double" data-min="15" data-grid="true" name="example_name" value="" data-qcontent='element__buttons__slider')
-
-
-
-mixin B-toOrder(value,className)
-	-if (!className) className =''
-	button.toOrder.active.notEdit(class=''+className data-qcontent='element__buttons__toOrder')=value
-  
-
 mixin B-switcher(value,className)
 	-if (!className) className =''
 	.switcher.not(class=''+className data-qcontent='element__buttons__switcher')=value
@@ -56,6 +58,11 @@ mixin B-switcher(value,className)
 			span.slider.round
 
 
+
+mixin B-toOrder(value,className)
+	-if (!className) className =''
+	button.toOrder.active.notEdit(class=''+className data-qcontent='element__buttons__toOrder')=value
+  
 
 mixin dashBoardElement(icon,text,className,type)
 	-if (!className) className =''
@@ -83,6 +90,11 @@ mixin dashBoardElement(icon,text,className,type)
 			
 
 
+mixin In-cuponInput(name,classModifier)
+	-var classModifier = (classModifier)? 'cuponInput--' + classModifier : ''
+	.cuponInput
+		label(for='cuponInput') Введите код купона для скидки:
+			input( id='cuponInput' name=name class=''+classModifier type='text' maxlength=8 data-qcontent='element__INPUTS__cuponInput')
 mixin In-counter(name,classModifier)
 	-var classModifier = (classModifier)? 'counter--' + classModifier : ''
 	.counter__ctn

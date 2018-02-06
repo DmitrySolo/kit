@@ -2,14 +2,13 @@ include ../INCLUDES/_includes
 <!-- split header.html -->
 doctype html
 html(lang=''+head.lang)
-	head
+	head  
 		include ../INCLUDES/_head
 	body(class=''+bodyClass, data-qcontent="layout__layout")
 		.projectWrapper#js-wrapper
 			.catalogList__outer#js_catShadow
 			<!-- HEADER --> 
 			include _header
-			+MODULE-mobileMenu()
 			<!-- split #{page.slug}.html -->
 			<!-- MAIN -->
 			+LEVEL-inner()

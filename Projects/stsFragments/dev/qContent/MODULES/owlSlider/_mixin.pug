@@ -2,18 +2,17 @@ mixin owlSlider()
 	<!-- split modules/owlSlider -->
 	.owlSlider(data-qcontent='module__owlSlider')
 		.ove-mainSlider.owl-carousel
-			+loop(3)
 				img(src='https://fast.ulmart.ru/ns/Shvidkova/800%D1%85250_credit10218.jpg')
 				img(src='https://fast.ulmart.ru/ns/Shvidkova/Smartphone_maraphone_800%D1%85250.jpg')
 				img(src='https://fast.ulmart.ru/ns/Content/cybersale_800%D1%85250_21.gif')
 	.sliderTitles
 		ul.sliderTitles__list.group#js_sliderTitles
-				li.sliderTitles__item.active.col.col-4-tl
+				li.sliderTitles__item.active.col.col-4-tl.col-4-m
 					+I('discount','sliderTitle ib')
-					h6.sliderTitles__title.ib Супер акция на ванны Монтерей
-				li.sliderTitles__item.col.col-4-tl
-					+I('discount','sliderTitle ib')
-					h6.sliderTitles__title.ib Супер акция на ванны Монтерей
-				li.sliderTitles__item.col.col-4-tl
-					+I('discount','sliderTitle ib')
-					h6.sliderTitles__title.ib Супер акция на ванны Монтерей
+					h6.sliderTitles__title.ib Супер акция на ванны Монтерей1
+				li.sliderTitles__item.col.col-4-tl.col-4-m
+					+I('new1','sliderTitle ib')
+					h6.sliderTitles__title.ib Супер акция на ванны Монтерей2
+				li.sliderTitles__item.col.col-4-tl.col-4-m
+					+I('new1','sliderTitle ib')
+					h6.sliderTitles__title.ib Супер акция на ванны Монтерей3  

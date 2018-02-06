@@ -10,8 +10,9 @@ mixin MODULE-cartPage()
 					+MODULE-cartProduct()
 				.col.col-3-tl
 					.cartPage__cartCheck
-						span.cartPage__summtitle Итого:
-						br
+						+In-cuponInput('cupon')
+						h5.cartPage__summtitle Итого:
 						span.cartPage__summ 113 400 Руб.
-						+B-toOrder('Заказать','makeOrder')
+						+B-toOrder('Оформить заказ','makeOrder')
+						+A-actionLink('Вернуться к покупкам','','returnToBuy icon-to-left')
 					

@@ -1,7 +1,8 @@
 mixin MODULE-catalogList(param)
 	if(page.slug=='main' && param =='main')
 		-var classN = 'catalogList--onMain'
-		<!-- split modules/catalogList -->  
+		<!-- split modules/catalogList -->
+					+MODULE-mobileMenu()  
 					.catalogList__content(data-qcontent='module__catalogList' class=''+classN)
 						nav(role='catalog').catalogList__categoryNavigation
 							ul.catalogList__categoryList(class=''+classN)#js_categories

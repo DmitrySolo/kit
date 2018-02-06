@@ -3,9 +3,9 @@
 */
 
 @mixin catalog(){
-        .catalog__mobile{
-        background: cs('primary-l');
-    }
+     .catalog__mobile{
+           background: darken(cs('primary-l'),4%);    
+     }
   .catalog {
     &__content {
         font-size:0;
@@ -21,7 +21,22 @@
              transition: transform .2s ease;
         } 
     }
-
+    &__by-m{
+        font-size: 1rem;
+        font-weight: bold;
+        display:inline-block; 
+        vertical-align:middle;
+        
+        color:#fff;
+        
+        height: 60px;
+        text-transform: uppercase;
+        text-align: center;
+        //padding:0 .8em;
+        line-height: 60px;  
+        cursor: pointer;
+        width:50%;      
+    }
     &__by,&__mobile{
         font-size: 1rem;
         font-weight: bold;
@@ -44,15 +59,15 @@
             }
         }
         &--category, .catalog__mobile{
-            background: darken(cs('primary-l'),4%);
+             background: darken(cs('primary-l'),4%);  
                     &--onMain{ 
-                        background:cs('primary-l') !important;
+                         
                         .icon--to-right{
                         transform: rotate(90deg) !important;   
             }
         }
 
-        }
+        }   
         &:hover{      
             background:cs('primary-l');      
             .icon--to-right{

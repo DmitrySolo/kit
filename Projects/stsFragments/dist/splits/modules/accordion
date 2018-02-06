@@ -1,0 +1,126 @@
+<button class="filter__mobileSwitcher icon-down" id="mobFilSwitcher">
+                      <svg class="icon icon--filterSwitcher" data-qcontent="element__ICONS__MAIN-SVG-use">
+                        <use xlink:href="#funnel">              </use>
+                      </svg><span>Подобрать по фильтру</span>
+                    </button>
+                    <div class="accordion__content" id="filter" data-qcontent="module__accordion">
+                      <button class="accordion icon-down  active">Производитель<span class="accordion__checkMarker"></span></button>
+                      <div class="accordion__panel">
+                        <div class="accordion__checkBox">
+                          <div class="group group-el">
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Grohe"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Grohe">Grohe</label>
+                            </div>
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Aquaton"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Aquaton">Aquaton</label>
+                            </div>
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Vivo"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Vivo">Vivo</label>
+                            </div>
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Polaris"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Polaris">Polaris</label>
+                            </div>
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Smartika"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Smartika">Smartika</label>
+                            </div>
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Vifu"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Vifu">Vifu</label>
+                            </div>
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Polis"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Polis">Polis</label>
+                            </div>
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Dron"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Dron">Dron</label>
+                            </div>
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Samsung"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Samsung">Samsung</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="productFilterRes__ctn"></div>
+                      </div>
+                      <button class="accordion icon-down  active">Цвет<span class="accordion__checkMarker"></span></button>
+                      <div class="accordion__panel">
+                        <div class="accordion__checkBox">
+                          <div class="group group-el">
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Красный"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Красный">Красный</label>
+                            </div>
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Белый"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Белый">Белый</label>
+                            </div>
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Синий"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Синий">Синий</label>
+                            </div>
+                            <div class="checkBox col col-12-tl col-6-tp col-6-m" data-qcontent="element__buttons__checkBox">
+                              <input class="checkBox__input productFilter__checkbox" type="checkbox" id="id_Зеленый"/>
+                              <label class="checkBox__label" type="checkbox" for="id_Зеленый">Зеленый</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="productFilterRes__ctn"></div>
+                      </div>
+                      <button class="accordion icon-down  active">Длинна<span class="accordion__checkMarker"></span></button>
+                      <div class="accordion__panel">
+                        <div class="accordion__slider">
+                          <input type="text" id="sl_id_1" data-type="double" data-min="15" data-grid="true" name="example_name" value="" data-qcontent="element__buttons__slider"/>
+                        </div>
+                        <div class="productFilterRes__ctn"></div>
+                      </div>
+                      <button class="accordion icon-down  ">Ширина<span class="accordion__checkMarker"></span></button>
+                      <div class="accordion__panel">
+                        <div class="accordion__slider">
+                          <input type="text" id="sl_id_2" data-type="double" data-min="15" data-grid="true" name="example_name" value="" data-qcontent="element__buttons__slider"/>
+                        </div>
+                        <div class="productFilterRes__ctn"></div>
+                      </div>
+                      <button class="accordion icon-down  ">Глубина<span class="accordion__checkMarker"></span></button>
+                      <div class="accordion__panel">
+                        <div class="productFilterRes__ctn"></div>
+                      </div>
+                      <button class="accordion icon-down  ">Страна производитель<span class="accordion__checkMarker"></span></button>
+                      <div class="accordion__panel">
+                        <div class="productFilterRes__ctn"></div>
+                      </div>
+                      <footer class="filter__buttons_ctn">
+                        <button class="button button--" data-qcontent="element__buttons__button">Смотреть</button>
+                        <button class="button button--default" data-qcontent="element__buttons__button">Сбросить</button>
+                      </footer>
+                    </div>
+                  </aside>
+                </div>
+                <div class="col col-9-tl">
+                  <main>
+                    <div class="productSection__content" data-qcontent="level__productSection">
+                      <header class="productSection__header clearfix">
+                        <div class="productSection__pager f-left"> 
+                          <!--span.productSection__subTitle Страницы:-->
+                          <div class="breadCrumb__content" data-qcontent="module__breadcrumbs">
+                            <nav class="breadCrumb visible-l"><a class="breadcrumb__section breadCrumb__section--current" href="/">1</a><a class="not breadcrumb__section" href="/">2</a><a class="not breadcrumb__section" href="/">3</a><a class="not breadcrumb__section" href="/">4</a><a class="not breadcrumb__section" href="/">5</a><a class="not breadcrumb__section" href="/">6</a><a class="not breadcrumb__section" href="/">7</a><a class="not breadcrumb__section" href="/">8</a>
+                            </nav>
+                          </div>
+                        </div>
+                        <div class="productSection__filter f-left">  <span class="productSection__subTitle">Cортировать по:</span><a class="productSection__sortBy productSection__sortBy--selected">Цене</a>|<a class="productSection__sortBy">Производителю</a></div>
+                        <div class="productSection__layoutChoiser f-right"><span class="productSection__subTitle">Вид каталога:</span><a href="/">
+                            <svg class="icon icon--productsLayout icon--productsLayout--selected" data-qcontent="element__ICONS__MAIN-SVG-use">
+                              <use xlink:href="#layout">              </use>
+                            </svg></a><a href="/">
+                            <svg class="icon icon--productsLayout" data-qcontent="element__ICONS__MAIN-SVG-use">
+                              <use xlink:href="#layout1">              </use>
+                            </svg></a></div>
+                      </header> 
+                      <ul class="productCol__list clearfix">
+                        <div class="group group--el">
+                          <div class="col col-12-tl">

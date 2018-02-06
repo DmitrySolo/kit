@@ -1,0 +1,239 @@
+<div class="order__content" data-qcontent="module__order">
+                  <div class="group group--md">
+                    <div class="col col-9-tl"> 
+                      <ul class="order__steps">
+                        <li class="order__checkPoint order__way order__way--gone order__checkPoint--gone">
+                          <div class="order__checkPointNum"> </div><span class="order__checkPointTitle">Тип плательщика</span>
+                        </li>
+                        <li class="order__checkPoint order__way order__checkPoint--active">
+                          <div class="order__checkPointNum">2</div><span class="order__checkPointTitle">Способ доставки      </span>
+                        </li>
+                        <li class="order__checkPoint order__way">
+                          <div class="order__checkPointNum">3</div><span class="order__checkPointTitle">Способ оплаты</span>
+                        </li>
+                        <li class="order__checkPoint order__way">
+                          <div class="order__checkPointNum">4</div><span class="order__checkPointTitle">Контактные данные</span>
+                        </li>
+                        <li class="order__checkPoint">
+                          <div class="order__checkPointNum">5</div><span class="order__checkPointTitle">Завершение покупки</span>
+                        </li>
+                      </ul>
+                      <section class="order__form order__form--personal clearfix">
+                        <div class="group group--el">
+                          <div class="col col-4-tp">
+                            <div class="input__ctn">
+                              <label class="textInput__label">ФИО</label>
+                              <input class="textInput " name="txt" placeholder="ФИО" type="text" data-qcontent="element__INPUTS__textInput"/>
+                            </div>
+                          </div>
+                          <div class="col col-4-tp">
+                            <div class="input__ctn">
+                              <label class="textInput__label">Email</label>
+                              <input class="textInput " name="txt" placeholder="Email" type="text" data-qcontent="element__INPUTS__textInput"/>
+                            </div>
+                          </div>
+                          <div class="col col-4-tp">
+                            <div class="input__ctn">
+                              <label class="textInput__label">Номер телефона</label>
+                              <input class="textInput " name="txt" placeholder="Номер телефона" type="text" data-qcontent="element__INPUTS__textInput"/>
+                            </div>
+                          </div>
+                          <div class="col col-4-tp">
+                            <div class="input__ctn">
+                              <label class="textInput__label">Город</label>
+                              <input class="textInput " name="txt" placeholder="Город" type="text" data-qcontent="element__INPUTS__textInput"/>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="toOrder active notEdit icon-to-right" data-qcontent="element__buttons__toOrder">Далее</button>
+                      </section>
+                      <section class="order__form order__form--client clearfix">
+                        <form>
+                          <div class="group group--el"> 
+                            <div class="col col-6-tl">
+                              <div class="radio" data-qcontent="element__buttons__radio">
+                                <input class="radio__input" value="Физическое лицо" type="radio" id="id_Физическое лицо" name="radio" checked="checked"/>
+                                <label class="radio__label" ,for="id_Физическое лицо">Физическое лицо</label>
+                              </div>
+                            </div>
+                            <div class="col col-6-tl">
+                              <div class="radio" data-qcontent="element__buttons__radio">
+                                <input class="radio__input" value="Юридическое лицо" type="radio" id="id_Юридическое лицо" name="radio"/>
+                                <label class="radio__label" ,for="id_Юридическое лицо">Юридическое лицо</label>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="toOrder active notEdit icon-to-right" data-qcontent="element__buttons__toOrder">Далее</button>
+                        </form>
+                      </section>
+                      <section class="order__form clearfix order__form--delivery">  
+                        <form>
+                          <div class="group group--el underlined"> 
+                            <div class="col col-4-tl"> 
+                              <div class="radio radio--selected trig_del_cont" data-qcontent="element__buttons__radio">
+                                <input class="radio__input" value="Доставка до пункта выдачи ТК СДЭК" type="radio" id="id_Доставка до пункта выдачи ТК СДЭК" name="radio" checked="checked"/>
+                                <label class="radio__label" ,for="id_Доставка до пункта выдачи ТК СДЭК">Доставка до пункта выдачи ТК СДЭК</label><br/><span class="deliveryCost">Cтоимость: 230 руб.</span>
+                              </div>
+                            </div>
+                            <div class="col col-4-tl">
+                              <div class="radio trig_del_cont" data-qcontent="element__buttons__radio">
+                                <input class="radio__input" value="Забрать самостоятельно из офиса фирмы-партнера" type="radio" id="id_Забрать самостоятельно из офиса фирмы-партнера" name="radio"/>
+                                <label class="radio__label" ,for="id_Забрать самостоятельно из офиса фирмы-партнера">Забрать самостоятельно из офиса фирмы-партнера</label><br/><span class="deliveryCost deliveryCost--free">Cтоимость: Бесплатно</span>
+                              </div>
+                            </div>
+                            <div class="col col-4-tl">
+                              <div class="radio trig_del_cont" data-qcontent="element__buttons__radio">
+                                <input class="radio__input" value="Курьерская доставка" type="radio" id="id_Курьерская доставка" name="radio"/>
+                                <label class="radio__label" ,for="id_Курьерская доставка">Курьерская доставка</label><br/><span class="deliveryCost">Cтоимость: 550 руб.</span>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                        <div class="order__points">
+                          <div class="group group--el">
+                            <div class="col col-4-tl">
+                              <div class="order__pointsList__ctn delivery">
+                                <h5 class="order__pointsTitle">Выберите пункт выдачи</h5>
+                                <ul class="order__pointsList">
+                                  <li>
+                                    <div class="radio radio--selected" data-qcontent="element__buttons__radio">
+                                      <input class="radio__input" value="г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)" type="radio" id="id_г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)" name="radio" checked="true"/>
+                                      <label class="radio__label" ,for="id_г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)">г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)</label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="radio" data-qcontent="element__buttons__radio">
+                                      <input class="radio__input" value="г. Воронеж, ул. Генерала Лизюкова, 17А, ТЦ «Калинка» (только мелкий габаритный груз)" type="radio" id="id_г. Воронеж, ул. Генерала Лизюкова, 17А, ТЦ «Калинка» (только мелкий габаритный груз)" name="radio"/>
+                                      <label class="radio__label" ,for="id_г. Воронеж, ул. Генерала Лизюкова, 17А, ТЦ «Калинка» (только мелкий габаритный груз)">г. Воронеж, ул. Генерала Лизюкова, 17А, ТЦ «Калинка» (только мелкий габаритный груз)</label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="radio" data-qcontent="element__buttons__radio">
+                                      <input class="radio__input" value="г. Воронеж, ул. Остужева 28 (только мелкий габаритный груз)" type="radio" id="id_г. Воронеж, ул. Остужева 28 (только мелкий габаритный груз)" name="radio"/>
+                                      <label class="radio__label" ,for="id_г. Воронеж, ул. Остужева 28 (только мелкий габаритный груз)">г. Воронеж, ул. Остужева 28 (только мелкий габаритный груз)</label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="radio" data-qcontent="element__buttons__radio">
+                                      <input class="radio__input" value="г. Воронеж, ул. Пушкинская, 42 (только мелкий габаритный груз)" type="radio" id="id_г. Воронеж, ул. Пушкинская, 42 (только мелкий габаритный груз)" name="radio"/>
+                                      <label class="radio__label" ,for="id_г. Воронеж, ул. Пушкинская, 42 (только мелкий габаритный груз)">г. Воронеж, ул. Пушкинская, 42 (только мелкий габаритный груз)</label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="radio" data-qcontent="element__buttons__radio">
+                                      <input class="radio__input" value="г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)" type="radio" id="id_г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)" name="radio"/>
+                                      <label class="radio__label" ,for="id_г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)">г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)</label>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="col col-8-tl">
+                              <div class="order__map">
+                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ao-BDfF8mwUhzu4w4BXJHX8ENv4xcrB0A&amp;amp;source=constructor" width="100%" height="414" frameborder="0"></iframe>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="order__points">
+                          <div class="group group--el">
+                            <div class="col col-4-tl">
+                              <div class="order__pointsList__ctn delivery">
+                                <h5 class="order__pointsTitle">Выберите партнерский офис</h5>
+                                <ul class="order__pointsList">
+                                  <li>
+                                    <div class="radio radio--selected" data-qcontent="element__buttons__radio">
+                                      <input class="radio__input" value="г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)" type="radio" id="id_г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)" name="radio" checked="true"/>
+                                      <label class="radio__label" ,for="id_г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)">г. Воронеж, ул. Ленинградская, д.55а (ост. Род дом №2, ул. Ленинградская) (только мелкий габаритный груз)</label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="radio" data-qcontent="element__buttons__radio">
+                                      <input class="radio__input" value="г. Воронеж, ул. Генерала Лизюкова, 17А, ТЦ «Калинка» (только мелкий габаритный груз)" type="radio" id="id_г. Воронеж, ул. Генерала Лизюкова, 17А, ТЦ «Калинка» (только мелкий габаритный груз)" name="radio"/>
+                                      <label class="radio__label" ,for="id_г. Воронеж, ул. Генерала Лизюкова, 17А, ТЦ «Калинка» (только мелкий габаритный груз)">г. Воронеж, ул. Генерала Лизюкова, 17А, ТЦ «Калинка» (только мелкий габаритный груз)</label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="radio" data-qcontent="element__buttons__radio">
+                                      <input class="radio__input" value="г. Воронеж, ул. Остужева 28 (только мелкий габаритный груз)" type="radio" id="id_г. Воронеж, ул. Остужева 28 (только мелкий габаритный груз)" name="radio"/>
+                                      <label class="radio__label" ,for="id_г. Воронеж, ул. Остужева 28 (только мелкий габаритный груз)">г. Воронеж, ул. Остужева 28 (только мелкий габаритный груз)</label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="radio" data-qcontent="element__buttons__radio">
+                                      <input class="radio__input" value="г. Воронеж, ул. Пушкинская, 42 (только мелкий габаритный груз)" type="radio" id="id_г. Воронеж, ул. Пушкинская, 42 (только мелкий габаритный груз)" name="radio"/>
+                                      <label class="radio__label" ,for="id_г. Воронеж, ул. Пушкинская, 42 (только мелкий габаритный груз)">г. Воронеж, ул. Пушкинская, 42 (только мелкий габаритный груз)</label>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="radio" data-qcontent="element__buttons__radio">
+                                      <input class="radio__input" value="г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)" type="radio" id="id_г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)" name="radio"/>
+                                      <label class="radio__label" ,for="id_г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)">г. Воронеж, ул.Ворошилова, 49а (только мелкий габаритный груз)</label>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="col col-8-tl">
+                              <div class="order__map">
+                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ao-BDfF8mwUhzu4w4BXJHX8ENv4xcrB0A&amp;amp;source=constructor" width="100%" height="414" frameborder="0"></iframe>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="order__points">
+                          <div class="group group--el">
+                            <div class="col col-4-tp">
+                              <div class="input__ctn">
+                                <label class="textInput__label">ФИО</label>
+                                <input class="textInput " name="txt" placeholder="ФИО" type="text" data-qcontent="element__INPUTS__textInput"/>
+                              </div>
+                            </div>
+                            <div class="col col-4-tp">
+                              <div class="input__ctn">
+                                <label class="textInput__label">Email</label>
+                                <input class="textInput " name="txt" placeholder="Email" type="text" data-qcontent="element__INPUTS__textInput"/>
+                              </div>
+                            </div>
+                            <div class="col col-4-tp">
+                              <div class="input__ctn">
+                                <label class="textInput__label">Номер телефона</label>
+                                <input class="textInput " name="txt" placeholder="Номер телефона" type="text" data-qcontent="element__INPUTS__textInput"/>
+                              </div>
+                            </div>
+                            <div class="col col-4-tp">
+                              <div class="input__ctn">
+                                <label class="textInput__label">Город</label>
+                                <input class="textInput " name="txt" placeholder="Город" type="text" data-qcontent="element__INPUTS__textInput"/>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="toOrder active notEdit icon-to-right" data-qcontent="element__buttons__toOrder">Далее</button>
+                      </section>
+                    </div>
+                    <div class="col col-12-tp">
+                      <section class="order__form clearfix order__form--confirmed">
+                        <div class="order__checkPoint--gone">
+                          <div class="order__checkPointNum"> </div>
+                          <h3 class="order__fsuccesTitle">Заказ оформлен    </h3>
+                          <p class="order__fsuccesTitle text">Ваш заказ <span class="order__number">№1111519  </span>от 17.01.2018 15:48:54 успешно создан.</p>
+                          <p class="text">Вы можете следить за выполнением своего заказа в Персональном разделе сайта. Обратите внимание, что для входа в этот раздел вам необходимо будет ввести логин и пароль пользователя сайта.</p>
+                        </div>
+                      </section>
+                    </div>
+                    <div class="col col-3-tl"> 
+                      <section class="order__info"> 
+                        <h5 class="order__infoTitle">Состав заказа:</h5><span class="order__infoItem">Товаров: 1 шт</span><span class="order__infoItem">На сумму: 123 000 р </span><span class="order__infoItem">Доставка: 1 000 р</span>
+                        <h6 class="order__infoSumm">Итого: 124 000 р</h6>
+                        <button class="button button--fastBuy" data-qcontent="element__buttons__button">Изменить cостав заказа</button>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </main>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- FOOTER -->

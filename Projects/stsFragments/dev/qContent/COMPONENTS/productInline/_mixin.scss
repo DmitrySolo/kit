@@ -8,6 +8,10 @@
      
     &__content {  
         position:relative;
+         background-color:#fff;
+        width: 100%;
+        overflow:hidden;
+        margin-bottom: vr-block(.2); 
         .productCol__mrcPrice{
             font-size: 1rem;
         }
@@ -57,20 +61,19 @@
                 border: none;
                 padding:none;
                 margin:none;
-                margin-right: vr-block(.2);
+               // margin-right: vr-block(.2);
                 &:after{
-                    content:';';
+                    content:',';
+                    
                 }
+                &:last-child:after{
+                        content: '';
+                    }
             }
             
         }
        
-        background-color:#fff;
-        //border-bottom: solid 1px cs('background-d');
-        width: 100%;
-       // height: 6rem;
-        margin-top: 1px;  
-        overflow:hidden;
+       
         .productCol__price,.productCol__stock{
             width:100%;
             margin:0;
@@ -111,6 +114,10 @@
         &--name{
             .productCatInline & {
                 font-size: 1rem;
+                @include for-size(tablet-l-up){
+                    height: vr-block(3);
+                    overflow:hidden;  
+                }
             }
             //line-height:1.45rem;
             //padding-left:15px;

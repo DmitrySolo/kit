@@ -1,5 +1,16 @@
 {
 	"LIBS": {
+		"quant-lib": {
+			"js": {
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"JQ": {
 			"js": {
 				"jquery": {
@@ -16,17 +27,6 @@
 				"quant-debug-JsonCss-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
 					"container": "footer/libs"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"quant-lib": {
-			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
-					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -86,6 +86,21 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/MODULES/flyPageFragment/flyPageFragment.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"mainInfo2": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/mainInfo/mainInfo.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -204,21 +219,6 @@
 				"": ""
 			}
 		},
-		"dashBoardElement": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"b1": {
 			"js": {
 				"lib1": {
@@ -264,6 +264,21 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/toOrder/toOrder.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"dashBoardElement": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -558,9 +573,6 @@
 	"footer": {
 		"footer": "1"
 	},
-	"priceAndStock": {
-		"priceAndStock": "1"
-	},
 	"productInline": {
 		"productInline": "1",
 		"sku": "123456",
@@ -569,6 +581,9 @@
 		"stock": "1255",
 		"sale": "true",
 		"superSale": "true"
+	},
+	"priceAndStock": {
+		"priceAndStock": "1"
 	},
 	"accordion": {
 		"filter": {
@@ -613,14 +628,14 @@
 			}
 		}
 	},
-	"cart": {
-		"cart": "1"
-	},
 	"breadcrumbs": {
 		"1": "22"
 	},
 	"cartPage": {
 		"cartPage": "1"
+	},
+	"cart": {
+		"cart": "1"
 	},
 	"cartProduct": {
 		"cartProduct": "1",
@@ -738,11 +753,11 @@
 	"reactTest": {
 		"reactTest": "1"
 	},
-	"support": {
-		"support": "1"
-	},
 	"swe": {
 		"swe": "1"
+	},
+	"support": {
+		"support": "1"
 	},
 	"topBar": {
 		"topBar": "1"

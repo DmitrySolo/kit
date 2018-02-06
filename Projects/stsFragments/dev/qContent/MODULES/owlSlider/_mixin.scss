@@ -1,11 +1,11 @@
 @mixin owlSlider(){
 	
 .owlSlider{
-    //background: cs('background-d2');
-    @include for-size(phone-only){
-        margin-left: -1rem;
-        margin-right: -1rem;  
-    }
+   /*  //background: cs('background-d2');
+   @include for-size(phone-only){
+       margin-left: -1rem;
+       margin-right: -1rem;  
+   } */   
     //margin-bottom: vr-block(.8);
     position: relative;
     margin-top: -1.2rem;
@@ -48,17 +48,26 @@
   }
     
     .sliderTitles{
+        margin-bottom: vr-block(.5);
         &__list {
-            
+           
+           
+             position:relative;
+
             border-bottom-left-radius: 3px;
             border-bottom-right-radius: 3px;
               border-bottom: solid 4px cs('background-d2');
         }
         &__item{
+
+
             background-color: cs('primary');
             border-right: solid 1px cs('background-d');
             padding: vr-block(.4) vr-block(.4);
-            height: vr-block(2.80);
+            @include for-size(tablet-l-up){
+                height: vr-block(2.80);
+            }
+            height: vr-block(2);
           
             //overflow: hidden;
             &:last-child{
@@ -68,8 +77,18 @@
                 fill: #fff;
             }
             &.active{
-                position:relative;
-                background: #fff;
+               
+                 background: #fff;
+               
+               //width:100%;    
+
+              // border-bottom: solid 4px cs('background-d2');  
+               @include for-size(tablet-l-up){
+                   position:relative; 
+                 //  width: inherit;   
+                   display:inline-block; 
+               }
+               
               
                 border-bottom-left-radius:6px;
                 border-bottom-right-radius: 6px;
@@ -93,9 +112,14 @@
             }
         }
         &__title{
+           display:none;
+           @include for-size(tablet-l-up){
+               display:inline-block;  
+               width: 73%;
+           }
             cursor:pointer;
             color: #fff;  
-            width: 73%;
+            
               font-weight: normal;
             margin-left: 5%;
             vertical-align:middle;

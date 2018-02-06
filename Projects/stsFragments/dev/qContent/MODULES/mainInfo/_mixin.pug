@@ -13,11 +13,18 @@ mixin MODULE-mainInfo()
 				.mainInfo__block.mainInfo__geotarget
 					+MODULE-geoTarget() 
 			.col.col-12-tp.hideFrom-tl
-				.mainInfo__cartLogin--mobile
-					a
-						+I('user','mobile user')
-					a
-						+I('cart','mobile')
+				.mainInfo__cartLogin--mobile.group.group-el.clearfix
+					a#js-user-city
+						+I('placeholderm','mobile placeholderm')
+					a#js-user-login
+						+I('user','mobile user')  
+					span.callMobile#js-user-call
+							+I('call','mobile call')
+					.f-right
+						span.searchMobile.js_modal_trigger#js_modal_trigger__searchm
+							+I('searchm','mobile mobileSearch')
+						a
+							+I('cart','mobile')
 			.col.col-8-tl.hideFrom-tl
 				.mainInfo__logo--mobile 
 					h1.logo

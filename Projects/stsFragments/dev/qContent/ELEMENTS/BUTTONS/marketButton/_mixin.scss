@@ -1,0 +1,31 @@
+$bkgColor__marketButton: cs('accent');
+$bkgColor__marketButton-hover:cs('accent-l');
+$color__marketButton-hover:#fff;
+$color__marketButton:#fff;
+
+.marketButton {
+    .icon{
+        width: 1.6em;
+        height: 1.6em;
+    }
+	position: relative;
+	padding: vr-block(.2) vr-block(.1);
+	font-size: 1.2rem;
+	border:solid 1px cs('accent-l2');  
+	border-radius: 3px;  
+	border-bottom-width: 4px;
+	width: 100%;
+	margin-bottom: vr-block(1);
+	background-color: $bkgColor__marketButton;
+	color: $color__marketButton;
+		&:hover, &:focus, &:active {
+		color: $color__marketButton-hover;
+		background-color: $bkgColor__marketButton-hover;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}

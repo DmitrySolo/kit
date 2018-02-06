@@ -1,0 +1,22 @@
+.cuponInput{
+    border-bottom:dashed 1px cs('background-d');
+    margin-bottom:vr-block(.2);
+    label{
+        text-align: center;
+        color: #251637;
+        font-weight: bold;
+       
+    }
+    input{
+        font-size: 1.4rem;
+        width: 100%;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        padding: vr-block(.2);
+        border:solid 2px cs('background-d2');
+        border-radius: 3px;
+       outline-color: cs('primary-l');
+
+    }
+}

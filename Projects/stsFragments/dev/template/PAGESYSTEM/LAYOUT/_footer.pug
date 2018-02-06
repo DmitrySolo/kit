@@ -13,6 +13,10 @@ footer.mainFooter(data-qcontent="layout__footer")
 		+In-textInput("mail","Повтоите пароль","Повторите пароль:")
 		+B-checkBox('Запомнить меня для последующего входа','checked')
 		+B-toOrder('Зарегистрироваться и войти')
+	+LEVEL-modalWindow('searchm','Поиск товаров:','searchm') 
+		+In-textInput("searchm","Например ванна Атланта","Искать среди 15 000 товаров","searchm")
+	+LEVEL-modalWindow('call','Связаться с нами:','call') 
+		+A-actionLink('Позвонить нам')
 	+LEVEL-modalWindow('geo','Выбор городов')
 		ul.current-list
 			li

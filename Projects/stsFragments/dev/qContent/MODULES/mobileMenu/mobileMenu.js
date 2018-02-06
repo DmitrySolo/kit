@@ -4,22 +4,9 @@
 ;  $(document).ready(function() {
    $("#mobileMenu").mmenu({
          "extensions": [
-            "fullscreen",
+            
              "position-front",
          ],
-          "navbars": [
-            {
-               "content": [
-                  "searchfield"
-               ]
-            },
-            {
-               
-               "content": [
-                  "close"
-               ]
-            }
-         ]
       }, {
          // configuration
          offCanvas: {
@@ -32,6 +19,13 @@
          API.open();
       });
    });
+     (function( $ ) {
+         var _PLUGIN_ = 'mmenu';
+         $[ _PLUGIN_ ].i18n({
+            'Search': 'Искать',
+            'Menu':'Каталог' 
+         });
+      })( jQuery );
    
    
 			

@@ -106,7 +106,7 @@
           width: 1.5em;
       }
       &--footer{
-          fill:#fff;
+          fill:#fff;    
           
           &.social{ 
               margin: vr-block(.08);        
@@ -120,7 +120,19 @@
               //fill:#fff;
               &.user{
                   width: 2.2em;
-                  height: 2.2em;
+                  height: 2.5em;
+              }
+              &.mobileSearch{
+                   width: 2em;
+                  height: 2.5em;
+              }
+              &.call{
+                  fill: cs('primary-l2'); 
+              }
+              &.placeholderm{
+                  fill: cs('accent');
+                  height:2.2em;
+                  margin-right:vr-block(.6);
               }
       }
       &--filterSwitcher{
@@ -132,7 +144,15 @@
           margin-right: vr-block(.4);
       }
       &--sliderTitle{
-          width: 15%;
+          width: 50%;
+          height:100%;
+          display:block;
+          margin: 0 auto;
+          @include for-size(tablet-l-up){
+              width: 15%;
+              display:inline;
+              margin:0;  
+          }
           vertical-align: middle;
           fill: #fff;  
       }
@@ -142,13 +162,18 @@
       &--bomb{
           fill:cs('primary-l2');       
       }
+      &--moreButton{
+
+          width: 2rem;
+          height: 2rem;
+      }
       
     
 }
 
 
 ////////////////////////////////////////
-@include mainSearch();
+ 
 
 
 

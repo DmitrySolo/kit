@@ -1,0 +1,6 @@
+mixin B-moreButton(value,className)
+	-if (!className) className =''
+	button.moreButton(class=''+className data-qcontent='element__buttons__moreButton')=value
+		span 	
+			+I('more','moreButton') 
+			| Смотреть еще 30 товаров

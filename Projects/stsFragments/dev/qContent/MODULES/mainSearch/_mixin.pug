@@ -3,12 +3,12 @@ mixin MODULE-mainSearch(data)
 	.mainSearch__content(data-qcontent='module__mainSearch')
 		form.mainSearch__form 
 			input.mainSearch__input(type='text',placeholder="Поиск среди 20 000 товаров")
-			span.mainSearch__icon
+			label.mainSearch__icon
 				+I('search','mainSearch') 
 				input.mainSearch__submit(type='submit' value="Искать")
-	if(data=='fired')
-		.mainSearch__result.clearfix
-			+C-productInline(productInline1,'search') 
-			+C-productInline(productInline1,'search')
-			+C-productInline(productInline1,'search')
-			+C-productInline(productInline1,'search')
+		if(data=='fired')
+			.mainSearch__result.clearfix
+				+C-productInline(productInline1,'search') 
+				+C-productInline(productInline1,'search')
+				+C-productInline(productInline1,'search')
+				+C-productInline(productInline1,'search')

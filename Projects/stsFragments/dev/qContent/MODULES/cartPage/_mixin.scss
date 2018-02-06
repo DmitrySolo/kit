@@ -18,16 +18,18 @@
     }
     
     &__cartCheck {
-         padding:vr-block(.4);
+         padding:vr-block(1)  vr-block(.8) vr-block(.6);
         width: 100%;
         background: #fff;
         border-bottom: solid 2px cs('background-d');
     }
+
     
     &__summtitle {
         font-weight: bold;
+       // text-align: center;
         text-transform: uppercase;
-        font-size: 1.6em;
+        //font-size: 1.6em;
         
     }
     &__summ{
@@ -37,11 +39,13 @@
         display: inline-block;
         width: 100%;
         text-align: center;
-        margin-top: vr-block(.2);
+      //margin-top: vr-block(.2);
         margin-bottom: vr-block(.4);
     }
   }
-
+    .returnToBuy:before{
+        font-size: .75em; 
+    }
 }
 
 

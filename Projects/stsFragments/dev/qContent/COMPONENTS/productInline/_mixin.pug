@@ -25,11 +25,11 @@ mixin C-productInline(data,type)
 				if(type != 'search')
 					.col.col-2-tp
 						.productInline__section--price
-							+C-priceAndStock('part')
+							+C-priceAndStock('sale')
 				else
 					.col.col-3-tp
 							.productInline__section--price
-								+C-priceAndStock('part')
+								+C-priceAndStock('sale')  
 				if(type != 'search')
 					.col.col-2-tp.col-8-m.push-2-m
 						+In-counter()

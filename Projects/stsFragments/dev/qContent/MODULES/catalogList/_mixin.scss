@@ -33,7 +33,7 @@
         z-index:2;
           
     }
-    &__content {
+    &__content {  
         position:relative;
         height:0;
         width:100%;
@@ -41,7 +41,7 @@
         &.catalogList--onMain{
             z-index:2;
             height: auto;
-            margin-bottom: vr-block(1);
+            margin-bottom: vr-block(.8);
         }
         dispaly:none;
     }
@@ -140,12 +140,16 @@
     }
     &__brands {
         position: absolute;
-         padding: 1.6em 2.4em;
+         padding: 1.6em 2.4em;    
         background: cs('foreground');
         z-index:11000000;
         
         .catalogList--onMain &{
-            width: 437%;
+                width:100%;
+                margin-top:- vr-block(1);     
+           @include for-size(tablet-l-up){
+               width: 430%;
+           }
         }
         
     }

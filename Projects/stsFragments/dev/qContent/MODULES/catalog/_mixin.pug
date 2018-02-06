@@ -13,8 +13,12 @@ mixin MODULE-catalog()
 		li.catalog__mobile.col.hideFrom-tl#mm-button
 			+I('menu','categories')  
 			span.catalog__elemTitle Кaталог        
-		li.catalog__by.catalog__by--brand.clearfix#js-BrandChoiser
+		li.catalog__by.catalog__by--brand.col.showFrom-tl.clearfix#js-BrandChoiser
 			+I('star1','categories ')
 			span.catalog__elemTitle Бренды    
+			+I('to-right','to-right f-right')
+		li.catalog__by-m.clearfix.col.hideFrom-tl#js-BrandChoiser-m
+			+I('star1','categories ')
+			span.catalog__elemTitle Бренды
 			+I('to-right','to-right f-right')
   

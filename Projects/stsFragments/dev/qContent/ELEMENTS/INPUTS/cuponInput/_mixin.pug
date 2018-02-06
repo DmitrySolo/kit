@@ -1,0 +1,5 @@
+mixin In-cuponInput(name,classModifier)
+	-var classModifier = (classModifier)? 'cuponInput--' + classModifier : ''
+	.cuponInput
+		label(for='cuponInput') Введите код купона для скидки:
+			input( id='cuponInput' name=name class=''+classModifier type='text' maxlength=8 data-qcontent='element__INPUTS__cuponInput')

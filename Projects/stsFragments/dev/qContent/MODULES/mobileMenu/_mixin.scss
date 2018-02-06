@@ -3,16 +3,21 @@
 */
     
 @mixin mobileMenu() {
-
+     
   .mobileMenu {  
-      display:none; 
-      
-    }
-    &___categoryNavigation{
+      display:none;       
+          &___categoryNavigation{  
+               box-shadow: 1px 2px 4px 1px #5a5e61;
+        &.mm-menu{
+             font-size: 1.4em;
+        }
         position:fixed;}
-    &__content {
+         &__content {
 
+            }  
     }
+
+   
   }
 
 

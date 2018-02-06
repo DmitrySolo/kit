@@ -3,6 +3,7 @@
 */
 
 @mixin mainInfo(){
+
     .subLogo{
         background: #3d255b;
     text-align: center;
@@ -24,7 +25,7 @@
 	}
 	&__geotarget{  
  
-	}
+	}  
 	&__logo{
 	   
 			@include for-size(phone-only){
@@ -35,22 +36,24 @@
 		     line-height:1;
 				width:100%;
 				text-align: center;
-				margin: 0;
+				margin: 0;  
 			}  
 	}
 	&__cartLogin--mobile{
 	   padding-top: vr-block(.2);
 	   padding-bottom: vr-block(.2);
-	   padding-right: 1em;
-	   margin-bottom: vr-block(.6);
+	   padding-right: 1em;     
+	   padding-left: 1em;
+	   margin-bottom: vr-block(.6);  
 	   margin-right:-.8em;
 	   margin-left: -.8em;
 	   border-bottom: solid 1px cs('background'); 
 	  // background: cs('primary');
-	   a{
-	       margin: vr-block(.4);
+	  
+	   a,span{
+	       margin: vr-block(.2);
+	       cursor: pointer;
 	   }
-	    text-align:right;
 	    
 	}
 	&__phone {

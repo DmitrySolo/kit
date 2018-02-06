@@ -2,7 +2,7 @@
 * mainSearch styles
 */
 
-@mixin mainSearch(){
+@mixin mainSearch(){        
 
   .mainSearch {
       &__form{
@@ -43,10 +43,11 @@
         text-align: center;  
         top:0;
         height:100%;
+        display:inline;
     }
     &__result{
         position:absolute;
-        padding: 0 .8em;
+        
         left:0;
         right:0;
        // bottom:0;
@@ -58,11 +59,12 @@
         //border-top:solid 1px cs('background-d');
         //margin: .5em auto 0 auto; 
        // padding: vr-block(.2);
-        .productInline__content{
+        .productInline__content{  
             margin-top: -1px;
-             font-size: .8em;
+             font-size: .7em;
              position: relative;
              padding: vr-block(.2);
+             margin-bottom:0;
              border: solid 1px cs('background-d');
              &:first-child{
                  border-top-style:dashed;
