@@ -1,0 +1,28 @@
+
+button.compare{
+    
+    
+    &:hover{ 
+        background:#fff;
+        .icon{
+        fill: cs('accent');}
+    }
+    .icon{
+        width: 1.8em;
+        height:1.8em;
+        
+       
+        fill:cs('background-d2');
+        @include for-size(big-desktop-up){
+            margin-right: vr-block(.2);
+        }
+    }
+    span{
+        display:none;
+    @include for-size(big-desktop-up){
+        display:inline;
+        width: 145px;
+        
+    }
+    }
+}

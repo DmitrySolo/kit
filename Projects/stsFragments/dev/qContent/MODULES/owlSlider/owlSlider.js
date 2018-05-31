@@ -4,7 +4,7 @@
         {
             "items":1, 
             "lazyLoad":true,
-            "autoplay":true,
+            "autoplay":false,
             //"dots":true
         }
     );

@@ -1,0 +1,27 @@
+mixin MODULE-innerCoupon(type)
+	-if(type!='product')
+		<!-- split modules/innerCoupon -->
+		.innerCoupon.sm(data-qcontent='module__innerCoupon')
+			.group.group--el
+				.col.col-9-tl
+					//.innerCoupon__subDesc 
+						//span Только для Воронежа и Области!
+					span.innerCoupon__value -10%  
+					span.innerCoupon__desc  на  смесители по промо - коду: 
+					span.innerCoupon__title 1378-2343
+					//.succes 
+						//span + Бесплатная доставка в черте города
+				.col.col-3-tl 
+					+C-countDown('innerCoupon','До коца акции осталось')
+				#demo12
+	-else
+		.innerCoupon.xs.t-center(data-qcontent='module__innerCoupon')
+			.group.group--el
+				.col.t-center
+					span.innerCoupon__value -10%  
+					span.innerCoupon__desc дополнительно #[br] по промо - коду: 
+					span.innerCoupon__title 1378-2343
+				.col 
+					+C-countDown('innerCoupon','До коца акции осталось')
+				#demo12
+		

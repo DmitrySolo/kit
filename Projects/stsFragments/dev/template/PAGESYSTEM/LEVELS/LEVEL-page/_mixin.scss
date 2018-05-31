@@ -1,6 +1,6 @@
 /* page STYLE */
 
-.page {  
+.page {   
 
     &__content {
 
@@ -33,5 +33,12 @@
             margin-bottom:vr-block(.8);
             //line-height: 1;
         }
-    }
+       
+    } &--text{ 
+            padding: vr-block(1);
+            background: cs('foreground');
+            border-radius: 6px;
+            border-bottom: solid 4px cs('background-d');
+            margin-bottom: vr-block(1.5);
+        }
 }

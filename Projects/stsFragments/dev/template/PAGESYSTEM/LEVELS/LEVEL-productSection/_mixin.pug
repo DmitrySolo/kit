@@ -6,7 +6,8 @@ mixin LEVEL-productSection(title,className)
 				//span.productSection__subTitle Страницы:
 				+breadcrumbs()
 			.productSection__filter.f-left   
-				span.productSection__subTitle Cортировать по:
+				span.productSection__subTitle
+					+I('sort','sort')
 				a.productSection__sortBy.productSection__sortBy--selected Цене
 				| |
 				a.productSection__sortBy Производителю

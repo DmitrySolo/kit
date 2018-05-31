@@ -5,6 +5,7 @@ mixin C-priceAndStock(type,empty)
 				span.icon-ruble
 			-if(!empty)
 				span.productCol__stock.icon-tick В наличии
+				+C-smartBonus() 
 			-else
 				span.productCol__stock.productCol__stock--out Нет В наличии
 	-if(type == 'sale')
@@ -16,6 +17,7 @@ mixin C-priceAndStock(type,empty)
 				span.icon-ruble
 			-if(!empty)  
 				span.productCol__stock.icon-tick В наличии
+				+C-smartBonus()
 			-else
 				span.productCol__stock.productCol__stock--out Нет В наличии
 	-if(type == 'part')

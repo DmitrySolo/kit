@@ -2,6 +2,8 @@ mixin breadcrumbs()
 	.breadCrumb__content(data-qcontent='module__breadcrumbs')
 		nav.breadCrumb.visible-l
 			a(href='/').breadcrumb__section.breadCrumb__section--current 1
-			-var page1 = 1
+			-var page1 = 10
 			+loop(7)
 				a(href='/').not.breadcrumb__section #{page1 +=1}
+			a(href='/').breadcrumb__section.breadCrumb__section--all Все 
+				

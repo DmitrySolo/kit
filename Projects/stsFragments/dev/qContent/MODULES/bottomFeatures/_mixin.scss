@@ -1,0 +1,66 @@
+/**
+* bottomFeatures styles
+*/
+
+@mixin bottomFeatures(){
+
+  .bottomFeatures { //-------------------------------------------SELF  
+        background:cs('foreground');
+        border-top: solid 2px cs('background-d');
+        padding: vr-block(2) 0;
+  }
+  .bottomFeatures { //------------------------------------------CHILDS
+      h2{
+          text-align: center;
+          margin-bottom: vr-block(1);
+          color: cs('primary');
+          img{
+              width:10em;
+          }
+          span{
+              color: cs('accent');
+          }
+      }
+      p {
+          font-weight: bold;
+          color: cs('primary');
+      }
+      &__home{
+          border-top: 2px dashed #fff;
+          background: #483265;
+          padding: vr-block(1.2) 0 vr-block(2);
+          color:#fff;
+          text-align: center;
+          font-weight:bold;
+          text-shadow: 0px 0px 1px #000;
+          .icon{
+              fill:#fff;
+          }
+          strong{
+              font-size: 1.4em;
+              text-shadow: 0px 0px 4px #111;
+              display: inline-block;
+              margin-bottom: vr-block(.8);
+          }
+      }
+  }
+  .bottomFeatures{  //-------------------------------------------EXTENDS
+      .icon{
+          width: 4em;
+          height: 4em;
+      }
+      .mainInfo__logo{ 
+          h3 {
+              text-align:center;
+          }
+          h3 img{
+              width: 40%;
+          }
+      }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include bottomFeatures();

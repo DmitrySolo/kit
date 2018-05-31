@@ -28,13 +28,56 @@ mixin MODULE-accordion(data)
 mixin MODULE-additionalProducts()
 	<!-- split modules/additionalProducts -->
 	.additionalProducts__content(data-qcontent='module__additionalProducts')
+mixin MODULE-bottomFeatures()
+	<!-- split modules/bottomFeatures -->
+	.bottomFeatures(data-qcontent='module__bottomFeatures')
+		+LEVEL-inner()
+			.mainInfo__logo
+					a(href="/")
+					h3
+						img(src="source/images/sts-logo.svg" alt="santehsmart Сантехсмарт") 
+			h2.text 
+				span Первый 
+				|Сантех-дискаунтер в Воронеже
+			.group.group--bl
+				.col.col-4-tl.t-center
+					+I('smartbonus')
+					h4 
+						span.accent Смарт
+						span Бонус
+					p Экономте впрок! За каждую покупку вы получаете СмартБонусы 1 СмартБонус = 1р. Оплачивать СмартБонусами можно до 100% стоимости товара!
+				.col.col-4-tl.t-center
+					+I('wrecle')
+					h4 
+						span.accent Смарт
+						span Сервис
+					p  Бесплатная доставка*, установка, гарантийное и постгарантийное обслуживание 
+				.col.col-4-tl.t-center 
+					+I('sslsh') 
+					h4 
+						span.accent Смарт  
+						span Покупка
+					p Ваши риски равны нулю! Данные защищены протоколами безопасности, которые на сегодняшний день используются всеми ведущими инетрнет-магазинами.
+	.bottomFeatures__home
+		+LEVEL-inner()
+			strong Будте в курсе последних акций и распродаж. Подпишитесь!
+			+C-subscribeSts()
+		
+		
+		
+		
+		
+		
+		
 mixin breadcrumbs()
 	.breadCrumb__content(data-qcontent='module__breadcrumbs')
 		nav.breadCrumb.visible-l
 			a(href='/').breadcrumb__section.breadCrumb__section--current 1
-			-var page1 = 1
+			-var page1 = 10
 			+loop(7)
 				a(href='/').not.breadcrumb__section #{page1 +=1}
+			a(href='/').breadcrumb__section.breadCrumb__section--all Все 
+				
 mixin MODULE-cart()
 	<!-- split modules/cart -->
 	-var empty = false
@@ -48,7 +91,7 @@ mixin MODULE-cart()
 			span.cart__icon
 				+I('cart-s','topBar')
 			span.cart__count 2    
-			span.cart__summ на 1000 000р
+			span.cart__summ на 100 000р
 mixin MODULE-cartPage()
 	<!-- split modules/cartPage -->
 	.cartPage__content(data-qcontent='module__cartPage')
@@ -105,10 +148,11 @@ mixin MODULE-catalogList(param)
 					.catalogList__content(data-qcontent='module__catalogList' class=''+classN)
 						nav(role='catalog').catalogList__categoryNavigation
 							ul.catalogList__categoryList(class=''+classN)#js_categories
-									li.catalogList__categoryItem#js_showSub__1     
-										+I('bathm','asset')      
-										span Ванны  
-										+I('to-right','catalog') 
+									li
+										a.catalogList__categoryItem#js_showSub__1(href="/")
+											+I('bathm','asset')      
+											span Ванны  
+											+I('to-right','catalog') 
 									li.catalogList__categoryItem#js_showSub__2
 										+I('mebelm','asset')   
 										span Мебель для ванной
@@ -198,7 +242,7 @@ mixin MODULE-catalogList(param)
 															+A-catalogLink('Aquatika','','sub')
 										li.catalogList__brandLitera.col.col-3-tl.col-6-m 
 											span B
-											ul.catalogList__barandList
+											ul.catalogList__barandList     
 												li.catalogList__barandItem
 															+A-catalogLink('ALPEN','','sub')
 												li.catalogList__barandItem
@@ -388,6 +432,48 @@ mixin MODULE-catalogMain()
 				li.catalogList__SublistItem#js_sub__7 7
 				li.catalogList__SublistItem#js_sub__8 8
 				li.catalogList__SublistItem#js_sub__9 9
+mixin MODULE-CENTURION()
+	<!-- split modules/CENTURION -->
+	.centurion(data-qcontent='module__CENTURION')
+		.centurion__content
+			form
+				.position
+					ul
+						li
+							label Брэнд:
+								select
+									option(value='a') 1111111
+									option(value='d') 2111111
+									option 3
+						li
+							label Имя позиции
+								input(type='text')
+						li
+							label Регулярная цена
+								input(type='text')
+				.sites
+					+loop(12)
+						ul
+							li
+								h5 САйт
+							li
+								label Путь к позиции
+									input(type='text')
+mixin MODULE-centurioResult()
+	<!-- split modules/centurioResult -->
+	.centurioResult__content(data-qcontent='module__centurioResult')
+		.centurioResult
+			ul.brandList.group.group--el
+				+loop(11)
+					li.brandList__item.col.col-1-tp.push-1-tp WasserKraft
+		.group.group--el
+			ul.siteList.col.col-1-tp
+				+loop(12)
+					li.siteList__item Ulmart.ru-ruse
+			+loop(11)
+				ul.resultList.col.col-1-tp
+					+loop(11)
+						li.resultList__item Ulmart 
 mixin confirmedOrderPage()
 	<!-- split modules/confirmedOrderPage -->
 	.confirmedOrderPage__content(data-qcontent='module__confirmedOrderPage')
@@ -398,20 +484,60 @@ mixin MODULE-deliverySection()
 	.deliverySection__content(data-qcontent='module__deliverySection')
 		h5.deliverySection__title Доставка в город 
 			a.geoTarget__link.js_modal_trigger(href='df' id = 'js_modal_trigger__geo') Воронеж:
-		.deliverySection__type
-			dl.deliverySection__to
-				dt До пункта Выдачи:
-				dd 300р 2-3 дня
-			a.deliverySection__pointsLink Пункты выдачи 
-		.deliverySection__type
-			dl.deliverySection__to
-				dt Курьерская доставка:
-				dd 500р 2-3 дня
-		.deliverySection__type
-			dl.deliverySection__to
-				dt Можно забрать:
-				dd Сегодня из офиса
-			
+		ul.deliverySection__type
+			li.deliverySection__to
+				h6.deliverySection__subHeader
+					+I('flag')
+					span Самовывоз из офиса
+				dl
+					dt Стоимость:
+					dd 
+						span.free Бесплатно
+				dl
+					dt Когда: 
+					dd  Уже сегодня до 18:00
+				dl
+					dt Адрес:
+					dd
+						ul
+							li 
+								a(href="/") гВоронеж ул Донбасская 21 
+			li.deliverySection__to
+				h6.deliverySection__subHeader  
+					+I('p-marker')
+					span Самовывоз из пункта выдачи
+				dl
+					dt Стоимость:
+					dd 
+						span.free Бесплатно
+						
+				dl
+					dt Когда: 
+					dd 1-2 дня
+						
+				dl
+					dt Адреса:
+					dd
+						ul
+							li 
+								a(href="/") гВоронеж ул Донбасская 21
+							li 
+								a(href="/") г. Воронеж, ул. Ленинградская, д.55а
+							li.deliverySection__more 
+								+A-actionLink('еще 14')
+			li.deliverySection__to
+							h6.deliverySection__subHeader
+								+I('truck-del')
+								span  Курьерская доставка
+							dl
+								dt Стоимость: 
+								dd 1700р
+									
+							dl
+								dt Когда: 
+								dd 
+									span 1-2 дня
+							
 			
 			
 mixin MODULE-featuresList()
@@ -480,6 +606,33 @@ mixin MODULE-IBGrid()
 				.col.col-6-tp.hideFrom-tl   
 					.testgrid 1      
 
+mixin MODULE-innerCoupon(type)
+	-if(type!='product')
+		<!-- split modules/innerCoupon -->
+		.innerCoupon.sm(data-qcontent='module__innerCoupon')
+			.group.group--el
+				.col.col-9-tl
+					//.innerCoupon__subDesc 
+						//span Только для Воронежа и Области!
+					span.innerCoupon__value -10%  
+					span.innerCoupon__desc  на  смесители по промо - коду: 
+					span.innerCoupon__title 1378-2343
+					//.succes 
+						//span + Бесплатная доставка в черте города
+				.col.col-3-tl 
+					+C-countDown('innerCoupon','До коца акции осталось')
+				#demo12
+	-else
+		.innerCoupon.xs.t-center(data-qcontent='module__innerCoupon')
+			.group.group--el
+				.col.t-center
+					span.innerCoupon__value -10%  
+					span.innerCoupon__desc дополнительно #[br] по промо - коду: 
+					span.innerCoupon__title 1378-2343
+				.col 
+					+C-countDown('innerCoupon','До коца акции осталось')
+				#demo12
+		
 mixin MODULE-layout()
 	<!-- split modules/layout -->
 	.layout__content(data-qcontent='module__layout')  
@@ -490,10 +643,10 @@ mixin MODULE-mainInfo()
 		.group.group--md.group--va-middle
 			.col.col-3-tl.showFrom-tl  
 				.mainInfo__logo
-				
-					h1.logo
-						span.subLogo S  
-						|Santehsmart
+					a(href="/")
+						h1
+							img(src="source/images/sts-logo.svg")  
+					
 				//	+logo-img('logo1.svg') 
 			.col.col-2-tl.showFrom-tl
 				.mainInfo__block.mainInfo__geotarget
@@ -513,15 +666,13 @@ mixin MODULE-mainInfo()
 							+I('cart','mobile')
 			.col.col-8-tl.hideFrom-tl
 				.mainInfo__logo--mobile 
-					h1.logo
-						span.subLogo S  
-						|Santehsmart
+					IMG(src="source/images/sts-logo.svg")
 			.col.col-5-tl.showFrom-tl
 				+MODULE-topFeatures()
 			.col.col-2-tl.showFrom-tl
 					.mainInfo__phone
 						span.mainInfo__phone-number
-							|8 800 500 13 84
+							|+7(473) 300-36-85
 						span.mainInfo__phone-time.icon-clock1
 							| Ежедневно  с 9 до 19ч
 							//| ПН-ПТ 9 - 19ч
@@ -533,9 +684,9 @@ mixin MODULE-mainSearch(data)
 			label.mainSearch__icon
 				+I('search','mainSearch') 
 				input.mainSearch__submit(type='submit' value="Искать")
-		if(data=='fired')
+		if( data=='fired')
 			.mainSearch__result.clearfix
-				+C-productInline(productInline1,'search') 
+				+C-productInline(productInline1,'search')
 				+C-productInline(productInline1,'search')
 				+C-productInline(productInline1,'search')
 				+C-productInline(productInline1,'search')
@@ -578,24 +729,6 @@ mixin MODULE-noticeList()
 						b 29.11.2017 11:18:56 
 					h5.noticeList__elementHeader Тестовое уведомление
 					p.noticeList__noticeContent.text Следует отметить, что повышение уровня гражданского сознания обеспечивает широкому кругу (специалистов) участие в формировании форм воздействия. Таким образом, дальнейшее развитие различных форм деятельности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для поэтапного и последовательного развития общества. Независимые государства, превозмогая сложившуюся непростую экономическую ситуацию, объявлены нарушающими общечеловеческие нормы этики и морали.
-mixin owlSlider()
-	<!-- split modules/owlSlider -->
-	.owlSlider(data-qcontent='module__owlSlider')
-		.ove-mainSlider.owl-carousel
-				img(src='https://fast.ulmart.ru/ns/Shvidkova/800%D1%85250_credit10218.jpg')
-				img(src='https://fast.ulmart.ru/ns/Shvidkova/Smartphone_maraphone_800%D1%85250.jpg')
-				img(src='https://fast.ulmart.ru/ns/Content/cybersale_800%D1%85250_21.gif')
-	.sliderTitles
-		ul.sliderTitles__list.group#js_sliderTitles
-				li.sliderTitles__item.active.col.col-4-tl.col-4-m
-					+I('discount','sliderTitle ib')
-					h6.sliderTitles__title.ib Супер акция на ванны Монтерей1
-				li.sliderTitles__item.col.col-4-tl.col-4-m
-					+I('new1','sliderTitle ib')
-					h6.sliderTitles__title.ib Супер акция на ванны Монтерей2
-				li.sliderTitles__item.col.col-4-tl.col-4-m
-					+I('new1','sliderTitle ib')
-					h6.sliderTitles__title.ib Супер акция на ванны Монтерей3  
 mixin MODULE-order()
 	<!-- split modules/order -->
 	.order__content(data-qcontent='module__order')
@@ -730,6 +863,24 @@ mixin MODULE-order()
 						
 						
 			
+mixin owlSlider()
+	<!-- split modules/owlSlider -->
+	.owlSlider(data-qcontent='module__owlSlider')
+		.ove-mainSlider.owl-carousel
+				img(src='/source/images/slider/SL1.png')
+				img(src='/source/images/slider/SL2.png')
+				img(src='/source/images/slider/SL3.png')
+	.sliderTitles
+		ul.sliderTitles__list.group#js_sliderTitles
+				li.sliderTitles__item.active.col.col-4-tl.col-4-m
+					+I('discount','sliderTitle ib')
+					h6.sliderTitles__title.ib Супер акция на ванны Монтерей1
+				li.sliderTitles__item.col.col-4-tl.col-4-m
+					+I('new1','sliderTitle ib')
+					h6.sliderTitles__title.ib Супер акция на ванны Монтерей2
+				li.sliderTitles__item.col.col-4-tl.col-4-m
+					+I('new1','sliderTitle ib')
+					h6.sliderTitles__title.ib Супер акция на ванны Монтерей3  
 mixin MODULE-pageBreadcrumbs()
 	-if(page.slug!='main')
 		<!-- split modules/pageBreadcrumbs -->
@@ -746,6 +897,11 @@ mixin MODULE-pageBreadcrumbs()
 									a Сантехника
 								li.pageBreadcrumbs__item.icon-to-right  
 									a Душевые кабины
+mixin MODULE-productCatInline(data)
+	<!-- split modules/productCatInline -->
+	.productCatInline__content(data-qcontent='module__productCatInline')
+		.productCatInline
+			+C-productInline(data,'cat')
 mixin MODULE-productChar()
 	<!-- split modules/productChar -->
 	.productChar__content(data-qcontent='module__productChar')
@@ -766,11 +922,6 @@ mixin MODULE-productChar()
 			.productChar__terminDesc
 				dt Страна-производитель:
 				dd Россия
-mixin MODULE-productCatInline(data)
-	<!-- split modules/productCatInline -->
-	.productCatInline__content(data-qcontent='module__productCatInline')
-		.productCatInline
-			+C-productInline(data,'cat')
 mixin MODULE-productCol(data)
 	<!-- split modules/productCol -->
 		li.productCol__content(data-qcontent='module__productCol')  
@@ -778,13 +929,13 @@ mixin MODULE-productCol(data)
 				span.productSection__subTitle='Код: '
 				span.productCol__sku=data.sku
 				-if(data.new)
-					+B-productBadge('Новинка','new')
+					+B-productBadge('Новинка','new') 
 				-if(data.sale)
-					+B-productBadge('Распродажа','sale') 
+					+B-productBadge('Акция','discount')
 				-if(data.hit)
 					+B-productBadge('Хит продаж','hit') 
 				a.productCol__link(href="#")
-					.productCol__img
+					.productCol__img 
 					h6.productCol__name=data.title
 					-if(data.sale)
 						+C-priceAndStock('part')   
@@ -808,8 +959,10 @@ mixin MODULE-productImageSlider()
 						img.productImageSlider__image(src='https://santehsmart.ru/upload/iblock/dc6/dc63e36b2080c2a4cc34950482a0b7d5.png')
 						img.productImageSlider__image(src='https://santehsmart.ru/upload/iblock/563/563c31fc3c70a30ce51f608728a60eea.jpg')
 	.productImageSlider__fullWindow
+	
 		+I('close','slider-close','js-slider-close')
-		ul.productImageSlider__imageList.owl-carousel  
+		
+		ul.productImageSlider__imageListFull.owl-carousel  
 			+loop(2)
 				img.productImageSlider__image(src='https://ove-cfo.ru/upload/iblock/44d/44d26668abf8db8ad511e0e4aba9c374.jpg')
 				img.productImageSlider__image(src='https://santehsmart.ru/upload/iblock/dc6/dc63e36b2080c2a4cc34950482a0b7d5.png')
@@ -819,6 +972,10 @@ mixin MODULE-reactTest()
 	<!-- split modules/reactTest -->
 	.reactTest__content(data-qcontent='module__reactTest')
 		#reactTest1
+mixin MODULE-sts-coupon()
+	<!-- split modules/sts-coupon -->
+	.sts-coupon__content(data-qcontent='module__sts-coupon')
+		.sts-coupon
 mixin MODULE-support()
 	<!-- split modules/support -->
 	.support__content(data-qcontent='module__support')
@@ -832,6 +989,10 @@ mixin MODULE-swe()
 	<!-- split modules/swe -->
 	.swe__content(data-qcontent='module__swe')
 		.swe
+mixin MODULE-tableP()
+	<!-- split modules/tableP -->
+	.tableP__content(data-qcontent='module__tableP')
+		.tableP
 mixin MODULE-topBar()
 	<!-- split modules/topBar -->
 	.topBar__content(data-qcontent='module__topBar')
@@ -841,9 +1002,10 @@ mixin MODULE-topBar()
 						+MODULE-catalog() 
 				.col.col-6-tl.showFrom-tl
 					.topBar__search
-						+MODULE-mainSearch('fired')   
-				.col.col-3-tl.showFrom-tl
-					.topBar__cart 
+						+MODULE-mainSearch('')   
+				.col.col-3-tl.showFrom-tl.no-gutter-l 
+					.topBar__cart
+						+B-compare()
 						+MODULE-cart()
 mixin MODULE-topFeatures(modificier)
 	<!-- split modules/topFeatures -->
@@ -892,15 +1054,35 @@ mixin MODULE-topMenu()
 						li.topMenu__element.topMenu__element--login
 							+A-actionLink('Вход','','login js_modal_trigger', 'js_modal_trigger__login','icon-login')
 							+A-actionLink('Регистрация','','signUp js_modal_trigger','js_modal_trigger__signUp')
+mixin MODULE-vipChallenge()
+	<!-- split modules/vipChallenge -->
+	.vipChallenge__content(data-qcontent='module__vipChallenge')
+		.vipChallenge
+			.vip-logo
+			.vip-title DESIGN BATTLE
+			p dsddfsdfdsfd
+			h1 Регистрация участника
+			form
+				label Фамилия:
+					input(type='text')
+				label Имя:
+					input(type='text')
+				label Отчество:
+					input(type='text')
+				label Номер телефона:
+					input(type='text')
+				label Эл. почта: 
+					input(type='text')
+				input(type='submit')
+mixin LEVEL-cartProduct(data)
+	.cartProduct
+		.cartProduct__content(class = 'cartProduct__content'+ className data-qcontent="level__cartProduct")
+
 mixin LEVEL-inner(data)
 	.level__inner
 		.container
 			if block
 				block
-mixin LEVEL-cartProduct(data)
-	.cartProduct
-		.cartProduct__content(class = 'cartProduct__content'+ className data-qcontent="level__cartProduct")
-
 mixin LEVEL-level(title,className)
 	-if (!className) className =''
 	.level__content(class = 'level__content'+ className data-qcontent="level__level")
@@ -918,6 +1100,12 @@ mixin LEVEL-level2(title,data)
 			h2.level2__title=data.title.ZOPA
 			if block
 				block
+mixin LEVEL-mainPageSection(title)
+	section.mainPageSection
+		.mainPageSection__content(class = 'mainPageSection__content'+ className data-qcontent="level__mainPageSection")
+			h2.mainPageSection__title=title
+			if block
+				block
 mixin LEVEL-modalWindow(id, title, className)
 	-if(!className) className = ''
 	-else className= 'modalWindow--'+className
@@ -925,21 +1113,19 @@ mixin LEVEL-modalWindow(id, title, className)
 		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
 			a.modalWindow__close
 				+I('close','close')
-			h3.modalWindow__title=title
+			h3.modalWindow__title=title  
 			.modalWindow__body
 				if block
 					block       
-mixin LEVEL-mainPageSection(title)
-	section.mainPageSection
-		.mainPageSection__content(class = 'mainPageSection__content'+ className data-qcontent="level__mainPageSection")
-			h2.mainPageSection__title=title
-			if block
-				block
-mixin LEVEL-outer(data)
-	.outer
-		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
-			if block    
-				block        
+mixin LEVEL-page(title)
+		.page(class = 'page--'+page.slug +' page--'+page.className)
+			.page__content(class = 'page__content'+ className data-qcontent="level__page")
+				-if(page.slug != 'main')
+					.group
+						.col.col-12-tl
+							h1.page__title=title        
+				if block
+					block
 mixin LEVEL-newtest(data)
 	.newtest
 		.newtest__content(class = 'newtest__content'+ className data-qcontent="level__newtest")
@@ -979,6 +1165,11 @@ mixin LEVEL-orderPage(title,className)
 			block
 			
 		
+mixin LEVEL-outer(data)
+	.outer
+		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
+			if block    
+				block        
 mixin LEVEL-popup(data)
 	.popup__angle
 		+I('to-right','popup')
@@ -987,36 +1178,6 @@ mixin LEVEL-popup(data)
 			.popup__body
 				if block
 					block
-mixin LEVEL-page(title)
-		.page(class = 'page--'+page.slug)
-			.page__content(class = 'page__content'+ className data-qcontent="level__page")
-				-if(page.slug != 'main')
-					.group
-						.col.col-12-tl
-							h1.page__title=title    
-				if block
-					block
-mixin LEVEL-productInfo(data)
-	.productInfo
-		.productInfo__content(class = 'productInfo__content'+ className data-qcontent="level__productInfo")
-			.productMain
-				.group.group--md
-					.col.col-5-tl
-						+MODULE-productImageSlider()
-					.col.col-3-tl.col-6-tp
-						.productInfo__section
-							+B-productBadge('Новинка','new')
-							.productInfo__priceStock
-								+C-priceAndStock('part')
-							+B-toOrder('В корзину')
-							+B-button('Оформить без регистрации','fastBuy')
-							+MODULE-productChar()
-					.col.col-4-tl.col-6-tp
-						.productInfo__section
-							+MODULE-deliverySection()
-						
-			.productLogo
-				img(src='https://santehsmart.ru/upload/resize_cache/uf/663/120_40_1/663573ea5278ca044fad90b0a4f2346d.png')
 //
 mixin LEVEL-productSection(title,className)
 	.productSection__content(data-qcontent="level__productSection")
@@ -1025,7 +1186,8 @@ mixin LEVEL-productSection(title,className)
 				//span.productSection__subTitle Страницы:
 				+breadcrumbs()
 			.productSection__filter.f-left   
-				span.productSection__subTitle Cортировать по:
+				span.productSection__subTitle
+					+I('sort','sort')
 				a.productSection__sortBy.productSection__sortBy--selected Цене
 				| |
 				a.productSection__sortBy Производителю
@@ -1046,12 +1208,29 @@ mixin LEVEL-showcase(title,className)
 			+holder('page__loader','100px300',colors.primary)
 			if block
 				block
-mixin LEVEL-starter(title,className)
-	-if (!className) className =''
-	.starter__content(class = 'starter__content'+ className data-qcontent="level__starter")
-		h5.starter__title=title
-		if block
-			block
+mixin LEVEL-productInfo(data)
+	.productInfo
+		.productInfo__content.block--inner(class = 'productInfo__content'+ className data-qcontent="level__productInfo")
+			.productMain
+				.group.group--md
+					.col.col-5-tl
+						+MODULE-productImageSlider()
+					.col.col-3-tl.col-6-tp
+						.productInfo__section
+							+MODULE-innerCoupon('product')
+							+B-productBadge('Новинка','new')  
+							.productInfo__priceStock
+								+C-priceAndStock('part')
+							+C-smartBonus()
+							+B-toOrder('В корзину')
+							+B-button('Оформить без регистрации','fastBuy')
+							+MODULE-productChar()
+					.col.col-4-tl.col-6-tp
+						.productInfo__section.productInfo__section--delivery
+							+MODULE-deliverySection()
+						
+			.productLogo
+				img(src='https://santehsmart.ru/upload/resize_cache/uf/663/120_40_1/663573ea5278ca044fad90b0a4f2346d.png')
 mixin LEVEL-showCasePage(data)
 	-if (!className) className =''
 	.container
@@ -1082,9 +1261,15 @@ mixin LEVEL-showCasePage(data)
 			p По своей сути рыбатекст является альтернативой традиционноaму lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.
 			if block
 				block
+mixin LEVEL-starter(title,className)
+	-if (!className) className =''
+	.starter__content(class = 'starter__content'+ className data-qcontent="level__starter")
+		h5.starter__title=title
+		if block
+			block
 mixin LEVEL-subProductInfo(data)
 	.subProductInfo
-		.subProductInfo__content(class = 'subProductInfo__content'+ className data-qcontent="level__subProductInfo")
+		.subProductInfo__content.block--inner(class = 'subProductInfo__content'+ className data-qcontent="level__subProductInfo")
 			.subProductInfo__tabber
 				ul.subProductInfo__tabber-list
 					li.subProductInfo__tabber-item.subProductInfo__tabber-item--active
@@ -1101,55 +1286,123 @@ mixin LEVEL-subProductInfo(data)
 					.subProductInfo__tabContent 2
 					.subProductInfo__tabContent 3
 					.subProductInfo__tabContent 4
+mixin LEVEL-topdashBoard(data)
+	-if (!className) className =''
+	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
+		ul.topdashBoard__list.group.group--el    
+			+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
+			+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
+			+dashBoardElement('help','Помощь и настройки','dashBoardElement')
+			+dashBoardElement('ptnMap','Пункты выдачи','dashBoardElement')
+			// +dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')  
+			+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher') 
+	if block
+		block 
 mixin LEVEL-testOfSergConnectingSupport(title,className)
 	-if (!className) className =''
 	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
 		h2.testOfSergConnectingSupport__title=title
 		block testOfSergConnectingSupport
-mixin LEVEL-topdashBoard(data)
-	-if (!className) className =''
-	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
-		ul.topdashBoard__list
-			+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
-			+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
-			+dashBoardElement('help','Помощь и настройки','dashBoardElement')
-			+dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')
-			+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher')
-	if block
-		block 
-mixin C-priceAndStock(type,empty)
-	-if(!type)
-		.priceAndStock(data-qcontent='component__priceAndStock')
-			span.productCol__price 14 300
-				span.icon-ruble
-			-if(!empty)
-				span.productCol__stock.icon-tick В наличии
-			-else
-				span.productCol__stock.productCol__stock--out Нет В наличии
-	-if(type == 'sale')
-		.priceAndStock.priceAndStock--sale(data-qcontent='component__priceAndStock')
-			span.productCol__price
-				span.productCol__oldPrice 17 300
-					span.icon-ruble
-				| 14 300
-				span.icon-ruble
-			-if(!empty)  
-				span.productCol__stock.icon-tick В наличии
-			-else
-				span.productCol__stock.productCol__stock--out Нет В наличии
-	-if(type == 'part')
-		.priceAndStock.priceAndStock--part(data-qcontent='component__priceAndStock')
-				span.productCol__price
-					span.productCol__mrcPrice 17 300   
-						span.icon-ruble        
-					| 14 300     
-					span.icon-ruble  
-				-if(!empty)
-					span.partStock
-						span.productCol.productCol__stock.icon-tick Доступно: 299шт   
-						span.productCol.productCol__lock.icon-padlock Резерв: 389шт
-				-else
-					span.productCol__stock.productCol__stock--out Нет В наличии
+mixin C-countDown(ids,header,time)
+	.countDown
+		h6.countDown__header=header+':'
+		.countDown__ctn(id=''+'countDown'+ids class=' '+'countDown--'+ids data-qcontent='component__countDown')
+		script.
+			// $(Document).ready(function(){
+			// $('#{'#countDown'+ids}')
+			// .countdown("2018/03/25", function(event) {
+			// $(this).text(
+			// event.strftime('%D Дня %Hч: %Mм: %Sс')
+			// );
+			// });
+			// });
+	
+ 
+
+mixin C-coupon(type)
+	-if(type == 'bottom')
+		.coupon.bounce.animated(data-qcontent='component__coupon' class = ' coupon--'+type )
+			span.coupon__closer 
+				+I('close','couponClose') 
+			+I('coupon','couponStar')
+			h6.coupon__title  
+				span.coupon__value 10%  
+				| ПРОМОКОД
+			+I('coupon','couponStar')  
+			.coupon__content 
+				p.text  До 12 марта! #[br] Дополнительная праздничная скидка #[br]
+					span.coupon__value 10% по промокоду: #[br]
+					span.coupon__id 2546-5367#[br]
+			+C-countDown('coupon--bottom','До конца действия акции осталось')
+			p.text.coupon__advices 
+				| Воспользуйтесь купоном, введя его номер в соответствующее поле на странице корзины.
+				
+			p.coupon__ps
+				
+				
+			
+mixin C-deliveryArticle()
+	.deliveryArticle(data-qcontent='component__deliveryArticle')
+		.group.group--bl.text
+			.col.col-4-tl 
+				.ta
+					+I('flag') 
+				h5 
+					span 1
+					|Самовывоз из нашего офиса #[br] или склада
+				p Самый #[strong быстрый и экономичный] способ получения заказа - это самовывоз  из #[strong нашего офиса, склада] или   офиса партнерской компании.
+				p
+					h6 Самовывоз из офиса
+					| После подтверждения заказа  мы  проводим его #[strong предпродажную проверку] на удаленном  складе и   доставляем в наш офис.
+					| Для самовывоза из офиса в день заказа  заявка должна быть оформлена  в будние дни не позднее #[strong 13:00]. В других случаях заказ будет доступен для выдачи с #[strong 9:00] следующего дня.
+				p
+					h6 Самовывоз со склада
+					| Самовывоз со склада доступен #[strong сразу после подтверждения заявки]  менеджером и
+					|  ограничивается лишь необходимостью посетить наш офис для оформления документа продажи. #[br] Время работы склада: пн-вск, с 9 до 18ч.
+				b При  получении в офисе #[br] доступны следующие виды оплаты:
+				ul
+					li Оплата картой на сайте 
+					li Оплата банковским переводом
+					li Оплата наличным рассчетом в офисе
+					li Оплата по карте в офисе
+			.col.col-4-tl
+				.ta
+					+I('marker')
+				h5 
+					span 2
+					|Самовывоз из пункта выдачи заказов ТК СДЭК
+				p  #[strong Более 1100 пунктов самовывоза по всей России.]
+				p 
+					h6 Как выбрать пункт выдачи?
+					| При оформлении заказа, на этапе выбора доставки выберите "Самовывоз из пункта выдачи"- вам откроется карта; Кликните по наиболее удобному для вас ПВЗ. Сроки и стоимость доставки также указаны на карточке товара.
+					h6 Как я узнаю что мой заказ пришел в ПВЗ?
+					|  Вам будет выслано SMS уведомление 
+					h6 Сколько заказ может храниться в ПВЗ? 
+					| Не более 7 календарных дней. При необходимости увеличить срок свяжитесь с нами.	
+					h6 Могу ли я сначала осмотреть заказ, нарушив транспортную упаковку?
+					| Да, вы можете сначала убедиться в целостности посылки, отсутствии дефектов у товара и его комплектности прежде чем оплачивать заказ
+					h6 Могу ли я отказаться от части заказа?
+					| Да, частичный забор и оплата заказа предусмотрены.
+				b При  получении в пункте выдачи #[br] доступны следующие виды оплаты:
+				ul
+					li Оплата картой на сайте.
+					li Оплата банковским переводом.
+					li Оплата наличным рассчетом в пункте выдачи.
+			.col.col-4-tl
+				.ta
+					+I('truck-del') 
+				h5
+					span 3
+					|Доставка курьером до двери дома/офиса
+				p Курьерская доставка заказов осуществляется как собственной службой доставки, так и транспортной компанией СДЭК. Стоимость доставки и примерные сроки опубликованы в карточках товара, а также формируются автоматически при выборе способа получения заказ "Курьрская доставка" во время оформления заказа.
+					|#[br] Точный срок и время доставки с вами согласует наш менеджер при подтверждении заказа. 
+				p Курьерская доставка приобретенного товара производится до подъезда, дачи, коттеджа только при наличии подъездных путей. 
+					| Подъем товара является дополнительной услугой и оговаривается с нашим менеджером при подтверждении заказа. 
+				b При  получении в пункте выдачи #[br] доступны следующие виды оплаты:
+				ul
+					li Оплата картой на сайте.
+					li Оплата банковским переводом.
+					li Оплата наличным рассчетом курьеру.
 mixin C-footer()
 	.footer__content(data-qcontent='component__footer')
 		.footer__section
@@ -1159,24 +1412,22 @@ mixin C-footer()
 						.col.col-3-tl
 							h5.footer__listTitle Клиентам
 							ul.footer__list
-									li.footer__listItem Доставка и оплата
-									li.footer__listItem Возврат и обмен
-									li.footer__listItem Новости и Акции
-									li.footer__listItem О магазине
-									li.footer__listItem Узнать статус заказа 
+								+loop(6)
+									li.footer__listItem
+										a(href='/') Как оформить заказ
+
 						.col.col-3-tl
-							h5.footer__listTitle Другой заголовок
+							h5.footer__listTitle СантехСмарт
 							ul.footer__list
-									li.footer__listItem Доставка и оплата  
-									li.footer__listItem Возврат и обен
-									li.footer__listItem Новости и Акции
-									li.footer__listItem О магазине
-									li.footer__listItem Узнать статус заказа
+									li.footer__listItem Партнерам  
+									li.footer__listItem Юридическая информация 
+									li.footer__listItem Вакансии
+									li.footer__listItem Политика Конфендециальности
 						.col.col-3-tl
 							h5.footer__listTitle Способы оплаты
 							ul.footer__list
 									li.footer__listItem
-										+I('ruble','footer')
+										+I('ruble','footer ruble')
 										+I('mir-logo2','footer')
 										+I('mastercard-logo','footer')
 										+I('maestro-logo','footer')
@@ -1207,18 +1458,53 @@ mixin C-footer()
 			
 			
 			
+mixin C-priceAndStock(type,empty)
+	-if(!type)
+		.priceAndStock(data-qcontent='component__priceAndStock')
+			span.productCol__price 14 300
+				span.icon-ruble
+			-if(!empty)
+				span.productCol__stock.icon-tick В наличии
+				+C-smartBonus() 
+			-else
+				span.productCol__stock.productCol__stock--out Нет В наличии
+	-if(type == 'sale')
+		.priceAndStock.priceAndStock--sale(data-qcontent='component__priceAndStock')
+			span.productCol__price
+				span.productCol__oldPrice 17 300
+					span.icon-ruble
+				| 14 300
+				span.icon-ruble
+			-if(!empty)  
+				span.productCol__stock.icon-tick В наличии
+				+C-smartBonus()
+			-else
+				span.productCol__stock.productCol__stock--out Нет В наличии
+	-if(type == 'part')
+		.priceAndStock.priceAndStock--part(data-qcontent='component__priceAndStock')
+				span.productCol__price
+					span.productCol__mrcPrice 17 300   
+						span.icon-ruble        
+					| 14 300     
+					span.icon-ruble  
+				-if(!empty)
+					span.partStock
+						span.productCol.productCol__stock.icon-tick Доступно: 299шт   
+						span.productCol.productCol__lock.icon-padlock Резерв: 389шт
+				-else
+					span.productCol__stock.productCol__stock--out Нет В наличии
 mixin C-productInline(data,type)
 	-if(!type) type= false
 	.productInline__content(data-qcontent='component__productInline')
 			.group.group--md.group--va-middle 
 				if(type != 'search')
 					.col.col-2-tp
-						a.productInline__link(href='#')
-							+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
+							a.productInline__link(href='#')
+								+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
 				else 
 					.col.col-3-tp
 						a.productInline__link(href='#')
-							+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
+							.productInline__section--img(style="background-image:url(https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg)")
 				if(type != 'search')
 					.col.col-4-tp
 						+B-productBadge('Распродажа','sale')
@@ -1247,7 +1533,8 @@ mixin C-productInline(data,type)
 						+B-delete()
 				if(type=='cat')
 					.col.col-2-tp
-						+B-toOrder('В корзину') 
+						+B-toOrder('В корзину')
+						+In-compareButton('В сравнение','checkBox--compare','compare')  
 					.col.col-12-tp
 						+MODULE-productChar()  
 				if block 
@@ -1258,3 +1545,25 @@ mixin C-productInline(data,type)
 					
 					
 					
+mixin C-sameCatProducts()
+	h6 Еще в категории сантехника
+	ul.sameCatProducts(data-qcontent='component__sameCatProducts')
+		li.sameCatProducts__item
+				a(href='#').sameCatProducts__link.sameCatProducts__link--active Ванны акриловые 
+		+loop(8)
+			li.sameCatProducts__item
+				a(href='#').sameCatProducts__link Ванны акриловые прямоугольные
+mixin C-smartBonus()
+	.smartBonus(data-qcontent='component__smartBonus')
+		+I('smartbonus','smartBonus')
+		span.smartBonus__value + 25  
+		|CмартБонусов 
+mixin C-subscribeSts()
+	.subscribeSts(data-qcontent='component__subscribeSts')
+		form.subscribeSts__form
+			input.subscribeSts__inpt(placeholder="Введите ваш email") 
+			button.subscribeSts__btn
+				+I('mail') 
+				span Подписаться
+			
+		

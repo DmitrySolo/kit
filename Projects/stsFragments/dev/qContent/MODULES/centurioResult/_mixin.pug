@@ -1,0 +1,15 @@
+mixin MODULE-centurioResult()
+	<!-- split modules/centurioResult -->
+	.centurioResult__content(data-qcontent='module__centurioResult')
+		.centurioResult
+			ul.brandList.group.group--el
+				+loop(11)
+					li.brandList__item.col.col-1-tp.push-1-tp WasserKraft
+		.group.group--el
+			ul.siteList.col.col-1-tp
+				+loop(12)
+					li.siteList__item Ulmart.ru-ruse
+			+loop(11)
+				ul.resultList.col.col-1-tp
+					+loop(11)
+						li.resultList__item Ulmart 

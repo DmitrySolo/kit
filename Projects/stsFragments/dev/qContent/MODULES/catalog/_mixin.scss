@@ -21,6 +21,9 @@
              transition: transform .2s ease;
         } 
     }
+    &__by--brand {
+        background: cs('primary');   
+    }
     &__by-m{
         font-size: 1rem;
         font-weight: bold;
@@ -71,10 +74,10 @@
         &:hover{      
             background:cs('primary-l');      
             .icon--to-right{
-            transform: rotate(90deg);   
+            transform: rotate(90deg); 
             }
         }
-        &--category{    
+        &--category{      
             
         }
         &:hover .icon-to-right{  

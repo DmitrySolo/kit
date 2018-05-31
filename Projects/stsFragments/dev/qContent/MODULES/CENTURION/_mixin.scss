@@ -1,0 +1,32 @@
+/**
+* CENTURION styles
+*/
+
+@mixin CENTURION(){  
+
+  .centurion {   
+      
+    background-color:#DCB858;
+    padding: vr-block(2);
+    &__content{
+       
+        padding: vr-block(1);
+    }
+    
+    .position,.sites{
+        border-bottom: solid 2px gray;
+        padding: vr-block(1);
+        margin-bottom:vr-block(1);
+        background-color: #fff;
+        li {
+            display: inline-block;
+            margin-left: vr-block(.5);
+        }
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include CENTURION();

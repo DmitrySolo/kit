@@ -1,0 +1,27 @@
+mixin MODULE-CENTURION()
+	<!-- split modules/CENTURION -->
+	.centurion(data-qcontent='module__CENTURION')
+		.centurion__content
+			form
+				.position
+					ul
+						li
+							label Брэнд:
+								select
+									option(value='a') 1111111
+									option(value='d') 2111111
+									option 3
+						li
+							label Имя позиции
+								input(type='text')
+						li
+							label Регулярная цена
+								input(type='text')
+				.sites
+					+loop(12)
+						ul
+							li
+								h5 САйт
+							li
+								label Путь к позиции
+									input(type='text')

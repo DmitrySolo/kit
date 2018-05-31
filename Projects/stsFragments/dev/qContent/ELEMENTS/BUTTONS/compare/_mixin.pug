@@ -1,0 +1,5 @@
+mixin B-compare(value,className)
+	-if (!className) className =''
+	button.compare(class=''+className data-qcontent='element__buttons__compare')=value
+		+I('compare')
+		span Сравнение

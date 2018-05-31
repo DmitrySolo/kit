@@ -7,24 +7,22 @@ mixin C-footer()
 						.col.col-3-tl
 							h5.footer__listTitle Клиентам
 							ul.footer__list
-									li.footer__listItem Доставка и оплата
-									li.footer__listItem Возврат и обмен
-									li.footer__listItem Новости и Акции
-									li.footer__listItem О магазине
-									li.footer__listItem Узнать статус заказа 
+								+loop(6)
+									li.footer__listItem
+										a(href='/') Как оформить заказ
+
 						.col.col-3-tl
-							h5.footer__listTitle Другой заголовок
+							h5.footer__listTitle СантехСмарт
 							ul.footer__list
-									li.footer__listItem Доставка и оплата  
-									li.footer__listItem Возврат и обен
-									li.footer__listItem Новости и Акции
-									li.footer__listItem О магазине
-									li.footer__listItem Узнать статус заказа
+									li.footer__listItem Партнерам  
+									li.footer__listItem Юридическая информация 
+									li.footer__listItem Вакансии
+									li.footer__listItem Политика Конфендециальности
 						.col.col-3-tl
 							h5.footer__listTitle Способы оплаты
 							ul.footer__list
 									li.footer__listItem
-										+I('ruble','footer')
+										+I('ruble','footer ruble')
 										+I('mir-logo2','footer')
 										+I('mastercard-logo','footer')
 										+I('maestro-logo','footer')

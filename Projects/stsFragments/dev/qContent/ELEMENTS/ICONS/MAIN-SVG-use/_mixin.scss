@@ -69,7 +69,7 @@
          position:absolute;
          right:.5em;
       }
-      &--close{
+      &--close{  
           height: 100%;
           width: 100%;
       }
@@ -106,7 +106,11 @@
           width: 1.5em;
       }
       &--footer{
-          fill:#fff;    
+          fill:#fff;  
+          &.ruble{
+              height: 2.2em;
+              width: 2.2em;  
+          }
           
           &.social{ 
               margin: vr-block(.08);        
@@ -166,6 +170,17 @@
 
           width: 2rem;
           height: 2rem;
+      }
+      &--text{
+          margin-right: vr-block(.4); 
+      }
+      &--sort{
+          height: 1rem;
+      }
+      &--smartBonus{
+          vertical-align:middle;
+          width: 1.6em;
+          height: 1.6em;
       }
       
     

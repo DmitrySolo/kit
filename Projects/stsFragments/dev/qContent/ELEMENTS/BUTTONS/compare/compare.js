@@ -1,0 +1,1 @@
+// Element: compare script.

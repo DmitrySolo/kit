@@ -4,10 +4,10 @@ mixin MODULE-mainInfo()
 		.group.group--md.group--va-middle
 			.col.col-3-tl.showFrom-tl  
 				.mainInfo__logo
-				
-					h1.logo
-						span.subLogo S  
-						|Santehsmart
+					a(href="/")
+						h1
+							img(src="source/images/sts-logo.svg")  
+					
 				//	+logo-img('logo1.svg') 
 			.col.col-2-tl.showFrom-tl
 				.mainInfo__block.mainInfo__geotarget
@@ -27,15 +27,13 @@ mixin MODULE-mainInfo()
 							+I('cart','mobile')
 			.col.col-8-tl.hideFrom-tl
 				.mainInfo__logo--mobile 
-					h1.logo
-						span.subLogo S  
-						|Santehsmart
+					IMG(src="source/images/sts-logo.svg")
 			.col.col-5-tl.showFrom-tl
 				+MODULE-topFeatures()
 			.col.col-2-tl.showFrom-tl
 					.mainInfo__phone
 						span.mainInfo__phone-number
-							|8 800 500 13 84
+							|+7(473) 300-36-85
 						span.mainInfo__phone-time.icon-clock1
 							| Ежедневно  с 9 до 19ч
 							//| ПН-ПТ 9 - 19ч

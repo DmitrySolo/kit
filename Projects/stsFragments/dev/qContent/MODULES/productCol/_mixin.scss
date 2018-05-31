@@ -21,12 +21,21 @@
         }
     }
   .productCol {
+     
     &__list{
        // background:cs('foreground-d')
     }
     &__content {
+        .smartBonus{
+            padding-top: vr-block(.2);
+            padding-left: vr-block(.8);
+        }
+        .checkBox--compare{
+         margin-top:0;
+     } 
+        
         .priceAndStock--part{
-              margin-bottom: vr-block(.4);
+              margin-bottom: vr-block(.4); 
               height: auto;
             .productCol__price{
                 font-size: 1.2em;
@@ -61,7 +70,7 @@
             display:inline-block;
               }
               .priceAndStock{
-                  margin-bottom: vr-block(.4);
+                  margin-bottom: vr-block(.9);
                   font-size: 1.1em;
               }
       .productBadge{
@@ -103,12 +112,12 @@
         background-image:url("https://santehsmart.ru/upload/iblock/a0c/a0c6e020c6e63b6219efc2fb3a2151a3.jpg");
         background-position: center;
         background-size: contain; 
-        background-repeat: no-repeat;
+        background-repeat: no-repeat;  
         //border-bottom: 1px solid cs('foreground-d');
         margin-bottom: 5px;
 
     }
-    &__name {  
+    &__name {      
        
         height: 3*$line_height_ratio#{em};
         text-align: center;
@@ -162,7 +171,7 @@
             line-height: 1.5;
             &-moc{  
                 color: cs('font');  
-            }
+            }  
         }   
         
           
@@ -170,7 +179,7 @@
       
     
   }
-  label.productInline__quantityLabel{
+  label.productInline__quantityLabel{    
       @include for-size(tablet-l-up){  
           display:none;
       }

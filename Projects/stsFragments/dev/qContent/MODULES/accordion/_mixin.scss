@@ -104,7 +104,10 @@
         padding: vr-block(.4) 0 vr-block(.4);
         background-color: #fff;
         display: none;
-        border-bottom: 3px solid cs('background-d');
+        border-bottom: 4px solid cs('background-d');
+        margin-bottom: vr-block(.3);
+        border-radius: 6px;
+        
         
     }
     &__checkBox{  

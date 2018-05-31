@@ -3,7 +3,30 @@
 */
 
 @mixin geoTarget(){
-
+    
+    // in bitrix
+    .custom-popup-2014 .current-list{
+        @include for-size(phone-only){
+            width:100%;
+            li {
+                width:33%;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .custom-popup-2014{
+        @include for-size(phone-only){
+            width: 100%;
+            height:auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: 0;
+        }
+    }
+    
+    
   .geoTarget {
     &__content {
         @include for-size(phone-only){

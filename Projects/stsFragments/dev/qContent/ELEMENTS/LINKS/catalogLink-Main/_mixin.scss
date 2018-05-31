@@ -1,0 +1,22 @@
+
+
+a.catalogLink-Main {
+	color: cs('font-d2');
+	text-decoration: none;
+
+	&:visited {
+		color: cs('font-d2');
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: cs('font-d2');;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover,
+	&:active {
+	outline: none;
+	}
+}

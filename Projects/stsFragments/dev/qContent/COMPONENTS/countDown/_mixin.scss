@@ -1,0 +1,17 @@
+/**
+* countDown styles
+*/
+
+@mixin countDown(){
+
+  .countDown {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include countDown();

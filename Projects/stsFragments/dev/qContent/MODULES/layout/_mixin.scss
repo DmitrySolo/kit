@@ -3,7 +3,30 @@
 */
 
 @mixin layout(){
- 
+    .bx-crm-widget-wrapper{
+        display: none;
+    }
+    .t-center{
+        text-align: center;
+    }
+    .center {
+        margin: 0 auto;
+    }
+    .accent {
+        color: cs('accent');
+    }
+    .succes{
+        color: cs('succes');
+    }
+    .succes--d{
+         color: cs('succes');
+    }
+     .error--d{
+         color: cs('erorr-d');
+    }
+    .error{
+         color: cs('erorr');
+    }
     
     h1.logo{
         color:cs('primary');
@@ -27,12 +50,31 @@
     }
     .mainFooter{
         background : darken(cs('primary'),9%);
-        z-index: 0;
+        z-index: 0;   
     }
     .productMain{
         background: cs('foreground');
     }
-   
+    .mobileSearchRes__ctn{
+        .productInline__content{
+            font-size: .8em;
+        }
+        background: cs('background');
+        text-align:left;
+        padding-top:vr-block(.2);
+        border-top: dashed 1px cs('background-d');
+        z-index:10000;
+    }
+    .sure-or-not-wrap {
+        background: cs('primary-l');  
+        padding: 20px;
+        position: absolute;
+        z-index: 1000;
+        color: #fff;
+        width: 150%;
+        border-radius: 6px;
+    }
+    
 }
 
 

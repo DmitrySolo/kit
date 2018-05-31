@@ -13,7 +13,14 @@
 	"	MODULE-order()",
 	"snippet +M-productInline",
 	"	MODULE-productInline()",
-	"snippet +M-productCatInline",
-	"	MODULE-productCatInline()",
-	"snippet +M-mobileMenu",
-	"	MODULE-mobileMenu()",undefined
+	"snippet +M-innerCoupon",
+	"	MODULE-innerCoupon()",
+	"snippet +M-CENTURION",
+	"	MODULE-CENTURION()",
+	"snippet +M-centurioResult",
+	"	MODULE-centurioResult()",
+	"snippet +M-vipChallenge",
+	"	MODULE-vipChallenge()",
+	"snippet +M-tableP",
+	"	MODULE-tableP()",
+].join(eol);

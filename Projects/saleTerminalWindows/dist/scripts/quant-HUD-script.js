@@ -305,7 +305,7 @@ function GetParents(el) {
 
 
 
-//  quant-debug-ruller script
+//  --quant-debug-ruller script
 
 
 

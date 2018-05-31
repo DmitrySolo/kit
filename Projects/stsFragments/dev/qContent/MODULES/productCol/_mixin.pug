@@ -5,13 +5,13 @@ mixin MODULE-productCol(data)
 				span.productSection__subTitle='Код: '
 				span.productCol__sku=data.sku
 				-if(data.new)
-					+B-productBadge('Новинка','new')
+					+B-productBadge('Новинка','new') 
 				-if(data.sale)
-					+B-productBadge('Распродажа','sale') 
+					+B-productBadge('Акция','discount')
 				-if(data.hit)
 					+B-productBadge('Хит продаж','hit') 
 				a.productCol__link(href="#")
-					.productCol__img
+					.productCol__img 
 					h6.productCol__name=data.title
 					-if(data.sale)
 						+C-priceAndStock('part')   

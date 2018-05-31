@@ -22,6 +22,22 @@
         width: 100%;
         background: #fff;
         border-bottom: solid 2px cs('background-d');
+        position:relative;
+        &:before{
+            position:absolute;
+            content:'%';
+            display:inline-block;
+            width: 2.5em;
+            height:2.5em;
+            color:#fff;
+            background:cs('primary');
+            text-align: center;
+            left: -.7rem;
+            top: -.7rem;
+            border-radius: 50%;
+            line-height:2.5rem;
+            font-weight:bold;
+        }
     }
 
     

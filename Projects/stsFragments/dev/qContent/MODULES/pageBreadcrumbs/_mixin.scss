@@ -10,6 +10,7 @@
         z-index:0;
         width: 100%;
         background: cs('background');
+        margin-bottom: vr-block(.5);  
         @include for-size(tablet-l-up){
             margin-top: 20px;
         }
@@ -27,7 +28,13 @@
         margin: 0 vr-block(.1);
         font-size: .9rem;
         font-weight:bold;
-        //padding-right:vr-block(.2);   
+        //padding-right:vr-block(.2);
+        &:first-child{
+            &:before{
+                content:'';
+                margin:0;
+            }
+        }
       @include for-size(phone-only){
           display: none;
       }
@@ -39,19 +46,26 @@
         
         &:nth-last-child(2){
             @include for-size(phone-only){
-                     padding:vr-block(.05);
-                  font-weight:normal;
+                     padding:vr-block(.4);
+                  //font-weight:normal;
                     font-size: 1.2rem;
+                    margin-right:-.8em;
+                    margin-left:-.8em;
                     display: block;
+                    background: #fff;
+                    a{
+                        vertical-align:middle;
+                    }
             }
            
 
             &.icon-to-right:before{
                 @include for-size(phone-only){
-                content:"\2190";
-                font-size: 2rem;
-                margin: .2em;
-                vertical-align:baseline;
+               content:'';
+                font-size: 1rem;
+                margin-right: .4em;
+                vertical-align: middle;
+                vertical-align:middle;
                 }
 
                // font-weight: bold;

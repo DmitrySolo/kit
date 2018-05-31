@@ -5,20 +5,72 @@
 @mixin deliverySection(){
   
   .deliverySection {
+      
+         &__more{  
+          list-style:none;  
+      }
+      &__to{
+          margin-bottom: vr-block(1);
+          border-bottom: dashed 1px cs('background-d');
+         // padding-left: vr-block(1);
+          padding-right: vr-block(.4);
+          padding-bottom: vr-block(.4);
+          .icon{
+              width: 2rem;
+              height: 2rem;
+              margin-right: vr-block(.4);
+              vertical-align:bottom;
+          }
+          dl{
+             
+          }
+          dt,dd{
+              display: inline-block;
+              vertical-align:top;
+          }
+          .free{
+              color: cs('succes-d2');
+          }
+          a{
+              text-decoration:none;
+              border-bottom: dashed 1px;
+              color:#000;       
+          }
+          li {
+              list-style: circle;
+          }
+      }
     &__content {
+        font-size:.9em; 
        @include for-size(tablet-l-up){
-                  float:right;
-          padding-right:vr-block(2);
+                width:100%;
+          //padding-right:vr-block(2);
           text-align:left;
 
        }
        text-align: center;
     }
     &__title{
-        margin-bottom: vr-block(.4);
-    }
+        margin-bottom: vr-block(.5);
+        text-align:center;
+        margin-bottom: vr-block(1);
+        //padding-left: vr-block(1);
+        
+        .geoTarget__link {
+            color: cs('accent');
+        }
+       // text-align: center;  
+    }&__subHeader{
+        margin-bottom:vr-block(.5);
+        line-height: 1;
+    
+        span{
+            vertical-align: baseline;
+        }
+       
+           }
     &__pointsLink{
-        color: cs('succes-d');
+        color: cs('succes');
         text-decoration: underline;
     }
     &__type {

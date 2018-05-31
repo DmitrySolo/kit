@@ -5,6 +5,9 @@
       a:link {
         color: cs('font');
         text-decoration: none;
+        &:hover{
+            color:#fff;
+        }
       }
       
       
@@ -17,10 +20,11 @@
           }
          
       }
-  .breadcrumb__section {
+  .breadcrumb__section {  
+      
     display: inline-block;
        height: 1.4rem;
-       width: 1.4rem;
+      padding: 0 .5rem;
        text-align: center;
        border-radius: 3px;
        margin-right: 2px; 
@@ -31,13 +35,23 @@
          background: cs('primary-l2');
          color: #fff;  
       }  
+      
   }
+  .breadCrumb__section--all{
+          background:#fff; 
+          color: cs('primary');
+          border: solid 1px cs('background-d2');
+          border-bottom-width:2px;
+          &:hover{
+              background: cs('primary');
+              border-color: cs('primary-d'); }
+      }
   .breadCrumb__section--current {
      //border: solid 2px cs('accent');
     font-weight: bold;
     background: cs('primary');
     color: #fff;   
-    &:hover{
+    &:hover a{ 
         color:#fff;
     }
     &:before{

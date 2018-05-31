@@ -1,0 +1,41 @@
+mixin MODULE-bottomFeatures()
+	<!-- split modules/bottomFeatures -->
+	.bottomFeatures(data-qcontent='module__bottomFeatures')
+		+LEVEL-inner()
+			.mainInfo__logo
+					a(href="/")
+					h3
+						img(src="source/images/sts-logo.svg" alt="santehsmart Сантехсмарт") 
+			h2.text 
+				span Первый 
+				|Сантех-дискаунтер в Воронеже
+			.group.group--bl
+				.col.col-4-tl.t-center
+					+I('smartbonus')
+					h4 
+						span.accent Смарт
+						span Бонус
+					p Экономте впрок! За каждую покупку вы получаете СмартБонусы 1 СмартБонус = 1р. Оплачивать СмартБонусами можно до 100% стоимости товара!
+				.col.col-4-tl.t-center
+					+I('wrecle')
+					h4 
+						span.accent Смарт
+						span Сервис
+					p  Бесплатная доставка*, установка, гарантийное и постгарантийное обслуживание 
+				.col.col-4-tl.t-center 
+					+I('sslsh') 
+					h4 
+						span.accent Смарт  
+						span Покупка
+					p Ваши риски равны нулю! Данные защищены протоколами безопасности, которые на сегодняшний день используются всеми ведущими инетрнет-магазинами.
+	.bottomFeatures__home
+		+LEVEL-inner()
+			strong Будте в курсе последних акций и распродаж. Подпишитесь!
+			+C-subscribeSts()
+		
+		
+		
+		
+		
+		
+		

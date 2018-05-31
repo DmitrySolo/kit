@@ -2,7 +2,7 @@
     display: inline-block;
     vertical-align:middle;
     height:100%;
-    padding-top: .9em;
+   
     float:right;
     
 }
@@ -16,7 +16,9 @@
 }
 
 /* Hide default HTML checkbox */
-.switch input {display:none;}
+.switch input {display:none;
+    
+}
 
 /* The slider */
 .slider {

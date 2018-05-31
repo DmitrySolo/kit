@@ -6,10 +6,11 @@ mixin MODULE-catalogList(param)
 					.catalogList__content(data-qcontent='module__catalogList' class=''+classN)
 						nav(role='catalog').catalogList__categoryNavigation
 							ul.catalogList__categoryList(class=''+classN)#js_categories
-									li.catalogList__categoryItem#js_showSub__1     
-										+I('bathm','asset')      
-										span Ванны  
-										+I('to-right','catalog') 
+									li
+										a.catalogList__categoryItem#js_showSub__1(href="/")
+											+I('bathm','asset')      
+											span Ванны  
+											+I('to-right','catalog') 
 									li.catalogList__categoryItem#js_showSub__2
 										+I('mebelm','asset')   
 										span Мебель для ванной
@@ -99,7 +100,7 @@ mixin MODULE-catalogList(param)
 															+A-catalogLink('Aquatika','','sub')
 										li.catalogList__brandLitera.col.col-3-tl.col-6-m 
 											span B
-											ul.catalogList__barandList
+											ul.catalogList__barandList     
 												li.catalogList__barandItem
 															+A-catalogLink('ALPEN','','sub')
 												li.catalogList__barandItem

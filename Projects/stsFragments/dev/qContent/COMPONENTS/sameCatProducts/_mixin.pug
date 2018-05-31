@@ -1,0 +1,8 @@
+mixin C-sameCatProducts()
+	h6 Еще в категории сантехника
+	ul.sameCatProducts(data-qcontent='component__sameCatProducts')
+		li.sameCatProducts__item
+				a(href='#').sameCatProducts__link.sameCatProducts__link--active Ванны акриловые 
+		+loop(8)
+			li.sameCatProducts__item
+				a(href='#').sameCatProducts__link Ванны акриловые прямоугольные

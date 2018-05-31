@@ -1,0 +1,168 @@
+/**
+* coupon styles
+*/
+
+@mixin coupon(){  
+    .coupon{
+        position:relative;
+             
+         &--bottom {    
+                 animation-iteration-count:3;  
+                 margin-bottom: -(vr-block(15.1));   
+                height: vr-block(17);
+               position: fixed;
+               padding: vr-block(.4)  vr-block(.1); 
+               width: 100%;
+               bottom:0;
+               z-index: 1000000;
+               background: #fd5800;   
+               padding: vr-block(.1);
+               text-align:center;
+               cursor: pointer;
+               border-top-left-radius: 6px;
+               border-top-right-radius: 6px;
+               text-shadow: 0px 0px 1px #000;
+               font-size: 1.2rem;
+               box-shadow: 0px 2px 2px 2px #333;
+               
+                ////COUPON--bottom/////MEDIA
+               @include for-size(tablet-p-up){
+                   width: 400px;
+                   left: 50%;
+                   margin-left:-200px;
+               }
+               & .coupon__title{
+                   margin: 0 1rem;
+                   color: #fff;
+                   display: inline-block;
+               }
+               & .coupon__value{
+                   font-size: 2rem; 
+               }
+               & .coupon__advices{
+                   font-size: 1rem;
+                   //text-shadow:none;
+                   color:#fff;
+               }
+               & .coupon__ps {
+                   font-size: 2rem;
+                   color: #fff;
+                   font-weight: bold;
+               }
+                ///////// DEPENDENCY  //////////////////
+                .countDown{
+                    h6{
+                        color: #fff;
+                    }
+                    color: #fff;
+                    .countDown__ctn{
+                        background: cs('primary');
+                        display: inline-block;
+                        margin: 0 auto;
+                        width: 250px;
+                        padding: vr-block(.1) vr-block(.2);
+                        border-radius: 3px;
+                        margin-top:vr-block(.2);
+                        letter-spacing: vr-block(.2);
+                    }
+                } 
+                .icon--couponStar{
+                      fill: cs('accent-d');
+                      width: 2em;
+                      display: inline-block;
+                }
+                .coupon__closer {
+                     position: absolute;
+                     top:vr-block(.2);
+                      right: vr-block(.2);
+                      display: inline-block;
+                }
+                .icon--couponClose{ 
+                    
+                      fill: #fff;   
+                      width: vr-block(.5);
+                      height: vr-block(.5);
+                      
+                      
+                      &:hover{
+                          fill: #fff;
+                      }
+                }
+                .coupon__content{ 
+                    color: #fff;
+                    margin-top: vr-block(1);
+                    margin-left: -(vr-block(.1));    
+                    margin-right:  -(vr-block(.1)); 
+                    border-top: dashed 2px #fff;
+                    border-bottom: dashed 2px #fff;
+                    padding-top: vr-block(.4);
+                    background:cs('primary');
+                    margin-bottom: vr-block(.4);
+                }
+                .coupon__id{
+                    font-size: 3rem; 
+                    display:inline-block;
+                    padding: 0 vr-block(.2);
+                    background: #fff;
+                    text-align: center;
+                    border: solid 4px cs('primary-l2'); 
+                    color: cs('primary');
+                    border-radius:6px;
+                    
+                }
+          }
+    }
+    ///////ANIMATION
+    .animated {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  
+   -webkit-animation-delay: 10s;
+ 
+  -webkit-animation-fill-mode: initial;
+  animation-fill-mode: initial;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+    @keyframes bounce {
+          from,
+          20%,
+          53%,
+          80%,
+          to {
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            transform: translate3d(0, 0, 0);
+          }
+        
+          40%,
+          43% {
+            animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            transform: translate3d(0, -30px, 0);
+          }
+        
+          70% {
+            animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            transform: translate3d(0, -15px, 0);
+          }
+        
+          90% {       
+            transform: translate3d(0, -4px, 0); 
+          }
+        } 
+          
+        
+        .bounce {
+          animation-name: bounce;
+          transform-origin: center bottom; 
+        }
+
+
+
+}
+
+
+////////////////////////////////////////
+@include coupon();

@@ -1,4 +1,4 @@
-//  quant-debug-ruller script
+//  --quant-debug-ruller script
 /**
  * Unifies event handling across browsers
  *

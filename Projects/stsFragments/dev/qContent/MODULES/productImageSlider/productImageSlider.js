@@ -40,15 +40,33 @@ $('.icon--slider-close').on('click',function () {
      owl.trigger('refresh.owl.carousel');
 })
 
+
+
+
+$('.productImageSlider__imageListFull').owlCarousel(
+        {
+            "items":1, 
+            "lazyLoad":false,
+            "autoplay":false,
+            "responsive":{
+                "responsiveRefreshRate":200
+            },
+            "dots":true,
+            "nav":true,
+            "center":true,
+            "itemElement":"li",
+            "navText":[lNav,rNav],
+            "dotsClass":"productImageSlider__dots",
+            "dotClass":"productImageSlider__dot notEdit"
+
+            
+        }
+    ); 
+
 $('.productImageSlider__dot').each(function(index,value){
-    console.log($(pImgs[index]).attr('src'),'BBBBBB');
+    
    $(value).css('backgroundImage','url('+$(pImgs[index]).attr('src')+')');  
 })
-
-
-
-
-
 
 
 

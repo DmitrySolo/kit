@@ -1,0 +1,59 @@
+
+$color__upButton-hover:cs('primary-d');
+$color__upButton:cs('primary');
+
+.upButton {
+    & span:before{
+        margin-right:vr-block(.4);
+        vertical-align: baseline;
+        @include for-size(tablet-l-up){
+            display:block;
+             margin-right:0;
+        }
+    }
+    &__ctn{
+        width: 100%;
+        position: absolute; 
+    }
+    z-index:100;
+    display:none;
+    position: fixed;
+    @include for-size(tablet-l-up){
+    
+         bottom: 350px;
+         top:inherit;
+         left: inherit;
+         right: 2px;
+         border-radius: 3px;
+         margin-top: vr-block(2);
+         border: solid 2px cs('primary');
+         	background: transparent;
+         	width: auto;
+         	 padding: vr-block(.4); 
+         	
+    }
+     @include for-size(big-desktop-up){
+         right:7.5%;
+     }
+   // padding: vr-block(.2) 0; 
+   top:0;
+   left:0;
+   right: 0; 
+   width:100%;
+	
+	
+
+	
+	//width: 20%;
+	color: $color__upButton;
+		&:hover, &:focus, &:active {
+		color: $color__upButton-hover;
+		 
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover, &:active {
+			outline: none;
+	}
+}

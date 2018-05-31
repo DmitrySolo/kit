@@ -153,7 +153,7 @@ function  qntTab(triggerObj,contentObj,activeTriggerClassName){
 
     if(triggerObj && contentObj && activeTriggerClassName){
         contentObj.not(":first").hide();
-        contentObj.filter(":first").addClass(activeTriggerClassName);
+        triggerObj.filter(":first").addClass(activeTriggerClassName);
         triggerObj.on('click',function(){
             contentObj.hide();
             triggerObj.removeClass(activeTriggerClassName);

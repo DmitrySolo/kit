@@ -1,0 +1,31 @@
+/**
+* smartBonus styles
+*/
+
+@mixin smartBonus(){
+
+       .smartBonus {
+          line-height:1.4; 
+          font-weight: bold;
+          font-size: .8rem;
+          color: cs('primary'); 
+          
+          color: cs('primary');
+          &__value{
+            //vertical-align: middle;
+            
+              color: cs('accent');
+             
+              margin-left: vr-block(.2);
+             //width: 1.7em; 
+              height:1.7em;
+              font-size:.9rem; 
+              border-radius:10%;
+             // padding:  vr-block(.1) vr-block(.4);
+          }
+      } 
+}
+
+
+////////////////////////////////////////
+@include smartBonus();

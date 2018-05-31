@@ -1,7 +1,8 @@
 /**
  * MODULE: accordion script
  */ 
-(function(){
+;  
+(function(){ 
     var acc = document.getElementsByClassName("accordion");
     var i;
     var switcher = $('#mobFilSwitcher');
@@ -18,7 +19,7 @@
             /* Toggle between adding and removing the "active" class,
             to highlight the button that controls the panel */
             this.classList.toggle("active");
-            // console.log()
+             console.log(75)
             /* Toggle between hiding and showing the active panel */
             var panel = this.nextElementSibling;
             if (panel.style.display === "block" || !this.classList.contains('active')) {
@@ -29,7 +30,7 @@
         });
     }
 
-    //checkboxCount
+   // checkboxCount
     var filterCheckArr = $('.productFilter__checkbox');
     var filterLink = $("<a class='productFilterRes__link icon-eye'></a>");
     filterCheckArr.each(function(){
@@ -39,7 +40,7 @@
         var display = (count == 0)? 'none':'inline-block';
        
         var target = sib.parent('.accordion__panel').prev('.accordion').addClass('accordion--choice').children('.accordion__checkMarker').css('display',display).html(count);
-        sib.parent('.accordion__panel').find('.productFilterRes__ctn').append(filterLink.text('Смотреть (5439)'));
+        sib.parent('.accordion__panel').find('.productFilterRes__ctn').append(filterLink.html('<img style="height:15px" src="/bitrix/templates/STS2/source/images/dotsLoader.svg" />'));
         if(count == 0) sib.parent('.accordion__panel').prev('.accordion').removeClass('accordion--choice');
            
     

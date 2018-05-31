@@ -1,4 +1,4 @@
 mixin B-marketButton(value,className)
 	-if (!className) className =''
-	button.marketButton(class=''+className data-qcontent='element__buttons__marketButton')=value
+		a.marketButton(href="/" class=''+className data-qcontent='element__buttons__marketButton')=value
 		//	+I('bomb','bomb')

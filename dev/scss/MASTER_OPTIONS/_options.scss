@@ -3,18 +3,18 @@ $switchers:(
     projectPrefix:'ta',
     response: true,
     vertical-rhythm: true,
-    linkFonts: true,
+    linkFonts: true, 
     assetsFonts: false,
     debug: false,
-    production: false,
+    production: false, 
     icon-font: false,
 );
 
 $linkFonts: true; // USE REMOTE FONTS
 $assetsFonts: false; // USE OWN FONTS
 $debug: true;
-$production: false;
-$icon-font: false;
+$production: false;   
+$icon-font: false; 
 @import "fontOption";
 
 // COLORS ///////////////////////////////////////////////

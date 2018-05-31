@@ -1,22 +1,38 @@
 .dashBoardElement{
-    vertical-align: top;
-    font-size:16px;   
+    vertical-align: middle;
+    font-size:16px; 
+    a{
+        text-decoration:none;
+        color: #fff;
+        font-weight: bold;
+        &:visited{
+            color: #fff;
+        font-weight: bold;
+        }
+    }
     //position: relative;
-    padding: 0;
-    border-bottom: 1px solid cs('font-d2');
+  &.dashBoardElement--active{  
+       background:  cs('background'); 
+     a{ color: cs('font-d2') !important;
+          
+      }  
+       &:hover{
+           background:cs('background');   
+       }
+   } 
     margin: 0;
-    border-bottom: 1px solid cs('font-d2');
+    @include for-size(tablet-l-up){
+        border-right: 1px solid cs('font-d2');
+        border-bottom: none;
+    }
+    border-bottom: 1px solid cs('font-d2'); 
     cursor: pointer;
     transition: background .15s linear;
     display: inline-block;
      width:100%;
-    @include for-size(tablet-l-up){
-       max-width: 19.62%;
-       margin-right:4px;
-       border:none;
-    }
+
     width: 100%;
-    height: 4em;
+    height: 3em; 
     background: cs('font-d');  
     color: #fff;
     display: inline-block;
@@ -29,7 +45,7 @@
         
     }
   .iconWrapper{
-      width:15%;
+      width:10%; 
       height: 100%;
       margin-right: 3%;
       @include for-size(phone-only){
@@ -38,22 +54,22 @@
       display: inline-block;
       vertical-align:middle;
       text-align:center;
-      //float:left;
+      //float:left; 
       @include for-size(tablet-p-up){
-            width:10%;
+            width:5%;
       }
             @include for-size(tablet-l-up){
             width:20%;
       }
       svg{
           fill: cs('accent');
-          width:70%;
+          width:80%;
           height :100%;
           @include for-size(tablet-p-up){
-              width:40%;
+              width:30%;
           }
           @include for-size(tablet-l-up){
-            width:70%;
+            width:40%;
       }
           
       }
@@ -87,22 +103,24 @@
             display:inline-block;
            //text-shadow: 1px 1px 0 #000;
             line-height:20px;
-            border-radius: 50%;
+            border-radius: 50%;  
            
         }
      }
   }
    &__title{  
+       font-size: .8em;
        vertical-align: middle;
         display:inline-block;
         width:75%;
-        line-height:3.2em;
+         text-align: left; 
+        //line-height:3.2em;
         &--oreder{
              width:initial;
         }
         @include for-size(tablet-l-up){
             line-height:$line_height_ratio;
-            text-align: center;
+            
             &--oreder{
                
             }
@@ -115,11 +133,9 @@
       }
     &__switcher {
       text-align:left;
+      padding-left:vr-block(.5);
       width:65%;
       float:left;
-      @include for-size(phone-only){
-          text-align: center;
-      }
     }
     &--notice{
         .iconWrapper{
@@ -128,8 +144,18 @@
         .iconWrapper:after{
             content: attr(data-notice);
             position: absolute;
-            top:0;
-            right:-5px;
+           @include for-size(tablet-l-up){
+                top:5% ;
+                left:12%;
+           }
+           left:80%;  
+           top:10%;
+            background: cs('font-d2');
+            display:block;
+            width: vr-block(1);
+            height: vr-block(1);
+            border-radius: 50%;
+            border:solid 1px #fff;
             color:cs('accent-l');
         }
     }

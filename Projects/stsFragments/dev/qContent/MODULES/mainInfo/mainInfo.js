@@ -14,3 +14,7 @@ $('#js-user-call').on('click',function(){
 
     $('#js_modall__call').removeClass('modalWindow--hide');
 });
+$('#js_modal_trigger__searchm').on('click',function(){  
+
+    $('#js_modall__searchm').removeClass('modalWindow--hide');
+});

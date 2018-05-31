@@ -1,0 +1,19 @@
+{
+  "LIBS": {
+	"countDown": {
+	  "js": {
+		"lib1": {
+		  "src": "node_modules/jquery-countdown/dist/jquery.countdown.min.js",
+		  "container": "footer/libs"
+		},
+		"init": {
+		  "src": "Projects/stsFragments/dev/qContent/COMPONENTS/countDown/countDown.js",
+		  "container": "footer/init/init"
+		}
+	  },
+	  "css": {
+		"": ""
+	  }
+	}
+  }
+}

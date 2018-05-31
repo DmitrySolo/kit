@@ -3,7 +3,15 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="307fa4d8-8847-4f23-9039-6d2c8623484f" name="Santehsmart (WEST Server)" url="http://santehsmart.ru">
-        <fileTransfer host="santehsmart.ru" port="22" rootFolder="/var/www/west/data/www/partner.santehsmart.ru" accessType="SFTP">
+        <fileTransfer host="santehsmart.ru" port="22" rootFolder="/var/www/west/data/www/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="728dd1cb-52e4-40b9-9d93-a7e1d95a9d79" name="stsbyroot" url="http://santehsmart.ru">
+        <fileTransfer host="santehsmart.ru" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

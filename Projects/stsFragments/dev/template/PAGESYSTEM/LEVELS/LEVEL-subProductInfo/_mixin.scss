@@ -3,7 +3,7 @@
 .subProductInfo {
     &__content {
         //background: cs('foreground');
-        border-bottom: solid 2px cs('background-d');
+       
     }
     &__title {  
 
@@ -22,6 +22,7 @@
             border-radius: 3px;
               padding: vr-block(.4);
             @include for-size(tablet-l-up){
+                color: #000;
                 margin-bottom:0;
                 border-radius:0;
                 text-decoration: underline;

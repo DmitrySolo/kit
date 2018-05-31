@@ -1,9 +1,21 @@
 {
 	"LIBS": {
-		"quant-lib": {
+		"quant-debug": {
 			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+				"quant-debug-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "node_modules/jquery-ui/custom/jquery-ui.min.js",
+					"container": "footer/libs+"
+				},
+				"vieport": {
+					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
+					"container": "footer/libs+"
+				},
+				"viewportResizer": {
+					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
 					"container": "footer/libs+"
 				}
 			},
@@ -27,6 +39,73 @@
 				"quant-debug-JsonCss-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
 					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-HUD-script": {
+			"js": {
+				"quant-HUD-script-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-HUD-script/quant-HUD-script.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
+					"container": "footer/libs+"
+				},
+				"AXE": {
+					"src": "node_modules/axe-core/axe.min.js",
+					"container": "footer/libs+"
+				},
+				"holder": {
+					"src": "node_modules/holderjs/holder.min.js",
+					"container": "head/top"
+				}
+			},
+			"css": {
+				"uicss": {
+					"src": "node_modules/jquery-ui-dist/jquery-ui.min.css",
+					"container": "head/libs"
+				}
+			}
+		},
+		"quant-lib": {
+			"js": {
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"countDown": {
+			"js": {
+				"lib1": {
+					"src": "node_modules/jquery-countdown/dist/jquery.countdown.min.js",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/COMPONENTS/countDown/countDown.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"coupon": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/COMPONENTS/coupon/coupon.js",
+					"container": "footer/init/init"
 				}
 			},
 			"css": {
@@ -93,6 +172,21 @@
 				"": ""
 			}
 		},
+		"innerCoupon": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/innerCoupon/innerCoupon.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"mainInfo2": {
 			"js": {
 				"lib1": {
@@ -101,6 +195,21 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/MODULES/mainInfo/mainInfo.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"mainSearch": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/mainSearch/mainSearch.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -264,6 +373,21 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/toOrder/toOrder.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"upButton": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/upButton/upButton.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -568,10 +692,78 @@
 			"dop_class": "",
 			"layout": "noSidebar",
 			"group": ""
+		},
+		"13": {
+			"title": "text",
+			"slug": "text",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "noSidebar",
+			"group": ""
+		},
+		"14": {
+			"title": "delivery",
+			"slug": "delivery",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "",
+			"group": ""
+		},
+		"15": {
+			"title": "Способы и условия доставки и самовывоза",
+			"slug": "delivery1",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "noSidebar",
+			"group": ""
+		},
+		"16": {
+			"title": "Способы оплаты",
+			"slug": "payment",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "noSidebar",
+			"group": ""
+		},
+		"17": {
+			"title": "CENTURION",
+			"slug": "centurio",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "standart",
+			"group": ""
+		},
+		"18": {
+			"title": "vip",
+			"slug": "vip",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "noSidebar",
+			"group": ""
+		},
+		"19": {
+			"title": "tableP",
+			"slug": "tableP",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "default",
+			"group": ""
 		}
+	},
+	"countDown": {
+		"countDown": "1"
+	},
+	"coupon": {
+		"coupon": "1"
+	},
+	"deliveryArticle": {
+		"deliveryArticle": "1"
 	},
 	"footer": {
 		"footer": "1"
+	},
+	"priceAndStock": {
+		"priceAndStock": "1"
 	},
 	"productInline": {
 		"productInline": "1",
@@ -582,8 +774,14 @@
 		"sale": "true",
 		"superSale": "true"
 	},
-	"priceAndStock": {
-		"priceAndStock": "1"
+	"sameCatProducts": {
+		"sameCatProducts": "1"
+	},
+	"smartBonus": {
+		"smartBonus": "1"
+	},
+	"subscribeSts": {
+		"subscribeSts": "1"
 	},
 	"accordion": {
 		"filter": {
@@ -628,11 +826,11 @@
 			}
 		}
 	},
+	"bottomFeatures": {
+		"bottomFeatures": "1"
+	},
 	"breadcrumbs": {
 		"1": "22"
-	},
-	"cartPage": {
-		"cartPage": "1"
 	},
 	"cart": {
 		"cart": "1"
@@ -641,11 +839,20 @@
 		"cartProduct": "1",
 		"title": {}
 	},
+	"cartPage": {
+		"cartPage": "1"
+	},
 	"catalog": {
 		"catalog": "1"
 	},
 	"catalogList": {
 		"catalogList": "1"
+	},
+	"CENTURION": {
+		"CENTURION": "1"
+	},
+	"centurioResult": {
+		"centurioResult": "1"
 	},
 	"confirmedOrderPage": {
 		"confirmedOrderPage": "1"
@@ -662,11 +869,14 @@
 	"flyPageFragment": {
 		"title": "Test Page"
 	},
-	"geoTarget": {
-		"geoTarget": "1"
-	},
 	"IBGrid": {
 		"IBGrid": "1"
+	},
+	"innerCoupon": {
+		"innerCoupon": "1"
+	},
+	"geoTarget": {
+		"geoTarget": "1"
 	},
 	"layout": {
 		"layout": "1"
@@ -701,14 +911,11 @@
 	"productCatInline": {
 		"productCatInline": "1"
 	},
-	"productChar": {
-		"productChar": "1"
-	},
 	"productCol": {
 		"productCol": "1"
 	},
-	"productImageSlider": {
-		"productImageSlider": "1"
+	"productChar": {
+		"productChar": "1"
 	},
 	"productInline1": {
 		"sku": "325335",
@@ -750,14 +957,23 @@
 		"price": "11 000",
 		"stock": "8"
 	},
+	"productImageSlider": {
+		"productImageSlider": "1"
+	},
 	"reactTest": {
 		"reactTest": "1"
 	},
-	"swe": {
-		"swe": "1"
+	"sts-coupon": {
+		"sts-coupon": "1"
 	},
 	"support": {
 		"support": "1"
+	},
+	"tableP": {
+		"tableP": "1"
+	},
+	"swe": {
+		"swe": "1"
 	},
 	"topBar": {
 		"topBar": "1"
@@ -767,6 +983,9 @@
 	},
 	"topMenu": {
 		"topMenu": "1"
+	},
+	"vipChallenge": {
+		"vipChallenge": "1"
 	},
 	"inner": {
 		"title": {}
@@ -779,10 +998,10 @@
 	"newtest": {
 		"title": {}
 	},
-	"outer": {
+	"page": {
 		"title": {}
 	},
-	"page": {
+	"outer": {
 		"title": {}
 	},
 	"popup": {

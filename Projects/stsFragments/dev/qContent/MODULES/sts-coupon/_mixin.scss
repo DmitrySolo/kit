@@ -1,0 +1,17 @@
+/**
+* sts-coupon styles
+*/
+
+@mixin sts-coupon(){
+
+  .sts-coupon {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include sts-coupon();

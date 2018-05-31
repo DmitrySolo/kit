@@ -1,3 +1,3 @@
 /**
-* MODULE: mainSearch script
-*/
+ * MODULE: mainSearch script
+ */

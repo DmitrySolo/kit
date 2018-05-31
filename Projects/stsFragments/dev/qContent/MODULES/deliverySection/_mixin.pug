@@ -3,19 +3,59 @@ mixin MODULE-deliverySection()
 	.deliverySection__content(data-qcontent='module__deliverySection')
 		h5.deliverySection__title Доставка в город 
 			a.geoTarget__link.js_modal_trigger(href='df' id = 'js_modal_trigger__geo') Воронеж:
-		.deliverySection__type
-			dl.deliverySection__to
-				dt До пункта Выдачи:
-				dd 300р 2-3 дня
-			a.deliverySection__pointsLink Пункты выдачи 
-		.deliverySection__type
-			dl.deliverySection__to
-				dt Курьерская доставка:
-				dd 500р 2-3 дня
-		.deliverySection__type
-			dl.deliverySection__to
-				dt Можно забрать:
-				dd Сегодня из офиса
-			
+		ul.deliverySection__type
+			li.deliverySection__to
+				h6.deliverySection__subHeader
+					+I('flag')
+					span Самовывоз из офиса
+				dl
+					dt Стоимость:
+					dd 
+						span.free Бесплатно
+				dl
+					dt Когда: 
+					dd  Уже сегодня до 18:00
+				dl
+					dt Адрес:
+					dd
+						ul
+							li 
+								a(href="/") гВоронеж ул Донбасская 21 
+			li.deliverySection__to
+				h6.deliverySection__subHeader  
+					+I('p-marker')
+					span Самовывоз из пункта выдачи
+				dl
+					dt Стоимость:
+					dd 
+						span.free Бесплатно
+						
+				dl
+					dt Когда: 
+					dd 1-2 дня
+						
+				dl
+					dt Адреса:
+					dd
+						ul
+							li 
+								a(href="/") гВоронеж ул Донбасская 21
+							li 
+								a(href="/") г. Воронеж, ул. Ленинградская, д.55а
+							li.deliverySection__more 
+								+A-actionLink('еще 14')
+			li.deliverySection__to
+							h6.deliverySection__subHeader
+								+I('truck-del')
+								span  Курьерская доставка
+							dl
+								dt Стоимость: 
+								dd 1700р
+									
+							dl
+								dt Когда: 
+								dd 
+									span 1-2 дня
+							
 			
 			

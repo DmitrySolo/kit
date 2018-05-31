@@ -4,12 +4,12 @@ mixin C-productInline(data,type)
 			.group.group--md.group--va-middle 
 				if(type != 'search')
 					.col.col-2-tp
-						a.productInline__link(href='#')
-							+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
+							a.productInline__link(href='#')
+								+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
 				else 
 					.col.col-3-tp
 						a.productInline__link(href='#')
-							+vertical_centered_image('https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg','productInline__section--img')
+							.productInline__section--img(style="background-image:url(https://santehsmart.ru/upload/iblock/4c6/4c6cab2c253fe3605d49a01b0b45aaeb.jpg)")
 				if(type != 'search')
 					.col.col-4-tp
 						+B-productBadge('Распродажа','sale')
@@ -38,7 +38,8 @@ mixin C-productInline(data,type)
 						+B-delete()
 				if(type=='cat')
 					.col.col-2-tp
-						+B-toOrder('В корзину') 
+						+B-toOrder('В корзину')
+						+In-compareButton('В сравнение','checkBox--compare','compare')  
 					.col.col-12-tp
 						+MODULE-productChar()  
 				if block 

@@ -1,6 +1,15 @@
 /* productInfo STYLE */
 
+.block--inner{
+    border-bottom: solid 4px #dadada;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
 .productInfo {
+    .smartBonus{
+         //text-align: center;
+        padding:vr-block(.4) 0; 
+    }
     .toOrder{
         width:80%;
         margin: vr-block(.4) auto vr-block(.1);
@@ -16,26 +25,26 @@
             display: inline-block;
             line-height: 1.7;
         }
-        .productBadge{
+        .productBadge{ 
             @include for-size(phone-only){
-                margin:0 auto;  
+                margin:0 auto;
                 display: block;
                 width: 40%;
                 margin-bottom: vr-block(.4);
-                
+
             }
         }
         background:#fff;
         position: relative;
-        padding-bottom:1rem;
+       // padding-bottom:1rem; 
         margin-bottom:1rem;
-        border-bottom: solid 2px cs('background-d');
+        
         .productCol__price{
              display: inline-block;
              width: 100%;
              font-size: 2.8rem;
              text-align: left;
-             
+
              @include for-size(phone-only){
                  text-align: center;
              }
@@ -54,10 +63,26 @@
                  text-align: center;
              }
         }
-        
+
     }
     &__section{
+        padding-bottom: vr-block(1);
         padding-top: vr-block(1);
+        
+        @include for-size(tablet-l-up){
+             padding-right: vr-block(0);
+        padding-left: vr-block(0);
+        }
+        
+        &--delivery{
+            @include for-size(tablet-p-up){
+            border-left: 1px solid cs('background-d');
+        }
+            @include for-size(tablet-l-up){
+                     
+                        padding-left: vr-block(1); 
+           } 
+        }
     }
     &__title {
 
@@ -67,14 +92,14 @@
         .priceAndStock{
             text-align: center;
         }
-        
-        
+
+
     }
       .productLogo {
       position:absolute;
       z-index: 1;
-      left:0;  
-      top:-2rem;  
+      left:0;
+      top:-2rem;
       background: cs('foreground');
       width: 9rem;
       height: 4.5rem;
@@ -83,7 +108,6 @@
           height:3rem;
       }
       padding: vr-block(.4);
-      border: solid 2px cs('background-d'); 
       box-shadow: 4px 4px silver;
         &>IMG{
             position: absolute;
@@ -92,10 +116,10 @@
             top:0;
             bottom:0;
             left:0;
-            right:0;
-            
+            right:0; 
+
         }
-        
-      
-  } 
+
+
+  }
 }

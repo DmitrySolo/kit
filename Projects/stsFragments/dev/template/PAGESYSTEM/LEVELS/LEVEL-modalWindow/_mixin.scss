@@ -62,4 +62,30 @@
         width: 1.4em;
         height: 1.4em;
     }
+    &--searchm{
+        
+        .modalWindow__content{
+            height: 100px;  
+        }
+    }
+    .contactUs{
+        display: block;
+        padding: vr-block(.8);
+        border: solid 1px cs('background-d');
+        border-radius: 3px;
+        margin-bottom: vr-block(.2); 
+        &:hover{
+            border-color: cs('primary');
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
 }

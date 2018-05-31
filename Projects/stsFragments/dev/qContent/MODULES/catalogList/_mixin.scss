@@ -3,7 +3,24 @@
 */
 
 @mixin catalogList(){
-
+    
+    
+    #js_showSub__14:before{
+                content: 'new';
+                font-size: .8em;  
+                padding: vr-block(.2);
+                color:#fff;
+                background:cs('succes-l');
+                text-shadow: 0 1px 1px #000; 
+                border-radius: 3px;
+                margin-right: vr-block(.4); 
+            }
+    
+    
+    
+    .sub__item{
+        margin-bottom: vr-block(.6); 
+    }
    .catalogList__categoryList.catalogList--onMain{
        dispalay: none;
        @include for-size(tablet-l-up){  
@@ -13,17 +30,22 @@
             
            
         } 
+        
+
+        
+        
+        
   .catalogList {
+     
     &__outerWrapper{  
         position:relative;  
         width:100%;
-        
+
     }
     
     &__outer{
         display:none;  
-        opacity:0;    
-        transition: opacity 2s ease; 
+   
         position:fixed;
        top:0;
         left:0;
@@ -76,6 +98,22 @@
        } 
     }
     &__categoryItem { 
+        width: 100%;
+        display:inline-block;
+        text-decoration:none;
+        color:#000;
+              
+        &:nth-last-child(2) a{
+            &:before{
+                content: 'new';
+                font-size: .8em;
+                padding: vr-block(.2);
+                color:#fff;
+                background:cs('succes-l');
+                text-shadow: 0 1px 1px #000;
+                border-radius: 3px;
+            }
+        }
         
         .catalogList--onMain &{  
             width: 100%;
@@ -88,7 +126,7 @@
         font-weight: bold;
         position:relative;
         text-transform: uppercase;  
-        padding:.4em 0 .4em .4em;
+        padding:.4em 0 .4em 2em;
         border-bottom:solid 1px lighten(cs('font-l2'),30%);
         &--hovered{
             background: cs('primary-l');
@@ -106,7 +144,7 @@
             fill: #fff;
         } 
         @include for-size(tablet-p-up){
-            font-size: .9rem;
+            font-size: .8rem;
         }
     }
     &__categoryList{
@@ -114,6 +152,10 @@
         display: none;
         width: 100%;
         z-index: 2;  
+                     
+          
+        
+
     }
     &__categorySublist{
         
@@ -133,7 +175,7 @@
         position: absolute;    
         top:0; 
         width:100%;  
-        min-height: 400px;  
+        min-height: 600px;   
         background: cs('foreground'); 
          padding: 1.6em 2.4em; 
          

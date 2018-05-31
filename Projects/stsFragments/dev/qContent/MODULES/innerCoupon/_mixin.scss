@@ -1,0 +1,62 @@
+/**
+* innerCoupon styles
+*/
+
+@mixin innerCoupon(){
+
+  .innerCoupon {
+      .countDown{
+          text-align: center;
+          font-size: 1.2rem;
+      }
+      .countDown__header{
+          color: cs('primary');
+          margin-bottom: vr-block(.2);
+      }
+      &.xl{
+          font-size: 1rem;
+      }
+       &.sm{
+          font-size: .8rem;
+      }
+         &.xs{
+          font-size: .6rem;
+      }
+   padding: vr-block(.8);
+   //background: cs('primary');
+   //background: linear-gradient(-45deg, cs('primary-l'),cs('primary'));
+   border: dashed 3px cs('primary');
+   border-radius: 6px;
+   margin: vr-block(.2) 0 vr-block(.4);
+    color: cs('primary');
+    &__desc{
+        font-weight: bold;
+        font-size: 1.4em;
+    }
+    &__subDesc{
+        font-weight: bold;
+    }
+   
+    &__value{
+        font-weight: bold; 
+        font-size: 3em;
+        color: #fff;
+        background: cs('accent');  
+        border-radius: 3px;
+        padding: 0 vr-block(.1);
+        margin-right: vr-block(.1);  
+       
+    }
+    &__title{
+        font-weight: bold;
+        font-size: 1.6em;
+        color: cs('accent');
+        border-bottom: dashed 2px;
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include innerCoupon();

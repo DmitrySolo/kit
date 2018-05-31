@@ -1,0 +1,54 @@
+/**
+* centurioResult styles
+*/
+
+@mixin centurioResult(){
+
+  .centurioResult {
+    &__content {
+        background-color: #fff;
+        ul{
+            padding:0;
+            margin:0;
+        } 
+        ul li{
+             padding: vr-block(.4)  0;
+             font-size: .8rem;
+             margin:0;
+        }
+    }
+    .brandList{
+        text-align:right;
+        font-weight:bold;
+        color: cs('primary');
+        border-bottom: solid 2px cs('primary-l');
+        &__item{
+            text-align:center;
+        }
+    } 
+
+  } 
+      .siteList{
+        &__item{ 
+            padding: vr-block(.4)  vr-block(.8);
+            background-color: cs('primary');
+            color: #fff;
+            text-align: center;
+        }
+    }
+    .resultList{
+    
+            &:nth-child(even){
+                background-color: lighten(cs('primary-l2'),50%); 
+            }
+            &__item{
+                text-align: center; 
+            }
+        
+    }
+
+}
+
+
+////////////////////////////////////////
+@include centurioResult();

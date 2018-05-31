@@ -2,8 +2,8 @@ $bkgColor__delete:#fff;
 $bkgColor__delete-hover: cs('background-d');
 $color__delete-hover: cs('font-d');
 $color__delete: cs('font-');
-.delete {
-	//position: relative;
+.delete,.compare {
+	display:inline-block; 
 	margin: 0;
 	padding:vr-block(.15);
 	border: solid 1px cs('background-d');

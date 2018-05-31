@@ -8,6 +8,7 @@ var cache = require('gulp-cache');
 var notify = require("gulp-notify");
 var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
+const cssnano = require('gulp-cssnano');
 const template = require('gulp-template');
 var convert = require('convert-source-map');
 const zip = require('gulp-zip');
@@ -16,7 +17,7 @@ var css = require('css');
 const cssScss = require('gulp-css-scss');
 var merge = require('gulp-merge-json');
 var data = require('./data.json');
-
+const uglify = require('gulp-uglify');
 var Vinyl = require('vinyl');
 var shell = require('gulp-shell');
 var sassJson = require('gulp-sass-json');
@@ -91,14 +92,14 @@ var dist = 'Projects/' + projectName + '/dist';
 
 ////PATH
 var pathToProj ={
-	win:'C:\\Users\\Dmitry Soloshenko\\Desktop\\git\\kit\\Projects\\'+projectName,
+	win:'C:\\QUANT\\kit\\Projects\\stsFragments',
 	mac:'~/Desktop/QV2/kit/Projects/'+projectName
 }
 var pathObj = {
 
 
 	downloads:{
-		win:'Explorer.exe C:\\Users\\Dmitry Soloshenko\\Downloads',
+		win:'Explorer.exe C:\\Users\\disol\\Downloads',
 		mac:`open ~/Downloads`
 	},
 	svgs:{
@@ -500,7 +501,7 @@ gulp.task('STYLES-1-LEVELS', function () {
 //SCRIPTS
 gulp.task('SCRIPTS-FINAL', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-	return watch(['dev/**/*.js','!dev/**/quant-debug-JsonCss.js',projectDevDir+'qContent/**/*.js',projectDevDir+'template/PAGESYSTEM/LEVELS/**/*.js']
+	return watch(['dev/**/*.js','!dev/**/--quant-debug-JsonCss.js',projectDevDir+'qContent/**/*.js',projectDevDir+'template/PAGESYSTEM/LEVELS/**/*.js']
 		, function () {
 			gulp.start('SCRIPTS');
 		});
@@ -1081,6 +1082,8 @@ gulp.task('tests', [], function () {
 	}
 )
 
+
+
 gulp.task('dist-module', [], function () {
 	var str = "include ../../../template/PAGESYSTEM/INCLUDES/_includes\n";
 	gulp.src('dev/MODULES/PROJECT MODULES/--' + options.name + '/_include.pug').pipe(insert.prepend(str))
@@ -1094,6 +1097,23 @@ gulp.task('dist-module', [], function () {
 			html: [dest]
 		}))
 		.pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--' + options.name + '/DIST/'));
+
+});
+
+gulp.task('Dist-module', [], function () {
+	console.log(projectName);
+    var str = "include ../../../template/PAGESYSTEM/INCLUDES/_includes.pug\n";
+    gulp.src('Projects/'+projectName+'/dev/qContent/MODULES/'+options.name+'/_include.pug').pipe(insert.prepend(str))
+        .pipe(pug({
+            data: data,
+            pretty: true,
+        })).pipe(gulp.dest('Projects/'+projectName+'/production/modules/'+options.name));
+		var dest = 'Projects/'+projectName+'/production/modules/'+ options.name +'/_include.html'
+		gulp.src(dist + '/main.css')
+			.pipe(uncss({
+				html: [dest]
+			})).pipe(cssnano())
+			.pipe(gulp.dest('Projects/'+projectName+'/production/modules/'+ options.name +'/'));
 
 });
 
@@ -1429,7 +1449,7 @@ gulp.task('svgstore', function () {
 				}]
 			}
 		}))
-		.pipe(svgstore())
+		.pipe(svgstore({inlineSvg: true}))
 		.pipe(rename('SVGSpriteIcons.html'))
 		.pipe(gulp.dest(dist + '/source/icons/'));
 });
@@ -1469,28 +1489,80 @@ gulp.task('u-h2p', function () {
 		.pipe(gulp.dest('utilities/htmlToPug/pr'));
 });
 gulp.task('deploycss', function () {
-	return gulp.src(dist + '/main.css')
-		.pipe(rename('template_styles.css'))
-		.pipe(sftp({
-			host: 'santehsmart.ru',
-			user: 'west',
-			pass: '5D2g4U9c',
-			remotePath: '/var/www/west/data/www/partner.santehsmart.ru/bitrix/templates/STS2/'
-		}));
-});
-gulp.task('deployjs', function () {
-    return gulp.src(dist + '/scripts/init.js')
+    return gulp.src(dist + '/main.css')
+        .pipe(cssnano())
+        .pipe(rename('template_styles.css'))
         .pipe(sftp({
             host: 'santehsmart.ru',
             user: 'west',
             pass: '5D2g4U9c',
-            remotePath: '/var/www/west/data/www/partner.santehsmart.ru/bitrix/templates/STS2/scripts/'
+            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2/'
+        }));
+});
+gulp.task('deploySVGsprite', function () {
+    return gulp.src(dist + '/source/icons/SVGSpriteIcons.html')
+        .pipe(rename('SVGSpriteIcons.php'))
+        .pipe(sftp({
+            host: 'santehsmart.ru',
+            user: 'west',
+            pass: '5D2g4U9c',
+            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2/'
+        }));
+});
+gulp.task('deploySVGsprite-main', function () {
+    return gulp.src(dist + '/source/icons/SVGSpriteIcons.html')
+        .pipe(rename('SVGSpriteIcons.php'))
+        .pipe(sftp({
+            host: 'santehsmart.ru',
+            user: 'west',
+            pass: '5D2g4U9c',
+            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/'
+        }));
+});
+gulp.task('deploycss-main', function () {
+    return gulp.src(dist + '/main.css')
+        .pipe(cssnano())
+        .pipe(rename('template_styles.css'))
+        .pipe(sftp({
+            host: 'santehsmart.ru',
+            user: 'west',
+            pass: '5D2g4U9c',
+            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/'
+        }));
+});
+gulp.task('deployjs', function () {
+    return gulp.src(dist + '/scripts/init.js')
+        .pipe(uglify())
+        .pipe(sftp({
+            host: 'santehsmart.ru',
+            user: 'west',
+            pass: '5D2g4U9c',
+            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2/scripts/'
+        }));
+});
+gulp.task('deployjs-main', function () {
+    return gulp.src(dist + '/scripts/init.js')
+        .pipe(uglify())
+        .pipe(sftp({
+            host: 'santehsmart.ru',
+            user: 'west',
+            pass: '5D2g4U9c',
+            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/scripts/'
         }));
 });
 	gulp.task('deploycssToFR', function () {
 		return gulp.src(dist + '/main.css')
 			.pipe(rename('template_styles.css'))
 			.pipe(gulp.dest(dist));})
+
+
+
+//DEPLOY
+gulp.task('DEPLOY', [ 'deployjs-main', 'deployjs', 'deploycss', 'deploycss-main','deploySVGsprite-main','deploySVGsprite']);
+
+
+
+
 // ICON FONT
 
 var fontName = 'Icons';
@@ -1522,7 +1594,7 @@ gulp.task('[D] DIST FRONT-END', function (done) {
 
 gulp.task('parc1', function () {
 	var ast = css.parse(file = fs.readFileSync(dist + '/main.css', "utf8"));
-	fs.writeFileSync(dist + "/scripts/quant-debug-JsonCss.js", 'var jsonCss = ' + JSON.stringify(ast));
+	fs.writeFileSync(dist + "/scripts/--quant-debug-JsonCss.js", 'var jsonCss = ' + JSON.stringify(ast));
 
 });
 gulp.task('cocs', function () {
@@ -2752,3 +2824,20 @@ function setContentSnippet(editor,type,name) {
 		});
 	});
 }
+//////////////////////////insi///////////////////////MIN
+gulp.task('minsvg', function () {
+    return gulp.src('utilities/minify/svg/*.svg')
+        .pipe(svgmin())
+        .pipe(gulp.dest('utilities/minify/_results/svg/'));
+});
+
+gulp.task('cssDistPrepare', function () {
+    return gulp.src('utilities/minify/css/*.css')
+        .pipe(cssnano())
+        .pipe(gulp.dest('utilities/minify/_results/css/'));
+});
+gulp.task('jsDistPrepare', function () {
+    return gulp.src('utilities/minify/js/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('utilities/minify/_results/js/'));
+});

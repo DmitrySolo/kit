@@ -1,0 +1,46 @@
+/**
+* deliveryArticle styles
+*/
+
+@mixin deliveryArticle(){
+
+  .deliveryArticle {
+      .col:nth-child(2){
+          border-left: 1px solid cs('background');
+          border-right: 1px solid cs('background'); 
+      }
+      strong{
+          color: cs('primary-l');
+      }
+      li{
+          list-style: disc;
+          color: cs('primary');
+      }
+      h5 {
+          text-align: center;
+          position: relative;
+           line-height: 1.7;
+           span{
+               display: inline-block;
+               width: vr-block(1);
+               height: vr-block(1);
+               line-height:1.7;
+               color: #fff;
+               text-align: center;
+               background: cs('accent');
+               border-radius: 50%; 
+               margin-right: vr-block(.4);
+           }
+      }
+      margin-top: vr-block(1);
+    .ta{
+        text-align: center;
+        
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include deliveryArticle();

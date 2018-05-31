@@ -1,0 +1,22 @@
+mixin C-coupon(type)
+	-if(type == 'bottom')
+		.coupon.bounce.animated(data-qcontent='component__coupon' class = ' coupon--'+type )
+			span.coupon__closer 
+				+I('close','couponClose') 
+			+I('coupon','couponStar')
+			h6.coupon__title  
+				span.coupon__value 10%  
+				| ПРОМОКОД
+			+I('coupon','couponStar')  
+			.coupon__content 
+				p.text  До 12 марта! #[br] Дополнительная праздничная скидка #[br]
+					span.coupon__value 10% по промокоду: #[br]
+					span.coupon__id 2546-5367#[br]
+			+C-countDown('coupon--bottom','До конца действия акции осталось')
+			p.text.coupon__advices 
+				| Воспользуйтесь купоном, введя его номер в соответствующее поле на странице корзины.
+				
+			p.coupon__ps
+				
+				
+			

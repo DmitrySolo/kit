@@ -1,9 +1,9 @@
 mixin LEVEL-page(title)
-		.page(class = 'page--'+page.slug)
+		.page(class = 'page--'+page.slug +' page--'+page.className)
 			.page__content(class = 'page__content'+ className data-qcontent="level__page")
 				-if(page.slug != 'main')
 					.group
 						.col.col-12-tl
-							h1.page__title=title    
+							h1.page__title=title        
 				if block
 					block

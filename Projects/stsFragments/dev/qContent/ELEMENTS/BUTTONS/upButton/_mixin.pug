@@ -1,0 +1,5 @@
+mixin B-upButton(value,className)
+	-if (!className) className =''
+	div.upButton__ctn
+		button.upButton(id='js-up' class=''+className data-qcontent='element__buttons__upButton')=value
+			span.icon-to-up Наверх

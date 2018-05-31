@@ -1,0 +1,17 @@
+/**
+* tableP styles
+*/
+
+@mixin tableP(){
+
+  .tableP {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include tableP();

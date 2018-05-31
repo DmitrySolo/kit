@@ -1,0 +1,8 @@
+mixin In-compareButton(label,className,icon)
+	-if (!className) className =''
+	.checkBox.col.col-12-tl.col-6-tp.col-6-m(class=''+className data-qcontent='element__buttons__checkBox')
+		label.checkBox__label(type='checkbox',for="id_"+label)
+			-if(icon)
+				+I(icon) 
+			input.checkBox__input.productFilter__checkbox(type='checkbox',id="id_"+label)
+			| #{label}

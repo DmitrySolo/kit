@@ -20,14 +20,16 @@
         $('.catalog__by--brand').removeClass('catalog__by--hovered');
          console.log(triggreredBy)
         console.log('hide');
-        categories.style.display = 'none';
-        categories.style.opacity = '0'; 
+        if(!$(categories).hasClass('catalogList--onMain')){
+            categories.style.display = 'none';
+            categories.style.opacity = '0'; 
+        }
+        
         brands.style.display = 'none';
         brands.style.opacity = '0';
         if(catShadow){
            
-            catShadow.style.display = 'none';
-             catShadow.style.opacity = '0';  
+             catShadow.style.display = 'none';
         }
          
     };
@@ -42,11 +44,9 @@
         catHeader[i].addEventListener('mouseover',function (e) { 
             if( ! $(this).hasClass('catalog__by--category') &&
             $('.catalogList__content').hasClass('catalogList--onMain')){
-                catShadow.style.display = 'block';
-                catShadow.style.opacity = '1';
+                $(catShadow).fadeIn(300);
             }else if(!$('.catalogList__content').hasClass('catalogList--onMain')){
-                catShadow.style.display = 'block';
-                catShadow.style.opacity = '1';
+                $(catShadow).fadeIn(300);
             }
             
         });
@@ -62,8 +62,10 @@
     }
     
     brandChoiser.addEventListener('mouseover',function (e) {
-        categories.style.display = 'none';
-        categories.style.opacity = '0';
+        if(!$(categories).hasClass('catalogList--onMain')){
+            categories.style.display = 'none';
+            categories.style.opacity = '0'; 
+        }
         this.classList.add('catalog__by--hovered');
         catChoiser.classList.remove('catalog__by--hovered');
         brands.style.display = 'block';
@@ -135,9 +137,8 @@
         
 		selectorsArr[i].addEventListener('mouseenter',function (e) {
 			var _this = this;
-			catShadow.style.display = 'block';
-            catShadow.style.opacity = '1';
-         console.log('dffs!!@');
+			 $(catShadow).fadeIn(300);
+        
 		    gogo = setTimeout(function(){
 
 				    var showNum = _this.getAttribute('id').split('__')[1];

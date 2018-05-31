@@ -1,20 +1,22 @@
 mixin LEVEL-productInfo(data)
 	.productInfo
-		.productInfo__content(class = 'productInfo__content'+ className data-qcontent="level__productInfo")
+		.productInfo__content.block--inner(class = 'productInfo__content'+ className data-qcontent="level__productInfo")
 			.productMain
 				.group.group--md
 					.col.col-5-tl
 						+MODULE-productImageSlider()
 					.col.col-3-tl.col-6-tp
 						.productInfo__section
-							+B-productBadge('Новинка','new')
+							+MODULE-innerCoupon('product')
+							+B-productBadge('Новинка','new')  
 							.productInfo__priceStock
 								+C-priceAndStock('part')
+							+C-smartBonus()
 							+B-toOrder('В корзину')
 							+B-button('Оформить без регистрации','fastBuy')
 							+MODULE-productChar()
 					.col.col-4-tl.col-6-tp
-						.productInfo__section
+						.productInfo__section.productInfo__section--delivery
 							+MODULE-deliverySection()
 						
 			.productLogo

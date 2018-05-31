@@ -2,7 +2,6 @@
   font-family: "Icons";
   src: url('fonts/icons/Icons.eot');
   src: url('fonts/icons/Icons.eot?#iefix') format('eot'),
-  url('fonts/icons/Icons.woff2') format('woff2'),
   url('fonts/icons/Icons.woff') format('woff'),
   url('fonts/icons/Icons.ttf') format('truetype'),
   url('fonts/icons/Icons.svg#Icons') format('svg');
@@ -21,53 +20,65 @@
 }
 
 %icon {
-  @include icon-styles;
+  @include icon-styles; 
 }
 
 @function icon-char($filename) {
   $char: "";
 
-  @if $filename == clock {
+  @if $filename == cellphone {
   $char: "\E001";
 }
-  @if $filename == clock1 {
+  @if $filename == clock {
   $char: "\E002";
 }
-  @if $filename == down {
+  @if $filename == clock1 {
   $char: "\E003";
 }
-  @if $filename == eye {
+  @if $filename == cu_telegram {
   $char: "\E004";
 }
-  @if $filename == left {
+  @if $filename == down {
   $char: "\E005";
 }
-  @if $filename == locked {
+  @if $filename == email {
   $char: "\E006";
 }
-  @if $filename == login {
+  @if $filename == eye {
   $char: "\E007";
 }
-  @if $filename == padlock {
+  @if $filename == left {
   $char: "\E008";
 }
-  @if $filename == placeholder {
+  @if $filename == locked {
   $char: "\E009";
 }
-  @if $filename == right {
+  @if $filename == login {
   $char: "\E00A";
 }
-  @if $filename == ruble {
+  @if $filename == padlock {
   $char: "\E00B";
 }
-  @if $filename == tick {
+  @if $filename == placeholder {
   $char: "\E00C";
 }
-  @if $filename == to-left {
+  @if $filename == right {
   $char: "\E00D";
 }
-  @if $filename == to-right {
+  @if $filename == ruble {
   $char: "\E00E";
+}
+  @if $filename == tick {
+  $char: "\E00F";
+}
+  @if $filename == to-left {
+  $char: "\E010";
+}
+  @if $filename == to-right {
+  $char: "\E011";
+}
+  @if $filename == to-up {
+  $char: "\E012";
 }
 
 @return $char;
@@ -84,14 +95,23 @@
 }
 }
 
+.icon-cellphone {
+  @include icon(cellphone);
+}
 .icon-clock {
   @include icon(clock);
 }
 .icon-clock1 {
   @include icon(clock1);
 }
+.icon-cu_telegram {
+  @include icon(cu_telegram);
+}
 .icon-down {
   @include icon(down);
+}
+.icon-email {
+  @include icon(email);
 }
 .icon-eye {
   @include icon(eye);
@@ -126,4 +146,7 @@
 .icon-to-right {
   @include icon(to-right);
 }
-
+.icon-to-up {
+  @include icon(to-up);
+}
+

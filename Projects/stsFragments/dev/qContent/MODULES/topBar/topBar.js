@@ -13,6 +13,11 @@ window.onscroll = function(e){
     if(scrolled > 126){
         header.style.height = headerHeight+'px';
         topBar.classList.add('topBar--fixed');
+        if(scrolled > 1900){
+            $("#js-up").css('display','block');
+        }else{
+            $("#js-up").css('display','none');
+        }
         
     }else{
          topBar.classList.remove('topBar--fixed');

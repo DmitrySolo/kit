@@ -1,0 +1,46 @@
+/**
+* subscribeSts styles
+*/
+
+@mixin subscribeSts(){
+
+  .subscribeSts {
+        &__form {
+            text-align: center;
+        }
+        &__inpt, &__btn {
+            display: inline-block;
+            margin:0;
+            border: none;
+            vertical-align:top;
+        }
+        &__inpt{
+            border-radius: 3px;
+            font-size: 1.1em;
+            padding: vr-block(.4) vr-block(.4);
+            height:50px;
+        }
+        &__btn{
+            text-align:center;
+            font-size: 1.4em;
+            height: 50px;
+            color: #fff;
+            border-radius: 3px;
+           // margin-left: -.7em;
+            background:cs('accent');
+             text-shadow: 0px 0px 3px #111;
+            &:hover{
+                background: darken(cs('accent-l'),5%);
+            }
+            .icon{
+                height: 100%;
+                width: 2em;
+            }
+        }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include subscribeSts();

@@ -28,9 +28,14 @@
         }
         &.succes {
             background: cs('succes');
-            border-color: cs('succes-l');
+            border-color: cs('succes-d');
+            font-weight:bold;
+            text-shadow: 0px 0px 3px #000;
+            text-decoration:underline;
             &:hover{
                 background: cs('succes-l');
+                border-color: cs('succes');
+            
             }
         }
         &.makeOrder {

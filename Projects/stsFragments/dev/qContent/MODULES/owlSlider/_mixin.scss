@@ -115,18 +115,18 @@
            display:none;
            @include for-size(tablet-l-up){
                display:inline-block;  
-               width: 73%;
-           }
+               width: 73%;   
+           }      
             cursor:pointer;
-            color: #fff;  
+            color: #fff;     
             
               font-weight: normal;
             margin-left: 5%;
             vertical-align:middle;
             .active &{
                 color: cs('primary');
-                  font-weight: bold; 
-            }
+                  font-weight: bold;  
+            }     
         }
     }
 
