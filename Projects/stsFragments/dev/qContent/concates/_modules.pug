@@ -25,9 +25,6 @@ mixin MODULE-accordion(data)
 			+B-button('Смотреть')
 			+B-button('Сбросить','default')
 
-mixin MODULE-additionalProducts()
-	<!-- split modules/additionalProducts -->
-	.additionalProducts__content(data-qcontent='module__additionalProducts')
 mixin MODULE-bottomFeatures()
 	<!-- split modules/bottomFeatures -->
 	.bottomFeatures(data-qcontent='module__bottomFeatures')
@@ -69,6 +66,9 @@ mixin MODULE-bottomFeatures()
 		
 		
 		
+mixin MODULE-additionalProducts()
+	<!-- split modules/additionalProducts -->
+	.additionalProducts__content(data-qcontent='module__additionalProducts')
 mixin breadcrumbs()
 	.breadCrumb__content(data-qcontent='module__breadcrumbs')
 		nav.breadCrumb.visible-l
@@ -140,6 +140,71 @@ mixin MODULE-catalog()
 			span.catalog__elemTitle Бренды
 			+I('to-right','to-right f-right')
   
+mixin MODULE-catalogMain()
+	<!-- split modules/catalogMain -->
+	.catalogMain__content(data-qcontent='module__catalogMain')
+		.catalogList__category.l_ib__c(class=' '+ classN)#js_categories
+			nav(role='catalog').l_ib__e
+				ul.catalogList__categoryList
+						li.catalogList__categoryItem#js_showSub__1     
+							+I('bathm','asset')      
+							span Ванны
+							+I('to-right','catalog') 
+						li.catalogList__categoryItem#js_showSub__2
+							+I('mebelm','asset')   
+							span Мебель для ванной
+							+I('to-right','catalog')  
+						li.catalogList__categoryItem#js_showSub__3   
+							+I('smes','asset')           
+							span Смесители
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__4
+							+I('dkm','asset')  
+							span Душ Кабины и уголки
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__5
+							+I('ogpo','asset')          
+							span Ограждения, поддоны
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__6
+							+I('showerm','asset')            
+							span Все для душа 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__7 
+							+I('toiletm','asset')           
+							span Унитазы и Биде 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__8  
+							+I('susm2','asset')           
+							span Полотенцесушители 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__9  
+							+I('accm','asset')              
+							span Аксессуары 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__3   
+							+I('smes','asset')           
+							span Смесители
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__4
+							+I('dkm','asset')  
+							span Душ Кабины и уголки
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__5
+							+I('ogpo','asset')          
+							span Ограждения, поддоны
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__6
+			ul.catalogList__categorySublist.l_ib__e
+				li.catalogList__SublistItem#js_sub__1 1
+				li.catalogList__SublistItem#js_sub__2 2
+				li.catalogList__SublistItem#js_sub__3 3
+				li.catalogList__SublistItem#js_sub__4 4
+				li.catalogList__SublistItem#js_sub__5 5
+				li.catalogList__SublistItem#js_sub__6 6
+				li.catalogList__SublistItem#js_sub__7 7
+				li.catalogList__SublistItem#js_sub__8 8
+				li.catalogList__SublistItem#js_sub__9 9
 mixin MODULE-catalogList(param)
 	if(page.slug=='main' && param =='main')
 		-var classN = 'catalogList--onMain'
@@ -367,71 +432,6 @@ mixin MODULE-catalogList(param)
 															+A-catalogLink('Ananas','','sub')
 												li.catalogList__barandItem
 															+A-catalogLink('Aquatika','','sub')
-mixin MODULE-catalogMain()
-	<!-- split modules/catalogMain -->
-	.catalogMain__content(data-qcontent='module__catalogMain')
-		.catalogList__category.l_ib__c(class=' '+ classN)#js_categories
-			nav(role='catalog').l_ib__e
-				ul.catalogList__categoryList
-						li.catalogList__categoryItem#js_showSub__1     
-							+I('bathm','asset')      
-							span Ванны
-							+I('to-right','catalog') 
-						li.catalogList__categoryItem#js_showSub__2
-							+I('mebelm','asset')   
-							span Мебель для ванной
-							+I('to-right','catalog')  
-						li.catalogList__categoryItem#js_showSub__3   
-							+I('smes','asset')           
-							span Смесители
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__4
-							+I('dkm','asset')  
-							span Душ Кабины и уголки
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__5
-							+I('ogpo','asset')          
-							span Ограждения, поддоны
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__6
-							+I('showerm','asset')            
-							span Все для душа 
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__7 
-							+I('toiletm','asset')           
-							span Унитазы и Биде 
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__8  
-							+I('susm2','asset')           
-							span Полотенцесушители 
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__9  
-							+I('accm','asset')              
-							span Аксессуары 
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__3   
-							+I('smes','asset')           
-							span Смесители
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__4
-							+I('dkm','asset')  
-							span Душ Кабины и уголки
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__5
-							+I('ogpo','asset')          
-							span Ограждения, поддоны
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__6
-			ul.catalogList__categorySublist.l_ib__e
-				li.catalogList__SublistItem#js_sub__1 1
-				li.catalogList__SublistItem#js_sub__2 2
-				li.catalogList__SublistItem#js_sub__3 3
-				li.catalogList__SublistItem#js_sub__4 4
-				li.catalogList__SublistItem#js_sub__5 5
-				li.catalogList__SublistItem#js_sub__6 6
-				li.catalogList__SublistItem#js_sub__7 7
-				li.catalogList__SublistItem#js_sub__8 8
-				li.catalogList__SublistItem#js_sub__9 9
 mixin MODULE-CENTURION()
 	<!-- split modules/CENTURION -->
 	.centurion(data-qcontent='module__CENTURION')
@@ -845,7 +845,7 @@ mixin MODULE-order()
 							span.order__number №1111519  
 							| от 17.01.2018 15:48:54 успешно создан.
 						p.text Вы можете следить за выполнением своего заказа в Персональном разделе сайта. Обратите внимание, что для входа в этот раздел вам необходимо будет ввести логин и пароль пользователя сайта.
-
+				p.deliveryMapHint Выберите подходящий пункт Выдачи на карте 
 					
 							
 			.col.col-3-tl 
@@ -856,6 +856,7 @@ mixin MODULE-order()
 					span.order__infoItem Доставка: 1 000 р
 					h6.order__infoSumm Итого: 124 000 р
 					+B-button('Изменить cостав заказа','fastBuy')
+			
 						
 						
 						
@@ -972,6 +973,109 @@ mixin MODULE-reactTest()
 	<!-- split modules/reactTest -->
 	.reactTest__content(data-qcontent='module__reactTest')
 		#reactTest1
+mixin MODULE-shipmentDocument()
+	<!-- split modules/shipmentDocument -->
+	.shipmentDocument__content(data-qcontent='module__shipmentDocument') 
+		table.shipmentDocument
+			caption(align ='left') ОТГРУЗКА N 23345
+				img.card(src="source/images/c_card.svg" style="width: 5%")
+				img.logo(src="source/images/sts-logo.svg") 
+			tbody
+				tr 
+					th Отправитель
+					th Информация об отправлении
+				tr
+					td 
+						h6 Компания:  
+						span "СантехСмарт", OOO; г. Воронеж 
+					td(rowspan="3" valign='top')
+						h6 Накладная к заказу:
+						span N РИМ-983
+						br
+						h6 Дата отгрузки:
+						span 30.05.18
+						br
+						h6 Количество мест:
+						span 1
+						br
+						.counterD 1/1
+						h2.city.t-center.ib ЛИПЕЦК 
+				tr
+					th ПОЛУЧАТЕЛЬ
+				tr
+					td 
+						h6 ФИО:
+						span Иванов Иван Петрович 
+						br
+						h6 Телефон: 
+						span 8902765266
+						br
+						h6 ПВЗ:
+						span г ЛИПЕЦК Ул Заречная 77 2ф ( OOO Строймаркет) 
+	
+		table.shipmentDocument.shipmentDocument__items
+			tbody
+				tr.docItemListTitle
+					th №
+					th Наименование товара
+					th К оплате: 
+					th Кол во
+				+loop(8)
+					tr.shipmentDocument__item
+						td(align='center') 1
+						td Потлотенце сушитель фиолетовый без ничего с повреждениями такой привезли
+						td(align='center') 139 000р
+						td(align='center') 1
+				tr.docItemListTitle__summary
+					td(colspan='4')
+						h5 Итого к оплате 34 000Р
+				tr
+					td(colspan='4')
+						h5.signature Сотрудник___________________
+						h5.signature.f-right.t-center Покупатель___________________
+					
+						
+	table.ordersSummary
+		caption 
+			h4 Заказы на пункт выдачи:
+		tbody
+			tr.ordersSummary__header
+				th №
+				th Дата
+				th Сумма заказа 
+				th Приходная
+				th Коммисия
+				th Итоговая закупка
+				th Профит
+				th Статус
+			+loop(4)
+				tr.ordersSummary__info
+					td РИМ-5345454
+					td 23.34.17
+					td.primary 19454
+					td 17669
+					td 5%
+					td.accent 18001
+					td.succes 1470
+					td ожидает выдачи
+	table.ordersSummary
+		caption 
+			h4 Статус взаиморсчетов
+		tbody
+			tr.ordersSummary__header
+				th Общий Статус
+				th Из них по Платформе
+			tr
+				td.t-centr - 1 290 000р
+				td.t-center 36 000р
+				td 
+					zopa
+					enotzaglot
+						seriy
+							sprite
+								| sptf_024_07_bober
+							
+
 mixin MODULE-sts-coupon()
 	<!-- split modules/sts-coupon -->
 	.sts-coupon__content(data-qcontent='module__sts-coupon')
@@ -1016,10 +1120,10 @@ mixin MODULE-topFeatures(modificier)
 	.topFeatures__content(data-qcontent='module__topFeatures' class=''+className)
 		span.topFeatures__element  
 			+I('housePin')
-			span.topFeatures__title Пункты выдачи в 170 городах.
+			span.topFeatures__title Пункты выдачи в 170q городах.
 		span.topFeatures__element
 			+I('box','boxTop')
-			span.topFeatures__title Оплачивайте заказы после проверки.
+			span.topFeatures__title Оплачивайте заказы после проверки.  
 mixin MODULE-topMenu()
 	<!-- split modules/topMenu -->
 	.group.group--md
@@ -1074,30 +1178,30 @@ mixin MODULE-vipChallenge()
 				label Эл. почта: 
 					input(type='text')
 				input(type='submit')
-mixin LEVEL-cartProduct(data)
-	.cartProduct
-		.cartProduct__content(class = 'cartProduct__content'+ className data-qcontent="level__cartProduct")
-
 mixin LEVEL-inner(data)
 	.level__inner
 		.container
 			if block
 				block
+mixin LEVEL-cartProduct(data)
+	.cartProduct
+		.cartProduct__content(class = 'cartProduct__content'+ className data-qcontent="level__cartProduct")
+
 mixin LEVEL-level(title,className)
 	-if (!className) className =''
 	.level__content(class = 'level__content'+ className data-qcontent="level__level")
 		h2.level__title=title
 		block level
-mixin LEVEL-level1(data)
-	.level1
-		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
-			h2.level1__title=title
-			if block
-				block
 mixin LEVEL-level2(title,data)
 	.level2
 		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
 			h2.level2__title=data.title.ZOPA
+			if block
+				block
+mixin LEVEL-level1(data)
+	.level1
+		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
+			h2.level1__title=title
 			if block
 				block
 mixin LEVEL-mainPageSection(title)
@@ -1106,26 +1210,6 @@ mixin LEVEL-mainPageSection(title)
 			h2.mainPageSection__title=title
 			if block
 				block
-mixin LEVEL-modalWindow(id, title, className)
-	-if(!className) className = ''
-	-else className= 'modalWindow--'+className
-	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id class=''+className)
-		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
-			a.modalWindow__close
-				+I('close','close')
-			h3.modalWindow__title=title  
-			.modalWindow__body
-				if block
-					block       
-mixin LEVEL-page(title)
-		.page(class = 'page--'+page.slug +' page--'+page.className)
-			.page__content(class = 'page__content'+ className data-qcontent="level__page")
-				-if(page.slug != 'main')
-					.group
-						.col.col-12-tl
-							h1.page__title=title        
-				if block
-					block
 mixin LEVEL-newtest(data)
 	.newtest
 		.newtest__content(class = 'newtest__content'+ className data-qcontent="level__newtest")
@@ -1178,36 +1262,6 @@ mixin LEVEL-popup(data)
 			.popup__body
 				if block
 					block
-//
-mixin LEVEL-productSection(title,className)
-	.productSection__content(data-qcontent="level__productSection")
-		header.productSection__header.clearfix
-			.productSection__pager.f-left 
-				//span.productSection__subTitle Страницы:
-				+breadcrumbs()
-			.productSection__filter.f-left   
-				span.productSection__subTitle
-					+I('sort','sort')
-				a.productSection__sortBy.productSection__sortBy--selected Цене
-				| |
-				a.productSection__sortBy Производителю
-			.productSection__layoutChoiser.f-right
-				span.productSection__subTitle Вид каталога:
-				a(href='/')
-					+I('layout','productsLayout icon--productsLayout--selected')
-				a(href='/')
-					+I('layout1','productsLayout') 
-		if block
-			block
-mixin LEVEL-showcase(title,className)
-	-if (!className) className =''
-	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
-		h1.showcase__title=title
-		.container
-			p.showcase__subtytle.text Hello its Showcase Content
-			+holder('page__loader','100px300',colors.primary)
-			if block
-				block
 mixin LEVEL-productInfo(data)
 	.productInfo
 		.productInfo__content.block--inner(class = 'productInfo__content'+ className data-qcontent="level__productInfo")
@@ -1231,6 +1285,47 @@ mixin LEVEL-productInfo(data)
 						
 			.productLogo
 				img(src='https://santehsmart.ru/upload/resize_cache/uf/663/120_40_1/663573ea5278ca044fad90b0a4f2346d.png')
+mixin LEVEL-page(title)
+		.page(class = 'page--'+page.slug +' page--'+page.className)
+			.page__content(class = 'page__content'+ className data-qcontent="level__page")
+				-if(page.slug != 'main')
+					.group
+						.col.col-12-tl
+							h1.page__title=title        
+				if block
+					block
+mixin LEVEL-modalWindow(id, title, className)
+	-if(!className) className = ''
+	-else className= 'modalWindow--'+className
+	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id class=''+className)
+		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
+			a.modalWindow__close
+				+I('close','close')
+			h3.modalWindow__title=title  
+			.modalWindow__body
+				if block
+					block       
+//
+mixin LEVEL-productSection(title,className)
+	.productSection__content(data-qcontent="level__productSection")
+		header.productSection__header.clearfix
+			.productSection__pager.f-left 
+				//span.productSection__subTitle Страницы:
+				+breadcrumbs()
+			.productSection__filter.f-left   
+				span.productSection__subTitle
+					+I('sort','sort')
+				a.productSection__sortBy.productSection__sortBy--selected Цене
+				| |
+				a.productSection__sortBy Производителю
+			.productSection__layoutChoiser.f-right
+				span.productSection__subTitle Вид каталога:
+				a(href='/')
+					+I('layout','productsLayout icon--productsLayout--selected')
+				a(href='/')
+					+I('layout1','productsLayout') 
+		if block
+			block
 mixin LEVEL-showCasePage(data)
 	-if (!className) className =''
 	.container
@@ -1267,6 +1362,15 @@ mixin LEVEL-starter(title,className)
 		h5.starter__title=title
 		if block
 			block
+mixin LEVEL-showcase(title,className)
+	-if (!className) className =''
+	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
+		h1.showcase__title=title
+		.container
+			p.showcase__subtytle.text Hello its Showcase Content
+			+holder('page__loader','100px300',colors.primary)
+			if block
+				block
 mixin LEVEL-subProductInfo(data)
 	.subProductInfo
 		.subProductInfo__content.block--inner(class = 'subProductInfo__content'+ className data-qcontent="level__subProductInfo")
@@ -1286,6 +1390,11 @@ mixin LEVEL-subProductInfo(data)
 					.subProductInfo__tabContent 2
 					.subProductInfo__tabContent 3
 					.subProductInfo__tabContent 4
+mixin LEVEL-testOfSergConnectingSupport(title,className)
+	-if (!className) className =''
+	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
+		h2.testOfSergConnectingSupport__title=title
+		block testOfSergConnectingSupport
 mixin LEVEL-topdashBoard(data)
 	-if (!className) className =''
 	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
@@ -1298,11 +1407,6 @@ mixin LEVEL-topdashBoard(data)
 			+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher') 
 	if block
 		block 
-mixin LEVEL-testOfSergConnectingSupport(title,className)
-	-if (!className) className =''
-	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
-		h2.testOfSergConnectingSupport__title=title
-		block testOfSergConnectingSupport
 mixin C-countDown(ids,header,time)
 	.countDown
 		h6.countDown__header=header+':'

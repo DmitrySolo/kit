@@ -594,7 +594,7 @@
   }
   .colors {
     .pb-element:first-child {
-      padding-right: 50px;
+      padding-right: 50px; 
     }
   }
   .originColor {
@@ -1303,18 +1303,18 @@
   }
   .saveToServer {
     button {
-      width: 172px;
-      margin: 5px 37px 5px 0px;
-      border: solid 2px darken(#fc9627, 5%);
+      width: 115px;
+      border: solid 2px #fc8a0e;
       background: #fc9627;
-      color: #fff;
+      color: #fff; 
       text-transform: uppercase;
       border-radius: 5px;
       text-align: center;
+      margin-top: 13px;
+      margin-left: 20px;
     }
     .icon {
       height: 1rem;
-      float: left;
       width: 1rem;
       display: inline !important;
       fill:#fff;
@@ -1785,23 +1785,28 @@
     background-color: rgb(218, 218, 218);
   }
   .contentNavigator {
+
     width:265px;
     background-color: #35373a;
     z-index: 9999999999;
     text-align: center;
     float: left;
-    margin-left:4px;
+    margin-left: 10px;
+    margin-right: 15px;
     &>input{
       border:solid .5px;
     }
     button {
-      background: #fa9527;
-      outline: none;
-      color: #fff;
-      border: none;
-      margin-right: 1px;
-      display: inline-block;
-      font-size: 10px;
+      background: #24b24b;
+    outline: none;
+    color: #fff;
+    border-bottom: solid 2px red;
+    border: none;
+    border-bottom: solid 2px #425647;
+    width: 100%;
+    margin-right: 3px;
+    display: inline-block;
+    font-size: 11px;
     }
     input{
       box-sizing: border-box;

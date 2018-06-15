@@ -128,11 +128,13 @@
                 & .order__checkPointNum {
                     background: cs('primary');
                     color: #fff;
+                   
                     
                 }
                 & .order__checkPointTitle {
                     color:cs('primary');
                     font-weight: bold;
+                     font-size: 1.2em;
                     
                 }
             }
@@ -208,17 +210,18 @@
                       border-bottom-right-radius:0;
                   }
                   font-size: .9em;
-                  margin-bottom:vr-block(.4);
+                  margin-bottom:vr-block(.2);
                   &.trig_del_cont{
                       border-width: 3px;
-                      height: vr-block(3.5);
+                      height: vr-block(4.5);
                       &.radio--selected{
                           @include for-size(tablet-l-up){
                                margin-top: -4px;
                                margin-bottom: -4px;
                           }
-                        height: vr-block(4);
-                        border-color: cs('primary'); 
+                        height: vr-block(5);
+                        border-color: cs('primary');
+                        border-bottom: none;
                         
                         z-index: 3;
                        
@@ -319,6 +322,28 @@
           font-size: 1.2em;
       }
 
+}
+.deliveryLabel{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.deliveryTextarea{
+    border:solid 2px cs('primary');
+    margin-top: 15px;
+    padding:15px;
+    border-radius: 6px;
+}
+.deliveryMapHint{
+       background: #3d255b;
+    font-size: 1.1em;
+    text-align: center;
+    padding: 0.69em;
+    color: #fff;
+    margin-top: 20px;
+    position: absolute;
+    left: 40px;
+    right: 60%;
+    z-index: 100;
 }
 }
 

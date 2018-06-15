@@ -1,28 +1,5 @@
 {
 	"LIBS": {
-		"quant-debug": {
-			"js": {
-				"quant-debug-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "node_modules/jquery-ui/custom/jquery-ui.min.js",
-					"container": "footer/libs+"
-				},
-				"vieport": {
-					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
-					"container": "footer/libs+"
-				},
-				"viewportResizer": {
-					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"JQ": {
 			"js": {
 				"jquery": {
@@ -34,11 +11,23 @@
 				"": ""
 			}
 		},
-		"quant-debug-JsonCss": {
+		"quant-debug": {
 			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
+				"quant-debug-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
+					"container": "footer/libs+"
+				},
+				"vieport": {
+					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
+					"container": "footer/libs+"
+				},
+				"viewportResizer": {
+					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -76,6 +65,17 @@
 				"quant-lib-script": {
 					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
 					"container": "footer/libs+"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-debug-JsonCss": {
+			"js": {
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
 				}
 			},
 			"css": {
@@ -127,21 +127,6 @@
 				"": ""
 			}
 		},
-		"catalog": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/MODULES/catalog/catalog.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"catalogList": {
 			"js": {
 				"lib1": {
@@ -150,6 +135,21 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/MODULES/catalogList/catalogList.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"catalog": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/catalog/catalog.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -328,6 +328,21 @@
 				"": ""
 			}
 		},
+		"dashBoardElement": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"b1": {
 			"js": {
 				"lib1": {
@@ -336,6 +351,21 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/b1/b1.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"checkBox": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/radio/radio.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -388,21 +418,6 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/BUTTONS/upButton/upButton.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"dashBoardElement": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -748,6 +763,22 @@
 			"dop_class": "",
 			"layout": "default",
 			"group": ""
+		},
+		"20": {
+			"title": "shipmentDocument",
+			"slug": "",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "",
+			"group": ""
+		},
+		"21": {
+			"title": "shipmentDocument",
+			"slug": "shipmentDocument",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "default",
+			"group": ""
 		}
 	},
 	"countDown": {
@@ -759,12 +790,6 @@
 	"deliveryArticle": {
 		"deliveryArticle": "1"
 	},
-	"footer": {
-		"footer": "1"
-	},
-	"priceAndStock": {
-		"priceAndStock": "1"
-	},
 	"productInline": {
 		"productInline": "1",
 		"sku": "123456",
@@ -773,6 +798,12 @@
 		"stock": "1255",
 		"sale": "true",
 		"superSale": "true"
+	},
+	"footer": {
+		"footer": "1"
+	},
+	"priceAndStock": {
+		"priceAndStock": "1"
 	},
 	"sameCatProducts": {
 		"sameCatProducts": "1"
@@ -835,12 +866,12 @@
 	"cart": {
 		"cart": "1"
 	},
+	"cartPage": {
+		"cartPage": "1"
+	},
 	"cartProduct": {
 		"cartProduct": "1",
 		"title": {}
-	},
-	"cartPage": {
-		"cartPage": "1"
 	},
 	"catalog": {
 		"catalog": "1"
@@ -857,11 +888,11 @@
 	"confirmedOrderPage": {
 		"confirmedOrderPage": "1"
 	},
-	"deliverySection": {
-		"deliverySection": "1"
-	},
 	"featuresList": {
 		"featuresList": "1"
+	},
+	"deliverySection": {
+		"deliverySection": "1"
 	},
 	"fgtr": {
 		"fgtr": "1"
@@ -869,14 +900,14 @@
 	"flyPageFragment": {
 		"title": "Test Page"
 	},
+	"geoTarget": {
+		"geoTarget": "1"
+	},
 	"IBGrid": {
 		"IBGrid": "1"
 	},
 	"innerCoupon": {
 		"innerCoupon": "1"
-	},
-	"geoTarget": {
-		"geoTarget": "1"
 	},
 	"layout": {
 		"layout": "1"
@@ -911,11 +942,14 @@
 	"productCatInline": {
 		"productCatInline": "1"
 	},
+	"productChar": {
+		"productChar": "1"
+	},
 	"productCol": {
 		"productCol": "1"
 	},
-	"productChar": {
-		"productChar": "1"
+	"productImageSlider": {
+		"productImageSlider": "1"
 	},
 	"productInline1": {
 		"sku": "325335",
@@ -957,23 +991,23 @@
 		"price": "11 000",
 		"stock": "8"
 	},
-	"productImageSlider": {
-		"productImageSlider": "1"
-	},
 	"reactTest": {
 		"reactTest": "1"
 	},
-	"sts-coupon": {
-		"sts-coupon": "1"
+	"shipmentDocument": {
+		"shipmentDocument": "1"
 	},
 	"support": {
 		"support": "1"
 	},
-	"tableP": {
-		"tableP": "1"
+	"sts-coupon": {
+		"sts-coupon": "1"
 	},
 	"swe": {
 		"swe": "1"
+	},
+	"tableP": {
+		"tableP": "1"
 	},
 	"topBar": {
 		"topBar": "1"
@@ -990,13 +1024,13 @@
 	"inner": {
 		"title": {}
 	},
+	"newtest": {
+		"title": {}
+	},
 	"level2": {
 		"title": {
 			"ZOPA": "OPA"
 		}
-	},
-	"newtest": {
-		"title": {}
 	},
 	"page": {
 		"title": {}
@@ -1004,10 +1038,10 @@
 	"outer": {
 		"title": {}
 	},
-	"popup": {
+	"productInfo": {
 		"title": {}
 	},
-	"productInfo": {
+	"popup": {
 		"title": {}
 	},
 	"showCasePage": {

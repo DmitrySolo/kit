@@ -2,6 +2,9 @@
   margin-bottom: 0.34em;
   position: relative;
   background-color: #fff;
+  .radio__input:checked + label {
+  font-weight: bold;
+ border-color: rgb(255, 149, 51);
 }
 .radio__input {
     display: none;
@@ -13,7 +16,7 @@
 }
 .radio__input:checked + label {
   font-weight: bold;
-  border-color: rgb(255, 149, 51);
+ border-color: rgb(255, 149, 51);
   &:before{
       /* content:'';
       width: .5em;
@@ -59,4 +62,4 @@
             }
         
 }
-}
+}}

@@ -503,26 +503,13 @@ window.onscroll = function(e){
 
     
 } 
-// Element: dashBoardElement script.
-
- $(document).ready(      
-     function () {
-          $('#js-switchShopState').on('change',function(){
-            if( $(this).is(':checked') ) {
-                $('.mop_row').hide()
-                qntSetCookie('shopState','true', 1000)
-                location.reload()
-            }else{
-               $('.mop_row').show()
-               qntSetCookie('shopState','', -1)
-                location.reload()
-            }
- })
-     }
-     )
-
 // Element: b1 script.
 
+;
+$('.order__form--paysystem .radio').on('click', function(){
+    $('.radio').removeClass('selected')
+    $(this).addClass('selected');
+}); 
 // Element: slider script.
 ;$("#sl_id_1,#sl_id_2").ionRangeSlider();
 // Element: toOrder script.
@@ -557,6 +544,24 @@ $("#js-up").click(function() {
   $("html, body").animate({ scrollTop: 0 }, "slow");
   return false;  
 });
+// Element: dashBoardElement script.
+
+ $(document).ready(      
+     function () {
+          $('#js-switchShopState').on('change',function(){
+            if( $(this).is(':checked') ) {
+                $('.mop_row').hide()
+                qntSetCookie('shopState','true', 1000)
+                location.reload()
+            }else{
+               $('.mop_row').show()
+               qntSetCookie('shopState','', -1)
+                location.reload()
+            }
+ })
+     }
+     )
+
 // modalWindows
 function openAuthorizePopup()
 {

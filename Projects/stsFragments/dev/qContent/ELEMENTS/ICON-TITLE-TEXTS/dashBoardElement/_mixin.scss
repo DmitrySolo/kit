@@ -126,10 +126,6 @@
             }
           
         }
-/*         line-height: 3.2em;
-@include for-size(tablet-l-up){
-    line-height:initial;
-} */
       }
     &__switcher {
       text-align:left;
@@ -143,13 +139,11 @@
         }
         .iconWrapper:after{
             content: attr(data-notice);
-            position: absolute;
+           position: absolute;
            @include for-size(tablet-l-up){
                 top:5% ;
                 left:12%;
            }
-           left:80%;  
-           top:10%;
             background: cs('font-d2');
             display:block;
             width: vr-block(1);

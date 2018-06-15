@@ -104,10 +104,13 @@ script
 					input
 				#contentNavigator__name.f-left.cntNav
 					input
+				#contentNavigator__dist.f-left.cntNav
+					button#distribution Distribution
 	.apiTester.f-right
 		span#apitest
-	.saveToServer.f-right
+	.hud-Button.f-right#deploy
+		+I('deploy')
+	.saveToServer
 		button#savecode
 			+I('save','saveMainButton')
-			| save as code
 

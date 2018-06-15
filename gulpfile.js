@@ -209,20 +209,20 @@ gulp.task('views-current', function buildHTML() {
 	})).pipe(gulp.dest(dist));
 	viewProcesscur.on('finish', function () {
 		Qupdate= '1';
-    })
+	})
 
 
 });
 gulp.task('views', function buildHTML() {
-    var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
-    var viewProcess = gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/*.pug','!'+projectDevDir + 'template/PAGESYSTEM/PAGES/'+loadForPug])
-        .pipe(pug({
-            data: data,
-            pretty: true,
-            cache: true
-        })).on('error', notify.onError(function (error) {
-            return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
-        })).pipe(gulp.dest(dist));
+	var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+	var viewProcess = gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/*.pug','!'+projectDevDir + 'template/PAGESYSTEM/PAGES/'+loadForPug])
+		.pipe(pug({
+			data: data,
+			pretty: true,
+			cache: true
+		})).on('error', notify.onError(function (error) {
+			return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
+		})).pipe(gulp.dest(dist));
 });
 
 
@@ -306,7 +306,7 @@ gulp.task('VIEW-FINAL', function () {
 		'data.json',
 		//'!dev/template/PAGESYSTEM/SCRIPTS-STYLES/**/*'
 	], function () {
-        gulp.start('views-current');
+		gulp.start('views-current');
 		gulp.start('views'); //
 
 
@@ -319,7 +319,7 @@ gulp.task('VIEW-SOURCE', function () {
 		'Projects/'+projectName+'/source_fabric/SVGSpriteIcons',
 	], function () {
 		gulp.start('svgstore');
-        gulp.start('views-current');
+		gulp.start('views-current');
 		gulp.start('views');
 	});
 });
@@ -372,7 +372,7 @@ gulp.task('VIEW-1-MODULES', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([
 		projectDevDir + 'qContent/MODULES/**/_mixin.pug',
-        projectDevDir + 'qContent/COMPONENTS/**/_mixin.pug',
+		projectDevDir + 'qContent/COMPONENTS/**/_mixin.pug',
 		projectDevDir + 'template/PAGESYSTEM/LEVELS/**/*.pug',
 
 	], function () {
@@ -483,7 +483,7 @@ gulp.task('STYLES-1-MODULES', function () {
 	// Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
 	return watch([
 			projectDevDir + 'qContent/MODULES/**/_mixin.scss',
-            projectDevDir + 'qContent/COMPONENTS/**/_mixin.scss'
+			projectDevDir + 'qContent/COMPONENTS/**/_mixin.scss'
 		]
 		, function () {
 			gulp.start('concat-modules-scss');
@@ -1084,30 +1084,15 @@ gulp.task('tests', [], function () {
 
 
 
-gulp.task('dist-module', [], function () {
-	var str = "include ../../../template/PAGESYSTEM/INCLUDES/_includes\n";
-	gulp.src('dev/MODULES/PROJECT MODULES/--' + options.name + '/_include.pug').pipe(insert.prepend(str))
-		.pipe(pug({
-			data: data,
-			pretty: true,
-		})).pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--' + options.name + '/DIST/'));
-	var dest = 'dev/MODULES/PROJECT MODULES/--' + options.name + '/DIST/_include.html'
-	gulp.src(dist + '/main.css')
-		.pipe(uncss({
-			html: [dest]
-		}))
-		.pipe(gulp.dest('dev/MODULES/PROJECT MODULES/--' + options.name + '/DIST/'));
-
-});
 
 gulp.task('Dist-module', [], function () {
 	console.log(projectName);
-    var str = "include ../../../template/PAGESYSTEM/INCLUDES/_includes.pug\n";
-    gulp.src('Projects/'+projectName+'/dev/qContent/MODULES/'+options.name+'/_include.pug').pipe(insert.prepend(str))
-        .pipe(pug({
-            data: data,
-            pretty: true,
-        })).pipe(gulp.dest('Projects/'+projectName+'/production/modules/'+options.name));
+	var str = "include ../../../template/PAGESYSTEM/INCLUDES/_includes.pug\n";
+	gulp.src('Projects/'+projectName+'/dev/qContent/MODULES/'+options.name+'/_include.pug').pipe(insert.prepend(str))
+		.pipe(pug({
+			data: data,
+			pretty: true,
+		})).pipe(gulp.dest('Projects/'+projectName+'/production/modules/'+options.name));
 		var dest = 'Projects/'+projectName+'/production/modules/'+ options.name +'/_include.html'
 		gulp.src(dist + '/main.css')
 			.pipe(uncss({
@@ -1489,66 +1474,66 @@ gulp.task('u-h2p', function () {
 		.pipe(gulp.dest('utilities/htmlToPug/pr'));
 });
 gulp.task('deploycss', function () {
-    return gulp.src(dist + '/main.css')
-        .pipe(cssnano())
-        .pipe(rename('template_styles.css'))
-        .pipe(sftp({
-            host: 'santehsmart.ru',
-            user: 'west',
-            pass: '5D2g4U9c',
-            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2/'
-        }));
+	return gulp.src(dist + '/main.css')
+		.pipe(cssnano())
+		.pipe(rename('template_styles.css'))
+		.pipe(sftp({
+			host: 'partner.santehsmart.ru',
+			user: 'west',
+			pass: '5D2g4U9c',
+			remotePath: '/var/www/west/data/www/partner.santehsmart.ru/bitrix/templates/STS2/'
+		}));
 });
 gulp.task('deploySVGsprite', function () {
-    return gulp.src(dist + '/source/icons/SVGSpriteIcons.html')
-        .pipe(rename('SVGSpriteIcons.php'))
-        .pipe(sftp({
-            host: 'santehsmart.ru',
-            user: 'west',
-            pass: '5D2g4U9c',
-            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2/'
-        }));
+	return gulp.src(dist + '/source/icons/SVGSpriteIcons.html')
+		.pipe(rename('SVGSpriteIcons.php'))
+		.pipe(sftp({
+			host: 'santehsmart.ru',
+			user: 'west',
+			pass: '5D2g4U9c',
+			remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2/'
+		}));
 });
 gulp.task('deploySVGsprite-main', function () {
-    return gulp.src(dist + '/source/icons/SVGSpriteIcons.html')
-        .pipe(rename('SVGSpriteIcons.php'))
-        .pipe(sftp({
-            host: 'santehsmart.ru',
-            user: 'west',
-            pass: '5D2g4U9c',
-            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/'
-        }));
+	return gulp.src(dist + '/source/icons/SVGSpriteIcons.html')
+		.pipe(rename('SVGSpriteIcons.php'))
+		.pipe(sftp({
+			host: 'santehsmart.ru',
+			user: 'west',
+			pass: '5D2g4U9c',
+			remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/'
+		}));
 });
 gulp.task('deploycss-main', function () {
-    return gulp.src(dist + '/main.css')
-        .pipe(cssnano())
-        .pipe(rename('template_styles.css'))
-        .pipe(sftp({
-            host: 'santehsmart.ru',
-            user: 'west',
-            pass: '5D2g4U9c',
-            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/'
-        }));
+	return gulp.src(dist + '/main.css')
+		.pipe(cssnano())
+		.pipe(rename('template_styles.css'))
+		.pipe(sftp({
+			host: 'santehsmart.ru',
+			user: 'west',
+			pass: '5D2g4U9c',
+			remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/'
+		}));
 });
 gulp.task('deployjs', function () {
-    return gulp.src(dist + '/scripts/init.js')
-        .pipe(uglify())
-        .pipe(sftp({
-            host: 'santehsmart.ru',
-            user: 'west',
-            pass: '5D2g4U9c',
-            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2/scripts/'
-        }));
+	return gulp.src(dist + '/scripts/init.js')
+		.pipe(uglify())
+		.pipe(sftp({
+			host: 'santehsmart.ru',
+			user: 'west',
+			pass: '5D2g4U9c',
+			remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2/scripts/'
+		}));
 });
 gulp.task('deployjs-main', function () {
-    return gulp.src(dist + '/scripts/init.js')
-        .pipe(uglify())
-        .pipe(sftp({
-            host: 'santehsmart.ru',
-            user: 'west',
-            pass: '5D2g4U9c',
-            remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/scripts/'
-        }));
+	return gulp.src(dist + '/scripts/init.js')
+		.pipe(uglify())
+		.pipe(sftp({
+			host: 'santehsmart.ru',
+			user: 'west',
+			pass: '5D2g4U9c',
+			remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/scripts/'
+		}));
 });
 	gulp.task('deploycssToFR', function () {
 		return gulp.src(dist + '/main.css')
@@ -1680,7 +1665,7 @@ gulp.task('API-SERVER', function () {
 
 		if (req.method == 'GET') {
 			var url_parts = url.parse(req.url, true);
-			//console.log(url_parts.query);
+			console.log(url_parts.query);
 			//GET SOURCE CODE
 
 			if (url_parts.query) {
@@ -1693,12 +1678,16 @@ gulp.task('API-SERVER', function () {
 						const tree = JSON.stringify(dirTree(path1));
 						srvRes = tree;
 						break;
+					case 'hello':
+						console.log('WOW');
+						srvRes='OK IT WAS AMAZING. '+url_parts.query.name;
+					break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 					case 'execute':
 						var CommandMessage = url_parts.query.command.split('__');
 						var command = CommandMessage[0];
 						var options = CommandMessage[1];
-						console.log(pathObj[options][sys])
+					//	console.log(pathObj[options][sys])
 						switch(command){
 							case 'open':
 								if (url_parts.query.page){
@@ -1709,6 +1698,7 @@ gulp.task('API-SERVER', function () {
 								}
 
 								break;
+							case 'run': console.log('A1') //cmd.run(`gulp Dist-module --name shipmentDocument `)
 						}
 						break;
 
@@ -1738,8 +1728,8 @@ gulp.task('API-SERVER', function () {
 								var pug = fs.readFileSync(path1 + '/_mixin.pug', 'utf8');
 								var scss = fs.readFileSync(path1 + '/_mixin.scss', 'utf8');
 								var js = fs.readFileSync(path1 + '/' + name + '.js', 'utf8');
-                               if(path1.indexOf('ELEMENTS') == -1)
-                                    var data = fs.readFileSync(path1 + '/data.json', 'utf8');
+							   if(path1.indexOf('ELEMENTS') == -1)
+									var data = fs.readFileSync(path1 + '/data.json', 'utf8');
 
 
 							}else if (path1.indexOf('LEVELS') > -1){
@@ -1749,7 +1739,7 @@ gulp.task('API-SERVER', function () {
 								var pug = fs.readFileSync(path1+'/_mixin.pug', 'utf8');
 								var scss = fs.readFileSync(path1+'/_mixin.scss', 'utf8');
 								var js = fs.readFileSync(path1+'/level.js', 'utf8');
-                                var data = fs.readFileSync(path1 + '/data.json', 'utf8');
+								var data = fs.readFileSync(path1 + '/data.json', 'utf8');
 
 							}else if (path1.indexOf('MASTER_OPTIONS') > -1){
 
@@ -1757,6 +1747,7 @@ gulp.task('API-SERVER', function () {
 
 
 								var scss = fs.readFileSync(path1, 'utf8');
+								console.log(sassJson(scss));
 
 
 							}else if (path1.indexOf('data') > -1){
@@ -1783,8 +1774,8 @@ gulp.task('API-SERVER', function () {
 
 						}else if (path1.indexOf('LAYOUT')> -1  ){
 
-                                if (path1.indexOf('.')> -1 ) var pug = fs.readFileSync(path1, 'utf8');
-                                else var pug = fs.readFileSync(path1+delimetr+'layout.pug', 'utf8');
+								if (path1.indexOf('.')> -1 ) var pug = fs.readFileSync(path1, 'utf8');
+								else var pug = fs.readFileSync(path1+delimetr+'layout.pug', 'utf8');
 
 
 							}
@@ -1801,7 +1792,7 @@ gulp.task('API-SERVER', function () {
 								pug: pug,
 								scss: scss,
 								js: js,
-                                data: data
+								data: data
 
 							};
 
@@ -1835,16 +1826,16 @@ gulp.task('API-SERVER', function () {
 								var PugContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/_mixin.pug', 'utf8');
 								var ScssContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/_mixin.scss', 'utf8');
 								var JsContent = fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/' + name + '.js', 'utf8');
-								var dataContent =fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/data.json', 'utf8');;
+								var dataContent =fs.readFileSync(projectDevDir + 'qContent/MODULES/' + name + '/data.json', 'utf8');
+								gulp.src(projectDevDir + 'qContent/MODULES/' + name + '/_mixin.scs').pipe(sassJson()).pipe(gulp.dest(projectDevDir+'/'));
+							}
+							if (type == 'component') {
+								var PugContent = fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/_mixin.pug', 'utf8');
+								var ScssContent = fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/_mixin.scss', 'utf8');
+								var JsContent = fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/' + name + '.js', 'utf8');
+								var dataContent =fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/data.json', 'utf8');;
 
 							}
-                            if (type == 'component') {
-                                var PugContent = fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/_mixin.pug', 'utf8');
-                                var ScssContent = fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/_mixin.scss', 'utf8');
-                                var JsContent = fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/' + name + '.js', 'utf8');
-                                var dataContent =fs.readFileSync(projectDevDir + 'qContent/COMPONENTS/' + name + '/data.json', 'utf8');;
-
-                            }
 
 
 							else if (type == 'element') {
@@ -1877,7 +1868,7 @@ gulp.task('API-SERVER', function () {
 								if(name.indexOf('.')>-1)
 									var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LAYOUT/' + name, 'utf8');
 								else
-                                    var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LAYOUT/' + name+delimetr+'layout.pug', 'utf8');
+									var PugContent = fs.readFileSync(projectDevDir + 'template/PAGESYSTEM/LAYOUT/' + name+delimetr+'layout.pug', 'utf8');
 								var ScssContent = '';
 								var JsContent = '';
 								var dataContent ='';
@@ -1965,6 +1956,21 @@ gulp.task('API-SERVER', function () {
 
 						break;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					/// DISTRIBUTION && DEPLOY
+					case 'deploy' :{
+							console.log('hello');
+						gulp.start('DEPLOY');
+					}
+					case 'distribution' :{
+						// var pathDist = url_parts.query.data.split('|');
+						// var typeDist = pathDist[0];
+						// var nameDist = pathDist[1];
+						// console.log(typeDist);
+						// var options = {}
+							cmd.run(`gulp Dist-module`);
+
+				}
+					break;
 					/// CREATE MODULES AND OTHER
 					case 'creator' :
 						var contentType = url_parts.query.element;
@@ -1975,8 +1981,8 @@ gulp.task('API-SERVER', function () {
 							extnds = url_parts.query.extends,
 							prnt = url_parts.query.parent,
 							save = url_parts.query.saveToGlobal;
-                        qM.ok(name_cr);
-                        qM.ok(type_cr);
+						qM.ok(name_cr);
+						qM.ok(type_cr);
 
 
 
@@ -2064,35 +2070,35 @@ gulp.task('API-SERVER', function () {
 								setContentSnippet('pug','module',moduleName)
 								qM.ok('Module added!');
 								break;
-                            case 'component' :
-                            	qM.ok('IN')
-                                var componentName = name_cr,
-                                    elemData = {
-                            			moduleName:"huy",
-                                        componentName: componentName,
-                                        projectName: projectName
-                                    },
+							case 'component' :
+								qM.ok('IN')
+								var componentName = name_cr,
+									elemData = {
+										moduleName:"huy",
+										componentName: componentName,
+										projectName: projectName
+									},
 
-                                    cTemplates = fs.readdirSync('vendor/file_templates/COMPONENTS/_templates/');
-                                try {
-                                    for (var key in cTemplates) {
+									cTemplates = fs.readdirSync('vendor/file_templates/COMPONENTS/_templates/');
+								try {
+									for (var key in cTemplates) {
 
-                                        var file = cTemplates[key].slice(1, -4);
-                                        if (file == 'moduleScript.js') file = componentName+ '.js';
+										var file = cTemplates[key].slice(1, -4);
+										if (file == 'moduleScript.js') file = componentName+ '.js';
 
-                                        gulp.src('vendor/file_templates/COMPONENTS/_templates/' + cTemplates[key])
-                                            .pipe(rename(file))
-                                            .pipe(template(elemData))
-                                            .pipe(gulp.dest(projectDevDir + 'qContent/COMPONENTS/' + componentName + '/'))
-                                    }
-                                } catch (e) {
+										gulp.src('vendor/file_templates/COMPONENTS/_templates/' + cTemplates[key])
+											.pipe(rename(file))
+											.pipe(template(elemData))
+											.pipe(gulp.dest(projectDevDir + 'qContent/COMPONENTS/' + componentName + '/'))
+									}
+								} catch (e) {
 
-                                    qM.err(e.name + ' ' + e.message);
+									qM.err(e.name + ' ' + e.message);
 
-                                }
-                                	setContentSnippet('pug','component',componentName)
-                                qM.ok('Component added!');
-                                break;
+								}
+									setContentSnippet('pug','component',componentName)
+								qM.ok('Component added!');
+								break;
 							case 'level':
 								if (!fs.existsSync(projectDevDir + 'template/PAGESYSTEM/LEVELS/LEVEL-' + name_cr + '.pug')) {
 
@@ -2182,10 +2188,10 @@ gulp.task('API-SERVER', function () {
 			var	body = data;
 
 				try{
-                    body = JSON.parse(body);
+					body = JSON.parse(body);
 				}
 				catch(e){
-                    Qupdate= '1';
+					Qupdate= '1';
 					console.log(e);
 				}
 
@@ -2456,19 +2462,19 @@ gulp.task('API-SERVER', function () {
 
 
 					}
-                    if (elemPath['type'] == 'component') {
+					if (elemPath['type'] == 'component') {
 
-                        if (pugToSave != 'notChanged' )
-                            fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/_mixin.pug', pugToSave)
-                        if (scssToSave != 'notChanged' )
-                            fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/_mixin.scss', scssToSave)
-                        if (jsToSave != 'notChanged' )
-                            fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/' + elemPath['name'] + '.js', jsToSave)
-                        if (dataToSave != 'notChanged' )
-                            fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/data.json', dataToSave)
+						if (pugToSave != 'notChanged' )
+							fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/_mixin.pug', pugToSave)
+						if (scssToSave != 'notChanged' )
+							fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/_mixin.scss', scssToSave)
+						if (jsToSave != 'notChanged' )
+							fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/' + elemPath['name'] + '.js', jsToSave)
+						if (dataToSave != 'notChanged' )
+							fs.writeFileSync(projectDevDir + 'qContent/COMPONENTS/' + elemPath['name'] + '/data.json', dataToSave)
 
 
-                    }
+					}
 					if (elemPath['type'] == 'element') {
 
 						if(pugToSave != 'notChanged' )
@@ -2826,18 +2832,18 @@ function setContentSnippet(editor,type,name) {
 }
 //////////////////////////insi///////////////////////MIN
 gulp.task('minsvg', function () {
-    return gulp.src('utilities/minify/svg/*.svg')
-        .pipe(svgmin())
-        .pipe(gulp.dest('utilities/minify/_results/svg/'));
+	return gulp.src('utilities/minify/svg/*.svg')
+		.pipe(svgmin())
+		.pipe(gulp.dest('utilities/minify/_results/svg/'));
 });
 
 gulp.task('cssDistPrepare', function () {
-    return gulp.src('utilities/minify/css/*.css')
-        .pipe(cssnano())
-        .pipe(gulp.dest('utilities/minify/_results/css/'));
+	return gulp.src('utilities/minify/css/*.css')
+		.pipe(cssnano())
+		.pipe(gulp.dest('utilities/minify/_results/css/'));
 });
 gulp.task('jsDistPrepare', function () {
-    return gulp.src('utilities/minify/js/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('utilities/minify/_results/js/'));
+	return gulp.src('utilities/minify/js/*.js')
+		.pipe(uglify())
+		.pipe(gulp.dest('utilities/minify/_results/js/'));
 });

@@ -23,4 +23,6 @@
 	"	MODULE-vipChallenge()",
 	"snippet +M-tableP",
 	"	MODULE-tableP()",
+	"snippet +M-shipmentDocument",
+	"	MODULE-shipmentDocument()",
 ].join(eol);

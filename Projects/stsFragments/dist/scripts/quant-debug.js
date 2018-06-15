@@ -2225,6 +2225,22 @@ z
 	}
 	loadByDOM(false);
 
+	alert('AAAASAA')
+    var deploy = function(){
+        alert(1);
+        $('#deploy').on('mousedown', function () {
+            alert(2)
+            $.ajax({
+                url: "http://localhost:8181?deploy=true"
+                , success: function (res) {
+                    allert('DEPLOYED');
+                }
+            });
+        });
+    }
+
+    deploy();
+
 	var saveCode = function () {
 		$('button#savecode').on('mousedown', function () {
 

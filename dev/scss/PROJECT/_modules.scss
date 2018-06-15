@@ -467,33 +467,6 @@
 ////////////////////////////////////////
 @include cartPage();
 /**
-* cartProduct styles
-*/
-
-@mixin cartProduct(){
-
-  .cartProduct {
-    &__content {
-        padding: vr-block(.8);
-        border-bottom: solid 1px cs('background');
-        &:first-child{
-            border-top-left-radius: 6px;
-            border-top-right-radius: 6px;
-        }
-        &:last-child{
-            border-bottom-left-radius: 6px;
-            border-bottom-right-radius: 6px;
-            border-bottom: 2px solid cs('background-d');
-        }
-    }
-  }
-
-}
-
-
-////////////////////////////////////////
-@include cartProduct();
-/**
 * catalog styles
 */
 
@@ -587,6 +560,33 @@
 
 ////////////////////////////////////////
 @include catalog();
+/**
+* cartProduct styles
+*/
+
+@mixin cartProduct(){
+
+  .cartProduct {
+    &__content {
+        padding: vr-block(.8);
+        border-bottom: solid 1px cs('background');
+        &:first-child{
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+        &:last-child{
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            border-bottom: 2px solid cs('background-d');
+        }
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include cartProduct();
 /**
 * catalogList styles
 */
@@ -929,6 +929,70 @@
 ////////////////////////////////////////
 @include confirmedOrderPage();
 /**
+* featuresList styles
+*/
+
+@mixin featuresList(){
+
+  .featuresList {
+
+    &__content {
+        text-align: center;
+        letter-spacing: -.65em;
+        background: cs('foreground');
+       // padding: vr-block(1)  vr-block(.2);
+        margin-bottom: vr-block(.8);
+        border-bottom: solid 2px cs('background-d');
+        border-radius: 3px;
+    }
+    &__item{
+        padding: vr-block(.4)  vr-block(.2);
+        letter-spacing: normal;
+        width: 33%;
+        position:relative;
+        margin-right: 1%;
+        &:first-child{
+          background: cs('primary');
+          color: #fff;
+        }
+        &:last-child{   
+            margin-right:0;
+        }
+
+    }
+    &__mark-ctn{
+        display: inline-block;
+         margin-right: 2%;
+         width: 9%;
+         text-align: center;}
+    &__mark{
+       
+        font-size: .8em;
+        display: inline-block;  
+        color:#fff;
+        text-align: center;
+        padding: .4em 0;   
+        width: 1.8em;
+        height: 1.8em;
+        line-height: 1em;
+        border-radius: 50%;
+        background: cs('primary');
+        
+    }
+    
+    &__desc {
+        font-size: .9em;
+        width:64%;
+        padding-left:5px;
+    }
+    
+  }
+}
+
+
+////////////////////////////////////////
+@include featuresList();
+/**
 * deliverySection styles
 */
 
@@ -1013,70 +1077,6 @@
 
 ////////////////////////////////////////
 @include deliverySection();
-/**
-* featuresList styles
-*/
-
-@mixin featuresList(){
-
-  .featuresList {
-
-    &__content {
-        text-align: center;
-        letter-spacing: -.65em;
-        background: cs('foreground');
-       // padding: vr-block(1)  vr-block(.2);
-        margin-bottom: vr-block(.8);
-        border-bottom: solid 2px cs('background-d');
-        border-radius: 3px;
-    }
-    &__item{
-        padding: vr-block(.4)  vr-block(.2);
-        letter-spacing: normal;
-        width: 33%;
-        position:relative;
-        margin-right: 1%;
-        &:first-child{
-          background: cs('primary');
-          color: #fff;
-        }
-        &:last-child{   
-            margin-right:0;
-        }
-
-    }
-    &__mark-ctn{
-        display: inline-block;
-         margin-right: 2%;
-         width: 9%;
-         text-align: center;}
-    &__mark{
-       
-        font-size: .8em;
-        display: inline-block;  
-        color:#fff;
-        text-align: center;
-        padding: .4em 0;   
-        width: 1.8em;
-        height: 1.8em;
-        line-height: 1em;
-        border-radius: 50%;
-        background: cs('primary');
-        
-    }
-    
-    &__desc {
-        font-size: .9em;
-        width:64%;
-        padding-left:5px;
-    }
-    
-  }
-}
-
-
-////////////////////////////////////////
-@include featuresList();
 /**
 * fgtr styles
 */
@@ -1868,11 +1868,13 @@
                 & .order__checkPointNum {
                     background: cs('primary');
                     color: #fff;
+                   
                     
                 }
                 & .order__checkPointTitle {
                     color:cs('primary');
                     font-weight: bold;
+                     font-size: 1.2em;
                     
                 }
             }
@@ -1948,17 +1950,18 @@
                       border-bottom-right-radius:0;
                   }
                   font-size: .9em;
-                  margin-bottom:vr-block(.4);
+                  margin-bottom:vr-block(.2);
                   &.trig_del_cont{
                       border-width: 3px;
-                      height: vr-block(3.5);
+                      height: vr-block(4.5);
                       &.radio--selected{
                           @include for-size(tablet-l-up){
                                margin-top: -4px;
                                margin-bottom: -4px;
                           }
-                        height: vr-block(4);
-                        border-color: cs('primary'); 
+                        height: vr-block(5);
+                        border-color: cs('primary');
+                        border-bottom: none;
                         
                         z-index: 3;
                        
@@ -2059,6 +2062,28 @@
           font-size: 1.2em;
       }
 
+}
+.deliveryLabel{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.deliveryTextarea{
+    border:solid 2px cs('primary');
+    margin-top: 15px;
+    padding:15px;
+    border-radius: 6px;
+}
+.deliveryMapHint{
+       background: #3d255b;
+    font-size: 1.1em;
+    text-align: center;
+    padding: 0.69em;
+    color: #fff;
+    margin-top: 20px;
+    position: absolute;
+    left: 40px;
+    right: 60%;
+    z-index: 100;
 }
 }
 
@@ -2571,7 +2596,6 @@
 
 ////////////////////////////////////////
 @include productCol();
-
 /**
 * productImageSlider styles
 */
@@ -2688,6 +2712,7 @@
 
 ////////////////////////////////////////
 @include productImageSlider();
+
 /**
 * reactTest styles
 */
@@ -2709,6 +2734,146 @@
 
 ////////////////////////////////////////
 @include reactTest();
+/**
+* shipmentDocument styles
+*/
+
+@mixin shipmentDocument(){
+
+  .shipmentDocument {
+        background: #fff;  
+    .docItemListTitle{
+        &__summary{ 
+            border-top: solid 2px #3d255b;
+            h5{
+                padding: .8em;
+                text-align: right;
+            }
+        }
+        th{
+             font-size: .8rem; 
+             background: cs('primary');
+             color: #fff;
+        }
+       
+    }
+    .counterD{
+        font-size: 2.1em;
+        width: 2.1em;
+        height: 2.1em;
+        color: #fff;
+        text-align: center;
+        line-height: 2.1em;
+        background: cs('primary');
+        padding: .1em;
+        display: inline-block;
+        margin-top: vr-block(.13);
+        margin-right: 1rem;
+    }
+    &__content { 
+        .shipmentDocument__items{
+            tr,th,td{
+                border-right: solid 1px silver;
+                border-left: solid 1px silver;
+            }
+            td[align='center']{
+                font-weight: bold;
+            }
+            th{ border-color: cs('primary-l')} 
+            .shipmentDocument__item:nth-child(odd){
+                background: #f2eded;
+                td{
+                   border-color: #fff;
+                }
+
+                
+            }
+            .signature{
+                width: 49%;
+                display:inline-block;
+                margin: 1em 0 1em;
+            }
+        }
+        width: 90%;
+        margin: 0 auto;
+        h6{
+            display: inline-block;
+            padding-right: .5em; 
+        }
+        table{
+           border: 3px solid cs('primary') !important;
+         
+           
+            caption { 
+             font-weight: bold; 
+             color:cs('primary-d');
+             font-size: 1.2rem;
+             text-align: left;
+             padding-left: 1em;
+                 img.logo{
+                     width: 28%;
+                    float: right;
+                    margin-bottom: 10px;
+                 }
+                 img.card{
+                     vertical-align: middle;
+                     margin-left: 15px; 
+                 }
+            }
+            td,tr,th{
+                border:solid 1px #ccc;
+                border-color: #edede;
+                padding: 6px 6px 6px 10px;
+            }
+            td{
+                border-right: solid 3px cs('primary');
+                border-left: solid 3px cs('primary');
+
+            }
+            th{
+                border-right: solid 3px;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 1.1rem;
+            }
+        }
+    }
+  }
+  .ordersSummary{
+      background: #fff;
+      border: solid 1px cs('primary');
+      td {
+          border: solid 1px silver;
+      }
+      &__header{
+          border-bottom:solid 1px;
+          background-color: cs('primary');
+         
+          th{
+                
+              border: 1px solid cs('primary-d');
+              text-align: center;
+              color: #fff;
+              text-shadow: 1px 1px 1px 2px #000;
+         
+          }
+      }
+      &__info{
+          td{
+              text-align: center;
+              font-weight: bold;
+          }
+          &:nth-child(even){
+              background:#f2eded;
+          }
+      }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include shipmentDocument();
 /**
 * sts-coupon styles
 */
@@ -2775,23 +2940,6 @@
 ////////////////////////////////////////
 @include swe();
 /**
-* tableP styles
-*/
-
-@mixin tableP(){
-
-  .tableP {
-    &__content {
-
-    }
-  }
-
-}
-
-
-////////////////////////////////////////
-@include tableP();
-/**
 * topBar styles
 */
 
@@ -2850,6 +2998,23 @@
 
 ////////////////////////////////////////
 @include topBar();
+/**
+* tableP styles
+*/
+
+@mixin tableP(){
+
+  .tableP {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include tableP();
 /**
 * topFeatures styles
 */
