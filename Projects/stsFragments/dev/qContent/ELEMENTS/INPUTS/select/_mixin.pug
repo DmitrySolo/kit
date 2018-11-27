@@ -1,0 +1,5 @@
+mixin In-select(name,classModifier)
+	-var classModifier = (classModifier)? 'select--' + classModifier : ''
+	select(name=name class='select'+classModifier type='text' data-qcontent='element__INPUTS__select')
+		if block
+			block

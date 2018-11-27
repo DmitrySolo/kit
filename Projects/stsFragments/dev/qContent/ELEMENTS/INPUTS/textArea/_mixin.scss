@@ -1,0 +1,14 @@
+.textArea{
+    width:100%;
+    border: solid 1px cs('background-d2');
+    border-radius: 3px; 
+    padding: vr-block(.2);
+    line-height: 1.5rem;
+    border-bottom: solid 2px cs('background-d2');
+    font-size: 1rem;
+    
+    &__label{
+        color: cs('primary-d');
+            font-weight: bold;
+    }
+}

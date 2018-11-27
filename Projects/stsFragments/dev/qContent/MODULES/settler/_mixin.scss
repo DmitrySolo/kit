@@ -1,0 +1,185 @@
+/**
+* settler styles
+*/
+
+@mixin settler(){
+    $orange:#fc5c00;
+    $blue: #396797;
+
+/* body {
+   background: linear-gradient(to right, rgb(92, 37, 141), rgb(67, 137, 162));
+} */
+    .wrapper{
+        background-image:url('images/wall.svg'); 
+    }
+  .settler {
+     font-family: 'Arimo', sans-serif;
+     width: 1200px;
+     
+    &__header {
+        padding: 30px 0px;
+        
+        color: blue;
+        text-align: center;
+        background: #fff;
+        
+     img{
+         vertical-align: middle;
+         width: 170px;
+        
+     }    
+    h1{
+        margin-left: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        color:$blue;
+        font-size: 1.6rem;
+    }
+     h1,span{
+          text-transform: uppercase;
+      }
+      h1 span{
+          color:$orange !important;}
+    }
+  }
+  .settler__block{
+      font-size: 20px; 
+      padding:60px 60px;
+      color:#fff;
+      min-height:200px;
+
+              &--up{
+               
+              }
+              &--down{
+                 
+                 
+              }
+  }
+  .settler__ruleList{
+      display: inline-block;
+      vertical-align: top;
+      margin-top:40px;
+      width:60%;
+      p{ dispay: inline-block;
+          
+      }
+      li{
+          display:inline-block;
+          margin-bottom: 45px;
+         
+      }
+      
+      
+  }
+  .settler__ruleItem{
+      vertical-align:middle;
+      display: inline-block;
+      text-align: center;
+      line-height: 2rem;
+      width: 50px;
+      height:50px;
+      line-height:50px;
+      font-size: 2rem;
+      border-radius: 50%;
+      background: $orange;
+     // padding-right: 20px;
+      
+     
+     
+     
+  }
+  .settler__ruleText{
+      position:relative;
+      vertical-align: middle;
+      width: 90%;
+      float: right;
+      padding-left: 20px;
+      &:before{
+          content: '1';
+          position: absolute;
+          top:-.25em;
+          left:-1.5em;
+           display: inline-block;
+      text-align: center;
+      line-height: 2rem;
+      width: 50px;
+      height:50px;
+      line-height:50px;
+      font-size: 2rem;
+      border-radius: 50%;
+      background: $orange;
+     
+      }
+       &.n2:before{
+          content:'2';
+      }
+       &.n3:before{
+          content:'3';
+      }
+       &.n4:before{
+          content:'4';
+      }
+       &.n5:before{
+          content:'5';
+      }
+       &.n6:before{
+          content:'6';
+      }
+  }
+  .settler__person{
+      width:39%;
+      display: inline-block;
+      
+      img{width:60%;
+      height: auto;}
+      &--gz{
+           img{width:100%;
+                  height: auto;
+               margin-left:20px; 
+           }
+      }
+      
+  }
+  .settler_to_action{
+      padding:40px;
+      background-color:#275586;
+      float: right;
+      width:60%;
+      margin-top: -250px;
+      position: relative;
+      &:after{
+        
+    background-image: url(images/FEAST11.png);
+    content: '';
+    display: block;
+    width: 14%;
+    height: 72px;
+    position: absolute;
+    left: -25px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    top: -54px;
+      
+  }
+      
+  }
+     .arrow--arrow_settler{ 
+        
+         width:5em;
+         height:5em;
+
+        margin: 0 auto;
+         z-index: 100000;
+         background-image:url('images/arrow.svg');
+         background-repeat: no-repeat;
+            transform: rotate(80deg);
+            background-position:center;
+            background-size: cover;
+     }
+
+}
+
+
+////////////////////////////////////////
+@include settler();

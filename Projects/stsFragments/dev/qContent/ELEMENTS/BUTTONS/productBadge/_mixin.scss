@@ -8,10 +8,15 @@
     color: #fff;
     text-align: center;
     text-shadow: 0px 0px 1px #000;
+     .icon{
+         height: 1rem;
+         width: 1rem;
+        
+     }
     
     &--new {
        
-        background: cs('succes-l2');
+        background: cs('succes-d');
         border-color: cs('succes-l');
         
     }
@@ -29,6 +34,21 @@
             background: #cc0000;
             border-color: #cc0000;
             color: #ffffff;
+    }
+    &--recommending {
+        //vertical-align: bottom;
+        background: cs('primary');
+        border-color: cs('primary-l'); 
+        .icon{
+            margin-right: .32em;
+            vertical-align: middle;  
+        }
+         
+        svg{
+            fill:#fff;
+            padding-bottom:3px; 
+            
+        }
     }
     
     

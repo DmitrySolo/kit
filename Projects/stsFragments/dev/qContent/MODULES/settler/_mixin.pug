@@ -1,0 +1,48 @@
+mixin MODULE-settler()
+	<!-- split modules/settler -->
+	link(href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet")
+	.wrapper
+		.settler
+			.settler__header(data-qcontent='module__settler')
+				img.settler__logo(src="images/ovelogo.png")
+				h1 Условия участия в акции 
+					span НОВОСЕЛ 
+			.settler__block.settler__block--up
+				ul.settler__ruleList
+					li
+						
+						span.settler__ruleText
+							strong Участником акции "Новосел" становится покупатель при условии:
+							br
+							|a) после предъявления одного из документов, подтверждающих	факт приобретения недвижимости.
+							br
+							| б) при единоразовой покупке на сумму от 50000 руб
+					li
+						
+						span.settler__ruleText.n2  Покупатель имеет статус «Новосела» в течение 3-х лет с момента 
+								|получения документов на недвижимость.
+					li
+						 
+						span.settler__ruleText.n3  Покупатель-новосел получает индивидуальную дисконтную карту.
+					li
+						
+						span.settler__ruleText.n4   Скидки по дисконтной карте «Новосел» 
+								|не распространяются на услуги и товары, участвующиe в какой-либо другой акции.
+				.settler__person
+					img(src="images/MZ11.png")
+				.arrow--arrow_settler
+			.settler__block.settler__block--down
+				.settler__person.settler__person--gz
+					img(src="images/GZ11.png")
+				ul.settler__ruleList
+					li
+						span.settler__ruleText.n5 Для участия в акции Покупатель обращается к администратору компании «Окно в Европу».
+					li
+						span.settler__ruleText.n6 Администрация оставляет за собой право изменить условия или приостановить действие данной акции в любой момент без объяснения причин							
+				p.settler_to_action
+					|Ознакомтесь с нашим ассортиментом в 
+					|интернет магазине или торопитесь к нам 
+					|по адрессу ул Донбасская 23 территория ЕЦ
+					|ЯРМАРКА
+				+B-toOrder('Посетить нас','newSetterAction')
+				+B-toOrder('Перейти в интернет-магазин','newSetterAction')

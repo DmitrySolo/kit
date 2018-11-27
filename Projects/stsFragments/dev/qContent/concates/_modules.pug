@@ -25,6 +25,9 @@ mixin MODULE-accordion(data)
 			+B-button('Смотреть')
 			+B-button('Сбросить','default')
 
+mixin MODULE-additionalProducts()
+	<!-- split modules/additionalProducts -->
+	.additionalProducts__content(data-qcontent='module__additionalProducts')
 mixin MODULE-bottomFeatures()
 	<!-- split modules/bottomFeatures -->
 	.bottomFeatures(data-qcontent='module__bottomFeatures')
@@ -66,9 +69,6 @@ mixin MODULE-bottomFeatures()
 		
 		
 		
-mixin MODULE-additionalProducts()
-	<!-- split modules/additionalProducts -->
-	.additionalProducts__content(data-qcontent='module__additionalProducts')
 mixin breadcrumbs()
 	.breadCrumb__content(data-qcontent='module__breadcrumbs')
 		nav.breadCrumb.visible-l
@@ -140,71 +140,6 @@ mixin MODULE-catalog()
 			span.catalog__elemTitle Бренды
 			+I('to-right','to-right f-right')
   
-mixin MODULE-catalogMain()
-	<!-- split modules/catalogMain -->
-	.catalogMain__content(data-qcontent='module__catalogMain')
-		.catalogList__category.l_ib__c(class=' '+ classN)#js_categories
-			nav(role='catalog').l_ib__e
-				ul.catalogList__categoryList
-						li.catalogList__categoryItem#js_showSub__1     
-							+I('bathm','asset')      
-							span Ванны
-							+I('to-right','catalog') 
-						li.catalogList__categoryItem#js_showSub__2
-							+I('mebelm','asset')   
-							span Мебель для ванной
-							+I('to-right','catalog')  
-						li.catalogList__categoryItem#js_showSub__3   
-							+I('smes','asset')           
-							span Смесители
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__4
-							+I('dkm','asset')  
-							span Душ Кабины и уголки
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__5
-							+I('ogpo','asset')          
-							span Ограждения, поддоны
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__6
-							+I('showerm','asset')            
-							span Все для душа 
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__7 
-							+I('toiletm','asset')           
-							span Унитазы и Биде 
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__8  
-							+I('susm2','asset')           
-							span Полотенцесушители 
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__9  
-							+I('accm','asset')              
-							span Аксессуары 
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__3   
-							+I('smes','asset')           
-							span Смесители
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__4
-							+I('dkm','asset')  
-							span Душ Кабины и уголки
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__5
-							+I('ogpo','asset')          
-							span Ограждения, поддоны
-							+I('to-right','catalog')
-						li.catalogList__categoryItem#js_showSub__6
-			ul.catalogList__categorySublist.l_ib__e
-				li.catalogList__SublistItem#js_sub__1 1
-				li.catalogList__SublistItem#js_sub__2 2
-				li.catalogList__SublistItem#js_sub__3 3
-				li.catalogList__SublistItem#js_sub__4 4
-				li.catalogList__SublistItem#js_sub__5 5
-				li.catalogList__SublistItem#js_sub__6 6
-				li.catalogList__SublistItem#js_sub__7 7
-				li.catalogList__SublistItem#js_sub__8 8
-				li.catalogList__SublistItem#js_sub__9 9
 mixin MODULE-catalogList(param)
 	if(page.slug=='main' && param =='main')
 		-var classN = 'catalogList--onMain'
@@ -459,6 +394,71 @@ mixin MODULE-CENTURION()
 							li
 								label Путь к позиции
 									input(type='text')
+mixin MODULE-catalogMain()
+	<!-- split modules/catalogMain -->
+	.catalogMain__content(data-qcontent='module__catalogMain')
+		.catalogList__category.l_ib__c(class=' '+ classN)#js_categories
+			nav(role='catalog').l_ib__e
+				ul.catalogList__categoryList
+						li.catalogList__categoryItem#js_showSub__1     
+							+I('bathm','asset')      
+							span Ванны
+							+I('to-right','catalog') 
+						li.catalogList__categoryItem#js_showSub__2
+							+I('mebelm','asset')   
+							span Мебель для ванной
+							+I('to-right','catalog')  
+						li.catalogList__categoryItem#js_showSub__3   
+							+I('smes','asset')           
+							span Смесители
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__4
+							+I('dkm','asset')  
+							span Душ Кабины и уголки
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__5
+							+I('ogpo','asset')          
+							span Ограждения, поддоны
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__6
+							+I('showerm','asset')            
+							span Все для душа 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__7 
+							+I('toiletm','asset')           
+							span Унитазы и Биде 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__8  
+							+I('susm2','asset')           
+							span Полотенцесушители 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__9  
+							+I('accm','asset')              
+							span Аксессуары 
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__3   
+							+I('smes','asset')           
+							span Смесители
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__4
+							+I('dkm','asset')  
+							span Душ Кабины и уголки
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__5
+							+I('ogpo','asset')          
+							span Ограждения, поддоны
+							+I('to-right','catalog')
+						li.catalogList__categoryItem#js_showSub__6
+			ul.catalogList__categorySublist.l_ib__e
+				li.catalogList__SublistItem#js_sub__1 1
+				li.catalogList__SublistItem#js_sub__2 2
+				li.catalogList__SublistItem#js_sub__3 3
+				li.catalogList__SublistItem#js_sub__4 4
+				li.catalogList__SublistItem#js_sub__5 5
+				li.catalogList__SublistItem#js_sub__6 6
+				li.catalogList__SublistItem#js_sub__7 7
+				li.catalogList__SublistItem#js_sub__8 8
+				li.catalogList__SublistItem#js_sub__9 9
 mixin MODULE-centurioResult()
 	<!-- split modules/centurioResult -->
 	.centurioResult__content(data-qcontent='module__centurioResult')
@@ -482,64 +482,168 @@ mixin confirmedOrderPage()
 mixin MODULE-deliverySection()
 	<!-- split modules/deliverySection -->
 	.deliverySection__content(data-qcontent='module__deliverySection')
-		h5.deliverySection__title Доставка в город 
-			a.geoTarget__link.js_modal_trigger(href='df' id = 'js_modal_trigger__geo') Воронеж:
-		ul.deliverySection__type
-			li.deliverySection__to
-				h6.deliverySection__subHeader
-					+I('flag')
-					span Самовывоз из офиса
-				dl
-					dt Стоимость:
-					dd 
-						span.free Бесплатно
-				dl
-					dt Когда: 
-					dd  Уже сегодня до 18:00
-				dl
-					dt Адрес:
-					dd
-						ul
-							li 
-								a(href="/") гВоронеж ул Донбасская 21 
-			li.deliverySection__to
-				h6.deliverySection__subHeader  
-					+I('p-marker')
-					span Самовывоз из пункта выдачи
-				dl
-					dt Стоимость:
-					dd 
-						span.free Бесплатно
-						
-				dl
-					dt Когда: 
-					dd 1-2 дня
-						
-				dl
-					dt Адреса:
-					dd
-						ul
-							li 
-								a(href="/") гВоронеж ул Донбасская 21
-							li 
-								a(href="/") г. Воронеж, ул. Ленинградская, д.55а
-							li.deliverySection__more 
-								+A-actionLink('еще 14')
-			li.deliverySection__to
-							h6.deliverySection__subHeader
-								+I('truck-del')
-								span  Курьерская доставка
-							dl
-								dt Стоимость: 
-								dd 1700р
-									
-							dl
-								dt Когда: 
-								dd 
-									span 1-2 дня
+		:php
+			if( $empty ):
+		if deliverySection.options.outStock == false 
+			h5.deliverySection__title Доставка в город 
+				a.geoTarget__link.js_modal_trigger(href='df' id = 'js_modal_trigger__geo') Воронеж:
+			ul.deliverySection__type
+				li.deliverySection__to
+					h6.deliverySection__subHeader
+						+I('flag')
+						span Самовывоз из офиса!
+					dl
+						dt Стоимость:
+						dd 
+							span.free Бесплатно
+					dl
+						dt Когда: 
+						dd  Уже сегодня до 18:00
+					dl
+						dt Адрес:
+						dd
+							ul
+								li 
+									a(href="/") гВоронеж ул Донбасская 21 
+				li.deliverySection__to
+					h6.deliverySection__subHeader  
+						+I('p-marker')
+						span Самовывоз из пункта выдачи
+					dl
+						dt Стоимость:
+						dd 
+							span.free Бесплатно
 							
-			
-			
+					dl
+						dt Когда: 
+						dd 1-2 дня
+							
+					dl
+						dt Адреса:
+						dd
+							ul
+								li 
+									a(href="/") гВоронеж ул Донбасская 21
+								li 
+									a(href="/") г. Воронеж, ул. Ленинградская, д.55а
+								li.deliverySection__more 
+									+A-actionLink('еще 14')
+				li.deliverySection__to
+								h6.deliverySection__subHeader
+									+I('truck-del')
+									span  Курьерская доставка
+								dl
+									dt Стоимость: 
+									dd 1700р
+										
+								dl
+									dt Когда: 
+									dd 
+										span 1-2 дня 
+		else
+			p.deliverySection__outOfStock 
+				b Интересуетесь данным товаром, но его нет в наличии?
+				br
+				span  Свяжитесь с нами по бесплатному номеру 
+					b 8 800-500-13-84 
+					| и назовите код товара. Наши менеджеры уточнят сроки доставки, актуальную цену или помогут подобрать аналог.
+			:php
+				endif
+				
+mixin MODULE-email()
+	<!-- split modules/email -->
+	table.outerTable
+		tr
+			td
+				table.email__content(data-qcontent='module__email')
+					th.email 
+						img(src = "partner.santehsmart.ru/bitrix/templates/STS2/images/logo.jpg")
+						span Новый заказ 234224 
+					tbody
+						tr
+							td 
+								h4 Уважаемый Тывавыа Сываываа ываывавыа выававы 
+						tr
+							td 
+								p Ваш заказ номер - 00ЗИМ-01498. от 15.06.2018 14:57:45 принят. 
+						tr
+							td 
+								p.email__main Стоимость заказа: 2 320 руб.
+									br 
+									
+									|	Пункт выдачи: Донбасская 21
+									
+									br
+									|Состав заказа:
+									br
+									|Сантек Бореаль унитаз подвесной (полипропилен) 1WH302206 - 1.00 шт x 2 320 руб. 
+						// tr
+						// 	td
+						// 		p Вы можете следить за выполнением своего заказа (на какой стадии выполнения он находится), войдя в Ваш персональный раздел сайта Santehsmart. 
+						// 			br
+						// 			br
+						// 			|Обратите внимание, что для входа в этот раздел Вам необходимо будет ввести логин и пароль пользователя сайта Santehsmart. 
+						// 			br
+						// 			br
+						// 			|Для того, чтобы аннулировать заказ, воспользуйтесь функцией отмены заказа, которая доступна в Вашем персональном разделе сайта Santehsmart. 
+						// 			br
+						// 			br
+						// 			|Пожалуйста, при обращении к администрации сайта Santehsmart ОБЯЗАТЕЛЬНО указывайте номер Вашего заказа - 1113042.
+						// 			br
+						// 			br
+						// 			br
+						// 			span Спасибо за покупку!  
+						// 			br
+						// 			br 
+						tr(style='border-top:solid 3px #3d255b;')
+							td 
+								p С уважением, 
+									br
+									|администрация Интернет-магазина
+									br
+									|E-mail: sale@santehsmart.ru 
+
+mixin MODULE-fastBuy()
+	<!-- split modules/fastBuy -->
+	.fastBuy__trigger#fastBuy__trigger(data-qcontent='module__fastBuy') trigger
+	+LEVEL-modalWindow('fastBuy','Быстрый заказ без регистрации','fastBuy')
+		.fastBuy__content(data-qcontent='module__fastBuy')
+			-if(fastBuy.state=='static')
+				form
+					p.fastBuy__label
+						strong Ванна акриловая BAS Сагра 160х100 левая (Код товара: 21060)
+					.group.group--md
+						.col.col-6-tl
+							+In-textInput('name','','Ваше Имя:','classModifier')
+							+In-textInput('city_name','Воронеж:','Город:','classModifier') 
+							+In-textInput('name','XXX-XXX','Номер купона для скидки:','classModifier')
+							+In-textInput('name','+7(xxx) xxx xx xx','Номер телефона:','classModifier')
+						.col.col-6-tl
+							.group.group--el
+								.col.col-6-tl.fastBuy__price
+									//+C-priceAndStock()
+								.col.col-6-tl
+									.fastBuy__prodImage
+							.fastBuy__productChar
+								//+MODULE-productChar() 
+					+In-textArea('name','Комментарий:','Комментарий по желанию','classModifier')
+					p.fastBuy__caution
+						| Обращаем ваше внимание - заказывая без регистрации, вы не накапливаете бонусные баллы.
+					.fastBuy__orderAction
+						+B-toOrder('Заказать')
+			-if(fastBuy.state=='onload')
+				.fastBuy__loader
+			-if(fastBuy.state=='success')
+				article.fastBuy__success
+					span.succes.icon-tick Заказ оформлен!
+					p В ближайшее время с вами свяжется наш менеджер для подверждения заказа и уточнения сроков и способа доставки.
+	p ///////////////////////////////////////////////////////////////
+	.page__title Товар такойто
+	.productInfo__priceStock 
+	+MODULE-productChar()
+	+C-priceAndStock()
+	img.productImageSlider__image(src = 'https://www.santehsmart.ru/upload/iblock/5a6/5a6597f83386fe4358bf252bb9751574.png')
+	if(fastBuy.state )	
 mixin MODULE-featuresList()
 	<!-- split modules/featuresList -->
 	.featuresList__content(data-qcontent='module__featuresList')
@@ -606,6 +710,10 @@ mixin MODULE-IBGrid()
 				.col.col-6-tp.hideFrom-tl   
 					.testgrid 1      
 
+mixin MODULE-layout()
+	<!-- split modules/layout -->
+	.layout__content(data-qcontent='module__layout')  
+		.layout
 mixin MODULE-innerCoupon(type)
 	-if(type!='product')
 		<!-- split modules/innerCoupon -->
@@ -633,10 +741,6 @@ mixin MODULE-innerCoupon(type)
 					+C-countDown('innerCoupon','До коца акции осталось')
 				#demo12
 		
-mixin MODULE-layout()
-	<!-- split modules/layout -->
-	.layout__content(data-qcontent='module__layout')  
-		.layout
 mixin MODULE-mainInfo()
 	<!-- split modules/mainInfo -->
 	.mainInfo__content(data-qcontent='module__mainInfo')
@@ -676,21 +780,6 @@ mixin MODULE-mainInfo()
 						span.mainInfo__phone-time.icon-clock1
 							| Ежедневно  с 9 до 19ч
 							//| ПН-ПТ 9 - 19ч
-mixin MODULE-mainSearch(data)
-	<!-- split modules/mainSearch -->
-	.mainSearch__content(data-qcontent='module__mainSearch')
-		form.mainSearch__form 
-			input.mainSearch__input(type='text',placeholder="Поиск среди 20 000 товаров")
-			label.mainSearch__icon
-				+I('search','mainSearch') 
-				input.mainSearch__submit(type='submit' value="Искать")
-		if( data=='fired')
-			.mainSearch__result.clearfix
-				+C-productInline(productInline1,'search')
-				+C-productInline(productInline1,'search')
-				+C-productInline(productInline1,'search')
-				+C-productInline(productInline1,'search')
-
 mixin MODULE-mobileMenu(param)
 	.mobileMenu
 		.mobileMenu__content(data-qcontent='module__mobileMenu')
@@ -711,6 +800,21 @@ mixin MODULE-mobileMenu(param)
 									li
 										a(href="/") Кабины
 
+mixin MODULE-mainSearch(data)
+	<!-- split modules/mainSearch -->
+	.mainSearch__content(data-qcontent='module__mainSearch')
+		form.mainSearch__form 
+			input.mainSearch__input(type='text',placeholder="Поиск среди 20 000 товаров")
+			label.mainSearch__icon
+				+I('search','mainSearch') 
+				input.mainSearch__submit(type='submit' value="Искать")
+		if( data=='fired')
+			.mainSearch__result.clearfix
+				+C-productInline(productInline1,'search')
+				+C-productInline(productInline1,'search')
+				+C-productInline(productInline1,'search')
+				+C-productInline(productInline1,'search')
+
 mixin MODULE-module()
 	<!-- split modules/module -->
 	.module__content(data-qcontent='module__module')
@@ -729,6 +833,91 @@ mixin MODULE-noticeList()
 						b 29.11.2017 11:18:56 
 					h5.noticeList__elementHeader Тестовое уведомление
 					p.noticeList__noticeContent.text Следует отметить, что повышение уровня гражданского сознания обеспечивает широкому кругу (специалистов) участие в формировании форм воздействия. Таким образом, дальнейшее развитие различных форм деятельности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для поэтапного и последовательного развития общества. Независимые государства, превозмогая сложившуюся непростую экономическую ситуацию, объявлены нарушающими общечеловеческие нормы этики и морали.
+mixin MODULE-onePageOrder()
+	<!-- split modules/onePageOrder -->
+	.onePageOrder__content(data-qcontent='module__onePageOrder')
+		form.onePageOrder
+			.group.group--md 
+				.col.col-9-tl
+					.onePageOrder__section
+						h5.onePageOrder__header Укажите контактные данные
+						.onePageOrder__inputGroup 
+							label.onePageOrder__label  
+								| Имя
+								input.onePageOrder__input(data-validation="length" data-validation-length="min3"  data-validation-error-msg="Введите Имя" id="email" type='text' value=''  name="email")
+							label.onePageOrder__label
+								| Телефон
+								input.onePageOrder__input(type='text' value=''  name="phone"  data-validation="custom" data-validation-regexp="^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$"  data-validation-error-msg="Введите корректный номер телефона" id="email")
+							label.onePageOrder__label
+								| E-mail   
+								input.onePageOrder__input(data-validation="email" data-validation-error-msg="Введите корректный E-mail" type='text' value=''  name="mail")
+					.onePageOrder__section.onePageOrder__section--widget
+						h5.onePageOrder__header Выберите способ получения
+						.group.onePageOrder__deliveryTabs
+							.col.col-4-tp.col-6-m.onePageOrder__deliveryTab.notEdit.onePageOrder__deliveryTab--selected
+								h6 Самовывоз
+								p 1-2 дня, 345 р
+							.col.col-4-tp.col-6-m.onePageOrder__deliveryTab.notEdit
+								h6 Курьерская доставка
+								p 1-2 дня, 345 р
+						.group.onePageOrder__deliveryOptions 
+							.col.col-12-tp.onePageOrder__deliveryOption 1
+							.col.col-12-tp.onePageOrder__deliveryOption 
+								.onePageOrder__inputGroup
+									label.onePageOrder__label
+										| Адрес доставки
+									input.onePageOrder__input(data-validation="length" data-validation-length="min6"  data-validation-error-msg="Введите Адрес доставки" type='text' value=''  name="delivery" data-validation-skipped="1")
+									label.onePageOrder__label
+										| Дата доставки
+									+In-select()
+										option ПН. 2 ноября ( с 11 до 18ч )
+										option ВТ. 3 ноября ( с 11 до 18ч )
+										option СР. 4 ноября ( с 11 до 18ч )
+										option ЧТ. 5 ноября ( с 11 до 18ч )
+										option ПТ. 6 ноября ( с 11 до 18ч )
+										option СБ. 7 ноября ( с 11 до 17ч )
+								.onePageOrder__inputGroup
+									label.onePageOrder__check(for='delTimeCheck') Доставка ко времени	-400р
+										input.notEdit(type='checkbox' id='delTimeCheck')
+										span.checkmark
+									label.onePageOrder__label
+									| Время
+									input.onePageOrder__input(id="selectTime" disabled="disabled" type='text' value='' name="selectTime")
+																									
+					.onePageOrder__section
+						h5.onePageOrder__header Выберите способ оплаты
+						h6.onePageOrder__subHeader Вы всегда можете осмотреть товар перед оплатой 
+						.onePageOrder__inputGroup
+							+In-radioButton('payment','bankCard','true')
+							label.onePageOrder__label--radio Онлайн оплата банковской картой
+							br
+							+In-radioButton('payment','cash')
+							label.onePageOrder__label--radio Оплата при получении 
+								br
+								|(банковской картой или наличными)
+					.onePageOrder__section
+						h5.onePageOrder__header Вы можете оставить комментарий к заказу
+						textarea(rows=6)
+					.onePageOrder__submit
+						button.toOrder.makeOrder Оформить заказ
+						label.onePageOrder__check(for='confidential') Я согласен с 
+							a(href='/') политикой конфиденциальности
+							input.notEdit(type='checkbox' id='confidential' checked='checked')
+							span.checkmark
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				.col.col-3-tl
+					
 mixin MODULE-order()
 	<!-- split modules/order -->
 	.order__content(data-qcontent='module__order')
@@ -781,7 +970,7 @@ mixin MODULE-order()
 									br
 									span.deliveryCost.deliveryCost--free='Cтоимость: Бесплатно'
 							.col.col-4-tl
-								+B-radio('Курьерская доставка','trig_del_cont')
+								+B-radio('ID_DELIVERY_ID_59','trig_del_cont')
 									br
 									span.deliveryCost='Cтоимость: 550 руб.'
 					.order__points
@@ -864,6 +1053,22 @@ mixin MODULE-order()
 						
 						
 			
+mixin MODULE-pageBreadcrumbs()
+	-if(page.slug!='main')
+		<!-- split modules/pageBreadcrumbs -->
+		.group.group-md
+			.col.col-12-tp
+				.pageBreadcrumbs__content(data-qcontent='module__pageBreadcrumbs')
+						nav.pageBreadcrumbs
+							ul.pageBreadcrumbs__list
+								li.pageBreadcrumbs__item
+									a Главная 
+								li.pageBreadcrumbs__item.icon-to-right
+									a Каталог
+								li.pageBreadcrumbs__item.icon-to-right
+									a Сантехника
+								li.pageBreadcrumbs__item.icon-to-right  
+									a Душевые кабины
 mixin owlSlider()
 	<!-- split modules/owlSlider -->
 	.owlSlider(data-qcontent='module__owlSlider')
@@ -882,22 +1087,26 @@ mixin owlSlider()
 				li.sliderTitles__item.col.col-4-tl.col-4-m
 					+I('new1','sliderTitle ib')
 					h6.sliderTitles__title.ib Супер акция на ванны Монтерей3  
-mixin MODULE-pageBreadcrumbs()
-	-if(page.slug!='main')
-		<!-- split modules/pageBreadcrumbs -->
-		.group.group-md
-			.col.col-12-tp
-				.pageBreadcrumbs__content(data-qcontent='module__pageBreadcrumbs')
-						nav.pageBreadcrumbs
-							ul.pageBreadcrumbs__list
-								li.pageBreadcrumbs__item
-									a Главная 
-								li.pageBreadcrumbs__item.icon-to-right
-									a Каталог
-								li.pageBreadcrumbs__item.icon-to-right
-									a Сантехника
-								li.pageBreadcrumbs__item.icon-to-right  
-									a Душевые кабины
+mixin MODULE-personalSection()
+	<!-- split modules/personalSection -->
+	.personalSection__content(data-qcontent='module__personalSection')
+		.personalSection
+			.group
+				.col.col-2-tl
+					a.personalSection__element
+						span Текущие заказы
+				.col.col-2-tl
+					a.personalSection__element
+						span Личный счет
+				.col.col-2-tl
+					a.personalSection__element 
+						span Личные данные 
+				.col.col-2-tl
+					a.personalSection__element История заказов
+				.col.col-2-tl
+					a.personalSection__element Корзина
+				.col.col-2-tl
+					a.personalSection__element Обратная связь
 mixin MODULE-productCatInline(data)
 	<!-- split modules/productCatInline -->
 	.productCatInline__content(data-qcontent='module__productCatInline')
@@ -973,6 +1182,59 @@ mixin MODULE-reactTest()
 	<!-- split modules/reactTest -->
 	.reactTest__content(data-qcontent='module__reactTest')
 		#reactTest1
+mixin MODULE-registerForm()
+	<!-- split modules/registerForm -->
+	.registerForm__content(data-qcontent='module__registerForm')
+		.registerForm
+			|Hey 
+mixin MODULE-settler()
+	<!-- split modules/settler -->
+	link(href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet")
+	.wrapper
+		.settler
+			.settler__header(data-qcontent='module__settler')
+				img.settler__logo(src="images/ovelogo.png")
+				h1 Условия участия в акции 
+					span НОВОСЕЛ 
+			.settler__block.settler__block--up
+				ul.settler__ruleList
+					li
+						
+						span.settler__ruleText
+							strong Участником акции "Новосел" становится покупатель при условии:
+							br
+							|a) после предъявления одного из документов, подтверждающих	факт приобретения недвижимости.
+							br
+							| б) при единоразовой покупке на сумму от 50000 руб
+					li
+						
+						span.settler__ruleText.n2  Покупатель имеет статус «Новосела» в течение 3-х лет с момента 
+								|получения документов на недвижимость.
+					li
+						 
+						span.settler__ruleText.n3  Покупатель-новосел получает индивидуальную дисконтную карту.
+					li
+						
+						span.settler__ruleText.n4   Скидки по дисконтной карте «Новосел» 
+								|не распространяются на услуги и товары, участвующиe в какой-либо другой акции.
+				.settler__person
+					img(src="images/MZ11.png")
+				.arrow--arrow_settler
+			.settler__block.settler__block--down
+				.settler__person.settler__person--gz
+					img(src="images/GZ11.png")
+				ul.settler__ruleList
+					li
+						span.settler__ruleText.n5 Для участия в акции Покупатель обращается к администратору компании «Окно в Европу».
+					li
+						span.settler__ruleText.n6 Администрация оставляет за собой право изменить условия или приостановить действие данной акции в любой момент без объяснения причин							
+				p.settler_to_action
+					|Ознакомтесь с нашим ассортиментом в 
+					|интернет магазине или торопитесь к нам 
+					|по адрессу ул Донбасская 23 территория ЕЦ
+					|ЯРМАРКА
+				+B-toOrder('Посетить нас','newSetterAction')
+				+B-toOrder('Перейти в интернет-магазин','newSetterAction')
 mixin MODULE-shipmentDocument()
 	<!-- split modules/shipmentDocument -->
 	.shipmentDocument__content(data-qcontent='module__shipmentDocument') 
@@ -1155,6 +1417,7 @@ mixin MODULE-topMenu()
 									li 4
 						li.topMenu__element
 							+A-material('Контакты')
+						+freeDelSticker('truck-del','Бесплатная доставка до пункта выдачи')
 						li.topMenu__element.topMenu__element--login
 							+A-actionLink('Вход','','login js_modal_trigger', 'js_modal_trigger__login','icon-login')
 							+A-actionLink('Регистрация','','signUp js_modal_trigger','js_modal_trigger__signUp')
@@ -1178,30 +1441,24 @@ mixin MODULE-vipChallenge()
 				label Эл. почта: 
 					input(type='text')
 				input(type='submit')
-mixin LEVEL-inner(data)
-	.level__inner
-		.container
-			if block
-				block
 mixin LEVEL-cartProduct(data)
 	.cartProduct
 		.cartProduct__content(class = 'cartProduct__content'+ className data-qcontent="level__cartProduct")
 
+mixin LEVEL-level1(data)
+	.level1
+		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
+			h2.level1__title=title
+			if block
+				block
 mixin LEVEL-level(title,className)
 	-if (!className) className =''
 	.level__content(class = 'level__content'+ className data-qcontent="level__level")
 		h2.level__title=title
 		block level
-mixin LEVEL-level2(title,data)
-	.level2
-		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
-			h2.level2__title=data.title.ZOPA
-			if block
-				block
-mixin LEVEL-level1(data)
-	.level1
-		.level1__content(class = 'level1__content'+ className data-qcontent="level__level1")
-			h2.level1__title=title
+mixin LEVEL-inner(data)
+	.level__inner
+		.container
 			if block
 				block
 mixin LEVEL-mainPageSection(title)
@@ -1210,6 +1467,23 @@ mixin LEVEL-mainPageSection(title)
 			h2.mainPageSection__title=title
 			if block
 				block
+mixin LEVEL-level2(title,data)
+	.level2
+		.level2__content(class = 'level2__content'+ className data-qcontent="level__level2")
+			h2.level2__title=data.title.ZOPA
+			if block
+				block
+mixin LEVEL-modalWindow(id, title, className)
+	-if(!className) className = ''
+	-else className= 'modalWindow--'+className
+	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id class=''+className)
+		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
+			a.modalWindow__close
+				+I('close','close')
+			h3.modalWindow__title=title  
+			.modalWindow__body
+				if block
+					block       
 mixin LEVEL-newtest(data)
 	.newtest
 		.newtest__content(class = 'newtest__content'+ className data-qcontent="level__newtest")
@@ -1254,14 +1528,6 @@ mixin LEVEL-outer(data)
 		.outer__content(class = 'outer__content'+ className data-qcontent="level__outer")
 			if block    
 				block        
-mixin LEVEL-popup(data)
-	.popup__angle
-		+I('to-right','popup')
-	.popup
-		.popup__content(class = 'popup__content'+ className data-qcontent="level__popup")
-			.popup__body
-				if block
-					block
 mixin LEVEL-productInfo(data)
 	.productInfo
 		.productInfo__content.block--inner(class = 'productInfo__content'+ className data-qcontent="level__productInfo")
@@ -1272,7 +1538,7 @@ mixin LEVEL-productInfo(data)
 					.col.col-3-tl.col-6-tp
 						.productInfo__section
 							+MODULE-innerCoupon('product')
-							+B-productBadge('Новинка','new')  
+							+B-productBadge('Рекомендуем','recommending','like')  
 							.productInfo__priceStock
 								+C-priceAndStock('part')
 							+C-smartBonus()
@@ -1285,26 +1551,6 @@ mixin LEVEL-productInfo(data)
 						
 			.productLogo
 				img(src='https://santehsmart.ru/upload/resize_cache/uf/663/120_40_1/663573ea5278ca044fad90b0a4f2346d.png')
-mixin LEVEL-page(title)
-		.page(class = 'page--'+page.slug +' page--'+page.className)
-			.page__content(class = 'page__content'+ className data-qcontent="level__page")
-				-if(page.slug != 'main')
-					.group
-						.col.col-12-tl
-							h1.page__title=title        
-				if block
-					block
-mixin LEVEL-modalWindow(id, title, className)
-	-if(!className) className = ''
-	-else className= 'modalWindow--'+className
-	.modalWindow.overlay.modalWindow--hide(id = 'js_modall__'+id class=''+className)
-		.modalWindow__content(class = 'modalWindow__content' data-qcontent="level__modalWindow")
-			a.modalWindow__close
-				+I('close','close')
-			h3.modalWindow__title=title  
-			.modalWindow__body
-				if block
-					block       
 //
 mixin LEVEL-productSection(title,className)
 	.productSection__content(data-qcontent="level__productSection")
@@ -1326,6 +1572,23 @@ mixin LEVEL-productSection(title,className)
 					+I('layout1','productsLayout') 
 		if block
 			block
+mixin LEVEL-page(title)
+		.page(class = 'page--'+page.slug +' page--'+page.className)
+			.page__content(class = 'page__content'+ className data-qcontent="level__page")
+				-if(page.slug != 'main')
+					.group
+						.col.col-12-tl
+							h1.page__title=title        
+				if block
+					block
+mixin LEVEL-popup(data)
+	.popup__angle
+		+I('to-right','popup')
+	.popup
+		.popup__content(class = 'popup__content'+ className data-qcontent="level__popup")
+			.popup__body
+				if block
+					block
 mixin LEVEL-showCasePage(data)
 	-if (!className) className =''
 	.container
@@ -1362,6 +1625,11 @@ mixin LEVEL-starter(title,className)
 		h5.starter__title=title
 		if block
 			block
+mixin LEVEL-testOfSergConnectingSupport(title,className)
+	-if (!className) className =''
+	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
+		h2.testOfSergConnectingSupport__title=title
+		block testOfSergConnectingSupport
 mixin LEVEL-showcase(title,className)
 	-if (!className) className =''
 	section.showcase__content(class = 'showcase__content '+ className data-qcontent="level__showcase")
@@ -1371,6 +1639,18 @@ mixin LEVEL-showcase(title,className)
 			+holder('page__loader','100px300',colors.primary)
 			if block
 				block
+mixin LEVEL-topdashBoard(data)
+	-if (!className) className =''
+	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
+		ul.topdashBoard__list.group.group--el    
+			+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
+			+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
+			+dashBoardElement('help','Помощь и настройки','dashBoardElement')
+			+dashBoardElement('ptnMap','Пункты выдачи','dashBoardElement')
+			// +dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')  
+			+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher') 
+	if block
+		block 
 mixin LEVEL-subProductInfo(data)
 	.subProductInfo
 		.subProductInfo__content.block--inner(class = 'subProductInfo__content'+ className data-qcontent="level__subProductInfo")
@@ -1390,23 +1670,6 @@ mixin LEVEL-subProductInfo(data)
 					.subProductInfo__tabContent 2
 					.subProductInfo__tabContent 3
 					.subProductInfo__tabContent 4
-mixin LEVEL-testOfSergConnectingSupport(title,className)
-	-if (!className) className =''
-	.testOfSergConnectingSupport__content(class = 'testOfSergConnectingSupport__content'+ className data-qcontent="level__testOfSergConnectingSupport")
-		h2.testOfSergConnectingSupport__title=title
-		block testOfSergConnectingSupport
-mixin LEVEL-topdashBoard(data)
-	-if (!className) className =''
-	.topdashBoard__content(class = 'topdashBoard__content'+ className data-qcontent="level__topdashBoard")
-		ul.topdashBoard__list.group.group--el    
-			+dashBoardElement('tie','Личный Кабинет   ','dashBoardElement')
-			+dashBoardElement('notification','Уведомления','dashBoardElement dashBoardElement--notice','noticer')
-			+dashBoardElement('help','Помощь и настройки','dashBoardElement')
-			+dashBoardElement('ptnMap','Пункты выдачи','dashBoardElement')
-			// +dashBoardElement('orderlist','Заявка:','dashBoardElement','orderList')  
-			+dashBoardElement('help','Режим Торгового Зала','dashBoardElement','switcher') 
-	if block
-		block 
 mixin C-countDown(ids,header,time)
 	.countDown
 		h6.countDown__header=header+':'
@@ -1423,28 +1686,6 @@ mixin C-countDown(ids,header,time)
 	
  
 
-mixin C-coupon(type)
-	-if(type == 'bottom')
-		.coupon.bounce.animated(data-qcontent='component__coupon' class = ' coupon--'+type )
-			span.coupon__closer 
-				+I('close','couponClose') 
-			+I('coupon','couponStar')
-			h6.coupon__title  
-				span.coupon__value 10%  
-				| ПРОМОКОД
-			+I('coupon','couponStar')  
-			.coupon__content 
-				p.text  До 12 марта! #[br] Дополнительная праздничная скидка #[br]
-					span.coupon__value 10% по промокоду: #[br]
-					span.coupon__id 2546-5367#[br]
-			+C-countDown('coupon--bottom','До конца действия акции осталось')
-			p.text.coupon__advices 
-				| Воспользуйтесь купоном, введя его номер в соответствующее поле на странице корзины.
-				
-			p.coupon__ps
-				
-				
-			
 mixin C-deliveryArticle()
 	.deliveryArticle(data-qcontent='component__deliveryArticle')
 		.group.group--bl.text
@@ -1507,6 +1748,28 @@ mixin C-deliveryArticle()
 					li Оплата картой на сайте.
 					li Оплата банковским переводом.
 					li Оплата наличным рассчетом курьеру.
+mixin C-coupon(type)
+	-if(type == 'bottom')
+		.coupon.bounce.animated(data-qcontent='component__coupon' class = ' coupon--'+type )
+			span.coupon__closer 
+				+I('close','couponClose') 
+			+I('coupon','couponStar')
+			h6.coupon__title  
+				span.coupon__value 10%  
+				| ПРОМОКОД
+			+I('coupon','couponStar')  
+			.coupon__content 
+				p.text  До 12 марта! #[br] Дополнительная праздничная скидка #[br]
+					span.coupon__value 10% по промокоду: #[br]
+					span.coupon__id 2546-5367#[br]
+			+C-countDown('coupon--bottom','До конца действия акции осталось')
+			p.text.coupon__advices 
+				| Воспользуйтесь купоном, введя его номер в соответствующее поле на странице корзины.
+				
+			p.coupon__ps
+				
+				
+			
 mixin C-footer()
 	.footer__content(data-qcontent='component__footer')
 		.footer__section

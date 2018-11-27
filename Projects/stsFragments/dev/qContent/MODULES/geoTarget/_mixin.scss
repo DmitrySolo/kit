@@ -57,7 +57,7 @@
     &__points{ 
         
         
-        @include for-size(phone-only){
+        @include for-size(phone-only){ 
             display:none;
         }
     }

@@ -5,15 +5,15 @@ $switchers:(
     vertical-rhythm: true,
     linkFonts: true, 
     assetsFonts: false,
-    debug: false,
-    production: false, 
+    debug: true, 
+    production: false,  
     icon-font: false,
 );
 
 $linkFonts: true; // USE REMOTE FONTS
 $assetsFonts: false; // USE OWN FONTS
 $debug: true;
-$production: false;   
+$production: false;
 $icon-font: false; 
 @import "fontOption";
 

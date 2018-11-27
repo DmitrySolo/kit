@@ -1,4 +1,6 @@
-mixin B-productBadge(value,className)
+mixin B-productBadge(value,className,icon)
 	-var className=className || ''
-	span.productBadge(class='productBadge--'+className data-qcontent='element__buttons__productBadge')=value
-		
+	span.productBadge(class='productBadge--'+className data-qcontent='element__buttons__productBadge')
+		-if(icon)	
+			+I(icon)
+		| #{value}

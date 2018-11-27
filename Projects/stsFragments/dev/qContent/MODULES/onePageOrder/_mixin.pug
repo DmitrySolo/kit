@@ -1,0 +1,85 @@
+mixin MODULE-onePageOrder()
+	<!-- split modules/onePageOrder -->
+	.onePageOrder__content(data-qcontent='module__onePageOrder')
+		form.onePageOrder
+			.group.group--md 
+				.col.col-9-tl
+					.onePageOrder__section
+						h5.onePageOrder__header Укажите контактные данные
+						.onePageOrder__inputGroup 
+							label.onePageOrder__label  
+								| Имя
+								input.onePageOrder__input(data-validation="length" data-validation-length="min3"  data-validation-error-msg="Введите Имя" id="email" type='text' value=''  name="email")
+							label.onePageOrder__label
+								| Телефон
+								input.onePageOrder__input(type='text' value=''  name="phone"  data-validation="custom" data-validation-regexp="^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$"  data-validation-error-msg="Введите корректный номер телефона" id="email")
+							label.onePageOrder__label
+								| E-mail   
+								input.onePageOrder__input(data-validation="email" data-validation-error-msg="Введите корректный E-mail" type='text' value=''  name="mail")
+					.onePageOrder__section.onePageOrder__section--widget
+						h5.onePageOrder__header Выберите способ получения
+						.group.onePageOrder__deliveryTabs
+							.col.col-4-tp.col-6-m.onePageOrder__deliveryTab.notEdit.onePageOrder__deliveryTab--selected
+								h6 Самовывоз
+								p 1-2 дня, 345 р
+							.col.col-4-tp.col-6-m.onePageOrder__deliveryTab.notEdit
+								h6 Курьерская доставка
+								p 1-2 дня, 345 р
+						.group.onePageOrder__deliveryOptions 
+							.col.col-12-tp.onePageOrder__deliveryOption 1
+							.col.col-12-tp.onePageOrder__deliveryOption 
+								.onePageOrder__inputGroup
+									label.onePageOrder__label
+										| Адрес доставки
+									input.onePageOrder__input(data-validation="length" data-validation-length="min6"  data-validation-error-msg="Введите Адрес доставки" type='text' value=''  name="delivery" data-validation-skipped="1")
+									label.onePageOrder__label
+										| Дата доставки
+									+In-select()
+										option ПН. 2 ноября ( с 11 до 18ч )
+										option ВТ. 3 ноября ( с 11 до 18ч )
+										option СР. 4 ноября ( с 11 до 18ч )
+										option ЧТ. 5 ноября ( с 11 до 18ч )
+										option ПТ. 6 ноября ( с 11 до 18ч )
+										option СБ. 7 ноября ( с 11 до 17ч )
+								.onePageOrder__inputGroup
+									label.onePageOrder__check(for='delTimeCheck') Доставка ко времени	-400р
+										input.notEdit(type='checkbox' id='delTimeCheck')
+										span.checkmark
+									label.onePageOrder__label
+									| Время
+									input.onePageOrder__input(id="selectTime" disabled="disabled" type='text' value='' name="selectTime")
+																									
+					.onePageOrder__section
+						h5.onePageOrder__header Выберите способ оплаты
+						h6.onePageOrder__subHeader Вы всегда можете осмотреть товар перед оплатой 
+						.onePageOrder__inputGroup
+							+In-radioButton('payment','bankCard','true')
+							label.onePageOrder__label--radio Онлайн оплата банковской картой
+							br
+							+In-radioButton('payment','cash')
+							label.onePageOrder__label--radio Оплата при получении 
+								br
+								|(банковской картой или наличными)
+					.onePageOrder__section
+						h5.onePageOrder__header Вы можете оставить комментарий к заказу
+						textarea(rows=6)
+					.onePageOrder__submit
+						button.toOrder.makeOrder Оформить заказ
+						label.onePageOrder__check(for='confidential') Я согласен с 
+							a(href='/') политикой конфиденциальности
+							input.notEdit(type='checkbox' id='confidential' checked='checked')
+							span.checkmark
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				.col.col-3-tl
+					

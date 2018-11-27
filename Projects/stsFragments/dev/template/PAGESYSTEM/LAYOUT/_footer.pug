@@ -1,32 +1,32 @@
 <!-- split footer.html -->
-// footer.mainFooter(data-qcontent="layout__footer")
-// 	+MODULE-bottomFeatures()
-// 	+C-footer()
-// 	+LEVEL-modalWindow('login','Войти','login')
-// 		+In-textInput("mail","Электронная почта","Электронная почта:")
-// 		+In-textInput("mail","Пароль","пароль:")
-// 		+B-toOrder('Войти')
-// 		+B-checkBox('Запомнить меня','checked')
-// 		+B-button('Забыли пароль?','fastBuy')
-// 	+LEVEL-modalWindow('signUp','Регистрация','signUp')
-// 		+In-textInput("mail","Электронная почта","Электронная почта:")
-// 		+In-textInput("mail","Пароль","пароль:")
-// 		+In-textInput("mail","Повтоите пароль","Повторите пароль:")
-// 		+B-checkBox('Запомнить меня для последующего входа','checked')
-// 		+B-toOrder('Зарегистрироваться и войти')
-// 	+LEVEL-modalWindow('searchm','Поиск товаров:','searchm')  
-// 		+In-textInput("searchm","Например ванна Атланта","Искать среди 15 000 товаров","searchm")
-// 		.mobileSearchRes__ctn
-// 			.mobileSearchRes__content
-// 				+loop(200)
-// 					span Искать среди 15 000 товаров
-// 	+LEVEL-modalWindow('call','Связаться с нами:','call')   
-// 		+A-actionLink('Позвонить (Бесплатно по России)','','contactUs icon-cellphone')
-// 		+A-actionLink('Написать на наш email','','contactUs icon-email')
-// 		+A-actionLink('Написать нам в Telegram','','contactUs icon-cu_telegram')
-// 	+LEVEL-modalWindow('geo','Выбор городов')
-// 		ul.current-list
-// 			li
-// 			a(data-id='3021', href='#') Белгород
-// 	+C-coupon('bottom')
+footer.mainFooter(data-qcontent="layout__footer")
+	+MODULE-bottomFeatures()
+	+C-footer()
+	+LEVEL-modalWindow('login','Войти','login')
+		+In-textInput("mail","Электронная почта","Электронная почта:")
+		+In-textInput("mail","Пароль","пароль:")
+		+B-toOrder('Войти')
+		+B-checkBox('Запомнить меня','checked')
+		+B-button('Забыли пароль?','fastBuy')
+	+LEVEL-modalWindow('signUp','Регистрация','signUp')
+		+In-textInput("mail","Электронная почта","Электронная почта:")
+		+In-textInput("mail","Пароль","пароль:")
+		+In-textInput("mail","Повтоите пароль","Повторите пароль:")
+		+B-checkBox('Запомнить меня для последующего входа','checked')
+		+B-toOrder('Зарегистрироваться и войти')
+	+LEVEL-modalWindow('searchm','Поиск товаров:','searchm')  
+		+In-textInput("searchm","Например ванна Атланта","Искать среди 15 000 товаров","searchm")
+		.mobileSearchRes__ctn
+			.mobileSearchRes__content
+				+loop(2)
+					span Искать среди 15 000 товаров
+	+LEVEL-modalWindow('call','Связаться с нами:','call')   
+		+A-actionLink('Позвонить (Бесплатно по России)','','contactUs icon-cellphone')
+		+A-actionLink('Написать на наш email','','contactUs icon-email')
+		+A-actionLink('Написать нам в Telegram','','contactUs icon-cu_telegram')
+	+LEVEL-modalWindow('geo','Выбор городов')
+		ul.current-list
+			li
+			a(data-id='3021', href='#') Белгород
+	//+C-coupon('bottom') 
 

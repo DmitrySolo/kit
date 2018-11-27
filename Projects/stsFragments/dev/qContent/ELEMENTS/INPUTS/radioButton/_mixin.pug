@@ -1,0 +1,5 @@
+mixin In-radioButton(name,idp,checked,classModifier)
+	-var classModifier = (classModifier)? 'radioButton--' + classModifier : ''
+	-var idp = (idp)? idp:""
+	-var checked = (checked)? true:false
+	input(id=idp name=name class='radioButton'+classModifier type='radio' checked=checked data-qcontent='element__INPUTS__radioButton')

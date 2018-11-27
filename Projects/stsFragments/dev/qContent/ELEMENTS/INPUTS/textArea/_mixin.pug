@@ -1,0 +1,7 @@
+mixin In-textArea(name,label,placeholder,classModifier)
+	-var classModifier = (classModifier)? 'textArea--' + classModifier : ''
+	-var placeholder = (placeholder)? placeholder : ''
+	-var label = (label)? label : ''
+	label.textArea__label=label
+		textArea(name=name class='textArea '+classModifier placeholder=''+placeholder type='text' data-qcontent='element__INPUTS__textArea')
+	

@@ -1,0 +1,19 @@
+{
+  "LIBS": {
+	"onePageOrder": {
+	  "js": {
+		"lib1": {
+		  "src": "node_modules/jquery-form-validator/form-validator/jquery.form-validator.min.js",
+		  "container": "footer/libs"
+		},
+		"init": {
+		  "src": "Projects/stsFragments/dev/qContent/MODULES/onePageOrder/onePageOrder.js",
+		  "container": "footer/init/init"
+		}
+	  },
+	  "css": {
+		"": ""
+	  }
+	}
+  }
+}

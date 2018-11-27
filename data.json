@@ -11,29 +11,6 @@
 				"": ""
 			}
 		},
-		"quant-debug": {
-			"js": {
-				"quant-debug-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
-					"container": "footer/init"
-				},
-				"JQUI-script": {
-					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
-					"container": "footer/libs+"
-				},
-				"vieport": {
-					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
-					"container": "footer/libs+"
-				},
-				"viewportResizer": {
-					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
-					"container": "footer/libs+"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
 		"quant-HUD-script": {
 			"js": {
 				"quant-HUD-script-script": {
@@ -60,10 +37,33 @@
 				}
 			}
 		},
-		"quant-lib": {
+		"quant-debug-JsonCss": {
 			"js": {
-				"quant-lib-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+				"quant-debug-JsonCss-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
+					"container": "footer/libs"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"quant-debug": {
+			"js": {
+				"quant-debug-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug/quant-debug.js",
+					"container": "footer/init"
+				},
+				"JQUI-script": {
+					"src": "node_modules/jquery-ui-dist/jquery-ui.min.js",
+					"container": "footer/libs+"
+				},
+				"vieport": {
+					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
+					"container": "footer/libs+"
+				},
+				"viewportResizer": {
+					"src": "node_modules/viewport-resizer/dist/viewpr.min.js",
 					"container": "footer/libs+"
 				}
 			},
@@ -71,11 +71,11 @@
 				"": ""
 			}
 		},
-		"quant-debug-JsonCss": {
+		"quant-lib": {
 			"js": {
-				"quant-debug-JsonCss-script": {
-					"src": "dev/SCRIPTS/SCRIPTS/--quant-debug-JsonCss/quant-debug-JsonCss.js",
-					"container": "footer/libs"
+				"quant-lib-script": {
+					"src": "dev/SCRIPTS/SCRIPTS/--quant-lib/quant-lib.js",
+					"container": "footer/libs+"
 				}
 			},
 			"css": {
@@ -127,6 +127,21 @@
 				"": ""
 			}
 		},
+		"catalog": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/catalog/catalog.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"catalogList": {
 			"js": {
 				"lib1": {
@@ -142,14 +157,14 @@
 				"": ""
 			}
 		},
-		"catalog": {
+		"fastBuy": {
 			"js": {
 				"lib1": {
 					"src": "",
 					"container": "footer/libs"
 				},
 				"init": {
-					"src": "Projects/stsFragments/dev/qContent/MODULES/catalog/catalog.js",
+					"src": "Projects/stsFragments/dev/qContent/MODULES/fastBuy/fastBuy.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -250,6 +265,21 @@
 				"": ""
 			}
 		},
+		"onePageOrder": {
+			"js": {
+				"lib1": {
+					"src": "node_modules/jquery-form-validator/form-validator/jquery.form-validator.min.js",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/MODULES/onePageOrder/onePageOrder.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"order": {
 			"js": {
 				"lib1": {
@@ -321,21 +351,6 @@
 				},
 				"init": {
 					"src": "Projects/stsFragments/dev/qContent/MODULES/topBar/topBar.js",
-					"container": "footer/init/init"
-				}
-			},
-			"css": {
-				"": ""
-			}
-		},
-		"dashBoardElement": {
-			"js": {
-				"lib1": {
-					"src": "",
-					"container": "footer/libs"
-				},
-				"init": {
-					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
 					"container": "footer/init/init"
 				}
 			},
@@ -425,6 +440,36 @@
 				"": ""
 			}
 		},
+		"dashBoardElement": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/ICON-TITLE-TEXTS/dashBoardElement/dashBoardElement.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
+		"select": {
+			"js": {
+				"lib1": {
+					"src": "",
+					"container": "footer/libs"
+				},
+				"init": {
+					"src": "Projects/stsFragments/dev/qContent/ELEMENTS/INPUTS/select/select.js",
+					"container": "footer/init/init"
+				}
+			},
+			"css": {
+				"": ""
+			}
+		},
 		"mainInfo": {
 			"js": {
 				"lib1": {
@@ -471,7 +516,7 @@
 		"vertical-rhythm": "true",
 		"linkFonts": "true",
 		"assetsFonts": "false",
-		"debug": "false",
+		"debug": "true",
 		"production": "false",
 		"icon-font": "false"
 	},
@@ -779,6 +824,54 @@
 			"dop_class": "",
 			"layout": "default",
 			"group": ""
+		},
+		"22": {
+			"title": "email",
+			"slug": "email",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "noSidebar",
+			"group": ""
+		},
+		"23": {
+			"title": "11percent",
+			"slug": "11percent",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "noSidebar",
+			"group": ""
+		},
+		"24": {
+			"title": "fastBuy",
+			"slug": "fastBuy",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "default",
+			"group": ""
+		},
+		"25": {
+			"title": "registerForm",
+			"slug": "registerForm",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "default",
+			"group": ""
+		},
+		"26": {
+			"title": "personalSection",
+			"slug": "personalSection",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "default",
+			"group": ""
+		},
+		"27": {
+			"title": "onePageOrder",
+			"slug": "onePage",
+			"MainMenu": "false",
+			"dop_class": "",
+			"layout": "nosidebar",
+			"group": ""
 		}
 	},
 	"countDown": {
@@ -790,6 +883,12 @@
 	"deliveryArticle": {
 		"deliveryArticle": "1"
 	},
+	"footer": {
+		"footer": "1"
+	},
+	"priceAndStock": {
+		"priceAndStock": "1"
+	},
 	"productInline": {
 		"productInline": "1",
 		"sku": "123456",
@@ -798,12 +897,6 @@
 		"stock": "1255",
 		"sale": "true",
 		"superSale": "true"
-	},
-	"footer": {
-		"footer": "1"
-	},
-	"priceAndStock": {
-		"priceAndStock": "1"
 	},
 	"sameCatProducts": {
 		"sameCatProducts": "1"
@@ -869,12 +962,12 @@
 	"cartPage": {
 		"cartPage": "1"
 	},
+	"catalog": {
+		"catalog": "1"
+	},
 	"cartProduct": {
 		"cartProduct": "1",
 		"title": {}
-	},
-	"catalog": {
-		"catalog": "1"
 	},
 	"catalogList": {
 		"catalogList": "1"
@@ -882,20 +975,36 @@
 	"CENTURION": {
 		"CENTURION": "1"
 	},
-	"centurioResult": {
-		"centurioResult": "1"
-	},
 	"confirmedOrderPage": {
 		"confirmedOrderPage": "1"
 	},
-	"featuresList": {
-		"featuresList": "1"
+	"centurioResult": {
+		"centurioResult": "1"
 	},
 	"deliverySection": {
-		"deliverySection": "1"
+		"deliverySection": "1",
+		"options": {
+			"outStock": false
+		}
+	},
+	"email": {
+		"email": "1"
+	},
+	"fastBuy": {
+		"images": "https://www.santehsmart.ru/upload/iblock/5a6/5a6597f83386fe4358bf252bb9751574.png",
+		"name": "fastBuy",
+		"states": [
+			"static",
+			"success",
+			"onload"
+		],
+		"state": "onload"
 	},
 	"fgtr": {
 		"fgtr": "1"
+	},
+	"featuresList": {
+		"featuresList": "1"
 	},
 	"flyPageFragment": {
 		"title": "Test Page"
@@ -906,11 +1015,11 @@
 	"IBGrid": {
 		"IBGrid": "1"
 	},
-	"innerCoupon": {
-		"innerCoupon": "1"
-	},
 	"layout": {
 		"layout": "1"
+	},
+	"innerCoupon": {
+		"innerCoupon": "1"
 	},
 	"mainInfo": {
 		"mainInfo": "1"
@@ -921,14 +1030,17 @@
 	"mobileMenu": {
 		"mobileMenu": "1"
 	},
-	"module": {
-		"module": "1"
-	},
 	"module1": {
 		"module1": "1"
 	},
+	"module": {
+		"module": "1"
+	},
 	"noticeList": {
 		"noticeList": "1"
+	},
+	"onePageOrder": {
+		"onePageOrder": "1"
 	},
 	"order": {
 		"order": "1"
@@ -938,6 +1050,9 @@
 	},
 	"pageBreadcrumbs": {
 		"pageBreadcrumbs": "1"
+	},
+	"personalSection": {
+		"personalSection": "1"
 	},
 	"productCatInline": {
 		"productCatInline": "1"
@@ -991,20 +1106,26 @@
 		"price": "11 000",
 		"stock": "8"
 	},
+	"registerForm": {
+		"registerForm": "1"
+	},
 	"reactTest": {
 		"reactTest": "1"
 	},
+	"settler": {
+		"settler": "1"
+	},
 	"shipmentDocument": {
 		"shipmentDocument": "1"
-	},
-	"support": {
-		"support": "1"
 	},
 	"sts-coupon": {
 		"sts-coupon": "1"
 	},
 	"swe": {
 		"swe": "1"
+	},
+	"support": {
+		"support": "1"
 	},
 	"tableP": {
 		"tableP": "1"
@@ -1024,13 +1145,13 @@
 	"inner": {
 		"title": {}
 	},
-	"newtest": {
-		"title": {}
-	},
 	"level2": {
 		"title": {
 			"ZOPA": "OPA"
 		}
+	},
+	"newtest": {
+		"title": {}
 	},
 	"page": {
 		"title": {}

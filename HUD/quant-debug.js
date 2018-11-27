@@ -2575,10 +2575,11 @@ var quantServerCommand = function(triggerStr,actionType,argsObj,callback,getData
 	)
 
 }
-alert('1a')
+
 quantServerCommand('#apitest','click',{action:'hello',name:'John'},function(res){alert(res)});
 quantServerCommand('#openSVGforSrite','mousedown',{action:'execute',command:'open__svgs'});
 quantServerCommand('#openDownload','mousedown',{action:'execute',command:'open__downloads'});
+
 quantServerCommand('#distribution','mousedown',{action:'execute',command:'run'},'',function(){
 	var path = $('#contentNavigator__type input').val()+'|'+$('#contentNavigator__name input').val();
 	return path;

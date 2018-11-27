@@ -1,0 +1,83 @@
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  min-width: 100%;
+  padding: 3px;
+
+}
+
+.select-styled {
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: solid 1px silver;
+  background-color: #fff;
+  padding: 3px;
+  border-radius: 4px;
+
+}
+
+.select-styled:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-color: orangered transparent transparent transparent;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+
+.select-styled:hover {
+  background-color: #e0d8d7;
+}
+
+.select-styled:active, .select-styled.active {
+  background-color: #e2dad9;
+}
+
+.select-styled:active:after, .select-styled.active:after {
+  top: 9px;
+  border-color: transparent transparent orangered transparent;
+}
+
+.select-options {
+  background: #fff;
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+}
+
+.select-options li {
+  margin: 0;
+  padding: 12px 0;
+  text-indent: 15px;
+  border-top: 1px solid #969296;
+
+}
+
+.select-options li:hover {
+
+  background: #dad2d1;
+}
+
+.select-options li[rel="hide"] {
+  display: none;
+}

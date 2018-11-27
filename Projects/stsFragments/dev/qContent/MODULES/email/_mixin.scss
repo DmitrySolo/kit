@@ -1,0 +1,55 @@
+/**
+* email styles
+*/
+
+@mixin email(){
+    .outerTable{width: 100%;
+        background-color:cs('background');
+    }
+ .email { 
+     &__main{
+         color:cs('primary');
+         padding-bottom: 50px;
+          font-weight: bold; 
+     }
+    &__content {
+        max-width: 800px;
+        border:solid 1px cs('background-d');
+        h4{
+            padding:50px 30px 10px;
+        }
+        p{
+            padding: 0 35px 35px 35px;
+           
+            font-size: 17px;
+        }
+         background-color: #fff; 
+        
+         margin: 0 auto;
+            tbody{
+        
+       // border: solid 1px cs('background-d');
+        border-bottom: solid 4px cs('background-d');
+      }    
+       th{
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 15px ;
+            text-align: left;
+            border-bottom: 4px solid cs('primary');
+             img{vertical-align:middle;width:200px;}
+            span{
+                vertical-align:middle;
+              float:right;
+               color: cs('primary');
+               font-size: 25px;
+            }
+        }
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include email();

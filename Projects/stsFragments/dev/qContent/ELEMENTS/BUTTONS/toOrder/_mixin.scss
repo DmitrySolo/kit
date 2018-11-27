@@ -57,6 +57,18 @@
         width: 50%;
         float: right;
     }
+    .newSetterAction{
+        min-height: 2.6em;
+        height:auto;
+        background: cs('accent');
+        margin-top: 60px;
+        width: 45%;
+        font-size: 24px;
+        border-bottom: cs('accent-d');
+        &:first-child{
+            margin-right: 9.2%;
+        }
+    }
     
     
     

@@ -1,0 +1,77 @@
+
+<div class="onePageOrder__content" data-qcontent="module__onePageOrder">
+  <div class="onePageOrder">
+    <div class="group group--md"> 
+      <div class="col col-9-tl">
+        <div class="onePageOrder__section">
+          <h5 class="onePageOrder__header">Укажите контактные данные</h5>
+          <div class="onePageOrder__inputGroup"> 
+            <label class="onePageOrder__label">
+               Имя
+              <input class="onePageOrder__input" id="email" type="text" value="" size="40" name="email"/>
+            </label>
+            <label class="onePageOrder__label">Телефон
+              <input class="onePageOrder__input" type="text" value="" size="40" name="phone"/>
+            </label>
+            <label class="onePageOrder__label">Email   
+              <input class="onePageOrder__input" type="text" value="" size="40" name="mail"/>
+            </label>
+          </div>
+        </div>
+        <div class="onePageOrder__section onePageOrder__section--widget">
+          <h5 class="onePageOrder__header">Выберите способ получения</h5>
+          <div class="group onePageOrder__deliveryTabs">
+            <div class="col col-4-tp onePageOrder__deliveryTab notEdit onePageOrder__deliveryTab--selected">
+              <h6>Самовывоз</h6>
+              <p>1-2 дня, 345 р</p>
+            </div>
+            <div class="col col-4-tp onePageOrder__deliveryTab notEdit">
+              <h6>Курьерская доставка</h6>
+              <p>1-2 дня, 345 р</p>
+            </div>
+          </div>
+          <div class="group onePageOrder__deliveryOptions">
+            <div class="col col-12-tp onePageOrder__deliveryOption">1</div>
+            <div class="col col-12-tp onePageOrder__deliveryOption"> 
+              <div class="onePageOrder__inputGroup">
+                <label class="onePageOrder__label">Адрес доставки</label>
+                <input class="onePageOrder__input" id="email" type="text" value="" size="40" name="email"/>
+                <label class="onePageOrder__label">Дата доставки</label>
+                <select class="select" type="text" data-qcontent="element__INPUTS__select">
+                  <option>ПН. 2 ноября ( с 11 до 18ч )</option>
+                  <option>ВТ. 3 ноября ( с 11 до 18ч )</option>
+                  <option>СР. 4 ноября ( с 11 до 18ч )</option>
+                  <option>ЧТ. 5 ноября ( с 11 до 18ч )</option>
+                  <option>ПТ. 6 ноября ( с 11 до 18ч )</option>
+                  <option>СБ. 7 ноября ( с 11 до 17ч )</option>
+                </select>
+              </div>
+              <div class="onePageOrder__inputGroup">
+                <label class="onePageOrder__check" for="delTimeCheck">Доставка ко времени	-400р
+                  <input class="notEdit" type="checkbox" id="delTimeCheck"/><span class="checkmark"></span>
+                </label>
+                <label class="onePageOrder__label"></label>Время
+                <input class="onePageOrder__input" id="selectTime" disabled="disabled" type="text" value="" size="40" name="selectTime"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="onePageOrder__section">
+          <h5 class="onePageOrder__header">Выберите способ оплаты</h5>
+          <h6 class="onePageOrder__subHeader">Вы всегда можете осмотреть товар перед оплатаой </h6>
+          <div class="onePageOrder__inputGroup">
+            <input class="radioButton" id="bankCard" name="payment" type="radio" checked="checked" data-qcontent="element__INPUTS__radioButton"/>
+            <label class="onePageOrder__label--radio">Онлайн оплата банковской картой</label><br/>
+            <input class="radioButton" id="cash" name="payment" type="radio" data-qcontent="element__INPUTS__radioButton"/>
+            <label class="onePageOrder__label--radio">Оплата при получении (банковской картой или наличными)</label>
+          </div>
+        </div>
+        <div class="onePageOrder__section">
+          <h5 class="onePageOrder__header">Вы можете оставить комментарий к заказу</h5>
+          <textarea rows="6"></textarea>
+        </div>
+      </div>
+      <div class="col col-3-tl"></div>
+    </div>
+  </div>
+</div>

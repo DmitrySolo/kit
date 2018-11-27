@@ -64,11 +64,15 @@ var cmd = require('node-cmd');
 const dirTree = require('directory-tree');
 var htmllint = require('gulp-htmllint')
 var gutil = require('gulp-util');
+var distType;
+var distName;
 // QUANT PLUGINS&FUNCTIONS
 var Qupdate = false;
 var updateQ = function () {
 	return Qupdate = '1';
 }
+var gulp = require('gulp'),
+    inlineCss = require('gulp-inline-css');
 
 var qp_path = "./gulp plugins/";
 var OS = require(qp_path + 'OS');
@@ -201,6 +205,8 @@ gulp.task('views-current', function buildHTML() {
 	var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 	var viewProcesscur = gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/'+loadForPug])
 		.pipe(pug({
+            filters: {
+                php: pugPHPFilter},
 			data: data,
 			pretty: true,
 			cache: true
@@ -217,6 +223,9 @@ gulp.task('views', function buildHTML() {
 	var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 	var viewProcess = gulp.src([projectDevDir + 'template/PAGESYSTEM/PAGES/*.pug','!'+projectDevDir + 'template/PAGESYSTEM/PAGES/'+loadForPug])
 		.pipe(pug({
+            filters: {
+                php: pugPHPFilter
+            },
 			data: data,
 			pretty: true,
 			cache: true
@@ -1088,17 +1097,19 @@ gulp.task('tests', [], function () {
 gulp.task('Dist-module', [], function () {
 	console.log(projectName);
 	var str = "include ../../../template/PAGESYSTEM/INCLUDES/_includes.pug\n";
-	gulp.src('Projects/'+projectName+'/dev/qContent/MODULES/'+options.name+'/_include.pug').pipe(insert.prepend(str))
+	gulp.src('Projects/'+projectName+'/dev/qContent/MODULES/'+distName+'/_include.pug').pipe(insert.prepend(str))
 		.pipe(pug({
+            filters: {
+                php: pugPHPFilter},
 			data: data,
 			pretty: true,
-		})).pipe(gulp.dest('Projects/'+projectName+'/production/modules/'+options.name));
-		var dest = 'Projects/'+projectName+'/production/modules/'+ options.name +'/_include.html'
+		})).pipe(gulp.dest('Projects/'+projectName+'/production/modules/'+distName));
+		var dest = 'Projects/'+projectName+'/production/modules/'+ distName +'/_include.html'
 		gulp.src(dist + '/main.css')
 			.pipe(uncss({
 				html: [dest]
 			})).pipe(cssnano())
-			.pipe(gulp.dest('Projects/'+projectName+'/production/modules/'+ options.name +'/'));
+			.pipe(gulp.dest('Projects/'+projectName+'/production/modules/'+ distName +'/'));
 
 });
 
@@ -1460,6 +1471,7 @@ gulp.task('svgstore-debug', function () {
 gulp.task('START_QUANT', function () {
 	runSequence('API-SERVER', 'WATCHER:NEW', 'SERVER', 'WATCHCSSTOPARSEIT')
 });
+
 gulp.task('RELOAD QUANT', function () {
 	runSequence('WATCHER:NEW', 'WATCHCSSTOPARSEIT','mergeJson',
 	'views','views-current',
@@ -1473,67 +1485,72 @@ gulp.task('u-h2p', function () {
 		.pipe(html2pug())
 		.pipe(gulp.dest('utilities/htmlToPug/pr'));
 });
+////////////////////////////////////////////DEPLOY
+let user = 'bitrix';
+let pass = 'vidpppnf1l';
+let host = '25.25.25.42';
+let serverPath = 'www/'
 gulp.task('deploycss', function () {
 	return gulp.src(dist + '/main.css')
 		.pipe(cssnano())
 		.pipe(rename('template_styles.css'))
 		.pipe(sftp({
-			host: 'partner.santehsmart.ru',
-			user: 'west',
-			pass: '5D2g4U9c',
-			remotePath: '/var/www/west/data/www/partner.santehsmart.ru/bitrix/templates/STS2/'
+			host: host,
+            user: user,
+			pass: pass,
+			remotePath: serverPath + '/bitrix/templates/STS2/'
 		}));
 });
 gulp.task('deploySVGsprite', function () {
 	return gulp.src(dist + '/source/icons/SVGSpriteIcons.html')
 		.pipe(rename('SVGSpriteIcons.php'))
 		.pipe(sftp({
-			host: 'santehsmart.ru',
-			user: 'west',
-			pass: '5D2g4U9c',
-			remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2/'
+			host: host,
+			user:  user,
+			pass: pass,
+			remotePath:  serverPath +'/bitrix/templates/STS2/'
 		}));
 });
 gulp.task('deploySVGsprite-main', function () {
 	return gulp.src(dist + '/source/icons/SVGSpriteIcons.html')
 		.pipe(rename('SVGSpriteIcons.php'))
-		.pipe(sftp({
-			host: 'santehsmart.ru',
-			user: 'west',
-			pass: '5D2g4U9c',
-			remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/'
-		}));
+        .pipe(sftp({
+            host: host,
+            user:  user,
+            pass: pass,
+            remotePath:  serverPath +'/bitrix/templates/STS2-Main/'
+        }));
 });
 gulp.task('deploycss-main', function () {
 	return gulp.src(dist + '/main.css')
-		.pipe(cssnano())
-		.pipe(rename('template_styles.css'))
-		.pipe(sftp({
-			host: 'santehsmart.ru',
-			user: 'west',
-			pass: '5D2g4U9c',
-			remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/'
+        .pipe(cssnano())
+        .pipe(rename('template_styles.css'))
+        .pipe(sftp({
+            host: host,
+            user: user,
+            pass: pass,
+            remotePath: serverPath + '/bitrix/templates/STS2-Main/'
 		}));
 });
 gulp.task('deployjs', function () {
 	return gulp.src(dist + '/scripts/init.js')
 		.pipe(uglify())
 		.pipe(sftp({
-			host: 'santehsmart.ru',
-			user: 'west',
-			pass: '5D2g4U9c',
-			remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2/scripts/'
+            host: host,
+            user: user,
+            pass: pass,
+			remotePath:  serverPath + '/bitrix/templates/STS2/scripts/'
 		}));
 });
 gulp.task('deployjs-main', function () {
-	return gulp.src(dist + '/scripts/init.js')
-		.pipe(uglify())
-		.pipe(sftp({
-			host: 'santehsmart.ru',
-			user: 'west',
-			pass: '5D2g4U9c',
-			remotePath: '/var/www/west/data/www/santehsmart.ru/bitrix/templates/STS2-Main/scripts/'
-		}));
+    return gulp.src(dist + '/scripts/init.js')
+        .pipe(uglify())
+        .pipe(sftp({
+            host: host,
+            user: user,
+            pass: pass,
+            remotePath:  serverPath + '/bitrix/templates/STS2-Main/scripts/'
+        }));
 });
 	gulp.task('deploycssToFR', function () {
 		return gulp.src(dist + '/main.css')
@@ -1698,7 +1715,11 @@ gulp.task('API-SERVER', function () {
 								}
 
 								break;
-							case 'run': console.log('A1') //cmd.run(`gulp Dist-module --name shipmentDocument `)
+							case 'run':
+
+                               var data = url_parts.query.data;
+                               distName = data.split('|')[1];
+								gulp.start('Dist-module');/////(`gulp Dist-module --name shipmentDocument `);
 						}
 						break;
 
@@ -2846,4 +2867,10 @@ gulp.task('jsDistPrepare', function () {
 	return gulp.src('utilities/minify/js/*.js')
 		.pipe(uglify())
 		.pipe(gulp.dest('utilities/minify/_results/js/'));
+});
+
+gulp.task('inlinecssModule', function() {
+    return gulp.src('Projects/stsFragments/production/modules/shipmentDocument/*.html')
+        .pipe(inlineCss())
+        .pipe(gulp.dest('Projects/stsFragments/production/modules/__INLINED__/'));
 });

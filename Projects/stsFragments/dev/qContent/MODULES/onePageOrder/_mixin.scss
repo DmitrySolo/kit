@@ -1,0 +1,190 @@
+/**
+* onePageOrder styles
+*/
+
+@mixin onePageOrder() {
+
+  .onePageOrder {
+    &__section {
+      background: #fff;
+      border-radius: 6px;
+      padding: 20px 25px 30px;
+      margin-bottom: 30px;
+      &--widget {
+        background: none;
+      }
+    }
+    &__header {
+        position:relative;
+        display:inline-block;
+      margin-bottom: 1rem;
+      &.errorHeader:after{
+          content:"Х";
+          position:absolute;
+          right:-1em;
+          top:0;
+          color:red;
+      }
+      & + .onePageOrder__subHeader {
+        font-weight: 400;
+        color: gray;
+        font-size: 15px;
+        margin-top: -1.2em;
+      }
+    }
+
+    &__widget {
+      background: none;
+    }
+    textarea {
+      border-radius: 4px;
+      width: 100%;
+      height: 105px;
+      padding-left: 0;
+      resize: none;
+    }
+    &__inputGroup {
+      margin-top: 1em;
+      width: 100%;
+      @include for-size(tablet-p-up) {
+        width: 50%;
+      }
+      input[type='text'] {
+        border: solid 1px silver;
+        padding: 6px;
+        border-radius: 4px; 
+        width: 100%;
+      }
+
+    }
+    &__label {
+      position: relative;
+      font-weight: 400;
+      font-size: 16px;
+      color: gray;
+      margin-top: 12px;
+      &--radio {
+        color: cs('primary-d');
+        margin-bottom: 7px;
+      }
+    }
+
+    &__deliveryTab {
+      padding: 15px 25px;
+      cursor: pointer;
+      &:first-child {
+        border-right: solid 1px silver;
+        border-top-left-radius: 4px;
+      }
+
+      &--selected {
+        background: #fff;
+        cursor: default;
+        border-right: solid 1px silver;
+
+      }
+      h6 {
+        height: vr-block(1);
+        overflow: hidden;
+      }
+
+    }
+    &__deliveryTabs {
+      background: #f8f8f8;
+      margin: 0 -25px;
+      border-bottom: solid 1px silver;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+    }
+    &__deliveryOptions {
+      background: #fff;
+      margin: 0 -25px;
+      padding: 20px 25px 40px;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    &__check {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      &:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+      & input:checked ~ .checkmark {
+        background-color: #fff;
+      }
+      & input:checked ~ .checkmark:after {
+        display: block;
+      }
+      .checkmark:after {
+        left: 6px;
+        top: 1px;
+        width: 5px;
+        height: 10px;
+        border: solid orangered;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #eee;
+      border: solid 1px silver;
+      border-radius: 2px;
+    }
+
+    .checkmark:after { 
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    &__submit {
+      margin-top: -.5rem;
+      margin-bottom: 40px;
+      .toOrder {
+        @include for-size(tablet-p-up) {
+          width: auto;
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+
+      }
+    }
+    .help-block.form-error {
+      font-size: 12px;
+      color: rgb(185, 74, 72);
+      position: absolute;
+      right: 0;
+      top: 4px;
+    }
+
+    &__content {
+
+    }
+  }
+
+}
+
+////////////////////////////////////////
+@include onePageOrder();

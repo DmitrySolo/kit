@@ -18,6 +18,22 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="6536e251-202f-4c48-ad7a-51370c35cbdb" name="inner" url="http://192.168.2.43">
+        <fileTransfer host="192.168.2.43" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="b0754129-e5bb-47d7-92a1-9744d7ab954f" name="192.168" url="http://192.168.2.43">
+        <fileTransfer host="192.168.2.43" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

@@ -69,7 +69,7 @@
          position:absolute;
          right:.5em;
       }
-      &--close{  
+      &--close{    
           height: 100%;
           width: 100%;
       }
@@ -177,10 +177,64 @@
       &--sort{
           height: 1rem;
       }
+      &--arrow_settler{
+          z-index: 10000;
+          position:absolute;
+          top:30%;
+      }
       &--smartBonus{
           vertical-align:middle;
           width: 1.6em;
           height: 1.6em;
+      }
+      &--settler{
+          fill:#85a9bf;
+          position: absolute;
+         
+          
+          &.sink{
+              z-index:10000;
+              width:4em;
+              height:4em;
+              left:20%;
+              top:134%;
+          } 
+           &.house{
+              z-index:10000;
+              width:4em;
+              height:4em;
+              left:20%;
+              top:284%;
+          } 
+           &.lightbulplamp{
+              z-index:10000;
+              width:4em;
+              height:4em;
+              left:20%;
+              top:284%;
+          } 
+           &.chandelier{
+              z-index:10000;
+              width:4em;
+              height:4em;
+              left:20%;
+              top:284%;
+          } 
+           &.bathtub{
+              z-index:10000;
+              width:6em;
+              height:6em;
+              left:70%;
+              top:174%;
+          } 
+           &.key{
+              z-index:10000;
+              width:4em;
+              height:4em;
+              left:20%;
+              top:284%;
+          }
+          
       }
       
     

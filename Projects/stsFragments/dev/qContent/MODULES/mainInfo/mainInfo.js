@@ -4,7 +4,7 @@
 ;
 $('#js-user-login').on('click',function(){
 
-    $('#js_modall__login').removeClass('modalWindow--hide');
+    $('#js_modal__login').removeClass('modalWindow--hide');
 });
 $('#js-user-city').on('click',function(){
 

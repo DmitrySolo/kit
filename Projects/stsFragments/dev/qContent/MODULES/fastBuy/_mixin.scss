@@ -1,0 +1,111 @@
+/**
+* fastBuy styles
+*/
+
+@mixin fastBuy() {
+  // EDIT PARENT--------------------------------------------------
+  .modalWindow--fastBuy {
+    posotion: relative;
+    border: solid 1px cs('primary');
+    .modalWindow__close {
+      display: inline-block;
+      height: vr-block(1);
+      width: vr-block(1);
+      background: cs('primary');
+      border-radius: 50%;
+      padding: 8px;
+      &:hover {
+        background: cs('primary-l');
+      }
+      svg {
+        display: inherit;
+        fill: #fff;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .modalWindow__content {
+      width: 100%;
+
+      @include for-size(desktop-up) {
+        width: 50%;
+      }
+      @include for-size(big-desktop-up) {
+        width: 35%;
+      }
+    }
+
+  }
+  //SELF------------------------------------------------------
+  .fastBuy {
+    &__loader {
+      background: url('/source/images/logoloader.png');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      width: 4em;
+      height: 4em;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -2em 0 0 -2em;}
+
+      &__success {
+        text-align: center;
+        font-size: 2em;
+        p {
+          font-size: .8em;
+        }
+        .icon-tick {
+          &:before {
+            padding-right: vr-block(.25);
+          }
+        }
+      }
+      &__label {
+        padding-bottom: vr-block(1);
+        font-size: 1.2em;
+      }
+      &__caution {
+        font-size: .8em;
+        padding: 4px 25px;
+        background-color: #f2ecfb;
+        border-radius: 6px;
+      }
+      &__content {
+        height: 580px;
+        overflow: hidden;
+        .input__ctn {
+
+          width: 100%;
+        }
+
+        .priceAndStock {
+          // font-size:.8rem;
+          .productCol__price, .productCol__stock {
+            display: inline-block;
+            width: 100%;
+          }
+
+        }
+        .smartBonus {
+          display: none;  
+        }
+
+      }
+      &__prodImage {
+        text-align: center;
+        img {
+          max-width: 100%;
+          max-height: 100px;
+        }
+
+      }
+
+    }
+
+  }
+
+
+
+////////////////////////////////////////
+@include fastBuy();

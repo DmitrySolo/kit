@@ -1,0 +1,39 @@
+/**
+* personalSection styles
+*/
+
+@mixin personalSection(){
+
+  .personalSection { 
+      margin-bottom: 20px;
+    &__content {
+      font-size:.9em;
+    }
+    &__element{ 
+        color:#fff;
+        text-align: center;
+        background-color: cs('primary');
+        min-height: vr-block(2.5);
+        width: 100%;
+        padding: vr-block(.3) vr-block(.2) 0;
+        display: inline-block;
+       border-right: solid 1px cs('primary-d');
+       display: inline-block;
+     margin-right: -2px;
+     transition: background-color ease 1s;
+     border-bottom: solid 2px cs('primary-d');
+     &:hover{
+         background-color: cs('primary-d');
+         cursor:pointer;
+          border-bottom: solid 2px cs('accent');
+     }
+            
+       
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include personalSection();

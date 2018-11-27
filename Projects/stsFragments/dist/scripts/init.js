@@ -281,6 +281,56 @@ $(".catalog__by").click(function() {
 }());
 
 /**
+ * MODULE: fastBuy script
+ */
+var fb_content = {
+    img: {
+        from: $('.productImageSlider__image'),
+        to: $('.fastBuy__prodImage')
+    },
+
+    fb_char: {
+        from: $('.productChar__content'),
+        to: $('.fastBuy__productChar')
+    },
+    price: {
+        from: $('.priceAndStock'),
+        to: $('.fastBuy__price')
+    },
+    stock: {
+        text:true,
+        from: $('h1.page__title').text(),
+        to: $('.fastBuy__label strong')
+    },
+    title: {
+        value:true,
+        from: $('.geoTarget__city'),
+        to: $('input[name="city_name"]')
+    }
+}
+
+
+$('#fastBuy__trigger').on('click', function () {
+    $('#js_modall__fastBuy').removeClass('modalWindow--hide');
+    
+    if(!$('.fastBuy__prodImage img').length ){
+             $.each(fb_content, function (index, element) {
+        if(element.hasOwnProperty('value')){
+             element.to.val(element.from.text());
+        }else if(element.hasOwnProperty('text')){
+          element.to.text(element.from);
+        }else
+        element.from.clone().appendTo(element.to);
+
+    })
+    }
+
+
+})
+
+
+    
+/**
 * MODULE: flyPageFragment script
 */
 
@@ -311,7 +361,7 @@ function showPosition(position) {
 ;
 $('#js-user-login').on('click',function(){
 
-    $('#js_modall__login').removeClass('modalWindow--hide');
+    $('#js_modal__login').removeClass('modalWindow--hide');
 });
 $('#js-user-city').on('click',function(){
 
@@ -364,11 +414,39 @@ $('#js_modal_trigger__searchm').on('click',function(){
 * MODULE: module1 script
 */
 
+//order js validator
+;
+qntTab(
+    $('.onePageOrder__deliveryTab'),
+    $('.onePageOrder__deliveryOption'),
+    'onePageOrder__deliveryTab--selected'
+);
+$('#delTimeCheck').on('change', function () {
+
+    if ($('#delTimeCheck').prop("checked") == true) {
+        $('#selectTime').prop("disabled", false);
+    } else {
+        $('#selectTime').prop("disabled", true);
+        $('#selectTime').val('');
+    }
+});
+$.validate({
+    validateOnBlur: true, 
+    errorMessagePosition: 'bottom',
+    scrollToTopOnError: true,
+      onError : function() {
+      $('.onePageOrder__input.error').closest('.onePageOrder__section')
+      .find('.onePageOrder__header')
+      .addClass('errorHeader');
+    },
+});
+
 /**
 * MODULE: order script
 */
   
 qntTab($('.trig_del_cont'),$('.order__points'),'radio--selected');
+
 //owlSlider Script
 
    var owl = $(".ove-mainSlider").owlCarousel(
@@ -543,6 +621,53 @@ $('.order__form--paysystem .radio').on('click', function(){
 $("#js-up").click(function() {
   $("html, body").animate({ scrollTop: 0 }, "slow");
   return false;  
+});
+// Element: select script.
+alert('select js included');
+$('.select').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+  
+    $this.addClass('select-hidden'); 
+    $this.wrap('<div class="select"></div>');
+    $this.after('<div class="select-styled"></div>');
+
+    var $styledSelect = $this.next('div.select-styled');
+    $styledSelect.text($this.children('option').eq(0).text());
+  
+    var $list = $('<ul />', {
+        'class': 'select-options'
+    }).insertAfter($styledSelect);
+  
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+  
+    var $listItems = $list.children('li');
+  
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active').not(this).each(function(){
+            $(this).removeClass('active').next('ul.select-options').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options').toggle();
+    });
+  
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        //console.log($this.val());
+    });
+  
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
+
 });
 // Element: dashBoardElement script.
 

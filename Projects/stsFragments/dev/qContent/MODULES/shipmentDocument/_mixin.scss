@@ -1,0 +1,140 @@
+/**
+* shipmentDocument styles
+*/
+
+@mixin shipmentDocument(){
+
+  .shipmentDocument {
+        background: #fff;  
+    .docItemListTitle{
+        &__summary{ 
+            border-top: solid 2px #3d255b;
+            h5{
+                padding: .8em;
+                text-align: right;
+            }
+        }
+        th{
+             font-size: .8rem; 
+             background: cs('primary');
+             color: #fff;
+        }
+       
+    }
+    .counterD{
+        font-size: 2.1em;
+        width: 2.1em;
+        height: 2.1em;
+        color: #fff;
+        text-align: center;
+        line-height: 2.1em;
+        background: cs('primary');
+        padding: .1em;
+        display: inline-block;
+        margin-top: vr-block(.13);
+        margin-right: 1rem;
+    }
+    &__content { 
+        .shipmentDocument__items{
+            tr,th,td{
+                border-right: solid 1px silver;
+                border-left: solid 1px silver;
+            }
+            td[align='center']{
+                font-weight: bold;
+            }
+            th{ border-color: cs('primary-l')} 
+            .shipmentDocument__item:nth-child(odd){
+                background: #f2eded;
+                td{
+                   border-color: #fff;
+                }
+
+                
+            }
+            .signature{
+                width: 49%;
+                display:inline-block;
+                margin: 1em 0 1em;
+            }
+        }
+        width: 90%;
+        margin: 0 auto;
+        h6{
+            display: inline-block;
+            padding-right: .5em; 
+        }
+        table{
+           border: 3px solid cs('primary') !important;
+         
+           
+            caption { 
+             font-weight: bold; 
+             color:cs('primary-d');
+             font-size: 1.2rem;
+             text-align: left;
+             padding-left: 1em;
+                 img.logo{
+                     width: 28%;
+                    float: right;
+                    margin-bottom: 10px;
+                 }
+                 img.card{
+                     vertical-align: middle;
+                     margin-left: 15px; 
+                 }
+            }
+            td,tr,th{
+                border:solid 1px #ccc;
+                border-color: #edede;
+                padding: 6px 6px 6px 10px;
+            }
+            td{
+                border-right: solid 3px cs('primary');
+                border-left: solid 3px cs('primary');
+
+            }
+            th{
+                border-right: solid 3px;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 1.1rem;
+            }
+        }
+    }
+  }
+  .ordersSummary{
+      background: #fff;
+      border: solid 1px cs('primary');
+      td {
+          border: solid 1px silver;
+      }
+      &__header{
+          border-bottom:solid 1px;
+          background-color: cs('primary');
+         
+          th{
+                
+              border: 1px solid cs('primary-d');
+              text-align: center;
+              color: #fff;
+              text-shadow: 1px 1px 1px 2px #000;
+         
+          }
+      }
+      &__info{
+          td{
+              text-align: center;
+              font-weight: bold;
+          }
+          &:nth-child(even){
+              background:#f2eded;
+          }
+      }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include shipmentDocument();

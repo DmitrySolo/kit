@@ -1,0 +1,102 @@
+mixin MODULE-shipmentDocument()
+	<!-- split modules/shipmentDocument -->
+	.shipmentDocument__content(data-qcontent='module__shipmentDocument') 
+		table.shipmentDocument
+			caption(align ='left') ОТГРУЗКА N 23345
+				img.card(src="source/images/c_card.svg" style="width: 5%")
+				img.logo(src="source/images/sts-logo.svg") 
+			tbody
+				tr 
+					th Отправитель
+					th Информация об отправлении
+				tr
+					td 
+						h6 Компания:  
+						span "СантехСмарт", OOO; г. Воронеж 
+					td(rowspan="3" valign='top')
+						h6 Накладная к заказу:
+						span N РИМ-983
+						br
+						h6 Дата отгрузки:
+						span 30.05.18
+						br
+						h6 Количество мест:
+						span 1
+						br
+						.counterD 1/1
+						h2.city.t-center.ib ЛИПЕЦК 
+				tr
+					th ПОЛУЧАТЕЛЬ
+				tr
+					td 
+						h6 ФИО:
+						span Иванов Иван Петрович 
+						br
+						h6 Телефон: 
+						span 8902765266
+						br
+						h6 ПВЗ:
+						span г ЛИПЕЦК Ул Заречная 77 2ф ( OOO Строймаркет) 
+	
+		table.shipmentDocument.shipmentDocument__items
+			tbody
+				tr.docItemListTitle
+					th №
+					th Наименование товара
+					th К оплате: 
+					th Кол во
+				+loop(8)
+					tr.shipmentDocument__item
+						td(align='center') 1
+						td Потлотенце сушитель фиолетовый без ничего с повреждениями такой привезли
+						td(align='center') 139 000р
+						td(align='center') 1
+				tr.docItemListTitle__summary
+					td(colspan='4')
+						h5 Итого к оплате 34 000Р
+				tr
+					td(colspan='4')
+						h5.signature Сотрудник___________________
+						h5.signature.f-right.t-center Покупатель___________________
+					
+						
+	table.ordersSummary
+		caption 
+			h4 Заказы на пункт выдачи:
+		tbody
+			tr.ordersSummary__header
+				th №
+				th Дата
+				th Сумма заказа 
+				th Приходная
+				th Коммисия
+				th Итоговая закупка
+				th Профит
+				th Статус
+			+loop(4)
+				tr.ordersSummary__info
+					td РИМ-5345454
+					td 23.34.17
+					td.primary 19454
+					td 17669
+					td 5%
+					td.accent 18001
+					td.succes 1470
+					td ожидает выдачи
+	table.ordersSummary
+		caption 
+			h4 Статус взаиморсчетов
+		tbody
+			tr.ordersSummary__header
+				th Общий Статус
+				th Из них по Платформе
+			tr
+				td.t-centr - 1 290 000р
+				td.t-center 36 000р
+				td 
+					zopa
+					enotzaglot
+						seriy
+							sprite
+								| sptf_024_07_bober
+							

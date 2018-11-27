@@ -1,0 +1,17 @@
+/**
+* registerForm styles
+*/
+
+@mixin registerForm(){
+
+  .registerForm {
+    &__content {
+
+    }
+  }
+
+}
+
+
+////////////////////////////////////////
+@include registerForm();

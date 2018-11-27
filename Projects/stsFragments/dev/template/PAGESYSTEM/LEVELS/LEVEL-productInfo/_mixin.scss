@@ -77,10 +77,12 @@
         &--delivery{
             @include for-size(tablet-p-up){
             border-left: 1px solid cs('background-d');
+            border-bottom: 1px solid cs('background-d');
+          
         }
             @include for-size(tablet-l-up){
                      
-                        padding-left: vr-block(1); 
+                      //  padding-left: vr-block(1); 
            } 
         }
     }

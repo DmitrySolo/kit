@@ -5,6 +5,14 @@
 @mixin deliverySection(){
   
   .deliverySection {
+      &__outOfStock{
+          padding:vr-block(1);
+          color:#fff;
+          b{
+              color: cs('accent-l');
+              wrap: nowrap;
+          }
+      }
       
          &__more{  
           list-style:none;  
@@ -12,9 +20,8 @@
       &__to{
           margin-bottom: vr-block(1);
           border-bottom: dashed 1px cs('background-d');
-         // padding-left: vr-block(1);
-          padding-right: vr-block(.4);
-          padding-bottom: vr-block(.4);
+         // padding-left: vr-block(1)
+          padding: vr-block(1);
           .icon{
               width: 2rem;
               height: 2rem;

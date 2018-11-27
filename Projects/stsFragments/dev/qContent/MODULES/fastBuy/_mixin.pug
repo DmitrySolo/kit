@@ -1,0 +1,41 @@
+mixin MODULE-fastBuy()
+	<!-- split modules/fastBuy -->
+	.fastBuy__trigger#fastBuy__trigger(data-qcontent='module__fastBuy') trigger
+	+LEVEL-modalWindow('fastBuy','Быстрый заказ без регистрации','fastBuy')
+		.fastBuy__content(data-qcontent='module__fastBuy')
+			-if(fastBuy.state=='static')
+				form
+					p.fastBuy__label
+						strong Ванна акриловая BAS Сагра 160х100 левая (Код товара: 21060)
+					.group.group--md
+						.col.col-6-tl
+							+In-textInput('name','','Ваше Имя:','classModifier')
+							+In-textInput('city_name','Воронеж:','Город:','classModifier') 
+							+In-textInput('name','XXX-XXX','Номер купона для скидки:','classModifier')
+							+In-textInput('name','+7(xxx) xxx xx xx','Номер телефона:','classModifier')
+						.col.col-6-tl
+							.group.group--el
+								.col.col-6-tl.fastBuy__price
+									//+C-priceAndStock()
+								.col.col-6-tl
+									.fastBuy__prodImage
+							.fastBuy__productChar
+								//+MODULE-productChar() 
+					+In-textArea('name','Комментарий:','Комментарий по желанию','classModifier')
+					p.fastBuy__caution
+						| Обращаем ваше внимание - заказывая без регистрации, вы не накапливаете бонусные баллы.
+					.fastBuy__orderAction
+						+B-toOrder('Заказать')
+			-if(fastBuy.state=='onload')
+				.fastBuy__loader
+			-if(fastBuy.state=='success')
+				article.fastBuy__success
+					span.succes.icon-tick Заказ оформлен!
+					p В ближайшее время с вами свяжется наш менеджер для подверждения заказа и уточнения сроков и способа доставки.
+	p ///////////////////////////////////////////////////////////////
+	.page__title Товар такойто
+	.productInfo__priceStock 
+	+MODULE-productChar()
+	+C-priceAndStock()
+	img.productImageSlider__image(src = 'https://www.santehsmart.ru/upload/iblock/5a6/5a6597f83386fe4358bf252bb9751574.png')
+	if(fastBuy.state )	

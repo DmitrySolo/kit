@@ -1,0 +1,7 @@
+mixin freeDelSticker(icon,title,text)
+	-if (!className) className =""
+		.freeDelSticker
+			.iconWrapper
+				svg()
+					use(xlink:href="#" + icon)
+			span=title+':'
